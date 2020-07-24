@@ -34,6 +34,14 @@ Discuss why that score and not higher or lower. Pay particular attention when th
 
 Finally (and most importantly) identify actions to move the score upward.
 
+#### Example
+
+|Area|Score|Comments|Actions|
+|:---|:---|:---|:---|
+|Mission|2|We don't validate our user needs|Identify customers to participate in focus groups|
+|Plan|3|Plan is a bit out of date and feature focused|Begin regular fortnightly backlog refinement and roadmap refresh session.<br>One off review to make sure operational readiness is adequately represented.|
+|Pawns or players|5|We have great autonomy|No action|
+
 ## Team
 
 ### Mission
