@@ -44,17 +44,17 @@ Finally (and most importantly) identify actions to move the score upward.
 
 ## Team
 
-### Mission
+### 1. Mission
 * We have a clear mission that we share with all stakeholders.
 * We understand what is important to our customers and validate our thinking regularly.
 
-### Plan
+### 2. Plan
 * Our plan guides us.
 * It makes sure we work on the right things first and helps us predict and avoid issues.
 * Risky items are clearly indicated and work to reduce risk is prioritised.
 * The plan gets the right balance between delivering features and operational aspects.
 
-### Fast, reliable and safe delivery
+### 3. Fast, reliable and safe delivery
 * We work rapidly together.
 * Our process helps us deliver high quality work quickly.
 * Our daily stand up keeps us aligned and working well as a team.
@@ -69,18 +69,18 @@ Finally (and most importantly) identify actions to move the score upward.
   * (Lead time = time from picking an item up to it being done.)
 * The onboarding process for new team members is simple and straightforward.
 
-### Fun
+### 4. Fun
 * The team is a fun place to be every day.
 * We have great team spirit and help each other out.
 * We give each other honest feedback.
 * We learn something every day.
 * We look forward to our retrospectives and they drive valuable improvements.
 
-### Pawns or players
+### 5. Pawns or players
 * We are in control of our destiny!
 * We decide what to build and how to build it.
 
-### Outside support
+### 6. Outside support
 * We always get great support and help when we ask for it!
 * We are listened to and our ideas are used to improve the organisation.
 
@@ -94,17 +94,17 @@ You may wish to score each individual component or system separately for these a
 > * The cloud platform
 > * The CI/CD system
 
-### Tech and architecture
+### 7. Tech and architecture
 * The tech helps us deliver value.
 * We enjoy working with it.
 * The architecture is clean.
 * The tech and architecture make delivery and live operations easy and enjoyable.
 
-### Healthy code base
+### 8. Healthy code base
 * We're proud of the quality of our code!
 * It is clean, easy to read, and has great test coverage.
 
-### Testing
+### 9. Testing
 * We have great test coverage.
 * Testing is everyone's responsibility.
 * The time we spend on testing is really worthwhile.
@@ -120,7 +120,7 @@ You may wish to score each individual component or system separately for these a
     * e.g. accessibility, browser compatibility, performance, capacity, resilience.
 * Test data is automatically generated and has the right properties and scale.
 
-### Easy to release
+### 10. Easy to release
 * It is easy and straightforward to release a change to production.
 * We can release on demand, typically multiple times per day.
 * Every code merge triggers the creation of a potentially releasable build artifact.
@@ -131,7 +131,7 @@ You may wish to score each individual component or system separately for these a
 * We can see what is currently deployed in each environment, including configuration and feature flags, and can see the history of changes.
 * We use blue-green/canary deployments to safely verify each deployment before fully switching over to the new version.
 
-### Operations
+### 11. Operations
 * We consider operations from day one and design the system to be easy to operate.
 * We include operability features throughout delivery, treating them as user needs of the support team.
   * e.g. monitoring and log aggregation.
@@ -145,7 +145,7 @@ You may wish to score each individual component or system separately for these a
 * We learn from incidents using blameless postmortems.
 * We use Service Level Objectives (SLOs) and error budgets to balance speed of change with operational reliability.
 
-### Security and compliance
+### 12. Security and compliance
 * We are confident our systems are secure.
 * We model threats and design systems to be secure.
 * Security is baked into our software delivery process.
