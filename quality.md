@@ -12,11 +12,11 @@ These hard figures help us to measure the effect of improvement work over time.
 | Deployment frequency | Number of deployments
 | Lead time | Median time between an item being started to when it is done.
 | Change failure rate | Percentage of deployments which result in an incident.
-| Overall incident rate: P1 | Total number of piority 1 incidents which occurred.
+| Overall incident rate: P1 | Total number of priority 1 incidents which occurred.
 | Mean time to restore service: P1 | Mean time from priority 1 incident starting to when it is resolved.
-| Overall incident rate: P1 | Total number of piority 1 incidents which occurred.
+| Overall incident rate: P1 | Total number of priority 2 incidents which occurred.
 | Mean time to restore service: P2 | Mean time from priority 2 incident starting to when it is resolved.
-| Overall incident rate: P3 | Total number of piority 3 incidents which occurred.
+| Overall incident rate: P3 | Total number of priority 3 incidents which occurred.
 | Mean time to restore service: P3 | Mean time from priority 3 incident starting to when it is resolved.
 
 # Scores and actions
