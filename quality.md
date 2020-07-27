@@ -45,14 +45,20 @@ Finally (and most importantly) identify actions to move the score upward.
 ## Team
 
 ### 1. Mission
-* We have a clear mission that we share with all stakeholders.
-* We understand what is important to our customers and validate our thinking regularly.
+* We have clear goals.
+* User needs are well understood. They validated through user research.
+* We know the metrics which will measure success and how they will be measured.
+* Non-functional requirements are understood and based on user needs.
 
 ### 2. Plan
-* Our plan guides us.
+* Our plan guides us. It is up to date and complete.
+* It gives our stakeholders a clear forecast of what is most likely to happen over the coming time periods.
 * It makes sure we work on the right things first and helps us predict and avoid issues.
-* Risky items are clearly indicated and work to reduce risk is prioritised.
+* Functionality is delivered in [thin vertical slices](https://docs.google.com/document/u/1/d/1TCuuu-8Mm14oxsOnlk8DqfZAA1cvtYu9WGv67Yj_sSk/pub), starting by building a [steel thread](https://www.agiledevelopment.org/agile-talk/111-defining-acceptance-criteria-using-the-steel-thread-concept) / [walking skeleton](https://www.henricodolfing.com/2018/04/start-your-project-with-walking-skeleton.html).
+* Risky items and dependencies are clearly indicated and work to reduce risk is prioritised.
 * The plan gets the right balance between delivering features and operational aspects.
+* We track risks, issues, assumptions and dependencies ('RAID') and work creatively to resolve them.
+* We keep a log of key technical and product decisions and who approved them.
 
 ### 3. Fast, reliable and safe delivery
 * We work rapidly together.
@@ -94,17 +100,23 @@ You may wish to score each individual component or system separately for these a
 > * The cloud platform
 > * The CI/CD system
 
-### 7. Tech and architecture
-* The tech helps us deliver value.
-* We enjoy working with it.
-* The architecture is clean.
-* The tech and architecture make delivery and live operations easy and enjoyable.
+### 7. Skills and knowledge
+* We have the skills and knowledge we need.
+* We are familiar with the tech in use and know how to use it well.
+* We know the codebase and are comfortable making changes in it.
+* We know how to operate the live system reliably and dignose and fix things when they break.
 
-### 8. Healthy code base
+### 8. Tech and architecture
+* The tech helps us deliver value.
+* We enjoy working with it and it supports fast reliable and safe delivery.
+* The architecture is clean.
+* The tech and architecture make testing, local development and live operations easy.
+
+### 9. Healthy code base
 * We're proud of the quality of our code!
 * It is clean, easy to read, and has great test coverage.
 
-### 9. Testing
+### 10. Testing
 * We have great test coverage.
 * Testing is everyone's responsibility.
 * The time we spend on testing is really worthwhile.
@@ -120,24 +132,25 @@ You may wish to score each individual component or system separately for these a
     * e.g. accessibility, browser compatibility, performance, capacity, resilience.
 * Test data is automatically generated and has the right properties and scale.
 
-### 10. Easy to release
+### 11. Easy to release
 * It is easy and straightforward to release a change to production.
 * We can release on demand, typically multiple times per day.
 * Every code merge triggers the creation of a potentially releasable build artifact.
   * That same artifact is deployed to each environment (e.g. dev, test, prod) rather than a new build being done for each.
 * We can deploy any recent version.
 * Our deployments are automated, including everything needed to build an environment from scratch.
-* Our test and production environments are all in a known state,including configuration parameters.
+* Our test and production environments are all in a known state, including configuration parameters.
 * We can see what is currently deployed in each environment, including configuration and feature flags, and can see the history of changes.
+* The CI/CD system has secure access control and credentials to deploy to each environment are handled securely.
 * We use blue-green/canary deployments to safely verify each deployment before fully switching over to the new version.
 
-### 11. Operations
+### 12. Operations
 * We consider operations from day one and design the system to be easy to operate.
 * We include operability features throughout delivery, treating them as user needs of the support team.
   * e.g. monitoring and log aggregation.
 * Our systems are reliable.
 * We have great insight into how live systems are functioning.
-* e.g. metrics dashboards, request tracing and application logs.
+  * e.g. metrics dashboards, request tracing and application logs.
 * We detect potential issues and take action to prevent them.
   * e.g. TLS certificate expiry, hitting quota limits.
 * We detect incidents before our users tell us about them and have a slick process for resolving them.
@@ -157,9 +170,9 @@ You may wish to score each individual component or system separately for these a
   * e.g. GDPR, PCI, ISO.
 * Data is encrypted in transit and at rest where needed.
 * Sensitive data is not leaked via application logs.
-• We use role based access control with minimum privileges for internal tools and the systems we build.
+* We use role based access control with minimum privileges for internal tools and the systems we build.
 * Identity and access management is modern and secure.
   * e.g. OAuth/OIDC with MFA.
 * Security is treated as an unspoken user need and functional tests ensure security measures work as intended.
 * Automated checks are in place for vulnerabilities in dependencies such as code libraries and container or VM base images.
-
+* There is strong separation (e.g. different AWS accounts) for test and production systems. Manual access to modify production systems is not normally needed.
