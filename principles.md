@@ -48,7 +48,7 @@ The following practices support the principle of building quality in.
 
 **Pair programming**. Avoid quality issues by combining the skills and experience of two developers instead of one. Take advantage of navigator and driver roles. Also consider cross-discipline (e.g. dev-test) pairing.
 
-**Test-driven development.** Write the tests hand in hand with the code it is testing to ensure code is easily testable and does just enough to meet the requirements.
+**[Test-driven development.](principles/test-automation.md)** Write the tests hand in hand with the code it is testing to ensure code is easily testable and does just enough to meet the requirements.
 
 **Write less code.** Treat code as a liability rather than an asset: the more code, the more there is to go wrong. Incremental delivery and test driven development both help keep the codebase small and simple.
 
