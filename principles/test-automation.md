@@ -28,3 +28,4 @@
 * Do not add tests of no value (e.g. tests of default getters/setters) just to increase the coverage level &mdash; 100% coverage is not a good use of time
 * Tests must pass before code can be merged
 * Non-functional requirements should also be covered by automated tests (e.g. security, performance, accessibility)
+* Website user interfaces should be tested against an appropriate set of browsers and versions (TO DO - won't be able to reference the policy, might need to copy and paste) &mdash; in particular, no effort should be spent testing against unsupported browsers or unsupported versions of browsers
