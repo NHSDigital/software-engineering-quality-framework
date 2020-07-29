@@ -15,4 +15,4 @@
 * Nobody should need access to production hosts, including:
     * Logging & monitoring should negate the need to manually inspect a production host
     * Deployments are immutable, and all deployments are issued via delivery pipelines, negating the need to manually change a production host
-* Any access to production must be audited
+* Any access to production must be audited and granted using temporary "break glass" permissions.
