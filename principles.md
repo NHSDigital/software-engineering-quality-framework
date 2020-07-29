@@ -66,7 +66,7 @@ The following practices support the principle of building quality in.
 
 **Keep it simple.** Explicit is better than implicit. Simple is better than complex. Complex is better than complicated. Complex is better than complicated.  Special cases aren't special enough to break the rules. Although practicality beats purity. ([Zen of Python](https://www.python.org/dev/peps/pep-0020/).)
 
-**Prefer serverless; where not serverless use ephemeral and immutable infrastructure.** Make it simple to guarantee predictable and reliable behaviour.
+**[Prefer serverless](principles/serverless.md); where not serverless use ephemeral and immutable infrastructure.** Make it simple to guarantee predictable and reliable behaviour.
 
 **[Bake in security.](principles/security.md)** Understand it as a team. Consider it through every stage of delivery. Verify it automatically and continuously. Model risks. Use defence in depth. Segregate security domains (e.g. test/prod, public/PII). Minimise human contact with sensitive data.
 
