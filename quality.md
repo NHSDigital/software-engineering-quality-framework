@@ -51,7 +51,9 @@ Finally (and most importantly) identify actions to move the score upward.
 * Non-functional requirements are understood and based on user needs.
 
 ### 2. Plan
-* Our plan guides us. It is up to date and complete.
+* Our plan guides us.
+* It is up to date and complete.
+* It changes when it should but is stable enough.
 * It gives our stakeholders a clear forecast of what is most likely to happen over the coming time periods.
 * It makes sure we work on the right things first and helps us predict and avoid issues.
 * Functionality is delivered in [thin vertical slices](https://docs.google.com/document/u/1/d/1TCuuu-8Mm14oxsOnlk8DqfZAA1cvtYu9WGv67Yj_sSk/pub), starting by building a [steel thread](https://www.agiledevelopment.org/agile-talk/111-defining-acceptance-criteria-using-the-steel-thread-concept) / [walking skeleton](https://www.henricodolfing.com/2018/04/start-your-project-with-walking-skeleton.html).
@@ -61,14 +63,15 @@ Finally (and most importantly) identify actions to move the score upward.
 * We keep a log of key technical and product decisions and who approved them.
 
 ### 3. Fast, reliable and safe delivery
-* We work rapidly together.
+* We work well together to keep the work flowing.
+* We have a defined process which we all stick to.
 * Our process helps us deliver high quality work quickly.
 * Our daily stand up keeps us aligned and working well as a team.
   * It helps us share and resolve impediments.
 * Our regular planning sessions are efficient and effective.
 * We use short-lived feature branches off master.
   * Tests must pass before code is merged.
-* We can see when the build has broken or tests are failing and fix them before we carry on.
+* We can see when the build has broken or tests are failing and we fix them before carrying on.
 * Our definition of "done" is ready to deploy to production.
 * We explicitly limit work in progress (WIP).
 * Our lead time is typically two days or less.
@@ -102,9 +105,11 @@ You may wish to score each individual component or system separately for these a
 
 ### 7. Skills and knowledge
 * We have the skills and knowledge we need.
+* Skills and knowledge are well spread between team members.
 * We are familiar with the tech in use and know how to use it well.
 * We know the codebase and are comfortable making changes in it.
-* We know how to operate the live system reliably and dignose and fix things when they break.
+* We know how to operate the live system reliably and diagnose and fix things when they break.
+* We have the skills and knowledge for what we will be doing next.
 
 ### 8. Tech and architecture
 * The tech helps us deliver value.
@@ -114,7 +119,7 @@ You may wish to score each individual component or system separately for these a
 
 ### 9. Healthy code base
 * We're proud of the quality of our code!
-* It is clean, easy to read, and has great test coverage.
+* It is clean, easy to read, and safe to work with.
 
 ### 10. Testing
 * We have great test coverage.
