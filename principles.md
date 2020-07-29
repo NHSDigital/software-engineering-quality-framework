@@ -98,13 +98,13 @@ We need to figure out how to deliver software so fast that our customers don’t
 
 **Eliminate waste** (as above).
 
-**Deliver little and often** Prefer lots of small changes (with automation doing the heavy lifting) to fewer large changes
+**Deliver little and often.** Prefer lots of small changes (with automation doing the heavy lifting) to fewer large changes
 
 **Start simple and iterate.** Structure projects as dinstinct discovery, inception and build stages to allow commitment to be incrementally increased. Start with an MVP /  [steel thread](https://www.agiledevelopment.org/agile-talk/111-defining-acceptance-criteria-using-the-steel-thread-concept) / [walking skeleton](https://www.henricodolfing.com/2018/04/start-your-project-with-walking-skeleton.html).
 
 **Sustainable pace.** Work at a pace which is sustainable long term.
 
-**Choose the right tools for each job** Balance autonomy and conformity: unnecessary proliferation of a wide variety of tools impacts overall effectiveness, but limiting too much promotes "least worst" choices. Note that "each job" does not have to mean a single toolset for a service: consider a polyglot approach for component&mdash;based services.
+**Choose the right tools for each job.** Balance autonomy and conformity: unnecessary proliferation of a wide variety of tools impacts overall effectiveness, but limiting too much promotes "least worst" choices. Note that "each job" does not have to mean a single toolset for a service: consider a polyglot approach for component&mdash;based services.
 
 # 6. Respect for people
 
