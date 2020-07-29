@@ -3,7 +3,8 @@
 ## Context
 
 * These notes are part of a broader set of [principles](../principles.md)
-* Further reading / training courses about test automation: (TO DO)
+* TO DO: Further reading / training courses about test automation
+* TO DO: Reference to the Automation Working Group (link to terms of reference?)
 
 ## Principles
 
