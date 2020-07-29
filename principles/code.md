@@ -10,7 +10,7 @@
 * All code is treated the same (e.g. application code, infrastructure code, test code, etc)
 * All code is peer-reviewed and tested
 * All code is version controlled
-* Code changes should be automatically checked for code quality using tools like [SonarQube](https://www.sonarqube.org)
+* Code changes should be automatically checked for code quality using tools like [SonarQube](https://www.sonarqube.org) (as well as via IDE plugins)
 * Code should be automatically scanned for secrets or other senstive data using tools like [AWS Macie](https://aws.amazon.com/macie/)
 
 
