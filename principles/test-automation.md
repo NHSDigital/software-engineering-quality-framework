@@ -5,6 +5,9 @@
 * These notes are part of a broader set of [principles](../principles.md)
 * TO DO: Further reading / training courses about test automation
 * TO DO: Reference to the Automation Working Group (link to terms of reference?)
+* See also:
+    * [Continuous integration](continuous-integration.md)
+    * [Automation](automation.md)
 
 ## Principles
 
@@ -17,7 +20,7 @@
 * Use Behaviour Driven Development (BDD) to encode acceptance criteria in business terms as automated tests where appropriate
   * Only use where the product owner is involved in reviewing detailed acceptance criteria (expressed as BDD tests)
   * In many cases well written unit and integration tests are sufficient and avoid the overhead of the extra layer of abstraction which BDD frameworks introduce
-* Tests and test suites must be executable from the command-line as one-liners
+* Tests and test suites must be executable from the command line via a single command
 * Tests do not rely on other tests (i.e. each test can be executed in isolation, tests can be run concurrently and in any order)
 * Tests only check a single condition
 * Tests are idempotent (i.e. give the same result when re-run against the same code)
@@ -29,4 +32,4 @@
 * Do not add tests of no value (e.g. tests of default getters/setters) just to increase the coverage level &mdash; 100% coverage is not a good use of time
 * Tests must pass before code can be merged
 * Non-functional requirements should also be covered by automated tests (e.g. security, performance, accessibility)
-* Website user interfaces should be tested against an appropriate set of browsers and versions (TO DO - won't be able to reference the policy, might need to copy and paste) &mdash; in particular, no effort should be spent testing against unsupported browsers or unsupported versions of browsers
+* Website user interfaces should be tested against an appropriate set of browsers and versions (TO DO &mdash; won't be able to reference the policy, might need to copy and paste) &mdash; in particular, no effort should be spent testing against unsupported browsers or unsupported versions of browsers

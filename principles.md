@@ -8,7 +8,7 @@ Waste is anything that interferes with giving customers what they really value a
 
 **Inventory &mdash; partially done work**, e.g. plans and designs, code. Limit work in progress (WIP) and use a pull-based approach.
 
-**Inventory &mdash; over-scaled resources**, e.g. server over-provisioning, complicated tools where simple ones would do. Adopt a "just enough, not just in case" mindset.
+**[Inventory &mdash; unnecessary resources.](principles/unnecessary-resources.md)**, e.g. server over-provisioning, complicated tools where simple ones would do. Adopt a "just enough, not just in case" mindset.
 
 **Overproduction &mdash; building unnecessary features.** Start simple and basic, get feedback and iterate.
 
@@ -18,7 +18,7 @@ Waste is anything that interferes with giving customers what they really value a
 
 **Overproduction &mdash; reinventing the wheel.** Solving the same problem repeatedly in an organisation. Make sure there are effective ways to share knowledge between teams to avoid this.
 
-**Overproduction &mdash; building when you could instead reuse or buy.** Remember to consider all these alternatives.
+**[Overproduction &mdash; building when you could instead reuse or buy.](principles/cloud-services.md)** Remember to consider all these alternatives.
 
 **Overproduction &mdash; premature optimisation for reusability.** Before making something reusable, first make it usable. Prefer explicit logic to implicit. Excessively generic systems create accidental complexity. [KISS](http://principles-wiki.net/principles:keep_it_simple_stupid) and [YAGNI](https://www.martinfowler.com/bliki/Yagni.html) again.
 
@@ -52,11 +52,11 @@ The following practices support the principle of building quality in.
 
 **Write less code.** Treat code as a liability rather than an asset: the more code, the more there is to go wrong. Incremental delivery and test driven development both help keep the codebase small and simple.
 
-**Continuous integration.** Build automated code quality checks and tests &mdash; security, accessibility etc. Use frequent code merges.
+**[Continuous integration.](principles/continuous-integration.md)** Build automated code quality checks and tests &mdash; security, accessibility etc. Use frequent code merges.
 
 **Minimise hand-offs** to reduce knowledge gaps.
 
-**Automate** any tedious, manual process or any process prone to human error.
+**[Automate](principles/automation.md)** any tedious, manual process or any process prone to human error.
 
 **Refactor often** &mdash; expect to change existing code.
 
@@ -64,13 +64,13 @@ The following practices support the principle of building quality in.
 
 **Keep it simple.** Explicit is better than implicit. Simple is better than complex. Complex is better than complicated. Complex is better than complicated.  Special cases aren't special enough to break the rules. Although practicality beats purity. ([Zen of Python](https://www.python.org/dev/peps/pep-0020/).)
 
-**Prefer ephemeral and immutable infrastructure.** Make it simple to guarantee predictable and reliable behaviour.
+**Prefer serverless; where not serverless use ephemeral and immutable infrastructure.** Make it simple to guarantee predictable and reliable behaviour.
 
-**Bake in security.** Understand it as a team. Consider it through every stage of delivery. Verify it automatically and continuously. Model risks. Use defence in depth. Segregate security domains (e.g. test/prod, public/PII). Minimise human contact with sensitive data.
+**[Bake in security.](principles/security.md)** Understand it as a team. Consider it through every stage of delivery. Verify it automatically and continuously. Model risks. Use defence in depth. Segregate security domains (e.g. test/prod, public/PII). Minimise human contact with sensitive data.
 
 **Stay up to date.** Automate patching/upgrades, dependency/image scanning and updating.
 
-**Bake in reliability.** Understand requirements as a team, treated as unspoken user needs. Consider it through every stage of delivery. Verify it automatically and continuously. Practice incident management resolution using techniques like [game days](https://wa.aws.amazon.com/wat.concept.gameday.en.html).
+**[Bake in reliability.](principles/reliability.md)** Understand requirements as a team, treated as unspoken user needs. Consider it through every stage of delivery. Verify it automatically and continuously. Practice incident management resolution using techniques like [game days](https://wa.aws.amazon.com/wat.concept.gameday.en.html).
 
 # 3. Create knowledge
 
