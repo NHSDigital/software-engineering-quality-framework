@@ -15,4 +15,4 @@
 * Application changes should be independent of other concurrent changes (i.e. releases can safely be taken at any time)
 * Quality gates should be applied and evidenced by the build pipeline (not via manual processes)
 * Prefer short and wide pipelines rather than long running sequential pipelines, so that the team can choose the shortest responsible path to done
-* Notes on expected coverage & CI strategies (e.g. load & performance testing, security testing, dependency scanning, scanning for secrets, accessibility testing, etc, etc)
+* TO DO: Notes on expected coverage & CI strategies (e.g. load & performance testing, security testing, dependency scanning, scanning for secrets, accessibility testing, etc, etc)

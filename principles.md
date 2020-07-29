@@ -26,9 +26,9 @@ Waste is anything that interferes with giving customers what they really value a
 
 **Extra Processing &mdash; due to changing requirements.** Use just enough, just in time approach to understanding requirements and deliver small iterations in a build-measure-learn loop.
 
-**Extra Processing &mdash; due to delayed integration** making merging / reconciliation harder. Use continuous integration with frequent merges.
+**Extra Processing &mdash; due to delayed integration** making merging / reconciliation harder. Use [continuous integration](principles/continuous-integration.md) with frequent merges.
 
-**Extra Processing &mdash; due to late testing.** When testing is done after implementation, especially if long after, bugs become more time consuming to detect and fix. Use test driven development and continuous integration.
+**Extra Processing &mdash; due to late testing.** When testing is done after implementation, especially if long after, bugs become more time consuming to detect and fix. Use test driven development and [continuous integration](principles/continuous-integration.md).
 
 **Hand-offs** (“Transportation” and “Waiting” in Lean terminology) &mdash; excessive passing of work between individuals or teams. Develop multi-skilled individuals and cross-functional product teams.
 
@@ -98,11 +98,13 @@ We need to figure out how to deliver software so fast that our customers don’t
 
 **Eliminate waste** (as above).
 
+**Deliver little and often** Prefer lots of small changes (with automation doing the heavy lifting) to fewer large changes
+
 **Start simple and iterate.** Structure projects as dinstinct discovery, inception and build stages to allow commitment to be incrementally increased. Start with an MVP /  [steel thread](https://www.agiledevelopment.org/agile-talk/111-defining-acceptance-criteria-using-the-steel-thread-concept) / [walking skeleton](https://www.henricodolfing.com/2018/04/start-your-project-with-walking-skeleton.html).
 
 **Sustainable pace.** Work at a pace which is sustainable long term.
 
-**Balance autonomy and conformity.** Teams use the right tool for the job, within reason &mdash; unchecked proliferation of a wide variety of tools impacts overall effectiveness of the organisation.
+**Choose the right tools for each job** Balance autonomy and conformity: unnecessary proliferation of a wide variety of tools impacts overall effectiveness, but limiting too much promotes "least worst" choices. Note that "each job" does not have to mean a single toolset for a service: consider a polyglot approach for component&mdash;based services.
 
 # 6. Respect for people
 
