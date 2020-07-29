@@ -14,3 +14,4 @@
     * Interactions with change management process / tools
     * Interactions with architecture repository process / tools
     * Process to rebuild a developer laptop
+* But be pragmatic, and choose where to invest your time. Error-prone, high impact and frequent activities are all high priorities for automation.
