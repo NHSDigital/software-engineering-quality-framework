@@ -50,6 +50,8 @@ The following practices support the principle of building quality in.
 
 **[Test automation.](principles/test-automation.md)** Use test-driven development: Write the tests hand in hand with the code it is testing to ensure code is easily testable and does just enough to meet the requirements.
 
+**[Protect code quality](principles/code.md)** to keep code easy to maintain.
+
 **Write less code.** Treat code as a liability rather than an asset: the more code, the more there is to go wrong. Incremental delivery and test driven development both help keep the codebase small and simple.
 
 **[Continuous integration.](principles/continuous-integration.md)** Build automated code quality checks and tests &mdash; security, accessibility etc. Use frequent code merges.
