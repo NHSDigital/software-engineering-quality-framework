@@ -7,9 +7,17 @@ This framework aims to:
 
 # Metrics
 These hard figures help us to measure the effect of improvement work over time.
+
+## Essential:
+
 | Measure | Definition (each calculated over the last 28 days) |
 |:---|:---|
 | Deployment frequency | Number of deployments
+
+## Recommended:
+
+| Measure | Definition (each calculated over the last 28 days) |
+|:---|:---|
 | Lead time | Median time between an item being started to when it is done.
 | Change failure rate | Percentage of deployments which result in an incident.
 | Overall incident rate: P1 | Total number of priority 1 incidents which occurred.
