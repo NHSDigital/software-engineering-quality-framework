@@ -13,12 +13,12 @@ These hard figures help us to measure the effect of improvement work over time.
 | Measure | Definition (each calculated over the last 28 days) |
 |:---|:---|
 | Deployment frequency | Number of deployments
-| Lead time | Median time between an item being started to when it is done.
 
 ## Recommended:
 
 | Measure | Definition (each calculated over the last 28 days) |
 |:---|:---|
+| Lead time | Median time between an item being started to when it is done.
 | Change failure rate | Percentage of deployments which result in an incident.
 | Overall incident rate: P1 | Total number of priority 1 incidents which occurred.
 | Mean time to restore service: P1 | Mean time from priority 1 incident starting to when it is resolved.
