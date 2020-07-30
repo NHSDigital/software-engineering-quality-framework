@@ -3,7 +3,8 @@
 ## Context
 
 * These notes are part of a broader set of [principles](../principles.md)
-* TO DO: Further reading / training courses about security
+* TO DO: Further reading / training courses about security:
+    * [OWASP top 10](https://owasp.org/www-project-top-ten/)
 * TO DO: Reference to the Security Working Group (link to terms of reference?)
 
 ## Principles
@@ -16,3 +17,5 @@
     * Logging & monitoring should negate the need to manually inspect a production host
     * Deployments are immutable, and all deployments are issued via delivery pipelines, negating the need to manually change a production host
 * Any access to production must be audited and granted using temporary "break glass" permissions.
+* Access to environments, secrets & credentials, etc must use role based access control with minimum privileges
+* Use public resources as well as organisation policies, for example [OWASP top 10](https://owasp.org/www-project-top-ten/)
