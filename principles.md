@@ -1,4 +1,6 @@
-# Introduction
+# Engineering principles
+
+This is part of a broader [quality framework](README.md)
 
 Our principles guide the way we work and interact with each other. They are based on the seven Lean principles as expressed in Lean Software Development: An Agile Toolkit by Mary Poppendieck and Tom Poppendieck.
 

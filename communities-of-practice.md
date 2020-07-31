@@ -1,5 +1,7 @@
 # Communities of practice
 
+This is part of a broader [quality framework](README.md)
+
 A community of practice (CoP) is a group of people who "share a concern or a passion for something they do and learn how to do it better as they interact regularly" ([Introduction to communities of practice](https://wenger-trayner.com/introduction-to-communities-of-practice/)). This document gives guidance on forming and running a CoP.
 
 # Scope

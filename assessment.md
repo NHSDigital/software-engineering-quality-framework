@@ -1,5 +1,8 @@
-# Quality framework
-This framework aims to:
+# Quality assessment tool
+
+This is part of a broader [quality framework](README.md)
+
+This tool aims to:
 * Help teams understand what "good" looks like — and to contribute to that shared understanding.
 * Measure themselves against this shared standard.
 * Identify and prioritise improvement work.
