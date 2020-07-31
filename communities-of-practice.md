@@ -10,7 +10,9 @@ CoPs are formed around a single subject which should be neither so narrow as to 
 
 It is important to set goals when forming a CoP to avoid it losing purpose and direction. Goals should be valuable to individuals and the wider organisation.
 
-Some common goals are listed below. We use the term _practitioner_ for someone whose primary job or role aligns strongly with the CoP’s scope, _apprentice_ for those who view the subject as an outside interest, _other_ for everyone else in the organisation and _public_ for anyone outside the organisation.
+Not all goals need to produce output in a material sense. Some focus more on harder to quantify results like individual learning. Having a balance of these is quite healthy and encouraged. If attendees start to see the CoP as just more actions to add to their to do list they could disengage.
+
+Some common goals are listed below.  We use the term _practitioner_ for someone whose primary job or role aligns strongly with the CoP’s scope, _apprentice_ for those who view the subject as an outside interest, _other_ for everyone else in the organisation and _public_ for anyone outside the organisation.
 
 * **Support** individual _practitioners_ with the specific challenges they are facing, usually with advanced or difficult topics.
 
