@@ -1,5 +1,8 @@
-# Quality framework
-This framework aims to:
+# Quality assessment tool
+
+This is part of a broader [quality framework](README.md)
+
+This tool aims to:
 * Help teams understand what "good" looks like — and to contribute to that shared understanding.
 * Measure themselves against this shared standard.
 * Identify and prioritise improvement work.
@@ -77,7 +80,7 @@ Finally (and most importantly) identify actions to move the score upward.
 * Our daily stand up keeps us aligned and working well as a team.
   * It helps us share and resolve impediments.
 * Our regular planning sessions are efficient and effective.
-* We use short-lived feature branches off master.
+* We practice [trunk-based development](https://trunkbaseddevelopment.com/) using short-lived feature branches off master.
   * Tests must pass before code is merged.
 * We can see when the build has broken or tests are failing and we fix them before carrying on.
 * Our definition of "done" is ready to deploy to production.
@@ -94,11 +97,11 @@ Finally (and most importantly) identify actions to move the score upward.
 * We look forward to our retrospectives and they drive valuable improvements.
 
 ### 5. Pawns or players
-* We are in control of our destiny!
+* As a team, we are in control of our destiny!
 * We decide what to build and how to build it.
 
 ### 6. Outside support
-* We always get great support and help when we ask for it!
+* We always get great support and help from outside the team when we ask for it!
 * We are listened to and our ideas are used to improve the organisation.
 
 ## Individual component or system
@@ -121,7 +124,7 @@ You may wish to score each individual component or system separately for these a
 
 ### 8. Tech and architecture
 * The tech helps us deliver value.
-* We enjoy working with it and it supports fast reliable and safe delivery.
+* We enjoy working with it and it supports fast, reliable and safe delivery.
 * The architecture is clean.
 * The tech and architecture make testing, local development and live operations easy.
 
@@ -134,15 +137,15 @@ You may wish to score each individual component or system separately for these a
 * Testing is everyone's responsibility.
 * The time we spend on testing is really worthwhile.
 * We use the right mixture of tools and techniques, e.g.
-  * code level unit and integration tests, and maybe behaviour-driven development
-  * running system component, integration and whole-system tests
+  * code-level unit and integration tests, and maybe behaviour-driven development
+  * running-system component, integration and whole-system tests
 * Our tests focus on individual components and the contracts between them, not on testing the whole system together.
 * We use stubs to insulate our tests from other components and systems.
 * Our components have versioned APIs.
 * Breaking changes are detected and clearly indicated.
   * e.g. using Consumer-Driven Contract testing and semantic versioning.
 * We understand user needs and non-functional requirements and our tests prove they are being met.
-    * e.g. accessibility, browser compatibility, performance, capacity, resilience.
+  * e.g. accessibility, browser compatibility, performance, capacity, resilience.
 * Test data is automatically generated and has the right properties and scale.
 
 ### 11. Easy to release
@@ -188,4 +191,5 @@ You may wish to score each individual component or system separately for these a
   * e.g. OAuth/OIDC with MFA.
 * Security is treated as an unspoken user need and functional tests ensure security measures work as intended.
 * Automated checks are in place for vulnerabilities in dependencies such as code libraries and container or VM base images.
-* There is strong separation (e.g. different AWS accounts) for test and production systems. Manual access to modify production systems is not normally needed.
+* There is strong separation (e.g. different AWS accounts) for test and production systems.
+* Humans don't have write access to production, except via time-limited "break-glass" permissions.
