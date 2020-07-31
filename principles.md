@@ -4,7 +4,7 @@ This is part of a broader [quality framework](README.md)
 
 Our principles guide the way we work and interact with each other. They are based on the seven Lean principles as expressed in Lean Software Development: An Agile Toolkit by Mary Poppendieck and Tom Poppendieck.
 
-# 1. Eliminate waste
+## 1. Eliminate waste
 
 Waste is anything that interferes with giving customers what they really value at the time and place where it will provide the most value. Here are some examples, listed against the seven types of waste identified by Lean.
 
@@ -40,7 +40,7 @@ Waste is anything that interferes with giving customers what they really value a
 
 **Defects** due to not understanding requirements properly or bugs leaking through. Use approaches described in the next section.
 
-# 2. Build quality in
+## 2. Build quality in
 
 The following practices support the principle of building quality in.
 
@@ -76,7 +76,7 @@ The following practices support the principle of building quality in.
 
 **[Bake in reliability.](principles/reliability.md)** Understand requirements as a team, treated as unspoken user needs. Consider it through every stage of delivery. Verify it automatically and continuously. Practice incident management resolution using techniques like [game days](https://wa.aws.amazon.com/wat.concept.gameday.en.html).
 
-# 3. Create knowledge
+## 3. Create knowledge
 
 **Generate knowledge.** Make time for activities which help us learn by doing, e.g. spikes, proof of concepts. Validation of technical design comes as the code is being written &mdash; expect the design to evolve. Encourage learning and experimentation.
 
@@ -86,7 +86,7 @@ The following practices support the principle of building quality in.
 
 **Record knowledge.** e.g. tests, self-documenting code, self-documenting system (e.g. [OpenAPI](https://swagger.io/resources/open-api/)), documentation &mdash; in that order.
 
-# 4. Defer commitment
+## 4. Defer commitment
 
 **Make decisions small** by breaking a big problem down.
 
@@ -96,7 +96,7 @@ The following practices support the principle of building quality in.
 
 **Just enough, just in time** &mdash; applied to all stages: research, analysis, product design, planning, technical design.
 
-# 5. Deliver fast
+## 5. Deliver fast
 
 We need to figure out how to deliver software so fast that our customers don’t have time to change their minds.
 
@@ -110,7 +110,7 @@ We need to figure out how to deliver software so fast that our customers don’t
 
 **Choose the right tools for each job.** Balance autonomy and conformity: unnecessary proliferation of a wide variety of tools impacts overall effectiveness, but limiting too much promotes "least worst" choices. Note that "each job" does not have to mean a single toolset for a service: consider a polyglot approach for component-based services.
 
-# 6. Respect for people
+## 6. Respect for people
 
 **Communicate.** e.g. stand-ups, retrospectives, show and tell / demo.
 
@@ -126,7 +126,7 @@ We need to figure out how to deliver software so fast that our customers don’t
 
 **No blame.** When things go wrong, treat it as a learning opportunity for the team and organisation. Use blameless post mortems and Five Whys.
 
-# 7. Optimise the whole
+## 7. Optimise the whole
 
 **Visualise the work.** Map the value stream with a Kanban board, identify bottlenecks.
 
