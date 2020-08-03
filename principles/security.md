@@ -9,13 +9,13 @@
 
 ## Principles
 
-* Everything (including infrastructure) should be up to date
-* Application dependencies should be automatically scanned for vulnerabilities & license issues
-    * TO DO: guidance around setting team tolerances for warnings etc
-* Source code should be automatically scanned for secrets or other senstive data (for example via tools like [AWS Macie](https://aws.amazon.com/macie/))
+* Everything (including infrastructure) should be up to date.
+* Application dependencies should be automatically scanned for vulnerabilities & license issues.
+    * TO DO: guidance around setting team tolerances for warnings etc.
+* Source code should be automatically scanned for secrets or other senstive data (see [code](code.md) for details).
 * Nobody should need access to production hosts, including:
-    * Logging & monitoring should negate the need to manually inspect a production host
-    * Deployments are immutable, and all deployments are issued via delivery pipelines, negating the need to manually change a production host
+    * Logging & monitoring should negate the need to manually inspect a production host.
+    * Deployments are immutable, and all deployments are issued via delivery pipelines, negating the need to manually change a production host.
 * Any access to production must be audited and granted using temporary "break glass" permissions.
-* Access to environments, secrets & credentials, etc must use role based access control with minimum privileges
-* Use public resources as well as organisation policies, for example [OWASP top 10](https://owasp.org/www-project-top-ten/)
+* Access to environments, secrets & credentials, etc must use role based access control with minimum privileges.
+* Use public resources as well as organisation policies, for example [OWASP Top 10](https://owasp.org/www-project-top-ten/).
