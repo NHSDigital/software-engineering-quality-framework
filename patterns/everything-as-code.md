@@ -1,12 +1,13 @@
-# Code
+# Everything as code
 
 ## Context
 
 * These notes are part of a broader set of [principles](../principles.md)
 
-## Principles
+## The pattern
 
 * Everything (including [infrastructure](cloud-services.md)) should be created by code.
+* Code makes it easy to see changes over time, easy to review and test changes, and enables automation (see [Automate everything](TBC))
 * All code is treated the same (e.g. application code, infrastructure code, test code, etc).
   * All code is peer-reviewed and tested.
   * All code is version controlled.
