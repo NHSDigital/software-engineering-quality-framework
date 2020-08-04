@@ -127,6 +127,7 @@ You may wish to score each individual component or system separately for these a
 * We enjoy working with it and it supports fast, reliable and safe delivery.
 * The architecture is clean.
 * The tech and architecture make testing, local development and live operations easy.
+* We use serverless or ephemeral infrastructure.
 
 ### 9. Healthy code base
 * We're proud of the quality of our code!
@@ -156,9 +157,9 @@ You may wish to score each individual component or system separately for these a
 * We can deploy any recent version.
 * Our deployments are automated, including everything needed to build an environment from scratch.
 * Our test and production environments are all in a known state, including configuration parameters.
-* We can see what is currently deployed in each environment, including configuration and feature flags, and can see the history of changes.
 * The CI/CD system has secure access control and credentials to deploy to each environment are handled securely.
 * We use blue-green/canary deployments to safely verify each deployment before fully switching over to the new version.
+* Our non-prod environments are cleared down automatically when they're no longer needed.
 
 ### 12. Operations
 * We consider operations from day one and design the system to be easy to operate.
@@ -173,13 +174,18 @@ You may wish to score each individual component or system separately for these a
 * We classify incidents and work to agreed protocols according to the Service Level Agreement (SLA) for each.
 * We learn from incidents using blameless postmortems.
 * We use Service Level Objectives (SLOs) and error budgets to balance speed of change with operational reliability.
+* We design for failure and we're confident our service will self-heal from most issues.
+* Our service is immutable: rather than make changes, we tear down and rebuild every time.
+* We can see what is currently deployed in each environment, including configuration and feature flags, and can see the history of changes.
+* Our infrastructure scales automatically.
+* We have clear visibility of our environment costs, and we regularly check for waste.
 
-### 12. Security and compliance
+### 13. Security and compliance
 * We are confident our systems are secure.
 * We model threats and design systems to be secure.
 * Security is baked into our software delivery process.
   * e.g. in analysis, coding and testing.
-* We understand typical vulnerabilities and how to guard against them
+* We understand typical vulnerabilities and how to guard against them.
   * e.g. OWASP Top Ten.
 * We understand the sensitivity of the data we process and handle it accordingly.
 * We know which regulations apply, and ensure we meet their requirements.
@@ -193,3 +199,7 @@ You may wish to score each individual component or system separately for these a
 * Automated checks are in place for vulnerabilities in dependencies such as code libraries and container or VM base images.
 * There is strong separation (e.g. different AWS accounts) for test and production systems.
 * Humans don't have write access to production, except via time-limited "break-glass" permissions.
+* We keep the versions of technology in our service up to date.
+
+
+
