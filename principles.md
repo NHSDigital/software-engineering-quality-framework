@@ -10,7 +10,7 @@ Waste is anything that interferes with giving customers what they really value a
 
 **Inventory &mdash; partially done work**, e.g. plans and designs, code. Limit work in progress (WIP) and use a pull-based approach.
 
-**[Inventory &mdash; unnecessary resources.](principles/unnecessary-resources.md)**, e.g. server over-provisioning, complicated tools where simple ones would do. Adopt a "just enough, not just in case" mindset.
+**[Inventory &mdash; unnecessary resources](principles/unnecessary-resources.md)**, e.g. server over-provisioning, complicated tools where simple ones would do. Adopt a "just enough, not just in case" mindset.
 
 **Overproduction &mdash; building unnecessary features.** Start simple and basic, get feedback and iterate.
 
@@ -20,7 +20,7 @@ Waste is anything that interferes with giving customers what they really value a
 
 **Overproduction &mdash; reinventing the wheel.** Solving the same problem repeatedly in an organisation. Make sure there are effective ways to share knowledge between teams to avoid this.
 
-**[Overproduction &mdash; building when you could instead reuse or buy.](principles/cloud-services.md)** Remember to consider all these alternatives.
+**[Overproduction &mdash; building when you could instead reuse or buy](principles/cloud-services.md).** Remember to consider all these alternatives.
 
 **Overproduction &mdash; premature optimisation for reusability.** Before making something reusable, first make it usable. Prefer explicit logic to implicit. Excessively generic systems create accidental complexity. [KISS](http://principles-wiki.net/principles:keep_it_simple_stupid) and [YAGNI](https://www.martinfowler.com/bliki/Yagni.html) again.
 
@@ -112,7 +112,7 @@ We need to figure out how to deliver software so fast that our customers don’t
 
 ## 6. Respect for people
 
-**Communicate.** e.g. stand-ups, retrospectives, show and tell / demo.
+**Communicate** e.g. stand-ups, retrospectives, show and tell / demo.
 
 **Give and receive feedback.** Give with honesty and respect; receive gratefully.
 

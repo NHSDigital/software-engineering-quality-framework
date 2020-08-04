@@ -6,6 +6,8 @@ The framework aims to:
 * Signpost useful training resources and examples/blueprints relating to aspects of "good"
 * Provide resources useful for establishment & expansion of an engineering community
 
+The framework is a companion, rather than an alternative, to the [NHS service standard](https://service-manual.nhs.uk/service-standard).
+
 The framework consists of:
 * [Engineering principles](principles.md)
 * [Quality assessment tool](assessment.md)
