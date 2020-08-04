@@ -13,7 +13,7 @@
 * The aim is to reduce operational maintenance work and improve security and reliability by handing responsibility to the cloud provider. They have made a business from doing this better than most organisations can.
 * For compute, prefer functions as a service (e.g. AWS Lambda), then serverless containers (e.g. GKE, AWS Fargate), then VM based deployments (e.g. AWS EKS, AWS ECS on EC2).
 * For data persistence, prefer pay per request options (e.g. Amazon DynamoDB, S3) to pay per time choices (e.g. Amazon Aurora or RDS).
-* In general, prefer solutions which do not involve managing VMs if possible, and ideally where there is no explicit configuration of a network (e.g. subnets, internet gateways, NAT gateways).
+* In general, prefer solutions which do not involve managing VMs if possible, and ideally where there is no explicit configuration of a network (e.g. subnets, internet gateways, NAT gateways) &mdash; compare AWS Lambda which needs no network with AWS Fargate which does.
 
 ### Automate
 * Configure all infrastructure using declarative tools such as Terraform and Cloudformation.
