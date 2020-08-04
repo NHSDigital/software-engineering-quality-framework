@@ -185,7 +185,7 @@ You may wish to score each individual component or system separately for these a
 * We model threats and design systems to be secure.
 * Security is baked into our software delivery process.
   * e.g. in analysis, coding and testing.
-* We understand typical vulnerabilities and how to guard against them
+* We understand typical vulnerabilities and how to guard against them.
   * e.g. OWASP Top Ten.
 * We understand the sensitivity of the data we process and handle it accordingly.
 * We know which regulations apply, and ensure we meet their requirements.
