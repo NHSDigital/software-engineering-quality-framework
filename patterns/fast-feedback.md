@@ -6,11 +6,15 @@
 
 ## The pattern
 
-TO DO
+Fast reliable feedback allows teams to move quickly with safety.
 
 ## Benefits
 
-TO DO
+* Automated feedback is the most reliable kind, e.g. [code quality](everything-as-code.md), [builds](../practices/continuous-integration.md), unit and other [tests](../practices/testing.md).
+* The earlier feedback is available, the quicker it is to address.
+* Improved lead time: teams build confidence in making changes, allowing them to move faster and be bolder.
+* Improved overall quality.
+* Reduced delivery times.
 
 ## Details
 

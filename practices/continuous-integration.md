@@ -16,19 +16,23 @@
 ## Details
 
 * **Avoid collisions**
-  Changes (application and infrastructure) should be independent of other concurrent changes (i.e. any release can safely be taken at any time)
+  Changes (application and infrastructure) should be independent of other concurrent changes so that any release can safely be taken at any time.
 
 * **Use IDE integration for instant feedback**
-  Lints, SonarQube, Unit Tests, Security scanning, etc. can all be triggered locally - giving instant feedback, without having to wait for a pipeline build.
+  Linting, SonarQube, Unit Tests, Security scanning, etc. can all be triggered locally - giving instant feedback, without having to wait for a pipeline build.
 
 * **Everything as code**
-  Pipelines should be written as code, and treated like code: source controlled, code reviewed, refactored, unit tested, etc.
+  Pipelines should be written as code (see [everything as code](../patterns/everything-as-code.md))
 
 * **Deploy what you tested**
   Never rebuild a deployment artefact for final release.
 
+* **Automate quality gates**
+  Quick-running, reliable automate tests allow you to refactor. Use that reduction in risk to regularly refactor and improve code.
+  Quality gates (such as [tests](testing.md)) should be applied and evidenced by the build pipeline, not via manual processes.
+
 * **Quick build**
-  Your build pipeline should run in under 10 minutes. Use techniques such as parallelisation and caching (Maven, Docker, etc) to improve build speeds.
+  Your build pipeline should run fast; a good default is under 10 minutes. Use techniques such as parallelisation and caching (Maven, Docker, etc) to improve build speeds. (See [fast feedback](../patterns/fast-feedback.md).)
 
 * **Flexible pipelines**
   Prefer short and wide pipelines (LINK) rather than long-running sequential pipelines. This enables the team to choose the shortest responsible path to done.
@@ -39,10 +43,6 @@
 
 * **Make failures clear and concise**
   Build failures should be easily available, clear and concise. Consider chat notifications from your build tools, rather than emails. Invest time in reducing unnecessary noise in the build output, and add logging to your builds to enable easy analysis of failures.
-
-* **Automate quality gates**
-  Quick-running, reliable automate tests allow you to refactor. Use that reduction in risk to regularly refactor and improve code.
-  Quality gates (such as [tests](testing.md)) should be applied and evidenced by the build pipeline (not via manual processes).
 
 * **Favour fix-forward**
   Avoid "roll-back scripts" in favour of being able to quickly build and deploy a fix.
