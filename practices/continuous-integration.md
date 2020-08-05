@@ -35,19 +35,14 @@
   Through this mechanism, the team can optionally incorporate long-running checks and tests (e.g. Soak/Stress testing) into builds and deployments.
 
 * **Address build failures immediately**
-  False / Intermittant failures will reduce the confidence that the team have in the pipeline, leading to wasted investigation effort, and wasteful "safety net" processes on top.
+  False / intermittant failures will reduce the confidence that the team have in the pipeline, leading to wasted investigation effort, and wasteful "safety net" processes on top.
 
 * **Make failures clear and concise**
   Build failures should be easily available, clear and concise. Consider chat notifications from your build tools, rather than emails. Invest time in reducing unnecessary noise in the build output, and add logging to your builds to enable easy analysis of failures.
 
-* ***Replace* manual testing with automated testing**
-  Aim for the traditional pyramid structure (LINK). Don't automate and then continue the same amount of manual testing on top!
-
-* ***Trust* your automated tests**
-  Quick-running, reliable automate tests allow you to refactor.  Use that reduction in risk to regularly refactor and improve code.
-
 * **Automate quality gates**
-  Quality gates should be applied and evidenced by the build pipeline (not via manual processes)
+  Quick-running, reliable automate tests allow you to refactor. Use that reduction in risk to regularly refactor and improve code.
+  Quality gates (such as [tests](testing.md)) should be applied and evidenced by the build pipeline (not via manual processes).
 
 * **Favour fix-forward**
   Avoid "roll-back scripts" in favour of being able to quickly build and deploy a fix.

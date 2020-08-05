@@ -14,7 +14,5 @@
 * Monitoring must cover both application and infrastructure, and should include active monitoring of the healthcheck endpoint for each service and passive monitoring, e.g. of the HTTP response code reported from the load balancer.
 * Application and infrastructure are encapsulated to guarantee consistency across environments.
 * Prefer serverless infrastructure where possible, and any hosts should be ephemeral and immutable (e.g. nothing gets patched or reconfigured: instead a replacement is created).
-* The only route to production is via automated deployment pipelines.
-* The same artefact flows across all environments (no special builds for production).
-* Split services vertically (via domain driven design) rather than horizontally: for example, do not implement dedicated processes to update databases or configuration.
-* Quality gates should be applied and evidenced by the build pipeline (not via manual processes).
+* The only route to production is via automated deployment pipelines (see [continuous integration](continuous-integration.md)).
+* Choose technologies and architectures which foster reliable operations (see [architect for flow](../patterns/architect-for-flow.md)).
