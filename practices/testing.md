@@ -11,12 +11,10 @@
 
 ## Details
 
-* Tests are automated by default.
+* Tests are automated by default (see [automate everything](../patterns/automate-everything.md)).
 * Tests act as documentation of the system's behaviour and should be clear enough to do this effectively.
 * Tests are written alongside or before whatever they are testing.
-* Tests are code, and all code is treated the same, including:
-    * All code is peer-reviewed.
-    * All code is version controlled.
+* Tests are code (see [everything as code](../patterns/everything-as-code.md)).
 * Use Behaviour Driven Development (BDD) to encode acceptance criteria in business terms as automated tests where appropriate.
   * This can be an effective communication and collaboration tool where the product owner is involved in reviewing detailed acceptance criteria (expressed as BDD tests).
   * But if the PO is not involved in this way then well written unit and integration tests are often sufficient and avoid the extra layer of abstraction which BDD frameworks introduce.
