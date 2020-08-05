@@ -4,7 +4,7 @@
 
 * These notes are part of a broader set of [principles](../principles.md)
 
-## Principles
+## Details
 
 * Design for failure: assume everything will fail at some point, so:
     * Implement loose coupling where possible to minimise the impact of component failure.

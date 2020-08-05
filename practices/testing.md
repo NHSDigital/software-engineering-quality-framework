@@ -9,7 +9,7 @@
     * [Continuous integration](continuous-integration.md)
     * [Continuous assurance](continuous-assurance.md)
 
-## Principles
+## Details
 
 * Tests are automated by default.
 * Tests act as documentation of the system's behaviour and should be clear enough to do this effectively.

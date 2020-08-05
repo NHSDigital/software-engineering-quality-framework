@@ -7,11 +7,13 @@
     * [OWASP top 10](https://owasp.org/www-project-top-ten/)
 * TO DO: Reference to the Security Working Group (link to terms of reference?)
 
-## Principles
+## Details
 
 * Everything (including infrastructure) should be up to date.
 * Application dependencies should be automatically scanned for vulnerabilities & license issues.
-    * TO DO: guidance around setting team tolerances for warnings etc.
+  * e.g. libraries, base container or VM images
+  * Scan before deployment and periodically in live for components no longer receiving regular deployments
+  * TO DO: guidance around setting team tolerances for warnings etc.
 * Source code should be automatically scanned for secrets or other senstive data (see [code](code.md) for details).
 * Nobody should need access to production hosts, including:
     * Logging & monitoring should negate the need to manually inspect a production host.
