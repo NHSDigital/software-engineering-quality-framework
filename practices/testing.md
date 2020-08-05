@@ -7,7 +7,7 @@
 * TO DO: Reference to the Automation Working Group (link to terms of reference?)
 * See also:
     * [Continuous integration](continuous-integration.md)
-    * [Continuous assurance](continuous-assurance.md)
+    * [Governance as a side effect](../patterns/governance-side-effect.md)
 
 ## Details
 

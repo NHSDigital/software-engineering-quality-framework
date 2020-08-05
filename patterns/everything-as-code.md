@@ -6,13 +6,13 @@
 
 ## The pattern
 
-Everything (including [infrastructure](cloud-services.md)) should be created by code whereever practical.
+Everything (including [infrastructure](../practices/cloud-services.md)) should be created by code whereever practical.
 
 ## Benefits
 
 * Easy to see changes over time
 * Easy to review and test changes
-* Enables automation (see [Automate everything](TBC))
+* Enables automation (see [automate everything](automate-everything.md)
 
 ## Details
 

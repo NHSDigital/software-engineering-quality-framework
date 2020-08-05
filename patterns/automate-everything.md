@@ -21,8 +21,8 @@ TO DO
 * Stress testing / Soak testing
 * Manually telling someone that the build is ready for testing / ready for a review
 * Manually updating a release log
-* Automated [tests](testing.md).
-* Automated [security](security.md) verification.
+* Automated [tests](../practices/testing.md).
+* Automated [security](../practices/security.md) verification.
 * Automated [governance](governance-side-effect.md).
 
 ## Examples &mdash; how to automate
