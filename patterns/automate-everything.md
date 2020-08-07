@@ -1,4 +1,4 @@
-# Continuous assurance
+# Automate everything
 
 ## Context
 
