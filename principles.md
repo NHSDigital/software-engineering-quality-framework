@@ -66,7 +66,7 @@ The following practices support the principle of building quality in.
 
 **Maintain actively** &mdash; prioritise fixing bugs and tech debt.
 
-**Keep it simple.** Explicit is better than implicit. Simple is better than complex. Complex is better than complicated. Complex is better than complicated.  Special cases aren't special enough to break the rules. Although practicality beats purity. ([Zen of Python](https://www.python.org/dev/peps/pep-0020/).)
+**Keep it simple.** Explicit is better than implicit. Simple is better than complex. Complex is better than complicated.  Special cases aren't special enough to break the rules. Although practicality beats purity. ([Zen of Python](https://www.python.org/dev/peps/pep-0020/).)
 
 **[Prefer serverless](practices/cloud-services.md); where not serverless use ephemeral and immutable infrastructure.** Make it simple to guarantee predictable and reliable behaviour.
 
