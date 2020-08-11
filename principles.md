@@ -96,9 +96,9 @@ The following practices support the principle of building quality in.
 
 **Just enough, just in time** &mdash; applied to all stages: research, analysis, product design, planning, technical design.
 
-## 5. Deliver fast
+## 5. Deliver as fast as possible
 
-We need to figure out how to deliver software so fast that our customers don’t have time to change their minds.
+We need to figure out how to deliver software as fast as possible.  This reduces the cycle time for change, allows the business to reach the point of increased learning sooner and provides more immediate gratification and feedback for the customer.  This also allows us to defer commitment as much as possible.
 
 **Eliminate waste** (as above).
 
