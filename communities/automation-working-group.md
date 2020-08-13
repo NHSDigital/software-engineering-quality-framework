@@ -1,6 +1,6 @@
 # Automation working group
 
-This is part of a broader [quality framework](../README.md) and is one of a set of [communities of practice](../communities-of-practice)
+This is part of a broader [quality framework](../README.md) and is one of a set of [communities of practice](../communities-of-practice.md)
 
 ## Subject
 
