@@ -56,7 +56,7 @@ The following practices support the principle of building quality in.
 
 **Write less code.** Treat code as a liability rather than an asset: the more code, the more there is to go wrong. Incremental delivery and test driven development both help keep the codebase small and simple.
 
-**[Continuous integration.](practices/continuous-integration.md)** Build automated code quality checks and tests &mdash; security, accessibility etc. Use frequent code merges.
+**[Continuous integration.](practices/continuous-integration.md)** Build automated code quality checks and tests: security, accessibility etc. Use frequent code merges.
 
 **Minimise hand-offs** to reduce knowledge gaps.
 
@@ -134,4 +134,4 @@ We need to figure out how to deliver software as fast as possible.  This reduces
 
 **Use feedback loops** to avoid negative global effects from local optimisations.
 
-**Balance autonomy and conformity.** Teams use the right tool for the job, within reason &mdash; unchecked proliferation of a wide variety of tools impacts overall effectiveness of the organisation.
+**Balance autonomy and conformity.** Teams use the right tool for the job, within reason: unchecked proliferation of a wide variety of tools impacts overall effectiveness of the organisation.
