@@ -116,6 +116,9 @@ We include a worked example to illustrate how this thinking can be applied in a 
 >
 > * Educate by helping practitioners and apprentices learn about new and emerging tools and techniques.
 >
+> #### Scope
+> This group will focus on AWS native services. AWS marketplace services are out of scope for this group.
+>
 > #### Coordinator
 > This will be a rotating post. Seren Howarth will be coordinator for the first three months.
 >
