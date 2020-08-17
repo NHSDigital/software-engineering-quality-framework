@@ -4,6 +4,18 @@ This is part of a broader [quality framework](README.md)
 
 Our principles guide the way we work and interact with each other. They are based on the seven Lean principles as expressed in Lean Software Development: An Agile Toolkit by Mary Poppendieck and Tom Poppendieck.
 
+# Summary
+
+1. Eliminate waste
+2. Build quality in
+3. Create knowledge
+4. Defer commitment
+5. Deliver as fast as possible
+6. Respect for people
+7. Optimise the whole
+
+# Details
+
 ## 1. Eliminate waste
 
 Waste is anything that interferes with giving customers what they really value at the time and place where it will provide the most value. Here are some examples, listed against the seven types of waste identified by Lean.
