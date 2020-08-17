@@ -83,7 +83,7 @@ Finally (and most importantly) identify actions to move the score upward.
 * We practice [trunk-based development](https://trunkbaseddevelopment.com/) using short-lived feature branches off master.
   * Tests must pass before code is merged.
 * We can see when the build has broken or tests are failing and we fix them before carrying on.
-* Our definition of "done" is ready to deploy to production.
+* Our definition of "done" is "deployed to production".
 * We explicitly limit work in progress (WIP).
 * Our lead time is typically two days or less.
   * (Lead time = time from picking an item up to it being done.)
