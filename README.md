@@ -11,4 +11,5 @@ The framework is a companion, rather than an alternative, to the [NHS service st
 The framework consists of:
 * [Engineering principles](principles.md)
 * [Quality assessment tool](assessment.md)
-* [Communities of practice](communities-of-practice.md) guidelines
+* [Communities of practice guidelines](communities-of-practice.md) and active communities:
+     * [Automation working group](communities/automation-working-group.md)
