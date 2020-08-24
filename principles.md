@@ -6,13 +6,13 @@ Our principles guide the way we work and interact with each other. They are base
 
 # Summary
 
-1. [Eliminate waste](#1.-eliminate-waste)
-2. [Build quality in](#2.-build-quality-in)
-3. [Create knowledge](#3.-create-knowledge)
-4. [Defer commitment](#4.-defer-commitment)
-5. [Deliver as fast as possible](#5.-deliver-as-fast-as-possible)
-6. [Respect for people](#6.-respect-for-people)
-7. [Optimise the whole](#7.-optimise-the-whole)
+1. [Eliminate waste](#1-eliminate-waste)
+2. [Build quality in](#2-build-quality-in)
+3. [Create knowledge](#3-create-knowledge)
+4. [Defer commitment](#4-defer-commitment)
+5. [Deliver as fast as possible](#5-deliver-as-fast-as-possible)
+6. [Respect for people](#6-respect-for-people)
+7. [Optimise the whole](#7-optimise-the-whole)
 
 # Details
 
