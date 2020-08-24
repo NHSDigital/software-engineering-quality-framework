@@ -32,8 +32,9 @@ Areas of interest are specifically:
 ## Coordinator
 
 * This will be a rotating post on a 3-month basis, requiring a commitment of one day per week
-* Subject to confirming availability (TODO: confirm), [dlavender4](https://github.com/dlavender4) will be coordinator initially
+* [dlavender4](https://github.com/dlavender4) will be coordinator initially
 * The coordinator will run a blog to help publicise the activity of the group
+* There will be a deputy coordinator (to cover sessions when the coordinator is away, etc) who will typically take over as coordinator for the following 3 months
 
 ## Format
 
