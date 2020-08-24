@@ -6,7 +6,7 @@
 
 ## The pattern
 
-Everything (including [infrastructure](../practices/cloud-services.md)) should be created by code whereever practical.
+Everything (including [infrastructure](../practices/cloud-services.md)) should be created by code wherever practical.
 
 ## Benefits
 
