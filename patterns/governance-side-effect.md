@@ -19,11 +19,17 @@ Automate preventative measures to ensure systems meet governance requirements.
 
 ### Prevention
 
-TO DO
+* Permissions systems like AWS IAM can prevent users from performing undesirable actions, e.g. restricting which resource types can be created and in which regions and to enforce minimum security requirements such as mandatory use of multi-factor authentication. Over time, new tools have emerged to make management of some of these concerns easier, as outlined below.
+* Tools like AWS Config can enforce more fine grained policies such as [ensuring resource tags are present](https://docs.aws.amazon.com/config/latest/developerguide/required-tags.html), [WAF is used](https://docs.aws.amazon.com/config/latest/developerguide/alb-waf-enabled.html) or that [CloudTrail is enabled](https://docs.aws.amazon.com/config/latest/developerguide/cloudtrail-enabled.html).
+* AWS [Control Tower](https://aws.amazon.com/about-aws/whats-new/2019/06/aws-control-tower-is-now-generally-available) allows clearly defined rules to be created for security, operations, and compliance that prevent deployment of resources that don't conform to policies and continuously monitor deployed resources for nonconformance.
 
 ### Audit and alert
 
-TO DO
+* Change management systems like service now
+* cloud infra
+* source control
+* issue tracking
+* ci/cd
 
 ## Examples
 
