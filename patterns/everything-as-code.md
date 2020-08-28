@@ -21,11 +21,9 @@ Everything (including [infrastructure](../practices/cloud-services.md)) should b
   * All code is version controlled.
 * Code changes should be automatically checked for code quality using tools like [SonarQube](https://www.sonarqube.org) (as well as via IDE plugins).
 * Code should be automatically scanned for secrets or other sensitive data using standalone tools like [GitGuardian](https://www.gitguardian.com/) or built in tools in [GitLab](https://docs.gitlab.com/ee/user/application_security/secret_detection/) or [GitHub](https://docs.github.com/en/github/administering-a-repository/about-secret-scanning).
-* Prefer convention over configuration as it leads to simpler code.
 * Prefer well structured and expressive code over extensive documentation to avoid documentation getting out of date.
 * Design the interface prior to the implementation and choose vocabulary to make it coherent. This includes external interfaces (e.g. REST API) and internal interfaces of classes, method signatures etc.
-* Adopt test-first approach to minimise waste and increase cohesion of the code.
-* Follow the clean code practices across the whole software stack, see [Clean Code](https://www.oreilly.com/library/view/clean-code/9780136083238/) and [Clean Architecture](https://www.oreilly.com/library/view/clean-architecture-a/9780134494272/).
+* Adopt test-first approach to minimise waste and increase cohesion of the code (see [testing](../practices/testing.md)).
 
 ## Examples
 
