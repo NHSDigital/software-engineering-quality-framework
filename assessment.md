@@ -223,7 +223,7 @@ You may wish to score each individual component or system separately for these a
 
 Assessments using this framework are done by the team, either as a whole or by a smaller set of representatives. As a guide, 6&ndash;8 is a good maximum number of people for a session. The scope of the assessment should be small enough so that a single set of scores and actions appropriately represent the situation for the [Team](#team) aspects.
 
-Good facilitation can help teams get the most out of the assessment and it is recommended that all assessments should include an outside facilitator familiar with the framework.
+Good facilitation can help teams get the most out of the assessment and it is recommended that all assessments should include an outside facilitator familiar with the framework. Because of the breadth and depth of the assessment, facilitation is best done by someone who has a broad background in both technical and delivery aspects. This helps them clarify and explain aspects of the assessment for the team and provide examples from their experience, and allows them to delve into areas in more detail when required.
 
 ## Facilitator responsibilities
 
@@ -243,7 +243,7 @@ Good facilitation can help teams get the most out of the assessment and it is re
 
 ## Facilitator tips
 
-* It's important to set the right tone. Some teams may understandably be wary of "being assessed", particularly because the process includes an outside facilitator. It's essential that they feel safe to be honest. Emphasise that this tool is just a way of helping teams identify how to best drive continuous improvement &mdash; a bit like a "structured retrospective".
+* It's important to set the right tone. Some teams may understandably be wary of "being assessed", particularly because the process includes an outside facilitator. It's essential that they feel safe to make an honest appraisal. Emphasise that this tool is just a way of helping teams identify how to best drive continuous improvement &mdash; a bit like a "structured retrospective".
 * Remember (and remind the team) that this framework is continually evolving and "open source". Encourage them to suggest ways it can be improved and raise pull requests. As well as being a useful way to drive improvement of the framework, this encourages the idea that it is not set in stone and decreed from on high, which can build trust and engagement.
 * Help the team understand and compare where they are just now with what genuinely excellent looks like. The notes under each section try to describe what good looks like, and the [principles](principles.md), patterns and practices go into more detail. Help them trace the path to excellence by starting with achievable changes and working over time to more significant changes if relevant.
 * Be intimately familiar with the sections of the assessment and the supporting [principles](principles.md), patterns and practices. Try to keep conversation focused around the topic for each section, mentioning which section will cover the point being raised when suggesting that discussion be deferred.
