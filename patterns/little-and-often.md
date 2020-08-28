@@ -7,7 +7,9 @@
 
 ## The pattern
 
-Delivering many small changes has benefits over delivering a smaller number of larger changes.
+Delivering "little and often" has broad benefits across the software delivery process:
+* Incremental software changes: delivering many small software changes is preferable to infrequent delivery of larger changes
+* Incremental team operations: working incrementally (for example re-planning frequently and iteratively refining the arhictecture and technology choices) is preferable to large up-front planning and design, or long-running delivery cycles
 
 ## Benefits
 
@@ -30,7 +32,7 @@ Delivering many small changes has benefits over delivering a smaller number of l
 
 ## Caveats
 
-* This pattern must not compromise quality: automation is essential for safe implementation of this pattern
+* This pattern must not compromise quality: automation (including of quality control) is essential for safe implementation of this pattern
 
 ## Details
 
