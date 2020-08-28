@@ -1,12 +1,22 @@
 # Software Engineering Quality Framework
 
+## Purpose
+
 The framework aims to:
-* Describe a shared (across multiple teams) view of what "good" looks like
+* Describe a shared (across multiple teams) view of what "good" software delivery and operations looks like
 * Assist teams to practice continuous improvement
 * Signpost useful training resources and examples/blueprints relating to aspects of "good"
 * Provide resources useful for establishment & expansion of an engineering community
 
-The framework is a companion, rather than an alternative, to the [NHS service standard](https://service-manual.nhs.uk/service-standard).
+## Context
+
+The framework is a companion to the [NHS service standard](https://service-manual.nhs.uk/service-standard), and considers software delivery to be a collaborative process across the disciplines in the team, with these areas of specific focus:
+* **What** is delivered is the primary focus of Service Design, User Research, and Product
+* **How** it is delivered (both the construction and the operation) is the primary focus of Engineering and Delivery
+
+This framework focusses on the "how"
+
+## Contents
 
 The framework consists of:
 * [Engineering principles](principles.md)
