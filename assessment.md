@@ -143,6 +143,7 @@ You may wish to score each individual component or system separately for these a
 ### 8. Tech and architecture
 * The tech helps us deliver value.
 * We enjoy working with it and it supports fast, reliable and safe delivery.
+* We build self-contained functionality as independent components.
 * The architecture is clean.
 * The tech and architecture make testing, local development and live operations easy.
 * We use serverless or ephemeral infrastructure.
