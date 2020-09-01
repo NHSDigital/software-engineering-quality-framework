@@ -2,7 +2,7 @@
 
 This is part of a broader [quality framework](../README.md) and is one of a set of [communities of practice](../communities-of-practice.md).
 
-There is some overlap with the [Automation Working Group](automation-working-group.md).
+There is some overlap with the [Automation Working Group](pd-automation-working-group.md).
 
 ## Subject
 
@@ -31,7 +31,7 @@ Goals to be reviewed December 2020
 
 * Front-end, back-end and platform/infrastructure engineering.
 * Technical aspects of delivery and operation of reliable services.
-* Architecting and engineering for functional and non-functional requirements and validating they are met (e.g. performance and capacity, security, accessibility). Also see [Automation Working Group](automation-working-group.md).
+* Architecting and engineering for functional and non-functional requirements and validating they are met (e.g. performance and capacity, security, accessibility). Also see [Automation Working Group](pd-automation-working-group.md).
 
 ## Coordinator
 
