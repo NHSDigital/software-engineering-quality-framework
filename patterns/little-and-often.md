@@ -20,15 +20,16 @@ Delivering "little and often" has broad benefits across the software delivery pr
     * The automation which supports frequent changes supports quick responses if there is a problem
     * Quality checks are applied more frequently
     * Frequent changes make it easier to keep everything up to date
-* Business benefits:
+* Product / service design benefits:
     * Early visibility of changes
     * Early benefit realisation
     * Smaller changes should require less user training, user communications, etc
-    * Happier delivery team
+    * Supports service designers to rapid test hypotheses
 * Cost (in the long term):
     * The automation which supports frequent changes means long-term savings on manual effort
     * Short-lived changes simplifies the technical delivery overhead (merge conflicts, etc)
     * Changing less at a time means less potential for obscure problems (which are difficult and expensive to find and fix)
+* Happier delivery team
 
 ## Caveats
 
