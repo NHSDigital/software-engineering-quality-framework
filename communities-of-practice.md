@@ -4,9 +4,14 @@ This is part of a broader [quality framework](README.md)
 
 A community of practice (CoP) is a group of people who "share a concern or a passion for something they do and learn how to do it better as they interact regularly" ([Introduction to communities of practice](https://wenger-trayner.com/introduction-to-communities-of-practice/)). This document gives guidance on forming and running a CoP.
 
+As Emily Webber, author of [Building Successful Communities of Practice](https://www.goodreads.com/book/show/29155800-building-successful-communities-of-practice), says:
+> Connecting with other people, finding a sense of belonging and the need for support are natural human desires. Employees who don't feel supported at work don't stay around for long &mdash; or if they do, they quickly become unmotivated and unhappy. At a time when organisational structures are flattening and workforces are increasingly fluid, supporting and connecting people is more important than ever. This is where organisational communities of practice come in.
+
+Members of a CoP engage in joint activities and discussions, help each other and share information. They build relationships that enable them to learn from each other.
+
 # Scope
 
-CoPs are formed around a single subject which should be neither so narrow as to give little value to members (e.g. unit testing), nor so broad that it is difficult to find topics within the subject which are of broad interest to the group (e.g. all of software engineering). We discuss scope more in [Format](#format), as the scope can have an implication for the most appropriate format. The subject should be of relevance to the goals of the organisation to attract investment (see [Time](#time)), e.g. testing would be an appropriate subject for an organisation which delivers software, basket weaving would not, public speaking may be.
+CoPs create relationships between their members based on a shared passion and commitment to a particular topic. They are formed around a single subject which should be neither so narrow as to give little value to members (e.g. unit testing), nor so broad that it is difficult to find topics within the subject which are of broad interest to the group (e.g. all of software engineering). We discuss scope more in [Format](#format), as the scope can have an implication for the most appropriate format. As well as being of interest to members, to attract investment (see [Time](#time)) the subject should also be of relevance to the goals of the organisation, e.g. testing would be an appropriate subject for an organisation which delivers software, basket weaving would not, public speaking may be.
 
 # Goals
 
@@ -36,13 +41,23 @@ It may be beneficial to focus on one or two goals initially with the intention t
 
 CoPs are fuelled by interactions between individuals. Broadly, interactions are either "live" (either in person or remotely by video call) or asynchronous (recorded or written). Several interaction formats are common, and CoPs often use more than one of these:
 
-* Live "round table" or lean coffee format discussion.
-
-* Meeting with a specific purpose and agenda.
+* Some form of regular meeting (default monthly) is usually the cornerstone of a CoP. These can take different formats at different times, e.g.
+    * Live "round table" or [lean coffee](https://leancoffee.org/) format discussion. This works well for small groups (5 to 10 people) to provide structure without imposing an agenda.
+    * Meeting with a specific purpose and agenda.
 
 * Internal or public "clinic".
 
+* Chat channel, e.g. in MS Teams or Slack.
+  * This does not constitute the community nor replace regular meetings, but it encourages members to keep interacting with each other
+
 * Live or recorded training sessions.
+
+* "Dojos"
+  * A hands-on practical session to try out specific new or unfamiliar techniques/tools in a safe environment. For example, a project management community could run a tools session where exploratory techniques and tools are practised.
+  * Works well for small groups (5 to 10 people) to learn how to use a specific tool or technique in a practical and quick way.
+
+* Social events
+  * Getting members together in a more social setting can help people to get to know each other and create a sense of belonging and community.
 
 * Live or recorded show and tell or presentation &mdash; for internal or public audience.
 
@@ -124,3 +139,15 @@ We include a worked example to illustrate how this thinking can be applied in a 
 >
 > #### Format and time
 > The group will meet monthly for one hour over lunch, where food will be provided (up to £6 per head). The coordinator will help the group determine the format for the next session each time. A time budget of two hours per month (on average) will be used to prepare for sessions when required.
+
+# Tips for success
+
+* Make the CoP visible. Help potential members easily understand the purpose of the CoP and what it is doing, as well as how it relates to other CoPs or working groups. Most importantly, focus on what it will do for them! Regular communications using a variety of channels (e.g. MS Teams, email, mentions at all hands calls) can help build awareness and interest. Public endorsement from the sponsor will increase credibility and authority.
+* Use the tools you know. Many of the tools we use for managing our day to day work can help CoPs, including group messaging systems, places to store knowledge (e.g. Wiki) and hold a lightweight backlog of things the CoP wants to work on (e.g. Jira, MS Teams Planner).
+* Individuals must be willing and keen to participate. Participation should be voluntary. In this way, Communities of Practice live on because they create value for members, not because of an edict or a box to check. Individuals can be encouraged to join, but it must be their free choice to avoid the CoP becoming just another meeting to go to.
+* Be realistic about what can be achieved with the time available. Members will likely be willing to spend an occasional lunch time for CoP meetings if they get value from them, but where tasks are picked up to be done between meetings, more will be achievable if there is some allocated time, rather than it being down to "best endeavours".
+* Keep it interesting. Try different formats and play with different ideas. Find out what other CoPs are doing and try things which seem interesting.
+* Focus on people. CoPs are there to serve people, not to act as another project. Be mindful of their needs and devote time to serving them, which may include acting as a support network.
+* But also, focus on outcomes. Get the balance right between serving individuals and their immediate needs and producing wider and longer term benefits for the organisation &mdash; particularly if work time is being allocated to CoP activities.
+* Don't try to solve everything. While the CoP can be a great focal point, ideally it will put in place and champion peer to peer knowledge sharing and support throughout the organisation, rather than expecting everything to flow through the CoP.
+* Individuals should continue to get value from their participation. Meetings do not need to be formal or highly structured, but participants should feel that it is productive use of their time. Hold retrospectvies periodically to ensure the community is still delivering value and to refresh and refine the goals and ways of working.
