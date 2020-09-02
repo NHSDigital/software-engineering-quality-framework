@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The framework aims to:
+The framework is concerned with using "good" software engineering to support rapid and safe delivery of high-quality software, at scale. It aims to:
 * Describe a shared (across multiple teams) view of what "good" software delivery and operations looks like
 * Assist teams to practice continuous improvement
 * Signpost useful training resources and examples/blueprints relating to aspects of "good"
