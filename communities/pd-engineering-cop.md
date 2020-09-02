@@ -29,17 +29,14 @@ Goals to be reviewed December 2020
 
 ## Scope
 
-* Front-end, back-end and platform/infrastructure engineering.
-* Technical aspects of delivery and operation of reliable services.
-* Architecting and engineering for functional and non-functional requirements and validating they are met (e.g. performance and capacity, security, accessibility). Also see [Automation Working Group](pd-automation-working-group.md).
+Initially this CoP will cast a very wide net and cover front-end, back-end and platform/infrastructure engineering and all technical aspects of delivery and operation of reliable services. This will include topics like pair programming, effective code reviews, team quality processes, architecting and engineering for functional and non-functional requirements and validating they are met, e.g. performance and capacity, security, accessibility. Some aspects of this will be covered in more detail by the [Automation Working Group](pd-automation-working-group.md), while others are expected to spin out into their own CoPs over time in response to demand to provide more focus around specific sub-topics (e.g. mobile engineering, operational excellence, front-end development).
 
 ## Coordinator
 
-* This will be a rotating post on a 3-month basis, requiring a commitment of one day per week
-
-* TBC will be coordinator initially
-* The coordinator will run a blog to help publicise the activity of the group
-* There will be a deputy coordinator (to cover sessions when the coordinator is away, etc) who will typically take over as coordinator for the following 3 months
+* This will be a rotating post on a 3-month basis, requiring a commitment of one day per week.
+* TBC will be coordinator initially.
+* The coordinator will run a blog to help publicise the activity of the group.
+* There will be a deputy coordinator (to cover sessions when the coordinator is away, etc) who will typically take over as coordinator for the following 3 months.
 
 ## Format
 
@@ -47,5 +44,5 @@ Goals to be reviewed December 2020
 * Tickets will be sized and timeboxed to maximum one month to avoid carry-over.
 * The group will meet every month to discuss issues, demonstrate solutions, and agree who will work on new tickets.
 * To keep these meetings manageable and useful, the aim is to have one representative from each area (this could be a single person, or a rotating role). The aim is for between 10 to 20 people to attend each session.
-* The group will also organise and facilitate other meetings, such as training workshops, hack-days, etc, which will be open to a much wider audience.
-* The group will maintain a discussion channel (TODO: where) for advice and guidance, as well as group announcements.
+* The group will also organise and facilitate other meetings, such as training workshops, hack-days, etc, which will be open to a much wider audience. These are expected to cover a representative spread across engineering disciplines, and as such each will likely appeal to a different subset of the wider community.
+* The group will maintain an open discussion channel (TODO: where) where the wider community can seek and share advice and guidance, and a restricted channel for the core group to collaborate together. There may be additional channels for sub-topics (e.g. mobile, front-end dev, aws).
