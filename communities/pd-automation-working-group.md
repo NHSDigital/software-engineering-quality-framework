@@ -4,7 +4,7 @@ This is part of a broader [quality framework](../README.md) and is one of a set 
 
 ## Subject
 
-Automated Testing and Quality Working Group (AWG)
+Automated Testing and Quality Working Group (AWG) for NHS Digital Product Development.
 
 ## Sponsor
 
