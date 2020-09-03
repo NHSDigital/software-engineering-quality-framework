@@ -17,7 +17,7 @@ In high level terms, systems which are designed to maximise rapid, reliable deli
 * Are cost efficient: teams don't waste their time fighting the tools or working with difficult architectures
 * Improve business agility: these systems allow teams to respond more quickly to changes
 * Improve reliability: these systems are easier to understand, which leads to fewer failures and shorter recovery times
-* Improve recruitment and retention: engineers are happy when the tools they work with let them get on with what they do best
+* Improve team happiness: engineers are happy when the tools they work with let them get on with what they do best
 
 In many cases, building a system as a set of independently running services has benefits:
 * Multiple components enable parallel development work by multiple teams
@@ -41,9 +41,12 @@ In many cases, building a system as a set of independently running services has 
 
 ## Details
 
-* Split services vertically rather than horizontally: for example, do not implement dedicated processes to update databases or configuration
+* Split services vertically (via bounded contexts) rather than horizontally (via technology layers): for example, do not implement dedicated processes to update databases or configuration
+* For components to be genuinely indepenent they need to be unaware of each other: these components act in isolation, regardless of the surrounding context.
+* Components should handle the entirety of their bounded context, for example persistence, logic and presentation (though obviously not all components will involve all of these layers).
 
 TO DO: more detail
+TO DO: reference to the NHS UI toolkit (for presentation fragments)
 
 ## Examples
 
