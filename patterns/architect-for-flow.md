@@ -38,12 +38,14 @@ In many cases, building a system as a set of independently running services has 
     * Versioning becomes a more complicated concern, and additional effort is required to ensure component APIs are compatible as each changes independently
     * Clean domain boundaries are essential for safe implementation of this pattern
     * Comprehensive monitoring and alerting is essential for safe implementation of this pattern
+* Components should be built because working in that way gives benefits, not purely because the components might be reused later: if they are later reused, that's even better
 
 ## Details
 
-* Split services vertically (via bounded contexts) rather than horizontally (via technology layers): for example, do not implement dedicated processes to update databases or configuration
-* For components to be genuinely indepenent they need to be unaware of each other: these components act in isolation, regardless of the surrounding context.
-* Components should handle the entirety of their bounded context, for example persistence, logic and presentation (though obviously not all components will involve all of these layers).
+* Split services vertically via [bounded contexts](https://martinfowler.com/bliki/BoundedContext.html) rather than horizontally via technology layers: for example, do not implement dedicated processes to update databases or configuration
+* For components to be genuinely indepenent they need to be unaware of each other: these components act in isolation, regardless of the surrounding context
+* Components should handle the entirety of their bounded context, for example persistence, logic and presentation (though obviously not all components will involve all of these layers)
+* This pattern applies to existing services as well as green-field development projects - please see Martin Fowler's [StranglerFigApplication blog](https://martinfowler.com/bliki/StranglerFigApplication.html)
 
 TO DO: more detail
 TO DO: reference to the NHS UI toolkit (for presentation fragments)
