@@ -44,8 +44,8 @@ Initially this CoP will cast a very wide net and cover front-end, back-end and p
 
 ## Format
 
-* The group will have an [open backlog](https://teams.microsoft.com/l/entity/com.microsoft.teamspace.tab.planner/_djb2_msteams_prefix_587764524?context=%7B%22subEntityId%22%3Anull%2C%22channelId%22%3A%2219%3Ae86f23b83cb643dd91c98f685f12b90a%40thread.tacv2%22%7D&groupId=1af53346-f699-44cc-b14a-2b12da3d5bcf&tenantId=50f6071f-bbfe-401a-8803-673748e629e2). The Sponsor and Coordinator will manage the backlog.
+* The group will have an open backlog (location TBC). The Sponsor and Coordinator will manage the backlog.
 * The group will meet every month to discuss issues, demonstrate solutions, and agree who will work on new tickets.
 * To keep these meetings manageable and useful, the aim is to have one representative from each area (this could be a single person, or a rotating role). The aim is for between 10 to 20 people to attend each session.
 * The group will also organise and facilitate other meetings, such as training workshops, hack-days, etc, which will be open to a much wider audience. These are expected to cover a representative spread across engineering disciplines, and as such each will likely appeal to a different subset of the wider community.
-* The group will maintain an [open discussion channel](https://teams.microsoft.com/l/channel/19%3ae86f23b83cb643dd91c98f685f12b90a%40thread.tacv2/Engineering?groupId=1af53346-f699-44cc-b14a-2b12da3d5bcf&tenantId=50f6071f-bbfe-401a-8803-673748e629e2) where the wider community can seek and share advice and guidance, and a restricted channel for the core group to collaborate together. There may be additional channels for sub-topics (e.g. mobile, front-end dev, aws).
+* The group will maintain an open discussion channel (location TBC) where the wider community can seek and share advice and guidance, and a restricted channel for the core group to collaborate together. There may be additional channels for sub-topics (e.g. mobile, front-end dev, aws).
