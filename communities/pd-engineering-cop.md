@@ -33,20 +33,19 @@ Initially this CoP will cast a very wide net and cover front-end, back-end and p
 
 * This will be a rotating post on a 3-month basis, requiring a commitment of one day per week.
 * Ivor Caldwell ([ivorc](https://github.com/ivorc)) will be coordinator initially.
-* There will be a deputy coordinator (to cover sessions when the coordinator is away, etc) who will typically take over as coordinator for the following 3 months.
+* TBC will be deputy coordinator (to cover sessions when the coordinator is away, etc) who will typically take over as coordinator for the following 3 months.
 
 ## Members
 
 * The CoP will have a core group who work together to deliver the CoP goals for the wider engineering community.
-* Core members will be ambassadors for the CoP, and for the [Software Engineering Quality Framework](../README.md) and the Tech Radar.
-* Members will be expected to attend and contribute at all (or at least most) regular meetings of the core group.
-* Occasional time commitment outside these meetings will be necessary, e.g. to prepare a presentation or hack event or to help others to do so.
+* Core members will be ambassadors for the CoP, the [Software Engineering Quality Framework](../README.md) and the Tech Radar.
+* Members will be expected to attend and contribute at the regular core group meetings.
+* Occasional time commitment outside these meetings will also be necessary, e.g. to prepare a presentation or hack event or to help others to do so.
 
 ## Format
 
-* The group will have an open backlog (TODO: where). The Sponsor and Coordinator will manage the backlog.
-* Tickets will be sized and timeboxed to maximum one month to avoid carry-over.
+* The group will have an [open backlog](https://teams.microsoft.com/l/entity/com.microsoft.teamspace.tab.planner/_djb2_msteams_prefix_587764524?context=%7B%22subEntityId%22%3Anull%2C%22channelId%22%3A%2219%3Ae86f23b83cb643dd91c98f685f12b90a%40thread.tacv2%22%7D&groupId=1af53346-f699-44cc-b14a-2b12da3d5bcf&tenantId=50f6071f-bbfe-401a-8803-673748e629e2). The Sponsor and Coordinator will manage the backlog.
 * The group will meet every month to discuss issues, demonstrate solutions, and agree who will work on new tickets.
 * To keep these meetings manageable and useful, the aim is to have one representative from each area (this could be a single person, or a rotating role). The aim is for between 10 to 20 people to attend each session.
 * The group will also organise and facilitate other meetings, such as training workshops, hack-days, etc, which will be open to a much wider audience. These are expected to cover a representative spread across engineering disciplines, and as such each will likely appeal to a different subset of the wider community.
-* The group will maintain an open discussion channel (TODO: where) where the wider community can seek and share advice and guidance, and a restricted channel for the core group to collaborate together. There may be additional channels for sub-topics (e.g. mobile, front-end dev, aws).
+* The group will maintain an [open discussion channel](https://teams.microsoft.com/l/channel/19%3ae86f23b83cb643dd91c98f685f12b90a%40thread.tacv2/Engineering?groupId=1af53346-f699-44cc-b14a-2b12da3d5bcf&tenantId=50f6071f-bbfe-401a-8803-673748e629e2) where the wider community can seek and share advice and guidance, and a restricted channel for the core group to collaborate together. There may be additional channels for sub-topics (e.g. mobile, front-end dev, aws).
