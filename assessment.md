@@ -143,7 +143,7 @@ You may wish to score each individual component or system separately for these a
 ### 8. Tech and architecture
 * The tech helps us deliver value.
 * We enjoy working with it and it supports fast, reliable and safe delivery.
-* We have informed discussions about when/whether to split functionality into independent components, and the components we build have clear and clean boundaries of responsibility.
+* Our system is built as a set of independent services/components where appropriate (see [Architect for Flow](patterns/architect-for-flow.md)).
 * The architecture is clean.
 * The tech and architecture make testing, local development and live operations easy.
 * We use serverless or ephemeral infrastructure.
