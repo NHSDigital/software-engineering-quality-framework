@@ -7,8 +7,8 @@ This is part of a broader [quality framework](README.md)
 * [Purpose](#purpose)
 * [Metrics](#metrics)
 * [Scores and actions](#scores-and-actions)
-* [Scores and actions &mdash; Team](#team)
-* [Scores and actions &mdash; Individual component or system](#individual-component-or-system)
+  * [Team](#team)
+  * [Individual component or system](#individual-component-or-system)
 * [How to facilitate](#how-to-facilitate)
 
 # Purpose
@@ -33,7 +33,7 @@ These hard figures help us to measure the effect of improvement work over time.
 
 | Measure | Definition (each calculated over the last 28 days) |
 |:---|:---|
-| Deployment frequency | Number of deployments
+| Deployment frequency | Number of standard deployments (excluding emergency fixes)
 
 ## Recommended:
 
@@ -80,6 +80,7 @@ Finally (and most importantly) identify actions to move the score upward.
 * Non-functional requirements are understood and based on user needs.
 
 ### 2. Plan
+* We have a plan which is visible to all of us.
 * Our plan guides us.
 * It is up to date and complete.
 * It changes when it should but is stable enough.
@@ -95,10 +96,15 @@ Finally (and most importantly) identify actions to move the score upward.
 * We work well together to keep the work flowing.
 * We have a defined process which we all stick to.
 * Our process helps us deliver high quality work quickly.
-* Our daily stand up keeps us aligned and working well as a team.
+* We have stand up every day with the whole team.
+  * It keeps us aligned and working well as a team.
   * It helps us share and resolve impediments.
-* Our regular planning sessions are efficient and effective.
-* We practice [trunk-based development](https://trunkbaseddevelopment.com/) using short-lived feature branches off master.
+* We have regular planning sessions.
+  * They involve all the people who are needed.
+  * They are efficient and effective.
+* All our code is stored in source control (e.g. git).
+  * We practice [trunk-based development](https://trunkbaseddevelopment.com/) using short-lived feature branches off master.
+  * All code must be reviewed before it is merged.
   * Tests must pass before code is merged.
 * We can see when the build has broken or tests are failing and we fix them before carrying on.
 * Our definition of "done" is ready to deploy to production.
@@ -112,7 +118,8 @@ Finally (and most importantly) identify actions to move the score upward.
 * We have great team spirit and help each other out.
 * We give each other honest feedback.
 * We learn something every day.
-* We look forward to our retrospectives and they drive valuable improvements.
+* We have regular retrospectives.
+  * We look forward to them and they drive valuable improvements.
 
 ### 5. Pawns or players
 * As a team, we are in control of our destiny!
