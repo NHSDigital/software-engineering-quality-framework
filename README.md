@@ -11,9 +11,9 @@ The framework is concerned with using "good" software engineering to support rap
 ## Philosophy
 
 The philosophy underpinning this framework advocates:
-* Empowered teams which are accountable for their products, including: "You build it, you run it" (Werner Vogels)
+* Empowered teams which are accountable for their products: "You build it, you run it" (Werner Vogels)
 * Rapid and iterative development: "Release early. Release often. And listen to your customers." (Eric S. Raymond in [The Cathedral and the Bazaar](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar))
-* High quality products, including: "Everything fails, all the time" (Werner Vogels), and "Site Reliability Engineering (SRE) is what you get when you treat operations as if it's a software problem" ([Google](https://landing.google.com/sre/))
+* Reliable services, remembering "Everything fails, all the time" (Werner Vogels), and treating operations as a software engineering challenge (as in Google's [Site Reliability Engineering](https://landing.google.com/sre/))
 
 ## Context
 
