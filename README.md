@@ -8,6 +8,13 @@ The framework is concerned with using "good" software engineering to support rap
 * Signpost useful training resources and examples/blueprints relating to aspects of "good"
 * Provide resources useful for establishment & expansion of an engineering community
 
+## Philosophy
+
+The philosophy underpinning this framework advocates:
+* Empowered teams which are accountable for their products: "You build it, you run it" (Werner Vogels)
+* Rapid and iterative development: "Release early. Release often. And listen to your customers." (Eric S. Raymond in [The Cathedral and the Bazaar](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar))
+* Reliable services, remembering "Everything fails, all the time" (Werner Vogels), and treating operations as a software engineering challenge (as in Google's [Site Reliability Engineering](https://landing.google.com/sre/))
+
 ## Context
 
 The framework is a companion to the [NHS service standard](https://service-manual.nhs.uk/service-standard), and considers software delivery to be a collaborative process across the disciplines in the team, with these areas of specific focus:
