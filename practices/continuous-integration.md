@@ -39,7 +39,7 @@
   Through this mechanism, the team can optionally incorporate long-running checks and tests (e.g. Soak/Stress testing) into builds and deployments.
 
 * **Address build failures immediately**
-  False / intermittant failures will reduce the confidence that the team have in the pipeline, leading to wasted investigation effort, and wasteful "safety net" processes on top.
+  False / intermittent failures will reduce the confidence that the team have in the pipeline, leading to wasted investigation effort, and wasteful "safety net" processes on top.
 
 * **Make failures clear and concise**
   Build failures should be easily available, clear and concise. Consider chat notifications from your build tools, rather than emails. Invest time in reducing unnecessary noise in the build output, and add logging to your builds to enable easy analysis of failures.
