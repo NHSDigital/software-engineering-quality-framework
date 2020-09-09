@@ -17,11 +17,7 @@ The philosophy underpinning this framework advocates:
 
 ## Context
 
-The framework is a companion to the [NHS service standard](https://service-manual.nhs.uk/service-standard), and considers software delivery to be a collaborative process across the disciplines in the team, with these areas of specific focus:
-* **What** is delivered is the primary focus of Service Design, User Research, and Product
-* **How** it is delivered (both the construction and the operation) is the primary focus of Engineering and Delivery
-
-This framework focusses on the "how"
+The framework is a companion to the [NHS service standard](https://service-manual.nhs.uk/service-standard).
 
 ## Contents
 
