@@ -33,7 +33,7 @@ These hard figures help us to measure the effect of improvement work over time.
 
 | Measure | Definition (each calculated over the last 28 days) |
 |:---|:---|
-| Deployment frequency | Number of standard deployments (excluding emergency fixes)
+| Deployment frequency | Number of deployments
 
 ## Recommended:
 
