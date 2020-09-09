@@ -244,9 +244,9 @@ Good facilitation can help teams get the most out of the assessment and it is re
 
 * Recommended group size is 3&ndash;8 team members for each session.
 * Recommended duration is 3&ndash;4 hours, either in one block with breaks or in multiple sessions (but aim to avoid long gaps between sessions).
-* Ask a member of the Software Engineering Quality Assessments team (currently Andrew Blundell, Daniel Stefanuik, David Lavendar, Ivor Caldwell) to create a blank spreadsheet for the assessment from the [template](https://hscic365.sharepoint.com/:x:/s/SoftwareEngineering-QualityAssessments/Edy9vc5XNjlNirHYFuG5MOgBtTk9Rj_A7z1sYjPYbcdIug). This will be stored centrally and shared with the team.
+* Ask a member of the Software Engineering Quality Assessments team (currently Andrew Blundell, Daniel Stefanuik, David Lavender, Ivor Caldwell) to create a blank spreadsheet for the assessment from the [template](https://hscic365.sharepoint.com/:x:/s/SoftwareEngineering-QualityAssessments/Edy9vc5XNjlNirHYFuG5MOgBtTk9Rj_A7z1sYjPYbcdIug). This will be stored centrally and shared with the team.
 * Work with a member of the team to fill in the _Project_ and _What's it do_ fields before the session. This is typically uncontroversial and saves time in the session.
-* To save time, fill in the list of particpants before the session, but verify and update as necessary at the start of the session.
+* To save time, fill in the list of participants before the session, but verify and update as necessary at the start of the session.
 * Be ready for the session with the assessment spreadsheet and this document open such that both can easily be seen by participants by sharing your screen (assuming the assessment is not being held in person).
 
 ## Facilitator tips
