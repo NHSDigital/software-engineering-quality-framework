@@ -86,7 +86,7 @@ The following practices support the principle of building quality in.
 
 **Stay up to date.** Automate patching/upgrades, dependency/image scanning and updating.
 
-**[Bake in reliability.](practices/service-reliability.md)** [:blue_heart: NHS-SM-14](https://service-manual.nhs.uk/service-standard/14-operate-a-reliable-service) Understand requirements as a team, treated as unspoken user needs. Consider it through every stage of delivery. Verify it automatically and continuously. Practice incident management resolution using techniques like [game days](https://wa.aws.amazon.com/wat.concept.gameday.en.html).
+**[Bake in reliability.](practices/service-reliability.md)** [:blue_book: :a: :ab: :abc: NHS-SM-14](https://service-manual.nhs.uk/service-standard/14-operate-a-reliable-service) Understand requirements as a team, treated as unspoken user needs. Consider it through every stage of delivery. Verify it automatically and continuously. Practice incident management resolution using techniques like [game days](https://wa.aws.amazon.com/wat.concept.gameday.en.html).
 
 ## 3. Create knowledge
 
