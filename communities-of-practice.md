@@ -110,7 +110,7 @@ The process for starting a new CoP is:
 
 3. The coordinator will facilitate a kick off along with interested others where the format will be agreed.
 
-4. The scope, goals, format and so on should be recorded somewhere easily accessible to the whole organisation, and esily editable by CoP members, e.g. Confluence.
+4. The scope, goals, format and so on should be recorded somewhere easily accessible to the whole organisation, and easily editable by CoP members, e.g. Confluence.
 
 # Worked example
 We include a worked example to illustrate how this thinking can be applied in a specific case. This is an example of a new CoP which is starting with relatively modest goals and time budget.
@@ -149,4 +149,4 @@ We include a worked example to illustrate how this thinking can be applied in a 
 * Focus on people. CoPs are there to serve people, not to act as another project. Be mindful of their needs and devote time to serving them, which may include acting as a support network.
 * But also, focus on outcomes. Get the balance right between serving individuals and their immediate needs and producing wider and longer term benefits for the organisation &mdash; particularly if work time is being allocated to CoP activities.
 * Don't try to solve everything. While the CoP can be a great focal point, ideally it will put in place mechanisms for- and champion peer to peer knowledge sharing and support throughout the organisation, rather than expecting everything to flow through the CoP.
-* Individuals should continue to get value from their participation. Meetings do not need to be formal or highly structured, but participants should feel that it is productive use of their time. Hold retrospectvies periodically to ensure the community is still delivering value and to refresh the goals and ways of working.
+* Individuals should continue to get value from their participation. Meetings do not need to be formal or highly structured, but participants should feel that it is productive use of their time. Hold retrospectives periodically to ensure the community is still delivering value and to refresh the goals and ways of working.

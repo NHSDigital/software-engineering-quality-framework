@@ -29,5 +29,5 @@ Everything (including [infrastructure](../practices/cloud-services.md)) should b
 
 * Application code written in languages such as Python, Java or C#.
 * Application configuration, held in files (e.g. YAML, Json) held in source control.
-* Declarative intrastructure as "code" (actually often YAML or HCL).
+* Declarative infrastructure as "code" (actually often YAML or HCL).
 * Database migrations: SQL scripts held in source control.

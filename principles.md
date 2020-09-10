@@ -116,7 +116,7 @@ We need to figure out how to deliver software as fast as possible.  This reduces
 
 **[Deliver little and often.](patterns/little-and-often.md)** Prefer lots of small changes (with automation doing the heavy lifting) to fewer large changes
 
-**Start simple and iterate.** Structure projects as dinstinct discovery, inception and build stages to allow commitment to be incrementally increased. Start with an MVP /  [steel thread](https://www.agiledevelopment.org/agile-talk/111-defining-acceptance-criteria-using-the-steel-thread-concept) / [walking skeleton](https://www.henricodolfing.com/2018/04/start-your-project-with-walking-skeleton.html).
+**Start simple and iterate.** Structure projects as distinct discovery, inception and build stages to allow commitment to be incrementally increased. Start with an MVP /  [steel thread](https://www.agiledevelopment.org/agile-talk/111-defining-acceptance-criteria-using-the-steel-thread-concept) / [walking skeleton](https://www.henricodolfing.com/2018/04/start-your-project-with-walking-skeleton.html).
 
 **Sustainable pace.** Work at a pace which is sustainable long term.
 
