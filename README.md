@@ -17,7 +17,11 @@ The philosophy underpinning this framework advocates:
 
 ## Context
 
-The framework is a companion to the [NHS service standard](https://service-manual.nhs.uk/service-standard).
+The framework is a companion to:
+* The [NHS service standard](https://service-manual.nhs.uk/service-standard), with cross-references in this format: [SERVICE-14](https://service-manual.nhs.uk/service-standard/14-operate-a-reliable-service)
+* The [NHS Digital architectural principles](architecture-principles.md), with cross-references in this format: [ARCHITECTURE-A](https://aalto.digital.nhs.uk/#/runView/?viewId=5821ac03-fe21-46ca-b9d1-7cb80a67f9bd&library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0)
+
+Note: the architecture principles are currently private links, but will soon be public.
 
 ## Contents
 
