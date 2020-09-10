@@ -3,6 +3,7 @@
 ## Context
 
 * These notes are part of a broader set of [principles](../principles.md)
+* This is related to [SERVICE-14](https://service-manual.nhs.uk/service-standard/14-operate-a-reliable-service)
 
 ## Details
 
