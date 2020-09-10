@@ -2,7 +2,7 @@
 
 ## Context
 
-* These notes are part of a broader set of [principles](../principles.md)
+* These notes are part of a broader set of [principles](../principles.md).
 
 ## The pattern
 
@@ -10,8 +10,8 @@ Fast reliable feedback allows teams to move quickly with safety.
 
 ## Benefits
 
-* Improved overall quality. When rapid feedback is readily available, it is quicker and easier it is to address.
-* Improved lead time for individual tickets and reduced overall delivery times. Reliable feedback helps teams build confidence in making changes, allowing them to move faster and be bolder.
+* **Improved overall quality.** When rapid feedback is readily available, it is quicker and easier it is to address.
+* **Improved lead time** for individual tickets and **reduced overall delivery times.** Reliable feedback helps teams build confidence in making changes, allowing them to move faster and be bolder.
 
 ## Details
 
