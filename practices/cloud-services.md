@@ -4,9 +4,8 @@
 
 * These notes are part of a broader set of [principles](../principles.md)
 * This is related to:
-  * [NHS cloud guidance](https://digital.nhs.uk/data-and-information/looking-after-information/data-security-and-information-governance/nhs-and-social-care-data-off-shoring-and-the-use-of-public-cloud-services)
-  * [ARCHITECTURE-D](https://aalto.digital.nhs.uk/#/object/details?objectId=923e33f8-889d-42e5-a7d1-8b04b3e4220f&library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0)
-  * [ARCHITECTURE-E](https://aalto.digital.nhs.uk/#/object/details?objectId=0a01622c-35fe-4670-9211-6a3f95497dd0&library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0)
+  * [ARCHITECTURE-CLOUD](https://aalto.digital.nhs.uk/#/object/details?objectId=923e33f8-889d-42e5-a7d1-8b04b3e4220f&library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0)
+  * [ARCHITECTURE-SUSTAINABILITY](https://aalto.digital.nhs.uk/#/object/details?objectId=0a01622c-35fe-4670-9211-6a3f95497dd0&library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0)
   * [SERVICE-5](https://service-manual.nhs.uk/service-standard/11-choose-the-right-tools-and-technology)
 
 ## Details

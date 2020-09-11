@@ -4,8 +4,8 @@
 
 * These notes are part of a broader set of [principles](../principles.md)
 * This is related to:
-  * [ARCHITECTURE-D](https://aalto.digital.nhs.uk/#/object/details?objectId=923e33f8-889d-42e5-a7d1-8b04b3e4220f&library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0)
-  * [ARCHITECTURE-I](https://aalto.digital.nhs.uk/#/object/details?objectId=ce63238e-8a54-4bd8-8cd5-aa6e2f23f4ef&library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0)
+  * [ARCHITECTURE-CLOUD](https://aalto.digital.nhs.uk/#/object/details?objectId=923e33f8-889d-42e5-a7d1-8b04b3e4220f&library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0)
+  * [ARCHITECTURE-REUSE](https://aalto.digital.nhs.uk/#/object/details?objectId=ce63238e-8a54-4bd8-8cd5-aa6e2f23f4ef&library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0)
 
 ## The pattern
 
