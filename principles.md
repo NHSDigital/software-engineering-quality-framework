@@ -80,13 +80,13 @@ The following practices support the principle of building quality in.
 
 **Keep it simple.** Explicit is better than implicit. Simple is better than complex. Complex is better than complicated.  Special cases aren't special enough to break the rules. Although practicality beats purity. ([Zen of Python](https://www.python.org/dev/peps/pep-0020/).)
 
-**[Prefer serverless](practices/cloud-services.md). [SERVICE-5](https://service-manual.nhs.uk/service-standard/11-choose-the-right-tools-and-technology) Where not serverless use ephemeral and immutable infrastructure.** Make it simple to guarantee predictable and reliable behaviour.
+**[Prefer serverless](practices/cloud-services.md). [SERVICE-TOOLS](https://service-manual.nhs.uk/service-standard/11-choose-the-right-tools-and-technology) Where not serverless use ephemeral and immutable infrastructure.** Make it simple to guarantee predictable and reliable behaviour.
 
 **[Bake in security.](practices/security.md)** Understand it as a team. Consider it through every stage of delivery. Verify it automatically and continuously. Model risks. Use defence in depth. Segregate security domains (e.g. test/prod, public/PII). Minimise human contact with sensitive data.
 
 **Stay up to date.** Automate patching/upgrades, dependency/image scanning and updating.
 
-**[Bake in reliability.](practices/service-reliability.md)** [SERVICE-14](https://service-manual.nhs.uk/service-standard/14-operate-a-reliable-service) Understand requirements as a team, treated as unspoken user needs. Consider it through every stage of delivery. Verify it automatically and continuously. Practice incident management resolution using techniques like [game days](https://wa.aws.amazon.com/wat.concept.gameday.en.html).
+**[Bake in reliability.](practices/service-reliability.md)** [SERVICE-RELIABILITY](https://service-manual.nhs.uk/service-standard/14-operate-a-reliable-service) Understand requirements as a team, treated as unspoken user needs. Consider it through every stage of delivery. Verify it automatically and continuously. Practice incident management resolution using techniques like [game days](https://wa.aws.amazon.com/wat.concept.gameday.en.html).
 
 ## 3. Create knowledge
 
@@ -120,7 +120,7 @@ We need to figure out how to deliver software as fast as possible.  This reduces
 
 **Sustainable pace.** Work at a pace which is sustainable long term.
 
-**Choose the right tools for each job.** [SERVICE-5](https://service-manual.nhs.uk/service-standard/11-choose-the-right-tools-and-technology) Balance autonomy and conformity: unnecessary proliferation of a wide variety of tools impacts overall effectiveness, but limiting too much promotes "least worst" choices. Note that "each job" does not have to mean a single toolset for a service: consider a polyglot approach for component-based services.
+**Choose the right tools for each job.** [SERVICE-TOOLS](https://service-manual.nhs.uk/service-standard/11-choose-the-right-tools-and-technology) Balance autonomy and conformity: unnecessary proliferation of a wide variety of tools impacts overall effectiveness, but limiting too much promotes "least worst" choices. Note that "each job" does not have to mean a single toolset for a service: consider a polyglot approach for component-based services.
 
 ## 6. Respect for people
 
