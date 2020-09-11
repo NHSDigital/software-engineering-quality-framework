@@ -31,14 +31,17 @@ Delivering "little and often" has broad benefits across the software delivery pr
     * Changing less at a time means less potential for obscure problems (which are difficult and expensive to find and fix)
 * Happier delivery team
 
-## Caveats
-
-* This pattern must not compromise quality: automation (including of quality control) is essential for safe implementation of this pattern
-
 ## Details
 
-TO DO
+This pattern is in essence very straightforward; the power comes in applying it rigorously to everything you do. Judgement is needed when deciding how much to do up front, versus deferring to be done incrementally. But in general the aim should be to do the minimum possible up front and to defer anything which will not alter your immediate actions.
 
 ## Examples
 
-TO DO
+* **Delivering software.** The trivial and obvious example of this pattern is that it is better to deliver software in small increments than to do it in one [big bang](https://hackernoon.com/why-your-big-bang-multi-year-project-will-fail-988e45c830af).
+* **Planning.** Start by doing just enough planning to forecast the size and type of team(s) you need to get the job done roughly when you want it to be done by. Incrementally refine that plan through (typically) fortnightly backlog/roadmap refinement sessions.
+* **Technical design and architecture.** While some up front thinking is generally beneficial to help a delivery team set off in the right direction, the output design is best viewed as first draft which will be refined during delivery as more is discovered about technical and product constraints and opportunities. See [Evolutionary Architectures](https://evolutionaryarchitecture.com/precis.html).
+* **Team processes.** Great team processes come about by starting with something simple and practising [continuous improvement](https://kanbanize.com/lean-management/improvement/what-is-continuous-improvement) to find ways of working, definitions of done and so on which are well suited to the particular team and environment.
+
+## Caveats
+
+* This pattern must not compromise quality: automation (including of quality control) is essential for safe implementation of this pattern.
