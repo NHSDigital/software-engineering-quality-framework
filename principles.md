@@ -22,7 +22,7 @@ Waste is anything that interferes with giving customers what they really value a
 
 **Inventory &mdash; partially done work**, e.g. plans and designs, code. Limit work in progress (WIP) and use a pull-based approach.
 
-**[Inventory &mdash; unnecessary resources](practices/cloud-services.md)**, e.g. server over-provisioning, complicated tools where simple ones would do. Adopt a "just enough, not just in case" mindset.
+**[Inventory &mdash; unnecessary resources](practices/cloud-services.md)** [ARCHITECTURE-SUSTAINABILITY](https://aalto.digital.nhs.uk/#/object/details?objectId=0a01622c-35fe-4670-9211-6a3f95497dd0&library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0), e.g. server over-provisioning, complicated tools where simple ones would do. Adopt a "just enough, not just in case" mindset.
 
 **Overproduction &mdash; building unnecessary features.** Start simple and basic, get feedback and iterate.
 
@@ -32,7 +32,7 @@ Waste is anything that interferes with giving customers what they really value a
 
 **Overproduction &mdash; reinventing the wheel.** Solving the same problem repeatedly in an organisation. Make sure there are effective ways to share knowledge between teams to avoid this.
 
-**[Overproduction &mdash; building when you could instead reuse or buy](practices/cloud-services.md).** Remember to consider all these alternatives.
+**[Overproduction &mdash; building when you could instead reuse or buy](practices/cloud-services.md).** [ARCHITECTURE-REUSE](https://aalto.digital.nhs.uk/#/object/details?objectId=ce63238e-8a54-4bd8-8cd5-aa6e2f23f4ef&library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0) Remember to consider all these alternatives.
 
 **Overproduction &mdash; premature optimisation for reusability.** Before making something reusable, first make it usable. Prefer explicit logic to implicit. Excessively generic systems create accidental complexity. [KISS](http://principles-wiki.net/principles:keep_it_simple_stupid) and [YAGNI](https://www.martinfowler.com/bliki/Yagni.html) again.
 
@@ -80,13 +80,13 @@ The following practices support the principle of building quality in.
 
 **Keep it simple.** Explicit is better than implicit. Simple is better than complex. Complex is better than complicated.  Special cases aren't special enough to break the rules. Although practicality beats purity. ([Zen of Python](https://www.python.org/dev/peps/pep-0020/).)
 
-**[Prefer serverless](practices/cloud-services.md); where not serverless use ephemeral and immutable infrastructure.** Make it simple to guarantee predictable and reliable behaviour.
+**[Prefer serverless](practices/cloud-services.md). [SERVICE-TOOLS](https://service-manual.nhs.uk/service-standard/11-choose-the-right-tools-and-technology) Where not serverless use ephemeral and immutable infrastructure.** Make it simple to guarantee predictable and reliable behaviour.
 
 **[Bake in security.](practices/security.md)** Understand it as a team. Consider it through every stage of delivery. Verify it automatically and continuously. Model risks. Use defence in depth. Segregate security domains (e.g. test/prod, public/PII). Minimise human contact with sensitive data.
 
 **Stay up to date.** Automate patching/upgrades, dependency/image scanning and updating.
 
-**[Bake in reliability.](practices/service-reliability.md)** [SERVICE-14](https://service-manual.nhs.uk/service-standard/14-operate-a-reliable-service) Understand requirements as a team, treated as unspoken user needs. Consider it through every stage of delivery. Verify it automatically and continuously. Practice incident management resolution using techniques like [game days](https://wa.aws.amazon.com/wat.concept.gameday.en.html).
+**[Bake in reliability.](practices/service-reliability.md)** [SERVICE-RELIABILITY](https://service-manual.nhs.uk/service-standard/14-operate-a-reliable-service) Understand requirements as a team, treated as unspoken user needs. Consider it through every stage of delivery. Verify it automatically and continuously. Practice incident management resolution using techniques like [game days](https://wa.aws.amazon.com/wat.concept.gameday.en.html).
 
 ## 3. Create knowledge
 
@@ -120,7 +120,7 @@ We need to figure out how to deliver software as fast as possible.  This reduces
 
 **Sustainable pace.** Work at a pace which is sustainable long term.
 
-**Choose the right tools for each job.** Balance autonomy and conformity: unnecessary proliferation of a wide variety of tools impacts overall effectiveness, but limiting too much promotes "least worst" choices. Note that "each job" does not have to mean a single toolset for a service: consider a polyglot approach for component-based services.
+**Choose the right tools for each job.** [SERVICE-TOOLS](https://service-manual.nhs.uk/service-standard/11-choose-the-right-tools-and-technology) Balance autonomy and conformity: unnecessary proliferation of a wide variety of tools impacts overall effectiveness, but limiting too much promotes "least worst" choices. Note that "each job" does not have to mean a single toolset for a service: consider a polyglot approach for component-based services.
 
 ## 6. Respect for people
 
