@@ -11,13 +11,17 @@ The framework is concerned with using "good" software engineering to support rap
 ## Philosophy
 
 The philosophy underpinning this framework advocates:
-* Empowered teams which are accountable for their products: "You build it, you run it" (Werner Vogels)
+* Empowered teams which are accountable for their products
 * Rapid, iterative and incremental development: "Release early. Release often. And listen to your customers." (Eric S. Raymond in [The Cathedral and the Bazaar](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar))
 * Reliable services, remembering "Everything fails, all the time" (Werner Vogels), and treating operations as a software engineering challenge (as in Google's [Site Reliability Engineering](https://landing.google.com/sre/))
 
 ## Context
 
-The framework is a companion to the [NHS service standard](https://service-manual.nhs.uk/service-standard).
+The framework is a companion to:
+* The [NHS service standard](https://service-manual.nhs.uk/service-standard), with cross-references in this format: [SERVICE-14](https://service-manual.nhs.uk/service-standard/14-operate-a-reliable-service)
+* The [NHS Digital architectural principles](https://aalto.digital.nhs.uk/#/runView/?viewId=5821ac03-fe21-46ca-b9d1-7cb80a67f9bd&library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0), with cross-references in this format: [ARCHITECTURE-A](https://aalto.digital.nhs.uk/#/object/details?objectId=683a5ab9-6630-42bf-86e5-b44a77e2766f&library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0)
+
+Note: the architecture principles are currently private links, but will soon be public.
 
 ## Contents
 
