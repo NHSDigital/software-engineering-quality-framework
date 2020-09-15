@@ -27,7 +27,7 @@ Goals to be reviewed December 2020
 
 ## Scope
 
-Initially this CoP will cast a very wide net and cover front-end, back-end and platform/infrastructure engineering and all technical aspects of delivery and operation of reliable services. This will include topics like pair programming, effective code reviews, team quality processes, architecting and engineering for functional and non-functional requirements and validating they are met, e.g. performance and capacity, security, accessibility. Some aspects of this will be covered in more detail by the [Test Automation CoP](communities/pd-test-automation-cop.md), while others are expected to spin out into their own CoPs over time in response to demand to provide more focus around specific sub-topics (e.g. mobile engineering, operational excellence, front-end development).
+Initially this CoP will cast a very wide net and cover front-end, back-end and platform/infrastructure engineering and all technical aspects of delivery and operation of reliable services. This will include topics like pair programming, effective code reviews, team quality processes, architecting and engineering for functional and non-functional requirements and validating they are met, e.g. performance and capacity, security, accessibility. Some aspects of this will be covered in more detail by the [Test Automation CoP](pd-test-automation-cop.md), while others are expected to spin out into their own CoPs over time in response to demand to provide more focus around specific sub-topics (e.g. mobile engineering, operational excellence, front-end development).
 
 ## Coordinator
 
