@@ -3,7 +3,7 @@
 ## Context
 
 * These notes are part of a broader set of [principles](../principles.md)
-* Related community of practice: [Test Automation](../communities/test-automation-cop.md)
+* Related community of practice: [Test Automation](../communities/pd-test-automation-cop.md)
 * See also:
   * [Continuous integration](continuous-integration.md)
   * [Governance as a side effect](../patterns/governance-side-effect.md)
