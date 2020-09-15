@@ -8,9 +8,9 @@
 ## Details
 
 * Understand reliability requirements.
-    * Determine [service level indicators and objectives](https://landing.google.com/sre/sre-book/chapters/service-level-objectives/)(SLIs and SLOs) to represent these requirements.
-    * Use SLIs and SLOs to drive monitoring and alerting requirements.
-    * Agree an [incident severity classification](https://www.atlassian.com/incident-management/kpis/severity-levels) and the response which each level requires in terms of communication and resolution. Be pragmatic and don't overstate the requirements: targeting unnecessary levels of resilience is wasteful.
+    * Determine [service level indicators and objectives](https://landing.google.com/sre/sre-book/chapters/service-level-objectives/) (SLIs and SLOs) to represent these requirements.
+    * Use SLIs and SLOs to drive monitoring and alerting requirements. Consider what constitutes [meaningful availability](https://www.usenix.org/system/files/nsdi20spring_hauer_prepub.pdf) for your service.
+    * Agree an [incident severity classification](https://www.atlassian.com/incident-management/kpis/severity-levels) and the response which each level requires in terms of communication and resolution. Be pragmatic and don't overstate the requirements: targeting unnecessary levels of resilience is wasteful and reduces the team's ability to deliver functionality.
 * Plan for failure.
     * Rehearse incident classification and resolution using regular [Game Days](https://aws.amazon.com/gameday/#:~:text=What%20is%20AWS%20GameDay%3F,gamified%2C%20risk%2Dfree%20environment.) and similar exercises.
     * Remember that service _reliability_ encompasses security, data integrity, performance, capacity and other factors as well as availability.
