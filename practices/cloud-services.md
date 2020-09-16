@@ -11,7 +11,7 @@
 
 ## Details
 
-* Configure all infrastructure using declarative code such as Terraform and Cloudformation (see [everything as code](../patterns/everything-as-code.md)).
+* Configure all infrastructure using declarative code such as Terraform and CloudFormation (see [everything as code](../patterns/everything-as-code.md)).
 * Automate monitoring and alerting (see [automate everything](../patterns/automate-everything.md)).
 * Make systems self-healing.
   * Prefer technologies which are resilient by default.
@@ -25,6 +25,9 @@
   * Understand how rapidly demand can spike and ensure scaling can meet these requirements. Balance scaling needs with the desire to avoid over provisioning and use [pre-warming](https://petrutandrei.wordpress.com/2016/03/18/pre-warming-the-load-balancer-in-aws/) of judiciously where required.
 * Infrastructure should always be fully utilised (if it isn't, it's generating waste).
   * Though balance this with potential need to run with some overhead to accommodate failed instance replacement times without overloading remaining instances.
+* Keep up to date.
+  * Services/components need prompt updates to dependencies where security vulnerabilities are found &mdash; even if they are not under active development.
+  * Services which use deprecated or unsupported technologies should be migrated onto alternatives as a priority.
 * Be aware of data sovereignty implications of using any systems hosted outside the UK.
   * Make sure your information governance lead is aware and included in decision making.
   * Consider SaaS tools the team uses as well as the systems we build.
