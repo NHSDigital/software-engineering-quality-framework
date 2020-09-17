@@ -51,7 +51,7 @@ Areas of interest are specifically:
 
 * The group's official home is the "Test Automation CoP" Teams channel
 * This includes a Backlog and Wiki
-* Any member can contribute to the backlog. This could be show-and-tells of tools or approaches; queries about how to do something; curation of a Principal; talking about an organisation-wide policy; etc.
+* Any member can contribute to the backlog. This could be show-and-tells of tools or approaches; queries about how to do something; curation of a principle; talking about an organisation-wide policy; etc.
 * The group meet regularly to refine the backlog, and talk through items
 * The group will also organise and facilitate other meetings, such as training workshops, hack-days, etc, which will be open to a much wider audience.
 * The group will maintain a discussion channel ("Test Automation") open to all of PD: for advice and guidance, and wider knowledge sharing
