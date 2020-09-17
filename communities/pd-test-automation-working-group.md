@@ -36,7 +36,7 @@ Areas of interest are specifically:
 * This will be a rotating post on a 3-month basis, requiring a commitment of one day per week
 * The coordinator will run a blog to help publicise the activity of the group
 * There will be a deputy coordinator (to cover sessions when the coordinator is away, etc). They will also typically take over as coordinator for the following 3 months. This gives the group continuity.
-* [dlavender4](https://github.com/dlavender4) will be coordinator initially
+* David Lavender [dlavender4](https://github.com/dlavender4) will be coordinator initially
 * A Deputy will be found during the first sessions
 
 ## Members
