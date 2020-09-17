@@ -47,10 +47,6 @@ Areas of interest are specifically:
 * Should include people from as many teams as possible
 * Can join as representatives from a specific team, or as "interested parties"
 
-## Time Booking
-
-* Everybody involved in the group will use the ABR "Training" timesheet code for all meeting and activities on behalf of this group
-
 ## Format
 
 * The group's official home is the "Test Automation CoP" Teams channel
