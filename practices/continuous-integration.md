@@ -5,13 +5,13 @@
 * These notes are part of a broader set of [principles](../principles.md)
 * TO DO: Further reading / training courses about test automation
   * https://martinfowler.com/articles/continuousIntegration.html
-* TO DO: Reference to the Automation Working Group (link to terms of reference?)
+* TO DO: Reference to the Test Automation Working Group (link to terms of reference?)
 * TO DO: Notes on expected coverage & CI strategies (e.g. load & performance testing, security testing, dependency scanning, scanning for secrets, accessibility testing, etc, etc)
   merge parts of <!-- markdown-link-check-disable -->[https://nhsd-confluence.digital.nhs.uk/display/DE/Pipeline+Healthcheck]<!-- markdown-link-check-enable -->
 
 * See also:
-    * [Automate everything](../patterns/automate-everything.md)
-    * [Test automation](testing.md)
+  * [Automate everything](../patterns/automate-everything.md)
+  * [Test automation](testing.md)
 
 ## Details
 
