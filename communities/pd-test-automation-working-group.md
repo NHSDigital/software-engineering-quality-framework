@@ -44,7 +44,7 @@ Areas of interest are specifically:
 * Formed from within PD
 * Core members should be kept to under 15, to promote interactive sessions
 * Should include a mix of backgrounds including Dev, DevOps, Test and Assurance.
-* Should include people from as many teams as possible
+* Should include people from a representative spread of teams
 * Can join as representatives from a specific team, or as "interested parties"
 
 ## Format
