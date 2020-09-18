@@ -12,7 +12,8 @@
 ## Details
 
 * Configure all infrastructure using declarative code such as Terraform and CloudFormation (see [everything as code](../patterns/everything-as-code.md)).
-* Automate monitoring and alerting (see [automate everything](../patterns/automate-everything.md)).
+* Automate monitoring and alerting (see [automate everything](../patterns/automate-everything.md)), including:
+  * Subscribe to service alerts from your cloud vendors, e.g. the service-status RSS feeds for [AWS](https://status.aws.amazon.com) and [Azure](https://status.azure.com/status/).
 * Prefer serverless platform as a service (PaaS) over infrastructure as a service (IaaS) (see [outsource bottom up](../patterns/outsource-bottom-up.md)).
 * Where not serverless use ephemeral and immutable infrastructure
 * Engage your cloud supplier early on in the development process. They have various tools and processes to help you (e.g. [AWS Well-Architected Review](https://aws.amazon.com/architecture/well-architected/?wa-lens-whitepapers.sort-by=item.additionalFields.sortDate&wa-lens-whitepapers.sort-order=desc) ).

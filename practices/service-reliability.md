@@ -26,6 +26,7 @@
 * Releases should, where possible, not incur any service downtime.
 * Breaking interface changes should be found before deploying to live through appropriate [testing](testing.md).
 * Monitoring must cover both application and infrastructure, and should include active monitoring of the healthcheck endpoint for each service and passive monitoring, e.g. of the HTTP response code reported from the load balancer.
+* Ensure alerting is in place for any upstream dependencies, for example services provided by cloud vendors (see [cloud services](cloud-services.md)).
 * Application and infrastructure are encapsulated to guarantee consistency across environments.
 * Prefer serverless infrastructure where possible, and any hosts should be ephemeral and immutable (e.g. nothing gets patched or reconfigured: instead a replacement is created).
 * The only route to production is via automated deployment pipelines (see [continuous integration](continuous-integration.md)).
