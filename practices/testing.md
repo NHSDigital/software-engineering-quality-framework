@@ -3,14 +3,14 @@
 ## Context
 
 * These notes are part of a broader set of [principles](../principles.md)
-* TO DO: Further reading / training courses about test automation
-* Related community of practice: [Automation Working Group](../communities/pd-automation-working-group.md)
+* Related community of practice: [Test Automation Working Group](../communities/pd-test-automation-working-group.md)
 * See also:
-    * [Continuous integration](continuous-integration.md)
-    * [Governance as a side effect](../patterns/governance-side-effect.md)
+  * [Continuous integration](continuous-integration.md)
+  * [Governance as a side effect](../patterns/governance-side-effect.md)
 
 ## Details
 
+* Software quality and testing is everyone's responsibility.
 * Tests are automated by default (see [automate everything](../patterns/automate-everything.md)).
 * Tests act as documentation of the system's behaviour and should be clear enough to do this effectively.
 * Tests are written alongside or before whatever they are testing.
@@ -30,4 +30,9 @@
 * Do not add tests of no value (e.g. tests of default getters/setters) just to increase the coverage level &mdash; 100% coverage is not a good use of time.
 * Tests must pass before code can be merged.
 * Non-functional requirements should also be covered by automated tests (e.g. security, performance, accessibility).
-* Website user interfaces should be tested against an appropriate set of browsers and versions (TO DO &mdash; won't be able to reference the policy, might need to copy and paste) &mdash; in particular, no effort should be spent testing against unsupported browsers or unsupported versions of browsers.
+* Website user interfaces should be tested against an appropriate set of browsers and versions &mdash; in particular, no effort should be spent testing against unsupported browsers or unsupported versions of browsers. See supported browsers for [Staff](https://aalto.digital.nhs.uk/#/document/viewer/8c039de1-eec0-49cd-8af3-a97fed6a8bff?library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0) and [Citizens](https://aalto.digital.nhs.uk/#/document/viewer/465e6d1b-f107-49eb-ad25-e72c0299d3a6?library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0)
+
+## Further reading
+
+* [Test Driven Development: By Example](https://learning.oreilly.com/library/view/test-driven-development/0321146530/)
+* [xUnit Test Patterns: Refactoring Test Code](https://learning.oreilly.com/library/view/xunit-test-patterns/9780131495050/)
