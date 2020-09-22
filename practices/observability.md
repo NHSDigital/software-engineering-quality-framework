@@ -30,3 +30,4 @@
   * Alerts must be in an appropriate form depending on who is consuming them (Email, SMS, Teams, Slack, Physical Alarm-Bell, Alexa, etc)
   * Alerts are important, and the alerting service(s) must be resilient. For essential (i.e. service critical) alerts, use more than one alerting tool, at least one of which should be a SaaS solution run out of multiple geographic locations
     * Do not include secrets or other sensitive data in alert requests, i.e. store no sensitive data with alerting providers
+* Observability is not just something for when there is a problem: use observability tools throughout development, for example use APM tools to understand the performance and behaviour of changes *as they're developed*
