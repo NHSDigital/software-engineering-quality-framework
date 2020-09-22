@@ -21,6 +21,8 @@
   * Ensure you have reporting and alerting for the health of any services/components your service relies on (for example: shared network connections, shared authentication services, etc)
   * See 'meaningful availability' in [service reliability](service-reliability.md)
 * Implement a dashboard for the [service level indicators and objectives](https://landing.google.com/sre/sre-book/chapters/service-level-objectives/) - see [service reliability](service-reliability.md)
+* PID
+  * PID rules must be followed for collection, and presenting of monitoring and alerting information. Only data relevant to the consumer should be presented.
 * Alerting
   * Alerts must be generated for events that the team (including 1st, 2nd line) consider high importance
   * Alerts must not be generated for any other reason (minimise noise)
