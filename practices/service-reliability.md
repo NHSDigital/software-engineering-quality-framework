@@ -22,6 +22,7 @@
 * Design for failure: assume everything will fail at some point, so:
     * Implement loose coupling where possible to minimise the impact of component failure.
     * Infrastructure should all be appropriately resilient (see [cloud services](cloud-services.md)).
+* Learn from incidents: conduct post-incident reviews as soon as possible after any service outage or significant degradation, with the goal of identifying improvements to systems and processes (rather than apportioning blame).
 * Services should scale automatically up and down (see [cloud services](cloud-services.md)).
 * Releases should, where possible, not incur any service downtime.
 * Breaking interface changes should be found before deploying to live through appropriate [testing](testing.md).
