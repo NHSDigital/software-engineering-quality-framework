@@ -9,7 +9,7 @@ As Emily Webber, author of [Building Successful Communities of Practice](https:/
 
 # Community
 
-Members of a CoP have a shared enthusiasm and commitment to a particular topic. They engage in joint activities and discussions, help each other and share information. Through this they build relationships that enable them to learn from and gain support from each other. A CoP can become a supportive community which members reach out to for advice and which builds confidence. The community can become something members identify with and care deeply about, which creates a sense of belonging and purpose. Active participation in a CoP can also be a great way for individuals to raise their profile in the organisation.
+Members of a CoP have a shared enthusiasm and commitment to a particular topic. They engage in joint activities and discussions, help each other and share information. Through this they build relationships that enable them to learn from and gain support from each other. A CoP can become a supportive community which members reach out to for advice and which builds confidence. The community can become something members identify with and care deeply about, which creates a sense of belonging and purpose. Active participation in a CoP can also be a great way for individuals to raise their profile and build relationships with people in other areas of the organisation.
 
 # Learning
 
