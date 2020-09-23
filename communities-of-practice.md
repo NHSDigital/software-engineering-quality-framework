@@ -7,17 +7,29 @@ A community of practice (CoP) is a group of people who "share a concern or a pas
 As Emily Webber, author of [Building Successful Communities of Practice](https://www.goodreads.com/book/show/29155800-building-successful-communities-of-practice), says:
 > Connecting with other people, finding a sense of belonging and the need for support are natural human desires. Employees who don't feel supported at work don't stay around for long &mdash; or if they do, they quickly become unmotivated and unhappy. At a time when organisational structures are flattening and workforces are increasingly fluid, supporting and connecting people is more important than ever. This is where organisational communities of practice come in.
 
-Members of a CoP engage in joint activities and discussions, help each other and share information. They build relationships that enable them to learn from each other.
+# Community
+
+Members of a CoP have a shared enthusiasm and commitment to a particular topic. They engage in joint activities and discussions, help each other and share information. Through this they build relationships that enable them to learn from and gain support from each other. A CoP can become a supportive community which members reach out to for advice and which builds confidence. The community can become something members identify with and care deeply about, which creates a sense of belonging and purpose. Active participation in a CoP can also be a great way for individuals to raise their profile and build relationships with people in other areas of the organisation.
+
+# Learning
+
+A primary aim of most CoPs is learning, which typically happens in two ways:
+1. Members share knowledge and experiences &mdash; good and bad.
+1. Members stimulate each others' interest in learning from outside the organisation.
+
+Learning from outside the organisation includes discovering new tools and techniques from reading books or blogs, watching or participating in external events and so on. Having a community to share new ideas with encourages individuals to seek out new knowledge and to experiment with the new things they have learned.
+
+For individuals, this learning can become an important part of their personal and professional development. And the organisation benefits from having individuals who are more engaged and effective in their roles.
 
 # Scope
 
-CoPs create relationships between their members based on a shared passion and commitment to a particular topic. They are formed around a single subject which should be neither so narrow as to give little value to members (e.g. unit testing), nor so broad that it is difficult to find topics within the subject which are of broad interest to the group (e.g. all of software engineering). We discuss scope more in [Format](#format), as the scope can have an implication for the most appropriate format. As well as being of interest to members, to attract investment (see [Time](#time)) the subject should also be of relevance to the goals of the organisation, e.g. testing would be an appropriate subject for an organisation which delivers software, basket weaving would not, public speaking may be.
+CoPs are formed around a single subject which should be neither so narrow as to give little value to members (e.g. unit testing), nor so broad that it is difficult to find topics within the subject which are of broad interest to the group (e.g. all of software engineering). We discuss scope more in [Format](#format), as the scope can have an influence on the most appropriate format. As well as being of interest to members, to attract investment (see [Time](#time)) the subject should also be of relevance to the goals of the organisation, e.g. testing would be an appropriate subject for an organisation which delivers software, basket weaving would not, public speaking may be.
 
 # Goals
 
 It is important to set goals when forming a CoP to avoid it losing purpose and direction. Goals should be valuable to individuals and the wider organisation.
 
-Not all goals need to produce output in a material sense. Some focus more on harder to quantify results like individual learning. Having a balance of these is quite healthy and encouraged. If attendees start to see the CoP as just more actions to add to their to do list they could disengage.
+Not all goals need to produce output in a material sense. Some focus more on harder to quantify results like individual learning. Having a balance of these is quite healthy and encouraged. If attendees start to see the CoP as just more actions to add to their to do list they could disengage. On the other hand, without clear goals a CoP can lose focus and can end up being little more than "a chat". When this happens, busy members can feel they don't get enough out of attendance to justify pulling themselves away from their busy schedules and again can disengage. It is a delicate balance to strike!
 
 Some common goals are listed below.  We use the term _practitioner_ for someone whose primary job or role aligns strongly with the CoP’s scope, _apprentice_ for those who view the subject as an outside interest, _other_ for everyone else in the organisation and _public_ for anyone outside the organisation.
 
@@ -106,11 +118,11 @@ The process for starting a new CoP is:
 
 1. Briefly outline the subject to be covered (see [Scope](#scope)), a set of [goals](#goals) and a proposed [time](#time) allocation and agree these with the [sponsor](#sponsor).
 
-2. Appoint a [coordinator](#leadership) and agree whether this will be a rotating post.
+2. Appoint a [coordinator](#leadership) and agree whether this will be a rotating post. The coordinator should be someone with the time and energy to actively drive the community, and the ability to excite and enthuse members. They need to be able to provide just enough direction and structure while ensuring members individual points of view are clearly heard and respected.
 
-3. The coordinator will facilitate a kick off along with interested others where the format will be agreed.
+3. The coordinator will facilitate a kick off along with interested others where the format will be agreed. The goal here is to get people excited and engaged and to align members so they can act as an effective group.
 
-4. The scope, goals, format and so on should be recorded somewhere easily accessible to the whole organisation, and easily editable by CoP members, e.g. Confluence.
+4. As the community forms they should refine the scope, goals and format along with the coordinator and sponsor to ensure they feel ownership of the community and to gain the benefit of their experience and knowledge. These should be recorded somewhere easily accessible to the whole organisation, and easily editable by CoP members, e.g. Confluence.
 
 # Worked example
 We include a worked example to illustrate how this thinking can be applied in a specific case. This is an example of a new CoP which is starting with relatively modest goals and time budget.
