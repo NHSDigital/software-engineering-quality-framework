@@ -167,9 +167,9 @@ The [SRE book](https://landing.google.com/sre/sre-book/chapters/monitoring-distr
 > Testing externally-visible behavior as a user would see it.
 
 Examples of white-box monitoring:
-* Using [Prometheus](prometheus) to scrape metrics from a component which uses a compatible metrics library to collect metrics and expose them on an HTTP endpoint.
+* Using [Prometheus](https://prometheus.io/) to scrape metrics from a component which uses a compatible metrics library to collect metrics and expose them on an HTTP endpoint.
 * Amazon [CloudWatch Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/working_with_metrics.html) exposes default metrics from AWS-provided services.
-* Publishing internal metrics from a component as CloudWatch [custom metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html), either by pushing them to CloudWatch using the SDK or by using [metric filters](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/MonitoringLogData.html#search-filter-concepts) to extract metrics from application logs in [CloudWatch Logs](aws-cloudwatch-logs).
+* Publishing internal metrics from a component as CloudWatch [custom metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html), either by pushing them to CloudWatch using the SDK or by using [metric filters](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/MonitoringLogData.html#search-filter-concepts) to extract metrics from application logs in [CloudWatch Logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html).
 * Using [Java Management Extensions](https://en.wikipedia.org/wiki/Java_Management_Extensions) (JMX) to collect internal metrics from an instrumented Java component.
 
 Examples of black-box monitoring:
