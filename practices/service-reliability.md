@@ -3,6 +3,7 @@
 ## Context
 
 * These notes are part of a broader set of [principles](../principles.md)
+* These practices are supported by [observability](observability.md)
 * This is related to [SERVICE-RELIABILITY](https://service-manual.nhs.uk/service-standard/14-operate-a-reliable-service)
 
 ## Details
@@ -11,7 +12,7 @@
     * Understand the implications of the designated service level for your service. NHS Digital service are classified as bronze, silver, gold or platinum and each has specific availability and recoverability requirements.
       * Part of this will be an incident severity classification, including the response which each level requires in terms of communication and resolution (example: [HSCN Consumer Handbook](https://digital.nhs.uk/services/health-and-social-care-network/hscn-consumer-handbook/service-levels-and-incident-severity-classification)).
     * As a multi-disciplinary team, determine [service level indicators and objectives](https://landing.google.com/sre/sre-book/chapters/service-level-objectives/) (SLIs and SLOs) to represent how these requirements apply specifically to your service. Also consider what else is important to users, and add SLIs and SLOs for these other aspects of service quality, such as response times and error rates.
-    * Use SLIs and SLOs to drive monitoring and alerting requirements.
+    * Use SLIs and SLOs to drive monitoring and alerting requirements (see [observability](observability.md))
     * SLI metrics can also play a useful role in system autoscaling rules, alongside lower level metrics such as CPU load or I/O wait times. SLIs represent what matters most to users, but lower level metrics often provide leading indicators of situations which will impact SLIs if no action is taken.
     * Consider what constitutes [meaningful availability](https://www.usenix.org/system/files/nsdi20spring_hauer_prepub.pdf) for your service, and the ways in which the service could fall back to degraded states to avoid total loss of availability, e.g. switching to read only mode, serving some proportion of demand only using [load shedding](https://aws.amazon.com/builders-library/using-load-shedding-to-avoid-overload/), serving some classes of demand but not others, disabling some features.
     * Be pragmatic and don't overengineer against requirements. Targeting unnecessary levels of resilience is wasteful and reduces the team's ability to deliver functionality.

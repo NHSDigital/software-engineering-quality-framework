@@ -4,6 +4,7 @@
 
 * These notes are part of a broader set of [principles](../principles.md)
 * Practices in this section contribute to [service reliability](service-reliability.md)
+* See also [observability](observability.md)
 * This is related to:
   * [ARCHITECTURE-CLOUD](https://aalto.digital.nhs.uk/#/object/details?objectId=923e33f8-889d-42e5-a7d1-8b04b3e4220f&library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0)
   * [ARCHITECTURE-SUSTAINABILITY](https://aalto.digital.nhs.uk/#/object/details?objectId=0a01622c-35fe-4670-9211-6a3f95497dd0&library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0)
@@ -12,12 +13,11 @@
 ## Details
 
 * Configure all infrastructure using declarative code such as Terraform and CloudFormation (see [everything as code](../patterns/everything-as-code.md)).
-* Automate monitoring and alerting (see [automate everything](../patterns/automate-everything.md)), including:
-  * Subscribe to service alerts from your cloud vendors, e.g. the service-status RSS feeds for [AWS](https://status.aws.amazon.com) and [Azure](https://status.azure.com/status/).
+* Automate monitoring and alerting (see [automate everything](../patterns/automate-everything.md) and [observability](observability.md).
 * Prefer serverless platform as a service (PaaS) over infrastructure as a service (IaaS) (see [outsource bottom up](../patterns/outsource-bottom-up.md)).
-* Where not serverless use ephemeral and immutable infrastructure
-* Engage your cloud supplier early on in the development process. They have various tools and processes to help you (e.g. [AWS Well-Architected Review](https://aws.amazon.com/architecture/well-architected/?wa-lens-whitepapers.sort-by=item.additionalFields.sortDate&wa-lens-whitepapers.sort-order=desc) ).
-* Understand cloud supplier SLAs
+* Where not serverless use ephemeral and immutable infrastructure.
+* Engage your cloud supplier early on in the development process. They have various tools and processes to help you (e.g. [AWS Well-Architected Review](https://aws.amazon.com/architecture/well-architected/?wa-lens-whitepapers.sort-by=item.additionalFields.sortDate&wa-lens-whitepapers.sort-order=desc)).
+* Understand cloud supplier SLAs.
 * Make systems self-healing.
   * Prefer technologies which are resilient by default.
   * Favour global-scoped (e.g. [CloudFront](https://aws.amazon.com/cloudfront/) or [Front Door](https://azure.microsoft.com/en-gb/pricing/details/frontdoor/)) or region-scoped services (e.g. [S3](https://aws.amazon.com/s3/), [Lambda](https://aws.amazon.com/lambda/), [Azure Functions](https://azure.microsoft.com/en-gb/services/functions/)) to availability-zone (AZ) scoped (e.g. [VMs](https://azure.microsoft.com/en-gb/services/virtual-machines/), [RDS DBs](https://aws.amazon.com/rds/)) or single-instance services (e.g. [EC2 instance storage](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html)).
