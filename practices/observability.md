@@ -30,7 +30,7 @@
   * It may also be worth considering free and open source alternatives such as [Prometheus](https://prometheus.io/) and [Grafana](https://grafana.com/).
   * Ensure the retention timescales for monitoring data are known and the implications understood.
   * Where using ephemeral infrastructure, observability of recently-destroyed infrastructure must be available.
-  * Consider client-side observability tools as well, in particular for client-side observability of browser-based services to provide what is called End User Monitoring.
+  * Consider client-side observability tools as well, in particular for client-side observability of browser-based services to provide [end user (or "real user") monitoring](https://en.wikipedia.org/wiki/Real_user_monitoring).
 * Monitoring should be supported by **application logs** and possibly distributed **tracing**. These will help diagnose the cause if something goes wrong.
   * Logs should be easily accessible and searchable in a log aggregation system.
   * Agree log levels (e.g. DEBUG, INFO, ERROR) and use them consistently.
@@ -160,19 +160,19 @@ The [Site Reliability Workbook](https://landing.google.com/sre/workbook/chapters
 
 The [SRE book](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/) discusses two types of monitoring:
 
-> **White-box monitoring**<br/>
+**Clear-box monitoring**<br/>
 > Monitoring based on metrics exposed by the internals of the system, including logs, interfaces like the Java Virtual Machine Profiling Interface, or an HTTP handler that emits internal statistics.
->
-> **Black-box monitoring**<br/>
-> Testing externally-visible behavior as a user would see it.
 
-Examples of white-box monitoring:
+Examples include:
 * Using [Prometheus](https://prometheus.io/) to scrape metrics from a component which uses a compatible metrics library to collect metrics and expose them on an HTTP endpoint.
 * Amazon [CloudWatch Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/working_with_metrics.html) exposes default metrics from AWS-provided services.
 * Publishing internal metrics from a component as CloudWatch [custom metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html), either by pushing them to CloudWatch using the SDK or by using [metric filters](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/MonitoringLogData.html#search-filter-concepts) to extract metrics from application logs in [CloudWatch Logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html).
 * Using [Java Management Extensions](https://en.wikipedia.org/wiki/Java_Management_Extensions) (JMX) to collect internal metrics from an instrumented Java component.
 
-Examples of black-box monitoring:
+**Opaque-box monitoring**<br/>
+> Testing externally-visible behaviour as a user would see it.
+
+Examples include:
 * _Passive_ monitoring by a load balancer of the instances it is directing traffic to, in order to determine whether they are healthy. Here the load balancer observes the responses from real user requests as they happen and records factors such as response times and HTTP status codes.
 * _Active_ monitoring of a service, where the monitoring system generates regular 'synthetic' requests to the service and observes the response to determine health.
 
