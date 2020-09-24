@@ -41,7 +41,7 @@
   * Subscribe to service alerts from your cloud vendors, e.g. the service-status RSS feeds for [AWS](https://status.aws.amazon.com) and [Azure](https://status.azure.com/status/).
   * Ensure you have reporting and alerting for the health of any services/components your service relies on, e.g. shared network connections or shared authentication services.
 * **Secret / sensitive data**.
-  * Be careful of secret (e.g. credentials) or sensitive (e.g. person-identifiable) data when collecting and presenting observability information. Only data relevant to operating a reliable service should be presented.
+  * Be careful of secret (e.g. credentials) or sensitive (e.g. person-identifiable) data when collecting and presenting observability information. Only data relevant to operating a reliable service should be stored and presented. In some cases this can include such data, but this is the exception, and in these cases it must be subject to the same governance and scrutiny as the source system.
 
 # Background
 
