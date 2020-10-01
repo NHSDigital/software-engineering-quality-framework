@@ -129,6 +129,15 @@ Finally (and most importantly) identify actions to move the score upward.
 * We always get great support and help from outside the team when we ask for it!
 * We are listened to and our ideas are used to improve the organisation.
 
+
+### 7. Skills and knowledge
+* We have the skills and knowledge we need.
+* Skills and knowledge are well spread between team members.
+* We are familiar with the tech in use and know how to use it well.
+* We know the codebase and are comfortable making changes in it.
+* We know how to operate the live system reliably and diagnose and fix things when they break.
+* We have the skills and knowledge for what we will be doing next.
+
 ## Individual component or system
 You may wish to score each individual component or system separately for these aspects.
 > Identify components based on natural seams in the system. Ultimately, the aim is to make it easy to decide what the appropriate score is for each "component". If you can"t decide between a low and high score for an aspect then this may indicate that component should be broken down to allow finer grained scoring.
@@ -139,15 +148,28 @@ You may wish to score each individual component or system separately for these a
 > * The cloud platform
 > * The CI/CD system
 
-### 7. Skills and knowledge
-* We have the skills and knowledge we need.
-* Skills and knowledge are well spread between team members.
-* We are familiar with the tech in use and know how to use it well.
-* We know the codebase and are comfortable making changes in it.
-* We know how to operate the live system reliably and diagnose and fix things when they break.
-* We have the skills and knowledge for what we will be doing next.
+### 8. Healthy code base
+* We're proud of the quality of our code!
+* It is clean, easy to read, and safe to work with.
 
-### 8. Tech and architecture
+### 9. Testing
+* We have great test coverage.
+* Testing is everyone's responsibility.
+* Repetitive tests are automated.
+* Testing is considered before each work item is started and throughout its delivery.
+* Exploratory manual testing targets things which cannot be automated.
+* We have code-level unit and integration tests, and maybe practice behaviour-driven development.
+* We have tests component, integration and whole-system tests which interact with a running system.
+* Our tests focus on individual components and the contracts between them, not on testing the whole system together.
+* We use stubs to insulate our tests from other components and systems.
+* We understand user needs and non-functional requirements and our tests prove they are being met.
+  * e.g. accessibility, browser compatibility, performance, capacity, resilience.
+* Our components have versioned APIs.
+* Breaking changes are detected and clearly indicated.
+  * e.g. using Consumer-Driven Contract testing and semantic versioning.
+* Test data is automatically generated and has the right properties and scale.
+
+### 10. Tech and architecture
 * The tech helps us deliver value.
 * We enjoy working with it and it supports fast, reliable and safe delivery.
 * Our system is built as a set of independent services/components where appropriate (see [Architect for Flow](patterns/architect-for-flow.md)).
@@ -155,58 +177,19 @@ You may wish to score each individual component or system separately for these a
 * The tech and architecture make testing, local development and live operations easy.
 * We use serverless or ephemeral infrastructure.
 
-### 9. Healthy code base
-* We're proud of the quality of our code!
-* It is clean, easy to read, and safe to work with.
-
-### 10. Testing
-* We have great test coverage.
-* Testing is everyone's responsibility.
-* The time we spend on testing is really worthwhile.
-* We use the right mixture of tools and techniques, e.g.
-  * code-level unit and integration tests, and maybe behaviour-driven development
-  * running-system component, integration and whole-system tests
-* Our tests focus on individual components and the contracts between them, not on testing the whole system together.
-* We use stubs to insulate our tests from other components and systems.
-* Our components have versioned APIs.
-* Breaking changes are detected and clearly indicated.
-  * e.g. using Consumer-Driven Contract testing and semantic versioning.
-* We understand user needs and non-functional requirements and our tests prove they are being met.
-  * e.g. accessibility, browser compatibility, performance, capacity, resilience.
-* Test data is automatically generated and has the right properties and scale.
-
 ### 11. Easy to release
 * It is easy and straightforward to release a change to production.
 * We can release on demand, typically multiple times per day.
 * Every code merge triggers the creation of a potentially releasable build artifact.
   * That same artifact is deployed to each environment (e.g. dev, test, prod) rather than a new build being done for each.
 * We can deploy any recent version.
-* Our deployments are automated, including everything needed to build an environment from scratch.
+* Our deployments are automated, including infrastructure and everything needed to build an environment from scratch.
 * Our test and production environments are all in a known state, including configuration parameters.
 * The CI/CD system has secure access control and credentials to deploy to each environment are handled securely.
 * We use blue-green/canary deployments to safely verify each deployment before fully switching over to the new version.
 * Our non-prod environments are cleared down automatically when they're no longer needed.
 
-### 12. Operations
-* We consider operations from day one and design the system to be easy to operate.
-* We include operability features throughout delivery, treating them as user needs of the support team.
-  * e.g. monitoring and log aggregation.
-* Our systems are reliable.
-* We have great insight into how live systems are functioning.
-  * e.g. metrics dashboards, request tracing and application logs.
-* We detect potential issues and take action to prevent them.
-  * e.g. TLS certificate expiry, hitting quota limits.
-* We detect incidents before our users tell us about them and have a slick process for resolving them.
-* We classify incidents and work to agreed protocols according to the Service Level Agreement (SLA) for each.
-* We learn from incidents using blameless postmortems.
-* We use Service Level Objectives (SLOs) and error budgets to balance speed of change with operational reliability.
-* We design for failure and we're confident our service will self-heal from most issues.
-* Our service is immutable: rather than make changes, we tear down and rebuild every time.
-* We can see what is currently deployed in each environment, including configuration and feature flags, and can see the history of changes.
-* Our infrastructure scales automatically.
-* We have clear visibility of our environment costs, and we regularly check for waste.
-
-### 13. Security and compliance
+### 12. Security and compliance
 * We are confident our systems are secure.
 * We model threats and design systems to be secure.
 * Security is baked into our software delivery process.
@@ -226,6 +209,25 @@ You may wish to score each individual component or system separately for these a
 * There is strong separation (e.g. different AWS accounts) for test and production systems.
 * Humans don't have write access to production, except via time-limited "break-glass" permissions.
 * We keep the versions of technology in our service up to date.
+
+### 13. Operations
+* We consider operations from day one and design the system to be easy to operate.
+* We include operability features throughout delivery, treating them as user needs of the support team.
+  * e.g. monitoring and log aggregation.
+* Our systems are reliable.
+* We have great insight into how live systems are functioning.
+  * e.g. metrics dashboards, request tracing and application logs.
+* We detect potential issues and take action to prevent them.
+  * e.g. TLS certificate expiry, hitting quota limits.
+* We detect incidents before our users tell us about them and have a slick process for resolving them.
+* We classify incidents and work to agreed protocols according to the Service Level Agreement (SLA) for each.
+* We learn from incidents using blameless postmortems.
+* We use Service Level Objectives (SLOs) and error budgets to balance speed of change with operational reliability.
+* We design for failure and we're confident our service will self-heal from most issues.
+* Our service is immutable: rather than make changes, we tear down and rebuild every time.
+* We can see what is currently deployed in each environment, including configuration and feature flags, and can see the history of changes.
+* Our infrastructure scales automatically.
+* We have clear visibility of our environment costs, and we regularly check for waste.
 
 # How to facilitate
 
