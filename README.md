@@ -28,7 +28,7 @@ Note: the architecture principles are currently private links, but will soon be 
 The framework consists of:
 
 * [Engineering principles](principles.md)
-* [Quality assessment tool](assessment.md)
+* [Engineering quality review tool](review.md)
 * [Communities of practice guidelines](communities-of-practice.md) and active communities:
   * [Product Development Test Automation Working Group](communities/pd-test-automation-working-group.md)
   * [Product Development Engineering CoP](communities/pd-engineering-cop.md)
