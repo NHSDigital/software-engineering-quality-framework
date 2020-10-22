@@ -157,17 +157,18 @@ You may wish to score each individual component or system separately for these a
 * Testing is everyone's responsibility.
 * Repetitive tests are automated.
 * Testing is considered before each work item is started and throughout its delivery.
-* Exploratory manual testing targets things which cannot be automated.
+* We use the right mix of testing techniques including automated checks and exploratory testing.
+* We consider whether the system genuinely meets user needs, rather than just following specifications blindly.
 * We have code-level unit and integration tests, and maybe practice behaviour-driven development.
-* We have tests component, integration and whole-system tests which interact with a running system.
-* Our tests focus on individual components and the contracts between them, not on testing the whole system together.
-* We use stubs to insulate our tests from other components and systems.
+* We have component, integration and whole-system tests which interact with a running system.
+* Our automated checks focus on individual components and the contracts between them, not on testing the whole system together.
+* We use stubs to insulate our tests from other components and systems &mdash; always for automated tests, sometimes for exploratory testing.
 * We understand user needs and non-functional requirements and our tests prove they are being met.
   * e.g. accessibility, browser compatibility, performance, capacity, resilience.
 * Our components have versioned APIs.
 * Breaking changes are detected and clearly indicated.
   * e.g. using Consumer-Driven Contract testing and semantic versioning.
-* Test data is automatically generated and has the right properties and scale.
+* We use the right combination of automatically generated test data and anonymised live data and our data has the right properties and scale.
 
 ### 10. Tech and architecture
 * The tech helps us deliver value.
