@@ -1,4 +1,4 @@
-# Quality assessment tool
+# Engineering quality review tool
 
 This is part of a broader [quality framework](README.md)
 
@@ -19,8 +19,8 @@ This tool aims to:
 * Identify and prioritise improvement work.
 * Escalate and ask for help in driving improvements.
 
-This is a **self** assessment:
-* The assessment is carried out **by** the team, not "done to" the team.
+This is a **self** assessment review:
+* The review is carried out **by** the team, not "done to" the team.
 * The emphasis is on **discussion and action**, not on the scores.
 * Scores help the team focus attention on where to concentrate improvement work.
 * Scores can help teams communicate and escalate issues outside the team.
@@ -232,34 +232,34 @@ You may wish to score each individual component or system separately for these a
 
 # How to facilitate
 
-Assessments using this framework are done by the team, either as a whole or by a smaller set of representatives. As a guide, 6&ndash;8 is a good maximum number of people for a session. The scope of the assessment should be small enough so that a single set of scores and actions appropriately represent the situation for the [Team](#team) aspects.
+Reviews using this framework are done by the team, either as a whole or by a smaller set of representatives. As a guide, 6&ndash;8 is a good maximum number of people for a session. The scope of the review should be small enough so that a single set of scores and actions appropriately represent the situation for the [Team](#team) aspects.
 
-Good facilitation can help teams get the most out of the assessment and it is recommended that all assessments should include an outside facilitator familiar with the framework. Because of the breadth and depth of the assessment, facilitation is best done by someone who has a broad background in both technical and delivery aspects. This helps them clarify and explain aspects of the assessment for the team and provide examples from their experience, and allows them to delve into areas in more detail when required.
+Good facilitation can help teams get the most out of the review and it is recommended that all reviews should include an outside facilitator familiar with the framework. Because of the breadth and depth of the review, facilitation is best done by someone who has a broad background in both technical and delivery aspects. This helps them clarify and explain aspects of the review for the team and provide examples from their experience, and allows them to delve into areas in more detail when required.
 
 ## Facilitator responsibilities
 
 * Ensure the session has the right people in it.
-* Ensure all participants understand the [purpose](#purpose) of the assessment.
-* Ensure a full and accurate assessment is done, considering all aspects.
+* Ensure all participants understand the [purpose](#purpose) of the review.
+* Ensure a full and accurate review is done, considering all aspects.
 * Ensure actions are identified and recorded.
 
 ## Preparation
 
 * Recommended group size is 3&ndash;8 team members for each session.
 * Recommended duration is 3&ndash;4 hours, either in one block with breaks or in multiple sessions (but aim to avoid long gaps between sessions).
-* Ask a member of the Software Engineering Quality Assessments team (currently Andrew Blundell, Daniel Stefanuik, David Lavender, Ivor Caldwell) to create a blank spreadsheet for the assessment from the [template](https://hscic365.sharepoint.com/:x:/s/SoftwareEngineering-QualityAssessments/Edy9vc5XNjlNirHYFuG5MOgBtTk9Rj_A7z1sYjPYbcdIug). This will be stored centrally and shared with the team.
+* Ask a member of the Software Engineering Quality Assessments team (currently Andrew Blundell, Daniel Stefanuik, David Lavender, Ivor Caldwell) to create a blank spreadsheet for the review from the [template](https://hscic365.sharepoint.com/:x:/s/SoftwareEngineering-QualityAssessments/ETiFpqH1N-5IvJMth530yC4B4QU9LZ6wtylbVJ9ywSFz7Q?e=pdVWSX). This will be stored centrally and shared with the team.
 * Work with a member of the team to fill in the _Project_ and _What's it do_ fields before the session. This is typically uncontroversial and saves time in the session.
 * To save time, fill in the list of participants before the session, but verify and update as necessary at the start of the session.
-* Be ready for the session with the assessment spreadsheet and this document open such that both can easily be seen by participants by sharing your screen (assuming the assessment is not being held in person).
+* Be ready for the session with the review spreadsheet and this document open such that both can easily be seen by participants by sharing your screen (assuming the review is not being held in person).
 
 ## Facilitator tips
 
 * It's important to set the right tone. Some teams may understandably be wary of "being assessed", particularly because the process includes an outside facilitator. It's essential that they feel safe to make an honest appraisal. Emphasise that this tool is just a way of helping teams identify how to best drive continuous improvement &mdash; a bit like a "structured retrospective".
 * Remember (and remind the team) that this framework is continually evolving and "open source". Encourage them to suggest ways it can be improved and raise pull requests. As well as being a useful way to drive improvement of the framework, this encourages the idea that it is not set in stone and decreed from on high, which can build trust and engagement.
 * Help the team understand and compare where they are just now with what genuinely excellent looks like. The notes under each section try to describe what good looks like, and the [principles](principles.md), patterns and practices go into more detail. Help them trace the path to excellence by starting with achievable changes and working over time to more significant changes if relevant.
-* Be intimately familiar with the sections of the assessment and the supporting [principles](principles.md), patterns and practices. Try to keep conversation focused around the topic for each section, mentioning which section will cover the point being raised when suggesting that discussion be deferred.
-* Work through the assessment section by section. For each, briefly outline the scope and pick out a few key points from the list of what "good" looks like, then invite the group to describe how things work for them. Keep conversation and questioning open to start with and let the conversation be led by the team. Ask specific questions to fill in any gaps based on the points under each section. Identify any actions which come up and record these. Try to keep the conversation relevant and focused &mdash; there is a lot to go through.
-* Once the team has discussed the points for the section, it's time to score. A good way to do this is using "planning poker" style blind voting, which can be easily done by holding up 1 to 5 fingers. Discuss any differences and agree on a single score which is recorded. Refer to the definitions of each score at the bottom of the assessment sheet. While emphasising that the score is not the most important part of the process, advise the team when it feels like they are being too harsh or too soft on scoring. Accurate scoring will more clearly focus attention on the right areas.
+* Be intimately familiar with the sections of the review and the supporting [principles](principles.md), patterns and practices. Try to keep conversation focused around the topic for each section, mentioning which section will cover the point being raised when suggesting that discussion be deferred.
+* Work through the review section by section. For each, briefly outline the scope and pick out a few key points from the list of what "good" looks like, then invite the group to describe how things work for them. Keep conversation and questioning open to start with and let the conversation be led by the team. Ask specific questions to fill in any gaps based on the points under each section. Identify any actions which come up and record these. Try to keep the conversation relevant and focused &mdash; there is a lot to go through.
+* Once the team has discussed the points for the section, it's time to score. A good way to do this is using "planning poker" style blind voting, which can be easily done by holding up 1 to 5 fingers. Discuss any differences and agree on a single score which is recorded. Refer to the definitions of each score at the bottom of the review sheet. While emphasising that the score is not the most important part of the process, advise the team when it feels like they are being too harsh or too soft on scoring. Accurate scoring will more clearly focus attention on the right areas.
 * Encourage the team to identify what action could improve the score (especially if 3 or lower) and record these. Make sure the team is happy with the wording you use for the action.
-* Wrap up the session by sharing a link (with editing enabled) to the spreadsheet with the team. The person who generated the blank sheet will have created this link at the time and have shared it with you. The assessment is owned by the team and they should feel free to refer to it and tweak the scores and actions over time.
+* Wrap up the session by sharing a link (with editing enabled) to the spreadsheet with the team. The person who generated the blank sheet will have created this link at the time and have shared it with you. The review is owned by the team and they should feel free to refer to it and tweak the scores and actions over time.
 
