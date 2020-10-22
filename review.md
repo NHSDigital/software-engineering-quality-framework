@@ -75,18 +75,18 @@ Finally (and most importantly) identify actions to move the score upward.
 
 ### 1. Mission
 * We have clear goals.
-* User needs are well understood. They validated through user research.
 * We know the metrics which will measure success and how they will be measured.
+* User needs are well understood and validated through user research.
 * Non-functional requirements are understood and based on user needs.
 
 ### 2. Plan
 * We have a plan which is visible to all of us.
-* Our plan guides us.
+* The plan is at the right level and shows what we expect to be delivered each sprint/month &mdash; usually 2–5 items in each increment.
 * It is up to date and complete.
 * It changes when it should but is stable enough.
 * It gives our stakeholders a clear forecast of what is most likely to happen over the coming time periods.
 * It makes sure we work on the right things first and helps us predict and avoid issues.
-* Functionality is delivered in [thin vertical slices](https://docs.google.com/document/u/1/d/1TCuuu-8Mm14oxsOnlk8DqfZAA1cvtYu9WGv67Yj_sSk/pub), starting by building a [steel thread](https://www.agiledevelopment.org/agile-talk/111-defining-acceptance-criteria-using-the-steel-thread-concept) / [walking skeleton](https://www.henricodolfing.com/2018/04/start-your-project-with-walking-skeleton.html).
+* Functionality is delivered in [thin vertical slices](https://docs.google.com/document/u/1/d/1TCuuu-8Mm14oxsOnlk8DqfZAA1cvtYu9WGv67Yj_sSk/pub), starting by building a [steel thread](https://www.agiledevelopment.org/agile-talk/111-defining-acceptance-criteria-using-the-steel-thread-concept) / [walking skeleton](https://www.henricodolfing.com/2018/04/start-your-project-with-walking-skeleton.html)
 * Risky items and dependencies are clearly indicated and work to reduce risk is prioritised.
 * The plan gets the right balance between delivering features and operational aspects.
 * We track risks, issues, assumptions and dependencies ('RAID') and work creatively to resolve them.
@@ -123,7 +123,8 @@ Finally (and most importantly) identify actions to move the score upward.
 
 ### 5. Pawns or players
 * As a team, we are in control of our destiny!
-* We decide what to build and how to build it.
+* We are given problems to solve, not just solutions to implement.
+* We decide how to build it.
 
 ### 6. Outside support
 * We always get great support and help from outside the team when we ask for it!
@@ -132,11 +133,11 @@ Finally (and most importantly) identify actions to move the score upward.
 
 ### 7. Skills and knowledge
 * We have the skills and knowledge we need.
+  * We are familiar with the tech in use and know how to use it well.
+  * We know the codebase and are comfortable making changes in it.
+  * We know how to operate the live system reliably and diagnose and fix things when they break.
+  * We have the skills and knowledge for what we will be doing next.
 * Skills and knowledge are well spread between team members.
-* We are familiar with the tech in use and know how to use it well.
-* We know the codebase and are comfortable making changes in it.
-* We know how to operate the live system reliably and diagnose and fix things when they break.
-* We have the skills and knowledge for what we will be doing next.
 
 ## Individual component or system
 You may wish to score each individual component or system separately for these aspects.
@@ -150,7 +151,7 @@ You may wish to score each individual component or system separately for these a
 
 ### 8. Healthy code base
 * We're proud of the quality of our code!
-* It is clean, easy to read, and safe to work with.
+* It is clean, easy to read, well structured and safe to work with.
 
 ### 9. Testing
 * We have great test coverage.
@@ -171,20 +172,19 @@ You may wish to score each individual component or system separately for these a
 * We use the right combination of automatically generated test data and anonymised live data and our data has the right properties and scale.
 
 ### 10. Tech and architecture
-* The tech helps us deliver value.
-* We enjoy working with it and it supports fast, reliable and safe delivery.
-* Our system is built as a set of independent services/components where appropriate (see [Architect for Flow](patterns/architect-for-flow.md)).
-* The architecture is clean.
+* We use modern technologies which work well for us.
+* We enjoy working with them and they support fast, reliable and safe delivery.
 * The tech and architecture make testing, local development and live operations easy.
-* We use serverless or ephemeral infrastructure.
+* The architecture is clean.
+  * Our system is built as a set of independent services/components where appropriate (see [Architect for Flow](patterns/architect-for-flow.md)).
 
-### 11. Easy to release
+### 11. Easy and safe to release
 * It is easy and straightforward to release a change to production.
 * We can release on demand, typically multiple times per day.
+* Our deployments are automated, including infrastructure and everything needed to build an environment from scratch.
 * Every code merge triggers the creation of a potentially releasable build artifact.
   * That same artifact is deployed to each environment (e.g. dev, test, prod) rather than a new build being done for each.
 * We can deploy any recent version.
-* Our deployments are automated, including infrastructure and everything needed to build an environment from scratch.
 * Our test and production environments are all in a known state, including configuration parameters.
 * The CI/CD system has secure access control and credentials to deploy to each environment are handled securely.
 * We use blue-green/canary deployments to safely verify each deployment before fully switching over to the new version.
@@ -209,9 +209,9 @@ You may wish to score each individual component or system separately for these a
 * Automated checks are in place for vulnerabilities in dependencies such as code libraries and container or VM base images.
 * There is strong separation (e.g. different AWS accounts) for test and production systems.
 * Humans don't have write access to production, except via time-limited "break-glass" permissions.
-* We keep the versions of technology in our service up to date.
+* We keep the versions of technology in our system up to date.
 
-### 13. Operations
+### 13. Operability and live support
 * We consider operations from day one and design the system to be easy to operate.
 * We include operability features throughout delivery, treating them as user needs of the support team.
   * e.g. monitoring and log aggregation.
@@ -225,7 +225,7 @@ You may wish to score each individual component or system separately for these a
 * We learn from incidents using blameless postmortems.
 * We use Service Level Objectives (SLOs) and error budgets to balance speed of change with operational reliability.
 * We design for failure and we're confident our service will self-heal from most issues.
-* Our service is immutable: rather than make changes, we tear down and rebuild every time.
+* Our components are immutable: every deployment creates new instances which replace the old ones.
 * We can see what is currently deployed in each environment, including configuration and feature flags, and can see the history of changes.
 * Our infrastructure scales automatically.
 * We have clear visibility of our environment costs, and we regularly check for waste.
