@@ -41,4 +41,26 @@
 * Build in [governance as a side effect](../patterns/governance-side-effect.md), e.g.
   * Segregate production and non-production workloads.
   * [Infrastructure must be tagged to identity the service so that unnecessary resources don't go unnoticed](../snippets/cloud-asset-tagging.md).
+  * <details><summary>Infrastructure must be tagged to identity the service so that unnecessary resources don't go unnoticed</summary>
+
+    AWS: configuration snippet for a CloudWatch rule for EC2 assets not tagged with the keys "CostCenter" and "Owner":
+    ```yaml
+    {
+      "ConfigRuleName": "RequiredTagsForEC2Instances",
+      "Description": "Checks whether the CostCenter and Owner tags are applied to EC2 instances.",
+      "Scope": {
+        "ComplianceResourceTypes": [
+          "AWS::EC2::Instance"
+        ]
+      },
+      "Source": {
+        "Owner": "AWS",
+        "SourceIdentifier": "REQUIRED_TAGS"
+      },
+      "InputParameters": "{\"tag1Key\":\"CostCenter\",\"tag2Key\":\"Owner\"}"
+    }
+    ```
+    Further reading: [AWS CloudWatch](https://docs.aws.amazon.com/cloudwatch/index.html)
+  </details>
+
   * Configure audit tools such as CloudTrail.
