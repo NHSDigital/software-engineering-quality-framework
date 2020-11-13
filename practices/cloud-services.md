@@ -6,8 +6,8 @@
 * Practices in this section contribute to [service reliability](service-reliability.md)
 * See also [observability](observability.md)
 * This is related to:
-  * [ARCHITECTURE-CLOUD](https://aalto.digital.nhs.uk/#/object/details?objectId=923e33f8-889d-42e5-a7d1-8b04b3e4220f&library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0)
-  * [ARCHITECTURE-SUSTAINABILITY](https://aalto.digital.nhs.uk/#/object/details?objectId=0a01622c-35fe-4670-9211-6a3f95497dd0&library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0)
+  * [ARCHITECTURE-CLOUD](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/public-cloud-first)
+  * [ARCHITECTURE-SUSTAINABILITY](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/deliver-sustainable-services)
   * [SERVICE-TOOLS](https://service-manual.nhs.uk/service-standard/11-choose-the-right-tools-and-technology)
 
 ## Details
