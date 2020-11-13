@@ -40,5 +40,5 @@
 * Understand and be able to justify vendor lock in (see [outsource from the bottom up](../patterns/outsource-bottom-up.md)).
 * Build in [governance as a side effect](../patterns/governance-side-effect.md), e.g.
   * Segregate production and non-production workloads.
-  * Infrastructure must be tagged to identity the service so that unnecessary resources don't go unnoticed.
+  * [Infrastructure must be tagged to identity the service so that unnecessary resources don't go unnoticed](../snippets/cloud-asset-tagging.md).
   * Configure audit tools such as CloudTrail.
