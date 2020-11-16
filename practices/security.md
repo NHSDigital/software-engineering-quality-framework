@@ -32,7 +32,7 @@
 - Prevent **[clickjacking](https://sudo.pagerduty.com/for_engineers/#clickjacking)** with `X-Frame-Options`
 - Be careful not to **leak information**, e.g. error messages, stack traces, headers
 - **Don't trust** yourself or others!
-  - Scan source code automatically for secrets or other sensitive data (see [everything as code](../patterns/everything-as-code.md) for details).
+  - Scan source code automatically for secrets or other sensitive data (see [everything as code](../patterns/everything-as-code.md) for details)
   - Be wary of any 3rd party JavaScript included on the page, e.g. for A/B testing, analytics
   - Pin dependencies at known versions to avoid unexpected updates
   - Scan dependencies for vulnerabilities, e.g. using [OWASP Dependency Check](https://www.owasp.org/index.php/OWASP_Dependency_Check) or [Snyk](https://snyk.io/)
@@ -60,6 +60,21 @@
   - Robust authentication and minimum privileges
   - Prefer ambient IAM credentials over retrieving credentials from secrets management. Do not store credentials in the plain.
 - **Enforce** infrastructure security (e.g. [Azure Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview), [AWS Config](https://aws.amazon.com/config/)) and validate it (e.g. [ScoutSuite](https://github.com/nccgroup/ScoutSuite/blob/master/README.md))?
+  <details><summary>Example IAM policy to prevent unencrypted RDS databases (click to expand)</summary>
+    ```json
+    {​​​​​​​​
+      "Sid": "",
+      "Effect": "Deny",
+      "Action": "rds:CreateDBInstance",
+      "Resource": "*",
+      "Condition": {​​​​​​​​
+        "Bool": {​​​​​​​​
+          "rds:StorageEncrypted": "false"
+        }
+      }​​​​​​​​
+    }​​​​​​​​
+    ```
+</details>
 - Lock down your **networks**
   - Restrict external and internal network traffic by appropriate firewall rules
   - Consider using a WAF (Web Application Firewall)
