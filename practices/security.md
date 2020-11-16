@@ -76,8 +76,7 @@
       }​​​​​​​​
     }​​​​​​​​
     ```
-</details>
-
+  </details>
 - Lock down your **networks**
   - Restrict external and internal network traffic by appropriate firewall rules
   - Consider using a WAF (Web Application Firewall)
