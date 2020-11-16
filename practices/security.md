@@ -59,7 +59,7 @@
 - Secure **CI/CD**
   - Robust authentication and minimum privileges
   - Prefer ambient IAM credentials over retrieving credentials from secrets management. Do not store credentials in the plain.
-- **Enforce** infrastructure security (e.g. [Azure Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview), [AWS Config](https://aws.amazon.com/config/)) and validate it (e.g. [ScoutSuite](https://github.com/nccgroup/ScoutSuite/blob/master/README.md))?
+- **Enforce** infrastructure security (e.g. [Azure Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview), [AWS Config](https://aws.amazon.com/config/)) and validate it (e.g. [ScoutSuite](https://github.com/nccgroup/ScoutSuite/blob/master/README.md))
 
   <details><summary>Example IAM policy fragment to prevent unencrypted RDS databases (click to expand)</summary>
 
