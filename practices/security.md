@@ -102,19 +102,19 @@
   <details><summary>If enforcement is not possible / appropriate, use alerts to identify potential issues: example AWS Config rule to identify public-facing RDS databases (click to expand)</summary>
 
     ```yaml
-      {
-        "ConfigRuleName": RDS_INSTANCE_PUBLIC_ACCESS_CHECK",
-        "Description": " Checks whether the Amazon Relational Database Service (RDS) instances are not publicly accessible. The rule is non-compliant if the publiclyAccessible field is true in the instance configuration item.
-        "Scope": {
-          "ComplianceResourceTypes": [
-            "AWS::RDS::DBInstance"
-          ]
-        },
-        "Source": {
-          "Owner": "AWS",
-          "SourceIdentifier": " RDS_INSTANCE_PUBLIC_ACCESS_CHECK"
-        }
+    {
+      "ConfigRuleName": "RDS_INSTANCE_PUBLIC_ACCESS_CHECK",
+      "Description": "Checks whether the Amazon Relational Database Service (RDS) instances are not publicly accessible. The rule is non-compliant if the publiclyAccessible field is true in the instance configuration item."
+      "Scope": {
+        "ComplianceResourceTypes": [
+          "AWS::RDS::DBInstance"
+        ]
+      },
+      "Source": {
+        "Owner": "AWS",
+        "SourceIdentifier": " RDS_INSTANCE_PUBLIC_ACCESS_CHECK"
       }
+    }
     ```
   </details>
 
