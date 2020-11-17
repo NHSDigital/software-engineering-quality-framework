@@ -57,7 +57,7 @@
 
     <details><summary>Example IAM policy to prevent assume role without MFA (click to expand)</summary>
 
-    ```json
+    ```yaml
     {
         "Version": "2012-10-17",
         "Statement": {
@@ -82,7 +82,7 @@
 
   <details><summary>Example IAM policy fragment to prevent unencrypted RDS databases (click to expand)</summary>
 
-    ```json
+    ```yaml
     {​​​​​​​​
       "Sid": "",
       "Effect": "Deny",
