@@ -54,6 +54,7 @@
   - Audit access to production and alert for unexpected access
 - Ensure infrastructure **IAM** is robust
   - Strong passwords and MFA
+
   - Segregate workloads, e.g. in separate AWS accounts ([Landing Zone](https://aws.amazon.com/solutions/aws-landing-zone/), [Control Tower](https://aws.amazon.com/controltower/features/`)) or Azure [subscriptions](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/decision-guides/subscriptions/)
   - Fine grained, least privilege IAM roles
 - Secure **CI/CD**
