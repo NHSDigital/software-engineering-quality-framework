@@ -30,7 +30,7 @@
   - Guard against time based authentication attacks, e.g. using a WAF
 - Guarded against invalid **certificates** e.g. expiry monitoring.
   - Consider [OCSP stapling](https://blog.cloudflare.com/high-reliability-ocsp-stapling/) for improved performance
-- Ensure **cookies** cannot leak from production to non-produnction environments e.g. avoid non-produnction on subdomain of production domain
+- Ensure **cookies** cannot leak from production to non-production environments e.g. avoid non-production on subdomain of production domain
 - Prevent **[clickjacking](https://sudo.pagerduty.com/for_engineers/#clickjacking)** with `X-Frame-Options`
 - Be careful not to **leak information**, e.g. error messages, stack traces, headers
 - **Don't trust** yourself or others!
@@ -98,6 +98,26 @@
     }​​​​​​​​
     ```
   </details>
+
+  <details><summary>If enforcement is not possible / appropriate, use alerts to identify potential issues: example AWS Config rule to identify public-facing RDS databases (click to expand)</summary>
+
+    ```yaml
+    {
+      "ConfigRuleName": "RDS_INSTANCE_PUBLIC_ACCESS_CHECK",
+      "Description": "Checks whether the Amazon Relational Database Service (RDS) instances are not publicly accessible. The rule is non-compliant if the publiclyAccessible field is true in the instance configuration item."
+      "Scope": {
+        "ComplianceResourceTypes": [
+          "AWS::RDS::DBInstance"
+        ]
+      },
+      "Source": {
+        "Owner": "AWS",
+        "SourceIdentifier": "RDS_INSTANCE_PUBLIC_ACCESS_CHECK"
+      }
+    }
+    ```
+  </details>
+
 - Lock down your **networks**
   - Restrict external and internal network traffic by appropriate firewall rules
   - Consider using a WAF (Web Application Firewall)
