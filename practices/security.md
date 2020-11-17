@@ -112,7 +112,7 @@
       },
       "Source": {
         "Owner": "AWS",
-        "SourceIdentifier": " RDS_INSTANCE_PUBLIC_ACCESS_CHECK"
+        "SourceIdentifier": "RDS_INSTANCE_PUBLIC_ACCESS_CHECK"
       }
     }
     ```
