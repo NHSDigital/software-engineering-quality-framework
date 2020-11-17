@@ -8,8 +8,8 @@
 ## Big picture
 
 - Understand what **data** is processed or stored in the system
-  - Assess the data classification e.g. [PII](https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/key-definitions/what-is-personal-data/), [PCI](https://www.pcisecuritystandards.org/pci_security/glossary#C), company confidential
-  - Understand compliance requirements, e.g. GDPR and ISO
+  - Assess the data classification e.g. personal confidential data (PCD), aggregate data, anonymised data, publicly available information. See [Health and social care data risk model](https://digital.nhs.uk/data-and-information/looking-after-information/data-security-and-information-governance/nhs-and-social-care-data-off-shoring-and-the-use-of-public-cloud-services/health-and-social-care-data-risk-model)
+  - Understand governance and compliance requirements which apply, e.g. [NHS guidance](https://digital.nhs.uk/data-and-information/looking-after-information/data-security-and-information-governance/nhs-and-social-care-data-off-shoring-and-the-use-of-public-cloud-services/health-and-social-care-cloud-risk-framework), GDPR
 - Consider whether the data being processed is all **necessary** for the system to function, or whether it could be reduced to minimise risk
   - Prefer use of managed services to reduce attack surface where possible
 - Keep **audit** log(s) of user actions, software and infrastructure changes (e.g. git, CI/CD, [CloudTrail](https://aws.amazon.com/cloudtrail/))
@@ -55,6 +55,24 @@
 - Ensure infrastructure **IAM** is robust
   - Strong passwords and MFA
 
+    <details><summary>Example IAM policy to prevent assume role without MFA (click to expand)</summary>
+
+    ```json
+    {
+        "Version": "2012-10-17",
+        "Statement": {
+            "Effect": "Allow",
+            "Action": "sts:AssumeRole",
+            "Resource": "arn:aws:iam::<your_account_id>:role/Administrator",
+            "Condition": {
+                "BoolIfExists": {
+                    "aws:MultiFactorAuthPresent": "true"
+                }
+            }
+        }
+    }
+    ```
+    </details>
   - Segregate workloads, e.g. in separate AWS accounts ([Landing Zone](https://aws.amazon.com/solutions/aws-landing-zone/), [Control Tower](https://aws.amazon.com/controltower/features/`)) or Azure [subscriptions](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/decision-guides/subscriptions/)
   - Fine grained, least privilege IAM roles
 - Secure **CI/CD**
