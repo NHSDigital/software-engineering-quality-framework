@@ -27,7 +27,7 @@
   - Minimum necessary feedback on failed authentication e.g. 404 or blanket 403 when not authenticated to avoid leaking whether resources exist
   - Guard against time based authentication attacks, e.g. using a WAF
 - Guarded against invalid **certificates** e.g. expiry monitoring.
-  - Consider [OCSP stapling](https://blog.cloudflare.com/high-reliability-ocsp-**stapling**/) for improved performance
+  - Consider [OCSP stapling](https://blog.cloudflare.com/high-reliability-ocsp-stapling/) for improved performance
 - Ensure **cookies** cannot leak from production to non-produnction environments e.g. avoid non-produnction on subdomain of production domain
 - Prevent **[clickjacking](https://sudo.pagerduty.com/for_engineers/#clickjacking)** with `X-Frame-Options`
 - Be careful not to **leak information**, e.g. error messages, stack traces, headers
@@ -73,7 +73,7 @@
     }
     ```
     </details>
-  - Segregate workloads, e.g. in separate AWS accounts ([Landing Zone](https://aws.amazon.com/solutions/aws-landing-zone/), [Control Tower](https://aws.amazon.com/controltower/features/`)) or Azure [subscriptions](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/decision-guides/subscriptions/)
+  - Segregate workloads, e.g. in separate AWS accounts ([Landing Zone](https://aws.amazon.com/solutions/aws-landing-zone/), [Control Tower](https://aws.amazon.com/controltower/features/)) or Azure [subscriptions](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/decision-guides/subscriptions/)
   - Fine grained, least privilege IAM roles
 - Secure **CI/CD**
   - Robust authentication and minimum privileges
