@@ -40,5 +40,28 @@
 * Understand and be able to justify vendor lock in (see [outsource from the bottom up](../patterns/outsource-bottom-up.md)).
 * Build in [governance as a side effect](../patterns/governance-side-effect.md), e.g.
   * Segregate production and non-production workloads.
-  * Infrastructure must be tagged to identity the service so that unnecessary resources don't go unnoticed.
+  * <details><summary>Infrastructure must be tagged to identity the service so that unnecessary resources don't go unnoticed (click to expand)</summary>
+
+    AWS Config rule to identify EC2 assets not tagged with "CostCenter" and "Owner":
+    ```yaml
+    {
+      "ConfigRuleName": "RequiredTagsForEC2Instances",
+      "Description": "Checks whether the CostCenter and Owner tags are applied to EC2 instances.",
+      "Scope": {
+        "ComplianceResourceTypes": [
+          "AWS::EC2::Instance"
+        ]
+      },
+      "Source": {
+        "Owner": "AWS",
+        "SourceIdentifier": "REQUIRED_TAGS"
+      },
+      "InputParameters": "{\"tag1Key\":\"CostCenter\",\"tag2Key\":\"Owner\"}"
+    }
+    ```
+    Further reading: [AWS Config](https://aws.amazon.com/config/)
+
+    TO DO: Azure equivalent
+  </details>
+
   * Configure audit tools such as CloudTrail.
