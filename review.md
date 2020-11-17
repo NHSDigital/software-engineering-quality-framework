@@ -130,7 +130,6 @@ Finally (and most importantly) identify actions to move the score upward.
 * We always get great support and help from outside the team when we ask for it!
 * We are listened to and our ideas are used to improve the organisation.
 
-
 ### 7. Skills and knowledge
 * We have the skills and knowledge we need.
   * We are familiar with the tech in use and know how to use it well.
@@ -173,6 +172,7 @@ You may wish to score each individual component or system separately for these a
 
 ### 10. Tech and architecture
 * We use modern technologies which work well for us.
+  * e.g. serverless or ephemeral/immutable instances ([cattle, not pets](http://cloudscaling.com/blog/cloud-computing/the-history-of-pets-vs-cattle)).
 * We enjoy working with them and they support fast, reliable and safe delivery.
 * The tech and architecture make testing, local development and live operations easy.
 * The architecture is clean.
