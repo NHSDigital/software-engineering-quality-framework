@@ -41,6 +41,7 @@
   - Scan running software, e.g. using [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
 - **Automate** security testing &mdash; on every build if practical
   - Generate test data in a way that avoids including personally identifiable information
+- When granting roles to CI/CD tools, use different roles for the different stages in the deployment pipeline &mdash; for example so that a deployment meant for a development account cannot be performed against a production account
 
 ## Infrastructure security
 
