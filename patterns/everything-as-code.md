@@ -20,7 +20,7 @@ Everything (including [infrastructure](../practices/cloud-services.md)) should b
   * All code is peer-reviewed and tested.
   * All code is version controlled.
 * Code changes should be automatically checked for code quality using tools like [SonarQube](https://www.sonarqube.org) (as well as via IDE plugins).
-* Code should be automatically scanned for secrets or other sensitive data using standalone tools like [GitGuardian](https://www.gitguardian.com/) or built in tools in [GitLab](https://docs.gitlab.com/ee/user/application_security/secret_detection/) or [GitHub](https://docs.github.com/en/github/administering-a-repository/about-secret-scanning).
+* Code should be automatically scanned for secrets or other sensitive data (see [security](../practices/security.md) for details)
 * Prefer well structured and expressive code over extensive documentation to avoid documentation getting out of date.
 * Design the interface prior to the implementation and choose vocabulary to make it coherent. This includes external interfaces (e.g. REST API) and internal interfaces of classes, method signatures etc.
 * Adopt test-first approach to minimise waste and increase cohesion of the code (see [testing](../practices/testing.md)).
