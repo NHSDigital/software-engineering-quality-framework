@@ -48,6 +48,7 @@
 
 ## Infrastructure security
 
+- Discuss your use-case with the [NHS Secure Boundary service](https://digital.nhs.uk/cyber-and-data-security/managing-security/nhs-secure-boundary)
 - **Encrypt** data at rest and in transit
   - TO DO: Statement on TLS versions
   - Consider enabling only [Perfect Forward Secrecy](https://en.wikipedia.org/wiki/Forward_secrecy) cipher suites (e.g. [ECDHE](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman))
