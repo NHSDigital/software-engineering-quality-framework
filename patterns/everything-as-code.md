@@ -12,7 +12,7 @@ Everything (including [infrastructure](../practices/cloud-services.md)) should b
 
 * Easy to see changes over time
 * Easy to review and test changes
-* Enables automation (see [automate everything](automate-everything.md)
+* Enables automation (see [automate everything](automate-everything.md))
 
 ## Details
 
