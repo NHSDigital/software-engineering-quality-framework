@@ -155,10 +155,16 @@ The remainder of this page gives more detailed and specific recommendations to b
   * Consider using a WAF (Web Application Firewall)
   * Restrict outbound network calls to limit the damage a compromised component can do if practical
 
+### Device security
+
+* Encrypt the disk storage
+* Enable the system firewall
+* Install an antivirus software
+* Use a password manager
+* Install only legitimate software packages from a well known source
+* Always apply security patches, and keep software packages and operating system up to date as much as possible
+
 ### Human factors
-- Ensure **joiners and leavers process** is adequate
-- Encourage use of **password managers** with MFA enabled
-- Be aware of security sign-off **policies or procedures** outside the team and engage with these early
 
 * Ensure **joiners and leavers process** is adequate
 * Encourage use of **password managers** with MFA enabled
