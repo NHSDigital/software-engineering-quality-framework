@@ -5,7 +5,34 @@
 * These notes are part of a broader set of [principles](../principles.md)
 * This is related to [ARCHITECTURE-SECURITY](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/adopt-appropriate-cyber-security-standards)
 
-## Big picture
+## Use the NSCS guidance
+
+The National Cyber Security Centre provides excellent [secure development and deployment guidance](https://www.ncsc.gov.uk/collection/developers-collection) on how to embed security into software delivery.
+
+This guidance outlines 8 principles and gives detailed practical steps for each on the pages linked.
+
+1. [Secure development is everyone's concern](https://www.ncsc.gov.uk/collection/developers-collection/principles/secure-development-is-everyones-concern)
+_Genuine security benefits can only be realised when delivery teams weave security into their everyday working practices._
+1. [Keep your security knowledge sharp](https://www.ncsc.gov.uk/collection/developers-collection/principles/keep-your-security-knowledge-sharp)
+_Give your developers and delivery team the time and resources necessary to form a good understanding of defensive code development and the risks to the systems they are building._
+1. [Produce clean & maintainable code](https://www.ncsc.gov.uk/collection/developers-collection/principles/produce-clean-maintainable-code)
+_Complexity is the enemy of security... Clean, well documented code is more efficient and easier to develop. It will also be easier to secure._
+1. [Secure your development environment](https://www.ncsc.gov.uk/collection/developers-collection/principles/secure-your-development-environment)
+_If your development environment is insecure, it's difficult to have confidence in the security of the code which comes from it. These environments need to be suitably secure, but should also facilitate and not impede the development process._
+1. [Protect your code repository](https://www.ncsc.gov.uk/collection/developers-collection/principles/protect-your-code-repository)
+_Your code is only as secure as the systems used to create it. As the central point at which your code is stored and managed, it's crucial that the repository is sufficiently secure._
+1. [Secure the build and deployment pipeline](https://www.ncsc.gov.uk/collection/developers-collection/principles/secure-the-build-and-deployment-pipeline)
+_There are huge efficiency savings to be had from automating functions such as building code, running tests and deploying reference environments. However, these processes are security critical. Take care to ensure that your build and deployment tooling cannot undermine the integrity of your code, and that key security processes cannot be bypassed before changes are pushed to your customers._
+1. [Continually test your security](https://www.ncsc.gov.uk/collection/developers-collection/principles/continually-test-your-security)
+_Performing security testing is critical in detecting and fixing security vulnerabilities. However, it should not get in the way of continuous delivery. Automating security testing where possible provides you with easily repeatable, scalable security measures. Your specialist security people can then concentrate on finding subtle and uncommon weaknesses._
+1. [Plan for security flaws](https://www.ncsc.gov.uk/collection/developers-collection/principles/plan-for-security-flaws)
+_All code is susceptible to bugs and security vulnerabilities... Accept that your code will have exploitable shortcomings and establish a process for capturing and managing them from identification through to the release of a fix._
+
+## Recommendations
+
+The remainder of this page gives more detailed and specific recommendations to be read in conjunction with the above.
+
+### Big picture
 
 - Understand what **data** is processed or stored in the system
   - Assess the data classification e.g. personal confidential data (PCD), aggregate data, anonymised data, publicly available information. See [Health and social care data risk model](https://digital.nhs.uk/data-and-information/looking-after-information/data-security-and-information-governance/nhs-and-social-care-data-off-shoring-and-the-use-of-public-cloud-services/health-and-social-care-data-risk-model)
@@ -14,7 +41,7 @@
   - Prefer use of managed services to reduce attack surface where possible
 - Keep **audit** log(s) of user actions, software and infrastructure changes (e.g. git, CI/CD, [CloudTrail](https://aws.amazon.com/cloudtrail/))
 
-## Application level security
+### Application level security
 
 - Cover the **basics**
   - Ensure the [OWASP Top Ten](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_2017_Project) is well understood and considered during software delivery
@@ -46,7 +73,7 @@
   - Generate test data in a way that avoids including personally identifiable information
 - When granting roles to CI/CD tools, use different roles for the different stages in the deployment pipeline &mdash; for example so that a deployment meant for a development account cannot be performed against a production account
 
-## Infrastructure security
+### Infrastructure security
 
 - [Discuss](https://digital.nhs.uk/cyber-and-data-security/managing-security/nhs-secure-boundary#register-for-the-service) your use-case with the [NHS Secure Boundary service](https://digital.nhs.uk/cyber-and-data-security/managing-security/nhs-secure-boundary)
 - **Encrypt** data at rest and in transit
@@ -128,7 +155,7 @@
   - Consider using a WAF (Web Application Firewall)
   - Restrict outbound network calls to limit the damage a compromised component can do if practical
 
-## Human factors
+### Human factors
 - Ensure **joiners and leavers process** is adequate
 - Encourage use of **password managers** with MFA enabled
 - Be aware of security sign-off **policies or procedures** outside the team and engage with these early
