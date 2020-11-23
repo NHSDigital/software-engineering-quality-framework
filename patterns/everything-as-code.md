@@ -33,18 +33,21 @@ Many teams consider code which has been written [as a pair](https://martinfowler
 
 Robert Fink provides an excellent description of the [motivation and practice of code reviews](https://medium.com/palantir/code-review-best-practices-19e02780015f). Some key points from this and other sources ([Google](https://google.github.io/eng-practices/review/reviewer/), [SmartBear](https://smartbear.com/learn/code-review/best-practices-for-peer-code-review/), [Atlassian](https://www.atlassian.com/agile/software-development/code-reviews)) are:
 
-* **Egalitarian**
+#### Egalitarian
   * With the right (basic) training, anyone in the team can review anyone else's code with no hierarchy.
   * Everyone's code must be reviewed, no matter how experienced they are.
-* **Small**
+#### Small
   * Code reviews should be relatively small as it is hard to review very large changes effectively.
   * This is one reason to break stories down as small as practical and to implement each incrementally, ensuring no single change is too large to be reviewed well.
-* **Meets user needs**
-  * Alongside testing, the review should consider whether the code meets user needs (i.e. meets the acceptance criteria, including non-functional requirements).
-* **Of high quality**
+#### Meets user needs
+While effective testing is the best way to detect bugs or non-functional problems, code review plays an important role in spotting _potential_ issues:
+  * Does the code look like it will meet the acceptance criteria, or are there obvious errors or omissions?
+  * Does it handle edge cases?
+  * Are common issues guarded against relating to security (e.g. [OWASP Top 10](https://owasp.org/www-project-top-ten/)), performance, scalability or robustness.
+  * Would it easily allow future modification to meet slightly different needs, e.g. ten times the required data size or throughput?
+#### Of high quality
   * Clarity and simplicity.
   * Consistency of layout and structure with agreed style and other code.
-  * Free of potential issues relating to security (e.g. [OWASP Top 10](https://owasp.org/www-project-top-ten/)), performance, scalability or robustness.
 
 ## Examples
 
