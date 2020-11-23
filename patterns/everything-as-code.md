@@ -55,3 +55,7 @@ While effective testing is the best way to detect bugs or non-functional problem
 * Application configuration, held in files (e.g. YAML, Json) held in source control.
 * Declarative infrastructure as "code" (actually often YAML or HCL).
 * Database migrations: SQL scripts held in source control.
+
+## Further reading
+
+* [Clean Code: A Handbook of Agile Software Craftsmanship](https://learning.oreilly.com/library/view/clean-code-a/9780136083238/)
