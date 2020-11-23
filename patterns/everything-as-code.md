@@ -44,10 +44,10 @@ While effective testing is the best way to detect bugs or non-functional problem
   * Does the code look like it will meet the acceptance criteria, or are there obvious errors or omissions?
   * Does it handle edge cases?
   * Are common issues guarded against relating to security (e.g. [OWASP Top 10](https://owasp.org/www-project-top-ten/)), performance, scalability or robustness?
-  * Would it easily allow future modification to meet slightly different needs, e.g. ten times the required data size or throughput?
 #### Of high quality
-  * Clarity and simplicity.
-  * Consistency of layout and structure with agreed style and other code.
+  * Is the code clear and simple?
+  * Is the code layout and structure consistent with agreed style and other code?
+  * Would it easily allow future modification to meet slightly different needs, e.g. ten times the required data size or throughput?
 
 ## Examples
 
