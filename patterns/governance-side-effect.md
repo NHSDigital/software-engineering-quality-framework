@@ -33,7 +33,7 @@ Automate preventative measures and ongoing compliance checks to ensure systems m
 Properly configured tooling supports good practice and provides an audit trail through the whole software delivery lifecycle:
 * Use of an issue tracking system such as Jira ensures changing requirements are visible over time.
 * Use of issue references in source control commit messages (which can be enforced with commit hooks) ensures code changes can be traced back to a business requirement.
-* Source control systems provide visibility of who changed what when, and enforce and record peer review approvals.
+* Source control systems provide visibility of who changed what when, and enforce and record [peer review](everything-as-code.md) approvals.
 * Continuous integration systems record the result of build and test stages as well as deployments to each environment, including who did what when.
 * Integration of CI/CD systems with change management systems ensures a consistent view of changes are visible.
 * Cloud platforms provide logs of changes to resources, e.g. AWS CloudTrail.
