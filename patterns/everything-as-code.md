@@ -43,7 +43,7 @@ Robert Fink provides an excellent description of the [motivation and practice of
 While effective testing is the best way to detect bugs or non-functional problems, code review plays an important role in spotting _potential_ issues:
   * Does the code look like it will meet the acceptance criteria, or are there obvious errors or omissions?
   * Does it handle edge cases?
-  * Are common issues guarded against relating to security (e.g. [OWASP Top 10](https://owasp.org/www-project-top-ten/)), performance, scalability or robustness.
+  * Are common issues guarded against relating to security (e.g. [OWASP Top 10](https://owasp.org/www-project-top-ten/)), performance, scalability or robustness?
   * Would it easily allow future modification to meet slightly different needs, e.g. ten times the required data size or throughput?
 #### Of high quality
   * Clarity and simplicity.
