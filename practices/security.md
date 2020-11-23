@@ -14,7 +14,7 @@ This guidance outlines 8 principles and gives detailed practical steps for each 
 1. [Secure development is everyone's concern](https://www.ncsc.gov.uk/collection/developers-collection/principles/secure-development-is-everyones-concern)
 _Genuine security benefits can only be realised when delivery teams weave security into their everyday working practices._
 1. [Keep your security knowledge sharp](https://www.ncsc.gov.uk/collection/developers-collection/principles/keep-your-security-knowledge-sharp)
-Give your developers and delivery team the time and resources necessary to form a good understanding of defensive code development and the risks to the systems they are building._
+_Give your developers and delivery team the time and resources necessary to form a good understanding of defensive code development and the risks to the systems they are building._
 1. [Produce clean & maintainable code](https://www.ncsc.gov.uk/collection/developers-collection/principles/produce-clean-maintainable-code)
 _Complexity is the enemy of security... Clean, well documented code is more efficient and easier to develop. It will also be easier to secure._
 1. [Secure your development environment](https://www.ncsc.gov.uk/collection/developers-collection/principles/secure-your-development-environment)
