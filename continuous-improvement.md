@@ -4,7 +4,7 @@ Continuous improvement is the practice of iteratively reviewing processes and im
 
 ## Quick start
 
-This document provides some theory and practical advice on practising continuous improvement. But you don’t need a lot of process to get going. There will almost certainly be problems people are already aware of which provide a great starting point for improvement work.
+This document provides some theory and advice on practising continuous improvement. But you don’t need a lot of process to get going. There will almost certainly be problems people are already aware of which provide a great starting point for improvement work.
 
 Set up regular retrospectives with the whole team and make a commitment to spend some time acting on the things which are uncovered. Don’t bite off more than you can chew: pick one or two changes which you think will be achievable in the next Sprint/iteration.
 
@@ -22,11 +22,11 @@ Set out with the intention of having this as a permanent part of how you work, i
 
 ## Improvement cycles
 
-It is common to describe the iterative continuous improvement process as a cycle, and two common models are Plan-Do-Check-Act (PDCA) and Observe-Orient-Decide-Act (OODA).
+It is common to describe the iterative continuous improvement process as a cycle, and two common models are Plan-Do-Check-Act (PDCA) and Observe-Orient-Decide-Act (OODA). Both give a mental model, rather than a process to follow, so feel free to refer to either one &mdash; or neither.
 
 ### Plan-Do-Check-Act
 
-The PDCA cycle attributed to Demming and Shewhart, and here adapted from [ASQ](https://asq.org/quality-resources/continuous-improvement), has four stages which are to be performed in a continuous loop:
+The PDCA cycle attributed to Demming and Shewhart, and here adapted from [ASQ](https://asq.org/quality-resources/continuous-improvement), has four stages which are performed in a continuous loop:
 * **Plan**: Identify an opportunity and plan for change.
 * **Do**: Implement the change on a small scale.
 * **Check**: Use data to analyse the results of the change and determine whether it made a difference.
@@ -59,15 +59,15 @@ It takes continuous effort to maintain and evolve processes in response to chall
 
 ### Control technical debt
 
-Technical debt arises due to processes or practices in the past, but is having an ongoing impact on the present.
+Technical debt arises due to processes or practices in the past, but has an ongoing impact on the present.
 
-Tech debt:
-*	can lead to bugs and loss of reliability.
+Technical debt:
+*	leads to bugs and loss of reliability.
 *	means changes take longer.
 *	makes it harder to predict how long any given change will take.
 *	causes dissatisfaction and disengagement in the team.
 
-Without sustained improvement effort these all get worse over time, reducing capacity for delivering features. If little or no tech debt improvement work is done, delivery may initially be faster, but over time it becomes progressively slower and less predictable.
+Without sustained improvement effort these all get worse over time, reducing capacity to deliver features. If little or no tech debt improvement work is done, delivery may initially be faster, but over time it becomes progressively slower and less predictable.
 
 ## Identifying improvement opportunities
 
@@ -95,20 +95,31 @@ Examples include:
 
 ## Prioritising
 
-Choose changes which will have the most impact for the effort involved. If you have lots of potential options, you could score how much the change will help you
+Choose changes which will have the most impact for the effort involved. If you have lots of potential options, you could score how much the change will help you:
 *	Deliver faster
-*	Deliver to higher quality
-*	Reduce risk
-*	Improve team happiness
+*	Deliver to higher quality (as `Q = 1..5`).
+*	Reduce risk (as `R = 1..5`).
+*	Improve team happiness (as `H = 1..5`).
 
-
-You could use a modified version of Weighted Shortest Job First prioritisation, which is typically defined as (business value + risk reduction + opportunity enablement) / expected effort.
+We can denote these as `F`, `Q`, `R`, and `H` respectively, each in the range 1 to 5. From this we can define the `value` of each proposed change as `value = F + Q + R + H` and use a modified version of [Weighted Shortest Job First](https://blackswanfarming.com/wsjf-weighted-shortest-job-first/), which prioritises items with the highest `value / duration` ratio.
 
 ## Acting
 
-Treat changes as experiments and consider ways to explore them safely, e.g. only applying the change to some of the work or being explicit that it is a trial to be re-evaluated at a predetermined time (usually at the next retrospective). Be clear what benefit you hope to get from each change so that you can objectively measure whether it has been a success and either reinforce or reverse the change.
+Treat changes as experiments and consider ways to explore them safely, e.g. only apply the change to some of the work or be explicit that it is a trial to be re-evaluated at a predetermined time (usually at the next retrospective).
 
-Break down larger problems into smaller ones which can be tackled with smaller changes more incrementally. Give example.
+Be clear what benefit you hope to get from each change so that you can objectively [measure](#measuring) whether it has been a success and either reinforce or reverse the change.
+
+Break down larger problems into smaller ones which can be tackled with smaller changes more incrementally.
+
+> **Example**
+>
+> The problem "_We don't communicate enough with the other team working in this area._"
+>
+> could break down into several more specific points, helping drive incremental action:
+> 1. _We don't have visibility of each other's backlogs_
+> 2. _We don't coordinate changes and end up clashing_
+> 3. _We don't have the same code style_
+> 4. _We don't have the same test approach_
 
 ## Measuring
 
@@ -119,8 +130,15 @@ When seeking to [identify](#identifying-improvement-opportunities) and [prioriti
 * Mean time to recover
 * Team happiness
 * Proportion of time being spent on:
-  * Features.
-  * Bug fixing.
-  * Operability.
-  * Tech debt.
-  * Other improvement work.
+  * Features
+  * Bug fixing
+  * Operability
+  * Tech debt
+  * Other improvement work
+
+## Closing remarks
+
+As we have seen, the recipe to start or give a boost to continuous improvement is essentially very simple:
+1. Make a start, keeping changes small and iterating.
+2. Bake improvement work into the way you work with regular retrospectives which feed a trickle of improvement work into your activity within each Sprint/iteration.
+3. Track metrics over time so you can measure the effect of improvement work.
