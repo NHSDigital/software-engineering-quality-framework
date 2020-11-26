@@ -2,6 +2,12 @@
 
 Continuous improvement is the practice of iteratively reviewing processes and impediments and making incremental changes to reduce waste and increase quality.
 
+## To do
+
+Training
+Scrum.org improvement Kata (Joan has links)
+Software engineering focused (true, OK)
+
 ## Quick start
 
 This document provides some theory and advice on practising continuous improvement. But you don’t need a lot of process to get going. There will almost certainly be problems people are already aware of which provide a great starting point for improvement work.
@@ -95,19 +101,24 @@ Examples include:
 
 ## Prioritising
 
-Choose changes which will have the most impact for the effort involved. If you have lots of potential options, you could score how much the change will help you:
-*	Deliver faster
-*	Deliver to higher quality (as `Q = 1..5`).
-*	Reduce risk (as `R = 1..5`).
-*	Improve team happiness (as `H = 1..5`).
+Choose changes which will have the most impact for the effort involved. If you have lots of potential options, you will want to prioritise them. One option is to score how much each will move the [metrics](#measurement) that matter to you &mdash; its _value_ &mdash; and use [Weighted Shortest Job First](https://blackswanfarming.com/wsjf-weighted-shortest-job-first/), which prioritises items with the highest `(value + urgency) / effort` ratio. Value, urgency and effort are judgements and estimates in arbitrary relative units, and it is common to use a [modified Fibonacci](https://www.mountaingoatsoftware.com/blog/why-the-fibonacci-sequence-works-well-for-estimating) scale (1, 2, 3, 5, 8, ...).
 
-We can denote these as `F`, `Q`, `R`, and `H` respectively, each in the range 1 to 5. From this we can define the `value` of each proposed change as `value = F + Q + R + H` and use a modified version of [Weighted Shortest Job First](https://blackswanfarming.com/wsjf-weighted-shortest-job-first/), which prioritises items with the highest `value / duration` ratio.
+### Prioritising tech debt
+
+It can be useful to apply a little more structure to help with the difficult job of judging the value of fixing any given bit of technical debt. It is helpful to focus on the impact that each bit of tech debt is having by considering aspects such as those listed in [Benefits &mdash; Control technical debt](#control-technical-debt). The score for each of those aspects will depend on how heavily that part of the system is worked on. By summing the individual scores for each of those aspects you can derive a measure of the total impact, which conveniently also works as a measure of the value of fixing it.
+
+So: `value = bugs + delays + uncertainty + unhappiness`, which can be fed into Weighted Shortest Job First prioritisation as above.
+
+Visualising your tech debt using an approach like [quality views](https://blog.colinbreck.com/using-quality-views-to-communicate-software-quality-and-evolution/) can help facilitate conversations about tech debt and where to focus efforts.
+
+![Quality View](quality-view.svg)
+[Image from Colin Breck]
 
 ## Acting
 
 Treat changes as experiments and consider ways to explore them safely, e.g. only apply the change to some of the work or be explicit that it is a trial to be re-evaluated at a predetermined time (usually at the next retrospective).
 
-Be clear what benefit you hope to get from each change so that you can objectively [measure](#measuring) whether it has been a success and either reinforce or reverse the change.
+Be clear what benefit you hope to get from each change so that you can objectively [measure](#measurement) whether it has been a success and either reinforce or reverse the change.
 
 Break down larger problems into smaller ones which can be tackled with smaller changes more incrementally.
 
@@ -121,7 +132,7 @@ Break down larger problems into smaller ones which can be tackled with smaller c
 > 3. _We don't have the same code style_
 > 4. _We don't have the same test approach_
 
-## Measuring
+## Measurement
 
 When seeking to [identify](#identifying-improvement-opportunities) and [prioritise](#prioritising) improvements, it can be helpful to have agreed metrics as a guide. These will be specific to each team, but some good defaults to start with are:
 * Deployment frequency
