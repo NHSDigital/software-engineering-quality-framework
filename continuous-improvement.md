@@ -26,28 +26,15 @@ Set out with the intention of having this as a permanent part of how you work, i
 >
 > Teams who find it is easier to get input from the product owner at short notice may prefer to add the "analysis and elaboration" stage instead to get the benefit of doing this analysis just in time. It is important to choose the right action for the specific scenario the team is facing.
 
-## Improvement cycles
+## Plan-Do-Check-Act improvement cycles
 
-It is common to describe the iterative continuous improvement process as a cycle, and two common models are Plan-Do-Check-Act (PDCA) and Observe-Orient-Decide-Act (OODA). Both give a mental model, rather than a process to follow, so feel free to refer to either one &mdash; or neither.
-
-### Plan-Do-Check-Act
-
-The PDCA cycle attributed to Demming and Shewhart, and here adapted from [ASQ](https://asq.org/quality-resources/continuous-improvement), has four stages which are performed in a continuous loop:
+It is common to describe the iterative continuous improvement process as a cycle, and the most common is called Plan-Do-Check-Act (PDCA). This gives a mental model rather than a process to follow, but this can still be useful when adopting and maintaining continuous improvement. The PDCA cycle is attributed to Demming and Shewhart, and here adapted from [ASQ](https://asq.org/quality-resources/continuous-improvement), has four stages which are performed in a continuous loop:
 * **Plan**: Identify an opportunity and plan for change.
 * **Do**: Implement the change on a small scale.
 * **Check**: Use data to analyse the results of the change and determine whether it made a difference.
 * **Act**: If the change was successful, reinforce it or implement it on a wider scale and continuously assess your results. If the change did not work, begin the cycle again &mdash; i.e. try a different approach to driving improvement in this area.
 
 At any one time, you may have several improvement initiatives in progress.
-
-### Observe-Orient-Decide-Act
-
-The OODA loop was devised by John Boyd and has a similar, but slightly different structure:
-* **Observe** that there is a problem.
-* **Orient**: seek to understand the causes by seeing the problem in an unbiased way.
-* **Decide** on your next step, typically a small experimental change.
-* **Act**: make the change.
-* **Observe** (again): continue round the loop repeatedly observing what the biggest problems are and focusing on tackling them iteratively.
 
 ## Benefits
 
@@ -77,7 +64,7 @@ Without sustained improvement effort these all get worse over time, reducing cap
 
 ## Identifying improvement opportunities
 
-Regular team retrospectives are an effective way to identify improvement opportunities and actions. Another potential source are periodic reviews using tools such as the the [AWS](https://aws.amazon.com/architecture/well-architected/) or [Azure](https://azure.microsoft.com/en-gb/blog/introducing-the-microsoft-azure-wellarchitected-framework/) Well-Architected Frameworks and the [NHS Digital quality review](review.md).
+Regular team retrospectives are an effective way to identify improvement opportunities and actions. Another potential source are periodic reviews using tools such as the the [AWS](https://aws.amazon.com/architecture/well-architected/) or [Azure](https://azure.microsoft.com/en-gb/blog/introducing-the-microsoft-azure-wellarchitected-framework/) Well-Architected Frameworks and the [NHS Digital quality review](review.md). And of course, tech debt is often uncovered in the course of making changes to a system
 
 As discused in [Benefits](#benefits), in high level terms the opportunities for reducing waste or improving quality tend to be in two areas:
 
@@ -105,20 +92,24 @@ Choose changes which will have the most impact for the effort involved. If you h
 
 ### Prioritising tech debt
 
-It can be useful to apply a little more structure to help with the difficult job of judging the value of fixing any given bit of technical debt. It is helpful to focus on the impact that each bit of tech debt is having by considering aspects such as those listed in [Benefits &mdash; Control technical debt](#control-technical-debt). The score for each of those aspects will depend on how heavily that part of the system is worked on. By summing the individual scores for each of those aspects you can derive a measure of the total impact, which conveniently also works as a measure of the value of fixing it.
+There is a lot of mileage in applying the [scout's rule](https://www.scout.org/sites/default/files/news_files/Leave%20the%20world%20a%20little%20better%20than%20you%20found%20it.pdf) as [applied to coding](https://www.oreilly.com/library/view/97-things-every/9780596809515/ch08.html) by Uncle Bob in a practice which Martin Fowler calls [opportunistic refactoring](https://martinfowler.com/bliki/OpportunisticRefactoring.html). Making time for this as part of feature work is a very effective way to make incremental improvements to a codebase over time.
+
+For more substantial issues, it can be useful to apply a little more structure to help with the difficult job of judging the value of fixing any given bit of technical debt. It is helpful to focus on the impact that each bit of tech debt is having by considering aspects such as those listed in [Benefits &mdash; Control technical debt](#control-technical-debt). The score for each of those aspects will depend on how heavily that part of the system is worked on. By summing the individual scores for each of those aspects you can derive a measure of the total impact, which conveniently also works as a measure of the value of fixing it.
 
 So: `value = bugs + delays + uncertainty + unhappiness`, which can be fed into Weighted Shortest Job First prioritisation as above.
 
 Visualising your tech debt using an approach like [quality views](https://blog.colinbreck.com/using-quality-views-to-communicate-software-quality-and-evolution/) can help facilitate conversations about tech debt and where to focus efforts.
 
 ![Quality View](quality-view.svg)
-[Image from Colin Breck]
+[Image by Colin Breck]
 
 ## Acting
 
 Treat changes as experiments and consider ways to explore them safely, e.g. only apply the change to some of the work or be explicit that it is a trial to be re-evaluated at a predetermined time (usually at the next retrospective).
 
 Be clear what benefit you hope to get from each change so that you can objectively [measure](#measurement) whether it has been a success and either reinforce or reverse the change.
+
+> Example hypothesis to do
 
 Break down larger problems into smaller ones which can be tackled with smaller changes more incrementally.
 
