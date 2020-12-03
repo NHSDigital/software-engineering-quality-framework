@@ -16,7 +16,7 @@ The goal is to provide solutions and guidance on Automated Testing and Quality, 
 
 * Share knowledge
 * Provide advice and guidance
-* Deliver solutions to relevant issues
+* Deliver solutions to relevant issues (TBC - is this the case for this group?)
 * Curate relevant Training Pathways within the [Software Engineering Quality Framework](../README.md)
 * Provide supplementary training in relevant areas (e.g. guest speakers, workshops)
 * Curate relevant principals, practices and patterns within the [Software Engineering Quality Framework](../README.md)
