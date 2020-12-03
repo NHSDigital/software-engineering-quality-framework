@@ -26,6 +26,14 @@ Set out with the intention of having this as a permanent part of how you work, i
 >
 > Teams who find it is easier to get input from the product owner at short notice may prefer to add the "analysis and elaboration" stage instead to get the benefit of doing this analysis just in time. It is important to choose the right action for the specific scenario the team is facing.
 
+## Improvement Kata
+
+The [Improvement Kata](https://www.atlassian.com/agile/agile-at-scale/using-improvement-kata-to-support-lean) is a product of the [Toyota Production System](https://global.toyota/en/company/vision-and-philosophy/production-system/) and provides a useful structure for wrapping continuous improvement activities:
+1. Understand the direction or challenge &mdash; expressed as a [measurable signal](#measurement) e.g. _Increase the number of deployments per month_
+1. Grasp the current condition &mdash; e.g. _We deploy once per month_
+1. Define the target destination &mdash; e.g. _Able to deploy on demand, up to several times per day_
+1. Move toward the target iteratively, which reveals obstacles to overcome &mdash; using [Plan-Do-Check-Act improvement cycles](#plan-do-check-act-improvement-cycles)
+
 ## Plan-Do-Check-Act improvement cycles
 
 It is common to describe the iterative continuous improvement process as a cycle, and the most common is called Plan-Do-Check-Act (PDCA). This gives a mental model rather than a process to follow, but this can still be useful when adopting and maintaining continuous improvement. The PDCA cycle is attributed to Demming and Shewhart, and here adapted from [ASQ](https://asq.org/quality-resources/continuous-improvement), has four stages which are performed in a continuous loop:
@@ -64,7 +72,7 @@ Without sustained improvement effort these all get worse over time, reducing cap
 
 ## Identifying improvement opportunities
 
-Regular team retrospectives are an effective way to identify improvement opportunities and actions. Another potential source are periodic reviews using tools such as the the [AWS](https://aws.amazon.com/architecture/well-architected/) or [Azure](https://azure.microsoft.com/en-gb/blog/introducing-the-microsoft-azure-wellarchitected-framework/) Well-Architected Frameworks and the [NHS Digital quality review](review.md). And of course, tech debt is often uncovered in the course of making changes to a system
+Regular team retrospectives are an effective way to identify improvement opportunities and actions. Another potential source are periodic reviews using tools such as the the [AWS](https://aws.amazon.com/architecture/well-architected/) or [Azure](https://azure.microsoft.com/en-gb/blog/introducing-the-microsoft-azure-wellarchitected-framework/) Well-Architected Frameworks and the [NHS Digital quality review](review.md). And of course, tech debt is often uncovered in the course of making changes to a system.
 
 As discused in [Benefits](#benefits), in high level terms the opportunities for reducing waste or improving quality tend to be in two areas:
 
@@ -92,13 +100,17 @@ Choose changes which will have the most impact for the effort involved. If you h
 
 ### Prioritising tech debt
 
-There is a lot of mileage in applying the [scout's rule](https://www.scout.org/sites/default/files/news_files/Leave%20the%20world%20a%20little%20better%20than%20you%20found%20it.pdf) as [applied to coding](https://www.oreilly.com/library/view/97-things-every/9780596809515/ch08.html) by Uncle Bob in a practice which Martin Fowler calls [opportunistic refactoring](https://martinfowler.com/bliki/OpportunisticRefactoring.html). Making time for this as part of feature work is a very effective way to make incremental improvements to a codebase over time.
+There is a lot of mileage in applying the [scout's rule](https://www.scout.org/sites/default/files/news_files/Leave%20the%20world%20a%20little%20better%20than%20you%20found%20it.pdf) as [applied to coding by Uncle Bob](https://www.oreilly.com/library/view/97-things-every/9780596809515/ch08.html) &mdash;
 
-For more substantial issues, it can be useful to apply a little more structure to help with the difficult job of judging the value of fixing any given bit of technical debt. It is helpful to focus on the impact that each bit of tech debt is having by considering aspects such as those listed in [Benefits &mdash; Control technical debt](#control-technical-debt). The score for each of those aspects will depend on how heavily that part of the system is worked on. By summing the individual scores for each of those aspects you can derive a measure of the total impact, which conveniently also works as a measure of the value of fixing it.
+> always leave the code behind in a better state than you found it
+
+&mdash; a practice which Martin Fowler calls [opportunistic refactoring](https://martinfowler.com/bliki/OpportunisticRefactoring.html). Making time for this as part of feature work is a very effective way to make incremental improvements to a codebase over time. Of course, sometimes you uncover issues which are just to big to tackle as part of an individual feature.
+
+For these more substantial issues, it can be useful to apply a little more structure to help with the difficult job of judging the value of fixing any given bit of technical debt. It is helpful to focus on the impact that each bit of tech debt is having by considering aspects such as those listed in [Benefits &mdash; Control technical debt](#control-technical-debt). The score for each of those aspects will depend on how heavily that part of the system is worked on. By summing the individual scores for each of those aspects you can derive a measure of the total impact, which conveniently also works as a measure of the value of fixing it.
 
 So: `value = bugs + delays + uncertainty + unhappiness`, which can be fed into Weighted Shortest Job First prioritisation as above.
 
-Visualising your tech debt using an approach like [quality views](https://blog.colinbreck.com/using-quality-views-to-communicate-software-quality-and-evolution/) can help facilitate conversations about tech debt and where to focus efforts.
+Visualising your tech debt using an approach like Colin Breck's [quality views](https://blog.colinbreck.com/using-quality-views-to-communicate-software-quality-and-evolution/) can help facilitate conversations about tech debt and where to focus efforts.
 
 ![Quality View](quality-view.svg)
 [Image by Colin Breck]
@@ -109,15 +121,24 @@ Treat changes as experiments and consider ways to explore them safely, e.g. only
 
 Be clear what benefit you hope to get from each change so that you can objectively [measure](#measurement) whether it has been a success and either reinforce or reverse the change.
 
-> Example hypothesis to do
+Express each experiment as a hypothesis:
+
+> To support _\<[Improvement Kata](#improvement-kata) direction or challenge\>_,
+> we believe _\<this capability\>_
+> will result in _\<this outcome\>_.
+> We will have confidence to proceed when _\<we see a measurable signal\>_.
+>
+> **Example**
+> To support **increasing the number of deployments per month**,
+> we believe **automating regression tests for our website**
+> will result in **shorter test cycles**.
+> We will have confidence to proceed when **regression test cycles are shorter, and the rate of bugs being missed by has not risen noticeably**.
 
 Break down larger problems into smaller ones which can be tackled with smaller changes more incrementally.
 
 > **Example**
 >
-> The problem "_We don't communicate enough with the other team working in this area._"
->
-> could break down into several more specific points, helping drive incremental action:
+> The problem "_We don't communicate enough with the other team working in this area._" could break down into several more specific points, helping drive incremental action:
 > 1. _We don't have visibility of each other's backlogs_
 > 2. _We don't coordinate changes and end up clashing_
 > 3. _We don't have the same code style_
@@ -131,7 +152,8 @@ When seeking to [identify](#identifying-improvement-opportunities) and [prioriti
 * Incident rate
 * Mean time to recover
 * Team happiness
-* Proportion of time being spent on:
+
+In addition, it is useful to track the proportion of time being spent on various activities so that the balance can be corrected if required:
   * Features
   * Bug fixing
   * Operability
