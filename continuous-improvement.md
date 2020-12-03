@@ -4,15 +4,15 @@ Continuous improvement is the practice of iteratively reviewing processes and im
 
 ## Quick start
 
-This document provides some theory and advice on practising continuous improvement. But you don’t need a lot of process to get going. There will almost certainly be problems people are already aware of which provide a great starting point for improvement work.
+This document provides some theory and advice on practising continuous improvement. But you don't need a lot of process to get going. There will almost certainly be problems people are already aware of which provide a great starting point for improvement work.
 
-Set up regular retrospectives with the whole team and make a commitment to spend some time acting on the things which are uncovered. Don’t bite off more than you can chew: pick one or two changes which you think will be achievable in the next Sprint/iteration.
+Set up regular retrospectives with the whole team and make a commitment to spend time acting on the things which are uncovered. Don't bite off more than you can chew: pick one or two changes which you think will be achievable in the next Sprint/iteration.
 
 Set out with the intention of having this as a permanent part of how you work, iteratively checking how things are, thinking of what to do to improve things, making a small change and repeating.
 
 > **Example**
 >
-> During a retrospective, the team identify that the product owner frequently finds issues with features once they have been implemented, causing costly rework late in the delivery cycle.
+> During a retrospective, the team identify that the product owner frequently finds problems with features once they have been implemented, causing costly rework late in the delivery cycle.
 >
 > They consider various options, including adding more detailed requirements to stories during sprint planning, introducing a just in time "analysis and elaboration" stage to their agile process, and showing the working software to the product owner during development for earlier feedback.
 >
@@ -46,23 +46,23 @@ Continuous improvement has significant benefits for teams.
 
 Improving processes:
 
-*	reduces waste leading to improved efficiency and productivity.
-*	improves quality and reduce error rates.
-*	leads to happier people and improved engagement, retention, and recruitment.
+*	Reduces waste, leading to improved efficiency and productivity.
+*	Improves quality and reduce error rates.
+*	Leads to happier people and improved engagement, retention, and recruitment.
 
-It takes continuous effort to maintain and evolve processes in response to challenges and changing circumstances. Without this effort, productivity and quality decline over time.
+It takes continuous effort to maintain and evolve processes in response to challenges and changing circumstances. Without this sustained effort, productivity and quality decline over time.
 
 ### Control technical debt
 
 Technical debt arises due to processes or practices in the past, but has an ongoing impact on the present.
 
 Technical debt:
-*	leads to bugs and loss of reliability.
-*	means changes take longer.
-*	makes it harder to predict how long any given change will take.
-*	causes dissatisfaction and disengagement in the team.
+*	Leads to bugs and loss of reliability.
+*	Means changes take longer.
+*	Makes it harder to predict how long any given change will take.
+*	Causes dissatisfaction and disengagement in the team.
 
-Without sustained improvement effort these all get worse over time, reducing capacity to deliver features. If little or no tech debt improvement work is done, delivery may initially be faster, but over time it becomes progressively slower and less predictable.
+Without sustained improvement effort these all get worse over time, reducing capacity to deliver features. If little or no tech debt improvement work is done, delivery may initially be faster but over time it becomes progressively slower and less predictable.
 
 ## Identifying improvement opportunities
 
@@ -90,42 +90,48 @@ Examples include:
 
 ## Prioritising
 
-Choose changes which will have the most impact for the effort involved. If you have lots of potential options, you will want to prioritise them. One option is to score how much each will move the [metrics](#measurement) that matter to you &mdash; its _value_ &mdash; and use [Weighted Shortest Job First](https://blackswanfarming.com/wsjf-weighted-shortest-job-first/), which prioritises items with the highest `(value + urgency) / effort` ratio. Value, urgency and effort are judgements and estimates in arbitrary relative units, and it is common to use a [modified Fibonacci](https://www.mountaingoatsoftware.com/blog/why-the-fibonacci-sequence-works-well-for-estimating) scale (1, 2, 3, 5, 8, ...).
+Select changes which will have the most impact for the effort required. If you have many potential options, you will want to prioritise them. One option is to score how much each will move the [metrics](#measurement) that matter to you &mdash; its _value_. You can then use [Weighted Shortest Job First](https://blackswanfarming.com/wsjf-weighted-shortest-job-first/) prioritisation, selecting items with the highest ratio of
+```
+(value + urgency) / effort
+```
+Value, urgency and effort are judgements and estimates in arbitrary relative units, and it is common to use a [modified Fibonacci](https://www.mountaingoatsoftware.com/blog/why-the-fibonacci-sequence-works-well-for-estimating) scale (1, 2, 3, 5, 8, ...) for each.
 
 ### Prioritising tech debt
 
-There is a lot of mileage in applying the [scout's rule](https://www.scout.org/sites/default/files/news_files/Leave%20the%20world%20a%20little%20better%20than%20you%20found%20it.pdf) as [applied to coding by Uncle Bob](https://www.oreilly.com/library/view/97-things-every/9780596809515/ch08.html) &mdash;
+There is a lot of mileage in following the [scout's rule](https://www.scout.org/sites/default/files/news_files/Leave%20the%20world%20a%20little%20better%20than%20you%20found%20it.pdf) as [applied to coding by Uncle Bob](https://www.oreilly.com/library/view/97-things-every/9780596809515/ch08.html) &mdash;
 
 > always leave the code behind in a better state than you found it
 
-&mdash; a practice which Martin Fowler calls [opportunistic refactoring](https://martinfowler.com/bliki/OpportunisticRefactoring.html). Making time for this as part of feature work is a very effective way to make incremental improvements to a codebase over time. Of course, sometimes you uncover issues which are just to big to tackle as part of an individual feature.
+&mdash; a practice which Martin Fowler calls [opportunistic refactoring](https://martinfowler.com/bliki/OpportunisticRefactoring.html). Making time for this as part of feature work is a very effective way to make incremental improvements to a codebase over time.
 
-For these more substantial issues, it can be useful to apply a little more structure to help with the difficult job of judging the value of fixing any given bit of technical debt. It is helpful to focus on the impact that each bit of tech debt is having by considering aspects such as those listed in [Benefits &mdash; Control technical debt](#control-technical-debt). The score for each of those aspects will depend on how heavily that part of the system is worked on. By summing the individual scores for each of those aspects you can derive a measure of the total impact, which conveniently also works as a measure of the value of fixing it.
+Of course, sometimes you uncover issues which are just to big to tackle as part of an individual feature. For these more substantial issues, it can be useful to apply a little more structure to help with the difficult job of judging the value of fixing any given bit of technical debt. It is helpful to focus on the impact that each is having by considering aspects such as those listed in [Benefits &mdash; Control technical debt](#control-technical-debt). The score for each of those aspects will depend on how heavily that part of the system is worked on. By summing the individual scores for each of those aspects you can derive a measure of the total impact, which conveniently also works as a measure of the value of fixing it, which can be fed into Weighted Shortest Job First prioritisation as above.
 
-So: `value = bugs + delays + uncertainty + unhappiness`, which can be fed into Weighted Shortest Job First prioritisation as above.
+```
+value = bugs + delays + uncertainty + unhappiness
+```
 
-Visualising your tech debt using an approach like Colin Breck's [quality views](https://blog.colinbreck.com/using-quality-views-to-communicate-software-quality-and-evolution/) can help facilitate conversations about tech debt and where to focus efforts.
+Visualising technical debt using an approach like Colin Breck's [Quality Views](https://blog.colinbreck.com/using-quality-views-to-communicate-software-quality-and-evolution/) can help facilitate conversations about how much improvement effort is required and where it should be focussed.
 
 ![Quality View](quality-view.svg)
-[Image by Colin Breck]
+[Example Quality View by Colin Breck]
 
 ## Acting
 
-Treat changes as experiments and consider ways to explore them safely, e.g. only apply the change to some of the work or be explicit that it is a trial to be re-evaluated at a predetermined time (usually at the next retrospective).
+Treat changes as experiments and consider ways to explore them safely. For example, only apply the change to some of the work or be explicit that it is a trial to be re-evaluated at a predetermined time (usually at the next retrospective).
 
 Be clear what benefit you hope to get from each change so that you can objectively [measure](#measurement) whether it has been a success and either reinforce or reverse the change.
 
 Express each experiment as a hypothesis:
 
-> To support _\<[Improvement Kata](#improvement-kata) direction or challenge\>_,
-> we believe _\<this capability\>_
-> will result in _\<this outcome\>_.
+> To support _\<[Improvement Kata](#improvement-kata) direction or challenge\>_,<br>
+> we believe _\<this capability\>_<br>
+> will result in _\<this outcome\>_.<br>
 > We will have confidence to proceed when _\<we see a measurable signal\>_.
 >
-> **Example**
-> To support **increasing the number of deployments per month**,
-> we believe **automating regression tests for our website**
-> will result in **shorter test cycles**.
+> **Example**<br>
+> To support **increasing the number of deployments per month**,<br>
+> we believe **automating regression tests for our website**<br>
+> will result in **shorter test cycles**.<br>
 > We will have confidence to proceed when **regression test cycles are shorter, and the rate of bugs being missed by has not risen noticeably**.
 
 Break down larger problems into smaller ones which can be tackled with smaller changes more incrementally.
