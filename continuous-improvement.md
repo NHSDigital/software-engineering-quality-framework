@@ -2,12 +2,6 @@
 
 Continuous improvement is the practice of iteratively reviewing processes and impediments and making incremental changes to reduce waste and increase quality.
 
-## To do
-
-Training
-Scrum.org improvement Kata (Joan has links)
-Software engineering focused (true, OK)
-
 ## Quick start
 
 This document provides some theory and advice on practising continuous improvement. But you don’t need a lot of process to get going. There will almost certainly be problems people are already aware of which provide a great starting point for improvement work.
