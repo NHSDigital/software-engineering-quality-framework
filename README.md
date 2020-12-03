@@ -30,4 +30,5 @@ The framework consists of:
 * [Communities of practice guidelines](communities-of-practice.md) and active communities:
   * [Product Development Test Automation Working Group](communities/pd-test-automation-working-group.md)
   * [Product Development Engineering CoP](communities/pd-engineering-cop.md)
+  * [Secure Engineering CoP](communities/security-cop.md)
 * Guidance on how to practice [continuous improvement](continuous-improvement.md)
