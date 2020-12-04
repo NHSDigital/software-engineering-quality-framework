@@ -12,11 +12,11 @@ Secure Engineering practices, tools & approaches within NHS Digital.
 
 ## Goals
 
-The goal is to provide solutions and guidance on Automated Testing and Quality, including:
+The goal is to provide guidance on Secure Development and Operation of systems, including:
 
 * Share knowledge
 * Provide advice and guidance
-* Deliver solutions to relevant issues (TBC - is this the case for this group?)
+* Contribute to Good practice discussions and definitions
 * Curate relevant Training Pathways within the [Software Engineering Quality Framework](../README.md)
 * Provide supplementary training in relevant areas (e.g. guest speakers, workshops)
 * Curate relevant principals, practices and patterns within the [Software Engineering Quality Framework](../README.md)
@@ -27,7 +27,10 @@ Goals to be reviewed (TBC when)
 
 Areas of interest are specifically:
 
-* TBC
+* Secure development practices
+* Secure operations of systems at scale
+* Security good practice
+* (TBC - any more?)
 
 ## Coordinator
 
@@ -38,9 +41,9 @@ Areas of interest are specifically:
 
 ## Members
 
-* This group will span NHS Digital and include
+* This group will span NHS Digital and include representatives from DSC, SSS, and delivery teams.
 * Core members should be kept to under 15, to promote interactive sessions
-* Should include a mix of backgrounds including (TBC)
+* Should include a mix of backgrounds including members of the Data Security Centre and team members with no Security qualifications
 * Should include people from a representative spread of teams / directorates
 * Can join as representatives from a specific team, or as "interested parties"
 
