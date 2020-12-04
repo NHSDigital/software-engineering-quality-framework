@@ -30,6 +30,7 @@ Areas of interest are specifically:
 * Secure development practices
 * Secure operations of systems at scale
 * Security good practice
+* Automated security-testing tools, for example tools to scan for secrets or other sensitive data
 * (TBC - any more?)
 
 ## Coordinator
