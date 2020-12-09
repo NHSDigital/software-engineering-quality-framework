@@ -12,14 +12,16 @@ Secure Engineering practices, tools & approaches within NHS Digital.
 
 ## Goals
 
-The goal is to provide guidance on Secure Development and Operation of systems, including:
+For secure development and operation of systems...
 
-* Share knowledge
-* Provide advice and guidance
-* Contribute to Good practice discussions and definitions
-* Curate relevant Training Pathways within the [Software Engineering Quality Framework](../README.md)
-* Provide supplementary training in relevant areas (e.g. guest speakers, workshops)
-* Curate relevant principals, practices and patterns within the [Software Engineering Quality Framework](../README.md)
+1. Share knowledge:
+  * Provide advice and guidance as requested
+  * Facilitate good practice discussions, and curate relevant principals, practices and patterns within the [Software Engineering Quality Framework](../README.md)
+  * Curate relevant Training Pathways within the [Software Engineering Quality Framework](../README.md)
+  * Provide supplementary learning in relevant areas (e.g. workshops)
+2. Build knowledge:
+  * Organise learning events (e.g. guest speakers)
+  * Organise events to practice security (e.g. security jams)
 
 Goals to be reviewed (TBC when)
 
