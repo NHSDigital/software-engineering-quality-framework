@@ -6,7 +6,7 @@ Continuous improvement is the practice of iteratively reviewing processes and im
 
 This document provides some theory and advice on practising continuous improvement. But you don't need a lot of process to get going. There will almost certainly be problems people are already aware of which provide a great starting point for improvement work.
 
-Set up regular retrospectives with the whole team and make a commitment to spend time acting on the things which are uncovered. Don't bite off more than you can chew: pick one or two changes which you think will be achievable in the next Sprint/iteration.
+Set up regular retrospectives with the whole team and make a commitment to spend time acting on the things which are uncovered. Don't bite off more than you can chew: pick one or two changes which you think will be achievable in the next Sprint.
 
 Set out with the intention of having this as a permanent part of how you work, iteratively checking how things are, thinking of what to do to improve things, making a small change and repeating.
 
@@ -14,9 +14,9 @@ Set out with the intention of having this as a permanent part of how you work, i
 >
 > During a retrospective, the team identify that the product owner frequently finds problems with features once they have been implemented, causing costly rework late in the delivery cycle.
 >
-> They consider various options, including adding more detailed requirements to stories during sprint planning, introducing a just in time "analysis and elaboration" stage to their agile process, and showing the working software to the product owner during development for earlier feedback.
+> They consider various options, including adding more detailed requirements to stories during Sprint planning, introducing a just in time "analysis and elaboration" stage to their agile process, and showing the working software to the product owner during development for earlier feedback.
 >
-> They can see potential value in all three, but decide to choose one to start with, remembering that continuous improvement is an iterative process. Because the product owner is often busy and is sometimes not available at short notice, they decide to try adding more detailed requirements to stories during sprint planning.
+> They can see potential value in all three, but decide to choose one to start with, remembering that continuous improvement is an iterative process. Because the product owner is often busy and is sometimes not available at short notice, they decide to try adding more detailed requirements to stories during Sprint planning.
 >
 > Teams who find it is easier to get input from the product owner at short notice may prefer to add the "analysis and elaboration" stage instead to get the benefit of doing this analysis just in time. It is important to choose the right action for the specific scenario the team is facing.
 
@@ -64,11 +64,26 @@ Technical debt:
 
 Without sustained improvement effort these all get worse over time, reducing capacity to deliver features. If little or no tech debt improvement work is done, delivery may initially be faster but over time it becomes progressively slower and less predictable.
 
+### Improve reliability and operability
+
+Some important improvement work consistens of implementing or improving reliability or operability features, such as creating or improving monitoring dashboards, application logs or automated security testing.
+
+Where things like this are missing or need improvement, it is not tech debt &mdash; improving those things bring a tangible benefit to service reliability, which users do notice and care about. As such, this work should be treated like any other feature work and prioritised alongside functional features.
+
+The benefits of improving these areas are:
+* Service has fewer bugs.
+* Performance is more reliable.
+* Services are more available.
+* Services are more secure.
+* Incidents are less impactful.
+* Incidents are detected earlier.
+* Incidents are fixed more quickly.
+
 ## Identifying improvement opportunities
 
 Regular team retrospectives are an effective way to identify improvement opportunities and actions. Another potential source are periodic reviews using tools such as the the [AWS](https://aws.amazon.com/architecture/well-architected/) or [Azure](https://azure.microsoft.com/en-gb/blog/introducing-the-microsoft-azure-wellarchitected-framework/) Well-Architected Frameworks and the [NHS Digital quality review](review.md). And of course, tech debt is often uncovered in the course of making changes to a system.
 
-As discused in [Benefits](#benefits), in high level terms the opportunities for reducing waste or improving quality tend to be in two areas:
+As discused in [Benefits](#benefits), in high level terms the opportunities for reducing waste or improving quality tend to be in these areas:
 
 ### 1. Process or practice
 
@@ -88,9 +103,18 @@ Examples include:
 * Technologies which should be replaced.
 * Areas with insufficient, inefficient or ineffective testing.
 
+### 3. Reliability and operability
+
+Examples include:
+* Automated build and deployment pipelines.
+* Monitoring dashboards.
+* Automated alerts.
+* Application logs.
+* Automated security testing.
+
 ## Prioritising
 
-Select changes which will have the most impact for the effort required. If you have many potential options, you will want to prioritise them. One option is to score how much each will move the [metrics](#measurement) that matter to you &mdash; its _value_. You can then use [Weighted Shortest Job First](https://blackswanfarming.com/wsjf-weighted-shortest-job-first/) prioritisation, selecting items with the highest ratio of
+Select items which will have the most impact for the effort required. If you have many potential options, you will want to prioritise them. One option is to score how much each will move the [metrics](#measurement) that matter to you &mdash; its _value_. You can then use [Weighted Shortest Job First](https://blackswanfarming.com/wsjf-weighted-shortest-job-first/) prioritisation, selecting items with the highest ratio of
 ```
 (value + urgency) / effort
 ```
@@ -148,7 +172,7 @@ Break down larger problems into smaller ones which can be tackled with smaller c
 
 Some teams have success with forming a single backlog covering feature and improvement work. This requires product and tech people to work together and build a shared understanding of the relative priority of each item so that a single priority order can be decided.
 
-Other teams find it too difficult to decide on the relative priorities between features and improvement work and instead use a time budget approach. For example, they may decide that each sprint roughly 70% of the capacity should go into feature and bug fix work and the remaining 30% into operability and improvement work. The appropriate split will depend on the specific situation the team finds themselves in, and can vary over time &mdash; so long as the medium term average (for example over the last 3 sprints) does not deviate too far from the agreed split.
+Other teams find it too difficult to decide on the relative priorities between features and improvement work and instead use a time budget approach. For example, they may decide that each Sprint roughly 70% of the capacity should go into feature and bug fix work and the remaining 30% into operability and improvement work. The appropriate split will depend on the specific situation the team finds themselves in, and can vary over time &mdash; so long as the medium term average (for example over the last 3 Sprint) does not deviate too far from the agreed split.
 
 ## Measurement
 
@@ -166,21 +190,40 @@ In addition, it is useful to track the proportion of time being spent on various
   * Tech debt
   * Other improvement work
 
-## What does this mean for me as a Product/Delivery person?
+## What does this mean for me as a less-technical person?
 
-If you are a Product manager/owner, Delivery Lead, Business Analyst or similar,
+If you are a Product Manager/Owner, Delivery Lead or Business Analyst, continuous improvement will help you:
+* Reduce waste a deliver more user value each Sprint.
+* Improve user experience by improving service reliability (see [benefits](#improve-reliability-and-operability)).
+* Maintain a rapid, reliable pace of delivery long term, instead of delivery becoming slower and less predictable over time.
+* Focus more team time on delivering features rather than menial or repetitive work.
+  * This can be achieved over the mid/long-term by investing in better automation of tests, deployment and so in the short term.
 
-To do
+You have an important role to play!
+* Remind the team that users expect systems to be reliable, even if they don't think to mention it. Make sure time is built in for engineering work to deliver that reliability each Sprint.
+* Help your engineers express their technical concerns in terms of user/business impact. This will help you all as a team make the right priority calls between individual items of improvement work, and between functional and improvement items.
+  * Explicitly consider the needs of support staff as users of the system and write stories to express those needs, e.g. _**As a** support engineer **in order to** respond quickly when our service is inaccessible **I need to** receive and automated alert when the service is unresponsive_.
+* Ensure your delivery roadmap includes a healthy balance of operability/reliability features along with the functional features.
+* Actively monitor the amount of improvement work being done each Sprint and the outstanding improvement work to do, and adjust the balance when required.
 
-## What does this mean for me as a Technical person?
+## What does this mean for me as a technical person?
 
-If you are an Engineer, Tester or similar,
+If you are an Engineer or Tester, continuous improvement will help you:
+* Reduce waste and spend more time delivering value for users.
+* Implement features and fix bugs more quickly and safely.
+* Spend less time on menial or repetitive work.
 
-To do
+You have an important role to play!
+* Make sure you understand the user needs well enough to have an informed conversation about the relative priority of the functional work items.
+* Express technical work in terms of the benefits it will deliver so that as a team you can have a meaningful conversation about relative priorities.
+* Play an active role in backlog refinement and planning, ensuring that operability and reliability work is adequately represented.
+* Be bold and make sure technical quality is maintained.
+  * But also, be pragmatic and accept that all systems have imperfections and some degree of tech debt.
+
 
 ## Closing remarks
 
 As we have seen, the recipe to start or give a boost to continuous improvement is essentially very simple:
 1. Make a start, keeping changes small and iterating.
-2. Bake improvement work into the way you work with regular retrospectives which feed a trickle of improvement work into your activity within each Sprint/iteration.
+2. Bake improvement work into the way you work with regular retrospectives which feed a trickle of improvement work into your activity within each Sprint.
 3. Track metrics over time so you can measure the effect of improvement work.
