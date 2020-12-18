@@ -192,7 +192,19 @@ In addition, it is useful to track the proportion of time being spent on various
 
 ## What does this mean for me as a less-technical person?
 
-To do
+If you are a Product Manager/Owner, Delivery Lead or Business Analyst, continuous improvement will help you:
+* Reduce waste a deliver more user value each Sprint.
+* Improve user experience by improving service reliability (see [benefits](#improve-reliability-and-operability)).
+* Maintain a rapid, reliable pace of delivery long term, instead of delivery becoming slower and less predictable over time.
+* Focus more team time on delivering features rather than menial or repetitive work.
+  * This can be achieved over the mid/long-term by investing in better automation of tests, deployment and so in the short term.
+
+You have an important role to play!
+* Remind the team that users expect systems to be reliable, even if they don't think to mention it. Make sure time is built in for engineering work to deliver that reliability each Sprint.
+* Help your engineers express their technical concerns in terms of user/business impact. This will help you all as a team make the right priority calls between individual items of improvement work, and between functional and improvement items.
+  * Explicitly consider the needs of support staff as users of the system and write stories to express those needs, e.g. _**As a** support engineer **in order to** respond quickly when our service is inaccessible **I need to** receive and automated alert when the service is unresponsive_.
+* Ensure your delivery roadmap includes a healthy balance of operability/reliability features along with the functional features.
+* Actively monitor the amount of improvement work being done each Sprint and the outstanding improvement work to do, and adjust the balance when required.
 
 ## What does this mean for me as a technical person?
 
