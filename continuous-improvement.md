@@ -66,9 +66,9 @@ Without sustained improvement effort these all get worse over time, reducing cap
 
 ### Improve reliability and operability
 
-Some important improvement work consistens of implementing or improving reliability or operability features, such as monitoring dashboards, application logs or automated security testing.
+Some important improvement work consists of implementing or improving reliability or operability features, such as monitoring dashboards, application logs or automated security testing.
 
-Where things like this are missing or need improvement, it is not tech debt &mdash; improving them brings a tangible benefit to service reliability, which users do notice and care about. As such, this work should be treated like any other feature work and prioritised alongside functional features.
+Where things like this are missing or need improvement, it is not tech debt &mdash; improving them brings a tangible benefit to service reliability, which users do notice and care about.
 
 The benefits of improving these areas are:
 * Service has fewer bugs.
