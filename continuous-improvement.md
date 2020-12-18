@@ -208,7 +208,6 @@ You have an important role to play!
 * Be bold and make sure technical quality is maintained.
   * But also, be pragmatic and accept that all systems have imperfections and some degree of tech debt.
 
-
 ## Closing remarks
 
 As we have seen, the recipe to start or give a boost to continuous improvement is essentially very simple:
