@@ -28,6 +28,12 @@ _Performing security testing is critical in detecting and fixing security vulner
 1. [Plan for security flaws](https://www.ncsc.gov.uk/collection/developers-collection/principles/plan-for-security-flaws)
 _All code is susceptible to bugs and security vulnerabilities... Accept that your code will have exploitable shortcomings and establish a process for capturing and managing them from identification through to the release of a fix._
 
+## Test first
+
+As with writing good code, doing good security involves continual testing &mdash; in many cases using the tests to steer implementation.
+
+The [OWASP Web Security Testing Guide](https://github.com/OWASP/wstg/tree/master/document) is an extensive and wide-reaching reference on how to test for security, including examining the software delivery process and reviewing code as well as more traditional black box penetration testing. It is a large resource, but is worth investing some time in for the security-concious.
+
 ## Recommendations
 
 The remainder of this page gives more detailed and specific recommendations to be read in conjunction with the above.
