@@ -28,6 +28,12 @@ _Performing security testing is critical in detecting and fixing security vulner
 1. [Plan for security flaws](https://www.ncsc.gov.uk/collection/developers-collection/principles/plan-for-security-flaws)
 _All code is susceptible to bugs and security vulnerabilities... Accept that your code will have exploitable shortcomings and establish a process for capturing and managing them from identification through to the release of a fix._
 
+## Test first
+
+As with writing good code, doing good security involves continual testing &mdash; in many cases using the tests to steer implementation.
+
+The [OWASP Web Security Testing Guide](https://github.com/OWASP/wstg/tree/master/document) is an extensive and wide-reaching reference on how to test for security, including examining the software delivery process and reviewing code as well as more traditional black box penetration testing. It is a large resource, but is worth investing some time in for the security-concious.
+
 ## Recommendations
 
 The remainder of this page gives more detailed and specific recommendations to be read in conjunction with the above.
@@ -64,7 +70,7 @@ The remainder of this page gives more detailed and specific recommendations to b
   - Code should be automatically scanned for secrets or other sensitive data using standalone tools like [GitGuardian](https://www.gitguardian.com/) or [awslabs git-secrets](https://github.com/awslabs/git-secrets) or built in tools in [GitLab](https://docs.gitlab.com/ee/user/application_security/secret_detection/) or [GitHub](https://docs.github.com/en/github/administering-a-repository/about-secret-scanning).
     - Review the configuration of whichever tools you use, for example [awslabs git-secrets](https://github.com/awslabs/git-secrets) does not scan for IP addresses by default, but you can change that by adding more regex expressions
       - TO DO: add config to register regex for IP4 and IP6
-    - Ideally, run a tool like [awslabs git-secrets](https://github.com/awslabs/git-secrets) locally on developer laptops (to catch secrets at source) with a backstop of a centralised tool such as  [GitHub](https://docs.github.com/en/github/administering-a-repository/about-secret-scanning)
+    - Ideally, run a tool like [OWASP SEDATED](https://github.com/OWASP/SEDATED) or [awslabs git-secrets](https://github.com/awslabs/git-secrets) locally on developer laptops (to catch secrets at source) with a backstop of a centralised tool such as  [GitHub](https://docs.github.com/en/github/administering-a-repository/about-secret-scanning)
   - Be wary of any 3rd party JavaScript included on the page, e.g. for A/B testing, analytics
   - Pin dependencies at known versions to avoid unexpected updates
   - Scan dependencies for vulnerabilities, e.g. using [OWASP Dependency Check](https://www.owasp.org/index.php/OWASP_Dependency_Check) or [Snyk](https://snyk.io/)
