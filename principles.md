@@ -28,13 +28,13 @@ Waste is anything that interferes with giving customers what they really value a
 
 **Overproduction &mdash; planning or designing in excessive detail.** Use a "just enough, just in time" approach to both.
 
-**Overproduction &mdash; overengineering**, i.e. building unwarranted levels of code perfection or quantities of tests. Be pragmatic and balance effort now with saved effort or risk in the future. Remember [KISS](http://principles-wiki.net/principles:keep_it_simple_stupid) and [YAGNI](https://www.martinfowler.com/bliki/Yagni.html).
+**Overproduction &mdash; overengineering**, i.e. building unwarranted levels of code perfection or quantities of tests. Be pragmatic and balance effort now with saved effort or risk in the future. Remember [KISS](http://principles-wiki.net/principles:keep_it_simple_stupid) and [YAGNI](https://www.martinfowler.com/bliki/Yagni.html) and see the caveats in [structured code](practices/structured-code.md).
 
 **Overproduction &mdash; reinventing the wheel.** Solving the same problem repeatedly in an organisation. Make sure there are effective ways to share knowledge between teams to avoid this.
 
 **[Overproduction &mdash; building when you could instead reuse or buy](practices/cloud-services.md).** [ARCHITECTURE-REUSE](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/reuse-before-buy-build) Remember to consider all these alternatives.
 
-**Overproduction &mdash; premature optimisation for reusability.** Before making something reusable, first make it usable. Prefer explicit logic to implicit. Excessively generic systems create accidental complexity. [KISS](http://principles-wiki.net/principles:keep_it_simple_stupid) and [YAGNI](https://www.martinfowler.com/bliki/Yagni.html) again.
+**Overproduction &mdash; premature optimisation for reusability.** Before making something reusable, first make it usable. Prefer explicit logic to implicit. Excessively generic systems create accidental complexity. [KISS](http://principles-wiki.net/principles:keep_it_simple_stupid) and [YAGNI](https://www.martinfowler.com/bliki/Yagni.html) and the caveats in [structured code](practices/structured-code.md) again.
 
 **Overproduction &mdash; premature optimisation**, e.g. for performance or scale. Design with both in mind, but not excessively so. Defer optimisation until testing shows it is necessary. Start simple, test, iterate.
 
