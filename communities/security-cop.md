@@ -12,7 +12,7 @@ Secure Engineering practices, tools & approaches within NHS Digital.
 
 ## Goals
 
-For secure development and operation of systems...
+For secure development and operation of systems:
 
 * **Share** knowledge:
   * Provide advice and guidance as requested
@@ -23,7 +23,7 @@ For secure development and operation of systems...
   * Organise learning events (e.g. guest speakers)
   * Organise events to practice security (e.g. security jams)
 
-Goals to be reviewed (TBC when)
+Goals to be reviewed after 3 months
 
 ## Scope
 
@@ -37,10 +37,13 @@ Areas of interest are specifically:
 
 ## Coordinator
 
-* This will be a rotating post on a 3-month basis, requiring a commitment of one day per week
-* The coordinator will run a blog to help publicise the activity of the group
-* There will be a deputy coordinator (to cover sessions when the coordinator is away, etc). They will also typically take over as coordinator for the following 3 months. This gives the group continuity.
-* (TBC - who) will be coordinator initially
+* Once the community is established:
+  * This will be a rotating post on a 3-month basis, requiring a commitment of one day per week
+  * The coordinator will run a blog to help publicise the activity of the group
+  * There will be a deputy coordinator (to cover sessions when the coordinator is away, etc). They will also typically take over as coordinator for the following 3 months. This gives the group continuity.
+* Initially:
+  * There will be a faciliator group, comprising of a representative from each of the member NHDS directorates (DSC, Product Development, Platforms, etc)
+  * The group will self-organise who faciliates individual sessions & activities
 
 ## Members
 
