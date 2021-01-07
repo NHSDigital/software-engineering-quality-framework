@@ -22,6 +22,7 @@ For secure development and operation of systems:
 * **Build** knowledge:
   * Organise learning events (e.g. guest speakers)
   * Organise events to practice security (e.g. security jams)
+  * Evaluate candidate security tools
 
 Goals to be reviewed after 3 months
 
