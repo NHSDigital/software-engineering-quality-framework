@@ -146,4 +146,4 @@ We need to figure out how to deliver software as fast as possible.  This reduces
 
 **Use feedback loops** to avoid negative global effects from local optimisations.
 
-**Balance autonomy and conformity.** Teams use the right tool for the job, within reason: unchecked proliferation of a wide variety of tools impacts overall effectiveness of the organisation.
+**Balance autonomy and conformity.** Teams use the right tool for the job, within reason: unchecked proliferation of a wide variety of tools impacts the overall effectiveness of the organisation.
