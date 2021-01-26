@@ -44,7 +44,7 @@ Areas of interest are specifically:
   * The coordinator will run a blog to help publicise the activity of the group
   * There will be a deputy coordinator (to cover sessions when the coordinator is away, etc). They will also typically take over as coordinator for the following 3 months. This gives the group continuity.
 * Initially:
-  * There will be a faciliator group, comprising of a representative from each of the member NHDS directorates (DSC, Product Development, Platforms, etc)
+  * There will be a faciliator group, comprising of a representative from each of the member NHDS directorates (DSC, Product Development, Platforms, Security Architecture)
   * The group will self-organise who faciliates individual sessions & activities
 
 ## Members
