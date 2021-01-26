@@ -23,6 +23,7 @@ For secure development and operation of systems:
   * Organise learning events (e.g. guest speakers)
   * Organise events to practice security (e.g. security jams)
   * Evaluate candidate security tools
+  * Form mini-groups to respond to "how do I..." questions from teams - generating examples in the [Software Engineering Quality Framework](../README.md)
 
 Goals to be reviewed after 3 months
 
