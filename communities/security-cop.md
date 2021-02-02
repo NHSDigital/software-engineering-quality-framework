@@ -50,7 +50,8 @@ Areas of interest are specifically:
 
 ## Members
 
-* This group will span NHS Digital and include representatives from DSC, SSS, and delivery teams.
+* This group will span NHS Digital and include representatives from DSC, SSS, and delivery teams
+* If possible, this group will also include external (to NHS Digital) subject-matter experts
 * Core members should be kept to under 15, to promote interactive sessions
 * Should include a mix of backgrounds including members of the Data Security Centre and team members with no Security qualifications
 * Should include people from a representative spread of teams / directorates
