@@ -56,7 +56,7 @@ Waste is anything that interferes with giving customers what they really value a
 
 The following practices support the principle of building quality in.
 
-**Three amigos analysis and elaboration** to ensure requirements are fully understood at the point the work will be done.
+**Collaborative analysis and elaboration** with the right people involved to examine a change from all angles to ensure requirements are fully understood at the point the work will be done.
 
 **[Deliver incrementally.](patterns/little-and-often.md)** Establish build-measure-learn loops to keep the system simple and to ensure it meets evolving user needs.
 
@@ -128,7 +128,7 @@ We need to figure out how to deliver software as fast as possible.  This reduces
 
 **Give and receive feedback.** Give with honesty and respect; receive gratefully.
 
-**Encourage healthy conflict.** e.g. three amigos analysis and elaboration, functionality/quality priority competition, collaborative design.
+**Encourage healthy debate.** e.g. collaborative analysis and elaboration with the right people involved to examine a change from all angles, functionality/quality priority competition, collaborative design.
 
 **Foster a growth mindset.** Invest in learning and individual development.
 
@@ -146,4 +146,4 @@ We need to figure out how to deliver software as fast as possible.  This reduces
 
 **Use feedback loops** to avoid negative global effects from local optimisations.
 
-**Balance autonomy and conformity.** Teams use the right tool for the job, within reason: unchecked proliferation of a wide variety of tools impacts overall effectiveness of the organisation.
+**Balance autonomy and conformity.** Teams use the right tool for the job, within reason: unchecked proliferation of a wide variety of tools impacts the overall effectiveness of the organisation.
