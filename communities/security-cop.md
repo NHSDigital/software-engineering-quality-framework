@@ -20,6 +20,7 @@ For secure development and operation of systems:
   * Curate relevant Training Pathways within the [Software Engineering Quality Framework](../README.md)
   * Curate relevant section(s) within the [Software Engineering Review Tool](../review.md)
   * Provide supplementary learning in relevant areas (e.g. workshops)
+  * Discuss, disseminate and feedback on the output of the Cyber Design Authority
 * **Build** knowledge:
   * Organise learning events (e.g. guest speakers)
   * Organise events to practice security (e.g. security jams)
@@ -32,21 +33,19 @@ Goals to be reviewed after 3 months
 
 Areas of interest are specifically:
 
-* Secure development practices
-* Secure operations of systems at scale
+* Secure development & operations practices
 * Security good practice
 * Automated security-testing tools, for example tools to scan for secrets or other sensitive data
-* (TBC - any more?)
 
 ## Coordinator
 
+* Initially:
+  * There will be a faciliator group, comprising of a representative from each of the member NHDS directorates (DSC, Product Development, Platforms, Security Architecture)
+  * The group will self-organise who faciliates individual sessions & activities
 * Once the community is established:
   * This will be a rotating post on a 3-month basis, requiring a commitment of one day per week
   * The coordinator will run a blog to help publicise the activity of the group
   * There will be a deputy coordinator (to cover sessions when the coordinator is away, etc). They will also typically take over as coordinator for the following 3 months. This gives the group continuity.
-* Initially:
-  * There will be a faciliator group, comprising of a representative from each of the member NHDS directorates (DSC, Product Development, Platforms, Security Architecture)
-  * The group will self-organise who faciliates individual sessions & activities
 
 ## Members
 
