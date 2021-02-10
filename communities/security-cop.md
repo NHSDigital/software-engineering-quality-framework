@@ -16,7 +16,7 @@ For secure development and operation of systems:
 
 * **Share** knowledge:
   * Provide advice and guidance as requested
-  * Facilitate good practice discussions, and curate relevant principals, practices and patterns within the [Software Engineering Quality Framework](../README.md)
+  * Facilitate good practice discussions, and curate relevant principles, practices and patterns within the [Software Engineering Quality Framework](../README.md)
   * Curate relevant Training Pathways within the [Software Engineering Quality Framework](../README.md)
   * Curate relevant section(s) within the [Software Engineering Review Tool](../review.md)
   * Provide supplementary learning in relevant areas (e.g. workshops)
