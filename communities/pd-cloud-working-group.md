@@ -21,30 +21,30 @@ Andy Blundell ([andyblundell](https://github.com/andyblundell))
 * Training, mentoring and guidance (Show ‘n Tells, Demos, DevOps Sessions, Cloud Provider Sessions)
 * CWG HackDays
 
-## Responsibilities:
+## Responsibilities
 * Enhancement recommendations for NHSD Cloud PaaS Platform
 * Accountable to NHSD Cloud Policies and NHSD Cloud PaaS Principles
 * Input into the NHSD Cloud PaaS backlog and its Roadmap
 
-## Coordinator:
+## Coordinator
 Chaired by member of NHSD Cloud PaaS Team (Neal Lilly/Jonathan Hadley)
 
-## Members:
+## Members
 All Service Teams onboarding/running in NHSD Cloud PaaS, recommendation of at least one representative from each service
 Other Teams interacting with NHSD Cloud PaaS (e.g. NHSD Splunk Team)
 
-## Agenda:
+## Agenda
 New Items can be raised in the agenda by Technical Leads
 
-# Frequency:
+## Frequency
 Weekly
 
-# Actions:
+## Actions
 Recorded in Agenda, Actions raised as Jira Tickets
 
-# Review:
+## Review
 * Cover previous open agenda items/Jira Tickets
 * Goals to be reviewed Annually December 2020
 
-# Related:
+## Related
 Service Team Stand Up. NHSD Cloud PaaS Refinement.
