@@ -119,7 +119,7 @@ The remainder of this page gives more detailed and specific recommendations to b
     -  deny RDS database creation outside London region
     -  deny unencrypted RDS database creation 
 
-- granular IAM role policies can be applied at a role level
+- Granular IAM role policies can be applied at a role level
 -   <details><summary>Example IAM policy fragment to prevent unencrypted RDS databases (click to expand)</summary>
 
     ```yaml
@@ -135,9 +135,9 @@ The remainder of this page gives more detailed and specific recommendations to b
       }​​​​​​​​
     }​​​​​​​​
     ```
-  </details>
-
--   <details><summary>If enforcement is not possible / appropriate, use alerts to identify potential issues: example AWS Config rule to identify public-facing RDS databases (click to expand) </summary>
+    </details>
+ -  <summary>If enforcement is not possible / appropriate, use alerts to identify potential issues: example AWS Config rule to identify public-facing RDS databases (click to expand)</summary>
+    <details>
 
     ```yaml
     {
@@ -154,9 +154,9 @@ The remainder of this page gives more detailed and specific recommendations to b
       }
     }
     ```
-  </details>
-  
--   <details><summary>Example IAM policy to prevent assume role without MFA (click to expand)</summary>
+    </details>
+ -  <summary>Example IAM policy to prevent assume role without MFA (click to expand)</summary>
+    <details>
 
     ```yaml
     {
@@ -173,7 +173,7 @@ The remainder of this page gives more detailed and specific recommendations to b
         }
     }
     ```
-    </details>
+     </details>
     
 ### Human factors
 - Ensure **joiners and leavers process** is adequate
