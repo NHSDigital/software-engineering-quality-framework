@@ -120,61 +120,61 @@ The remainder of this page gives more detailed and specific recommendations to b
     -  deny unencrypted RDS database creation 
 
 - Granular IAM role policies can be applied at a role level
--   <summary>Example IAM policy fragment to prevent unencrypted RDS databases (click to expand)</summary>
-    <details>
+  -    <summary>Example IAM policy fragment to prevent unencrypted RDS databases (click to expand)</summary>
+        <details>
 
-    ```yaml
-    {​​​​​​​​
-      "Sid": "",
-      "Effect": "Deny",
-      "Action": "rds:CreateDBInstance",
-      "Resource": "*",
-      "Condition": {​​​​​​​​
-        "Bool": {​​​​​​​​
-          "rds:StorageEncrypted": "false"
+         ```yaml
+         {​​​​​​​​
+           "Sid": "",
+           "Effect": "Deny",
+           "Action": "rds:CreateDBInstance",
+           "Resource": "*",
+           "Condition": {​​​​​​​​
+             "Bool": {​​​​​​​​
+               "rds:StorageEncrypted": "false"
+             }
+           }​​​​​​​​
+         }​​​​​​​​
+         ```
+         </details>
+   -   <summary>If enforcement is not possible / appropriate, use alerts to identify potential issues: example AWS Config rule to identify public-facing RDS databases (click to expand)</summary>
+         <details>
+
+        ```yaml
+        {
+          "ConfigRuleName": "RDS_INSTANCE_PUBLIC_ACCESS_CHECK",
+          "Description": "Checks whether the Amazon Relational Database Service (RDS) instances are not publicly accessible. The rule is non-compliant if the publiclyAccessible field is true in the instance configuration item."
+          "Scope": {
+            "ComplianceResourceTypes": [
+              "AWS::RDS::DBInstance"
+            ]
+          },
+          "Source": {
+            "Owner": "AWS",
+            "SourceIdentifier": "RDS_INSTANCE_PUBLIC_ACCESS_CHECK"
+          }
         }
-      }​​​​​​​​
-    }​​​​​​​​
-    ```
-    </details>
- -  <summary>If enforcement is not possible / appropriate, use alerts to identify potential issues: example AWS Config rule to identify public-facing RDS databases (click to expand)</summary>
-    <details>
+        ```
+         </details>
+   -   <summary>Example IAM policy to prevent assume role without MFA (click to expand)</summary>
+         <details>
 
-    ```yaml
-    {
-      "ConfigRuleName": "RDS_INSTANCE_PUBLIC_ACCESS_CHECK",
-      "Description": "Checks whether the Amazon Relational Database Service (RDS) instances are not publicly accessible. The rule is non-compliant if the publiclyAccessible field is true in the instance configuration item."
-      "Scope": {
-        "ComplianceResourceTypes": [
-          "AWS::RDS::DBInstance"
-        ]
-      },
-      "Source": {
-        "Owner": "AWS",
-        "SourceIdentifier": "RDS_INSTANCE_PUBLIC_ACCESS_CHECK"
-      }
-    }
-    ```
-    </details>
- -  <summary>Example IAM policy to prevent assume role without MFA (click to expand)</summary>
-    <details>
-
-    ```yaml
-    {
-        "Version": "2012-10-17",
-        "Statement": {
-            "Effect": "Allow",
-            "Action": "sts:AssumeRole",
-            "Resource": "arn:aws:iam::<your_account_id>:role/Administrator",
-            "Condition": {
-                "BoolIfExists": {
-                    "aws:MultiFactorAuthPresent": "true"
+        ```yaml
+        {
+            "Version": "2012-10-17",
+            "Statement": {
+                "Effect": "Allow",
+                "Action": "sts:AssumeRole",
+                "Resource": "arn:aws:iam::<your_account_id>:role/Administrator",
+                "Condition": {
+                    "BoolIfExists": {
+                        "aws:MultiFactorAuthPresent": "true"
+                    }
                 }
             }
         }
-    }
-    ```
-     </details>
+        ```
+          </details>
     
 ### Human factors
 - Ensure **joiners and leavers process** is adequate
