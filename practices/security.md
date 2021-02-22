@@ -120,7 +120,8 @@ The remainder of this page gives more detailed and specific recommendations to b
     -  deny unencrypted RDS database creation 
 
 - Granular IAM role policies can be applied at a role level
--   <details><summary>Example IAM policy fragment to prevent unencrypted RDS databases (click to expand)</summary>
+-   <summary>Example IAM policy fragment to prevent unencrypted RDS databases (click to expand)</summary>
+    <details>
 
     ```yaml
     {​​​​​​​​
