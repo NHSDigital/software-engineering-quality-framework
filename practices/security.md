@@ -161,6 +161,12 @@ The remainder of this page gives more detailed and specific recommendations to b
   - Consider using a WAF (Web Application Firewall)
   - Restrict outbound network calls to limit the damage a compromised component can do if practical
 
+- Implement Organisation level Security Policy (OSP): Service Control Policy (e.g. [AWS SCP](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_examples.html))
+  - Implement checks and notification processes
+  - Determine use cases that break OSP
+  - Agree to a standard set of service control policies (e.g. deny s3 public bucket creation)
+
+
 ### Human factors
 - Ensure **joiners and leavers process** is adequate
 - Encourage use of **password managers** with MFA enabled
