@@ -163,7 +163,7 @@ The remainder of this page gives more detailed and specific recommendations to b
 
 - Implement Organisation level Security Policy (OSP): Service Control Policy (e.g. [AWS SCP](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_examples.html))
   - Implement checks and notification processes
-  - Determine use cases that break OSP
+  - Determine use cases that break SCPs
   - Agree to a standard set of service control policies (e.g. deny s3 public bucket creation)
 
 
