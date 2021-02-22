@@ -94,25 +94,6 @@ The remainder of this page gives more detailed and specific recommendations to b
   - Audit access to production and alert for unexpected access
 - Ensure infrastructure **IAM** is robust
   - Strong passwords and MFA
-
-    <details><summary>Example IAM policy to prevent assume role without MFA (click to expand)</summary>
-
-    ```yaml
-    {
-        "Version": "2012-10-17",
-        "Statement": {
-            "Effect": "Allow",
-            "Action": "sts:AssumeRole",
-            "Resource": "arn:aws:iam::<your_account_id>:role/Administrator",
-            "Condition": {
-                "BoolIfExists": {
-                    "aws:MultiFactorAuthPresent": "true"
-                }
-            }
-        }
-    }
-    ```
-    </details>
   - Segregate workloads, e.g. in separate AWS accounts ([Landing Zone](https://aws.amazon.com/solutions/aws-landing-zone/), [Control Tower](https://aws.amazon.com/controltower/features/)) or Azure [subscriptions](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/decision-guides/subscriptions/)
   - Fine grained, least privilege IAM roles
 - Secure **CI/CD**
@@ -120,41 +101,7 @@ The remainder of this page gives more detailed and specific recommendations to b
   - Prefer ambient IAM credentials over retrieving credentials from secrets management. Do not store credentials in the plain.
 - **Enforce** infrastructure security (e.g. [Azure Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview), [AWS Config](https://aws.amazon.com/config/)) and validate it (e.g. [ScoutSuite](https://github.com/nccgroup/ScoutSuite/blob/master/README.md))
 
-  <details><summary>Example IAM policy fragment to prevent unencrypted RDS databases (click to expand)</summary>
 
-    ```yaml
-    {​​​​​​​​
-      "Sid": "",
-      "Effect": "Deny",
-      "Action": "rds:CreateDBInstance",
-      "Resource": "*",
-      "Condition": {​​​​​​​​
-        "Bool": {​​​​​​​​
-          "rds:StorageEncrypted": "false"
-        }
-      }​​​​​​​​
-    }​​​​​​​​
-    ```
-  </details>
-
-  <details><summary>If enforcement is not possible / appropriate, use alerts to identify potential issues: example AWS Config rule to identify public-facing RDS databases (click to expand)</summary>
-
-    ```yaml
-    {
-      "ConfigRuleName": "RDS_INSTANCE_PUBLIC_ACCESS_CHECK",
-      "Description": "Checks whether the Amazon Relational Database Service (RDS) instances are not publicly accessible. The rule is non-compliant if the publiclyAccessible field is true in the instance configuration item."
-      "Scope": {
-        "ComplianceResourceTypes": [
-          "AWS::RDS::DBInstance"
-        ]
-      },
-      "Source": {
-        "Owner": "AWS",
-        "SourceIdentifier": "RDS_INSTANCE_PUBLIC_ACCESS_CHECK"
-      }
-    }
-    ```
-  </details>
 
 - Lock down your **networks**
   - Restrict external and internal network traffic by appropriate firewall rules
@@ -172,6 +119,62 @@ The remainder of this page gives more detailed and specific recommendations to b
     -  deny RDS database creation outside London region
     -  deny unencrypted RDS database creation 
 
+- granular IAM role policies can be applied at a role level
+-   <details><summary>Example IAM policy fragment to prevent unencrypted RDS databases (click to expand)</summary>
+
+    ```yaml
+    {​​​​​​​​
+      "Sid": "",
+      "Effect": "Deny",
+      "Action": "rds:CreateDBInstance",
+      "Resource": "*",
+      "Condition": {​​​​​​​​
+        "Bool": {​​​​​​​​
+          "rds:StorageEncrypted": "false"
+        }
+      }​​​​​​​​
+    }​​​​​​​​
+    ```
+  </details>
+
+-   <details><summary>If enforcement is not possible / appropriate, use alerts to identify potential issues: example AWS Config rule to identify public-facing RDS databases (click to expand) </summary>
+
+    ```yaml
+    {
+      "ConfigRuleName": "RDS_INSTANCE_PUBLIC_ACCESS_CHECK",
+      "Description": "Checks whether the Amazon Relational Database Service (RDS) instances are not publicly accessible. The rule is non-compliant if the publiclyAccessible field is true in the instance configuration item."
+      "Scope": {
+        "ComplianceResourceTypes": [
+          "AWS::RDS::DBInstance"
+        ]
+      },
+      "Source": {
+        "Owner": "AWS",
+        "SourceIdentifier": "RDS_INSTANCE_PUBLIC_ACCESS_CHECK"
+      }
+    }
+    ```
+  </details>
+  
+-   <details><summary>Example IAM policy to prevent assume role without MFA (click to expand)</summary>
+
+    ```yaml
+    {
+        "Version": "2012-10-17",
+        "Statement": {
+            "Effect": "Allow",
+            "Action": "sts:AssumeRole",
+            "Resource": "arn:aws:iam::<your_account_id>:role/Administrator",
+            "Condition": {
+                "BoolIfExists": {
+                    "aws:MultiFactorAuthPresent": "true"
+                }
+            }
+        }
+    }
+    ```
+    </details>
+    
 ### Human factors
 - Ensure **joiners and leavers process** is adequate
 - Encourage use of **password managers** with MFA enabled
