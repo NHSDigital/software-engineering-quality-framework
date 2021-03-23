@@ -18,7 +18,7 @@ All of these checks are important, even where their purpose overlaps with other 
 
 We rate our applications against each of these checks as follows:
 
-* Green = the quality check is applied frequently and consistently (in practice this typically means automated via CI/CD), the output of the check is a quality gate (as opposed to just a warning / for information), and the tolerances for that quality gate (e.g. code coverage %) are agreed and understood
+* Green = the quality check is applied frequently and consistently (in practice this typically means [automated](./patterns/automate-everything.md) via [continuous integration / continuous deployment](./practices/continuous-integration.md)), the output of the check is a quality gate (as opposed to just a warning / for information), and the tolerances for that quality gate (e.g. code coverage %) are agreed and understood
 * Amber = the quality check is applied, but not all conditions for green are met - for example the check generates warnings that may or may not be acted on
 * Red = the quality check is not applied
 * N/A = the quality check is not applicable
