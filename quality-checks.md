@@ -12,7 +12,7 @@ All applicable quality checks should be applied. Not all checks are applicable i
 
 The majority of these checks should be [automated](./patterns/automate-everything.md) via [continuous integration / continuous deployment](./practices/continuous-integration.md): the optimal sequencing of these checks within CI/CD pipelines will depend on the project's branching strategy, deployment strategy, etc.
 
-All of these checks are important, even where their purpose overlaps with other checks in the list. For example, comprehensive functional testing could be achieved without unit testing, instead only using the other functional test types on this list - this would result in a very long-running and inefficient test suite, precluding fast feedback and impeding rapid and safe delivery of software changes. For further details please see [test practices](./practices/testing.md) and [test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html).
+All of these checks are important, even where their purpose overlaps with other checks in the list. For example, comprehensive functional testing could be achieved without unit testing, instead only using the other functional test types on this list - this would result in a very long-running and inefficient test suite, precluding fast feedback and impeding rapid and safe delivery of software changes. For further details please see [test practices](./practices/testing.md), and especially the [test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html).
 
 ## RAG scale
 
