@@ -4,24 +4,24 @@ This is part of a broader [quality framework](README.md)
 
 # Summary
 
-Quality checks are at the heart of good engineering and are essential for rapid and safe delivery of software changes. This page provides an index of the various quality checks described within our principles, patterns and practices.
+Quality checks are at the heart of good engineering, and are essential for rapid and safe delivery of software changes. This page provides an index of the various quality checks described within our principles, patterns and practices.
 
 # Usage
 
-We recommend all applications should apply all of the applicable quality checks.
-
-Not all checks are applicable in all contexts, for example accessibility testing is not applicable to applications without a user interface.
+We recommend all applications should apply all applicable quality checks. Not all checks are applicable in all contexts, for example accessibility testing is only applicable to applications with a user interface.
 
 The majority of these checks should be [automated](./patterns/automate-everything.md) via [continuous integration / continuous deployment](./practices/continuous-integration.md): the optimal sequencing of these checks within CI/CD pipelines will depend on the project's branching strategy, deployment strategy, etc.
+
+All of these checks are important, even where their purpose overlaps with other checks in the list. For example, comprehensive functional testing could be achieved without unit testing, instead only using the other functional test types on this list - this would result in a very long-running and inefficient test suite, precluding fast feedback and impeding rapid and safe delivery of software changes. For further details please see [test practices](./practices/testing.md) and [test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html).
 
 ## RAG scale
 
 We rate our applications against each of these checks as follows:
 
-* Green = check is applied frequently and consistently (in practice this typically means automated via CI/CD), the output of the check is a quality gate (as opposed to just a warning / for information), and the tolerances for that quality gate (e.g. code coverage %) are agreed and understood
-* Amber = check is applied, but not all conditions for green are met
-* Red = check not in place
-* N/A = check is not applicable
+* Green = the quality check is applied frequently and consistently (in practice this typically means automated via CI/CD), the output of the check is a quality gate (as opposed to just a warning / for information), and the tolerances for that quality gate (e.g. code coverage %) are agreed and understood
+* Amber = the quality check is applied, but not all conditions for green are met - for example the check generates warnings that may or may not be acted on
+* Red = the quality check is not applied
+* N/A = the quality check is not applicable
 
 # Details
 
