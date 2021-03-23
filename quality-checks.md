@@ -12,7 +12,7 @@ We recommend all applications should apply all of the applicable quality checks.
 
 Not all checks are applicable in all contexts, for example accessibility testing is not applicable to applications without a user interface.
 
-The majority of these checks should be [automated](./patterns/automated-everything.md) via [continuous integration / continuous deployment](./practices/continuous-integration.md): the optimal sequencing of these checks within CI/CD pipelines will depend on the project's branching strategy, deployment strategy, etc.
+The majority of these checks should be [automated](./patterns/automate-everything.md) via [continuous integration / continuous deployment](./practices/continuous-integration.md): the optimal sequencing of these checks within CI/CD pipelines will depend on the project's branching strategy, deployment strategy, etc.
 
 ## RAG scale
 
@@ -31,7 +31,7 @@ We rate our applications against each of these checks as follows:
 | Integration tests | Functionality | Universal | | | | | |
 | API / contract tests | Functionality | Contextual | | | | | |
 | UI tests | Functionality | Contextual | | | | | |
-| Secret scanning | Security | Universal | Check for secrets (e.g. passwords, IP addresses, etc) accidentally included in software code | This protects us against accidentally leaking secrets which could compromise the security of the application | CI/CD builds fail if any unexpected secrets are detected | TBC | TBC |
+| Secret scanning | Security | Universal | Check for secrets (e.g. passwords, IP addresses, etc) accidentally included in software code | This protects us against accidentally leaking secrets (in source code) which could compromise the security of the application | CI/CD builds fail if any unexpected secrets are detected | TBC | TBC |
 | Security code analysis | Security | Universal | | | | | |
 | Security testing | Security | Contextual | | | | | |
 | Dependency scanning | Security | Universal | | | | | |
