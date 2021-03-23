@@ -4,41 +4,43 @@ This is part of a broader [quality framework](README.md)
 
 # Summary
 
-Quality checks are at the heart of good engineering and are essential for rapid and safe delivery of software changes. This page provides an index of the various quality checks described within our principles, patterns and practices.
+Quality checks are at the heart of good engineering, and are essential for rapid and safe delivery of software changes. This page provides an index of the various quality checks described within our principles, patterns and practices.
 
 # Usage
 
-We recommend all projects should apply all of the applicable quality checks
+All applicable quality checks should be applied. Not all checks are applicable in all contexts, for example accessibility testing is only applicable to applications with a user interface.
 
-Not all checks are applicable in all contexts, for example accessibility testing is obviously not applicable to products without a user interface
+The majority of these checks should be [automated](./patterns/automate-everything.md) via [continuous integration / continuous deployment](./practices/continuous-integration.md): the optimal sequencing of these checks within CI/CD pipelines will depend on the project's branching strategy, deployment strategy, etc.
+
+All of these checks are important, even where their purpose overlaps with other checks in the list. For example, comprehensive functional testing could be achieved without unit testing, instead only using the other functional test types on this list - this would result in a very long-running and inefficient test suite, precluding fast feedback and impeding rapid and safe delivery of software changes. For further details please see [test practices](./practices/testing.md), and especially the [test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html).
 
 ## RAG scale
 
-We rate our projects against these checks as follows:
+We rate our applications against each of these checks as follows:
 
-* Green = check is applied frequently and consistently (typically via CI/CD), the output of the check is a quality gate (as opposed to just a warning / for information), and the tolerances for that quality gate (e.g. code coverage %) are agreed and understood
-* Amber = check is applied, but not all conditions for green are met
-* Red = check not in place
-* N/A = check does not apply in the context
+* Green = the quality check is applied frequently and consistently (in practice this typically means [automated](./patterns/automate-everything.md) via [continuous integration / continuous deployment](./practices/continuous-integration.md)), the output of the check is a quality gate (as opposed to just a warning / for information), and the tolerances for that quality gate (e.g. code coverage %) are agreed and understood
+* Amber = the quality check is applied, but not all conditions for green are met - for example the check generates warnings that may or may not be acted on
+* Red = the quality check is not applied
+* N/A = the quality check is not applicable
 
 # Details
 
 | Quality check | Classification | Applicability | What it means | We we care | Tolerances for green | Endorsed tools / configuration | Further details |
 |:---|:---|:---|:---|:---|:---|:---|:---|
-| Unit tests | Functionality | Universal | Logic tests for blocks of code, e.g. methods | Fast & early feedback of logic issues| CI/CD builds fail if any tests fail | - | [Test practices](./practices/testing.md) |
+| Unit tests | Functionality | Universal | Logic tests for individual blocks of code, e.g. individual methods | This is the quickest (to execute) type of functional test, so these are essential to achieve both rapid and thorough functional testing | CI/CD builds fail if any tests fail | - | [Test practices](./practices/testing.md) |
 | Integration tests | Functionality | Universal | | | | | |
 | API / contract tests | Functionality | Contextual | | | | | |
 | UI tests | Functionality | Contextual | | | | | |
-| Secret scanning | Security | Universal | | | | | |
+| Secret scanning | Security | Universal | Check for secrets (e.g. passwords, IP addresses, etc) accidentally included in software code | This protects us against accidentally leaking secrets (in source code) which could compromise the security of the application | CI/CD builds fail if any unexpected secrets are detected | TBC | TBC |
 | Security code analysis | Security | Universal | | | | | |
 | Security testing | Security | Contextual | | | | | |
 | Dependency scanning | Security | Universal | | | | | |
-| Performance tests | Resilience | Contextual | | | | | |
-| Capacity tests | Resilience | Contextual | | | | | |
-| Stress tests | Resilience | Contextual | | | | | |
-| Soak tests | Resilience | Contextual | | | | | |
+| Performance tests | Resilience | Contextual | Check whether application performance is acceptable at different levels of load | Without this test, we don't know how load will affect the performance of the application | | | |
+| Capacity tests | Resilience | Contextual | Identify the application's breaking point in terms of heavy load | Without this test, we don't know how much load the application can handle before the application breaks | | | |
+| Stress tests | Resilience | Contextual | Check whether sudden spikes in load cause a problem | Without this test, we don't know if the application will fail under a sharp increase in load | | | |
+| Soak tests | Resilience | Contextual | Check whether sustained heavy load causes a problem | Without this test, we don't know if application performance will suffer under prolonged heavy load | | | |
 | Chaos tests | Resilience | Contextual | | | | | |
-| Code coverage | Maintainability | Universal | | | | | |
+| Code coverage | Maintainability | Universal | The proportion of the application code which is executed (in this context: during testing) | The higher the code coverage, the more thorough the testing, and therefore the higher the likelihood of detecting functional issues early | For new code: 70% | | |
 | Duplicate code scan | Maintainability | Universal | | | | | |
 | Code smells scan | Maintainability | Universal | | | | | |
 | Dead code scan | Maintainability | Universal | | | | | |
