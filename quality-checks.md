@@ -42,6 +42,6 @@ We rate our projects against these checks as follows:
 | Duplicate code scan | Maintainability | Universal | | | | | |
 | Code smells scan | Maintainability | Universal | | | | | |
 | Dead code scan | Maintainability | Universal | | | | | |
-| Code review | Other | Universal | | | | | [Code review guidance](/patterns/everything-as-code.md#code-review) |
+| Code review | Other | Universal | A second person manually checking a code change | Quality check by a human, as opposed to via a tool | Enforced & audited step within workflow | TBC | [Code review guidance](/patterns/everything-as-code.md#code-review) |
 | Accessibility tests | Other | Universal | | | | | |
 | Tech radar check | Other | Universal | | | | | |
