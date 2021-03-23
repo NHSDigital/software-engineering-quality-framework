@@ -25,7 +25,7 @@ We rate our projects against these checks as follows:
 
 | Quality check | Classification | Applicability | What it means | We we care | Tolerances for green | Endorsed tools / configuration | Further details |
 |:---|:---|:---|:---|:---|:---|:---|:---|
-| Unit tests | Functionality | Universal | Logic tests for blocks of code, e.g. methods | Fast & early feedback of logic issues| CI/CD builds fail if any tests fail | - | [Test practices](/practices/testing.md) |
+| Unit tests | Functionality | Universal | Logic tests for blocks of code, e.g. methods | Fast & early feedback of logic issues| CI/CD builds fail if any tests fail | - | [Test practices](./practices/testing.md) |
 | Integration tests | Functionality | Universal | | | | | |
 | API / contract tests | Functionality | Contextual | | | | | |
 | UI tests | Functionality | Contextual | | | | | |
@@ -42,6 +42,6 @@ We rate our projects against these checks as follows:
 | Duplicate code scan | Maintainability | Universal | | | | | |
 | Code smells scan | Maintainability | Universal | | | | | |
 | Dead code scan | Maintainability | Universal | | | | | |
-| Code review | Other | Universal | A second person manually checking a code change | Quality check by a human, as opposed to via a tool | Enforced & audited step within workflow | TBC | [Code review guidance](/patterns/everything-as-code.md#code-review) |
+| Code review | Other | Universal | A second person manually checking a code change | Quality check by a human, as opposed to via a tool | Enforced & audited step within workflow | TBC | [Code review guidance](./patterns/everything-as-code.md#code-review) |
 | Accessibility tests | Other | Universal | | | | | |
 | Tech radar check | Other | Universal | | | | | |
