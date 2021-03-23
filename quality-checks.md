@@ -8,7 +8,7 @@ Quality checks are at the heart of good engineering, and are essential for rapid
 
 # Usage
 
-We recommend all applications should apply all applicable quality checks. Not all checks are applicable in all contexts, for example accessibility testing is only applicable to applications with a user interface.
+All applicable quality checks should be applied. Not all checks are applicable in all contexts, for example accessibility testing is only applicable to applications with a user interface.
 
 The majority of these checks should be [automated](./patterns/automate-everything.md) via [continuous integration / continuous deployment](./practices/continuous-integration.md): the optimal sequencing of these checks within CI/CD pipelines will depend on the project's branching strategy, deployment strategy, etc.
 
