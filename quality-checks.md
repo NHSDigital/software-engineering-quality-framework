@@ -6,6 +6,13 @@ This is part of a broader [quality framework](README.md)
 
 Quality checks are at the heart of good engineering, and are essential for rapid and safe delivery of software changes. This page provides an index of the various quality checks described within our principles, patterns and practices.
 
+The checks are classified here based on the concerns they help to address:
+
+* Functionality
+* Security
+* Resilience
+* Maintainability
+
 # Usage
 
 All applicable quality checks should be applied. Not all checks are applicable in all contexts, for example accessibility testing is only applicable to applications with a user interface.
@@ -27,13 +34,13 @@ We rate our applications against each of these checks as follows:
 
 | Quality check | Classification | Applicability | What it means | We we care | Tolerances for green | Endorsed tools / configuration | Further details |
 |:---|:---|:---|:---|:---|:---|:---|:---|
-| Unit tests | Functionality | Universal | Logic tests for individual blocks of code, e.g. individual methods | This is the quickest (to execute) type of functional test, so these are essential to achieve both rapid and thorough functional testing | CI/CD builds fail if any tests fail | - | [Test practices](./practices/testing.md) |
-| Integration tests | Functionality | Universal | | | | | |
-| API / contract tests | Functionality | Contextual | | | | | |
-| UI tests | Functionality | Contextual | | | | | |
-| Secret scanning | Security | Universal | Check for secrets (e.g. passwords, IP addresses, etc) accidentally included in software code | This protects us against accidentally leaking secrets (in source code) which could compromise the security of the application | CI/CD builds fail if any unexpected secrets are detected | TBC | TBC |
-| Security code analysis | Security | Universal | | | | | |
-| Security testing | Security | Contextual | | | | | |
+| Unit tests | Functionality | Universal | Logic tests for individual blocks of code, e.g. individual methods | This is the quickest (to execute) type of functional test, so these are essential to achieve both rapid and thorough functional testing | Builds fail if any tests fail | - | [Test practices](./practices/testing.md) |
+| Integration tests | Functionality | Universal | | | Builds fail if any tests fail | | |
+| API / contract tests | Functionality | Contextual | | | Builds fail if any tests fail | | |
+| UI tests | Functionality | Contextual | | | Builds fail if any tests fail | | |
+| Secret scanning | Security | Universal | Check for secrets (e.g. passwords, IP addresses, etc) accidentally included in software code | This protects us against accidentally leaking secrets (in source code) which could compromise the security of the application | Builds fail if any unexpected secrets are detected | TBC | TBC |
+| Security code analysis | Security | Universal | Check for indications of possible security issues (for example injection weaknesses) | This gives fast feedback about security issues: it's not as thorough as security testing, but it's much quicker to execute, so both are important to achieve both rapid and thorough security testing | | | |
+| Security testing | Security | Contextual | Check for security issues (for example injection weaknesses) | More thorough than security code scanning, but much slower to execute, so both are important to achieve both rapid and thorough security testing | | | |
 | Dependency scanning | Security | Universal | | | | | |
 | Performance tests | Resilience | Contextual | Check whether application performance is acceptable at different levels of load | Without this test, we don't know how load will affect the performance of the application | | | |
 | Capacity tests | Resilience | Contextual | Identify the application's breaking point in terms of heavy load | Without this test, we don't know how much load the application can handle before the application breaks | | | |
