@@ -6,6 +6,13 @@ This is part of a broader [quality framework](README.md)
 
 Quality checks are at the heart of good engineering, and are essential for rapid and safe delivery of software changes. This page provides an index of the various quality checks described within our principles, patterns and practices.
 
+The checks are classified in this list based on the concerns they help to address:
+
+* Functionality
+* Security
+* Resilience
+* Maintainability
+
 # Usage
 
 All applicable quality checks should be applied. Not all checks are applicable in all contexts, for example accessibility testing is only applicable to applications with a user interface.
