@@ -35,10 +35,10 @@ We rate our applications against each of these checks as follows:
 | Quality check | Classification | Applicability | What it means | We we care | Tolerances for green | Endorsed tools / configuration | Further details |
 |:---|:---|:---|:---|:---|:---|:---|:---|
 | Unit tests | Functionality | Universal | Logic tests for individual blocks of code, e.g. individual methods | This is the quickest (to execute) type of functional test, so these are essential to achieve both rapid and thorough functional testing | CI/CD builds fail if any tests fail | - | [Test practices](./practices/testing.md) |
-| Integration tests | Functionality | Universal | | | CI/CD builds fail if any tests fail | | |
-| API / contract tests | Functionality | Contextual | | | CI/CD builds fail if any tests fail | | |
-| UI tests | Functionality | Contextual | | | CI/CD builds fail if any tests fail | | |
-| Secret scanning | Security | Universal | Check for secrets (e.g. passwords, IP addresses, etc) accidentally included in software code | This protects us against accidentally leaking secrets (in source code) which could compromise the security of the application | CI/CD builds fail if any unexpected secrets are detected | TBC | TBC |
+| Integration tests | Functionality | Universal | | | Builds fail if any tests fail | | |
+| API / contract tests | Functionality | Contextual | | | Builds fail if any tests fail | | |
+| UI tests | Functionality | Contextual | | | Builds fail if any tests fail | | |
+| Secret scanning | Security | Universal | Check for secrets (e.g. passwords, IP addresses, etc) accidentally included in software code | This protects us against accidentally leaking secrets (in source code) which could compromise the security of the application | Builds fail if any unexpected secrets are detected | TBC | TBC |
 | Security code analysis | Security | Universal | | | | | |
 | Security testing | Security | Contextual | | | | | |
 | Dependency scanning | Security | Universal | | | | | |
