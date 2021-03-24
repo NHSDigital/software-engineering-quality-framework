@@ -39,8 +39,8 @@ We rate our applications against each of these checks as follows:
 | API / contract tests | Functionality | Contextual | | | Builds fail if any tests fail | | |
 | UI tests | Functionality | Contextual | | | Builds fail if any tests fail | | |
 | Secret scanning | Security | Universal | Check for secrets (e.g. passwords, IP addresses, etc) accidentally included in software code | This protects us against accidentally leaking secrets (in source code) which could compromise the security of the application | Builds fail if any unexpected secrets are detected | TBC | TBC |
-| Security code analysis | Security | Universal | | | | | |
-| Security testing | Security | Contextual | | | | | |
+| Security code analysis | Security | Universal | Check for indications of possible security issues (for example injection weaknesses) | | | | |
+| Security testing | Security | Contextual | Check for security issues (for example injection weaknesses) | | | | |
 | Dependency scanning | Security | Universal | | | | | |
 | Performance tests | Resilience | Contextual | Check whether application performance is acceptable at different levels of load | Without this test, we don't know how load will affect the performance of the application | | | |
 | Capacity tests | Resilience | Contextual | Identify the application's breaking point in terms of heavy load | Without this test, we don't know how much load the application can handle before the application breaks | | | |
