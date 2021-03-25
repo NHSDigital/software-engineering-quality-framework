@@ -8,6 +8,16 @@
   * [Continuous integration](continuous-integration.md)
   * [Governance as a side effect](../patterns/governance-side-effect.md)
 
+## Testing Specific Principles
+* Quality is the whole team's responsibility
+  * Software testing is the responsibility of the whole team.
+  * Education on testing and testing principles is important to drive the right cultural behaviours.
+  * Quality approaches are driven by testers, but implemented by everyone.
+* Combining business knowledge with testing knowledge yields better quality outcomes
+  * Include business knowledge and critical thinking as part of assurance
+  * Intrinsic knowledge and mindset of the tester is key to driving quality outcomes
+  * Use BDD as an approach to align testing across the whole team and customer
+
 ## Details
 
 * Software quality and testing is everyone's responsibility.
