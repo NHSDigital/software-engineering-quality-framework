@@ -1,6 +1,6 @@
 # Engineering quality-checks
 
-This is part of a broader [quality framework](README.md)
+This is part of a broader [quality framework](README.md) and forms a key part of the [metrics](metrics.md) section.
 
 ## Summary
 
