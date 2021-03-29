@@ -10,12 +10,16 @@ Also, these metrics are intended to be considered as part of [engineering review
 
 ## Essential metrics:
 
+These metrics provide a fundamental level of insight, and so must be tracked:
+
 | Measure | Definition (each calculated over the last 28 days) |
 |:---|:---|
 | Deployment frequency | Number of deployments
 | Quality checks | Presence or absence of frequent, consistent, enforced (with agreed tolerances) of the [engineering quality checks](quality-checks.md) - follow that link for further details
 
 ## Recommended metrics:
+
+These metrics provide useful additional insight, and are recommended to be tracked:
 
 | Measure | Definition (each calculated over the last 28 days) |
 |:---|:---|
