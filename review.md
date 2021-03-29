@@ -27,26 +27,8 @@ This is a **self** assessment review:
 * Scores cannot be compared between teams, but they can help spot common issues which would benefit from coordinated effort between and across teams.
 
 # Metrics
-These hard figures help us to measure the effect of improvement work over time.
 
-## Essential:
-
-| Measure | Definition (each calculated over the last 28 days) |
-|:---|:---|
-| Deployment frequency | Number of deployments
-
-## Recommended:
-
-| Measure | Definition (each calculated over the last 28 days) |
-|:---|:---|
-| Lead time | Median time between an item being started to when it is done.
-| Change failure rate | Percentage of deployments which result in an incident.
-| Overall incident rate: P1 | Total number of priority 1 incidents which occurred.
-| Mean time to restore service: P1 | Mean time from priority 1 incident starting to when it is resolved.
-| Overall incident rate: P1 | Total number of priority 2 incidents which occurred.
-| Mean time to restore service: P2 | Mean time from priority 2 incident starting to when it is resolved.
-| Overall incident rate: P3 | Total number of priority 3 incidents which occurred.
-| Mean time to restore service: P3 | Mean time from priority 3 incident starting to when it is resolved.
+These reviews are intentionally subjective and open-ended, unlike [metrics](metrics.md) which are prescriptive and specific. Both of these things should be considered together, so these reviews should take the relevant [metrics](metrics.md) into account.
 
 # Scores and actions
 
