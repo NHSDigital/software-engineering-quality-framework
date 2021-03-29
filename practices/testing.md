@@ -17,6 +17,16 @@
   * Include business knowledge and critical thinking as part of assurance
   * Intrinsic knowledge and mindset of the tester is key to driving quality outcomes
   * Use BDD as an approach to align testing across the whole team and customer
+* Testing is prioritised based on risk
+  * A testing risk profile is defined and understood by the whole team, including the customer
+  * Risk appetite should be worked across the whole team, including customers and/or users
+* Use experiental / experimental / exploratory testing as well as formal methods
+  * Gamify testing - try multiple techniques and learn as you go
+* Testing is assisted by automation
+  * Appreciate that not everything can be automated
+  * Identify good candidates for automation - particular focus on high risk and repeatable areas
+* Look to continually improve testing
+  * Testing is a continuous activity, not a phase of delivery
 
 ## Details
 
