@@ -42,6 +42,7 @@
 * New functionality must be covered by passing automated tests (unless there is a legitimate reason not to).
 * Consider where best to add tests within the [test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html) &mdash; in general, the lower the better.
 * Avoid testing the same thing at multiple levels of the test pyramid.
+* Consider using the [agile testing quadrant](https://lisacrispin.com/2011/11/08/using-the-agile-testing-quadrants/) to help support a whole team approach around test planning and test automation.
 * Use stubs to test the behaviour of components in isolation &mdash; focus tests of multiple services on validating the interactions between services e.g. using consumer-driven contract testing.
 * Do not add tests of no value (e.g. tests of default getters/setters) just to increase the coverage level &mdash; 100% coverage is not a good use of time.
 * Tests must pass before code can be merged.
