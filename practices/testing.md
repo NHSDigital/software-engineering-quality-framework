@@ -13,7 +13,7 @@
 * Quality is the whole team's responsibility
   * Software testing is the responsibility of the whole team.
   * Education on testing and testing principles is important to drive the right cultural behaviours.
-  * Quality approaches are driven by testers, but implemented by everyone.
+  * Quality approaches should be driven as a team and implemented by everyone.
 * Combining business knowledge with testing knowledge yields better quality outcomes
   * Include business knowledge and critical thinking as part of assurance
   * Intrinsic knowledge and mindset of the tester is key to driving quality outcomes
