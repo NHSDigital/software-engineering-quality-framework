@@ -16,7 +16,7 @@
   * Quality approaches should be driven as a team and implemented by everyone.
 * Combining business knowledge with testing knowledge yields better quality outcomes
   * Include business knowledge and critical thinking as part of assurance
-  * Intrinsic knowledge and mindset of the tester is key to driving quality outcomes
+  * Intrinsic knowledge and mindset of the team is key to driving quality outcomes
   * Use Behaviour Driven Development (BDD) as an approach to align testing across the whole team and customer
   * Consider BDD to encode acceptance criteria in business terms as automated tests where appropriate.
     * This can be an effective communication and collaboration tool where the product owner is involved in reviewing detailed acceptance criteria (expressed as BDD tests).
