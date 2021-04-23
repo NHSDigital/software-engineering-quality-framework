@@ -40,7 +40,7 @@ Areas of interest are specifically:
 ## Coordinator
 
 * Initially:
-  * There will be a faciliator group, comprising of a representative from each of the member NHDS directorates (DSC, Product Development, Platforms, Security Architecture)
+  * There will be a faciliator group, comprising of a representative from each of the member NHS Digital directorates (DSC, Product Development, Platforms, Security Architecture)
   * The group will self-organise who faciliates individual sessions & activities
 * Once the community is established:
   * This will be a rotating post on a 3-month basis, requiring a commitment of one day per week
