@@ -27,26 +27,8 @@ This is a **self** assessment review:
 * Scores cannot be compared between teams, but they can help spot common issues which would benefit from coordinated effort between and across teams.
 
 # Metrics
-These hard figures help us to measure the effect of improvement work over time.
 
-## Essential:
-
-| Measure | Definition (each calculated over the last 28 days) |
-|:---|:---|
-| Deployment frequency | Number of deployments
-
-## Recommended:
-
-| Measure | Definition (each calculated over the last 28 days) |
-|:---|:---|
-| Lead time | Median time between an item being started to when it is done.
-| Change failure rate | Percentage of deployments which result in an incident.
-| Overall incident rate: P1 | Total number of priority 1 incidents which occurred.
-| Mean time to restore service: P1 | Mean time from priority 1 incident starting to when it is resolved.
-| Overall incident rate: P1 | Total number of priority 2 incidents which occurred.
-| Mean time to restore service: P2 | Mean time from priority 2 incident starting to when it is resolved.
-| Overall incident rate: P3 | Total number of priority 3 incidents which occurred.
-| Mean time to restore service: P3 | Mean time from priority 3 incident starting to when it is resolved.
+These reviews are intentionally subjective and open-ended, unlike [metrics](metrics.md) which are prescriptive and specific. Both of these things should be considered together, so these reviews should take the relevant [metrics](metrics.md) into account.
 
 # Scores and actions
 
@@ -83,6 +65,9 @@ Finally (and most importantly) identify actions to move the score upward.
 * We have a plan which is visible to all of us.
 * The plan is at the right level and shows what we expect to be delivered each sprint/month &mdash; usually 2–5 items in each increment.
 * It is up to date and complete.
+* We have regular planning sessions.
+  * They involve all the people who are needed.
+  * They are efficient and effective.
 * It changes when it should but is stable enough.
 * It gives our stakeholders a clear forecast of what is most likely to happen over the coming time periods.
 * It makes sure we work on the right things first and helps us predict and avoid issues.
@@ -99,9 +84,6 @@ Finally (and most importantly) identify actions to move the score upward.
 * We have stand up every day with the whole team.
   * It keeps us aligned and working well as a team.
   * It helps us share and resolve impediments.
-* We have regular planning sessions.
-  * They involve all the people who are needed.
-  * They are efficient and effective.
 * All our code is stored in source control (e.g. git).
   * We practice [trunk-based development](https://trunkbaseddevelopment.com/) using short-lived feature branches off master.
   * All code must be reviewed before it is merged.
@@ -111,7 +93,6 @@ Finally (and most importantly) identify actions to move the score upward.
 * We explicitly limit work in progress (WIP).
 * Our lead time is typically two days or less.
   * (Lead time = time from picking an item up to it being done.)
-* The onboarding process for new team members is simple and straightforward.
 
 ### 4. Fun
 * The team is a fun place to be every day.
@@ -137,6 +118,7 @@ Finally (and most importantly) identify actions to move the score upward.
   * We know how to operate the live system reliably and diagnose and fix things when they break.
   * We have the skills and knowledge for what we will be doing next.
 * Skills and knowledge are well spread between team members.
+* The onboarding process for new team members is simple and straightforward.
 
 ## Individual component or system
 You may wish to score each individual component or system separately for these aspects.
@@ -247,7 +229,7 @@ Good facilitation can help teams get the most out of the review and it is recomm
 
 * Recommended group size is 3&ndash;8 team members for each session.
 * Recommended duration is 3&ndash;4 hours, either in one block with breaks or in multiple sessions (but aim to avoid long gaps between sessions).
-* Ask a member of the Software Engineering Quality Assessments team (currently Andrew Blundell, Daniel Stefanuik, David Lavender, Ivor Caldwell) to create a blank spreadsheet for the review from the [template](review-template.xlsx). This will be stored centrally and shared with the team.
+* Ask a member of the Software Engineering Quality Assessments team (currently Andrew Blundell, Daniel Stefanuik, David Lavender, Sean Craig, Nick Sparks, Adam Strickland) to create a blank spreadsheet for the review from the [template](review-template.xlsx). This will be stored centrally and shared with the team.
 * Work with a member of the team to fill in the _Project_ and _What's it do_ fields before the session. This is typically uncontroversial and saves time in the session.
 * To save time, fill in the list of participants before the session, but verify and update as necessary at the start of the session.
 * Be ready for the session with the review spreadsheet and this document open such that both can easily be seen by participants by sharing your screen (assuming the review is not being held in person).
@@ -261,5 +243,6 @@ Good facilitation can help teams get the most out of the review and it is recomm
 * Work through the review section by section. For each, briefly outline the scope and pick out a few key points from the list of what "good" looks like, then invite the group to describe how things work for them. Keep conversation and questioning open to start with and let the conversation be led by the team. Ask specific questions to fill in any gaps based on the points under each section. Identify any actions which come up and record these. Try to keep the conversation relevant and focused &mdash; there is a lot to go through.
 * Once the team has discussed the points for the section, it's time to score. A good way to do this is using "planning poker" style blind voting, which can be easily done by holding up 1 to 5 fingers. Discuss any differences and agree on a single score which is recorded. Refer to the definitions of each score at the bottom of the review sheet. While emphasising that the score is not the most important part of the process, advise the team when it feels like they are being too harsh or too soft on scoring. Accurate scoring will more clearly focus attention on the right areas.
 * Encourage the team to identify what action could improve the score (especially if 3 or lower) and record these. Make sure the team is happy with the wording you use for the action.
+* At the end of the session work through the actions with the team to come up with the top 3 actions based on priority. Add these to the "Top Actions" section of the review sheet.
 * Wrap up the session by sharing a link (with editing enabled) to the spreadsheet with the team. The person who generated the blank sheet will have created this link at the time and have shared it with you. The review is owned by the team and they should feel free to refer to it and tweak the scores and actions over time.
 

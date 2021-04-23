@@ -7,17 +7,33 @@
 * See also:
   * [Continuous integration](continuous-integration.md)
   * [Governance as a side effect](../patterns/governance-side-effect.md)
+  * [Quality Metrics](../quality-checks.md)
 
 ## Details
-
-* Software quality and testing is everyone's responsibility.
-* Tests are automated by default (see [automate everything](../patterns/automate-everything.md)).
+* Quality is the whole team's responsibility
+  * Software testing is the responsibility of the whole team.
+  * Education on testing and testing principles is important to drive the right cultural behaviours.
+  * Quality approaches should be driven as a team and implemented by everyone.
+* Combining business knowledge with testing knowledge yields better quality outcomes
+  * Include business knowledge and critical thinking as part of assurance
+  * Intrinsic knowledge and mindset of the team is key to driving quality outcomes
+  * Use Behaviour Driven Development (BDD) as an approach to align testing across the whole team and customer
+  * Consider BDD to encode acceptance criteria in business terms as automated tests where appropriate.
+    * This can be an effective communication and collaboration tool where the product owner is involved in reviewing detailed acceptance criteria (expressed as BDD tests).
+    * But if the PO is not involved in this way then well written unit and integration tests are often sufficient and avoid the extra layer of abstraction which BDD frameworks introduce.
+* Testing is prioritised based on risk
+  * A testing risk profile is defined and understood by the whole team, including the customer
+  * Risk appetite should be worked across the whole team, including customers and/or users
+* Use experiental / experimental / exploratory testing as well as formal methods
+  * Gamify testing - try multiple techniques and learn as you go
+* Testing is assisted by automation with automated tests as a default (see [automate everything](../patterns/automate-everything.md)).
+  * Appreciate that not everything can be automated
+  * Identify good candidates for automation - particular focus on high risk and repeatable areas
+* Look to continually improve testing
+  * Testing is a continuous activity, not a phase of delivery
 * Tests act as documentation of the system's behaviour and should be clear enough to do this effectively.
 * Tests are written alongside or before whatever they are testing.
 * Tests are code (see [everything as code](../patterns/everything-as-code.md)).
-* Use Behaviour Driven Development (BDD) to encode acceptance criteria in business terms as automated tests where appropriate.
-  * This can be an effective communication and collaboration tool where the product owner is involved in reviewing detailed acceptance criteria (expressed as BDD tests).
-  * But if the PO is not involved in this way then well written unit and integration tests are often sufficient and avoid the extra layer of abstraction which BDD frameworks introduce.
 * Tests and test suites must be executable from the command line via a single command.
 * Tests do not rely on other tests (i.e. each test can be executed in isolation, tests can be run concurrently and in any order).
 * Tests only check a single condition.
@@ -26,6 +42,7 @@
 * New functionality must be covered by passing automated tests (unless there is a legitimate reason not to).
 * Consider where best to add tests within the [test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html) &mdash; in general, the lower the better.
 * Avoid testing the same thing at multiple levels of the test pyramid.
+* Consider using the [agile testing quadrant](https://lisacrispin.com/2011/11/08/using-the-agile-testing-quadrants/) to help support a whole team approach around test planning and test automation.
 * Use stubs to test the behaviour of components in isolation &mdash; focus tests of multiple services on validating the interactions between services e.g. using consumer-driven contract testing.
 * Do not add tests of no value (e.g. tests of default getters/setters) just to increase the coverage level &mdash; 100% coverage is not a good use of time.
 * Tests must pass before code can be merged.
