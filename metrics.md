@@ -6,7 +6,7 @@ This is part of a broader [quality framework](README.md)
 
 These hard figures help us to measure the effect of improvement work over time, and should be tracked on a monthly basis.
 
-Also, these metrics are intended to be considered as part of [engineering reviews](review.md).
+Also, these metrics are intended to be considered as part of [engineering reviews](review.md). They will also be used on Engineering Quality dashboards for teams to track their progress with improvements in line with the engineering reviews.
 
 ## Essential metrics:
 
@@ -14,8 +14,8 @@ These metrics provide a fundamental level of insight, and so must be tracked:
 
 | Measure | Definition (each calculated over the last 28 days) |
 |:---|:---|
-| Deployment frequency | Number of deployments
-| Quality checks | Presence or absence of frequent, consistent, enforced (with agreed tolerances) of the [engineering quality checks](quality-checks.md) - follow that link for further details
+| Deployment frequency | Number of deployments. Captured and represented on Engineering Quality Dashboards.
+| Quality checks | Presence or absence of frequent, consistent, enforced (with agreed tolerances) of the [engineering quality checks](quality-checks.md) - follow that link for further details. Captured and represented on Engineering Quality Dashboards.
 
 ## Recommended metrics:
 
