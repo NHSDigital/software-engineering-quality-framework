@@ -73,11 +73,13 @@ The remainder of this page gives more detailed and specific recommendations to b
 
       TO DO: more details...
       [awslabs git-secrets](https://github.com/awslabs/git-secrets)
+      <br/>[candidate regex list](https://github.com/nhsd-exeter/make-devops/blob/master/build/automation/lib/git.mk#L22-L34)
       </details>
     - As a backstop, *also* enable server-side scanning within the code repository
       <details><summary>Recommended solution (click to expand)</summary>
 
       TO DO: more details... for example in [GitHub](https://docs.github.com/en/github/administering-a-repository/about-secret-scanning)
+      <br/>[candidate regex list](https://github.com/nhsd-exeter/make-devops/blob/master/build/automation/lib/git.mk#L22-L34)
       </details>
   - Be wary of any 3rd party JavaScript included on the page, e.g. for A/B testing, analytics
   - Pin dependencies at known versions to avoid unexpected updates
