@@ -30,6 +30,12 @@ We rate our applications against each of these checks as follows:
 * Red = the quality check is not applied
 * N/A = the quality check is not applicable
 
+## Tracking progress
+
+We recommend tracking progress on an Engineering Quality dashboard, for example:
+
+![Example Dashboard](quality-dashboard.png)
+
 ## Details
 
 | Quality check          | Classification  | Applicability | What it means                                                                                                                                                                                                   | Why we care                                                                                                                                                                                                                                                | Tolerances for green                                                                                                                                                     | Endorsed tools / configuration                                                | Further details                                                                                               |
