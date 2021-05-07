@@ -68,19 +68,27 @@ The remainder of this page gives more detailed and specific recommendations to b
 - Be careful not to **leak information**, e.g. error messages, stack traces, headers
 - **Don't trust** yourself or others!
   - Code must be automatically scanned for secrets or other sensitive data:
-    - To catch any issues early and to minimise potential exposure, scan code on developer machines *before* code is committed to the code repository
-      <details><summary>Recommended solution (click to expand)</summary>
+    - It is recommended to use RegEx expressions to catch any potential issues in your code. 
 
-      TO DO: more details...
-      [awslabs git-secrets](https://github.com/awslabs/git-secrets)
-      <br/>[candidate regex list](https://github.com/nhsd-exeter/make-devops/blob/master/build/automation/lib/git.mk#L22-L34)
+      <details><summary>Base set of recommended RegEx expressions for scanning (click to expand)</summary>
+        make git-secrets-add-allowed PATTERN='(000000000000|123456789012)' # AWS mock account numbers
+        make git-secrets-add-banned PATTERN='[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}' # IPv6
+        make git-secrets-add-banned PATTERN='[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' # IPv4
+        make git-secrets-add-allowed PATTERN='(127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}|10\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}|172\.(1[6-9|2[0-9]|3[0-1])\.[0-9]{1,3}\.[0-9]{1,3}|192\.168\.[0-9]{1,3}\.[0-9]{1,3}|0\.0\.0\.0|8\.8\.8\.8|8\.8\.4\.4|208\.67\.222\.222|208\.67\.220\.220)' # IPv4 exceptions
+        make git-secrets-add-banned PATTERN='[a-z]{2}-[a-z-]*-[1,2,3]\.rds\.amazonaws\.com' # AWS RDS (Aurora) endpoint
+        make git-secrets-add-banned PATTERN='rds\.[a-z]{2}-[a-z-]*-[1,2,3]\.amazonaws\.com' # AWS RDS endpoint
+        make git-secrets-add-banned PATTERN='dynamodb\.[a-z]{2}-[a-z-]*-[1,2,3]\.amazonaws\.com' # AWS DynamoDB endpoint
+        make git-secrets-add-banned PATTERN='[a-z]{2}-[a-z-]*-[1,2,3]\.es\.amazonaws\.com' # AWS Elasticsearch endpoint
+        make git-secrets-add-banned PATTERN='[a-z]*[1-3]\.cache\.amazonaws\.com' # AWS ElastiCache endpoint
+        make git-secrets-add-banned PATTERN='hooks\.slack\.com/services/T[a-zA-Z0-9]*/B[a-zA-Z0-9]*/[a-zA-Z0-9]*' # Slack webhook URL
+        make git-secrets-add-banned PATTERN='-----BEGIN[[:blank:]]CERTIFICATE-----' # SSL PEM certificate
+        make git-secrets-add-banned PATTERN='-----BEGIN[[:blank:]]PRIVATE[[:blank:]]KEY-----' # SSL PEM key
       </details>
-    - As a backstop, *also* enable server-side scanning within the code repository
-      <details><summary>Recommended solution (click to expand)</summary>
-
-      TO DO: more details... for example in [GitHub](https://docs.github.com/en/github/administering-a-repository/about-secret-scanning)
-      <br/>[candidate regex list](https://github.com/nhsd-exeter/make-devops/blob/master/build/automation/lib/git.mk#L22-L34)
-      </details>
+    - To catch any issues early and to minimise potential exposure, scan code on developer machines *before* code is committed to the code repository. Recommended solution options:
+      - [awslabs git-secrets](https://github.com/awslabs/git-secrets)
+      - [GitLeaks](https://github.com/zricethezav/gitleaks)
+    - As a backstop, *also* enable server-side scanning within the code repository. Recommended solution options:
+      - TO DO: more details... for example in [GitHub](https://docs.github.com/en/github/administering-a-repository/about-secret-scanning)
   - Be wary of any 3rd party JavaScript included on the page, e.g. for A/B testing, analytics
   - Pin dependencies at known versions to avoid unexpected updates
   - Scan dependencies for vulnerabilities, e.g. using [OWASP Dependency Check](https://www.owasp.org/index.php/OWASP_Dependency_Check) or [Snyk](https://snyk.io/)
