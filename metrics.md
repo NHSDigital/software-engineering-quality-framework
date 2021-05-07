@@ -16,8 +16,8 @@ These metrics provide a fundamental level of insight, and so must be tracked:
 
 | Measure | Definition (each calculated over the last 28 days) |
 |:---|:---|
-| Deployment frequency | Number of deployments. We recommend capturing and representing this information on an Engineering Quality Dashboard.
-| Quality checks | Presence or absence of frequent, consistent, enforced (with agreed tolerances) of the [engineering quality checks](quality-checks.md) - follow that link for further details. We recommend capturing and representing this information on an Engineering Quality Dashboard.
+| Deployment frequency | Number of deployments.
+| Quality checks | Presence or absence of frequent, consistent, enforced (with agreed tolerances) of the [engineering quality checks](quality-checks.md) - follow that link for further details.
 
 ## Recommended metrics:
 
