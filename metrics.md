@@ -6,7 +6,9 @@ This is part of a broader [quality framework](README.md)
 
 These hard figures help us to measure the effect of improvement work over time, and should be tracked on a monthly basis.
 
-Also, these metrics are intended to be considered as part of [engineering reviews](review.md). We recommend tracking these metrics on an Engineering Quality dashboard for teams to track their progress with improvements in line with the engineering reviews.
+Also, these metrics are intended to be considered as part of [engineering reviews](review.md). We recommend tracking these metrics on an Engineering Quality dashboard for teams to track their progress with improvements in line with the engineering reviews, for example:
+
+![Example Dashboard](quality-dashboard.png)
 
 ## Essential metrics:
 
