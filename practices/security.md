@@ -41,8 +41,8 @@ The remainder of this page gives more detailed and specific recommendations to b
 ### Big picture
 
 - Understand what **data** is processed or stored in the system
-  - Assess the data classification e.g. personal confidential data (PCD), aggregate data, anonymised data, publicly available information. See [Health and social care data risk model](https://digital.nhs.uk/data-and-information/looking-after-information/data-security-and-information-governance/nhs-and-social-care-data-off-shoring-and-the-use-of-public-cloud-services/health-and-social-care-data-risk-model)
-  - Understand governance and compliance requirements which apply, e.g. [NHS guidance](https://digital.nhs.uk/data-and-information/looking-after-information/data-security-and-information-governance/nhs-and-social-care-data-off-shoring-and-the-use-of-public-cloud-services/health-and-social-care-cloud-risk-framework), GDPR
+  - Assess the data classification e.g. personal confidential data (PCD), aggregate data, anonymised data, publicly available information. See [Health and social care data risk model](https://digital.nhs.uk/data-and-information/looking-after-information/data-security-and-information-governance/nhs-and-social-care-data-off-shoring-and-the-use-of-public-cloud-services)
+  - Understand governance and compliance requirements which apply, e.g. [NHS guidance](https://digital.nhs.uk/data-and-information/looking-after-information/data-security-and-information-governance/nhs-and-social-care-data-off-shoring-and-the-use-of-public-cloud-services), GDPR
 - Consider whether the data being processed is all **necessary** for the system to function, or whether it could be reduced to minimise risk
   - Prefer use of managed services to reduce attack surface where possible
 - Keep **audit** log(s) of user actions, software and infrastructure changes (e.g. git, CI/CD, [CloudTrail](https://aws.amazon.com/cloudtrail/))
