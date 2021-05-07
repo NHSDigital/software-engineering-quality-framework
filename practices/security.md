@@ -71,6 +71,8 @@ The remainder of this page gives more detailed and specific recommendations to b
     - It is recommended to use RegEx expressions to catch any potential issues in your code. 
 
       <details><summary>Base set of recommended RegEx expressions for scanning (click to expand)</summary>
+  
+        ```yaml
         make git-secrets-add-allowed PATTERN='(000000000000|123456789012)' # AWS mock account numbers
         make git-secrets-add-banned PATTERN='[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}' # IPv6
         make git-secrets-add-banned PATTERN='[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' # IPv4
@@ -83,6 +85,7 @@ The remainder of this page gives more detailed and specific recommendations to b
         make git-secrets-add-banned PATTERN='hooks\.slack\.com/services/T[a-zA-Z0-9]*/B[a-zA-Z0-9]*/[a-zA-Z0-9]*' # Slack webhook URL
         make git-secrets-add-banned PATTERN='-----BEGIN[[:blank:]]CERTIFICATE-----' # SSL PEM certificate
         make git-secrets-add-banned PATTERN='-----BEGIN[[:blank:]]PRIVATE[[:blank:]]KEY-----' # SSL PEM key
+        ```
       </details>
     - To catch any issues early and to minimise potential exposure, scan code on developer machines *before* code is committed to the code repository. Recommended solution options:
       - [awslabs git-secrets](https://github.com/awslabs/git-secrets)
