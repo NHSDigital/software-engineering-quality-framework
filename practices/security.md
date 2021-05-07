@@ -72,19 +72,21 @@ The remainder of this page gives more detailed and specific recommendations to b
 
       <details><summary>Base set of recommended RegEx expressions for scanning (click to expand)</summary>
   
-        ```yaml
-        make git-secrets-add-allowed PATTERN='(000000000000|123456789012)' # AWS mock account numbers
-        make git-secrets-add-banned PATTERN='[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}' # IPv6
-        make git-secrets-add-banned PATTERN='[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' # IPv4
-        make git-secrets-add-allowed PATTERN='(127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}|10\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}|172\.(1[6-9|2[0-9]|3[0-1])\.[0-9]{1,3}\.[0-9]{1,3}|192\.168\.[0-9]{1,3}\.[0-9]{1,3}|0\.0\.0\.0|8\.8\.8\.8|8\.8\.4\.4|208\.67\.222\.222|208\.67\.220\.220)' # IPv4 exceptions
-        make git-secrets-add-banned PATTERN='[a-z]{2}-[a-z-]*-[1,2,3]\.rds\.amazonaws\.com' # AWS RDS (Aurora) endpoint
-        make git-secrets-add-banned PATTERN='rds\.[a-z]{2}-[a-z-]*-[1,2,3]\.amazonaws\.com' # AWS RDS endpoint
-        make git-secrets-add-banned PATTERN='dynamodb\.[a-z]{2}-[a-z-]*-[1,2,3]\.amazonaws\.com' # AWS DynamoDB endpoint
-        make git-secrets-add-banned PATTERN='[a-z]{2}-[a-z-]*-[1,2,3]\.es\.amazonaws\.com' # AWS Elasticsearch endpoint
-        make git-secrets-add-banned PATTERN='[a-z]*[1-3]\.cache\.amazonaws\.com' # AWS ElastiCache endpoint
-        make git-secrets-add-banned PATTERN='hooks\.slack\.com/services/T[a-zA-Z0-9]*/B[a-zA-Z0-9]*/[a-zA-Z0-9]*' # Slack webhook URL
-        make git-secrets-add-banned PATTERN='-----BEGIN[[:blank:]]CERTIFICATE-----' # SSL PEM certificate
-        make git-secrets-add-banned PATTERN='-----BEGIN[[:blank:]]PRIVATE[[:blank:]]KEY-----' # SSL PEM key
+        ```
+        Banned:
+        '[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}:[0-9a-fA-F]{1,4}' # IPv6
+        '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' # IPv4
+        '[a-z]{2}-[a-z-]*-[1,2,3]\.rds\.amazonaws\.com' # AWS RDS (Aurora) endpoint
+        'rds\.[a-z]{2}-[a-z-]*-[1,2,3]\.amazonaws\.com' # AWS RDS endpoint
+        'dynamodb\.[a-z]{2}-[a-z-]*-[1,2,3]\.amazonaws\.com' # AWS DynamoDB endpoint
+        '[a-z]{2}-[a-z-]*-[1,2,3]\.es\.amazonaws\.com' # AWS Elasticsearch endpoint
+        '[a-z]*[1-3]\.cache\.amazonaws\.com' # AWS ElastiCache endpoint
+        'hooks\.slack\.com/services/T[a-zA-Z0-9]*/B[a-zA-Z0-9]*/[a-zA-Z0-9]*' # Slack webhook URL
+        '-----BEGIN[[:blank:]]CERTIFICATE-----' # SSL PEM certificate
+        '-----BEGIN[[:blank:]]PRIVATE[[:blank:]]KEY-----' # SSL PEM key
+        Allowed:
+        '(000000000000|123456789012)' # AWS mock account numbers
+        '(127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}|10\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}|172\.(1[6-9|2[0-9]|3[0-1])\.[0-9]{1,3}\.[0-9]{1,3}|192\.168\.[0-9]{1,3}\.[0-9]{1,3}|0\.0\.0\.0|8\.8\.8\.8|8\.8\.4\.4|208\.67\.222\.222|208\.67\.220\.220)' # IPv4 exceptions
         ```
       </details>
     - To catch any issues early and to minimise potential exposure, scan code on developer machines *before* code is committed to the code repository. Recommended solution options:
