@@ -8,8 +8,6 @@ The framework is concerned with using "good" software engineering to support rap
 * Signpost useful training resources and examples/blueprints relating to aspects of "good"
 * Provide resources useful for establishment & expansion of an engineering community
 
-Temporary broken link: [this won't work!!](www.madeuplinkthiscannotpossiblyexist.com/madeup)
-
 ## Philosophy
 
 The philosophy underpinning this framework advocates:
