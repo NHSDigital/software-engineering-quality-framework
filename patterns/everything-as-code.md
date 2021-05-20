@@ -56,6 +56,8 @@ While effective testing is the best way to detect bugs or non-functional problem
     * Are there secrets in the code?
     * For further reading, please see the [OWASP Code Review Guide](https://owasp.org/www-pdf-archive/OWASP_Code_Review_Guide_v2.pdf)
 
+Note: automated scans and tests can help to identity a lot of these quality issues (please see (Quality Checks)[../quality-checks.md] but no automated scan is perfect.
+
 ## Examples
 
 * Application code written in languages such as Python, Java or C#.
