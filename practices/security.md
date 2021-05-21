@@ -92,9 +92,7 @@ The remainder of this page gives more detailed and specific recommendations to b
         '(127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}|10\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}|172\.(1[6-9|2[0-9]|3[0-1])\.[0-9]{1,3}\.[0-9]{1,3}|192\.168\.[0-9]{1,3}\.[0-9]{1,3}|0\.0\.0\.0|8\.8\.8\.8|8\.8\.4\.4|208\.67\.222\.222|208\.67\.220\.220)' # IPv4 exceptions
         ```
       </details>
-    - To catch any issues early and to minimise potential exposure, scan code on developer machines *before* code is committed to the code repository. Recommended solution options:
-      - [awslabs git-secrets](https://github.com/awslabs/git-secrets)
-      - [GitLeaks](https://github.com/zricethezav/gitleaks)
+    - To catch any issues early and to minimise potential exposure, scan code on developer machines *before* code is committed to the code repository. NHSD recommend using [awslabs git-secrets](https://github.com/awslabs/git-secrets). To set this up on a Mac workstation or as part of your Jenkins pipeline, follow the examples and READMEs in [nhsd-git-secrets](../nhsd-git-secrets). Windows testing is in progress and instructions/code will be added in due course
     - As a backstop, *also* enable server-side scanning within the code repository. Recommended solution options:
       - TO DO: more details... for example in [GitHub](https://docs.github.com/en/github/administering-a-repository/about-secret-scanning)
   - Be wary of any 3rd party JavaScript included on the page, e.g. for A/B testing, analytics
