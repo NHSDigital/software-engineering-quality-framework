@@ -41,8 +41,8 @@ The remainder of this page gives more detailed and specific recommendations to b
 ### Big picture
 
 - Understand what **data** is processed or stored in the system
-  - Assess the data classification e.g. personal confidential data (PCD), aggregate data, anonymised data, publicly available information. See [Health and social care data risk model](https://digital.nhs.uk/data-and-information/looking-after-information/data-security-and-information-governance/nhs-and-social-care-data-off-shoring-and-the-use-of-public-cloud-services/health-and-social-care-data-risk-model)
-  - Understand governance and compliance requirements which apply, e.g. [NHS guidance](https://digital.nhs.uk/data-and-information/looking-after-information/data-security-and-information-governance/nhs-and-social-care-data-off-shoring-and-the-use-of-public-cloud-services/health-and-social-care-cloud-risk-framework), GDPR
+  - Assess the data classification e.g. personal confidential data (PCD), aggregate data, anonymised data, publicly available information. See [Health and social care data risk model](https://digital.nhs.uk/data-and-information/looking-after-information/data-security-and-information-governance/nhs-and-social-care-data-off-shoring-and-the-use-of-public-cloud-services)
+  - Understand governance and compliance requirements which apply, e.g. [NHS guidance](https://digital.nhs.uk/data-and-information/looking-after-information/data-security-and-information-governance/nhs-and-social-care-data-off-shoring-and-the-use-of-public-cloud-services), GDPR
 - Consider whether the data being processed is all **necessary** for the system to function, or whether it could be reduced to minimise risk
   - Prefer use of managed services to reduce attack surface where possible
 - Keep **audit** log(s) of user actions, software and infrastructure changes (e.g. git, CI/CD, [CloudTrail](https://aws.amazon.com/cloudtrail/))
@@ -67,10 +67,10 @@ The remainder of this page gives more detailed and specific recommendations to b
 - Prevent **[clickjacking](https://sudo.pagerduty.com/for_engineers/#clickjacking)** with `X-Frame-Options`
 - Be careful not to **leak information**, e.g. error messages, stack traces, headers
 - **Don't trust** yourself or others!
-  - Code should be automatically scanned for secrets or other sensitive data using standalone tools like [GitGuardian](https://www.gitguardian.com/) or [awslabs git-secrets](https://github.com/awslabs/git-secrets) or built in tools in [GitLab](https://docs.gitlab.com/ee/user/application_security/secret_detection/) or [GitHub](https://docs.github.com/en/github/administering-a-repository/about-secret-scanning).
-    - Review the configuration of whichever tools you use, for example [awslabs git-secrets](https://github.com/awslabs/git-secrets) does not scan for IP addresses by default, but you can change that by adding more regex expressions
-      - TO DO: add config to register regex for IP4 and IP6
-    - Ideally, run a tool like [OWASP SEDATED](https://github.com/OWASP/SEDATED) or [awslabs git-secrets](https://github.com/awslabs/git-secrets) locally on developer laptops (to catch secrets at source) with a backstop of a centralised tool such as  [GitHub](https://docs.github.com/en/github/administering-a-repository/about-secret-scanning)
+  - Code must be automatically scanned for secrets or other sensitive data:
+    - To catch any issues early and to minimise potential exposure, scan code on developer machines *before* code is committed to the code repository. We recommend using [awslabs git-secrets](https://github.com/awslabs/git-secrets). To set this up on a Mac workstation or as part of your Jenkins pipeline, follow the examples and READMEs in [nhsd-git-secrets](../nhsd-git-secrets). Windows testing is in progress and instructions/code will be added in due course
+    - As a backstop, *also* enable server-side scanning within the code repository. Recommended solution options:
+      - TO DO: more details... for example in [GitHub](https://docs.github.com/en/github/administering-a-repository/about-secret-scanning)
   - Be wary of any 3rd party JavaScript included on the page, e.g. for A/B testing, analytics
   - Pin dependencies at known versions to avoid unexpected updates
   - Scan dependencies for vulnerabilities, e.g. using [OWASP Dependency Check](https://www.owasp.org/index.php/OWASP_Dependency_Check) or [Snyk](https://snyk.io/)
