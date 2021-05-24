@@ -45,11 +45,18 @@ Robert Fink provides an excellent description of the [motivation and practice of
 While effective testing is the best way to detect bugs or non-functional problems, code review plays an important role in spotting _potential_ issues:
   * Does the code look like it will meet the acceptance criteria, or are there obvious errors or omissions?
   * Does it handle edge cases?
-  * Are common issues guarded against relating to security (e.g. [OWASP Top 10](https://owasp.org/www-project-top-ten/)), performance, scalability or robustness?
 #### Of high quality
   * Is the code clear and simple?
   * Is the code layout and structure consistent with agreed style and other code?
   * Would it easily allow future modification to meet slightly different needs, e.g. ten times the required data size or throughput?
+  * Have the non-functional requirements been considered (performance, scalability, robustness, etc)?
+  * Are common security issues guarded against (e.g. [OWASP Top 10](https://owasp.org/www-project-top-ten/))? Including:
+    * Is any new input data being treated as potentially hostile?
+    * Is any data potentially leaking from the system by mistake, for example sensitive data recorded in log files?
+    * Are there secrets in the code?
+    * For further reading, please see the [OWASP Code Review Guide](https://owasp.org/www-pdf-archive/OWASP_Code_Review_Guide_v2.pdf)
+
+Note: automated scans and tests can help to identity a lot of these quality issues (please see [Quality Checks](../quality-checks.md)) but no automated scan is perfect, so both code reviews and automated checks are essential.
 
 ## Examples
 
