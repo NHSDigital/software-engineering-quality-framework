@@ -10,6 +10,8 @@ Also, these metrics are intended to be considered as part of [engineering review
 
 ![Example Dashboard](quality-dashboard.png)
 
+These metrics are obviously limited to engineering concerns, and are only one part of the picture. For example, we don't want to build the wrong thing, even if we build it in a great way! We recommend that these metrics form part of a broader set of health indicators, including data relating to user satisfaction.
+
 ## Essential metrics:
 
 These metrics provide a fundamental level of insight, and so must be tracked:
