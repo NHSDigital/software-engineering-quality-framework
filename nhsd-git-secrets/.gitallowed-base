@@ -1,6 +1,5 @@
 .*git-secrets/.*:*
 .*terraform.tfstate.*:*'
-.*.js.map:*
 .*.svg:*
 .*.jquery.*.js:*
 .*engine_version*
