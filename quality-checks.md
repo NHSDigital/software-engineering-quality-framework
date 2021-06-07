@@ -63,4 +63,24 @@ We recommend tracking progress on an Engineering Quality dashboard, for example:
 
 ## Publishing code
 
-All code should be treated kindly, but code that is being published incurs additional considerations: for example, it's never good to include credentials and other secrets in source code, but the impact of this is obviously greater if the code is published.  
+All code should be treated kindly, but code that is being published incurs additional considerations: for example, it's never good to include credentials and other secrets in source code, but the impact of this is obviously greater if the code is published. Therefore, for published code, the following minimums are recommended:
+  * Unit tests          
+  * Integration tests      
+  * API / contract tests   
+  * UI tests               
+  * Secret scanning       
+  * Security code analysis 
+  * Security testing  
+  * Dependency scanning 
+  * Performance tests 
+  * Capacity tests  
+  * Stress tests   
+  * Soak tests    
+  * Chaos tests       
+  * Code coverage       
+  * Duplicate code scan 
+  * Code smells scan 
+  * Dead code scan
+  * Code review
+  * Accessibility tests
+  * Tech radar check
