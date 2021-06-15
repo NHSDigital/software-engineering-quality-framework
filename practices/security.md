@@ -66,7 +66,7 @@ The remainder of this page gives more detailed and specific recommendations to b
 - Ensure **cookies** cannot leak from production to non-production environments e.g. avoid non-production on subdomain of production domain
 - Prevent **[clickjacking](https://sudo.pagerduty.com/for_engineers/#clickjacking)** with `X-Frame-Options`
 - Be careful not to **leak information**, e.g. error messages, stack traces, headers
-- **Don't trust** yourself or others!
+- **Don't trust** yourself or others! <a name='secret-scanning'></a>
   - Code must be automatically scanned for secrets or other sensitive data:
     - To catch any issues early and to minimise potential exposure, scan code on developer machines *before* code is committed to the code repository. We recommend using [awslabs git-secrets](https://github.com/awslabs/git-secrets). To set this up on a Mac workstation or as part of your Jenkins pipeline, follow the examples and READMEs in [nhsd-git-secrets](../nhsd-git-secrets). Windows testing is in progress and instructions/code will be added in due course
     - As a backstop, *also* enable server-side scanning within the code repository. Recommended solution options:
