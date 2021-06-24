@@ -62,7 +62,7 @@ The remainder of this page gives more detailed and specific recommendations to b
   - Minimum necessary feedback on failed authentication e.g. 404 or blanket 403 when not authenticated to avoid leaking whether resources exist
   - Guard against time based authentication attacks, e.g. using a WAF
 - Guarded against invalid **certificates** e.g. expiry monitoring.
-  - Consider [OCSP stapling](https://blog.cloudflare.com/high-reliability-ocsp-stapling/) for improved performance
+  - Consider <!-- markdown-link-check-disable -->[OCSP stapling](https://blog.cloudflare.com/high-reliability-ocsp-stapling/)<!-- markdown-link-check-enable --> for improved performance
 - Ensure **cookies** cannot leak from production to non-production environments e.g. avoid non-production on subdomain of production domain
 - Prevent **[clickjacking](https://sudo.pagerduty.com/for_engineers/#clickjacking)** with `X-Frame-Options`
 - Be careful not to **leak information**, e.g. error messages, stack traces, headers
