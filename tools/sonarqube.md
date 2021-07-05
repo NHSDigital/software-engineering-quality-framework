@@ -36,8 +36,7 @@ Code coverage on new code greater than 80%
 
 Ensuring code quality of “new” code while fixing existing ones is one good way to maintain a good codebase over time. The Quality Gate facilitates setting up rules for validating every new code added to the codebase on subsequent analysis.
 
-
-## Setup default quality gates
+## Default quality gates
 By default, SonarQube provides basic quality gate called sonarway with following metrics.
 
 - The coverage on new code is less than 80%
@@ -46,24 +45,22 @@ By default, SonarQube provides basic quality gate called sonarway with following
 
 The recommendation is that we use the Sonarqube Way for all projects. Teams will eventually diverge, but these diversions need to be closely monitored by the Tech Lead and the team.
 
-## Configuring CI pipeline
+# Configuring CI pipeline
 Making SonarQube part of a Continuous Integration process is recommended: a build should fail if the code analysis did not satisfy the Quality Gate condition.
 
+# FAQs
 
-
-## FAQs
-
-### SonarQube is going to add weeks to my workload!
+## SonarQube is going to add weeks to my workload!
 Initially, yes, it might. Especially if you're introducing it to an existing, legacy codebase.
 Going forwards though, we should see fewer things being picked up by SonarQube. This is because these coding standards will embedded in the team's heads: encouraging best practices before they've written a line of code.
 SonarQube can then also act as a guide to new people joining: this is how we write code: these are our standards.
 
-### Why should I listen to SonarQube?
+## Why should I listen to SonarQube?
 You live and breathe your code every day: you're probably aware of every pitfall and quirk.
 New starters won't be. 
 You've probably also got used to the fact that code changes take X times longer than they could, because the code is not as maintainable as it could be.
 
-### The suggested fix is nonsense!
+## The suggested fix is nonsense!
 SonarQube does two jobs: finds real issues; and raises "smells".
 Smells only give you _suggested fixes_. You do not have to follow its suggestions. But you do have to make the build pass again!
 For example: SonarQube raises 10 smells in a piece of code: tiny, annoying things. It isn't telling you to fix them. You could. And get the build passing again like that - but that's not the point.
@@ -72,9 +69,5 @@ What's _really_ causing those underlying issues?
 
 The idea of SonarQube isn't to tickle a few lines of code just to get the build passing! If it's shouting about a lot of small, related issues, it probably means there’s something much bigger that you need to address!
 
-### Why these rules?
+## Why these rules?
 Everyone has different standards. Agreeing is impossible. We need to impose <something>. If we impose the default SonarQube rules, it will breed familiarity across individuals, teams, even companies.
-
-
-
-
