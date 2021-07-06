@@ -12,11 +12,11 @@ SonarQube gives you the tools you need to write clean and safe code:
 - Raises "smells". It knows _something_ looks odd, and suggests a fix (only suggests!). Your team can then look at the bigger picture around that code, and fix the smells in whichever way is best.
 
 # Profile
-Quality Profiles are a core component of SonarQube, since they are where you define sets of Rules that when violated should raise issues on your codebase (example: Methods should not have a Cognitive Complexity higher than 15). Quality Profiles are defined for individual languages.
+Quality Profiles are a core component of SonarQube, since they are where you define sets of Rules that - when violated - should raise issues on your codebase (example: Methods should not have a Cognitive Complexity higher than 15). Quality Profiles are defined for individual languages.
 
 While it's recommended to have as few Quality Profiles as possible to ensure consistency across projects, you can define as many Quality Profiles as are necessary to fit your specific needs.
 
-The Sonar way Quality Profiles are a good starting-point as you begin analyzing code, and they start out as the default Quality Profiles for each language, created by knowledge experts.
+The "Sonar Way" Quality Profiles are a good starting-point as you begin analyzing code, and they start out as the default Quality Profiles for each language, created by knowledge experts.
 
 # Rules
 SonarQube executes rules on source code to generate issues. There are four types of rules:
@@ -27,33 +27,35 @@ SonarQube executes rules on source code to generate issues. There are four types
 - Security Hotspot (Security domain)
 
 # Quality Gate
-Quality Gates enforce a quality policy in your organization by answering one question: is my project ready for release?
+Quality Gates enforce a quality policy in your organisation by answering one question: is my project ready for release?
 
-To answer this question, you define a set of conditions against which projects are measured. For example:
+To answer this question, you define a set of conditions against which projects are measured. For example "No new blocker issues", "Code coverage on new code greater than X%".
 
-No new blocker issues
-Code coverage on new code greater than 80%
+You can define gates for "new code" and for all code.
+This approach facilitates getting new code right, without having to instantly fix legacy code.
 
-Ensuring code quality of “new” code while fixing existing ones is one good way to maintain a good codebase over time. The Quality Gate facilitates setting up rules for validating every new code added to the codebase on subsequent analysis.
+## Definition of new code
+New code is defined by SonarQube as:
+The entire contents of any file that was changed as part of this commit.
 
 ## Default quality gates
-By default, SonarQube provides basic quality gate called sonarway with following metrics.
+By default, SonarQube provides a basic quality gate called the Sonarqube Way, with the following failure conditions:
 
-- The coverage on new code is less than 80%
-- Percentage of duplicated lines on new code is greater than 3
-- Maintainability, reliability or security rating is worse than A
+- If coverage on new code is less than 80%
+- If percentage of duplicated lines on new code is greater than 3
+- If maintainability, reliability or security rating is worse than A
 
 The recommendation is that we use the Sonarqube Way for all projects. Teams will eventually diverge, but these diversions need to be closely monitored by the Tech Lead and the team.
 
 # Configuring CI pipeline
-Making SonarQube part of a Continuous Integration process is recommended: a build should fail if the code analysis did not satisfy the Quality Gate condition.
+Making SonarQube part of a Continuous Integration process is recommended: a build should fail if the code analysis did not satisfy the Quality Gate condition (see [Quality Checks](../quality-checks.md))
 
 # FAQs
 
 ## SonarQube is going to add weeks to my workload!
 Initially, yes, it might. Especially if you're introducing it to an existing, legacy codebase.
 Going forwards though, we should see fewer things being picked up by SonarQube. This is because these coding standards will embedded in the team's heads: encouraging best practices before they've written a line of code.
-SonarQube can then also act as a guide to new people joining: this is how we write code: these are our standards.
+SonarQube can then also act as a guide for new people joining: this is how we write code: these are our standards.
 
 ## Why should I listen to SonarQube?
 You live and breathe your code every day: you're probably aware of every pitfall and quirk.
@@ -67,7 +69,8 @@ For example: SonarQube raises 10 smells in a piece of code: tiny, annoying thing
 What you - as the expert - need to do is look at the bigger picture. Why is SonarQube raising these? Does this entire class need rewriting? Does it interact with other classes properly? Do we need a properties file instead of hardcoding values? Do we need to look at error handling across the whole system? Is our code written well for reuse and testability?
 What's _really_ causing those underlying issues?
 
-The idea of SonarQube isn't to tickle a few lines of code just to get the build passing! If it's shouting about a lot of small, related issues, it probably means there’s something much bigger that you need to address!
+The idea of SonarQube isn't to unquestioningly implement every individual suggested code change, just to get the build to pass. Instead, we should use these suggestions, especially where we have a concentration of suggestions in one area of the code, to consider if there is something bigger that we need to address to improve our code.
 
 ## Why these rules?
-Everyone has different standards. Agreeing is impossible. We need to impose <something>. If we impose the default SonarQube rules, it will breed familiarity across individuals, teams, even companies.
+The default sonar rules are established industry standards, crafted by experts, and a really good place to start.
+If all teams use them, it will breed familiarity across individuals and teams.
