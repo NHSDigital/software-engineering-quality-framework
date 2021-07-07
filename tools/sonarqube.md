@@ -16,7 +16,7 @@ Quality Profiles are a core component of SonarQube, since they are where you def
 
 While it's recommended to have as few Quality Profiles as possible to ensure consistency across projects, you can define as many Quality Profiles as are necessary to fit your specific needs.
 
-The "Sonar Way" Quality Profiles are a good starting-point as you begin analyzing code, and they start out as the default Quality Profiles for each language, created by knowledge experts.
+The "Sonar Way" Quality Profiles are a good starting-point as you begin analysing code, and they start out as the default Quality Profiles for each language, created by knowledge experts.
 
 # Rules
 SonarQube executes rules on source code to generate issues. There are four types of rules:
@@ -31,7 +31,7 @@ Quality Gates enforce a quality policy in your organisation by answering one que
 
 To answer this question, you define a set of conditions against which projects are measured. For example "No new blocker issues", "Code coverage on new code greater than X%".
 
-You can define gates for "new code" and for all code.
+We recommend that you define one gate for [new code](#definition-of-new-code), and another that covers **all** code (new and legacy).
 This approach facilitates getting new code right, without having to instantly fix legacy code.
 
 ## Definition of new code
@@ -39,11 +39,20 @@ New code is defined by SonarQube as:
 The entire contents of any file that was changed as part of this commit.
 
 ## Default quality gates
-By default, SonarQube provides a basic quality gate called the Sonarqube Way, with the following failure conditions:
+By default, SonarQube provides a basic quality gate called the Sonarqube Way, with the following failure conditions.
 
-- If coverage on new code is less than 80%
-- If percentage of duplicated lines on new code is greater than 3
-- If maintainability, reliability or security rating is worse than A
+Conditions on New Code:
+
+| Metric | Operator | Value |
+| ------ | -------- | ----- |
+| Coverage | is less than | 80.0% |
+|Duplicated Lines (%)|is greater than|3.0%
+|Maintainability Rating|is worse than|A
+|Reliability Rating|is worse than|A
+|Security Hotspots Reviewed|is less than|100%
+|Security Rating|is worse than|A
+
+NB: These are subject to change as Sonarqube is updated
 
 The recommendation is that we use the Sonarqube Way for all projects. Teams will eventually diverge, but these diversions need to be closely monitored by the Tech Lead and the team.
 
@@ -53,9 +62,9 @@ Making SonarQube part of a Continuous Integration process is recommended: a buil
 # FAQs
 
 ## SonarQube is going to add weeks to my workload!
-Initially, yes, it might. Especially if you're introducing it to an existing, legacy codebase.
-Going forwards though, we should see fewer things being picked up by SonarQube. This is because these coding standards will embedded in the team's heads: encouraging best practices before they've written a line of code.
+Initially, yes, it might. Going forwards though, we should see fewer things being picked up by SonarQube. This is because these coding standards will become embedded in the team's heads: encouraging best practices before they've written a line of code.
 SonarQube can then also act as a guide for new people joining: this is how we write code: these are our standards.
+Also remember that, for legacy code, you can use a separate gateway to allow lower standards while you gradually bring that legacy code up to scratch. You can also use refactoring techniques to - for example - extract functionality from troublesome classes and put it somewhere else that can easily be refactored.
 
 ## Why should I listen to SonarQube?
 You live and breathe your code every day: you're probably aware of every pitfall and quirk.
