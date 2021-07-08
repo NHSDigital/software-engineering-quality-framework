@@ -5,9 +5,9 @@
 The framework is concerned with using "good" software engineering to support rapid and safe delivery of high-quality software, at scale.
 
 It aims to:
-* Describe a shared (across multiple teams) view of "good" engineering
-* Provide tools for teams to assess their current engineering maturity levels
-* Provide resources to support teams to increase their engineering maturity levels
+1. Describe a shared (across multiple teams) definition of "good" engineering
+2. Provide tools for teams to gain insight into their current engineering maturity levels
+3. Provide resources to support teams to increase their engineering maturity levels
 
 ![Ecosystem](images/engineering-ecosystem.png)
 ## Philosophy
