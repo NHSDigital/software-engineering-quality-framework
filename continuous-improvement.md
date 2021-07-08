@@ -136,7 +136,7 @@ value = criticality x (bugs + delays + uncertainty + unhappiness)
 
 Visualising technical debt using an approach like Colin Breck's [Quality Views](https://blog.colinbreck.com/using-quality-views-to-communicate-software-quality-and-evolution/) can help facilitate conversations about how much improvement effort is required and where it should be focussed.
 
-![Quality View](quality-view.svg)
+![Quality View](images/quality-view.svg)
 [Example Quality View by Colin Breck]
 
 ## Acting

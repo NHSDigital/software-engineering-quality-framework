@@ -2,12 +2,14 @@
 
 ## Purpose
 
-The framework is concerned with using "good" software engineering to support rapid and safe delivery of high-quality software, at scale. It aims to:
-* Describe a shared (across multiple teams) view of what "good" software delivery and operations looks like
-* Assist teams to practice continuous improvement
-* Signpost useful training resources and examples/blueprints relating to aspects of "good"
-* Provide resources useful for establishment & expansion of an engineering community
+The framework is concerned with using "good" software engineering to support rapid and safe delivery of high-quality software, at scale.
 
+It aims to:
+* Describe a shared (across multiple teams) view of "good" engineering
+* Provide tools for teams to assess their current engineering maturity levels
+* Provide resources to support teams to increase their engineering maturity levels
+
+![Ecosystem](images/engineering-ecosystem-light.png)
 ## Philosophy
 
 The philosophy underpinning this framework advocates:

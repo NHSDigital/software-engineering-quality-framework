@@ -34,7 +34,7 @@ We rate our applications against each of these checks as follows:
 
 We recommend tracking progress on an Engineering Quality dashboard, for example:
 
-![Example Dashboard](quality-dashboard.png)
+![Example Dashboard](images/quality-dashboard.png)
 
 ## Details
 
