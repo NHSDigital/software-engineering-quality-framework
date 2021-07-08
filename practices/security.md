@@ -70,7 +70,7 @@ The remainder of this page gives more detailed and specific recommendations to b
   - Code must be automatically scanned for secrets or other sensitive data:
     - To catch any issues early and to minimise potential exposure, scan code on developer machines *before* code is committed to the code repository. We recommend using [awslabs git-secrets](https://github.com/awslabs/git-secrets). To set this up on a Mac workstation or as part of your Jenkins pipeline, follow the examples and READMEs in [nhsd-git-secrets](../nhsd-git-secrets). Windows testing is in progress and instructions/code will be added in due course
     - As a backstop, *also* enable server-side scanning within the code repository. Recommended solution options:
-      - TO DO: more details... for example in [GitHub](https://docs.github.com/en/github/administering-a-repository/about-secret-scanning)
+      - TO DO: more details... for example in [GitHub](https://docs.github.com/en/code-security/secret-security/about-secret-scanning)
   - Be wary of any 3rd party JavaScript included on the page, e.g. for A/B testing, analytics
   - Pin dependencies at known versions to avoid unexpected updates
   - Scan dependencies for vulnerabilities, e.g. using [OWASP Dependency Check](https://www.owasp.org/index.php/OWASP_Dependency_Check) or [Snyk](https://snyk.io/)
