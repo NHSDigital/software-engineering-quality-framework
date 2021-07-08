@@ -9,7 +9,7 @@ It aims to:
 * Provide tools for teams to assess their current engineering maturity levels
 * Provide resources to support teams to increase their engineering maturity levels
 
-![Ecosystem](images/engineering-ecosystem-light.png)
+![Ecosystem](images/engineering-ecosystem.png)
 ## Philosophy
 
 The philosophy underpinning this framework advocates:
