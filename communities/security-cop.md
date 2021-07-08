@@ -1,6 +1,6 @@
 # Secure Engineering CoP (Community of Practice)
 
-This is part of a broader [quality framework](../README.md) and is one of a set of [communities of practice](../communities-of-practice.md)
+This is part of a broader [quality framework](../README.md) and is one of a set of [communities of practice](communities-of-practice.md)
 
 ## Subject
 
