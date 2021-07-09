@@ -1,6 +1,6 @@
 # Secure Engineering CoP (Community of Practice)
 
-This is part of a broader [quality framework](../README.md) and is one of a set of [communities of practice](../communities-of-practice.md)
+This is part of a broader [quality framework](../README.md) and is one of a set of [communities of practice](communities-of-practice.md)
 
 ## Subject
 
@@ -18,7 +18,7 @@ For secure development and operation of systems:
   * Provide advice and guidance as requested
   * Facilitate good practice discussions, and curate relevant principles, practices and patterns within the [Software Engineering Quality Framework](../README.md)
   * Curate relevant Training Pathways within the [Software Engineering Quality Framework](../README.md)
-  * Curate relevant section(s) within the [Software Engineering Review Tool](../review.md)
+  * Curate relevant section(s) within the [Software Engineering Review Tool](../insights/review.md)
   * Provide supplementary learning in relevant areas (e.g. workshops)
   * Discuss, disseminate and feedback on the output of the Cyber Design Authority
 * **Build** knowledge:
