@@ -1,6 +1,6 @@
 # Engineering metrics
 
-This is part of a broader [quality framework](README.md)
+This is part of a broader [quality framework](../README.md)
 
 ## Purpose & usage
 
@@ -8,7 +8,7 @@ These hard figures help us to measure the effect of improvement work over time, 
 
 Also, these metrics are intended to be considered as part of [engineering reviews](review.md). We recommend tracking these metrics on an Engineering Quality dashboard for teams to track their progress with improvements in line with the engineering reviews, for example:
 
-![Example Dashboard](quality-dashboard.png)
+![Example Dashboard](../images/quality-dashboard.png)
 
 These metrics are obviously limited to engineering concerns, and are only one part of the picture. For example, we don't want to build the wrong thing, even if we build it in a great way! We recommend that these metrics form part of a broader set of health indicators, including data relating to user satisfaction.
 
@@ -19,7 +19,7 @@ These metrics provide a fundamental level of insight, and so must be tracked:
 | Measure | Definition (each calculated over the last 28 days) |
 |:---|:---|
 | Deployment frequency | Number of deployments.
-| Quality checks | Presence or absence of frequent, consistent, enforced (with agreed tolerances) of the [engineering quality checks](quality-checks.md) - follow that link for further details.
+| Quality checks | Presence or absence of frequent, consistent, enforced (with agreed tolerances) of the [engineering quality checks](../quality-checks.md) - follow that link for further details.
 
 ## Recommended metrics:
 

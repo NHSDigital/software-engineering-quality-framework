@@ -1,6 +1,6 @@
 # Engineering quality review tool
 
-This is part of a broader [quality framework](README.md)
+This is part of a broader [quality framework](../README.md)
 
 # Contents
 
@@ -158,7 +158,7 @@ You may wish to score each individual component or system separately for these a
 * We enjoy working with them and they support fast, reliable and safe delivery.
 * The tech and architecture make testing, local development and live operations easy.
 * The architecture is clean.
-  * Our system is built as a set of independent services/components where appropriate (see [Architect for Flow](patterns/architect-for-flow.md)).
+  * Our system is built as a set of independent services/components where appropriate (see [Architect for Flow](../patterns/architect-for-flow.md)).
 
 ### 11. Easy and safe to release
 * It is easy and straightforward to release a change to production.
@@ -238,8 +238,8 @@ Good facilitation can help teams get the most out of the review and it is recomm
 
 * It's important to set the right tone. Some teams may understandably be wary of "being assessed", particularly because the process includes an outside facilitator. It's essential that they feel safe to make an honest appraisal. Emphasise that this tool is just a way of helping teams identify how to best drive continuous improvement &mdash; a bit like a "structured retrospective".
 * Remember (and remind the team) that this framework is continually evolving and "open source". Encourage them to suggest ways it can be improved and raise pull requests. As well as being a useful way to drive improvement of the framework, this encourages the idea that it is not set in stone and decreed from on high, which can build trust and engagement.
-* Help the team understand and compare where they are just now with what genuinely excellent looks like. The notes under each section try to describe what good looks like, and the [principles](principles.md), patterns and practices go into more detail. Help them trace the path to excellence by starting with achievable changes and working over time to more significant changes if relevant.
-* Be intimately familiar with the sections of the review and the supporting [principles](principles.md), patterns and practices. Try to keep conversation focused around the topic for each section, mentioning which section will cover the point being raised when suggesting that discussion be deferred.
+* Help the team understand and compare where they are just now with what genuinely excellent looks like. The notes under each section try to describe what good looks like, and the [principles](../principles.md), patterns and practices go into more detail. Help them trace the path to excellence by starting with achievable changes and working over time to more significant changes if relevant.
+* Be intimately familiar with the sections of the review and the supporting [principles](../principles.md), patterns and practices. Try to keep conversation focused around the topic for each section, mentioning which section will cover the point being raised when suggesting that discussion be deferred.
 * Consider running an "ice breaker" to get the team engaged and talking in the session. This can help to reduce confirmation bias with only the more vocal members of the team contributing to the session.
 * Work through the review section by section. For each, briefly outline the scope and pick out a few key points from the list of what "good" looks like, then invite the group to describe how things work for them. Keep conversation and questioning open to start with and let the conversation be led by the team. Ask specific questions to fill in any gaps based on the points under each section. Identify any actions which come up and record these. Try to keep the conversation relevant and focused &mdash; there is a lot to go through.
 * Once the team has discussed the points for the section, it's time to score. A good way to do this is using "planning poker" style blind voting, which can be easily done by holding up 1 to 5 fingers. Discuss any differences and use these as a lever to bring some of the quieter team members into the conversation. Agree on a single score for the team which is recorded. Refer to the definitions of each score at the bottom of the review sheet. While emphasising that the score is not the most important part of the process, advise the team when it feels like they are being too harsh or too soft on scoring. Accurate scoring will more clearly focus attention on the right areas.
