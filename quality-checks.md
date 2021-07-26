@@ -63,7 +63,11 @@ We recommend tracking progress on an Engineering Quality dashboard, for example:
 
 ## Publishing code
 
-All code should be treated the same and treated well (please see [everything as code](./patterns/everything-as-code.md)), but code that is being published (i.e. made available outside of NHS Digital, for example in a public repository on GitHub) incurs additional considerations. For example, it's never good to include credentials and other secrets in source code, but the impact of this is obviously greater if the code is made available to the public. Therefore, for published code, the following minimums are recommended:
+All code should be treated the same and treated well (please see [everything as code](./patterns/everything-as-code.md)), but code that is being published (i.e. made available outside of NHS Digital, for example in a public repository on GitHub) incurs additional considerations. 
+
+For example, it's never good to include credentials and other secrets in source code, but the impact of this is obviously greater if the code is made available to the public. 
+
+Therefore, for published code, the following minimums are recommended:
   * Unit tests: GREEN       
   * Integration tests: AMBER (where applicable)    
   * API / contract tests: AMBER (where applicable)
