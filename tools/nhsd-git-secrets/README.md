@@ -1,5 +1,5 @@
 # Git-Secrets examples
-This folder comprises examples for implementing AWSLabs Git-Secrets, which is our default implementation for secrets scanning. As with any default, we expect teams to resolve any caveats as they best see fit, and of course to contribute to these examples.
+This folder comprises examples for implementing AWSLabs Git-Secrets, which is our default implementation for [secrets scanning](../../quality-checks.md). As with any default, we expect teams to resolve any caveats as they best see fit, and of course to contribute to these examples.
 
 # Why secrets scanning
 Although we might be re-stating the obvious here, there's two main goals to consistent secrets scanning:
