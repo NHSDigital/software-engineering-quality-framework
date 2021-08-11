@@ -81,7 +81,7 @@ The benefits of improving these areas are:
 
 ## Identifying improvement opportunities
 
-Regular team retrospectives are an effective way to identify improvement opportunities and actions. Another potential source are periodic reviews using tools such as the the [AWS](https://aws.amazon.com/architecture/well-architected/) or [Azure](https://azure.microsoft.com/en-gb/blog/introducing-the-microsoft-azure-wellarchitected-framework/) Well-Architected Frameworks and the [NHS Digital quality review](review.md). And of course, tech debt is often uncovered in the course of making changes to a system.
+Regular team retrospectives are an effective way to identify improvement opportunities and actions. Another potential source are periodic reviews using tools such as the the [AWS](https://aws.amazon.com/architecture/well-architected/) or [Azure](https://azure.microsoft.com/en-gb/blog/introducing-the-microsoft-azure-wellarchitected-framework/) Well-Architected Frameworks and the [NHS Digital quality review](insights/review.md). And of course, tech debt is often uncovered in the course of making changes to a system.
 
 As discused in [Benefits](#benefits), in high level terms the opportunities for reducing waste or improving quality tend to be in these areas:
 
@@ -136,7 +136,7 @@ value = criticality x (bugs + delays + uncertainty + unhappiness)
 
 Visualising technical debt using an approach like Colin Breck's [Quality Views](https://blog.colinbreck.com/using-quality-views-to-communicate-software-quality-and-evolution/) can help facilitate conversations about how much improvement effort is required and where it should be focussed.
 
-![Quality View](quality-view.svg)
+![Quality View](images/quality-view.svg)
 [Example Quality View by Colin Breck]
 
 ## Acting
@@ -192,7 +192,12 @@ In addition, it is useful to track the proportion of time being spent on various
 
 ## What does this mean for me as a less-technical person?
 
-To do
+Good engineering and good ways of working are intrinsically connected. Every team member, regardless of how technical they perceive themselves, has a role to play. Think of how your own area of expertise may contribute to improving the metrics the team has selected. Looking at the examples in [Acting](#acting), the conditions to enable increased number of deployments, or better communication, are created by the team as a whole.
+
+Same as for more technical people, continuous improvement should help you reduce waste and enable more focus on the core activities that deliver value from your role. Start with general concepts that may help you identify more specific areas for improvement:
+* Can you observe handoffs between "teams-within-a-team"? How could you help reduce or avoid them?
+* Do you have no understanding of what a part of the team is working on? How could that be made more visible?
+* Do you find yourself spending significant time on activities which seem to have no influence on the value of what the team produces? Why do such activities exist, and how could they be reduced or avoided so that time can be better spent?
 
 ## What does this mean for me as a technical person?
 

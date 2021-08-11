@@ -4,8 +4,6 @@
 
 # These only need to be run once per workstation but are included to try and ensure they are present
 ./git-secrets --add-provider -- cat nhsd-git-secrets/nhsd-rules-linux-mac.txt
-./git-secrets --add --allowed '.*git-secrets/.*:*'
-./git-secrets --add --allowed '.*terraform.tfstate.*:*'
 
 # Just scan the files changed in this commit
 ./git-secrets --pre_commit_hook
