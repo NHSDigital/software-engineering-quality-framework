@@ -87,8 +87,12 @@ The remainder of this page gives more detailed and specific recommendations to b
 - **Minimise access** to production
   - Logging & monitoring should negate the need to manually inspect a production host
   - All deployments should be done via delivery pipelines, negating the need to manually change a production host
-  - If possible, only allow access for emergencies using a "break glass" pattern, e.g. using Azure AD [Privileged Identity Management](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure)
+  - Only allow access for emergencies using a "break glass" pattern, e.g. using Azure AD [Privileged Identity Management](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure)
   - Audit access to production and alert for unexpected access
+  - Frequently asked question:
+    - If I can't access production, how can I check data (e.g.) to respond to a support call?
+    - If I can't access production, how can I update data that is incorrect?
+    - If I can't access production, how can I refresh static / reference data?
 - Ensure infrastructure **IAM** is robust
   - Strong passwords and MFA
 
