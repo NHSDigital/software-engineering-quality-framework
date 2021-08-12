@@ -67,7 +67,7 @@ All code should be treated the same and treated well (please see [everything as 
 
 For example, it's never good to include credentials and other secrets in source code, but the impact of this is obviously greater if the code is made available to the public. 
 
-Therefore, for published code, the following minimums are recommended:
+Therefore, for published code, the following minimums are required:
   * Unit tests: GREEN       
   * Integration tests: AMBER (where applicable)    
   * API / contract tests: AMBER (where applicable)
