@@ -60,3 +60,24 @@ We recommend tracking progress on an Engineering Quality dashboard, for example:
 | Code review            | Other           | Universal     | A second person manually checking a code change                                                                                                                                                                 | Quality check by a human, as opposed to via a tool                                                                                                                                                                                                         | Enforced & audited step within workflow                                                                                                                                  | TBC                                                                           | [Code review guidance](./patterns/everything-as-code.md#code-review)                                          |
 | Accessibility tests    | Other           | Universal     | The practice of making applications usable by as many people as possible.                                                                                                                                                                                                                 | It is a regulatory requirement that our applications are accessible by as many people as possible. Catching accessibility failures up front is essential to maximise the accessibility                                                                                                                                                                                                                                                           |                                                                                                                                                                          |                                                                               |                                                                                                               |
 | Tech radar check       | Other           | Universal     | Checking that the tools to be used are in line with organisational / team standards                                                                                                                                                                                                                | To prevent the unnecessary proliferation of a wide variety of tools and technologies, which would have a negative impact on overall effectiveness                                                                                                                                                                                                                                                           |                                                                                                                                                                          |                                                                               |                                                                                                               |
+
+## Publishing code
+
+All code should be treated the same and treated well (please see [everything as code](./patterns/everything-as-code.md)), but code that is being published (i.e. made available outside of NHS Digital, for example in a public repository on GitHub) incurs additional considerations. 
+
+For example, it's never good to include credentials and other secrets in source code, but the impact of this is obviously greater if the code is made available to the public. 
+
+Therefore, for published code, the following minimums are required:
+  * Unit tests: GREEN       
+  * Integration tests: AMBER (where applicable)    
+  * API / contract tests: AMBER (where applicable)
+  * UI tests: AMBER (where applicable)
+  * Secret scanning: AMBER (including removal of any secrets) 
+  * Security code analysis and Security testing: AMBER for at least one of these
+  * Dependency scanning: AMBER 
+  * Code coverage: AMBER    
+  * Duplicate code scan: AMBER
+  * Code smells scan: AMBER
+  * Dead code scan: AMBER
+  * Code review: GREEN
+  * Accessibility tests: AMBER (where applicable)
