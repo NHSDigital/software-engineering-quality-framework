@@ -1,6 +1,8 @@
 # Securing repositories
 
-This guide lays out security best practice for Github repositories. Github is the default tool for code repositories, and should generally be used unless there is good reason otherwise. This set of practices should be implemented alongside other relevant ones that contribute to [security](security.md) as a whole. These are discussed in more detail as part of the [Quality Checks](../quality-checks.md)
+This guide lays out security best practice for Github repositories. Github is the default tool for code repositories, and should generally be used unless there is good reason otherwise. 
+
+This set of practices is a minimum (nothing stops you from doing more), and they should be implemented alongside other relevant ones that contribute to [security](security.md) as a whole. These are discussed in more detail as part of the [Quality Checks](../quality-checks.md).
 
 ## Access controls
 * All users should have MFA enabled. *Note*: as we consider moving to Github Enterprise, this may be automated by way of authentication via short code.
@@ -12,5 +14,8 @@ This guide lays out security best practice for Github repositories. Github is th
 ## Code security
 * Enable, at a minimum, [Dependabot](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/) alerts for vulnerabilities and respond to them appropriately.
 * Disable ability to push to master.
-* 
+* Refer to [Quality Checks](../quality-checks.md) for further code security practices.
+
 ### Branch protection
+* Require pull request code reviews to merge a branch.
+* Require adequate automated status checks prior to merging.
