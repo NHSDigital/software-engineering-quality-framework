@@ -6,7 +6,7 @@ This set of practices is a minimum (nothing stops you from doing more), and they
 
 ## Prerequisites
 [Publishing Code](../quality-checks.md#publishing-code) within the Quality Checks page lists a minimum set of practices that should be in place before code is published. This implies that:
-* Repositories can only be secure once the listed practices meet the relevant amber/green thresholds (which should also be reflected in a [Quality Dashboard](..insights/metrics.md)).
+* Repositories can only be secure once the listed practices meet the relevant amber/green thresholds (which should also be reflected in a [Quality Dashboard](../insights/metrics.md)).
 * The guidelines in this page are a necessary, but not a sufficient, condition for code overall being secure.
 
 ## Access controls
