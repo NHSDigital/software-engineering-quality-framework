@@ -23,6 +23,6 @@ This set of practices is a minimum (nothing stops you from doing more), and they
 
 ### Branch protection
 * Require pull request code reviews to merge a branch.
-** Choose reviewers wisely - avoid bottlenecks and single points of failure, but ensure meaningful feedback can be provided.
+  * Choose reviewers wisely - avoid bottlenecks and single points of failure, but ensure meaningful feedback can be provided.
 * Invalidate existing reviews when new commits are pushed (`fresh-commits-invalidate-existing-reviews` option).
 * Require adequate automated status checks prior to merging. This should always include checking branches are up to date.
