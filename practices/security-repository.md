@@ -18,11 +18,11 @@ This set of practices is a minimum (nothing stops you from doing more), and they
 
 ## Code security
 * Enable, at a minimum, [Dependabot](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/) alerts for vulnerabilities and respond to them appropriately.
-* Disable ability to push to master for everyone, admins included (`applies-to-admin` option)
+* Disable ability to push to the default branch for everyone, admins included (`applies-to-admin` option).
 * Refer to [Quality Checks](../quality-checks.md) for further code security practices.
 
 ### Branch protection
-* Require pull request code reviews to merge a branch.
-  * Choose reviewers wisely - avoid bottlenecks and single points of failure, but ensure meaningful feedback can be provided.
+* Require [pull request code reviews](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-pull-request-reviews-before-merging), by at least one code owner, to merge a branch.
+* Require [signed commits](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-signed-commits)
 * Invalidate existing reviews when new commits are pushed (`fresh-commits-invalidate-existing-reviews` option).
 * Require adequate automated status checks prior to merging. This should always include checking branches are up to date.
