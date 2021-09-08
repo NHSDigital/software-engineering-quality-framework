@@ -23,6 +23,6 @@ This set of practices is a minimum (nothing stops you from doing more), and they
 
 ### Branch protection
 * Require [pull request code reviews](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-pull-request-reviews-before-merging), by at least one code owner, to merge a branch.
-* Require [signed commits](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-signed-commits)
+* Require [signed commits](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-signed-commits), and, accordingly, check that commits are verified before merging.
 * Invalidate existing reviews when new commits are pushed (`fresh-commits-invalidate-existing-reviews` option).
 * Require adequate automated status checks prior to merging. This should always include checking branches are up to date.
