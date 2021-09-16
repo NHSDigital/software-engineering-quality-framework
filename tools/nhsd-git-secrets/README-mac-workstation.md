@@ -51,8 +51,16 @@ Next time you do a commit the git secrets hook should be invoked.
  # Scan all files within this repo for this commit
  git secrets --scan
  ```
- 
+
 # Testing-a
 
 * make sure you have done git add if you have changed anything within git-Secrets
 * Run: `pre-commit run git-secrets`
+
+# Docker version
+
+Alternatively, you might find this [dockerfile](nhsd-git-secrets.dockerfile) convenient, which:
+1. Copies your source code into a docker image
+1. Downloads latest version of the secret scanner tool
+1. Downloads latest regex patterns from software-engineering-quality-framework
+1. Runs a scan
