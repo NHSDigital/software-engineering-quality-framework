@@ -50,7 +50,7 @@ The remainder of this page gives more detailed and specific recommendations to b
 ### Application level security
 
 - Cover the **basics**
-  - Ensure the [OWASP Top Ten](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_2017_Project) is well understood and considered during software delivery
+  - Ensure the [OWASP Top Ten](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_2017_Project) is well understood and considered during software delivery, other risks outside of the Top Ten should not be discounted however
     - Static code analysis tools can catch some of these issues early, for example [SonarQube](https://www.sonarqube.org/features/security/owasp/)
     - Beware of over-reliance on automated tools: they can help to catch some issues, but they cannot be relied on to catch everything
   - Encode/validate all user input. Code against (and test for) XSS and injection attacks such as SQL/XML/JSON/CRLF
