@@ -24,6 +24,7 @@
 * Testing is prioritised based on risk
   * A testing risk profile is defined and understood by the whole team, including the customer
   * Risk appetite should be worked across the whole team, including customers and/or users
+  * Solution Assurance risks and Clinical Safety hazards must also be considered when prioritising risks
 * Use experiental / experimental / exploratory testing as well as formal methods
   * Gamify testing - try multiple techniques and learn as you go
 * Testing is assisted by automation with automated tests as a default (see [automate everything](../patterns/automate-everything.md)).
