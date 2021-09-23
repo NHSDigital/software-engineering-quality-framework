@@ -11,7 +11,7 @@ def canaryName = 'Get appx homepage'
 
 // Jenkins variables
 def jenkinsSlaveLabel = 'jenkins-slave'
-def scriptsDir = 'scripts'
+def jenkinsScriptsDir = 'tools/aws-fis/jenkins/scripts'
 
 // Service Team vars
 def serviceTeamShortname = 'teamx'
@@ -19,7 +19,7 @@ def appName = 'appx'
 def rdsInstance = "${appName}-postgres"
 
 // jMeter vars
-def jmeterDir = 'jmeter'
+def jmeterDir = 'tools/aws-fis/jmeter'
 def jmeterNamespace = "${serviceTeamShortname}-jmeter"
 def jmxFile = "${appName}-loadtest.jmx"
 
@@ -73,12 +73,12 @@ node( jenkinsSlaveLabel ) {
       // give jMeter a minute to generate load and for Wordpress to stablise
       sleep 60
       // Ensure any alarms linked to this fis expt. are in OK state, otherwise expt. will fail, repeat for each linked alarm
-      sh """${scriptsDir}/check_cw_alarm_state.sh '${cloudwatchAlarm1}' 'OK' """
-      sh """${scriptsDir}/check_cw_alarm_state.sh '${cloudwatchAlarm2}' 'OK' """
+      sh """${jenkinsScriptsDir}/check_cw_alarm_state.sh '${cloudwatchAlarm1}' 'OK' """
+      sh """${jenkinsScriptsDir}/check_cw_alarm_state.sh '${cloudwatchAlarm2}' 'OK' """
 
       exptTemplateId = sh ( script: """aws fis list-experiment-templates | jq -r --arg jq_expttmpldesc '${exptTmplDesc1}' '.experimentTemplates[] | select(.description == \$jq_expttmpldesc) | .id' """, returnStdout: true).trim()
       exptId = sh ( script: """aws fis start-experiment --experiment-template-id ${exptTemplateId} | jq -r '.experiment.id' """, returnStdout: true).trim()
-      sh """${scriptsDir}/check_fis_expt.sh ${exptId} 5 120 """
+      sh """${jenkinsScriptsDir}/check_fis_expt.sh ${exptId} 5 120 """
     }
   }
   
@@ -98,11 +98,11 @@ node( jenkinsSlaveLabel ) {
       // give jMeter a minute to generate load and for Wordpress to stablise
       sleep 60
       // Ensure any alarms linked to this fis expt. are in OK state, otherwise expt. will fail, repeat for each linked alarm
-      sh """${scriptsDir}/check_cw_alarm_state.sh '${cloudwatchAlarm2}' 'OK' """
+      sh """${jenkinsScriptsDir}/check_cw_alarm_state.sh '${cloudwatchAlarm2}' 'OK' """
 
       exptTemplateId = sh ( script: """aws fis list-experiment-templates | jq -r --arg jq_expttmpldesc '${exptTmplDesc2}' '.experimentTemplates[] | select(.description == \$jq_expttmpldesc) | .id' """, returnStdout: true).trim()
       exptId = sh ( script: """aws fis start-experiment --experiment-template-id ${exptTemplateId} | jq -r '.experiment.id' """, returnStdout: true).trim()
-      sh """${scriptsDir}/check_fis_expt.sh ${exptId} 5 120 """
+      sh """${jenkinsScriptsDir}/check_fis_expt.sh ${exptId} 5 120 """
     }
   }
   
@@ -128,10 +128,10 @@ node( jenkinsSlaveLabel ) {
       
       exptTemplateId = sh ( script: """aws fis list-experiment-templates | jq -r --arg jq_expttmpldesc '${exptTmplDesc3}' '.experimentTemplates[] | select(.description == \$jq_expttmpldesc) | .id' """, returnStdout: true).trim()
       exptId = sh ( script: """aws fis start-experiment --experiment-template-id ${exptTemplateId} | jq -r '.experiment.id' """, returnStdout: true).trim()
-      sh """${scriptsDir}/check_fis_expt.sh ${exptId} 5 120 """
+      sh """${jenkinsScriptsDir}/check_fis_expt.sh ${exptId} 5 120 """
       
       // Check canary state
-      sh """${scriptsDir}/check_canary_state.sh "${canaryName}" 'PASSED' """
+      sh """${jenkinsScriptsDir}/check_canary_state.sh "${canaryName}" 'PASSED' """
       echo "Success - application recovered from AZ outage within 5 minutes"
     }
   }
