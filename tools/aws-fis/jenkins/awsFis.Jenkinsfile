@@ -21,7 +21,7 @@ def rdsInstance = "${appName}-postgres"
 // jMeter vars
 def jmeterDir = 'tools/aws-fis/jmeter'
 def jmeterNamespace = "${serviceTeamShortname}-jmeter"
-def jmxFile = "${appName}-loadtest.jmx"
+def jmxFile = "wordpress-homepage-k8s-influxdb.jmx"
 
 // Placeholder for code to set variables for each environment, e.g. could be 
 // derived from Jenkins job name so that one Jenkinsfile can be used for all environments
