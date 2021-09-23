@@ -46,6 +46,7 @@ The remainder of this page gives more detailed and specific recommendations to b
 - Consider whether the data being processed is all **necessary** for the system to function, or whether it could be reduced to minimise risk
   - Prefer use of managed services to reduce attack surface where possible
 - Keep **audit** log(s) of user actions, software and infrastructure changes (e.g. git, CI/CD, [CloudTrail](https://aws.amazon.com/cloudtrail/))
+- Ensure testing is conducted continually, appropriately and relevent to the design and development environment
 
 ### Application level security
 
