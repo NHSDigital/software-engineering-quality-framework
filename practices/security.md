@@ -59,7 +59,7 @@ The remainder of this page gives more detailed and specific recommendations to b
   - Strong passwords and MFA
   - Secure storage of session token (`Secure`, `HttpOnly` and `SameSite`) which is refreshed on privilege escalation to avoid session hijacking/fixation
   - Strong hash and salt if storing passwords
-  - Clear and consistent permissions model
+  - Clear and consistent permissions model - add link or more info
   - Minimum necessary feedback on failed authentication e.g. 404 or blanket 403 when not authenticated to avoid leaking whether resources exist
   - Guard against time based authentication attacks, e.g. using a WAF
 - Guarded against invalid **certificates** e.g. expiry monitoring.
