@@ -19,7 +19,7 @@
 * Plan for failure.
     * Rehearse incident classification and resolution using regular [Game Days](https://aws.amazon.com/gameday/#:~:text=What%20is%20AWS%20GameDay%3F,gamified%2C%20risk%2Dfree%20environment.) and similar exercises.
     * Remember that service _reliability_ encompasses security, data integrity, performance, capacity and other factors as well as availability.
-    * Perform regular (preferably automated) testing to ensure reliability, e.g. load testing, security testing (see [testing](testing.md)).
+    * Perform regular (preferably automated) testing to ensure reliability, e.g. load testing, security testing and chaos engineering/resilience testing (see [testing](testing.md)).
 * Design for failure: assume everything will fail at some point, so:
     * Implement loose coupling where possible to minimise the impact of component failure.
     * Infrastructure should all be appropriately resilient (see [cloud services](cloud-services.md)).
