@@ -46,15 +46,16 @@ The remainder of this page gives more detailed and specific recommendations to b
 - Consider whether the data being processed is all **necessary** for the system to function, or whether it could be reduced to minimise risk
   - Prefer use of managed services to reduce attack surface where possible
 - Keep **audit** log(s) of user actions, software and infrastructure changes (e.g. git, CI/CD, [CloudTrail](https://aws.amazon.com/cloudtrail/))
+- Ensure testing is conducted continually, appropriately and relevent to the design and development environment (for further details please see [testing](testing.md), [continuous integration](continuous-integration.md), [automate everything](../patterns/automate-everything.md) and [fast feedback](../patterns/fast-feedback.md)).
 
 ### Application level security
 
 - Cover the **basics**
-  - Ensure the [OWASP Top Ten](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_2017_Project) is well understood and considered during software delivery
+  - Ensure the [OWASP Top Ten](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_2017_Project) is well understood and considered during software delivery, other risks outside of the Top Ten should not be discounted however
     - Static code analysis tools can catch some of these issues early, for example [SonarQube](https://www.sonarqube.org/features/security/owasp/)
     - Beware of over-reliance on automated tools: they can help to catch some issues, but they cannot be relied on to catch everything
   - Encode/validate all user input. Code against (and test for) XSS and injection attacks such as SQL/XML/JSON/CRLF
-- Ensure **authentication** is robust
+- Ensure **authentication** is robust and appropriate for the level of data being handled.
   - Strong passwords and MFA
   - Secure storage of session token (`Secure`, `HttpOnly` and `SameSite`) which is refreshed on privilege escalation to avoid session hijacking/fixation
   - Strong hash and salt if storing passwords
