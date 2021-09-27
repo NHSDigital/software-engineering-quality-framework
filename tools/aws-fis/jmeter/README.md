@@ -15,7 +15,7 @@ The JMX file was generated using jMeter UI on a Macbook. If you are experimentin
 
 HTTP request config:
 ```
-<stringProp name="HTTPSampler.domain">wordpress.k8s.texastest.uk</stringProp>
+<stringProp name="HTTPSampler.domain">www.example.com</stringProp>
 <stringProp name="HTTPSampler.port"></stringProp>
 <stringProp name="HTTPSampler.protocol">https</stringProp>
 <stringProp name="HTTPSampler.contentEncoding"></stringProp>
