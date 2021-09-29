@@ -58,7 +58,7 @@ The remainder of this page gives more detailed and specific recommendations to b
 - Ensure **authentication** is robust and appropriate for the level of data being handled.
   - Strong passwords and MFA
   - Secure storage of session token (`Secure`, `HttpOnly` and `SameSite`) which is refreshed on privilege escalation to avoid session hijacking/fixation
-  - Strong hash and salt if storing passwords
+  - Any secrets should be stored in a vault
   - Clear and consistent permissions model
   - Minimum necessary feedback on failed authentication e.g. 404 or blanket 403 when not authenticated to avoid leaking whether resources exist
   - Guard against time based authentication attacks, e.g. using a WAF
@@ -81,7 +81,7 @@ The remainder of this page gives more detailed and specific recommendations to b
 
 - [Discuss](https://digital.nhs.uk/cyber-and-data-security/managing-security/nhs-secure-boundary#register-for-the-service) your use-case with the [NHS Secure Boundary service](https://digital.nhs.uk/cyber-and-data-security/managing-security/nhs-secure-boundary) to explore what the service already provides or can offer in terms of data egress/ingress
 - **Encrypt** data at rest and in transit
-  - TO DO: Statement on TLS versions
+  - TLS versions shall be ideally v1.3 or v1.2 as a minimum. Anything less, as at the end of 2020 will be obsolete and an up-to-date version of the protocol will be required. If a system or service is still utilising anything less than v1.2 then a risk must be raised and managed accordingly.
   - Consider enabling only [Perfect Forward Secrecy](https://en.wikipedia.org/wiki/Forward_secrecy) cipher suites (e.g. [ECDHE](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman))
 - **Scan and refresh** systems and software when required to keep them secure, e.g. using [Prisma](https://www.paloaltonetworks.com/prisma/cloud/cloud-workload-protection-platform) (formerly Twistlock), [Clair](https://github.com/quay/clair) or [ECR image scanning](https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html) for container base images, or [Amazon Inspector](https://aws.amazon.com/inspector/) for VMs
   - Scan before deployment and periodically in live for components no longer receiving regular deployments
