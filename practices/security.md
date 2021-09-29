@@ -58,7 +58,7 @@ The remainder of this page gives more detailed and specific recommendations to b
 - Ensure **authentication** is robust and appropriate for the level of data being handled.
   - Strong passwords and MFA
   - Secure storage of session token (`Secure`, `HttpOnly` and `SameSite`) which is refreshed on privilege escalation to avoid session hijacking/fixation
-  - Strong hash and salt if storing passwords
+  - Any secrets should be stored in a vault
   - Clear and consistent permissions model
   - Minimum necessary feedback on failed authentication e.g. 404 or blanket 403 when not authenticated to avoid leaking whether resources exist
   - Guard against time based authentication attacks, e.g. using a WAF
