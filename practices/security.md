@@ -80,7 +80,7 @@ The remainder of this page gives more detailed and specific recommendations to b
 
 ### Infrastructure security
 
-- [Discuss](https://digital.nhs.uk/cyber-and-data-security/managing-security/nhs-secure-boundary#register-for-the-service) your use-case with the [NHS Secure Boundary service](https://digital.nhs.uk/cyber-and-data-security/managing-security/nhs-secure-boundary)
+- [Discuss](https://digital.nhs.uk/cyber-and-data-security/managing-security/nhs-secure-boundary#register-for-the-service) your use-case with the [NHS Secure Boundary service](https://digital.nhs.uk/cyber-and-data-security/managing-security/nhs-secure-boundary) to explore what the service already provides or can offer in terms of data egress/ingress
 - **Encrypt** data at rest and in transit
   - TLS versions shall be ideally v1.3 or v1.2 as a minimum. Anything less, as at the end of 2020 will be obsolete and an up-to-date version of the protocol will be required. If a system or service is still utilising anything less than v1.2 then a risk must be raised and managed accordingly.
   - Consider enabling only [Perfect Forward Secrecy](https://en.wikipedia.org/wiki/Forward_secrecy) cipher suites (e.g. [ECDHE](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman))
