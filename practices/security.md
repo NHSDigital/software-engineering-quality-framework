@@ -4,6 +4,7 @@
 
 * These notes are part of a broader set of [principles](../principles.md)
 * This is related to [ARCHITECTURE-SECURITY](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/adopt-appropriate-cyber-security-standards)
+* :warning:Any deviation away from these security practices **must** be discussed with your security lead
 
 ## Use the NCSC guidance
 
