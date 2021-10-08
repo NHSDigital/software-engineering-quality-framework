@@ -8,7 +8,7 @@
 ## The pattern
 
 Delivering "little and often" has broad benefits across the software delivery process:
-* Incremental software changes: delivering many small software changes is [preferable](https://blog.gembaacademy.com/2014/07/29/whats-faster-one-piece-flow-or-mass-production-watch-this-envelope-stuffing-simulation-to-find-out/) to infrequent delivery of larger changes
+* Incremental software changes: delivering many small software changes is [preferable](https://cloud.google.com/architecture/devops/devops-process-working-in-small-batches) to infrequent delivery of larger changes
 * Incremental team operations: working incrementally (for example re-planning frequently and iteratively refining the architecture and technology choices) is preferable to large up-front planning and design, or long-running delivery cycles
 
 ## Benefits
