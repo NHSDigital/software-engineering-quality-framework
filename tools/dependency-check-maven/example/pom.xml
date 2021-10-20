@@ -1,0 +1,60 @@
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>uk.nhs.digital</groupId>
+	<artifactId>example</artifactId>
+	<version>1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.4.3</version>
+	</parent>
+
+	<modules>
+		<module>my-datastore</module>
+		<module>my-core-services</module>
+		<module>my-external-webservices</module>
+		<module>my-application</module>
+	</modules>
+
+	<properties>
+		<java.version>11</java.version>
+		<dependency-check-maven.version>6.3.1</dependency-check-maven.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.owasp</groupId>
+				<artifactId>dependency-check-maven</artifactId>
+				<version>${dependency-check-maven.version}</version>
+				<configuration>
+					<!-- options: https://jeremylong.github.io/DependencyCheck/dependency-check-maven/configuration.html -->
+					<versionCheckEnabled>true</versionCheckEnabled>
+					<formats>
+						<format>html</format>
+						<format>json</format>
+					</formats>
+					<!-- these analyzers cause errors -->
+					<bundleAuditAnalyzerEnabled>false</bundleAuditAnalyzerEnabled>
+					<!-- these are known ones that we are ignoring for now -->
+					<suppressionFiles>cve-suppressions.xml</suppressionFiles>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>none</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
