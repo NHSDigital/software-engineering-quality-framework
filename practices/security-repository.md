@@ -10,8 +10,8 @@ This set of practices is a minimum (nothing stops you from doing more), and they
 * The guidelines in this page are a necessary, but not a sufficient, condition for code overall being secure.
 
 ## Access controls
-* All users must have MFA enabled. *Note*: as we consider moving to Github Enterprise, this may be automated by way of authentication via short code.
-* In line with the [Service Manual](https://service-manual.nhs.uk/service-standard/12-make-new-source-code-open), all new repositories must be public by default, unless there is good reason not to - this avoids costly rework to secure private information further down the line.
+* All users must have MFA enabled, and this should be enforced at the organisation level. *Note*: as we consider moving to Github Enterprise, this may be automated by way of authentication via short code.
+* In line with the [Service Manual](https://service-manual.nhs.uk/service-standard/12-make-new-source-code-open), all new repositories should be public by default, unless there is good reason not to - this avoids costly rework to secure private information further down the line.
 * Private repositories must disable forking.
 * There must be no outside collaborators in private repositories.
 * Ability to change repository view from private to public must be reserved to admins only. *Note*: this will be routinely enforced at the organisation level.
