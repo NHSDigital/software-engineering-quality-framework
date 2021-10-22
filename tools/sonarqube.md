@@ -10,6 +10,7 @@ SonarQube gives you the tools you need to write clean and safe code:
 - Issues – SonarQube raises issues whenever a piece of your code breaks a coding rule, whether it's an error that will break your code (bug), a point in your code open to attack (vulnerability), or a maintainability issue (code smell).
 - Security Hotspots – SonarQube highlights security-sensitive pieces of code that need to be reviewed. Upon review, you'll either find there is no threat or you need to apply a fix to secure the code.
 - Raises "smells". It knows _something_ looks odd, and suggests a fix (only suggests!). Your team can then look at the bigger picture around that code, and fix the smells in whichever way is best.
+- Dependency vulnerability scanning - provided by the [dependency-check-maven plugin](dependency-check-maven/README.md)
 
 # Profile
 Quality Profiles are a core component of SonarQube, since they are where you define sets of Rules that - when violated - should raise issues on your codebase (example: Methods should not have a Cognitive Complexity higher than 15). Quality Profiles are defined for individual languages.

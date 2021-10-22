@@ -192,7 +192,12 @@ In addition, it is useful to track the proportion of time being spent on various
 
 ## What does this mean for me as a less-technical person?
 
-To do
+Good engineering and good ways of working are intrinsically connected. Every team member, regardless of how technical they perceive themselves, has a role to play. Think of how your own area of expertise may contribute to improving the metrics the team has selected. Looking at the examples in [Acting](#acting), the conditions to enable increased number of deployments, or better communication, are created by the team as a whole.
+
+Same as for more technical people, continuous improvement should help you reduce waste and enable more focus on the core activities that deliver value from your role. Start with general concepts that may help you identify more specific areas for improvement:
+* Can you observe handoffs between "teams-within-a-team"? How could you help reduce or avoid them?
+* Do you have no understanding of what a part of the team is working on? How could that be made more visible?
+* Do you find yourself spending significant time on activities which seem to have no influence on the value of what the team produces? Why do such activities exist, and how could they be reduced or avoided so that time can be better spent?
 
 ## What does this mean for me as a technical person?
 

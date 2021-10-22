@@ -4,6 +4,7 @@
 
 * These notes are part of a broader set of [principles](../principles.md)
 * This is related to [ARCHITECTURE-SECURITY](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/adopt-appropriate-cyber-security-standards)
+* :warning:Any deviation away from these security practices **must** be discussed with your security lead
 
 ## Use the NCSC guidance
 
@@ -46,18 +47,19 @@ The remainder of this page gives more detailed and specific recommendations to b
 - Consider whether the data being processed is all **necessary** for the system to function, or whether it could be reduced to minimise risk
   - Prefer use of managed services to reduce attack surface where possible
 - Keep **audit** log(s) of user actions, software and infrastructure changes (e.g. git, CI/CD, [CloudTrail](https://aws.amazon.com/cloudtrail/))
+- Ensure testing is conducted continually, appropriately and relevent to the design and development environment (for further details please see [testing](testing.md), [continuous integration](continuous-integration.md), [automate everything](../patterns/automate-everything.md) and [fast feedback](../patterns/fast-feedback.md)).
 
 ### Application level security
 
 - Cover the **basics**
-  - Ensure the [OWASP Top Ten](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_2017_Project) is well understood and considered during software delivery
+  - Ensure the [OWASP Top Ten](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_2017_Project) is well understood and considered during software delivery, other risks outside of the Top Ten should not be discounted however
     - Static code analysis tools can catch some of these issues early, for example [SonarQube](https://www.sonarqube.org/features/security/owasp/)
     - Beware of over-reliance on automated tools: they can help to catch some issues, but they cannot be relied on to catch everything
   - Encode/validate all user input. Code against (and test for) XSS and injection attacks such as SQL/XML/JSON/CRLF
-- Ensure **authentication** is robust
+- Ensure **authentication** is robust and appropriate for the level of data being handled.
   - Strong passwords and MFA
   - Secure storage of session token (`Secure`, `HttpOnly` and `SameSite`) which is refreshed on privilege escalation to avoid session hijacking/fixation
-  - Strong hash and salt if storing passwords
+  - Any secrets should be stored in a vault
   - Clear and consistent permissions model
   - Minimum necessary feedback on failed authentication e.g. 404 or blanket 403 when not authenticated to avoid leaking whether resources exist
   - Guard against time based authentication attacks, e.g. using a WAF
@@ -67,11 +69,7 @@ The remainder of this page gives more detailed and specific recommendations to b
 - Prevent **[clickjacking](https://sudo.pagerduty.com/for_engineers/#clickjacking)** with `X-Frame-Options`
 - Be careful not to **leak information**, e.g. error messages, stack traces, headers
 - **Don't trust** yourself or others! <a name='secret-scanning'></a>
-  - Code must be automatically scanned for secrets or other sensitive data:
-    - To catch any issues early and to minimise potential exposure, scan code on developer machines *before* code is committed to the code repository. We recommend using [awslabs git-secrets](https://github.com/awslabs/git-secrets). To set this up on a Mac workstation or as part of your Jenkins pipeline, follow the examples and READMEs in [nhsd-git-secrets](../tools/nhsd-git-secrets). Windows testing is in progress and instructions/code will be added in due course
-    - The above solution uses regular expressions to find potential secrets: before using the solution, consider the types of secrets that might exist (based on your technology stack) and update the list of regular expressions as necessary
-    - As a backstop, *also* enable server-side scanning within the code repository. Recommended solution options:
-      - TO DO: more details... for example in [GitHub](https://docs.github.com/en/code-security/secret-security/about-secret-scanning)
+  - Code must be automatically scanned for secrets or other sensitive data. We have a [secret scanning guide](../tools/nhsd-git-secrets/README.md) that describes how to best achieve this using our preferred tooling, and also includes examples to get you started.
   - Be wary of any 3rd party JavaScript included on the page, e.g. for A/B testing, analytics
   - Pin dependencies at known versions to avoid unexpected updates
   - Scan dependencies for vulnerabilities, e.g. using [OWASP Dependency Check](https://www.owasp.org/index.php/OWASP_Dependency_Check) or [Snyk](https://snyk.io/)
@@ -82,17 +80,21 @@ The remainder of this page gives more detailed and specific recommendations to b
 
 ### Infrastructure security
 
-- [Discuss](https://digital.nhs.uk/cyber-and-data-security/managing-security/nhs-secure-boundary#register-for-the-service) your use-case with the [NHS Secure Boundary service](https://digital.nhs.uk/cyber-and-data-security/managing-security/nhs-secure-boundary)
+- [Discuss](https://digital.nhs.uk/cyber-and-data-security/managing-security/nhs-secure-boundary#register-for-the-service) your use-case with the [NHS Secure Boundary service](https://digital.nhs.uk/cyber-and-data-security/managing-security/nhs-secure-boundary) to explore what the service already provides or can offer in terms of data egress/ingress
 - **Encrypt** data at rest and in transit
-  - TO DO: Statement on TLS versions
+  - TLS versions shall be ideally v1.3 or v1.2 as a minimum. Anything less, as at the end of 2020 will be obsolete and an up-to-date version of the protocol will be required. If a system or service is still utilising anything less than v1.2 then a risk must be raised and managed accordingly.
   - Consider enabling only [Perfect Forward Secrecy](https://en.wikipedia.org/wiki/Forward_secrecy) cipher suites (e.g. [ECDHE](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman))
 - **Scan and refresh** systems and software when required to keep them secure, e.g. using [Prisma](https://www.paloaltonetworks.com/prisma/cloud/cloud-workload-protection-platform) (formerly Twistlock), [Clair](https://github.com/quay/clair) or [ECR image scanning](https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html) for container base images, or [Amazon Inspector](https://aws.amazon.com/inspector/) for VMs
   - Scan before deployment and periodically in live for components no longer receiving regular deployments
 - **Minimise access** to production
   - Logging & monitoring should negate the need to manually inspect a production host
   - All deployments should be done via delivery pipelines, negating the need to manually change a production host
-  - If possible, only allow access for emergencies using a "break glass" pattern, e.g. using Azure AD [Privileged Identity Management](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure)
+  - Only allow access for emergencies using a "break glass" pattern, e.g. using Azure AD [Privileged Identity Management](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure)
   - Audit access to production and alert for unexpected access
+  - Frequently asked questions:
+    - Q: If I can't access production, how can I check data, for example to respond to a support call? A: one approach is to build a facility (which must be automated, controlled and secured - so likely to be triggered via a pipeline) to clone the production database into a short-lived and isolated copy, so that data can be checked safely without anyone accessing production. Read-replicas can potentially be used instead, but they are (obviously) limited to read-only, and will often consume more cost and energy than on-demand clones ([ARCHITECTURE-SUSTAINABILITY](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/deliver-sustainable-services)). As above, access must be audited and strictly controlled. 
+    - Q: If I can't access production, how can I update data that is incorrect? A: to update data safely and with confidence, all data changes should be scripted, tested against production data (using a clone, as above) and applied (both for testing and to production) via delivery pipelines rather than via manual updates.
+    - Q: If I can't access production, how can I refresh static / reference data? A: as above, one approach is to script the data changes required and apply them via delivery pipelines; another approach is to build a housekeeping facility that refreshes an entire static dataset based on a file (for example CSV or JSON) - if using this approach, access and usage must be audited and strictly controlled. 
 - Ensure infrastructure **IAM** is robust
   - Strong passwords and MFA
 
