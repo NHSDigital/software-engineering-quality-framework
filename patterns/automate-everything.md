@@ -35,6 +35,7 @@ Regularly review *every* manual process that the team performs. Automate it, but
 * Automated [tests](../practices/testing.md).
 * Automated [security](../practices/security.md) verification.
 * Automated [governance](governance-side-effect.md).
+* Hooks to [enforce code formatting](enforce-code-formatting.md).
 
 ## Examples &mdash; how to automate
 
