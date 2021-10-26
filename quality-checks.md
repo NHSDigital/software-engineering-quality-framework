@@ -15,7 +15,7 @@ The checks are classified here based on the concerns they help to address:
 
 ## Usage
 
-All applicable quality checks should be applied. Not all checks are universal, i.e. applicable in all contexts. For example, accessibility testing is only applicable to applications with a user interface. The [Details](#details) section lists universal checks in black, and contextual checks in grey.
+All applicable quality checks should be applied. Not all checks are universal, i.e. applicable in all contexts. For example, accessibility testing is only applicable to applications with a user interface.
 
 The majority of these checks should be [automated](./patterns/automate-everything.md) via [continuous integration / continuous deployment](./practices/continuous-integration.md): the optimal sequencing of these checks within CI/CD pipelines will depend on the project's branching strategy, deployment strategy, etc.
 
