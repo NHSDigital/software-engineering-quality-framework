@@ -12,7 +12,7 @@ The checks are classified here based on the concerns they help to address:
 * [Security](#2-security-checks)
 * [Resilience](#3-resilience-checks)
 * [Maintainability](#4-maintainability-checks)
-* [General checks] (#5-general-checks)
+* [General checks](#5-general-checks)
 
 ## Usage
 
@@ -41,8 +41,8 @@ We recommend tracking progress on an Engineering Quality dashboard, for example:
 
 
 ## 1. Functionality checks
-* [Unit tests](#unit-tests)
-* [Integration tests](#integration-tests)
+* [Unit tests](#unit-tests-)
+* [Integration tests](#integration-tests-)
 * API/Contract tests
 * UI Tests
 
