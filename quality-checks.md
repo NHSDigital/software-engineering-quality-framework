@@ -8,10 +8,11 @@ Quality checks are at the heart of good engineering, and are essential for rapid
 
 The checks are classified here based on the concerns they help to address:
 
-* Functionality
-* Security
-* Resilience
-* Maintainability
+* [Functionality](#1-functionality-checks)
+* [Security](#2-security-checks)
+* [Resilience](#3-resilience-checks)
+* [Maintainability](#4-maintainability-checks)
+* [General checks] (#5-general-checks)
 
 ## Usage
 
@@ -38,7 +39,49 @@ We recommend tracking progress on an Engineering Quality dashboard, for example:
 
 ![Example Dashboard](images/quality-dashboard.png)
 
-## Details
+
+## 1. Functionality checks
+* [Unit tests](#unit-tests)
+* [Integration tests](#integration-tests)
+* API/Contract tests
+* UI Tests
+
+### Unit Tests ![](https://img.shields.io/badge/-Universal-blue)
+#### About
+* What it is: Logic tests for individual blocks of code, e.g. individual methods.
+* Why we care: This is the quickest (to execute) type of functional test, so these are essential to achieve both rapid and thorough functional testing.
+* Endorsed tools/configuration: TBD
+* Further details: See [Test practices](./practices/testing.md)
+
+#### Thresholds
+* ![](https://img.shields.io/badge/-Green-green) Builds fail if any tests fail.
+* ![](https://img.shields.io/badge/-Amber-yellow) TBD
+
+### Integration tests ![](https://img.shields.io/badge/-Universal-blue)
+#### About
+* What it is: Check interactions with other components and dependant systems. e.g. across microservices, authentication layers, database, third-party systems. Ideally includes full end-to-end testing across all components.
+* Why we care: When components are developed in isolation, it's vital that we regularly test them working together. Changes in one component can break the whole system.
+* Endorsed tools/configuration: TBD
+
+#### Thresholds
+* ![](https://img.shields.io/badge/-Green-green) Builds fail if any tests fail.
+* ![](https://img.shields.io/badge/-Amber-yellow) TBD
+
+## 2. Security checks
+Checks here
+
+## 3. Resilience checks
+Checks here
+
+## 4. Maintainability checks
+Checks here
+
+## 5. General checks
+
+
+
+
+## --Deprecated below--Details
 
 | Quality check          | Classification  | Applicability | What it means                                                                                                                                                                                                   | Why we care                                                                                                                                                                                                                                                | Tolerances for green                                                                                                                                                     | Endorsed tools / configuration                                                | Further details                                                                                               |
 | :--------------------- | :-------------- | :------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------ |
