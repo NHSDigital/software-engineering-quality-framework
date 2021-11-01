@@ -19,10 +19,13 @@ This guide lays out security best practice for Github repositories. This set of 
 * There must be no outside collaborators in private repositories.
 
 ### Teams setup
-Because of baseline visibility configurations, you must setup Github teams in order to provide team members access to projects. The recommended setup is as follows:
-* Create one team with the name of your programme (e.g. `Engineering Quality Framework`). Add all required members to that team.
-* Create a child team within the team, for admins only (e.g. `Engineering Quality Framework Admins`). Add admins only to this team.
-* For each project in your programme (e.g. `software-engineering-quality-framework`), under the `Manage Access` option in `Settings`, set the general team to have `Write` access and the admins team to have `Admin` access.
+Because of baseline visibility configurations, you must setup Github teams in order to provide team members access to repos. The minimum recommended setup is as follows:
+* Create one team with the name of your programme (e.g. `Engineering Quality Framework`). Add all required members to this team.
+* Create one child team within the team, for admins only (e.g. `Engineering Quality Framework Admins`). Add admins only to this team.
+* Create a second child team, for code owners (e.g. `Engineering Quality Framework Code Owners`). Add relevant members to this team, and reference in the CODEOWNERS file (example [here](https://github.com/NHSDigital/software-engineering-quality-framework/blob/master/CODEOWNERS)).
+* For each repo in your programme (e.g. `software-engineering-quality-framework`), under the `Manage Access` option in `Settings`, set the general team to have `Write` access and the admins team to have `Admin` access.
+
+Depending on your use case, you may want to create additional teams (e.g. a read-only access team, or different teams granting access to different projects). This is welcomed by the framework, as long as the teams provide clarity on the role they encompass, remain consistent and are applied consistently to your repos.
 
 ## Code security
 * Enable, at a minimum, [Dependabot](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/) alerts for vulnerabilities and respond to them appropriately.
