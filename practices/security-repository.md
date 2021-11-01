@@ -17,6 +17,7 @@ This guide lays out security best practice for Github repositories. This set of 
 * In line with the [Service Manual](https://service-manual.nhs.uk/service-standard/12-make-new-source-code-open), new repositories should be public by default, unless there is good reason not to - this avoids costly rework to secure private information further down the line.
 * Private repositories must disable forking.
 * There must be no outside collaborators in private repositories.
+* Enable abuse reporting by [accepting content reports](https://docs.github.com/en/communities/moderating-comments-and-conversations/managing-how-contributors-report-abuse-in-your-organizations-repository)
 
 ### Teams setup
 Because of baseline visibility configurations, you must setup Github teams in order to provide team members access to repos. The minimum recommended setup is as follows:
