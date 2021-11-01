@@ -10,7 +10,7 @@ This guide lays out security best practice for Github repositories. This set of 
 ## Access controls
 ### Organisation-level settings
 * All users must have MFA enabled.
-* Baseline visibility for private repositories must be no permissions.
+* Baseline visibility for private repositories must be "no permission".
 * Ability to change repository view from private to public must be reserved to admins only.
 
 ### Repository-specific settings
