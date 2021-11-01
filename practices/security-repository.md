@@ -10,13 +10,19 @@ This guide lays out security best practice for Github repositories. This set of 
 ## Access controls
 ### Organisation-level settings
 * All users must have MFA enabled.
-* Baseline visibility for private repositories must be "no permission".
+* Baseline visibility for private repositories must be `No Permission`.
 * Ability to change repository view from private to public must be reserved to admins only.
 
 ### Repository-specific settings
 * In line with the [Service Manual](https://service-manual.nhs.uk/service-standard/12-make-new-source-code-open), new repositories should be public by default, unless there is good reason not to - this avoids costly rework to secure private information further down the line.
 * Private repositories must disable forking.
 * There must be no outside collaborators in private repositories.
+
+### Teams setup
+Because of baseline visibility configurations, you must setup Github teams in order to provide team members access to projects. The recommended setup is as follows:
+* Create one team with the name of your programme (e.g. `Engineering Quality Framework`). Add all required members to that team.
+* Create a child team within the team, for admins only (e.g. `Engineering Quality Framework Admins`). Add admins only to this team.
+* For each project in your programme (e.g. `software-engineering-quality-framework`), under the `Manage Access` option in `Settings`, set the general team to have `Write` access and the admins team to have `Admin` access.
 
 ## Code security
 * Enable, at a minimum, [Dependabot](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/) alerts for vulnerabilities and respond to them appropriately.
