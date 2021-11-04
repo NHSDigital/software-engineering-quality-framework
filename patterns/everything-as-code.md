@@ -47,7 +47,7 @@ While effective testing is the best way to detect bugs or non-functional problem
   * Does it handle edge cases?
 #### Of high quality
   * Is the code clear and simple?
-  * Is the code layout and structure consistent with agreed style and other code?
+  * Is the code layout and structure consistent with agreed style and other code? (please see [enforce code formatting](enforce-code-formatting.md))
   * Would it easily allow future modification to meet slightly different needs, e.g. ten times the required data size or throughput?
   * Have the non-functional requirements been considered (performance, scalability, robustness, etc)?
   * Are common security issues guarded against (e.g. [OWASP Top 10](https://owasp.org/www-project-top-ten/))? Including:
