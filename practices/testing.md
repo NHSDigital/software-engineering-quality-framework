@@ -40,7 +40,7 @@
 
 * **Testing is continuous**
   * Testing is a continuous activity, not a phase of delivery
-  * Testing can be performed in [all phases of a product's DevOps cycle](https://danashby.co.uk/2016/10/19/continuous-testing-in-devops/) and is best done as a collaborative exercise
+  * Testing can be performed in [all phases of a product's DevOps cycle](https://danashby.co.uk/2016/10/19/continuous-testing-in-devops/) and should be done as a collaborative exercise
 
 ## Test Automation Theory
 
