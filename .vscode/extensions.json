@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "ban.spellright",
+    "davidanson.vscode-markdownlint",
+    "editorconfig.editorconfig",
+    "johnpapa.vscode-peacock",
+    "streetsidesoftware.code-spell-checker",
+    "vscode-icons-team.vscode-icons",
+    "yzhang.dictionary-completion",
+    "yzhang.markdown-all-in-one"
+  ]
+}
