@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This framework is concerned with using "good" software engineering to support rapid and safe delivery of high-quality software, at scale.
+This framework is concerned with using "good" software engineering to support rapid and safe delivery of high-quality software, at scale
 
 It aims to:
 1. Describe a shared (across multiple teams) definition of "good" engineering
