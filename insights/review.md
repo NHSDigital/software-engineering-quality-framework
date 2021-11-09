@@ -85,7 +85,7 @@ Finally (and most importantly) identify actions to move the score upward.
   * It keeps us aligned and working well as a team.
   * It helps us share and resolve impediments.
 * All our code is stored in source control (e.g. git).
-  * We practice [trunk-based development](https://trunkbaseddevelopment.com/) using short-lived feature branches off master.
+  * We practice [trunk-based development](https://trunkbaseddevelopment.com/) using short-lived feature branches off the main branch.
   * All code must be reviewed before it is merged.
   * Tests must pass before code is merged.
 * We can see when the build has broken or tests are failing and we fix them before carrying on.
