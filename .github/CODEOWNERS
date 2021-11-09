@@ -1,4 +1,2 @@
-/.github @NHSDigital/quality-framework-admins
-/.vscode @NHSDigital/quality-framework-admins
-/.gitignore @NHSDigital/quality-framework-admins
-/project.code-workspace @NHSDigital/quality-framework-admins
+# Default owners for everything in the repo - unless a later match takes precedence
+* @NHSDigital/software-engineering-quality-framework-code-owners
