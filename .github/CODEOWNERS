@@ -1,8 +1,2 @@
 # Default owners for everything in the repo - unless a later match takes precedence
-@NHSDigital/software-engineering-quality-framework-code-owners
-
-# Owners for specific areas in the repo
-/.github @NHSDigital/software-engineering-quality-framework-code-owners
-/.vscode @NHSDigital/software-engineering-quality-framework-code-owners
-/.gitignore @NHSDigital/software-engineering-quality-framework-code-owners
-/project.code-workspace @NHSDigital/software-engineering-quality-framework-code-owners
+* @NHSDigital/software-engineering-quality-framework-code-owners
