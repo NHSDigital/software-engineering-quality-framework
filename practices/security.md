@@ -33,7 +33,7 @@ _All code is susceptible to bugs and security vulnerabilities... Accept that you
 
 As with writing good code, doing good security involves continual testing &mdash; in many cases using the tests to steer implementation.
 
-The [OWASP Web Security Testing Guide](https://github.com/OWASP/wstg/tree/master/document) is an extensive and wide-reaching reference on how to test for security, including examining the software delivery process and reviewing code as well as more traditional black box penetration testing. It is a large resource, but is worth investing some time in for the security-concious.
+The [OWASP Web Security Testing Guide](https://github.com/OWASP/wstg/tree/main/document) is an extensive and wide-reaching reference on how to test for security, including examining the software delivery process and reviewing code as well as more traditional black box penetration testing. It is a large resource, but is worth investing some time in for the security-concious.
 
 ## Recommendations
 
@@ -92,9 +92,9 @@ The remainder of this page gives more detailed and specific recommendations to b
   - Only allow access for emergencies using a "break glass" pattern, e.g. using Azure AD [Privileged Identity Management](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure)
   - Audit access to production and alert for unexpected access
   - Frequently asked questions:
-    - Q: If I can't access production, how can I check data, for example to respond to a support call? A: one approach is to build a facility (which must be automated, controlled and secured - so likely to be triggered via a pipeline) to clone the production database into a short-lived and isolated copy, so that data can be checked safely without anyone accessing production. Read-replicas can potentially be used instead, but they are (obviously) limited to read-only, and will often consume more cost and energy than on-demand clones ([ARCHITECTURE-SUSTAINABILITY](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/deliver-sustainable-services)). As above, access must be audited and strictly controlled. 
+    - Q: If I can't access production, how can I check data, for example to respond to a support call? A: one approach is to build a facility (which must be automated, controlled and secured - so likely to be triggered via a pipeline) to clone the production database into a short-lived and isolated copy, so that data can be checked safely without anyone accessing production. Read-replicas can potentially be used instead, but they are (obviously) limited to read-only, and will often consume more cost and energy than on-demand clones ([ARCHITECTURE-SUSTAINABILITY](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/deliver-sustainable-services)). As above, access must be audited and strictly controlled.
     - Q: If I can't access production, how can I update data that is incorrect? A: to update data safely and with confidence, all data changes should be scripted, tested against production data (using a clone, as above) and applied (both for testing and to production) via delivery pipelines rather than via manual updates.
-    - Q: If I can't access production, how can I refresh static / reference data? A: as above, one approach is to script the data changes required and apply them via delivery pipelines; another approach is to build a housekeeping facility that refreshes an entire static dataset based on a file (for example CSV or JSON) - if using this approach, access and usage must be audited and strictly controlled. 
+    - Q: If I can't access production, how can I refresh static / reference data? A: as above, one approach is to script the data changes required and apply them via delivery pipelines; another approach is to build a housekeeping facility that refreshes an entire static dataset based on a file (for example CSV or JSON) - if using this approach, access and usage must be audited and strictly controlled.
 - **Secure the route** to infrastructure: all access to infrastructure (production or otherwise) must be via a secured route, for example via a hardened bastion only accessible via a VPN (with MFA challenge), and with an audit of usage.
 - Ensure infrastructure **IAM** is robust
   - Strong passwords and MFA
@@ -122,7 +122,7 @@ The remainder of this page gives more detailed and specific recommendations to b
 - Secure **CI/CD**
   - Robust authentication and minimum privileges
   - Prefer ambient IAM credentials over retrieving credentials from secrets management. Do not store credentials in the plain.
-- **Enforce** infrastructure security (e.g. [Azure Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview), [AWS Config](https://aws.amazon.com/config/)) and validate it (e.g. [ScoutSuite](https://github.com/nccgroup/ScoutSuite/blob/master/README.md))
+- **Enforce** infrastructure security (e.g. [Azure Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview), [AWS Config](https://aws.amazon.com/config/)) and validate it (e.g. [ScoutSuite](https://github.com/nccgroup/ScoutSuite/blob/main/README.md))
 
   <details><summary>Example IAM policy fragment to prevent unencrypted RDS databases (click to expand)</summary>
 
