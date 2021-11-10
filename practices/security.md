@@ -33,7 +33,7 @@ _All code is susceptible to bugs and security vulnerabilities... Accept that you
 
 As with writing good code, doing good security involves continual testing &mdash; in many cases using the tests to steer implementation.
 
-The [OWASP Web Security Testing Guide](https://github.com/OWASP/wstg/tree/main/document) is an extensive and wide-reaching reference on how to test for security, including examining the software delivery process and reviewing code as well as more traditional black box penetration testing. It is a large resource, but is worth investing some time in for the security-concious.
+The [OWASP Web Security Testing Guide](https://github.com/OWASP/wstg/tree/master/document) is an extensive and wide-reaching reference on how to test for security, including examining the software delivery process and reviewing code as well as more traditional black box penetration testing. It is a large resource, but is worth investing some time in for the security-concious.
 
 ## Recommendations
 
@@ -122,7 +122,7 @@ The remainder of this page gives more detailed and specific recommendations to b
 - Secure **CI/CD**
   - Robust authentication and minimum privileges
   - Prefer ambient IAM credentials over retrieving credentials from secrets management. Do not store credentials in the plain.
-- **Enforce** infrastructure security (e.g. [Azure Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview), [AWS Config](https://aws.amazon.com/config/)) and validate it (e.g. [ScoutSuite](https://github.com/nccgroup/ScoutSuite/blob/main/README.md))
+- **Enforce** infrastructure security (e.g. [Azure Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview), [AWS Config](https://aws.amazon.com/config/)) and validate it (e.g. [ScoutSuite](https://github.com/nccgroup/ScoutSuite/blob/master/README.md))
 
   <details><summary>Example IAM policy fragment to prevent unencrypted RDS databases (click to expand)</summary>
 
