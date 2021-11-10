@@ -37,7 +37,7 @@
   * Consider using structured (i.e. Json formatted) log messages, as log aggregation systems can often perform more effective searches of these.
   * Tracing can be implemented using cloud platform-native tools like [AWS X-Ray](https://aws.amazon.com/xray/) or open source equivalents such as [OpenTracing](https://opentracing.io/docs/overview/what-is-tracing/). APM tools mentioned elsewhere also typically include tracing functionality.
 * More **things to monitor**.
-  * Monitor (and generate alerts for) the expiry dates of the SSL certificates within the service.
+  * Monitor (and generate alerts for) the expiry dates of the SSL certificates within the service. See [acm-cert-monitor](../tools/acm-cert-monitor/) for an example lambda and Terraform stack to monitor your AWS ACM certificates.
   * Subscribe to service alerts from your cloud vendors, e.g. the service-status RSS feeds for [AWS](https://status.aws.amazon.com) and [Azure](https://status.azure.com/status/).
   * Ensure you have reporting and alerting for the health of any services/components your service relies on, e.g. shared network connections or shared authentication services.
 * **Secret / sensitive data**.
