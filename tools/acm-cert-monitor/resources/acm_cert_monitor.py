@@ -92,7 +92,7 @@ def send_msg_slack(result):
       print ('unable to send slack message, slack url not set')
    else:     
       msg = {
-        "channel": "#texas-alerts",
+        "channel": "<INSERT SLACK CHANNEL>",
         "username": "ACM_Expiry",
         "text": result,
         "icon_emoji": ""
