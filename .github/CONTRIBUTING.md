@@ -3,10 +3,10 @@ Thank you for interest in improving the framework.
 
 In this guide you will get an overview of the contribution workflow from opening an issue, creating a PR, reviewing, and merging the PR.
 
-If you're new to Github and/or Markdown, Github's own (contributor's guide)[https://github.com/github/docs/blob/main/CONTRIBUTING.md] provides good signposting on these topics.
+If you're new to Github and/or Markdown, Github's own [contributor's guide](https://github.com/github/docs/blob/main/CONTRIBUTING.md) provides good signposting on these topics.
 
 ## Using issues
-If you have a change (or a new page) to raise, please create an (issue)[https://github.com/NHSDigital/software-engineering-quality-framework/issues] first, and reference it in your commits. Before raising a new issue, have a look through the existing ones in case it's already been raised (Framework owners will strive to keep the list small enough).
+If you have a change (or a new page) to raise, please create an [issue](https://github.com/NHSDigital/software-engineering-quality-framework/issues) first, and reference it in your commits. Before raising a new issue, have a look through the existing ones in case it's already been raised (Framework owners will strive to keep the list small enough).
 
 ## Pull requests and merging
 You can't push to the main branch. Therefore, for all changes you will need to create a new branch, and then a pull request to merge said branch into main. The framework owners will be nominated as reviewers of your PR by default, but feel free to add other people as well if you think they will have valuable input.
