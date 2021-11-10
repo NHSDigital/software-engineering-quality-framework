@@ -1,7 +1,9 @@
 # Welcome to the Engineering Framework contributors guide
-Thank you for interest in improving the framework.
+Thank you for your interest in improving the framework.
 
 In this guide you will get an overview of the contribution workflow from opening an issue, creating a PR, reviewing, and merging the PR.
+
+The framework is concerned with engineering best practice at NHSD, however, operational matters (e.g. structure of teams, roles and responsibilities, etc.) are out of scope. Please consider this when adding new content, and if in doubt, any of the code owners will be more than happy to discuss.
 
 If you're new to Github and/or Markdown, Github's own [contributor's guide](https://github.com/github/docs/blob/main/CONTRIBUTING.md) provides good signposting on these topics.
 
