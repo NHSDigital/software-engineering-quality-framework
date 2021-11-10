@@ -1,7 +1,7 @@
 ###################################################################################
 #
 # Uses git secrets scanner to scan raw source code for secrets
-# Same framework in the nhsd-git-secrets folder, but wrapped up in a docker image
+# Same framework in the nhsd-git-secrets folder, but wrapped up in a docker image 
 #
 # How to use:
 # 1. Create yourself a ".gitallowed" file in the root of your project.
@@ -44,7 +44,7 @@ WORKDIR /secrets-scanner/source
 RUN git init
 
 RUN echo "Downloading regex files from engineering-framework"
-RUN curl https://codeload.github.com/NHSDigital/software-engineering-quality-framework/tar.gz/main | tar -xz --strip=3 software-engineering-quality-framework-main/tools/nhsd-git-secrets/nhsd-rules-linux-mac.txt
+RUN curl https://codeload.github.com/NHSDigital/software-engineering-quality-framework/tar.gz/master | tar -xz --strip=3 software-engineering-quality-framework-master/tools/nhsd-git-secrets/nhsd-rules-linux-mac.txt
 
 RUN echo "Copying allowed secrets list"
 COPY .gitallowed .
