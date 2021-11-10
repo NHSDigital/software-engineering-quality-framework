@@ -35,3 +35,6 @@ The framework consists of:
   * [Product Development Cloud PaaS Working Group](communities/pd-cloud-working-group.md)
   * [Secure Engineering CoP](communities/security-cop.md)
 * Guidance on how to practice [continuous improvement](continuous-improvement.md)
+
+## Contributing
+See our (contributor's guide)[./github/CONTRIBUTING.md]
