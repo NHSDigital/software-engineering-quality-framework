@@ -37,4 +37,4 @@ The framework consists of:
 * Guidance on how to practice [continuous improvement](continuous-improvement.md)
 
 ## Contributing
-See our [contributor's guide](./github/CONTRIBUTING.md)
+See our [contributor's guide](./.github/CONTRIBUTING.md)
