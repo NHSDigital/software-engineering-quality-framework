@@ -25,7 +25,7 @@ Use managed services where available and appropriate. The aim is to reduce opera
   * TO DO: close discussion about whether containers are still preferable in some use-cases
 * For data persistence prefer (where there are no other differentiating factors) pay per request options (e.g. Amazon DynamoDB, S3) to pay per time choices (e.g. Amazon Aurora or RDS).
 * In general, prefer solutions which do not involve managing VMs if possible, and ideally where there is no explicit configuration of a network (e.g. subnets, internet gateways, NAT gateways) &mdash; compare AWS Lambda which needs no network with AWS Fargate which does.
-* Where possible, outsource the management (including renewal) of certificates (e.g. via (AWS Certificate Manager)[https://aws.amazon.com/certificate-manager/])
+* Where possible, outsource the management (including renewal) of certificates (e.g. via [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/))
   * Where that isn't possible, still prefer outsourcing the management of alerting for certificate expiry
 
 ## Cloud native vs cloud agnostic
