@@ -12,7 +12,7 @@ Dependency-Check supports the identification of project dependencies in a number
 
 This SonarQube plugin does not perform analysis, rather, it reads existing Dependency-Check reports. Use one of the other available methods to scan project dependencies and generate the necessary JSON report which can then be consumed by this plugin. Refer to the [Dependency-Check project](https://github.com/jeremylong/DependencyCheck) for relevant [documentation](https://jeremylong.github.io/DependencyCheck/).
 
-Is it veru quick and easy to configure depenedency scanning in your azure devops pipeline.
+Is it very quick and easy to configure depenedency scanning in your azure devops pipeline.
 
 - Install Dependency-Check plugin on SonarQube.
 - In your azure build pipeline add SonarQube prepare task
