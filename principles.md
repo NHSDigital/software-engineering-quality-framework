@@ -138,7 +138,7 @@ We need to figure out how to deliver software as fast as possible.  This reduces
 
 **No blame.** When things go wrong, treat it as a learning opportunity for the team and organisation. Use blameless post mortems and Five Whys.
 
-**[Use inclusive language.](inclusive-language.md)** 
+**[Use inclusive language.](inclusive-language.md)** Avoid terms which cause hurt and offence, including if they have been considered industry-standard terms.
 
 ## 7. Optimise the whole
 
