@@ -12,7 +12,15 @@ TBC
 * [Python](https://bugs.python.org/issue34605)
 * [GitHub](https://github.com/github/renaming)
 
+| Term we will avoid | Terms we will use instead | 
+| :----------------- | :------------------------ |
+| TBC                | TBC                       | 
+
 ## Renaming the master branch in github
+
+GitHub have published [guidance](https://github.com/github/renaming) around renaming the master branch. It is worth noting that GitHub retains a history of the names of the parent branch so that existing links to your repository aren't broken - for example the master branch in this repository has been renamed to main, but old links still work [https://github.com/NHSDigital/software-engineering-quality-framework/blob/master/README.md](https://github.com/NHSDigital/software-engineering-quality-framework/blob/master/README.md) and are automatically redirected at the main branch.
+
+In addition to the guidance from GitHub, developers will need to update local copies of a repository if the master branch is renamed - this example is for a renaming from master to main:
 
 ```
 git branch -m master main
