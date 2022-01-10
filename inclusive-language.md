@@ -17,7 +17,7 @@ In line with organisations such as the [Home Office](https://hodigital.blog.gov.
 | :------------------------------ | :-------------------- | :------------------------------------ |
 | Infrastructure (e.g. databases) | Master                | Primary                               | 
 | Infrastructure (e.g. databases) | Slave                 | Replica                               | 
-| Source control                  | Master                | Main                                  |
+| Source control                  | Master                | Main (see [below](#renaming-the-master-branch-in-github))                                  |
 | Network rules                   | Whitelist             | Allowlist / Permitlist                |
 | Network rules                   | Blacklist             | Denylist / Blocklist                  |
 
