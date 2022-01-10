@@ -14,7 +14,7 @@ In line with organisations such as the [Home Office](https://hodigital.blog.gov.
 ## Details
 
 | Context | Term we will avoid | Terms we will use instead | 
-| :----------------- | :------------------------ |
+| :----------------- | :------------------------ | :----------------- |
 | Infrastructure, e.g. databases | Master / Slave                | Primary / Replica                       | 
 | Source control | Master                 | Main                       | 
 
