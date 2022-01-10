@@ -13,10 +13,10 @@ In line with organisations such as the [Home Office](https://hodigital.blog.gov.
 
 ## Details
 
-| Term we will avoid | Terms we will use instead | 
+| Context | Term we will avoid | Terms we will use instead | 
 | :----------------- | :------------------------ |
-| Master / Slave (in the context of infrastructure, e.g. databases)                | Primary / Replica                       | 
-| Master (in the context of source control branches)                | Main                       | 
+| Infrastructure, e.g. databases | Master / Slave                | Primary / Replica                       | 
+| Source control | Master                 | Main                       | 
 
 ## Renaming the master branch in github
 
