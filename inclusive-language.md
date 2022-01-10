@@ -7,7 +7,11 @@
 
 ## Detail
 
-In line with organisations such as the [Home Office](https://hodigital.blog.gov.uk/2020/07/23/not-a-black-and-white-issue-using-racially-neutral-terms-in-technology/) and the [National Cyber Security Centre](https://www.ncsc.gov.uk/blog-post/terminology-its-not-black-and-white), we recognise that we have historically used 
+In line with organisations such as the [Home Office](https://hodigital.blog.gov.uk/2020/07/23/not-a-black-and-white-issue-using-racially-neutral-terms-in-technology/) and the [National Cyber Security Centre](https://www.ncsc.gov.uk/blog-post/terminology-its-not-black-and-white), we recognise that we have historically used offensive terms that have become normlised by the software engineering industry.
+
+| Term we will avoid | Terms we will use instead | 
+| :----------------- | :------------------------ |
+| TBC                | TBC                       | 
 
 ## Renaming the master branch in github
 
@@ -28,6 +32,3 @@ git remote set-head origin -a
 * [Python](https://bugs.python.org/issue34605)
 * [GitHub](https://github.com/github/renaming)
 
-| Term we will avoid | Terms we will use instead | 
-| :----------------- | :------------------------ |
-| TBC                | TBC                       | 
