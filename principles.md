@@ -138,6 +138,8 @@ We need to figure out how to deliver software as fast as possible.  This reduces
 
 **No blame.** When things go wrong, treat it as a learning opportunity for the team and organisation. Use blameless post mortems and Five Whys.
 
+**[Use inclusive language.](inclusive-language-md)** 
+
 ## 7. Optimise the whole
 
 **Visualise the work.** Map the value stream with a Kanban board, identify bottlenecks.
