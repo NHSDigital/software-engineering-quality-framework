@@ -39,5 +39,5 @@ git remote set-head origin -a
 * [Internet Engineering Task Force](https://datatracker.ietf.org/doc/draft-knodel-terminology/)
 * [Python](https://bugs.python.org/issue34605)
 * [GitHub](https://github.com/github/renaming)
-* [NCSC] (https://www.ncsc.gov.uk/blog-post/terminology-its-not-black-and-white)
+* [NCSC](https://www.ncsc.gov.uk/blog-post/terminology-its-not-black-and-white)
 
