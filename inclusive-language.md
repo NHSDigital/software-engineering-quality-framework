@@ -13,10 +13,13 @@ In line with organisations such as the [Home Office](https://hodigital.blog.gov.
 
 ## Details
 
-| Context | Term we will avoid | Terms we will use instead | 
-| :----------------- | :------------------------ | :----------------- |
-| Infrastructure (e.g. databases) | Master / Slave                | Primary / Replica                       | 
-| Source control | Master                 | Main                       | 
+| Context                         | Term we will avoid    | Terms we will use instead (suggested) | 
+| :------------------------------ | :-------------------- | :------------------------------------ |
+| Infrastructure (e.g. databases) | Master                | Primary                               | 
+| Infrastructure (e.g. databases) | Slave                 | Replica                               | 
+| Source control                  | Master                | Main                                  |
+| Network rules                   | Whitelist             | Allowlist / Permitlist                |
+| Network rules                   | Blacklist             | Denylist / Blocklist                  |
 
 ## Renaming the master branch in github
 
