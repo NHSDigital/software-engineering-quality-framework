@@ -7,7 +7,7 @@
 
 ## Background
 
-The language and terminology we use is important, and there are certain industry-standard terms which ave become normlised by the software engineering industr, and which cause hurt and offence. 
+The language and terminology we use is important, and there are certain industry-standard terms which ave become normlised by the software engineering industry, and which cause hurt and offence. 
 
 In line with organisations such as the [Home Office](https://hodigital.blog.gov.uk/2020/07/23/not-a-black-and-white-issue-using-racially-neutral-terms-in-technology/) and the [National Cyber Security Centre](https://www.ncsc.gov.uk/blog-post/terminology-its-not-black-and-white), we recognise that we have historically used these terms, and we will strive to avoid using these terms going forward.
 
@@ -15,7 +15,8 @@ In line with organisations such as the [Home Office](https://hodigital.blog.gov.
 
 | Term we will avoid | Terms we will use instead | 
 | :----------------- | :------------------------ |
-| TBC                | TBC                       | 
+| Master / Slave (in the context of infrastructure, e.g. databases)                | Primary / Replica                       | 
+| Master (in the context of source control branches)                | Main                       | 
 
 ## Renaming the master branch in github
 
