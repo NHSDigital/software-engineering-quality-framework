@@ -7,7 +7,7 @@
 
 ## Background
 
-The language and terminology we use is important, and there are certain industry-standard terms which cause hurt and offence. Furthermore, the 'old' standard terms use arbitrary language.  Replacing White / Black with terms such as Allowed / Disallowed or Permitted / Blocked removes ambiguity delivers a better experience for all users. 
+The language and terminology we use is important, and there are certain industry-standard terms which cause hurt and offence. Furthermore, the 'old' standard terms use arbitrary language. Replacing White / Black with terms such as Allow / Deny or Permit / Block removes ambiguity delivers a better experience for all users. 
 
 In line with organisations such as the [Home Office](https://hodigital.blog.gov.uk/2020/07/23/not-a-black-and-white-issue-using-racially-neutral-terms-in-technology/) and the [National Cyber Security Centre](https://www.ncsc.gov.uk/blog-post/terminology-its-not-black-and-white), we recognise that historically we have used these terms, and we will strive to avoid using these terms in the future.
 
