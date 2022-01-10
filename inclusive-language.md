@@ -15,7 +15,7 @@ In line with organisations such as the [Home Office](https://hodigital.blog.gov.
 
 | Context | Term we will avoid | Terms we will use instead | 
 | :----------------- | :------------------------ | :----------------- |
-| Infrastructure, e.g. databases | Master / Slave                | Primary / Replica                       | 
+| Infrastructure (e.g. databases) | Master / Slave                | Primary / Replica                       | 
 | Source control | Master                 | Main                       | 
 
 ## Renaming the master branch in github
