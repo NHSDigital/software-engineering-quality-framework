@@ -21,4 +21,4 @@ When committing your changes, please reference the issue they're resolving, so i
 * The framework is open to the world. This has a few implications:
   * Nothing in it should be confidential, private to NHSD or include any personal data.
   * All links in framework pages should be public.
-* Use [inclusive language](inclusive-language.md): avoid terms which cause hurt and offence, including if they have historically been considered industry-standard terms.
+* Use [inclusive language](../inclusive-language.md): avoid terms which cause hurt and offence, including if they have historically been considered industry-standard terms.
