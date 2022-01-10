@@ -10,7 +10,7 @@ TBC
 * [inclusivenaming.org](https://inclusivenaming.org/word-lists/overview/)
 * [Internet Engineering Task Force](https://datatracker.ietf.org/doc/draft-knodel-terminology/)
 * [Python](https://bugs.python.org/issue34605)
-* [github](https://github.com/github/renaming)
+* [GitHub](https://github.com/github/renaming)
 
 ## Renaming the master branch in github
 
