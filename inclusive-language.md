@@ -1,20 +1,13 @@
 # Inclusive language
 
-This is part of a broader [quality framework](README.md)
+## Context
 
-TBC
+* This is part of a broader [quality framework](README.md)
+* This guidance has been co-authored with the [NHS Digital EMBRACE network](https://digital.nhs.uk/about-nhs-digital/corporate-information-and-documents/staff-networks#ethnic-minorities-broadening-racial-awareness-and-cultural-exchange-embrace-)
 
-## Further reading
-* [Home Office](https://hodigital.blog.gov.uk/2020/07/23/not-a-black-and-white-issue-using-racially-neutral-terms-in-technology/)
-* [National Cyber Security Centre](https://www.ncsc.gov.uk/blog-post/terminology-its-not-black-and-white)
-* [inclusivenaming.org](https://inclusivenaming.org/word-lists/overview/)
-* [Internet Engineering Task Force](https://datatracker.ietf.org/doc/draft-knodel-terminology/)
-* [Python](https://bugs.python.org/issue34605)
-* [GitHub](https://github.com/github/renaming)
+## Detail
 
-| Term we will avoid | Terms we will use instead | 
-| :----------------- | :------------------------ |
-| TBC                | TBC                       | 
+In line with organisations such as the [Home Office](https://hodigital.blog.gov.uk/2020/07/23/not-a-black-and-white-issue-using-racially-neutral-terms-in-technology/) and the [National Cyber Security Centre](https://www.ncsc.gov.uk/blog-post/terminology-its-not-black-and-white), we recognise that we have historically used 
 
 ## Renaming the master branch in github
 
@@ -28,3 +21,13 @@ git fetch origin
 git branch -u origin/main main
 git remote set-head origin -a
 ```
+## Further reading
+
+* [inclusivenaming.org](https://inclusivenaming.org/word-lists/overview/)
+* [Internet Engineering Task Force](https://datatracker.ietf.org/doc/draft-knodel-terminology/)
+* [Python](https://bugs.python.org/issue34605)
+* [GitHub](https://github.com/github/renaming)
+
+| Term we will avoid | Terms we will use instead | 
+| :----------------- | :------------------------ |
+| TBC                | TBC                       | 
