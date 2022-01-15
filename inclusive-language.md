@@ -16,7 +16,7 @@ In line with organisations such as the [Home Office](https://hodigital.blog.gov.
 | Context                         | Term we will avoid    | Terms we will use instead (suggested) | 
 | :------------------------------ | :-------------------- | :------------------------------------ |
 | Infrastructure (e.g. databases) | Master                | Primary                               | 
-| Infrastructure (e.g. databases) | Slave                 | Replica                               | 
+| Infrastructure (e.g. databases) | Slave                 | Replica / Secondary / Worker / Agent  | 
 | Source control                  | Master                | Main (see [below](#renaming-the-master-branch-in-github) for GitHub notes) |
 | Security / permissions          | Whitelist             | Allowlist / Permitlist                |
 | Security / permissions          | Blacklist             | Denylist / Blocklist                  |
