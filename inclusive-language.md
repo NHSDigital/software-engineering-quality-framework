@@ -21,6 +21,8 @@ In line with organisations such as the [Home Office](https://hodigital.blog.gov.
 | Security / permissions          | Whitelist             | Allowlist / Permitlist                |
 | Security / permissions          | Blacklist             | Denylist / Blocklist                  |
 
+Note: this is not intended to be an exhaustive list, and further suggestions are [very welcome](.github/CONTRIBUTING.md).
+
 ## Renaming the master branch in GitHub
 
 GitHub have published [guidance](https://github.com/github/renaming) around renaming the master branch. It is worth noting that GitHub retains a history of the names of the parent branch so that existing links to your repository aren't broken - for example the parent branch in this repository has been renamed from master to main, but old links to the master address still work ([https://github.com/NHSDigital/software-engineering-quality-framework/blob/master/README.md](https://github.com/NHSDigital/software-engineering-quality-framework/blob/master/README.md)) and are automatically redirected to the main branch.
