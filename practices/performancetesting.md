@@ -50,7 +50,7 @@ APDEX is a useful index for pipelines as it gives a definite figure and is there
 
 ![Alt](./jmeter-reportsample.png "Sample JMeter Report")
 
-As such APDEX can help us answer and take action (e.g. fail the pipeline) on such fundamental questions as:-
+As such APDEX can help us answer and take action (e.g. fail the pipeline) on such fundamental questions as:
 
 * Are our users happy?
 * Have we made performance worse?
