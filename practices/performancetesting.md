@@ -32,8 +32,8 @@ For the sake of clarity this page will consider Performance Testing as per the d
 
 * Try and identify clear targets for performance.  Performance testing should be an **objective** not subjective exercise
 * Examples of possible targets might be: 
-  * SLA based e.g. all pages must respond within 4 seconds
-  * Relative e.g. any given release must not deterioate performance by more than 5%
+  * SLA based, e.g. all pages must respond within 4 seconds
+  * Relative, e.g. any given release must not deteriorate performance by more than 5%
   * Weighted by interaction.  If a user performs a particular interaction once every 3 months they are liable to be more accepting of a 8 second delay than a task which they perform many times a day.
   * Weighted by load.  In busy periods you may be willing to have a slightly longer response time.
 * Consider how your targets may be influenced by your architecture for example if you are using a serverless "scale on demand" architecture your targets might be cost based.
