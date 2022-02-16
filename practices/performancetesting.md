@@ -30,7 +30,7 @@ For the sake of clarity this page will consider Performance Testing as per the d
 
 ### What does good look like?
 
-* Try and identify clear targets for performance.  Performance testing should be an **objective** not subjective exercise
+* Identify clear targets for performance.  Performance testing should be an **objective** not subjective exercise
 * Examples of possible targets might be: 
   * SLA based, e.g. all pages must respond within 4 seconds
   * Relative, e.g. any given release must not deteriorate performance by more than 5%
@@ -42,7 +42,7 @@ Ultimately your targets are a red flag that you need to investigate further.
 
 ## Use of the APDEX index
 
-[APDEX](https://en.wikipedia.org/wiki/Apdex) is a simple formula for calculating performance based on a target response time which would satisfy your users.  The reason it is useful is that it gives a definite figure between 0 and 1.0 where 1.0 means all your users are happy and satisfied and 0 means they all hate your system.
+[APDEX](https://en.wikipedia.org/wiki/Apdex) is a simple formula for calculating performance based on a target response time which would satisfy your users.  The reason it is useful is that it gives a definite figure between 0 and 1.0, where 1.0 means all of your users are happy and satisfied, and 0 means they are all unhappy and dissatisfied.
 
 APDEX acts as a "smoothing" function and helps ameliorate the effect of outliers by purely classing performance times in terms of whether the user is satisfied, tolerating or frustrated.  Therefore if you have a strict SLA around every page response time it may not be appropriate for you to use.  It is also important to choose a realistic target response time as otherwise, if it is overly lenient or overly generous, you will struggle to make much distinction between different performance test runs.  Repeated results of 0 or 1.0 aren't very useful.
 
