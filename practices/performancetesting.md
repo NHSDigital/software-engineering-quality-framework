@@ -4,7 +4,6 @@
 
 * These notes are part of a broader set of [principles](../principles.md)
 * This is related to [Engineering quality-checks](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/adopt-appropriate-cyber-security-standards)
-
 * Related community of practice: [Test Automation Working Group](../communities/pd-test-automation-working-group.md)
 * See also:
   * [Quality Metrics](../quality-checks.md) 
