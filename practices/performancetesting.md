@@ -12,7 +12,7 @@
 
 ## Introduction
 
-Performance testing has a somewhat ambiguous meaning across the IT industry and is often used interchangeably with other testing terms such as Load testing, stress testing, soak testing etc.
+Performance testing has a somewhat ambiguous meaning across the IT industry and is often used interchangeably with other testing terms such as load testing, stress testing, soak testing etc.
 
 For the sake of clarity this page will consider Performance Testing as per the definition on [Wikipedia](https://en.wikipedia.org/wiki/Software_performance_testing), namely:
 
