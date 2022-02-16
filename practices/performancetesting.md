@@ -14,7 +14,7 @@
 
 Performance testing has a somewhat ambiguous meaning across the IT industry and is often used interchangeably with other testing terms such as Load testing, stress testing, soak testing etc.
 
-For the sake of clarity this page will consider Performance Testing as per it's definition on [Wikipedia](https://en.wikipedia.org/wiki/Software_performance_testing), namely:
+For the sake of clarity this page will consider Performance Testing as per the definition on [Wikipedia](https://en.wikipedia.org/wiki/Software_performance_testing), namely:
 
 >  performance testing is in general a testing practice performed to determine how a system performs in terms of responsiveness and stability under a particular workload. It can also serve to investigate, measure, validate or verify other quality attributes of the system, such as scalability, reliability and resource usage.
 
