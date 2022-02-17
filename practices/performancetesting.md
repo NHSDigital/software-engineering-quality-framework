@@ -9,6 +9,7 @@
   * [Quality Metrics](../quality-checks.md) 
   * [Continuous integration](continuous-integration.md)
   * [Governance as a side effect](../patterns/governance-side-effect.md)
+  * [Testing](testing.md)
 
 ## Introduction
 
