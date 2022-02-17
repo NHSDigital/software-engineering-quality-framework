@@ -70,7 +70,8 @@ For the Data Security Protection Toolkit (DSPT) we decided to use APDEX so that,
 <div style="padding-right:30px;padding-bottom:30px;">
 Previously we had defined a list of user scenarios for the typical actions undertaken on the system which we named after Mr Men characters.  We also defined for every 100 users how many (i.e. what percentage) would be likely to be performing a given Mr Man scenario
 </div>
-We used these scenarios to define our thread groups within JMeter and decided we would run our performance tests for 250 users at a time which would constitute a heavy load for the system.
+                                                    
+We used these scenarios to define our thread groups within JMeter and decided we would run our performance tests for 250 users at a time, which would represent a heavy load for the system.
 
 ### A case study (what does good look like?)
 
