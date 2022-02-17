@@ -78,7 +78,7 @@
 
 * BDD tools to encode acceptance criteria in business terms as automated tests where appropriate.
 * Chaos engineering / resilience testing e.g. using AWS Fault Injection Simulator (see [AWS FIS](../tools/aws-fis) for sample code)
-* Performance tools to check load, volume, soak and stress limits
+* Performance tools to check load, volume, soak and stress limits (see [Performance Testing practices](performancetesting.md) for further details)
 
 ## Further reading and resources
 
