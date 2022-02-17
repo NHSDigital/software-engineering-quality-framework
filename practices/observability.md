@@ -112,7 +112,7 @@ Rather than blunt "uptime" measures, the paper proposes an interpretation of ava
 
 Monitoring dashboards are a primary way for people like support engineers and product managers to visualise and understand service health and behaviour.
 
-![Grafana Dashboard](grafana-dashboard.jpg)
+![Alt](./images/grafana-dashboard.jpg "Grafana Dashboard")
 
 Dashboards should be easy to understand at a glance. Some tips to achieve this are:
 * Limit the dashboard to a small set of individual graphs or charts, no more than 10.
