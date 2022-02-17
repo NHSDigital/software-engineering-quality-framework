@@ -8,7 +8,7 @@
   * [Continuous integration](continuous-integration.md)
   * [Governance as a side effect](../patterns/governance-side-effect.md)
   * [Quality Metrics](../quality-checks.md)
-  * [Performance Testing](performancetesting.md)
+  * [Performance Testing](performance-testing.md)
 
 ## General Testing Principles
 
