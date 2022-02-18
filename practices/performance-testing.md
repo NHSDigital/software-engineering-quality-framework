@@ -35,9 +35,9 @@ For the sake of clarity this page will consider Performance Testing as per the d
 * Examples of possible targets might be: 
   * SLA based, e.g. all pages must respond within 4 seconds
   * Relative, e.g. any given release must not deteriorate performance by more than 5%
-  * Weighted by interaction: if a user performs a particular interaction once every 3 months they are liable to be more accepting of a 8 second delay than a task which they perform many times a day.
-  * Weighted by load: in busy periods you may be willing to have a slightly longer response time.
-* Consider how your targets may be influenced by your architecture - for example if you are using a serverless "scale on demand" architecture your targets might be cost based.
+  * Weighted by interaction: if a user performs a particular interaction once every 3 months they are liable to be more accepting of a 8 second delay than a task which they perform many times a day
+  * Weighted by load: in busy periods you may be willing to have a slightly longer response time
+* Consider how your targets may be influenced by your architecture - for example if you are using a serverless "scale on demand" architecture your targets might be cost based
 
 Ultimately your targets are a red flag that you need to investigate further
 
