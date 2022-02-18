@@ -115,4 +115,4 @@ The following diagram summarises the approach taken to using APDEX by DSPT:
 
 ### A case study - impact
 
-By integrating APDEX into our build pipelines we have significantly improved our performance testing: a working process that was previously subjective, manual, and not always applied, is now applied to every release candidate, always applied consistently and objectively, and with no human effort.
+By integrating APDEX into our build pipelines we have significantly improved our performance testing: a working process that was previously subjective, manual, and  applied infrequently, is now applied to every release candidate, always applied consistently and objectively, and with no human effort.
