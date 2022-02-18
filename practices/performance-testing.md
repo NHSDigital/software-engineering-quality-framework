@@ -71,7 +71,7 @@ Previously we had defined a list of user scenarios for the typical actions under
 
 We used these scenarios to define our thread groups within JMeter and decided we would run our performance tests for 250 users at a time which would represent a heavy load for the system.
 
-### A case study (what does good look like?)
+### A case study - what does good look like?
 
 Previously we had performed Performance Testing in a fairly adhoc manner and even when we hooked just the JMeter tests into our Release Candidate pipeline we were forgetting to check the resulting report often.  When we did check we were finding it hard to compare against previous reports (if we still had them) and the whole process felt rather loose and subjective.
 
@@ -79,7 +79,7 @@ The [quality-checks section of our Engineering Dashboard](../quality-checks.md) 
 
 In order to have an automatic, quantifiable quality gate we decided that we wanted to know if the performance for a particular scenario had degraded by more than 5% compared to previous average performance.  If it did we wanted to fail the pipeline so we could investigate any new pieces of code further.  Using the following approach we were able to achieve this aim and are currently using it.
 
-### A case study (approach)
+### A case study - approach
 
 Although you can apply APDEX figures to JMeter it only calculates them per endpoint whereas we wanted to aggregate our APDEX figures at the Mr Man scenario level.
 
@@ -112,3 +112,7 @@ Whilst we have found this approach useful there are certain caveats to it, for e
 The following diagram summarises the approach taken to using APDEX by DSPT:
 
 ![Alt](./case-studies/performance-dspt/images/architecture.png "DSPT Performance test architecture")
+
+### A case study - impact
+
+By integrating APDEX into our build pipelines we have significantly improved our performance testing: a working process that was previously subjective, manual, and not always applied, is now applied to every release candidate, always applied consistently and objectively, and with no human effort.
