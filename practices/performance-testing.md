@@ -73,7 +73,9 @@ We used these scenarios to define our thread groups within JMeter and decided we
 
 ### A case study (what does good look like?)
 
-Previously we had performed Performance Testing in a fairly adhoc manner and even when we hooked just the JMeter tests into our Release Candidate pipeline we were forgetting to check the resulting report often.  When we did check we were finding it hard to compare against previous reports (if we still had them) and the whole process felt rather loose and subjective.  We decided we needed to improve this working practice.
+Previously we had performed Performance Testing in a fairly adhoc manner and even when we hooked just the JMeter tests into our Release Candidate pipeline we were forgetting to check the resulting report often.  When we did check we were finding it hard to compare against previous reports (if we still had them) and the whole process felt rather loose and subjective.
+
+The [quality-checks section of our Engineering Dashboard](../quality-checks.md) was reporting this gap in best-practice: we needed to improve this working practice.
 
 In order to have an automatic, quantifiable quality gate we decided that we wanted to know if the performance for a particular scenario had degraded by more than 5% compared to previous average performance.  If it did we wanted to fail the pipeline so we could investigate any new pieces of code further.  Using the following approach we were able to achieve this aim and are currently using it.
 
