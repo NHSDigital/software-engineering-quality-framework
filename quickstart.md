@@ -8,7 +8,7 @@ Read the [introduction](README.md) to the Engineering Framework.
 
 ## Dashboard
 
-Complete an [engineering dashboard](link?).
+Complete an [engineering dashboard](insights/metrics.md).
 This will quickly assess the engineering maturity of your team in specific areas.
 
 ## Review
@@ -30,10 +30,10 @@ We recommend running a quality review ever 3 months to reassess.
 
 ## Join the community
 
-This repo is public for a reason. Feel free to create branches and submit Pull Requests to add your own content, or improve existing pages.
+Create branches and submit Pull Requests to add your own content, or improve existing pages.
 
-Or raise [Issues](issues) for things you would like us to add or amend.
+Raise [Issues](https://github.com/NHSDigital/software-engineering-quality-framework/issues) for things you would like us to add or amend.
 
-Contact [the group](TODO need a mailing group?) to join the [Communities of practice](communities/communities-of-practice.md) that jointly input into the Framework.
+Join the [Communities of practice](communities/communities-of-practice.md) that jointly input into the Framework.
 
-Contact [the group](TODO need a mailing group?) to join weekly knowledge-sharing meetings focused on building shared solutions.
+Join weekly knowledge-sharing meetings focused on building shared solutions.
