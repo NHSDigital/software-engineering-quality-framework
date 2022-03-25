@@ -18,15 +18,19 @@ This is a team-led self assessment to discover areas of improvement: a "technica
 
 ## Use existing solutions
 
-The [tools section](tools) contains cloneable tools, scripts, docker files, and pipeline steps that can be added straight to your existing systems.
+Browse the [tools section](tools).
+This contains cloneable scripts, docker files, and pipeline steps that can be added straight to your existing systems.
 
 ## Embed best practices within your team
 
-The entire team should familiarise themselves with the [Principals](principles.md) set out in the framework. And the common [Patterns](patterns) that help achieve those Principals.
+The entire team should familiarise themselves with the Framework's [Principals](principles.md).
+And with the common [Patterns](patterns) that help achieve those Principals.
 
 Specialists should familiarise themselves with [best Practices](practices) in their areas.
 
-We recommend running a quality review ever 3 months to reassess.
+Run a quality review ever 3 months to keep track of progress.
+
+Regularly update dashboards.
 
 ## Join the community
 
@@ -34,6 +38,8 @@ Create branches and submit Pull Requests to add your own content, or improve exi
 
 Raise [Issues](https://github.com/NHSDigital/software-engineering-quality-framework/issues) for things you would like us to add or amend.
 
-Join the [Communities of practice](communities/communities-of-practice.md) that jointly input into the Framework.
+Join the [Communities of Practice](communities/communities-of-practice.md) that jointly input into the Framework.
 
 Join weekly knowledge-sharing meetings focused on building shared solutions.
+
+Ask for a Technical Coach to help guide your team. You can also offer yourself up as a coach to help other teams.
