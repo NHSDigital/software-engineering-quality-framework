@@ -19,7 +19,7 @@ Everything (including [infrastructure](../practices/cloud-services.md)) should b
 * All code is treated the same (e.g. application code, infrastructure code, test code, etc).
   * All code is [peer-reviewed](#code-review) and tested.
   * All code is version controlled.
-  * The mainline branch (e.g. `master`) is protected: no force-pushes are allowed and code reviews, tests and any other automated checks must pass before pull/merge requests can be merged. Administrators should be subject to the same rules.
+  * The mainline branch (e.g. `main`) is protected: no force-pushes are allowed and code reviews, tests and any other automated checks must pass before pull/merge requests can be merged. Administrators should be subject to the same rules.
   * In general, squash merges are preferred for cleaner history. This does rely on merges being small, as should be the practice in any case.
 * Code changes should be automatically checked for code quality using tools like [SonarQube](../tools/sonarqube.md) (as well as via IDE plugins).
 * Code should be automatically scanned for secrets or other sensitive data (see [security](../practices/security.md) for details)
