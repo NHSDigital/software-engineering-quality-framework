@@ -23,14 +23,14 @@ This contains cloneable scripts, docker files, and pipeline steps that can be ad
 
 ## Embed best practices within your team
 
-The entire team should familiarise themselves with the Framework's [Principals](principles.md).
-And with the common [Patterns](patterns) that help achieve those Principals.
+The entire team should familiarise themselves with the Framework's [Principles](principles.md).
+And with the common [Patterns](patterns) that help achieve those Principles.
 
 Specialists should familiarise themselves with [best Practices](practices) in their areas.
 
-Run a quality review ever 3 months to keep track of progress.
+Run a quality review every 3 months to keep track of progress.
 
-Regularly update dashboards.
+Update dashboards monthly.
 
 ## Join the community
 
