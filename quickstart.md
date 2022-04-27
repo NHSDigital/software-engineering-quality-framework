@@ -36,7 +36,7 @@ Update dashboards monthly.
 
 Create branches and submit Pull Requests to add your own content, or improve existing pages.
 
-[Raise an Issue](https://github.com/NHSDigital/software-engineering-quality-framework/issues/new) for things you would like us to add or amend.
+[Raise an Issue](issues/new) for things you would like us to add or amend.
 
 Join the [Communities of Practice](communities/communities-of-practice.md) that jointly input into the Framework.
 
