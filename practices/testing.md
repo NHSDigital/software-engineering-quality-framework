@@ -8,6 +8,7 @@
   * [Continuous integration](continuous-integration.md)
   * [Governance as a side effect](../patterns/governance-side-effect.md)
   * [Quality Metrics](../quality-checks.md)
+  * [Performance Testing](performance-testing.md)
 
 ## General Testing Principles
 
@@ -78,7 +79,7 @@
 
 * BDD tools to encode acceptance criteria in business terms as automated tests where appropriate.
 * Chaos engineering / resilience testing e.g. using AWS Fault Injection Simulator (see [AWS FIS](../tools/aws-fis) for sample code)
-* Performance tools to check load, volume, soak and stress limits
+* Performance tools to check load, volume, soak and stress limits (see [Performance Testing practices](performance-testing.md) for further details)
 
 ## Further reading and resources
 
