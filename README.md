@@ -1,5 +1,9 @@
 # Software Engineering Quality Framework
 
+## How to get started
+
+See the [Quick Start Guide](quickstart.md)
+
 ## Purpose
 
 This framework is concerned with using "good" software engineering to support rapid and safe delivery of high-quality software, at scale
