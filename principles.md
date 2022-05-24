@@ -13,6 +13,7 @@ Our principles guide the way we work and interact with each other. They are base
 5. [Deliver as fast as possible](#5-deliver-as-fast-as-possible)
 6. [Respect for people](#6-respect-for-people)
 7. [Optimise the whole](#7-optimise-the-whole)
+8. [Separation of code vs processing](#8-separation-of-code-and-data)
 
 # Details
 
@@ -149,3 +150,7 @@ We need to figure out how to deliver software as fast as possible.  This reduces
 **Use feedback loops** to avoid negative global effects from local optimisations.
 
 **Balance autonomy and conformity.** Teams use the right tool for the job, within reason: unchecked proliferation of a wide variety of tools impacts the overall effectiveness of the organisation.
+
+## 8. Separation of code and data
+
+**Prevent accidentally committing data** Ideally processing of sensitive data should happen on a machine without permission to commit to the code repository. Alternatively, all data processing must occur outside of the code repository to prevent data files being accidentally committed to source control. Solutions should be architected such that data files are not moved into the source code. and .gitignore should be used to prevent log files from being committed to the repository.
