@@ -17,7 +17,8 @@ It aims to:
 ## Philosophy
 
 The philosophy underpinning this framework advocates:
-* Empowered teams which are accountable for their products
+* Engineering led by user needs and service outcomes
+* Empowered delivery teams which are accountable for their products
 * Rapid, iterative and incremental development: "Release early. Release often. And listen to your customers." (Eric S. Raymond in [The Cathedral and the Bazaar](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar))
 * Robust and comprehensive automation supporting and enforcing quality 
 * Reliable & scalable services, remembering "Everything fails, all the time" (Werner Vogels), and treating operations as a software engineering challenge (as in Google's [Site Reliability Engineering](https://landing.google.com/sre/))
