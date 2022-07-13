@@ -52,34 +52,79 @@ grype dir:path/to/dir
 Recipe 2: Using Docker images, shell scripting and Makefile
 
 Makefile
+
 ```bash
 generate-sbom: ### Run SBOM generator - mandatory: SCHEME=[file|directory|image|registry]; optional: ARGS=[syft args]
-	docker run --interactive --tty --rm \
-		--volume /var/run/docker.sock:/var/run/docker.sock \
-		--volume $(HOME)/.docker/config.json:/config/config.json \
-		--volume $(PWD):/project \
-		--env "DOCKER_CONFIG=/config" \
-		--workdir /project \
-		anchore/syft:latest $(SCHEME) $(ARGS)
+  docker run --interactive --tty --rm \
+    --volume /var/run/docker.sock:/var/run/docker.sock \
+    --volume $(HOME)/.docker/config.json:/config/config.json \
+    --volume $(PWD):/project \
+    --env "DOCKER_CONFIG=/config" \
+    --workdir /project \
+    anchore/syft:latest $(SCHEME) $(ARGS)
 
 scan-vulnerabilities: ### Run vulnerability scanner - mandatory: SCHEME=[sbom|file|directory|image|registry]; optional: ARGS=[grype args]
-	docker run --interactive --tty --rm \
-		--volume /var/run/docker.sock:/var/run/docker.sock \
-		--volume $(HOME)/.docker/config.json:/config/config.json \
-		--volume $(PWD):/project \
-		--env "DOCKER_CONFIG=/config" \
-		--workdir /project \
-		anchore/grype:latest $(SCHEME) $(ARGS)
+  docker run --interactive --tty --rm \
+    --volume /var/run/docker.sock:/var/run/docker.sock \
+    --volume $(HOME)/.docker/config.json:/config/config.json \
+    --volume $(PWD):/project \
+    --env "DOCKER_CONFIG=/config" \
+    --workdir /project \
+    anchore/grype:latest $(SCHEME) $(ARGS)
 
 ```
 
 Run from a command-line
+
 ```bash
 $ make generate-sbom SCHEME=alpine:3.11.3 ARGS="-o cyclonedx-json=sbom.cdx.json"
 $ make scan-vulnerabilities SCHEME=sbom:./sbom.cdx.json
 ```
 
-TODO: Recipe 3: Using GitHub workflow action
+Recipe 3: Using GitHub Workflow Action
+
+Action to generate Software Bill of Materials for the codebase
+
+```yaml
+name: "Generate SBOM for the repository"
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  generate-sbom:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: anchore/sbom-action@v0
+      with:
+        path: ./
+        artifact-name: sbom.cdx.json
+        format: cyclonedx-json
+```
+
+Action to generate Software Bill of Materials for a specified Docker image
+
+```yaml
+name: "Generate SBOM for an image"
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  generate-sbom:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: anchore/sbom-action@v0
+      with:
+        image: my-registry.com/my/awesome/image
+        registry-username: ${{ secrets.REGISTRY_USERNAME }}
+        registry-password: ${{ secrets.REGISTRY_PASSWORD }}
+        artifact-name: sbom.cdx.json
+        format: cyclonedx-json
+```
 
 ## How It Works
 
