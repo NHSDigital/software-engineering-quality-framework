@@ -94,7 +94,7 @@ TODO: Recipe 3: Using GitHub workflow action
 
 ## Further Comments
 
-TODO: What's next
+What's next
 - Integrate SBOM into CI/CD piplines to provide early visibility of application dependencies.
 - Consider where SBOM artifacts are stored, i.e committed and tagged in the source repository.
 - Use SBOM to continually scan for new vulnerabilities as they are discovered.
