@@ -63,7 +63,10 @@ TODO: Recipe 3: Using GitHub workflow action
 
 TODO: more details on how syft and grype work
 
-- SBOM standards [SPDX](https://spdx.dev/) and [CycloneDX](https://cyclonedx.org/)
+**[CycloneDX](https://cyclonedx.org/)** is a lightweight SBOM standard useful for application security and supply chain component analysis. CycloneDX is an open source project that originated in the OWASP community.  
+
+**[SPDX](https://spdx.dev/)** is an ISO standard hosted by the Linux Foundation, which outlines the components, licenses, and copyrights associated with a software package.
+
 
 ## Further Comments
 
