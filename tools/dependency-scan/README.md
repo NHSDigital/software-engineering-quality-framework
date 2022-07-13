@@ -38,8 +38,8 @@ cat <file> | jq -r '(["name", "type", "version"] | (.,map(length*"-"))), (.compo
 # scan a container image archive (from the result of `docker image save ...`, `podman save ...`, or `skopeo copy` commands)
 grype path/to/image.tar
 
-# scan a sbom
-grype sbom:./alpine-sbom.json
+# Use SBOM as input to vulnerability scan
+grype sbom:./path/to/sbom.json
 
 ```
 Recipe 1b: Filesystem
