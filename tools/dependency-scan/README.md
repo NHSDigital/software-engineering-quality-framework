@@ -6,18 +6,16 @@ The dependency scan feature can automatically find security vulnerabilities in y
 
 ## Solution
 
-### Syft
+### [syft](https://github.com/anchore/syft)
 A CLI tool and for generating a Software Bill of Materials (SBOM) from container images and filesystems. Provides vulnerability detection when used with a scanner like Grype.
 
-### Grype
+### [grype](https://github.com/anchore/grype)
 
 A vulnerability scanner for container images and filesystems. Works with Syft, SBOM (software bill of materials) tool for container images and filesystems.
 
 Recipe 1a: Docker images as targets
 
-- [syft](https://github.com/anchore/syft)
 
-### Example usage
 ```
 # catalog a container image archive (from the result of `docker image save ...`, `podman save ...`, or `skopeo copy` commands)
 syft path/to/image.tar
@@ -32,8 +30,6 @@ syft <image> -o cyclonedx-json=<file>
 cat <file> | jq -r '(["name", "type", "version"] | (.,map(length*"-"))), (.components[] | [.name, .type, .version]) | @tsv ' | column -t
 ```
 
-- [grype](https://github.com/anchore/grype)
-
 ```
 # scan a container image archive (from the result of `docker image save ...`, `podman save ...`, or `skopeo copy` commands)
 grype path/to/image.tar
@@ -43,13 +39,11 @@ grype sbom:./path/to/sbom.json
 
 ```
 Recipe 1b: Filesystem
-- [syft](https://github.com/anchore/syft)
 
 ```
 # catalog a folder
 syft path/to/dir -o cyclonedx-json=<file>
 ```
-- [grype](https://github.com/anchore/grype)
 ```
 # scan a directory
 grype dir:path/to/dir
