@@ -55,7 +55,35 @@ syft path/to/dir -o cyclonedx-json=<file>
 grype dir:path/to/dir
 ```
 
-TODO: Recipe 2: Using Docker images, Makefile and shell scripting
+Recipe 2: Using Docker images, shell scripting and Makefile
+
+Makefile
+```bash
+generate-sbom: ### Run SBOM generator - mandatory: SCHEME=[file|directory|image|registry]; optional: ARGS=[syft args]
+	docker run --interactive --tty --rm \
+		--volume /var/run/docker.sock:/var/run/docker.sock \
+		--volume $(HOME)/.docker/config.json:/config/config.json \
+		--volume $(PWD):/project \
+		--env "DOCKER_CONFIG=/config" \
+		--workdir /project \
+		anchore/syft:latest $(SCHEME) $(ARGS)
+
+scan-vulnerabilities: ### Run vulnerability scanner - mandatory: SCHEME=[sbom|file|directory|image|registry]; optional: ARGS=[grype args]
+	docker run --interactive --tty --rm \
+		--volume /var/run/docker.sock:/var/run/docker.sock \
+		--volume $(HOME)/.docker/config.json:/config/config.json \
+		--volume $(PWD):/project \
+		--env "DOCKER_CONFIG=/config" \
+		--workdir /project \
+		anchore/grype:latest $(SCHEME) $(ARGS)
+
+```
+
+Run from a command-line
+```bash
+$ make generate-sbom SCHEME=alpine:3.11.3 ARGS="-o cyclonedx-json=sbom.cdx.json"
+$ make scan-vulnerabilities SCHEME=sbom:./sbom.cdx.json
+```
 
 TODO: Recipe 3: Using GitHub workflow action
 
@@ -65,7 +93,7 @@ TODO: Recipe 3: Using GitHub workflow action
 - Supports OCI and Docker image formats
 - Linux distribution identification
 - Converts between SBOM formats, such as CycloneDX, SPDX, and Syft's own format.
-- **[CycloneDX](https://cyclonedx.org/)** is a lightweight SBOM standard useful for application security and supply chain component analysis. CycloneDX is an open source project that originated in the OWASP community.  
+- **[CycloneDX](https://cyclonedx.org/)** is a lightweight SBOM standard useful for application security and supply chain component analysis. CycloneDX is an open source project that originated in the OWASP community.
 
 - **[SPDX](https://spdx.dev/)** is an ISO standard hosted by the Linux Foundation, which outlines the components, licenses, and copyrights associated with a software package.
 
@@ -76,4 +104,3 @@ TODO: What's next
 - Integrate SBOM into CI/CD piplines to provide early visibility of application dependencies.
 - Consider where SBOM artifacts are stored, i.e committed and tagged in the source repository.
 - Use SBOM to continually scan for new vulnerabilities as they are discovered.
-
