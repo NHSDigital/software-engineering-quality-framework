@@ -61,11 +61,13 @@ TODO: Recipe 3: Using GitHub workflow action
 
 ## How It Works
 
-TODO: more details on how syft and grype work
+- Syft generates SBOMs for container images, filesystems & archives to discover packages and libraries
+- Supports OCI and Docker image formats
+- Linux distribution identification
+- Converts between SBOM formats, such as CycloneDX, SPDX, and Syft's own format.
+- **[CycloneDX](https://cyclonedx.org/)** is a lightweight SBOM standard useful for application security and supply chain component analysis. CycloneDX is an open source project that originated in the OWASP community.  
 
-**[CycloneDX](https://cyclonedx.org/)** is a lightweight SBOM standard useful for application security and supply chain component analysis. CycloneDX is an open source project that originated in the OWASP community.  
-
-**[SPDX](https://spdx.dev/)** is an ISO standard hosted by the Linux Foundation, which outlines the components, licenses, and copyrights associated with a software package.
+- **[SPDX](https://spdx.dev/)** is an ISO standard hosted by the Linux Foundation, which outlines the components, licenses, and copyrights associated with a software package.
 
 
 ## Further Comments
