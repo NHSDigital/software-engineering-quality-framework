@@ -6,7 +6,14 @@ The dependency scan feature can automatically find security vulnerabilities in y
 
 ## Solution
 
-TODO: Recipe 1a: Docker images as targets
+### Syft
+A CLI tool and for generating a Software Bill of Materials (SBOM) from container images and filesystems. Provides vulnerability detection when used with a scanner like Grype.
+
+### Grype
+
+A vulnerability scanner for container images and filesystems. Works with Syft, SBOM (software bill of materials) tool for container images and filesystems.
+
+Recipe 1a: Docker images as targets
 
 - [syft](https://github.com/anchore/syft)
 
@@ -35,7 +42,7 @@ grype path/to/image.tar
 grype sbom:./alpine-sbom.json
 
 ```
-TODO: Recipe 1b: Filesystem
+Recipe 1b: Filesystem
 - [syft](https://github.com/anchore/syft)
 
 ```
@@ -61,3 +68,7 @@ TODO: more details on how syft and grype work
 ## Further Comments
 
 TODO: What's next
+- Integrate SBOM into CI/CD piplines to provide early visibility of application dependencies.
+- Consider where SBOM artifacts are stored, i.e committed and tagged in the source repository.
+- Use SBOM to continually scan for new vulnerabilities as they are discovered.
+
