@@ -1,0 +1,22 @@
+name: "Scan vulnerabilities"
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  scan-vulnerabilities:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: anchore/scan-action@v3
+      with:
+        sbom: sbom-repo.cdx.json
+        fail-build: true
+        severity-cutoff: critical
+        acs-report-enable: true
+    - uses: anchore/scan-action@v3
+      with:
+        sbom: sbom-image.cdx.json
+        fail-build: true
+        severity-cutoff: critical
+        acs-report-enable: true

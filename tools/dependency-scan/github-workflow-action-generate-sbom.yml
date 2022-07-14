@@ -1,4 +1,4 @@
-name: "Generate SBOM for an image"
+name: "Generate SBOM"
 on:
   push:
     branches: [main]
@@ -8,10 +8,16 @@ jobs:
   generate-sbom:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@master
+    - uses: anchore/sbom-action@v0
+      with:
+        path: ./
+        format: cyclonedx-json
+        artifact-name: sbom-repo.cdx.json
     - uses: anchore/sbom-action@v0
       with:
         image: my-registry.com/my/awesome/image
         registry-username: ${{ secrets.REGISTRY_USERNAME }}
         registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-        artifact-name: sbom.cdx.json
         format: cyclonedx-json
+        artifact-name: sbom-image.cdx.json

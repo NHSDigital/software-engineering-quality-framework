@@ -161,12 +161,12 @@ zlib          1.2.11-r3              apk   CVE-2018-25032  High
   * discovered vulnerabilities at or above the severity threshold
 ```
 
-Recipe 3: Using GitHub Workflow Action
+### Recipe 3: Using GitHub Workflow Action
 
-Action to generate Software Bill of Materials for the codebase
+An action to generate software bill of materials for the repository and a Docker image
 
 ```yaml
-name: "Generate SBOM for the repository"
+name: "Generate SBOM"
 on:
   push:
     branches: [main]
@@ -180,30 +180,42 @@ jobs:
     - uses: anchore/sbom-action@v0
       with:
         path: ./
-        artifact-name: sbom.cdx.json
         format: cyclonedx-json
+        artifact-name: sbom-repo.cdx.json
+    - uses: anchore/sbom-action@v0
+      with:
+        image: my-registry.com/my/awesome/image
+        registry-username: ${{ secrets.REGISTRY_USERNAME }}
+        registry-password: ${{ secrets.REGISTRY_PASSWORD }}
+        format: cyclonedx-json
+        artifact-name: sbom-image.cdx.json
 ```
 
-Action to generate Software Bill of Materials for a specified Docker image
+An action to scan vulnerabilities based on the content of the generated sbom json file
 
 ```yaml
-name: "Generate SBOM for an image"
+name: "Scan vulnerabilities"
 on:
   push:
     branches: [main]
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  generate-sbom:
+  scan-vulnerabilities:
     runs-on: ubuntu-latest
     steps:
-    - uses: anchore/sbom-action@v0
+    - uses: anchore/scan-action@v3
       with:
-        image: my-registry.com/my/awesome/image
-        registry-username: ${{ secrets.REGISTRY_USERNAME }}
-        registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-        artifact-name: sbom.cdx.json
-        format: cyclonedx-json
+        sbom: sbom-repo.cdx.json
+        fail-build: true
+        severity-cutoff: critical
+        acs-report-enable: true
+    - uses: anchore/scan-action@v3
+      with:
+        sbom: sbom-image.cdx.json
+        fail-build: true
+        severity-cutoff: critical
+        acs-report-enable: true
 ```
 
 ## How It Works
