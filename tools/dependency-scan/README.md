@@ -2,6 +2,7 @@
 
 - [Dependency Scan](#dependency-scan)
   - [Problem](#problem)
+  - [Design](#design)
   - [Tools](#tools)
     - [syft](#syft)
     - [grype](#grype)
@@ -16,6 +17,10 @@
 ## Problem
 
 The dependency scan feature can automatically find security vulnerabilities in your dependencies while you are developing and testing your applications. For example, dependency scanning lets you know if your application uses an external (open source) library that is known to be vulnerable. You can then take action to protect your application.
+
+## Design
+
+![Dependency Scan v1](Design%20-%20Dependency%20Scan%20v1.drawio.png)
 
 ## Tools
 
@@ -99,11 +104,11 @@ Run from a command-line
 ```bash
 # Scan the repository
 
-$ make generate-sbom SCHEME=dir:./ ARGS="-o cyclonedx-json=sbom-repo.cdx.json"
+$ make generate-sbom SCHEME="dir:./" ARGS="-o cyclonedx-json=sbom-repo.cdx.json"
  ✔ Indexed .
  ✔ Cataloged packages      [0 packages]
 
-$ make scan-vulnerabilities SCHEME=sbom:./sbom-repo.cdx.json
+$ make scan-vulnerabilities SCHEME="sbom:./sbom-repo.cdx.json"
  ✔ Vulnerability DB        [updated]
  ✔ Scanned image           [0 vulnerabilities]
 No vulnerabilities found
@@ -112,12 +117,12 @@ No vulnerabilities found
 ```bash
 # Scan an image
 
-$ make generate-sbom SCHEME=alpine:3.11.3 ARGS="-o cyclonedx-json=sbom-image.cdx.json"
+$ make generate-sbom SCHEME="alpine:3.11.3" ARGS="-o cyclonedx-json=sbom-image.cdx.json"
  ✔ Loaded image
  ✔ Parsed image
  ✔ Cataloged packages      [14 packages]
 
-$ make scan-vulnerabilities SCHEME=sbom:./sbom-image.cdx.json ARGS="--fail-on critical"
+$ make scan-vulnerabilities SCHEME="sbom:./sbom-image.cdx.json" ARGS="--fail-on critical"
  ✔ Vulnerability DB        [updated]
  ✔ Scanned image           [71 vulnerabilities]
 NAME          INSTALLED  FIXED-IN    TYPE  VULNERABILITY   SEVERITY
