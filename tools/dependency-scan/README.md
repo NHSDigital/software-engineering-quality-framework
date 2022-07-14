@@ -38,26 +38,57 @@ A vulnerability scanner for container images and filesystems. Works with Syft, S
 
 ```bash
 # Catalog a container image archive (from the result of `docker image save ...`, `podman save ...`, or `skopeo copy` commands)
-syft path/to/image.tar
+$ docker save alpine:3.11.3 -o alpine.tar
+
+# Specify an output format and file name
+$ syft alpine.tar -o cyclonedx-json=alpine.cdx.json
+ ✔ Parsed image            
+ ✔ Cataloged packages      [14 packages]
+
 ```
 
 ```bash
-# Specify an output format
-syft <image> -o <format>
-syft <image> -o cyclonedx-json=<file>
+# Convert cyclonedx-json to human readable format using json parser
+$ cat alpine.cdx.json  | jq -r '(["name", "type", "version"] | (.,map(length*"-"))), (.components[] | [.name, .type, .version]) | @tsv ' | column -t
+name                    type              version
+----                    ----              -------
+alpine-baselayout       library           3.2.0-r3
+alpine-keys             library           2.1-r2
+apk-tools               library           2.10.4-r3
+busybox                 library           1.31.1-r9
+ca-certificates-cacert  library           20191127-r0
+libc-utils              library           0.7.2-r0
+libcrypto1.1            library           1.1.1d-r3
+libssl1.1               library           1.1.1d-r3
+libtls-standalone       library           2.9.1-r0
+musl                    library           1.1.24-r0
+musl-utils              library           1.1.24-r0
+scanelf                 library           1.2.4-r0
+ssl_client              library           1.31.1-r9
+zlib                    library           1.2.11-r3
+alpine                  operating-system  3.11.3
 ```
 
 ```bash
-# Convert cyclonedx-json to human readable format
-cat <file> | jq -r '(["name", "type", "version"] | (.,map(length*"-"))), (.components[] | [.name, .type, .version]) | @tsv ' | column -t
-```
-
-```bash
-# Scan a container image archive (from the result of `docker image save ...`, `podman save ...`, or `skopeo copy` commands)
-grype path/to/image.tar
-
 # Use SBOM as input to vulnerability scan
-grype sbom:./path/to/sbom.json
+$ grype sbom:./alpine.cdx.json --fail-on CRITICAL
+ ✔ Vulnerability DB        [no update available]
+ ✔ Scanned image           [71 vulnerabilities]
+NAME          INSTALLED  FIXED-IN    TYPE  VULNERABILITY   SEVERITY 
+apk-tools     2.10.4-r3  2.10.6-r0   apk   CVE-2021-30139  High      
+apk-tools     2.10.4-r3  2.10.7-r0   apk   CVE-2021-36159  Critical  
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42386  High      
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42383  High      
+busybox       1.31.1-r9  1.31.1-r10  apk   CVE-2021-28831  High      
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42378  High      
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42380  High      
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42382  High      
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42385  High      
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42381  High      
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42374  Medium    
+...
+1 error occurred:
+        * discovered vulnerabilities at or above the severity threshold
 
 ```
 
@@ -65,12 +96,55 @@ grype sbom:./path/to/sbom.json
 
 ```bash
 # Catalog a folder
-syft path/to/dir -o cyclonedx-json=<file>
+$ syft ./python -o cyclonedx-json=python.cdx.json
+ ✔ Indexed python          
+ ✔ Cataloged packages      [22 packages]
+
 ```
 
 ```bash
-# Scan a directory
-grype dir:path/to/dir
+# Convert SBOM to human readable format using json parser
+$ cat python.cdx.json  | jq -r '(["name", "type", "version"] | (.,map(length*"-"))), (.components[] | [.name, .type, .version]) | @tsv ' | column -t
+name                type     version
+----                ----     -------
+Flask               library  2.1.2
+Jinja2              library  3.1.2
+MarkupSafe          library  2.1.1
+Werkzeug            library  2.1.2
+azure-core          library  1.24.1
+azure-storage-blob  library  12.13.0
+certifi             library  2022.6.15
+cffi                library  1.15.0
+charset-normalizer  library  2.1.0
+click               library  8.1.3
+cryptography        library  37.0.2
+idna                library  3.3
+isodate             library  0.6.1
+itsdangerous        library  2.1.2
+lxml                library  4.6.0
+msrest              library  0.7.1
+oauthlib            library  3.2.0
+pycparser           library  2.21
+requests            library  2.28.0
+requests-oauthlib   library  1.3.1
+six                 library  1.16.0
+urllib3             library  1.26.9
+
+```
+
+```bash
+# Scan a SBOM generated from file systems
+$ grype sbom:./python.cdx.json --fail-on CRITICAL
+ ✔ Vulnerability DB        [no update available]
+ ✔ Scanned image           [7 vulnerabilities]
+NAME  INSTALLED  FIXED-IN  TYPE    VULNERABILITY        SEVERITY 
+lxml  4.6.0      4.6.2     python  GHSA-pgww-xf46-h92r  Medium    
+lxml  4.6.0      4.9.1     python  GHSA-wrxv-2j5q-m38w  Medium    
+lxml  4.6.0                python  CVE-2020-27783       Medium    
+lxml  4.6.0                python  CVE-2021-28957       Medium    
+lxml  4.6.0                python  CVE-2021-43818       High      
+lxml  4.6.0      4.6.5     python  GHSA-55x5-fj6c-h6m8  High      
+lxml  4.6.0      4.6.3     python  GHSA-jq4v-f5q6-mjqq  Medium      
 ```
 
 ### Recipe 2: Using Docker images, Makefile and shell scripting
