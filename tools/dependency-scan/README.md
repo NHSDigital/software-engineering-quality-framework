@@ -13,8 +13,7 @@ A CLI tool and for generating a Software Bill of Materials (SBOM) from container
 
 A vulnerability scanner for container images and filesystems. Works with Syft, SBOM (software bill of materials) tool for container images and filesystems.
 
-Recipe 1a: Docker images as targets
-
+### Recipe 1a: Docker images as targets
 
 ```
 # catalog a container image archive (from the result of `docker image save ...`, `podman save ...`, or `skopeo copy` commands)
@@ -38,7 +37,8 @@ grype path/to/image.tar
 grype sbom:./path/to/sbom.json
 
 ```
-Recipe 1b: Filesystem
+
+### Recipe 1b: Filesystem
 
 ```
 # catalog a folder
@@ -49,7 +49,7 @@ syft path/to/dir -o cyclonedx-json=<file>
 grype dir:path/to/dir
 ```
 
-Recipe 2: Using Docker images, shell scripting and Makefile
+### Recipe 2: Using Docker images, Makefile and shell scripting
 
 Makefile
 
@@ -66,19 +66,99 @@ generate-sbom: ### Run SBOM generator - mandatory: SCHEME=[file|directory|image|
 scan-vulnerabilities: ### Run vulnerability scanner - mandatory: SCHEME=[sbom|file|directory|image|registry]; optional: ARGS=[grype args]
   docker run --interactive --tty --rm \
     --volume /var/run/docker.sock:/var/run/docker.sock \
+    --volume /tmp/grype/db:/tmp/grype/db \
     --volume $(HOME)/.docker/config.json:/config/config.json \
     --volume $(PWD):/project \
     --env "DOCKER_CONFIG=/config" \
+    --env "XDG_CACHE_HOME=/tmp/grype/db" \
     --workdir /project \
     anchore/grype:latest $(SCHEME) $(ARGS)
-
 ```
 
 Run from a command-line
 
 ```bash
-$ make generate-sbom SCHEME=alpine:3.11.3 ARGS="-o cyclonedx-json=sbom.cdx.json"
-$ make scan-vulnerabilities SCHEME=sbom:./sbom.cdx.json
+# Scan the repository
+
+$ make generate-sbom SCHEME=dir:./ ARGS="-o cyclonedx-json=sbom-repo.cdx.json"
+ ✔ Indexed .
+ ✔ Cataloged packages      [0 packages]
+
+$ make scan-vulnerabilities SCHEME=sbom:./sbom-repo.cdx.json
+ ✔ Vulnerability DB        [updated]
+ ✔ Scanned image           [0 vulnerabilities]
+No vulnerabilities found
+```
+
+```bash
+# Scan an image
+
+$ make generate-sbom SCHEME=alpine:3.11.3 ARGS="-o cyclonedx-json=sbom-image.cdx.json"
+ ✔ Loaded image
+ ✔ Parsed image
+ ✔ Cataloged packages      [14 packages]
+
+$ make scan-vulnerabilities SCHEME=sbom:./sbom-image.cdx.json ARGS="--fail-on critical"
+ ✔ Vulnerability DB        [updated]
+ ✔ Scanned image           [71 vulnerabilities]
+NAME          INSTALLED  FIXED-IN    TYPE  VULNERABILITY   SEVERITY
+apk-tools     2.10.4-r3  2.10.7-r0   apk   CVE-2021-36159  Critical
+apk-tools     2.10.4-r3  2.10.6-r0   apk   CVE-2021-30139  High
+busybox       1.31.1-r9              apk   CVE-2022-28391  Critical
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42378  High
+busybox       1.31.1-r9  1.31.1-r10  apk   CVE-2021-28831  High
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42374  Medium
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42380  High
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42385  High
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42381  High
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42384  High
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42386  High
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42382  High
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42379  High
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42383  High
+libcrypto1.1  1.1.1d-r3  1.1.1k-r0   apk   CVE-2021-3450   High
+libcrypto1.1  1.1.1d-r3  1.1.1l-r0   apk   CVE-2021-3711   Critical
+libcrypto1.1  1.1.1d-r3  1.1.1j-r0   apk   CVE-2021-23841  Medium
+libcrypto1.1  1.1.1d-r3  1.1.1j-r0   apk   CVE-2021-23840  High
+libcrypto1.1  1.1.1d-r3  1.1.1k-r0   apk   CVE-2021-3449   Medium
+libcrypto1.1  1.1.1d-r3              apk   CVE-2022-1292   Critical
+libcrypto1.1  1.1.1d-r3  1.1.1j-r0   apk   CVE-2021-23839  Low
+libcrypto1.1  1.1.1d-r3  1.1.1l-r0   apk   CVE-2021-3712   High
+libcrypto1.1  1.1.1d-r3              apk   CVE-2022-0778   High
+libcrypto1.1  1.1.1d-r3              apk   CVE-2022-2068   Critical
+libcrypto1.1  1.1.1d-r3              apk   CVE-2021-4160   Medium
+libcrypto1.1  1.1.1d-r3  1.1.1g-r0   apk   CVE-2020-1967   High
+libcrypto1.1  1.1.1d-r3  1.1.1i-r0   apk   CVE-2020-1971   Medium
+libssl1.1     1.1.1d-r3              apk   CVE-2022-0778   High
+libssl1.1     1.1.1d-r3  1.1.1j-r0   apk   CVE-2021-23839  Low
+libssl1.1     1.1.1d-r3              apk   CVE-2021-4160   Medium
+libssl1.1     1.1.1d-r3  1.1.1l-r0   apk   CVE-2021-3712   High
+libssl1.1     1.1.1d-r3  1.1.1l-r0   apk   CVE-2021-3711   Critical
+libssl1.1     1.1.1d-r3  1.1.1j-r0   apk   CVE-2021-23840  High
+libssl1.1     1.1.1d-r3  1.1.1k-r0   apk   CVE-2021-3449   Medium
+libssl1.1     1.1.1d-r3  1.1.1j-r0   apk   CVE-2021-23841  Medium
+libssl1.1     1.1.1d-r3              apk   CVE-2022-1292   Critical
+libssl1.1     1.1.1d-r3  1.1.1i-r0   apk   CVE-2020-1971   Medium
+libssl1.1     1.1.1d-r3  1.1.1k-r0   apk   CVE-2021-3450   High
+libssl1.1     1.1.1d-r3              apk   CVE-2022-2068   Critical
+libssl1.1     1.1.1d-r3  1.1.1g-r0   apk   CVE-2020-1967   High
+musl          1.1.24-r0  1.1.24-r3   apk   CVE-2020-28928  Medium
+musl-utils    1.1.24-r0  1.1.24-r3   apk   CVE-2020-28928  Medium
+ssl_client    1.31.1-r9  1.31.1-r11  apk   CVE-2021-42382  High
+ssl_client    1.31.1-r9  1.31.1-r11  apk   CVE-2021-42380  High
+ssl_client    1.31.1-r9  1.31.1-r11  apk   CVE-2021-42379  High
+ssl_client    1.31.1-r9  1.31.1-r11  apk   CVE-2021-42383  High
+ssl_client    1.31.1-r9  1.31.1-r11  apk   CVE-2021-42374  Medium
+ssl_client    1.31.1-r9  1.31.1-r11  apk   CVE-2021-42386  High
+ssl_client    1.31.1-r9              apk   CVE-2022-28391  Critical
+ssl_client    1.31.1-r9  1.31.1-r11  apk   CVE-2021-42381  High
+ssl_client    1.31.1-r9  1.31.1-r11  apk   CVE-2021-42385  High
+ssl_client    1.31.1-r9  1.31.1-r10  apk   CVE-2021-28831  High
+ssl_client    1.31.1-r9  1.31.1-r11  apk   CVE-2021-42378  High
+ssl_client    1.31.1-r9  1.31.1-r11  apk   CVE-2021-42384  High
+zlib          1.2.11-r3              apk   CVE-2018-25032  High
+1 error occurred:
+  * discovered vulnerabilities at or above the severity threshold
 ```
 
 Recipe 3: Using GitHub Workflow Action
