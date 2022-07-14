@@ -1,36 +1,54 @@
 # Dependency Scan
 
+- [Dependency Scan](#dependency-scan)
+  - [Problem](#problem)
+  - [Tools](#tools)
+    - [syft](#syft)
+    - [grype](#grype)
+  - [Solution](#solution)
+    - [Recipe 1a: Docker images as targets](#recipe-1a-docker-images-as-targets)
+    - [Recipe 1b: Filesystem](#recipe-1b-filesystem)
+    - [Recipe 2: Using Docker images, Makefile and shell scripting](#recipe-2-using-docker-images-makefile-and-shell-scripting)
+    - [Recipe 3: Using GitHub Workflow Action](#recipe-3-using-github-workflow-action)
+  - [How It Works](#how-it-works)
+  - [Further Comments](#further-comments)
+
 ## Problem
 
 The dependency scan feature can automatically find security vulnerabilities in your dependencies while you are developing and testing your applications. For example, dependency scanning lets you know if your application uses an external (open source) library that is known to be vulnerable. You can then take action to protect your application.
 
-## Solution
+## Tools
 
 ### [syft](https://github.com/anchore/syft)
+
 A CLI tool and for generating a Software Bill of Materials (SBOM) from container images and filesystems. Provides vulnerability detection when used with a scanner like Grype.
 
 ### [grype](https://github.com/anchore/grype)
 
 A vulnerability scanner for container images and filesystems. Works with Syft, SBOM (software bill of materials) tool for container images and filesystems.
 
+## Solution
+
 ### Recipe 1a: Docker images as targets
 
-```
-# catalog a container image archive (from the result of `docker image save ...`, `podman save ...`, or `skopeo copy` commands)
+```bash
+# Catalog a container image archive (from the result of `docker image save ...`, `podman save ...`, or `skopeo copy` commands)
 syft path/to/image.tar
 ```
-```
-# specify an output format
+
+```bash
+# Specify an output format
 syft <image> -o <format>
 syft <image> -o cyclonedx-json=<file>
 ```
-```
-# convert cyclonedx-json to human readable format
+
+```bash
+# Convert cyclonedx-json to human readable format
 cat <file> | jq -r '(["name", "type", "version"] | (.,map(length*"-"))), (.components[] | [.name, .type, .version]) | @tsv ' | column -t
 ```
 
-```
-# scan a container image archive (from the result of `docker image save ...`, `podman save ...`, or `skopeo copy` commands)
+```bash
+# Scan a container image archive (from the result of `docker image save ...`, `podman save ...`, or `skopeo copy` commands)
 grype path/to/image.tar
 
 # Use SBOM as input to vulnerability scan
@@ -40,12 +58,13 @@ grype sbom:./path/to/sbom.json
 
 ### Recipe 1b: Filesystem
 
-```
-# catalog a folder
+```bash
+# Catalog a folder
 syft path/to/dir -o cyclonedx-json=<file>
 ```
-```
-# scan a directory
+
+```bash
+# Scan a directory
 grype dir:path/to/dir
 ```
 
@@ -225,13 +244,12 @@ jobs:
 - Linux distribution identification
 - Converts between SBOM formats, such as CycloneDX, SPDX, and Syft's own format.
 - **[CycloneDX](https://cyclonedx.org/)** is a lightweight SBOM standard useful for application security and supply chain component analysis. CycloneDX is an open source project that originated in the OWASP community.
-
 - **[SPDX](https://spdx.dev/)** is an ISO standard hosted by the Linux Foundation, which outlines the components, licenses, and copyrights associated with a software package.
-
 
 ## Further Comments
 
 What's next
+
 - Integrate SBOM into CI/CD piplines to provide early visibility of application dependencies.
 - Consider where SBOM artifacts are stored, i.e committed and tagged in the source repository.
 - Use SBOM to continually scan for new vulnerabilities as they are discovered.
