@@ -342,6 +342,8 @@ jobs:
 
 ### Recipe 4: Jenkins Pipeline
 
+A jenkins pipeline that builds a container image archive, generates an SBOM, commits to a git reposity, then scans for vulnerabilities.
+
 ```
 # commits SBOM to repository
 pipeline {
