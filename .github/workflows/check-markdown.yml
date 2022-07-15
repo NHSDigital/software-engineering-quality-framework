@@ -25,5 +25,5 @@ jobs:
               -v $PWD:/workdir \
               ghcr.io/igorshubovych/markdownlint-cli:latest \
                 $files \
-                --disable MD013
+                --disable MD013 MD033
           fi
