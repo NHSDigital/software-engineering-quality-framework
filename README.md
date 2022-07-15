@@ -15,6 +15,7 @@ It aims to:
 3. Provide resources to support teams to increase their engineering maturity levels and manage their [technical debt](tech-debt.md)
 
 ![Ecosystem](images/engineering-ecosystem.png)
+
 ## Philosophy
 
 The philosophy underpinning this framework advocates:
