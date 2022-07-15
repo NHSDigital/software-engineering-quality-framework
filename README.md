@@ -10,8 +10,8 @@ This framework is concerned with using "good" software engineering to support ra
 
 It aims to:
 1. Describe a shared (across multiple teams) definition of "good" engineering
-2. Provide tools for teams to gain insight into their current engineering maturity levels
-3. Provide resources to support teams to increase their engineering maturity levels
+2. Provide tools for teams to gain insight into their current engineering maturity levels and their level of [technical debt](tech-debt.md)
+3. Provide resources to support teams to increase their engineering maturity levels and manage their [technical debt](tech-debt.md)
 
 ![Ecosystem](images/engineering-ecosystem.png)
 ## Philosophy
@@ -21,7 +21,7 @@ The philosophy underpinning this framework advocates:
 * Empowered delivery teams which are accountable for their products
 * Products must be actively maintained for their entire lifecycle
 * Rapid, iterative and incremental development: "Release early. Release often. And listen to your customers." (Eric S. Raymond in [The Cathedral and the Bazaar](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar))
-* Robust and comprehensive automation supporting and enforcing quality 
+* Robust and comprehensive automation supporting and enforcing quality
 * Reliable & scalable services, remembering "Everything fails, all the time" (Werner Vogels), and treating operations as a software engineering challenge (as in Google's [Site Reliability Engineering](https://landing.google.com/sre/))
 * Loosely-coupled & cloud-native composable components as the default mode of construction
 * Continuous improvement, with prioritisation decisions based on data rather than sentiment

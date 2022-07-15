@@ -54,13 +54,7 @@ It takes continuous effort to maintain and evolve processes in response to chall
 
 ### Control technical debt
 
-Technical debt is a term which refers to things about the way a system is built which are not apparent to users of the system, but impact the ability of the team to make changes to it quickly and safely. Tech debt arises due to processes or practices in the past, but has an ongoing impact on the present.
-
-Technical debt:
-*	Leads to bugs and loss of reliability.
-*	Means changes take longer.
-*	Makes it harder to predict how long any given change will take.
-*	Causes dissatisfaction and disengagement in the team.
+[Technical debt](tech-debt.md) is a term which refers to things about the way a system is built which are not apparent to users of the system, but impact the ability of the team to make changes to it quickly and safely.
 
 Without sustained improvement effort these all get worse over time, reducing capacity to deliver features. If little or no tech debt improvement work is done, delivery may initially be faster but over time it becomes progressively slower and less predictable.
 
