@@ -33,7 +33,7 @@ Note: it includes working practices as well as the software: the scope includes 
 
 Here is a non-exhaustive list of examples we consider to be *in* scope of "technical debt":
 
-* Unknown / poor code hygiene
+* Unknown / poor code hygiene and lack of coding standards
 * Unknown / poor [resilience test-automation](practices/service-reliability.md)
 * Unknown / poor [security test-automation](practices/security.md)
 * Unknown / poor accessibility test-automation
