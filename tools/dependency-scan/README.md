@@ -11,6 +11,7 @@
     - [Recipe 1b: Filesystem](#recipe-1b-filesystem)
     - [Recipe 2: Using Docker images, Makefile and shell scripting](#recipe-2-using-docker-images-makefile-and-shell-scripting)
     - [Recipe 3: Using GitHub Workflow Action](#recipe-3-using-github-workflow-action)
+    - [Recipe 4: Using Jenksin Pipeline](#recipe-4-jenkins-pipeline)    
   - [How It Works](#how-it-works)
   - [Further Comments](#further-comments)
 
@@ -339,7 +340,7 @@ jobs:
         acs-report-enable: true
 ```
 
-### Recipe 5: Jenkins Pipeline
+### Recipe 4: Jenkins Pipeline
 
 ```
 # commits SBOM to repository
