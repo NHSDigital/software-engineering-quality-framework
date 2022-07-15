@@ -29,6 +29,9 @@ An SBOM can be used to monitor the security of each application post-deployment 
 Each time a build artifact is generated an SBOM can be produced and associated with that artifact.  Even though the artifacts never changes, it is important to continually scan for vulnerabilities as they could be discovered and published after the initial image creation.
 
 ***Standards***
+
+An SBOM can exist in a simple human-readable output such as CSV, TSV or JSON.  However there are two main industry standards for SBOMs:
+
 - **[CycloneDX](https://cyclonedx.org/)** is a lightweight SBOM standard useful for application security and supply chain component analysis. CycloneDX is an open source project that originated in the OWASP community.
 - **[SPDX](https://spdx.dev/)** is an ISO standard hosted by the Linux Foundation, which outlines the components, licenses, and copyrights associated with a software package.
 
