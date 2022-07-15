@@ -66,8 +66,6 @@
       "**/target": true,
       "**/tmp": true
     },
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
     "terminal.integrated.fontFamily": "Hack Nerd Font",
     "window.title": "${activeEditorMedium}${separator}${rootName}${separator}${rootPath}",
     "window.zoomLevel": 0,
@@ -131,35 +129,9 @@
       "editor.insertSpaces": true,
       "editor.tabSize": 2
     },
-    "yaml.customTags": [
-      "!And",
-      "!And sequence",
-      "!If",
-      "!If sequence",
-      "!Not",
-      "!Not sequence",
-      "!Equals",
-      "!Equals sequence",
-      "!Or",
-      "!Or sequence",
-      "!FindInMap",
-      "!FindInMap sequence",
-      "!Base64",
-      "!Join",
-      "!Join sequence",
-      "!Cidr",
-      "!Ref",
-      "!Sub",
-      "!Sub sequence",
-      "!GetAtt",
-      "!GetAZs",
-      "!ImportValue",
-      "!ImportValue sequence",
-      "!Select",
-      "!Select sequence",
-      "!Split",
-      "!Split sequence"
-    ],
+    "yaml.schemas": {
+      "https://json.schemastore.org/github-workflow.json": "file://./.github/workflows/check-markdown.yml"
+    },
     "workbench.colorCustomizations": {
       "activityBar.activeBackground": "#1accff",
       "activityBar.activeBorder": "#df00ad",
@@ -168,10 +140,7 @@
       "activityBar.inactiveForeground": "#15202b99",
       "activityBarBadge.background": "#df00ad",
       "activityBarBadge.foreground": "#e7e7e7",
-      "editorGroup.border": "#1accff",
-      "panel.border": "#1accff",
       "sash.hoverBorder": "#1accff",
-      "sideBar.border": "#1accff",
       "statusBar.background": "#00b3e6",
       "statusBar.foreground": "#15202b",
       "statusBarItem.hoverBackground": "#008bb3",
@@ -182,6 +151,6 @@
       "titleBar.inactiveBackground": "#00b3e699",
       "titleBar.inactiveForeground": "#15202b99"
     },
-    "peacock.color": "#00b3e6"
+    "peacock.color": "#00b3e6",
   }
 }

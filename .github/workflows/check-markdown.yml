@@ -16,6 +16,8 @@ jobs:
         with:
           use-quiet-mode: 'yes'
       - name: Check format
+        # Please, make sure to enable Markdown linting in your IDE. For the Visual Studio Code editor it is
+        # `davidanson.vscode-markdownlint` that is already specified in the `.vscode/extensions.json` file.
         run: |
           files=$(git diff --diff-filter=ACMRT --name-only origin/${{ github.event.repository.default_branch }}.. "*.md")
           if [ -n "$files" ]; then
