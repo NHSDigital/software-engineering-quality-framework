@@ -34,17 +34,17 @@ Note: it includes working practices as well as the software: the scope includes 
 Here is a non-exhaustive list of examples we consider to be *in* scope of "technical debt":
 
 * Unknown / poor code hygiene
-* Unknown / poor resilience test-automation
-* Unknown / poor security test-automation
+* Unknown / poor [resilience test-automation](practices/service-reliability.md)
+* Unknown / poor [security test-automation](practices/security.md)
 * Unknown / poor accessibility test-automation
 * Use of technologies not endorsed by the organisation
-* Code you no longer need (e.g. a new managed service is available)
+* Code you no longer need ([e.g. a new managed service is available](patterns/outsource-bottom-up.md))
 * Technologies no longer needed (e.g. you've introduced something better than what you used before)
-* CI issues, e.g. lack of fast feedback, or intermittent build failures
-* Manual processes that could be automated
-* Software components with inappropriate / confused domain boundaries
+* CI issues, e.g. lack of [fast feedback](patterns/fast-feedback.md), or intermittent [build failures](practices/continuous-integration.md)
+* Manual processes that could be [automated](patterns/automate-everything.md)
+* Software components with inappropriate / confused [domain boundaries](patterns/architect-for-flow.md)
 * Use of obsolete / unsupported technologies
-* Self-run tooling where a SaaS offering exists, e.g. sonarqube vs sonarcloud
+* Self-run tooling where a [SaaS offering](patterns/outsource-bottom-up.md) exists, e.g. sonarqube vs sonarcloud
 
 ### Examples of what it ISN'T
 
@@ -63,6 +63,6 @@ Here is a non-exhaustive list of examples we consider to be *out of* scope of "t
 
 ## Instrumentation
 
-The collection of tech debt should be fully automated. Some aspects of the above "in scope" list are much easier to collect than others - many of the above are reflected in. Please see [metrics](insights/metrics.md).
+The collection of tech debt should be fully automated. Some aspects of the above "in scope" list are much easier to collect than others - many of the above are reflected in [metrics](insights/metrics.md).
 
 TO DO: further details around instrumentation
