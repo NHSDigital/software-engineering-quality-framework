@@ -56,10 +56,11 @@ Here is a non-exhaustive list of examples we consider to be *out of* scope of "t
 * "Functional debt", for example:
   * Bugs
   * New features that haven't been built yet
-* Operational issues within the delivery team, for example:
+* Operational issues within the delivery & operational teams, for example:
   * Poor communication channels from/to end users, between operational teams, or within teams
   * Silos of knowledge / single points of failure within the team
   * Poorly understood team responsibilities
+  * Poorly aligned contracts / organisation-level-agreements across suppliers / teams
 
 ## Instrumentation
 
