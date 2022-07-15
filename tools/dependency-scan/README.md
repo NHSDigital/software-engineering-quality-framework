@@ -18,6 +18,26 @@
 
 The dependency scan feature can automatically find security vulnerabilities in your dependencies while you are developing and testing your applications. For example, dependency scanning lets you know if your application uses an external (open source) library that is known to be vulnerable. You can then take action to protect your application.
 
+**Software Bill of Materials**
+
+A Software Bill of Materials (SBOM) is a complete, formally structured list of components, libraries, and modules that are required to build a given piece of software.  These components can be open source or proprietary, free or paid, and widely available or have restricted access.  An SBOM provides a machine-readable list of the libraries and components, their versions and related vulnerabilities.
+
+The value of an SBOM can be further enhanced by using it as an input into a vulnerability scanning process.  The benefit of an SBOM is that it can be shared easily allowing insights into the components, dependencies, and vulnerabilities of a product before release.  This improves the overall transparency and visibility into security issues and helps detect vulnerabilities early and efficiently.
+
+An SBOM can be used to monitor the security of each application post-deployment by identifying the potential impact of new vulnerabilities.
+
+Each time a build artifact is generated an SBOM can be produced and associated with that artifact.  Even though the artifacts never changes, it is important to continually scan for vulnerabilities as they could be discovered and published after the initial image creation.
+
+***Standards***
+- **[CycloneDX](https://cyclonedx.org/)** is a lightweight SBOM standard useful for application security and supply chain component analysis. CycloneDX is an open source project that originated in the OWASP community.
+- **[SPDX](https://spdx.dev/)** is an ISO standard hosted by the Linux Foundation, which outlines the components, licenses, and copyrights associated with a software package.
+
+***Audience***
+
+SBOMs play a critical role for security teams, especially when it comes to vulnerability scanning. It is much quicker and easier to scan a library of SBOMs than it is to scan the entire infrastructure.  SBOMs can also be leveraged by security teams to prioritise issues for remediation based on their location and severity.
+
+Development teams use SBOMS to track the open source, commercial, and custom-built software components that they use across the applications they develop, manage, and operate. This assists development teams by reducing time spent on rework by helping to manage dependencies, identify security issues for remediation early, and ensure that developers are using approved code and sources.
+
 ## Design
 
 ![Dependency Scan v1](Design%20-%20Dependency%20Scan%20v1.drawio.png)
@@ -322,8 +342,6 @@ jobs:
 - Supports OCI and Docker image formats
 - Linux distribution identification
 - Converts between SBOM formats, such as CycloneDX, SPDX, and Syft's own format.
-- **[CycloneDX](https://cyclonedx.org/)** is a lightweight SBOM standard useful for application security and supply chain component analysis. CycloneDX is an open source project that originated in the OWASP community.
-- **[SPDX](https://spdx.dev/)** is an ISO standard hosted by the Linux Foundation, which outlines the components, licenses, and copyrights associated with a software package.
 
 ## Further Comments
 
