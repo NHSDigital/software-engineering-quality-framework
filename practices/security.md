@@ -52,7 +52,7 @@ The remainder of this page gives more detailed and specific recommendations to b
 ### Application level security
 
 - Cover the **basics**
-  - Ensure the [OWASP Top Ten](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_2017_Project) is well understood and considered during software delivery, other risks outside of the Top Ten should not be discounted however
+  - Ensure the [OWASP Top Ten](https://owasp.org/www-project-top-ten/) is well understood and considered during software delivery, other risks outside of the Top Ten should not be discounted however
     - Static code analysis tools can catch some of these issues early, for example [SonarQube](https://www.sonarqube.org/features/security/owasp/)
     - Beware of over-reliance on automated tools: they can help to catch some issues, but they cannot be relied on to catch everything
   - Encode/validate all user input. Code against (and test for) XSS and injection attacks such as SQL/XML/JSON/CRLF
@@ -72,8 +72,8 @@ The remainder of this page gives more detailed and specific recommendations to b
   - Code must be automatically scanned for secrets or other sensitive data. We have a [secret scanning guide](../tools/nhsd-git-secrets/README.md) that describes how to best achieve this using our preferred tooling, and also includes examples to get you started.
   - Be wary of any 3rd party JavaScript included on the page, e.g. for A/B testing, analytics
   - Pin dependencies at known versions to avoid unexpected updates
-  - Scan dependencies for vulnerabilities, e.g. using [OWASP Dependency Check](https://www.owasp.org/index.php/OWASP_Dependency_Check) or [Snyk](https://snyk.io/)
-  - Scan running software, e.g. using [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
+  - Scan dependencies for vulnerabilities, e.g. using [OWASP Dependency Check](https://owasp.org/www-project-dependency-check/) or [Snyk](https://snyk.io/)
+  - Scan running software, e.g. using [OWASP ZAP](https://owasp.org/www-project-zap/)
 - **Automate** security testing &mdash; on every build if practical
   - Generate test data in a way that avoids including personally identifiable information
 - When granting roles to CI/CD tools, use different roles for the different stages in the deployment pipeline &mdash; for example so that a deployment meant for a development account cannot be performed against a production account
