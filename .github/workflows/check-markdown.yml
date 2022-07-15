@@ -1,0 +1,18 @@
+name: Check Markdown
+on: push
+jobs:
+  markdown-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check links
+        uses: gaurav-nelson/github-action-markdown-link-check@1.0.13
+        with:
+          use-quiet-mode: 'yes'
+      - name: Check format
+        run: |
+          docker run -it --rm \
+            -v $PWD:/workdir \
+            ghcr.io/igorshubovych/markdownlint-cli:latest \
+              $(git diff --diff-filter=MA --name-only main... "*.md") \
+              --disable MD013
