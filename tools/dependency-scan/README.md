@@ -339,6 +339,74 @@ jobs:
         acs-report-enable: true
 ```
 
+### Recipe 5: Jenkins Pipeline
+
+```
+# commits SBOM to repository
+pipeline {
+    agent {
+        label 'linux'
+    }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '3', artifactNumToKeepStr: '3'))
+    }        
+    environment {
+        githubCredential = 'jenkins-git'
+        SOURCE_DIR = "${WORKSPACE}/src"
+    }
+    stages {
+        stage('Docker') {
+            steps {
+                sh 'docker build -f ${WORKSPACE}/alpine/Dockerfile -t alpine:dev .'
+                sh 'docker save alpine:dev -o alpine.tar'
+            }
+        }
+        stage('Syft') {
+            steps {
+                sh 'syft alpine.tar -o cyclonedx-json=alpine.cdx.json'
+                sh '''
+                    cat alpine.cdx.json  | jq -r '(["name", "type", "version"] | (.,map(length*"-"))), (.components[] | [.name, .type, .version]) | @tsv ' | column -t
+                '''
+            }
+        }
+        stage('Commmit SBOM') {
+            steps {
+                script {
+                    checkout([$class: 'GitSCM', branches: [[name: "main"]],
+                            doGenerateSubmoduleConfigurations: false,
+                            extensions: [[$class: 'CleanCheckout'],[$class: 'RelativeTargetDirectory', relativeTargetDir: "${SOURCE_DIR}"]],
+                            submoduleCfg: [],
+                            userRemoteConfigs: [[credentialsId: githubCredential, url: 'git@github.com:<repository>/sbom.git']]
+                    ])
+                    dir("${SOURCE_DIR}") {
+                        sshagent([githubCredential]) {
+                            sh """
+                                export GIT_SSH_COMMAND="ssh -oStrictHostKeyChecking=no"
+                                
+                                git checkout main
+                                if ! [ -d .sbom ]; then mkdir .sbom; fi
+
+                                cp ${WORKSPACE}/*cdx.json ${SOURCE_DIR}/.sbom/
+                                git add ./.sbom/*
+
+                                git commit -am "CI Generated SBOM for build: ${BUILD_NUMBER}"
+
+                                git push
+                            """
+                        }
+                    }
+                }
+            }
+        }           
+        stage('Grype') {
+            steps {
+                sh 'grype sbom:./alpine.cdx.json --fail-on CRITICAL'
+            }
+        }
+    }
+}
+
+```
 ## How It Works
 
 - Syft generates SBOMs for container images, filesystems & archives to discover packages and libraries
