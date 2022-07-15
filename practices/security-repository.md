@@ -17,7 +17,7 @@ This guide lays out security best practice for Github repositories. This set of 
 * In line with the [Service Manual](https://service-manual.nhs.uk/service-standard/12-make-new-source-code-open), new repositories should be public by default, unless there is good reason not to - this avoids costly rework to secure private information further down the line.
 * Private repositories must disable forking.
 * There must be no outside collaborators in private repositories.
-* Enable abuse reporting by [accepting content reports](https://docs.github.com/en/communities/moderating-comments-and-conversations/managing-how-contributors-report-abuse-in-your-organizations-repository)
+* Enable abuse reporting by <!-- markdown-link-check-disable -->[accepting content reports](https://docs.github.com/en/communities/moderating-comments-and-conversations/managing-how-contributors-report-abuse-in-your-organizations-repository)<!-- markdown-link-check-enable -->
 
 ### Teams setup
 Because of baseline visibility configurations, you must setup Github teams in order to provide team members access to repos. The minimum recommended setup is as follows:
@@ -34,7 +34,7 @@ Depending on your use case, you may want to create additional teams (e.g. a read
 * Refer to [Quality Checks](../quality-checks.md) for further code security practices.
 
 ### Branch protection
-* Require [pull request code reviews](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-pull-request-reviews-before-merging), by at least one code owner, to merge a branch.
-* Require [signed commits](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-signed-commits), and, accordingly, check that commits are verified before merging.
+* Require <!-- markdown-link-check-disable -->[pull request code reviews](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-pull-request-reviews-before-merging)<!-- markdown-link-check-enable -->, by at least one code owner, to merge a branch.
+* Require <!-- markdown-link-check-disable -->[signed commits](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-signed-commits)<!-- markdown-link-check-enable -->, and, accordingly, check that commits are verified before merging.
 * Invalidate existing reviews when new commits are pushed (`fresh-commits-invalidate-existing-reviews` option).
 * Require adequate automated status checks prior to merging. This should always include checking that branches are up to date.
