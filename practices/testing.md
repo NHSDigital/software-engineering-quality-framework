@@ -1,5 +1,17 @@
 # Testing
 
+- [Testing](#testing)
+  - [Context](#context)
+  - [General Testing Principles](#general-testing-principles)
+  - [Test Automation Theory](#test-automation-theory)
+  - [Guidelines for different types of testing](#guidelines-for-different-types-of-testing)
+    - [Unit Testing Guidance](#unit-testing-guidance)
+    - [API Testing Guidance](#api-testing-guidance)
+    - [UI Testing Guidance](#ui-testing-guidance)
+    - [Browser/OS Testing Guidance](#browseros-testing-guidance)
+  - [Other Tools To Consider](#other-tools-to-consider)
+  - [Further reading and resources](#further-reading-and-resources)
+
 ## Context
 
 * These notes are part of a broader set of [principles](../principles.md)

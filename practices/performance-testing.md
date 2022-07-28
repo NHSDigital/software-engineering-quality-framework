@@ -1,12 +1,27 @@
 # Performance Testing
 
+- [Performance Testing](#performance-testing)
+  - [Context](#context)
+  - [Introduction](#introduction)
+  - [How to start?](#how-to-start)
+    - [Know your audience](#know-your-audience)
+    - [What does good look like?](#what-does-good-look-like)
+  - [Use of the APDEX index](#use-of-the-apdex-index)
+  - [A case study](#a-case-study)
+    - [A case study (know your audience)](#a-case-study-know-your-audience)
+    - [A case study - what does good look like?](#a-case-study---what-does-good-look-like)
+    - [A case study - approach](#a-case-study---approach)
+    - [A case study - some caveats](#a-case-study---some-caveats)
+    - [A case study - architecture](#a-case-study---architecture)
+    - [A case study - impact](#a-case-study---impact)
+
 ## Context
 
 * These notes are part of a broader set of [principles](../principles.md)
 * This is related to [Engineering quality-checks](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/adopt-appropriate-cyber-security-standards)
 * Related community of practice: [Test Automation Working Group](../communities/pd-test-automation-working-group.md)
 * See also:
-  * [Quality Metrics](../quality-checks.md) 
+  * [Quality Metrics](../quality-checks.md)
   * [Continuous integration](continuous-integration.md)
   * [Governance as a side effect](../patterns/governance-side-effect.md)
   * [Testing](testing.md)
@@ -32,7 +47,7 @@ For the sake of clarity this page will consider Performance Testing as per the d
 ### What does good look like?
 
 * Identify clear targets for performance: performance testing should be an **objective** not subjective exercise
-* Examples of possible targets might be: 
+* Examples of possible targets might be:
   * SLA based, e.g. all pages must respond within 4 seconds
   * Relative, e.g. any given release must not deteriorate performance by more than 5%
   * Weighted by interaction: if a user performs a particular interaction once every 3 months they are liable to be more accepting of a 8 second delay than a task which they perform many times a day

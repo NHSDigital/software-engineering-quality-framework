@@ -1,5 +1,9 @@
 # Service Reliability
 
+- [Service Reliability](#service-reliability)
+  - [Context](#context)
+  - [Details](#details)
+
 ## Context
 
 * These notes are part of a broader set of [principles](../principles.md)

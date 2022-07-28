@@ -1,5 +1,20 @@
 # Observability
 
+- [Observability](#observability)
+  - [Context](#context)
+  - [In summary](#in-summary)
+- [Background](#background)
+  - [What is observability?](#what-is-observability)
+  - [What is monitoring for?](#what-is-monitoring-for)
+  - [What should you monitor?](#what-should-you-monitor)
+    - [Four Golden Signals](#four-golden-signals)
+    - [Availability](#availability)
+  - [Dashboards](#dashboards)
+  - [Alerts](#alerts)
+  - [Collecting metrics](#collecting-metrics)
+  - [Commercial model](#commercial-model)
+  - [Further reading](#further-reading)
+
 ## Context
 
 * These notes are part of a broader set of [principles](../principles.md).
