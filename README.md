@@ -9,14 +9,17 @@ See the [Quick Start Guide](quickstart.md)
 This framework is concerned with using "good" software engineering to support rapid and safe delivery of high-quality software, at scale
 
 It aims to:
+
 1. Describe a shared (across multiple teams) definition of "good" engineering
 2. Provide tools for teams to gain insight into their current engineering maturity levels and their level of [technical debt](tech-debt.md)
 3. Provide resources to support teams to increase their engineering maturity levels and manage their [technical debt](tech-debt.md)
 
 ![Ecosystem](images/engineering-ecosystem.png)
+
 ## Philosophy
 
 The philosophy underpinning this framework advocates:
+
 * Engineering led by user needs and service outcomes
 * Empowered delivery teams which are accountable for their products
 * Products must be actively maintained for their entire lifecycle
@@ -29,6 +32,7 @@ The philosophy underpinning this framework advocates:
 ## Context
 
 The framework is a companion to:
+
 * The [NHS service standard](https://service-manual.nhs.uk/service-standard), with cross-references in this format: [SERVICE-RELIABILITY](https://service-manual.nhs.uk/service-standard/14-operate-a-reliable-service)
 * The [NHS Digital architectural principles](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles), with cross-references in this format: [ARCHITECTURE-SECURITY](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/adopt-appropriate-cyber-security-standards)
 
@@ -46,4 +50,5 @@ The framework consists of:
 * Guidance on how to practice [continuous improvement](continuous-improvement.md)
 
 ## Contributing
-See our [contributor's guide](./.github/CONTRIBUTING.md)
+
+See our [contributor's guide](CONTRIBUTING.md)
