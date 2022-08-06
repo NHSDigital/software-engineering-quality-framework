@@ -38,7 +38,7 @@ git remote set-head origin -a
 
 ## Further reading
 
-* [inclusivenaming.org](https://inclusivenaming.org/word-lists/overview/)
+* [inclusivenaming.org](https://inclusivenaming.org/word-lists/)
 * [Internet Engineering Task Force](https://datatracker.ietf.org/doc/draft-knodel-terminology/)
 * [Python](https://bugs.python.org/issue34605)
 * [GitHub](https://github.com/github/renaming)
