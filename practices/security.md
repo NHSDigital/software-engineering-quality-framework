@@ -98,25 +98,6 @@ The remainder of this page gives more detailed and specific recommendations to b
 - **Secure the route** to infrastructure: all access to infrastructure (production or otherwise) must be via a secured route, for example via a hardened bastion only accessible via a VPN (with MFA challenge), and with an audit of usage.
 - Ensure infrastructure **IAM** is robust
   - Strong passwords and MFA
-
-    <details><summary>Example IAM policy to prevent assume role without MFA (click to expand)</summary>
-
-    ```yaml
-    {
-        "Version": "2012-10-17",
-        "Statement": {
-            "Effect": "Allow",
-            "Action": "sts:AssumeRole",
-            "Resource": "arn:aws:iam::<your_account_id>:role/Administrator",
-            "Condition": {
-                "BoolIfExists": {
-                    "aws:MultiFactorAuthPresent": "true"
-                }
-            }
-        }
-    }
-    ```
-    </details>
   - Segregate workloads, e.g. in separate AWS accounts ([Landing Zone](https://aws.amazon.com/solutions/aws-landing-zone/), [Control Tower](https://aws.amazon.com/controltower/features/)) or Azure [subscriptions](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/decision-guides/subscriptions/)
   - Fine grained, least privilege IAM roles
 - Secure **CI/CD**
@@ -124,47 +105,81 @@ The remainder of this page gives more detailed and specific recommendations to b
   - Prefer ambient IAM credentials over retrieving credentials from secrets management. Do not store credentials in the plain.
 - **Enforce** infrastructure security (e.g. [Azure Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview), [AWS Config](https://aws.amazon.com/config/)) and validate it (e.g. [ScoutSuite](https://github.com/nccgroup/ScoutSuite/blob/master/README.md))
 
-  <details><summary>Example IAM policy fragment to prevent unencrypted RDS databases (click to expand)</summary>
 
-    ```yaml
-    {​​​​​​​​
-      "Sid": "",
-      "Effect": "Deny",
-      "Action": "rds:CreateDBInstance",
-      "Resource": "*",
-      "Condition": {​​​​​​​​
-        "Bool": {​​​​​​​​
-          "rds:StorageEncrypted": "false"
-        }
-      }​​​​​​​​
-    }​​​​​​​​
-    ```
-  </details>
-
-  <details><summary>If enforcement is not possible / appropriate, use alerts to identify potential issues: example AWS Config rule to identify public-facing RDS databases (click to expand)</summary>
-
-    ```yaml
-    {
-      "ConfigRuleName": "RDS_INSTANCE_PUBLIC_ACCESS_CHECK",
-      "Description": "Checks whether the Amazon Relational Database Service (RDS) instances are not publicly accessible. The rule is non-compliant if the publiclyAccessible field is true in the instance configuration item."
-      "Scope": {
-        "ComplianceResourceTypes": [
-          "AWS::RDS::DBInstance"
-        ]
-      },
-      "Source": {
-        "Owner": "AWS",
-        "SourceIdentifier": "RDS_INSTANCE_PUBLIC_ACCESS_CHECK"
-      }
-    }
-    ```
-  </details>
 
 - Lock down your **networks**
   - Restrict external and internal network traffic by appropriate firewall rules
   - Consider using a WAF (Web Application Firewall)
   - Restrict outbound network calls to limit the damage a compromised component can do if practical
 
+- Implement Organisation level Security Policy (OSP): Service Control Policy (e.g. [AWS SCP](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps_examples.html))
+  - Implement checks and notification processes
+  - Determine use cases that break SCPs
+  - Agree to a standard set of service control policies :
+    ** IN DRAFT **
+    -  deny s3 public bucket creation
+    -  deny s3 bucket creation outside London region
+    -  deny RDS public database creation
+    -  deny RDS database creation outside London region
+    -  deny unencrypted RDS database creation 
+
+- Granular IAM role policies can be applied at a role level
+  -    <summary>Example IAM policy fragment to prevent unencrypted RDS databases (click to expand)</summary>
+        <details>
+
+         ```yaml
+         {​​​​​​​​
+           "Sid": "",
+           "Effect": "Deny",
+           "Action": "rds:CreateDBInstance",
+           "Resource": "*",
+           "Condition": {​​​​​​​​
+             "Bool": {​​​​​​​​
+               "rds:StorageEncrypted": "false"
+             }
+           }​​​​​​​​
+         }​​​​​​​​
+         ```
+         </details>
+    -   <summary>Example IAM policy to prevent assume role without MFA (click to expand)</summary>
+         <details>
+
+        ```yaml
+        {
+            "Version": "2012-10-17",
+            "Statement": {
+                "Effect": "Allow",
+                "Action": "sts:AssumeRole",
+                "Resource": "arn:aws:iam::<your_account_id>:role/Administrator",
+                "Condition": {
+                    "BoolIfExists": {
+                        "aws:MultiFactorAuthPresent": "true"
+                    }
+                }
+            }
+        }
+        ```
+          </details>
+ -   <summary>If enforcement is not possible / appropriate, use alerts to identify potential issues: example AWS Config rule to identify public-facing RDS databases (click to expand)</summary>
+         <details>
+
+        ```yaml
+        {
+          "ConfigRuleName": "RDS_INSTANCE_PUBLIC_ACCESS_CHECK",
+          "Description": "Checks whether the Amazon Relational Database Service (RDS) instances are not publicly accessible. The rule is non-compliant if the publiclyAccessible field is true in the instance configuration item."
+          "Scope": {
+            "ComplianceResourceTypes": [
+              "AWS::RDS::DBInstance"
+            ]
+          },
+          "Source": {
+            "Owner": "AWS",
+            "SourceIdentifier": "RDS_INSTANCE_PUBLIC_ACCESS_CHECK"
+          }
+        }
+        ```
+         </details>
+    
 ### Human factors
 - Ensure **joiners and leavers process** is adequate
 - Encourage use of **password managers** with MFA enabled
