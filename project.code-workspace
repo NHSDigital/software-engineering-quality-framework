@@ -129,9 +129,6 @@
       "editor.insertSpaces": true,
       "editor.tabSize": 2
     },
-    "yaml.schemas": {
-      "https://json.schemastore.org/github-workflow.json": "file://./.github/workflows/check-markdown.yml"
-    },
     "workbench.colorCustomizations": {
       "activityBar.activeBackground": "#1accff",
       "activityBar.activeBorder": "#df00ad",
@@ -151,6 +148,6 @@
       "titleBar.inactiveBackground": "#00b3e699",
       "titleBar.inactiveForeground": "#15202b99"
     },
-    "peacock.color": "#00b3e6",
+    "peacock.color": "#00b3e6"
   }
 }
