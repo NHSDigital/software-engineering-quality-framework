@@ -47,6 +47,7 @@
   - <details><summary>Infrastructure must be tagged to identity the service so that unnecessary resources don't go unnoticed (click to expand)</summary>
 
     AWS Config rule to identify EC2 assets not tagged with "CostCenter" and "Owner":
+
     ```yaml
     {
       "ConfigRuleName": "RequiredTagsForEC2Instances",
@@ -63,6 +64,7 @@
       "InputParameters": "{\"tag1Key\":\"CostCenter\",\"tag2Key\":\"Owner\"}"
     }
     ```
+
     Further reading: [AWS Config](https://aws.amazon.com/config/)
 
     TO DO: Azure equivalent

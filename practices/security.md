@@ -126,6 +126,7 @@ The remainder of this page gives more detailed and specific recommendations to b
         }
     }
     ```
+
     </details>
   - Segregate workloads, e.g. in separate AWS accounts ([Landing Zone](https://aws.amazon.com/solutions/aws-landing-zone/), [Control Tower](https://aws.amazon.com/controltower/features/)) or Azure [subscriptions](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/decision-guides/subscriptions/)
   - Fine grained, least privilege IAM roles
@@ -149,6 +150,7 @@ The remainder of this page gives more detailed and specific recommendations to b
       }​​​​​​​​
     }​​​​​​​​
     ```
+
   </details>
 
   <details><summary>If enforcement is not possible / appropriate, use alerts to identify potential issues: example AWS Config rule to identify public-facing RDS databases (click to expand)</summary>
@@ -168,6 +170,7 @@ The remainder of this page gives more detailed and specific recommendations to b
       }
     }
     ```
+
   </details>
 
 - Lock down your **networks**
