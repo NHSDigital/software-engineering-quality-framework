@@ -1,10 +1,20 @@
 # Security
 
+- [Security](#security)
+  - [Context](#context)
+  - [Use the NCSC guidance](#use-the-ncsc-guidance)
+  - [Test first](#test-first)
+  - [Recommendations](#recommendations)
+    - [Big picture](#big-picture)
+    - [Application level security](#application-level-security)
+    - [Infrastructure security](#infrastructure-security)
+    - [Human factors](#human-factors)
+
 ## Context
 
-* These notes are part of a broader set of [principles](../principles.md)
-* This is related to [ARCHITECTURE-SECURITY](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/adopt-appropriate-cyber-security-standards)
-* :warning:Any deviation away from these security practices **must** be discussed with your security lead
+- These notes are part of a broader set of [principles](../principles.md)
+- This is related to [ARCHITECTURE-SECURITY](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/adopt-appropriate-cyber-security-standards)
+- :warning:Any deviation away from these security practices **must** be discussed with your security lead
 
 ## Use the NCSC guidance
 
@@ -116,6 +126,7 @@ The remainder of this page gives more detailed and specific recommendations to b
         }
     }
     ```
+
     </details>
   - Segregate workloads, e.g. in separate AWS accounts ([Landing Zone](https://aws.amazon.com/solutions/aws-landing-zone/), [Control Tower](https://aws.amazon.com/controltower/features/)) or Azure [subscriptions](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/decision-guides/subscriptions/)
   - Fine grained, least privilege IAM roles
@@ -139,6 +150,7 @@ The remainder of this page gives more detailed and specific recommendations to b
       }​​​​​​​​
     }​​​​​​​​
     ```
+
   </details>
 
   <details><summary>If enforcement is not possible / appropriate, use alerts to identify potential issues: example AWS Config rule to identify public-facing RDS databases (click to expand)</summary>
@@ -158,6 +170,7 @@ The remainder of this page gives more detailed and specific recommendations to b
       }
     }
     ```
+
   </details>
 
 - Lock down your **networks**
@@ -166,6 +179,7 @@ The remainder of this page gives more detailed and specific recommendations to b
   - Restrict outbound network calls to limit the damage a compromised component can do if practical
 
 ### Human factors
+
 - Ensure **joiners and leavers process** is adequate
 - Encourage use of **password managers** with MFA enabled
 - Be aware of security sign-off **policies or procedures** outside the team and engage with these early

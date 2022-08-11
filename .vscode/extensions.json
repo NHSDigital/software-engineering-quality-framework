@@ -1,6 +1,5 @@
 {
   "recommendations": [
-    "ban.spellright",
     "davidanson.vscode-markdownlint",
     "editorconfig.editorconfig",
     "johnpapa.vscode-peacock",

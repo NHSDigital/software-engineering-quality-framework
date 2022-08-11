@@ -1,15 +1,30 @@
 # Performance Testing
 
+- [Performance Testing](#performance-testing)
+  - [Context](#context)
+  - [Introduction](#introduction)
+  - [How to start?](#how-to-start)
+    - [Know your audience](#know-your-audience)
+    - [What does good look like?](#what-does-good-look-like)
+  - [Use of the APDEX index](#use-of-the-apdex-index)
+  - [A case study](#a-case-study)
+    - [A case study (know your audience)](#a-case-study-know-your-audience)
+    - [A case study - what does good look like?](#a-case-study---what-does-good-look-like)
+    - [A case study - approach](#a-case-study---approach)
+    - [A case study - some caveats](#a-case-study---some-caveats)
+    - [A case study - architecture](#a-case-study---architecture)
+    - [A case study - impact](#a-case-study---impact)
+
 ## Context
 
-* These notes are part of a broader set of [principles](../principles.md)
-* This is related to [Engineering quality-checks](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/adopt-appropriate-cyber-security-standards)
-* Related community of practice: [Test Automation Working Group](../communities/pd-test-automation-working-group.md)
-* See also:
-  * [Quality Metrics](../quality-checks.md) 
-  * [Continuous integration](continuous-integration.md)
-  * [Governance as a side effect](../patterns/governance-side-effect.md)
-  * [Testing](testing.md)
+- These notes are part of a broader set of [principles](../principles.md)
+- This is related to [Engineering quality-checks](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/adopt-appropriate-cyber-security-standards)
+- Related community of practice: [Test Automation Working Group](../communities/pd-test-automation-working-group.md)
+- See also:
+  - [Quality Metrics](../quality-checks.md)
+  - [Continuous integration](continuous-integration.md)
+  - [Governance as a side effect](../patterns/governance-side-effect.md)
+  - [Testing](testing.md)
 
 ## Introduction
 
@@ -17,27 +32,27 @@ Performance testing has a somewhat ambiguous meaning across the IT industry and 
 
 For the sake of clarity this page will consider Performance Testing as per the definition on [Wikipedia](https://en.wikipedia.org/wiki/Software_performance_testing), namely:
 
->  performance testing is in general a testing practice performed to determine how a system performs in terms of responsiveness and stability under a particular workload. It can also serve to investigate, measure, validate or verify other quality attributes of the system, such as scalability, reliability and resource usage.
+> performance testing is in general a testing practice performed to determine how a system performs in terms of responsiveness and stability under a particular workload. It can also serve to investigate, measure, validate or verify other quality attributes of the system, such as scalability, reliability and resource usage.
 
 ## How to start?
 
 ### Know your audience
 
-* Identify common user interactions or journeys with your system
-* Identify how many users are typically accessing your system at any given moment
-* Calculate or estimate what percentage of those users will be performing a given interaction or journey at any given moment
-* This information can then be used to design your thread groups in JMeter or similar grouping of interactions with other testing tools
-* The information can then also be used to determine a "typical" load as well as being useful to realistically scale up load as part of your tests
+- Identify common user interactions or journeys with your system
+- Identify how many users are typically accessing your system at any given moment
+- Calculate or estimate what percentage of those users will be performing a given interaction or journey at any given moment
+- This information can then be used to design your thread groups in JMeter or similar grouping of interactions with other testing tools
+- The information can then also be used to determine a "typical" load as well as being useful to realistically scale up load as part of your tests
 
 ### What does good look like?
 
-* Identify clear targets for performance: performance testing should be an **objective** not subjective exercise
-* Examples of possible targets might be: 
-  * SLA based, e.g. all pages must respond within 4 seconds
-  * Relative, e.g. any given release must not deteriorate performance by more than 5%
-  * Weighted by interaction: if a user performs a particular interaction once every 3 months they are liable to be more accepting of a 8 second delay than a task which they perform many times a day
-  * Weighted by load: in busy periods you may be willing to have a slightly longer response time
-* Consider how your targets may be influenced by your architecture - for example if you are using a serverless "scale on demand" architecture your targets might be cost based
+- Identify clear targets for performance: performance testing should be an **objective** not subjective exercise
+- Examples of possible targets might be:
+  - SLA based, e.g. all pages must respond within 4 seconds
+  - Relative, e.g. any given release must not deteriorate performance by more than 5%
+  - Weighted by interaction: if a user performs a particular interaction once every 3 months they are liable to be more accepting of a 8 second delay than a task which they perform many times a day
+  - Weighted by load: in busy periods you may be willing to have a slightly longer response time
+- Consider how your targets may be influenced by your architecture - for example if you are using a serverless "scale on demand" architecture your targets might be cost based
 
 Ultimately your targets are a red flag that you need to investigate further
 
@@ -53,9 +68,9 @@ APDEX is a useful index for pipelines as it gives a definite figure and is there
 
 As such APDEX can help us answer and take action (e.g. fail the pipeline) on such fundamental questions as:
 
-* Are our users happy?
-* Have we made performance worse?
-* Would our users become unhappy when there is an increased load?
+- Are our users happy?
+- Have we made performance worse?
+- Would our users become unhappy when there is an increased load?
 
 ## A case study
 
@@ -101,9 +116,9 @@ Using the results of this query we could calculate any deterioration and fail th
 
 Whilst we have found this approach useful there are certain caveats to it, for example:
 
-* What if performance slowly degrades over time but always by less than 5% per release?
-* It potentially hides an individual page or end point whose performance has degraded due to the aggregation/smoothing effect of APDEX.
-* Recognition that we probably want in the future to also apply an absolute target e.g. APDEX of >= 0.9
+- What if performance slowly degrades over time but always by less than 5% per release?
+- It potentially hides an individual page or end point whose performance has degraded due to the aggregation/smoothing effect of APDEX.
+- Recognition that we probably want in the future to also apply an absolute target e.g. APDEX of >= 0.9
 
 ### A case study - architecture
 
