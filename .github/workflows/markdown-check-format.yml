@@ -19,7 +19,6 @@ jobs:
       - run: |
           files=$(git diff --diff-filter=ACMRT --name-only origin/${{ github.event.repository.default_branch }}.. "*.md")
           if [ -n "$files" ]; then
-            # v0.32.1s
-            image=ghcr.io/igorshubovych/markdownlint-cli:sha256:c902fc97bb4ba50cd073408e664fe00414e6e2064f0c213bafd393ea17f3a0fd
+            image=ghcr.io/igorshubovych/markdownlint-cli@sha256:c902fc97bb4ba50cd073408e664fe00414e6e2064f0c213bafd393ea17f3a0fd # v0.32.1
             docker run --rm -v $PWD:/workdir $image $files --disable MD013 MD033
           fi
