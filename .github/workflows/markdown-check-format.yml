@@ -1,0 +1,24 @@
+name: Check Markdown Format
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+
+jobs:
+  markdown-check-format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      # Please, make sure to enable Markdown linting in your IDE. For the Visual Studio Code editor it is
+      # `davidanson.vscode-markdownlint` that is already specified in the `.vscode/extensions.json` file.
+      - run: |
+          files=$(git diff --diff-filter=ACMRT --name-only origin/${{ github.event.repository.default_branch }}.. "*.md")
+          if [ -n "$files" ]; then
+            image=ghcr.io/igorshubovych/markdownlint-cli:sha256:c902fc97bb4ba50cd073408e664fe00414e6e2064f0c213bafd393ea17f3a0fd # v0.32.1
+            docker run --rm -v $PWD:/workdir $image $files --disable MD013 MD033
+          fi
