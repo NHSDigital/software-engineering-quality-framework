@@ -96,7 +96,7 @@ Finally (and most importantly) identify actions to move the score upward.
 - Risky items and dependencies are clearly indicated and work to reduce risk is prioritised.
 - The plan gets the right balance between delivering features and operational aspects.
 - We track risks, issues, assumptions and dependencies ('RAID') and work creatively to resolve them.
-- We keep a log of key technical and product decisions and who approved them.
+- We keep a log of key technical and product decisions and who approved them, e.g. by using the [Any Decision Record template](any-decision-record-template.md).
 
 #### 3. Fast, reliable and safe delivery
 
