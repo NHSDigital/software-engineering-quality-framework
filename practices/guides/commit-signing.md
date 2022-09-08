@@ -1,0 +1,89 @@
+# Git commit signing notes
+
+- From workstations:
+  - [macOS](#From-the-macOS-Terminal)
+  - Windows
+- From pipelines:
+  - [GitHub Actions](#GitHub-Actions)
+  - [AWS CodePipeline](#AWS-CodePipeline)
+<br>
+
+
+## macOS
+- Install the Brew package manager: https://brew.sh
+```
+brew upgrade
+brew install gnupg pinentry-mac
+gpg --full-generate-key
+```
+- Accept the defaults, Curve 25519 etc.
+- Enter your GitHub account name as the Full Name
+- Enter your GitHub account email as the Email Address
+- You can use the privacy *@users.noreply.github.com* email address listed in the GitHub *profile > Settings > Email*
+- Define a passphrase and keep it in your password manager
+```
+gpg --armor --export ${my_email_address} | pbcopy
+```
+ 
+- Public key is now in your clipboard - in your GitHub account add it to your profile here:
+*Settings > SSH and GPG Keys> Add New GPG Key*
+- Paste it in
+```
+git config --global user.email ${my_email_address}
+git config --global user.name ${my_username}
+git config --global commit.gpgsign true
+echo export GPG_TTY=\$\(tty\) >> ~/.zshrc
+source ~/.zshrc
+echo "pinentry-program /opt/homebrew/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+gpgconf --kill gpg-agent
+```
+The first time you commit you will be prompted to add the GPG key passphrase to the macOS Keychain. Thereafter signing will happen seamlessly without prompts.
+
+Most of the published solutions for this don't work because *brew* seems to have moved the default folder for binaries, plus many guides contain obsolete settings for *gnupg*.
+
+### Troubleshooting
+Re-run your git command prefixed with GIT_TRACE=1
+Usually it will fail because the name or email don't quite match up with the values on the key so it can't auto select a key. However you can [force a choice of signing key](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key)
+
+<br>
+
+
+## GitHub Actions
+A GitHub Actions workflow will by default authenticate using a [GITHUB_TOKEN](https://docs.github.com/en/actions/security-guides/automatic-token-authentication) which is generated automatically.
+
+However, at the time of writing, to sign commits the workflow will need to use a dedicated GitHub identity (in which to register the GPG public key).
+
+The workflow would then use a Personal Access Token, stored with the GPG private key in the repo secrets, like so:
+```
+steps:
+  - name: Checkout
+    uses: actions/checkout@v3
+    with:
+      token: ${{ secrets.BOT_PAT }}
+      ref: main
+```
+Example run action script excerpt:
+```
+# configure GPG Key for signing GitHub commits
+if [ -n "${{ secrets.BOT_GPG_KEY }}" ]; then
+  echo "GPG secret key found in repo secrets, enabling GitHub commmit signing"
+  GITHUB_SIGNING_OPTION="-S"
+  echo "${BOT_GPG_KEY}" | gpg --import
+  # Highlight any expiry date
+  gpg --list-secret-keys
+fi
+git add .
+git config --global user.name "${GITHUB_USER_NAME}"
+git config --global user.email "${GITHUB_USER_EMAIL}"
+git commit ${GITHUB_SIGNING_OPTION} -am "Automated commit from GitHub Actions: ${WORKFLOW_URL}"
+git push
+```
+
+<br>
+
+
+## AWS CodePipeline
+
+The cryptographic libraries in the default Amazon Linux 2 distro are very old, and do not support elliptic curve cryptography. When using pre-existing solution elements updating the build container is not always an option. This restricts the GPG key algorithm to RSA-4096 at the very best.
+
+Furthermore, the Systems Manager Parameter Store will not accept a key that is generated for both signing and encrypting (which will contain a second key for the encryption). It will be too large to be pasted in as a valid parameter. So when generating the GPG key you must select type RSA (sign only).
