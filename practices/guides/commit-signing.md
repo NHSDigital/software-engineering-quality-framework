@@ -135,5 +135,6 @@ git push
 
 ## Troubleshooting
 Re-run your git command prefixed with GIT_TRACE=1
-Usually it will fail because the name or email don't quite match up with the values on the key so it can't auto select a key. However you can [force a choice of signing key](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key)
+
+Usually it will fail because the name or email don't quite match up with the values use to generate the GPG key, so git cannot auto-select a key. However you are able to [force a choice of signing key](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key).
 
