@@ -88,7 +88,7 @@ The cryptographic libraries in the default Amazon Linux 2 distro are very old, a
 
 Furthermore, the Systems Manager Parameter Store will not accept a key that is generated for both signing and encrypting (which will contain a second key for the encryption). It will be too large to be pasted in as a valid parameter. So when generating the GPG key you must select type RSA (sign only).
 
-Example Buildspec excerpt:
+Example AWS CodeBuild Buildspec excerpt:
 ```
 # create SSH identity for connecting to GitHub 
 BOT_SSH_KEY=$(aws ssm get-parameter --name "/keys/ssh-key" --query "Parameter.Value" --output text --with-decryption 2> /dev/null || echo "None")
