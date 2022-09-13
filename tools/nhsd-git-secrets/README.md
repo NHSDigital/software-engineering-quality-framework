@@ -25,18 +25,15 @@ OpenID Connect allows federated authentication from pipeline workflows to AWS an
 Example GitHub Actions workflow excerpt:
 ```
 steps:
-  # Checkout the repository to the GitHub Actions runner
   - name: Checkout
     uses: actions/checkout@v3
 
-  # Configure the AWS IAM Role to assume via OIDC
   - name: Configure AWS STS credentials via OIDC
     uses: aws-actions/configure-aws-credentials@v1
     with:
       role-to-assume: ${{ secrets.AWS_ROLE_ID }}
       aws-region: eu-west-2
 
-  # Configure the OIDC login to Azure
   - name: Configure Azure identity token via OIDC
     uses: azure/login@v1
     with:
