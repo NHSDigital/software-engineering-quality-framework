@@ -87,3 +87,49 @@ git push
 The cryptographic libraries in the default Amazon Linux 2 distro are very old, and do not support elliptic curve cryptography. When using pre-existing solution elements updating the build container is not always an option. This restricts the GPG key algorithm to RSA-4096 at the very best.
 
 Furthermore, the Systems Manager Parameter Store will not accept a key that is generated for both signing and encrypting (which will contain a second key for the encryption). It will be too large to be pasted in as a valid parameter. So when generating the GPG key you must select type RSA (sign only).
+
+Example Buildspec excerpt:
+```
+# create SSH identity for connecting to GitHub 
+BOT_SSH_KEY=$(aws ssm get-parameter --name "/keys/ssh-key" --query "Parameter.Value" --output text --with-decryption 2> /dev/null || echo "None")
+if [[ ${BOT_SSH_KEY} != "None" ]]; then
+  mkdir -p ~/.ssh
+  echo "Host *" >> ~/.ssh/config
+  echo "StrictHostKeyChecking yes" >> ~/.ssh/config
+  echo "UserKnownHostsFile=~/.ssh/known_hosts" >> ~/.ssh/config
+  echo "${BOT_SSH_KEY}" > ~/.ssh/ssh_key
+  echo -e "\n\n" >>  ~/.ssh/ssh_key
+  chmod 600 ~/.ssh/ssh_key
+  eval "$(ssh-agent -s)"
+  ssh-add ~/.ssh/ssh_key
+fi
+
+gpg --version
+echo
+BOT_GPG_KEY=$(aws ssm get-parameter --name "/keys/gpg-key" --query "Parameter.Value" --output text --with-decryption 2> /dev/null || echo "None")
+if [ "${BOT_GPG_KEY}" != "None" ]; then
+  echo "Encrypted GPG secret key found in the AFT Parameter Store, enabling GitHub commmit signing" 
+  GITHUB_SIGNING_OPTION="-S"
+  echo "${BOT_GPG_KEY}" | gpg --import
+  # Highlight any expiry date
+  gpg --list-secret-keys
+  gpg-agent --daemon
+  echo
+fi
+
+# GitHub publishes its public key fingerprints here:
+# https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints
+# the known_hosts entry below was obtained by validating the fingerprint on a separate computer
+echo "github.com ssh-ed25519 ${GITHUB_FINGERPRINT}" >> ~/.ssh/known_hosts
+
+git config --global advice.detachedHead false
+git config --global user.name "${GITHUB_USER_NAME}"
+git config --global user.email "${GITHUB_USER_EMAIL}"
+git clone git@github.com:${GITHUB_ORG_NAME}/${SSO_CONFIG_REPO_NAME}.git
+
+# make code changes here
+
+git add .
+git commit ${GITHUB_SIGNING_OPTION} -am "Automated commit from ${SCRIPT_URL}"
+git push
+```
