@@ -6,6 +6,7 @@
 - From pipelines:
   - [GitHub Actions](#GitHub-Actions)
   - [AWS CodePipeline](#AWS-CodePipeline)
+- [Troubleshooting](#Troubleshooting)
 <br>
 
 
@@ -40,10 +41,6 @@ gpgconf --kill gpg-agent
 The first time you commit you will be prompted to add the GPG key passphrase to the macOS Keychain. Thereafter signing will happen seamlessly without prompts.
 
 Most of the published solutions for this don't work because *brew* seems to have moved the default folder for binaries, plus many guides contain obsolete settings for *gnupg*.
-
-### Troubleshooting
-Re-run your git command prefixed with GIT_TRACE=1
-Usually it will fail because the name or email don't quite match up with the values on the key so it can't auto select a key. However you can [force a choice of signing key](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key)
 
 <br>
 
@@ -133,3 +130,9 @@ git add .
 git commit ${GITHUB_SIGNING_OPTION} -am "Automated commit from ${SCRIPT_URL}"
 git push
 ```
+
+<br>
+## Troubleshooting
+Re-run your git command prefixed with GIT_TRACE=1
+Usually it will fail because the name or email don't quite match up with the values on the key so it can't auto select a key. However you can [force a choice of signing key](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key)
+
