@@ -124,7 +124,7 @@ git config --global user.name "${GITHUB_USER_NAME}"
 git config --global user.email "${GITHUB_USER_EMAIL}"
 git clone git@github.com:${GITHUB_ORG_NAME}/${SSO_CONFIG_REPO_NAME}.git
 
-# make code changes here
+# make git repository source code changes here
 
 git add .
 git commit ${GITHUB_SIGNING_OPTION} -am "Automated commit from ${SCRIPT_URL}"
