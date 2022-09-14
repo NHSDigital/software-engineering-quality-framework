@@ -69,15 +69,8 @@ gpg --armor --export ${my_email_address} | clip
 git config --global user.email ${my_email_address} # same one used during key generation
 git config --global user.name ${my_username}
 git config --global commit.gpgsign true
-echo export GPG_TTY=\$\(tty\) >> ~/.zshrc
-source ~/.zshrc
-echo "pinentry-program /opt/homebrew/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
-gpgconf --kill gpg-agent
 ```
-The first time you commit you will be prompted to add the GPG key passphrase to the macOS Keychain. Thereafter signing will happen seamlessly without prompts.
-
-Most of the published solutions for this don't work because *brew* seems to have moved the default folder for binaries, plus many guides contain obsolete settings for *gnupg*.
-
+When you commit you will be prompted to enter the GPG key passphrase into a Pinentry window.
 
 <br>
 
