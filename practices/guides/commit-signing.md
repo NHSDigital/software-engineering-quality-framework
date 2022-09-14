@@ -22,7 +22,7 @@ gpg --full-generate-key
 - Accept the defaults, Curve 25519 etc.
 - Enter your GitHub account name as the Real Name
 - Enter your GitHub account email as the Email Address
-- You can use the privacy *@users.noreply.github.com* email address listed in the GitHub *Profile > Settings > Email*
+- You can use the privacy *@users.noreply.github.com* email address listed in the GitHub profile: *Settings > Email*
 - Define a passphrase and keep it in your password manager
 ```
 gpg --armor --export ${my_email_address} | pbcopy
@@ -56,7 +56,7 @@ gpg --full-generate-key
 - Set key size to 4096 bit, the minimum accepted for GitHub
 - Enter your GitHub account name as the Real Name
 - Enter your GitHub account email as the Email Address
-- You can use the privacy *@users.noreply.github.com* email address listed in the GitHub *Profile > Settings > Email*
+- You can use the privacy *@users.noreply.github.com* email address listed in the GitHub profile: *Settings > Email*
 - Define a passphrase and keep it in your password manager
 ```
 gpg --armor --export ${my_email_address} | clip
