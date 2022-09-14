@@ -17,7 +17,7 @@ Once you've verified there's no urgent actions on your code, the next steps towa
 2. Run these same scripts as part of your deployment pipelines as a second line of defence.
 
 # Consider using OIDC instead of secrets
-OpenID Connect allows federated authentication from pipeline workflows to AWS and Azure without storing credentials in repository secrets at all. GitHub documentation for achieving this for:
+OpenID Connect allows federated authentication from pipeline workflows to AWS and Azure without storing credentials in repository secrets at all, so no expiry to manage. GitHub documentation for achieving this for:
 - [AWS](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services)
 - [Azure](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-azure)
 - [Google](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-google-cloud-platform)
