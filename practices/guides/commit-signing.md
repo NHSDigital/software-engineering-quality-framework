@@ -32,7 +32,7 @@ gpg --armor --export ${my_email_address} | pbcopy
 *Settings > SSH and GPG Keys> Add New GPG Key*
 - Paste it in
 ```
-git config --global user.email ${my_email_address}
+git config --global user.email ${my_email_address} # same one used during key generation
 git config --global user.name ${my_username}
 git config --global commit.gpgsign true
 echo export GPG_TTY=\$\(tty\) >> ~/.zshrc
@@ -66,7 +66,7 @@ gpg --armor --export ${my_email_address} | clip
 *Settings > SSH and GPG Keys> Add New GPG Key*
 - Paste it in
 ```
-git config --global user.email ${my_email_address}
+git config --global user.email ${my_email_address} # same one used during key generation
 git config --global user.name ${my_username}
 git config --global commit.gpgsign true
 echo export GPG_TTY=\$\(tty\) >> ~/.zshrc
@@ -158,7 +158,7 @@ echo "github.com ssh-ed25519 ${GITHUB_FINGERPRINT}" >> ~/.ssh/known_hosts
 
 git config --global advice.detachedHead false
 git config --global user.name "${GITHUB_USER_NAME}"
-git config --global user.email "${GITHUB_USER_EMAIL}"
+git config --global user.email "${GITHUB_USER_EMAIL}" # same one used during key generation
 git clone git@github.com:${GITHUB_ORG_NAME}/${SSO_CONFIG_REPO_NAME}.git
 
 # Make git repository source code changes here
