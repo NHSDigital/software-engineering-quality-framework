@@ -20,7 +20,7 @@ brew install gnupg pinentry-mac
 gpg --full-generate-key
 ```
 - Accept the defaults, Curve 25519 etc.
-- Enter your GitHub account name as the Full Name
+- Enter your GitHub account name as the Real Name
 - Enter your GitHub account email as the Email Address
 - You can use the privacy *@users.noreply.github.com* email address listed in the GitHub *profile > Settings > Email*
 - Define a passphrase and keep it in your password manager
@@ -81,7 +81,37 @@ git push
 <br>
 
 ## Windows
-Pending
+- Install Git for Windows, which includes Bash and GnuPG: https://git-scm.com/download/win
+- Right-click on the Desktop > _Git Bash here_
+```
+gpg --full-generate-key
+```
+- Pick _RSA and RSA_, or _RSA (sign only)_
+- Set key size to 4096 bit, the minimum accepted for GitHub
+- Enter your GitHub account name as the Real Name
+- Enter your GitHub account email as the Email Address
+- You can use the privacy *@users.noreply.github.com* email address listed in the GitHub *profile > Settings > Email*
+- Define a passphrase and keep it in your password manager
+```
+gpg --armor --export ${my_email_address} | clip
+```
+ 
+- Public key is now in your clipboard - in your GitHub account add it to your profile here:
+*Settings > SSH and GPG Keys> Add New GPG Key*
+- Paste it in
+```
+git config --global user.email ${my_email_address}
+git config --global user.name ${my_username}
+git config --global commit.gpgsign true
+echo export GPG_TTY=\$\(tty\) >> ~/.zshrc
+source ~/.zshrc
+echo "pinentry-program /opt/homebrew/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+gpgconf --kill gpg-agent
+```
+The first time you commit you will be prompted to add the GPG key passphrase to the macOS Keychain. Thereafter signing will happen seamlessly without prompts.
+
+Most of the published solutions for this don't work because *brew* seems to have moved the default folder for binaries, plus many guides contain obsolete settings for *gnupg*.
+
 
 <br>
 
