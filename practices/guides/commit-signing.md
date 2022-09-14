@@ -82,7 +82,7 @@ git push
 
 ## Windows
 - Install Git for Windows, which includes Bash and GnuPG: https://git-scm.com/download/win
-- Right-click on the Desktop > _Git Bash here_
+- Right-click on the Desktop > _Git Bash Here_
 ```
 gpg --full-generate-key
 ```
