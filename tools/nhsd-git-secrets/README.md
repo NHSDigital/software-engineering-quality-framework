@@ -22,7 +22,7 @@ OpenID Connect allows federated authentication from pipeline workflows to AWS an
 - [Azure](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-azure)
 - [Google](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-google-cloud-platform)
 
-Example GitHub Actions workflow excerpt:
+Configuration for OIDC is light. See the below example GitHub Actions workflow excerpt which connects to both AWS and Azure:
 ```
 steps:
   - name: Checkout
