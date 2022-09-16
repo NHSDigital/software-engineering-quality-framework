@@ -47,7 +47,7 @@ gpgconf --kill gpg-agent
 
 The first time you commit you will be prompted to add the GPG key passphrase to the macOS Keychain. Thereafter signing will happen seamlessly without prompts.
 
-Most of the published solutions for this don't work because *brew* seems to have moved the default folder for binaries, plus many guides contain obsolete settings for *gnupg*.
+Most of the published solutions for this don't work because *brew* seems to have moved the default folder for binaries, plus many guides contain obsolete settings for *gpg-agent*.
 
 <br>
 
