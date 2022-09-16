@@ -15,12 +15,14 @@ One key consideration is how best to break the system down into independent serv
 ## Benefits
 
 In high level terms, systems which are designed to maximise rapid, reliable delivery and operations:
+
 * Are cost efficient: teams don't waste their time fighting the tools or working with difficult architectures
 * Improve business agility: these systems allow teams to respond more quickly to changes
 * Improve reliability: these systems are easier to understand, which leads to fewer failures and shorter recovery times
 * Improve team happiness: engineers are happy when the tools they work with let them get on with what they do best
 
 In many cases, building a system as a set of independently running services/components has benefits:
+
 * Multiple components enable parallel development work by multiple teams
 * Teams can work at their own cadence
 * Changes with each component are easier to reason about and test
