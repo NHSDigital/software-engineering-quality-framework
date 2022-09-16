@@ -15,12 +15,14 @@ One key consideration is how best to break the system down into independent serv
 ## Benefits
 
 In high level terms, systems which are designed to maximise rapid, reliable delivery and operations:
+
 * Are cost efficient: teams don't waste their time fighting the tools or working with difficult architectures
 * Improve business agility: these systems allow teams to respond more quickly to changes
 * Improve reliability: these systems are easier to understand, which leads to fewer failures and shorter recovery times
 * Improve team happiness: engineers are happy when the tools they work with let them get on with what they do best
 
 In many cases, building a system as a set of independently running services/components has benefits:
+
 * Multiple components enable parallel development work by multiple teams
 * Teams can work at their own cadence
 * Changes with each component are easier to reason about and test
@@ -35,10 +37,10 @@ In many cases, building a system as a set of independently running services/comp
 
 * This pattern must not compromise quality: automation (including of quality control) is essential for safe implementation of this pattern
 * Architectures with multiple moving parts are more complicated. While splitting a system into multiple components is often a good idea, "too many" components can cause more harm than good. There is usually a sweet spot for how many components to break a system down into &mdash; and for small or simple systems a monolith might be better. In distributed systems:
-    * There are more failure modes to test, since calls which go over the network can fail in more ways than simple method invocations
-    * Versioning becomes a more complicated concern, and additional effort is required to ensure component APIs are compatible as each changes independently
-    * Clean domain boundaries are essential for safe implementation of this pattern
-    * Comprehensive monitoring and alerting is essential for safe implementation of this pattern
+  * There are more failure modes to test, since calls which go over the network can fail in more ways than simple method invocations
+  * Versioning becomes a more complicated concern, and additional effort is required to ensure component APIs are compatible as each changes independently
+  * Clean domain boundaries are essential for safe implementation of this pattern
+  * Comprehensive monitoring and alerting is essential for safe implementation of this pattern
 * Components should be built because working in that way gives benefits, not purely because the components might be reused later: if they are later reused, that's even better
 
 ## Details
