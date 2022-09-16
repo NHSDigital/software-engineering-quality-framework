@@ -26,7 +26,7 @@ gpg --full-generate-key
 - Enter your GitHub account name as the Real Name
 - Enter your GitHub account email as the Email Address
 - You can use the privacy *@users.noreply.github.com* email address listed in the GitHub profile: *Settings > Email*
-- Define a passphrase and keep it in your password manager
+- Define a passphrase for the key and keep it in your password manager
 
 ```bash
 gpg --armor --export ${my_email_address} | pbcopy
@@ -65,7 +65,7 @@ gpg --full-generate-key
 - Enter your GitHub account name as the Real Name
 - Enter your GitHub account email as the Email Address
 - You can use the privacy *@users.noreply.github.com* email address listed in the GitHub profile: *Settings > Email*
-- Define a passphrase and keep it in your password manager
+- Define a passphrase for the key and keep it in your password manager
 
 ```bash
 gpg --armor --export ${my_email_address} | clip
