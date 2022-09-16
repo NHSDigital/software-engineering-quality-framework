@@ -60,7 +60,7 @@ Most of the published solutions for this don't work because *brew* seems to have
 gpg --full-generate-key
 ```
 
-- Pick *RSA and RSA*, or *RSA (sign only)* - there is no elliptic curve support yet
+- Pick *RSA and RSA*, or *RSA (sign only)* - there is no elliptic curve cryptography (ECC) support at the time of writing
 - Set key size to 4096 bit, the minimum accepted for GitHub
 - Enter your GitHub account name as the Real Name
 - Enter your GitHub account email as the Email Address
