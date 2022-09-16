@@ -167,7 +167,7 @@ echo "github.com ssh-ed25519 ${GITHUB_FINGERPRINT}" >> ~/.ssh/known_hosts
 git config --global advice.detachedHead false
 git config --global user.name "${GITHUB_USER_NAME}"
 git config --global user.email "${GITHUB_USER_EMAIL}" # same one used during key generation
-git clone git@github.com:${GITHUB_ORG_NAME}/${SSO_CONFIG_REPO_NAME}.git
+git clone git@github.com:${GITHUB_ORG_NAME}/${GITHUB_REPO_NAME}.git
 
 # Make git repository source code changes here
 
@@ -182,4 +182,4 @@ git push
 
 Re-run your git command prefixed with GIT_TRACE=1
 
-Usually it will fail because the name or email don't quite match up with the values use to generate the GPG key, so git cannot auto-select a key. However you are able to [force a choice of signing key](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key).
+Usually it will fail because the name or email don't quite match up with the values use to generate the GPG key, so git cannot auto-select a key. Ensure that these are indeed consistent. You are able to [force a choice of signing key](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key), though this should not be necessary.
