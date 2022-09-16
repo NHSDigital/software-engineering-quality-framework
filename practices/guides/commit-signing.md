@@ -182,4 +182,4 @@ git push
 
 Re-run your git command prefixed with GIT_TRACE=1
 
-Usually it will fail because the name or email don't quite match up with the values use to generate the GPG key, so git cannot auto-select a key. Ensure that these are indeed consistent. You are able to [force a choice of signing key](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key), though this should not be necessary.
+A failure to sign a commit is usually because the name or email does not quite match those which were used to generate the GPG key, so git cannot auto-select a key. Ensure that these are indeed consistent. You are able to [force a choice of signing key](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key), though this should not be necessary.
