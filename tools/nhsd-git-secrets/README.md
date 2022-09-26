@@ -5,6 +5,7 @@ This folder comprises examples for implementing AWSLabs Git-Secrets, which is ou
 ## Why secrets scanning
 
 Although we might be re-stating the obvious here, there's two main goals to consistent secrets scanning:
+
 1. Remove any secrets that may have been checked into the codebase in the past.
 2. Prevent any new secrets from making it into the codebase.
 
@@ -17,6 +18,7 @@ If your team isn't doing secrets scanning at all yet, the fundamental first step
 ## Getting to green
 
 Once you've verified there's no urgent actions on your code, the next steps towards getting to green are:
+
 1. Ensure every team member is doing local scans. Stopping secrets before code has been committed is cheap, removing them from git history is expensive.
 2. Run these same scripts as part of your deployment pipelines as a second line of defence.
 
