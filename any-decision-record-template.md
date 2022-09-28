@@ -46,11 +46,11 @@ Provide a rationale for the decision that is based on weighing the options to en
 
 ## Consequences
 
-Describe the resulting context, after applying the decision. All the identified consequences should be listed here, not just the positive ones. Any decision comes with many implications. For example, it may introduce a need to make other decisions as an effect of cross-cutting concerns; it may impact structural or operational characteristics of the software, and influence non-functional requirements; as a result, some things may become easier or more difficult to do because of this change. What are the trade offs?
+Describe the resulting context, after applying the decision. All the identified consequences should be listed here, not just the positive ones. Any decision comes with many implications. For example, it may introduce a need to make other decisions as an effect of cross-cutting concerns; it may impact structural or operational characteristics of the software, and influence non-functional requirements; as a result, some things may become easier or more difficult to do because of this change. What are the trade-offs?
 
 ## Compliance
 
-Establish how the success is going to be measured. Once implemented, the effect might lend itself to be measured, therefore if appropriate a set of criteria for success could be established. Compliance check of the decision can be manual or automated using a fitness function. If it is the later this section can then specify how that fitness function would be implemented and whether there are any other changes to the codebase needed to measure this decision for compliance.
+Establish how the success is going to be measured. Once implemented, the effect might lend itself to be measured, therefore if appropriate a set of criteria for success could be established. Compliance checks of the decision can be manual or automated using a fitness function. If it is the latter this section can then specify how that fitness function would be implemented and whether there are any other changes to the codebase needed to measure this decision for compliance.
 
 ## Notes
 
