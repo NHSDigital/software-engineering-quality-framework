@@ -36,13 +36,13 @@ Next time you do a commit the git secrets hook should be invoked.
 # Custom configuration (per repo / per service team)
 
 * Add individual regex expressions to nhsd-rules-deny.txt
-* Add regex rules files within wrapper.sh e.g.
+* Add regex rules files within [pre-commit (mac) script](pre-commit-mac.sh) e.g.
 
  `git secrets --add-provider -- cat git-secrets/nhsd-rules-deny.txt`
 
 * Add file/dir excludes within .gitallowed, e.g. `.*terraform.tfstate.*:*`
 
-* Control full scan vs staged files scan within wrapper.sh by commenting/uncommenting the mode to run e.g.:
+* Control full scan vs staged files scan within [pre-commit (mac) script](pre-commit-mac.sh) by commenting/uncommenting the mode to run e.g.:
 
  ```
  # Just scan the files changed in this commit

@@ -13,7 +13,7 @@ Essentially, we want to avoid the NHS facing [potentially dire consequences](htt
 
 ## How to get started
 
-If your team isn't doing secrets scanning at all yet, the fundamental first step is to understand the current state of the art. Use the [Macbook](README-mac-workstation.md) or Windows (coming soon...) guides to set up and run Git-Secrets for a nominated team member. Run the tooling, and ascertain whether there's any immediate actions to be taken.
+If your team isn't doing secrets scanning at all yet, the fundamental first step is to understand the current state of the art. Use the [macOS](README-mac-workstation.md), [Linux/WSL](README-linux-workstation.md) or [Windows](README-windows-workstation.md) guides to set up and run Git-Secrets for a nominated team member. Run the tooling, and ascertain whether there's any immediate actions to be taken.
 
 ## Getting to green
 
