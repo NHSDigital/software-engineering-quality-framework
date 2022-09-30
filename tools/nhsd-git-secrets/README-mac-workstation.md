@@ -35,10 +35,10 @@ Next time you do a commit the git secrets hook should be invoked.
 
 # Custom configuration (per repo / per service team)
 
-* Add individual regex expressions to nhsd-rules.txt
+* Add individual regex expressions to nhsd-rules-deny.txt
 * Add regex rules files within wrapper.sh e.g.
 
- `git secrets --add-provider -- cat git-secrets/nhsd-rules.txt`
+ `git secrets --add-provider -- cat git-secrets/nhsd-rules-deny.txt`
 
 * Add file/dir excludes within .gitallowed, e.g. `.*terraform.tfstate.*:*`
 
