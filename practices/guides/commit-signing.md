@@ -41,7 +41,9 @@ git config --global user.name ${my_username}
 git config --global commit.gpgsign true
 echo export GPG_TTY=\$\(tty\) >> ~/.zshrc
 source ~/.zshrc
-echo "pinentry-program /opt/homebrew/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+PINENTRY_BIN=$(whereis -q pinentry-mac)
+sed -i '' '/pinentry-program/d' ~/.gnupg/gpg-agent.conf
+echo "pinentry-program ${PINENTRY_BIN}" >> ~/.gnupg/gpg-agent.conf
 gpgconf --kill gpg-agent
 ```
 
