@@ -39,10 +39,11 @@ gpg --armor --export ${my_email_address} | pbcopy
 git config --global user.email ${my_email_address} # same one used during key generation
 git config --global user.name ${my_username}
 git config --global commit.gpgsign true
+sed -i '' '/^export GPG_TTY/d' ~/.zshrc
 echo export GPG_TTY=\$\(tty\) >> ~/.zshrc
 source ~/.zshrc
 PINENTRY_BIN=$(whereis -q pinentry-mac)
-sed -i '' '/pinentry-program/d' ~/.gnupg/gpg-agent.conf
+sed -i '' '/^pinentry-program/d' ~/.gnupg/gpg-agent.conf
 echo "pinentry-program ${PINENTRY_BIN}" >> ~/.gnupg/gpg-agent.conf
 gpgconf --kill gpg-agent
 ```
