@@ -56,6 +56,8 @@ Establish how the success is going to be measured. Once implemented, the effect 
 
 Include any links to existing epics, decisions, dependencies, risks, and policies related to this decision record. This section could also include any further links to configuration items within the project or the codebase, signposting to the areas of change.
 
+It is important that if the decision is sub-optimal or the choice is tactical or misaligned with the strategic directions the risk related to it is identified and clearly articulated. As a result of that, the expectation is that a [Tech Debt](./tech-debt.md) record is going to be created on the backlog.
+
 ## Tags
 
 `#availability|#security|#resilience|#scalability|#maintainability|#accessibility|…` these tags are intended to be operational, structural or cross-cutting architecture characteristics to link to related decisions.
