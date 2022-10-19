@@ -13,22 +13,30 @@ Essentially, we want to avoid the NHS facing [potentially dire consequences](htt
 
 ## How to get started
 
-If your team isn't doing secrets scanning at all yet, the fundamental first step is to understand the current state of the art. Use the [macOS](README-mac-workstation.md), [Linux/WSL](README-linux-workstation.md) or [Windows](README-windows-workstation.md) guides to set up and run Git-Secrets for a nominated team member. Run the tooling, and ascertain whether there's any immediate actions to be taken.
+If your team isn't doing secrets scanning at all yet, the fundamental first step is to understand the current state of the art. Use the following guides to set up and run Git-Secrets for a nominated team member:
 
-## Getting to green
+* [macOS](README-mac-workstation.md)
+* [Linux/WSL](README-linux-workstation.md)
+* [Windows](README-windows-workstation.md)
+
+Run the tooling, and ascertain whether there's any immediate actions to be taken.
+
+## Ongoing checks
 
 Once you've verified there's no urgent actions on your code, the next steps towards getting to green are:
 
 1. Ensure every team member is doing local scans. Stopping secrets before code has been committed is cheap, removing them from git history is expensive.
 2. Run these same scripts as part of your deployment pipelines as a second line of defence.
 
-## Consider using OIDC instead of secrets
+## Other ways of keeping credentials out of your code
+
+### Consider using OIDC Authentication instead of passwords
 
 OpenID Connect allows federated authentication from pipeline workflows to AWS and Azure without storing credentials in repository secrets at all, so no expiry to manage. GitHub documentation for achieving this for:
 
-- [AWS](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services)
-- [Azure](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-azure)
-- [Google](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-google-cloud-platform)
+* [AWS](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services)
+* [Azure](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-azure)
+* [Google](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-google-cloud-platform)
 
 Configuration for OIDC is light. See the below example GitHub Actions workflow excerpt which connects to both AWS and Azure:
 
@@ -36,13 +44,13 @@ Configuration for OIDC is light. See the below example GitHub Actions workflow e
 steps:
   - name: Checkout
     uses: actions/checkout@v3
-
+​
   - name: Configure AWS STS credentials via OIDC
     uses: aws-actions/configure-aws-credentials@v1
     with:
       role-to-assume: ${{ secrets.AWS_ROLE_ID }}
       aws-region: eu-west-2
-
+​
   - name: Configure Azure identity token via OIDC
     uses: azure/login@v1
     with:

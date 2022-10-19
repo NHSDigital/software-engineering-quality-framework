@@ -1,8 +1,6 @@
 # Setup (Mac only)
 
-Ensure you have the pre-commit framework set up first:
-
-https://pre-commit.com/
+Ensure you have the [pre-commit framework](https://pre-commit.com/) set up first.
 
 ## TL;DR
 
@@ -33,18 +31,18 @@ Then:
 
 Next time you do a commit the git secrets hook should be invoked.
 
-# Custom configuration (per repo / per service team)
+## Custom configuration (per repo / per service team)
 
-* Add individual regex expressions to nhsd-rules-deny.txt
-* Add regex rules files within [pre-commit (mac) script](pre-commit-mac.sh) e.g.
+* Add individual regex expressions to the existing `repo_root/nhsd-git-secrets-nhsd-rules-deny.txt` file
+* Or, create your own file for regex rules and add it as a provider within the [pre-commit script](pre-commit.sh) e.g.:
 
  `git secrets --add-provider -- cat git-secrets/nhsd-rules-deny.txt`
 
-* Add file/dir excludes within .gitallowed, e.g. `.*terraform.tfstate.*:*`
+* Add file/dir excludes within the `repo_root/.gitallowed` file, e.g. `.*terraform.tfstate.*:*`
 
 * Control full scan vs staged files scan within [pre-commit (mac) script](pre-commit-mac.sh) by commenting/uncommenting the mode to run e.g.:
 
- ```
+ ```bash
  # Just scan the files changed in this commit
  # git secrets --pre_commit_hook
 
@@ -52,14 +50,15 @@ Next time you do a commit the git secrets hook should be invoked.
  git secrets --scan
  ```
 
-# Testing-a
+## Testing-a
 
 * make sure you have done git add if you have changed anything within git-Secrets
 * Run: `pre-commit run git-secrets`
 
-# Docker version
+## Docker version
 
 Alternatively, you might find this [dockerfile](nhsd-git-secrets.dockerfile) convenient, which:
+
 1. Copies your source code into a docker image
 1. Downloads latest version of the secret scanner tool
 1. Downloads latest regex patterns from software-engineering-quality-framework
