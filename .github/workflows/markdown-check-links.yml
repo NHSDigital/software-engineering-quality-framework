@@ -10,12 +10,12 @@ on:
 jobs:
   markdown-check-links:
     runs-on: ubuntu-latest
+    env:
+      CONFIG_FILE: .github/workflows/markdown-check-links.json
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - uses: gaurav-nelson/github-action-markdown-link-check@9710f0fec812ce0a3b98bef4c9d842fc1f39d976 # 1.0.13
-        env:
-          CONFIG_FILE: .github/workflows/markdown-check-links.json
         with:
           use-quiet-mode: 'yes'
