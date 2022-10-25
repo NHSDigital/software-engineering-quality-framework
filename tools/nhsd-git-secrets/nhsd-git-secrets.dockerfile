@@ -44,7 +44,7 @@ WORKDIR /secrets-scanner/source
 RUN git init
 
 RUN echo "Downloading regex files from engineering-framework"
-RUN curl https://codeload.github.com/NHSDigital/software-engineering-quality-framework/tar.gz/main | tar -xz --strip=3 software-engineering-quality-framework-main/tools/nhsd-git-secrets/nhsd-rules-linux-mac.txt
+RUN curl https://codeload.github.com/NHSDigital/software-engineering-quality-framework/tar.gz/main | tar -xz --strip=3 software-engineering-quality-framework-main/tools/nhsd-git-secrets/nhsd-rules-deny.txt
 
 RUN echo "Copying allowed secrets list"
 COPY .gitallowed .
@@ -53,7 +53,7 @@ RUN echo .gitallowed
 # Register additional providers: adds AWS by default
 RUN echo "Configuring secrets scanner"
 RUN /secrets-scanner/git-secrets --register-aws
-RUN /secrets-scanner/git-secrets --add-provider -- cat nhsd-rules-linux-mac.txt
+RUN /secrets-scanner/git-secrets --add-provider -- cat nhsd-rules-deny.txt
 
 # build will fail here, if secrets are found
 RUN echo "Running scan..."
