@@ -176,7 +176,7 @@ You may wish to score each individual component or system separately for these a
 - Our automated checks focus on individual components and the contracts between them, not on testing the whole system together.
 - We use stubs to insulate our tests from other components and systems &mdash; always for automated tests, sometimes for exploratory testing.
 - We understand user needs and non-functional requirements and our tests prove they are being met.
-  - e.g. accessibility, browser compatibility, performance, capacity, resilience.
+  - e.g. [accessibility](https://nhsdigital.github.io/accessibility-checklist/), browser compatibility, performance, capacity, resilience.
 - Our components have versioned APIs.
 - Breaking changes are detected and clearly indicated.
   - e.g. using Consumer-Driven Contract testing and semantic versioning.
