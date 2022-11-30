@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "[1/5] Cloning Git Secrets"
 installPath="$HOME/git-secrets-temp"
 if [ -d "$installPath" ];
