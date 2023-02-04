@@ -26,7 +26,7 @@ This contains cloneable scripts, docker files, and pipeline steps that can be ad
 The entire team should familiarise themselves with the Framework's [Principles](principles.md).
 And with the common [Patterns](patterns) that help achieve those Principles.
 
-Specialists should familiarise themselves with [best Practices](practices) in their areas.
+Specialists should familiarise themselves with [best Practices](practices) in their areas. Teams building APIs should refer to the [policies and best practice guidance](https://digital.nhs.uk/developer/guides-and-documentation/api-policies-and-best-practice) on building APIs.
 
 Run a quality review every 3 months to keep track of progress.
 
