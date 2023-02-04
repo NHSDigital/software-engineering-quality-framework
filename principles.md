@@ -92,7 +92,7 @@ The following practices support the principle of building quality in.
 
 **Gather knowledge.** Release a minimum feature set early for evaluation and feedback and continue to iterate and get feedback. Use continuous integration and live service monitoring and analytics to gain insight on code and system health.
 
-**Share knowledge.** e.g. pair programming, code reviews, show and tell.
+**Share knowledge.** e.g. pair programming, code reviews, show and tell. Consider whether encoding knowledge in tools would assist other members of your team, for example building a VSCode extension to provide contextual information and tips for using a bespoke test harness.
 
 **Record knowledge.** e.g. tests, self-documenting code, self-documenting system (e.g. [OpenAPI](https://swagger.io/resources/open-api/)), documentation &mdash; in that order.
 
