@@ -6,4 +6,4 @@ These notes are part of a broader set of [principles](../principles.md). See als
 
 ## Details
 
-NHSDigital has published guidance on [policies and best practices](https://digital.nhs.uk/developer/guides-and-documentation/api-policies-and-best-practice) around APIs. For projects using APIs, development and engineerng teams should review these guides to assist in building good quality, easy to use healthcare APIs.
+NHSDigital has published guidance on [policies and best practices](https://digital.nhs.uk/developer/guides-and-documentation/api-policies-and-best-practice) around APIs. For projects using APIs, development and engineering teams should review these guides to assist in building good quality, easy to use healthcare APIs.
