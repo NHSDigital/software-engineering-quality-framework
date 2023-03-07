@@ -1,6 +1,16 @@
-# Decision Title - ADR-XXX: ADR (Any Decision Record) Template
+# ADR-XXX: ADR (Any Decision Record) Template
 
-- [Decision Title - ADR-XXX: ADR (Any Decision Record) Template](#decision-title---adr-xxx-adr-any-decision-record-template)
+>|              | |
+>| ------------ | --- |
+>| Date         | `dd/mm/YYYY` _when the decision was last updated_ |
+>| Status       | `RFC by dd/mm/YYYY, Proposed, In Discussion, Pending Approval, Withdrawn, Rejected, Accepted, Deprecated, ..., Superseded by ADR-XXX or Supersedes ADR-XXX` |
+>| Deciders     | `Tech Radar, Engineering, Architecture, Solution Assurance, Clinical Assurance, Technical Review and Governance, Information Governance, Cyber Security, Live Services Board,` ... |
+>| Significance | `Structure, Nonfunctional characteristics, Dependencies, Interfaces, Construction techniques,` ... |
+>| Owners       | |
+
+---
+
+- [ADR-XXX: ADR (Any Decision Record) Template](#adr-xxx-adr-any-decision-record-template)
   - [Context](#context)
   - [Decision](#decision)
     - [Assumptions](#assumptions)
@@ -11,12 +21,8 @@
   - [Consequences](#consequences)
   - [Compliance](#compliance)
   - [Notes](#notes)
+  - [Actions](#actions)
   - [Tags](#tags)
-
-- `Date`: `dd/mm/YYYY` when the decision was last updated
-- `Status`: `RFC by dd/mm/YYYY | Proposed | Rejected | Accepted | Deprecated | ... | Superseded by ADR-XXX | Supersedes ADR-XXX`
-- `Deciders`: List all the key decision makers and state whether it is an internal decision or it requires additional endorsement or approval of an external group or governing body like `Tech Radar | Engineering | Architecture | Solution Assurance | Clinical Assurance | Technical Review and Governance | Information Governance | Cyber Security | Live Services Board` or any other
-- `Significance`:  `Structure | Nonfunctional characteristics | Dependencies | Interfaces | Construction techniques | ...`
 
 ## Context
 
@@ -34,11 +40,11 @@ List the decision drivers that motivate this change or course of action. This ma
 
 ### Options
 
-Consider a comprehensive set of alternative options.
+Consider a comprehensive set of alternative options; provide weighting if applicable.
 
 ### Outcome
 
-State the decision outcome as a result of taking into account all of the above.
+State the decision outcome as a result of taking into account all of the above. Is it a reversible or irreversible decision?
 
 ### Rationale
 
@@ -47,6 +53,8 @@ Provide a rationale for the decision that is based on weighing the options to en
 ## Consequences
 
 Describe the resulting context, after applying the decision. All the identified consequences should be listed here, not just the positive ones. Any decision comes with many implications. For example, it may introduce a need to make other decisions as an effect of cross-cutting concerns; it may impact structural or operational characteristics of the software, and influence non-functional requirements; as a result, some things may become easier or more difficult to do because of this change. What are the trade-offs?
+
+What are the conditions under which this decision no longer applies or becomes irrelevant?
 
 ## Compliance
 
@@ -58,6 +66,11 @@ Include any links to existing epics, decisions, dependencies, risks, and policie
 
 It is important that if the decision is sub-optimal or the choice is tactical or misaligned with the strategic directions the risk related to it is identified and clearly articulated. As a result of that, the expectation is that a [Tech Debt](./tech-debt.md) record is going to be created on the backlog.
 
+## Actions
+
+- [x] name, date by, action
+- [ ] name, date by, action
+
 ## Tags
 
-`#availability|#security|#resilience|#scalability|#maintainability|#accessibility|…` these tags are intended to be operational, structural or cross-cutting architecture characteristics to link to related decisions.
+`#availability|#scalability|#elasticity|#performance|#reliability|#resilience|#maintainability|#testability|#deployability|#modularity|#simplicity|#security|#data||#cost#usability|#accessibility|…` these tags are intended to be operational, structural or cross-cutting architecture characteristics to link to related decisions.
