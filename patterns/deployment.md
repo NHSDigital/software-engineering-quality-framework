@@ -12,7 +12,7 @@ As part of the development process, a [CI/CD pipeline](../practices/continuous-i
 
 ### Immutable signed deployment artefacts
 
-Following a merge into the main branch development teams must ensure that all appropriate tests are performed, once all tests have passed a [deployment artefact](../practices/continuous-integration.md#deploy-what-you-tested) should be created if applicable. This means that there is a fully tested, known-good, signed deployment artefact that can be used to confidently deploy to other environments. These artefacts should be immutable, tagged, signed and stored in a location where they are accessible to all environments (e.g., GitHub or an s3 bucket). 
+Following a merge into the main branch development teams must ensure that all appropriate tests are performed, once all tests have passed a [deployment artefact](../practices/continuous-integration.md#deploy-what-you-tested) should be created if applicable. This means that there is a fully tested, known-good, signed deployment artefact that can be used to confidently deploy to other environments. These artefacts should be immutable, tagged, signed and stored in a location where they are accessible to all environments (e.g., GitHub or an s3 bucket).
 
 ### Promotion through path-to-live environments
 
@@ -32,7 +32,7 @@ Finally, development teams must ensure that no lower environment (e.g., dev, tes
 
 ## Continuous deployment vs approval gateways
 
-The holy grail of CI/CD is continuous deployment, every Pull Request completed in dev gets promoted through environments and tests automatically until it is automatically deployed to production. 
+The holy grail of CI/CD is continuous deployment, every Pull Request completed in dev gets promoted through environments and tests automatically until it is automatically deployed to production.
 
 However this presents challenges due to clinical, security, service and other approval requirements, and the release windows assigned to specific products. In these situations development teams should consider Continuous Delivery, and automatically build artefacts that are ready to deploy to production when the RFC for deployment is approved. As confidence grows teams should look sto migrate to more frequent smaller deployments in discussion with their Live service teams.
 
@@ -102,9 +102,9 @@ The following table includes steps that development teams should consider when p
 | e | Soak period complete. | CI tooling | CI |
 | 22 | Release is marked as successful. Update RFC | CI tooling | CI |
 
-### Failure mode.
+### Failure mode
 
 If initial smoke tests fail OR monitoring identifies increased failures / other indicator OR Further smoke tests fail:
+
 1. Traffic is migrated back to previously healthy leg.
 1. Release is marked as failed.
-
