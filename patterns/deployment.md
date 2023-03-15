@@ -12,7 +12,7 @@ As part of the development process, a [CI/CD pipeline](../practices/continuous-i
 
 ### Immutable signed deployment artefacts
 
-Following a merge into the main branch development teams must ensure that all appropriate tests are performed, once all tests have passed a [deployment artefact](../practices/continuous-integration.md#deploy-what-you-tested) should be created if applicable. This means that there is a fully tested, known-good, signed deployment artefact that can be used to confidently deploy to other environments. These artefacts should be immutable, tagged, signed and stored in a location where they are accessible to all environments (e.g., GitHub or an s3 bucket).
+Following a merge from your feature branch development teams must ensure that all appropriate tests are performed, once all tests have passed a [deployment artefact](../practices/continuous-integration.md#deploy-what-you-tested) should be created if applicable. This means that there is a fully tested, known-good, signed deployment artefact that can be used to confidently deploy to other environments. These artefacts should be immutable, tagged, signed and stored in a location where they are accessible to all environments (e.g., GitHub or an s3 bucket).
 
 ### Promotion through path-to-live environments
 
@@ -24,19 +24,19 @@ These artefacts should be used to deploy to environments on your path-to-live, a
 1. Non functional / pre-production / live-like environment
 1. Production environment
 
-The pre-production environment must be used to test deployments to ensure that the new release will go smoothly into the production environment.
+Manual deployments should be restricted whereever possible, even in development environments automation of deployments and the ability to rapidly spin up and down environments is key, manua deployments can lead to infrastructure being left running and potential issues with deployments that are costly to identify and resolve. The pre-production environment must be used to test deployments to ensure that the new release will go smoothly into the production environment.
 
 Other things worth considering are whether the team requires a different testing environment for any manual/accessibility testing (but think how this can be automated in the CI/CD pipeline). Does the project require supplier testing against the latest version before it is promoted to production, and is a separate environment required for this?
 
-Finally, development teams must ensure that no lower environment (e.g., dev, test) has access to a higher environment (e.g., preprod/production). It is an anti-pattern to push artefacts up to a higher environment from a lower one, or to run a deployment runner instance in dev that deploys to production. Development teams must always use a pull model from their higher-level environments.
+Finally, development teams must ensure that no lower environment (e.g., dev, test) has access to a higher environment (e.g., preprod/production). It is an anti-pattern to push artefacts up to a higher environment from a lower one, or to run a deployment runner instance in dev that deploys to production. Development teams must always use a pull model from their higher-level environments. Development teams should adopt a "management" account to perform deployment / orchestration activities to prevent cross environment communication / interactions.
 
 ## Continuous deployment vs approval gateways
 
-The holy grail of CI/CD is continuous deployment, every Pull Request completed in dev gets promoted through environments and tests automatically until it is automatically deployed to production.
+The target approach of CI/CD is continuous deployment, every Pull Request completed in dev gets promoted through environments and tests automatically until it is automatically deployed to production.
 
 However this presents challenges due to clinical, security, service and other approval requirements, and the release windows assigned to specific products. In these situations development teams should consider Continuous Delivery, and automatically build artefacts that are ready to deploy to production when the RFC for deployment is approved. As confidence grows teams should look sto migrate to more frequent smaller deployments in discussion with their Live service teams.
 
-Further, teams must implement approval gateways in their CD pipeline, and assess building of integration with service management tools to automate releases to production during the release window once approved.
+Further, teams must implement approval gateways in their CD pipeline, and assess building of integration with service management tools to automate releases to production during the release window once approved. These approval gateways may just include code review depending on the context and risks for the specific service.
 
 ## Manual deployments
 
@@ -46,11 +46,11 @@ For example, one possible way of starting manual deployments in AWS (e.g., rolli
 
 ## Zero-downtime deployments
 
-Development teams must build systems and deployment patterns in such a way as to achieve zero downtime deployments, where this is not required, due to service levels and complexity teams should highlight and ensure the decision has been ratified through a Key Architectural Decision document being presented at appropriate boards.
+Development teams must build systems and deployment patterns in such a way as to achieve zero downtime deployments, where this is not required, due to service levels and complexity teams should highlight and ensure the decision has been ratified through a Key Architectural Decision document.
 
 To achieve zero downtime deployments the implemented deployment strategy must be “Blue-Green”.
 
-Blue-green deployments are a technique for safely rolling out updates to a software application. It involves maintaining two identical production environments and ensuring that traffic is routed to only one of these environments. At deployment time, one of the environments is “Live” and receiving all production traffic, while the other environment is idle. At deployment time the release is tested and deployed to the idle environment (known as the green environment) (some teams may elect to deploy to the live environment keeping the idle environment available as a fall back). Once initial smoke tests have been completed the production traffic can be routed to the green environment with the blue environment becoming idle. The new release should be allowed to soak for a defined period, if any issues arise with the release, it can be quickly rolled back by routing traffic away from the green environment back to the idle blue environment.
+Blue-green deployments are a technique for safely rolling out updates to a software application. It involves maintaining two identical production environments (or distinct components, e.g. by cylcing through nodes and deploying one at a time while the service continues to handle live load and bringing the new updated services into load in a controlled manner) and ensuring that traffic is routed to only one of these environments. At deployment time, one of the environments is “Live” and receiving all production traffic, while the other environment is idle. At deployment time the release is tested and deployed to the idle environment (known as the green environment) (some teams may elect to deploy to the live environment keeping the idle environment available as a fall back). Once initial smoke tests have been completed the production traffic can be routed to the green environment with the blue environment becoming idle. The new release should be allowed to soak for a defined period, if any issues arise with the release, it can be quickly rolled back by routing traffic away from the green environment back to the idle blue environment. Development teams should look to run automated tests, through their pipeline, following the deploy to build confidence that the deployment was successful.
 
 After a suitable period, the blue environment can then be uplifted to the latest release, or alternatively stood down until the next release is ready.
 
