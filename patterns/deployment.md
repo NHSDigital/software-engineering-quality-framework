@@ -24,9 +24,9 @@ These artefacts should be used to deploy to environments on your path-to-live, a
 1. Non functional / pre-production / live-like environment
 1. Production environment
 
-Manual deployments should be restricted whereever possible, even in development environments automation of deployments and the ability to rapidly spin up and down environments is key, manua deployments can lead to infrastructure being left running and potential issues with deployments that are costly to identify and resolve. The pre-production environment must be used to test deployments to ensure that the new release will go smoothly into the production environment.
+Manual deployments should be restricted whereever possible, even in development environments automation of deployments and the ability to rapidly spin up and down environments is key, manual deployments can lead to infrastructure being left running and potential issues with deployments that are costly to identify and resolve. The pre-production environment must be used to test deployments to ensure that the new release will go smoothly into the production environment.
 
-Other things worth considering are whether the team requires a different testing environment for any manual/accessibility testing (but think how this can be automated in the CI/CD pipeline). Does the project require supplier testing against the latest version before it is promoted to production, and is a separate environment required for this?
+Other things worth considering are whether the team requires a different testing environment for any manual/accessibility testing (but think how this can be automated in the CI/CD pipeline). Does the project require supplier testing against the latest version before it is promoted to production, and is a separate environment required for this? Development teams should also consider the implications on their spend of multiple environments, particularly where there is a high reliance on Cloud-based testing environments in large Programmes. Teams should implement controls to shut down environments and should give particular thought to the frequency and duration of ephemeral environments. 
 
 Finally, development teams must ensure that no lower environment (e.g., dev, test) has access to a higher environment (e.g., preprod/production). It is an anti-pattern to push artefacts up to a higher environment from a lower one, or to run a deployment runner instance in dev that deploys to production. Development teams must always use a pull model from their higher-level environments. Development teams should adopt a "management" account to perform deployment / orchestration activities to prevent cross environment communication / interactions.
 
@@ -34,7 +34,7 @@ Finally, development teams must ensure that no lower environment (e.g., dev, tes
 
 The target approach of CI/CD is continuous deployment, every Pull Request completed in dev gets promoted through environments and tests automatically until it is automatically deployed to production.
 
-However this presents challenges due to clinical, security, service and other approval requirements, and the release windows assigned to specific products. In these situations development teams should consider Continuous Delivery, and automatically build artefacts that are ready to deploy to production when the RFC for deployment is approved. As confidence grows teams should look sto migrate to more frequent smaller deployments in discussion with their Live service teams.
+However this presents challenges due to clinical, security, service and other approval requirements, and the release windows assigned to specific products. In these situations development teams should consider Continuous Delivery, and automatically build artefacts that are ready to deploy to production when the RFC for deployment is approved. As confidence grows teams should look to migrate to more frequent smaller deployments in discussion with their Live service teams.
 
 Further, teams must implement approval gateways in their CD pipeline, and assess building of integration with service management tools to automate releases to production during the release window once approved. These approval gateways may just include code review depending on the context and risks for the specific service.
 
@@ -59,6 +59,8 @@ Utilising this mechanism means that teams can rapidly fail away from an issue as
 ## Roll-back strategies
 
 Engineering teams should consider the potential impact to their service of a failed deployment and the appropriate mechanisms to ensure they are able to revert a deployment quickly and easily. This failed deployment mechanism should ideally be tested regularly as part of the test lifecycle. Ideally this mechanism would be to revert the service to the leg that has not been deployed to. In some cases, teams may decide that it is not possible to achieve a roll back, in these cases the deployment must be flagged with Service management and the Engineering management as a “High Risk” deployment. Teams should expect to justify why it is not possible to provide a rollback option and should consider alternative risk mitigation activities.
+
+Particular care should be taken around deployments for serverless architectures with a thought being given to idempotent data workflows and clear version control strategies. Other strategies to reduce the risk in such situations are more frequent and smaller changes.
 
 ## Example deployment pipeline stages
 
@@ -108,3 +110,7 @@ If initial smoke tests fail OR monitoring identifies increased failures / other 
 
 1. Traffic is migrated back to previously healthy leg.
 1. Release is marked as failed.
+
+### Game days and chaos testing
+
+Development teams should look at implementing regular game days to cover how their system and their teams handle failures, these game days should consider the release and deployment process as this is a key window for issues to arise in and can complicate investigations due to the impact of the change being deployed. Teams should also explore and implement [Chaos Engineering](../practices/testing.md#other-tools-to-consider) techniques.
