@@ -73,4 +73,4 @@ It is important that if the decision is sub-optimal or the choice is tactical or
 
 ## Tags
 
-`#availability|#scalability|#elasticity|#performance|#reliability|#resilience|#maintainability|#testability|#deployability|#modularity|#simplicity|#security|#data||#cost|#usability|#accessibility|…` these tags are intended to be operational, structural or cross-cutting architecture characteristics to link to related decisions.
+`#availability|#scalability|#elasticity|#performance|#reliability|#resilience|#maintainability|#testability|#deployability|#modularity|#simplicity|#security|#data|#cost|#usability|#accessibility|…` these tags are intended to be operational, structural or cross-cutting architecture characteristics to link to related decisions.
