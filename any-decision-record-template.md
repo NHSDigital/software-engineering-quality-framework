@@ -50,6 +50,8 @@ State the decision outcome as a result of taking into account all of the above. 
 
 Provide a rationale for the decision that is based on weighing the options to ensure that the same questions are not going to be asked again and again unless the decision needs to be superseded.
 
+For non-trivial decisions a comparison table can be useful for the reviewer. Decision criteria down one side, options across the top. You'll likely find decision criteria come from the Drivers section above. Effort can be an important driving factor.  You may have an intuitive feel for this, but reviewers will not. T-shirt sizing the effort for each option may help communicate.
+
 ## Consequences
 
 Describe the resulting context, after applying the decision. All the identified consequences should be listed here, not just the positive ones. Any decision comes with many implications. For example, it may introduce a need to make other decisions as an effect of cross-cutting concerns; it may impact structural or operational characteristics of the software, and influence non-functional requirements; as a result, some things may become easier or more difficult to do because of this change. What are the trade-offs?
