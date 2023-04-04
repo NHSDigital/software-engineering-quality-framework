@@ -2,6 +2,8 @@
 
 - [Dependency Scan](#dependency-scan)
   - [Problem](#problem)
+    - [Software Bill of Materials](#software-bill-of-materials)
+    - [Standards](#standards)
   - [Design](#design)
   - [Tools](#tools)
     - [syft](#syft)
@@ -11,7 +13,7 @@
     - [Recipe 1b: Filesystem](#recipe-1b-filesystem)
     - [Recipe 2: Using Docker images, Makefile and shell scripting](#recipe-2-using-docker-images-makefile-and-shell-scripting)
     - [Recipe 3: Using GitHub Workflow Action](#recipe-3-using-github-workflow-action)
-    - [Recipe 4: Using Jenksin Pipeline](#recipe-4-jenkins-pipeline)    
+    - [Recipe 4: Jenkins Pipeline](#recipe-4-jenkins-pipeline)
   - [How It Works](#how-it-works)
   - [Further Comments](#further-comments)
 
@@ -19,7 +21,7 @@
 
 The dependency scan feature can automatically find security vulnerabilities in your dependencies while you are developing and testing your applications. For example, dependency scanning lets you know if your application uses an external (open source) library that is known to be vulnerable. You can then take action to protect your application.
 
-**Software Bill of Materials**
+### Software Bill of Materials
 
 A Software Bill of Materials (SBOM) is a complete, formally structured list of components, libraries, and modules that are required to build a given piece of software.  These components can be open source or proprietary, free or paid, and widely available or have restricted access.  An SBOM provides a machine-readable list of the libraries and components, their versions and related vulnerabilities.
 
@@ -29,12 +31,12 @@ An SBOM can be used to monitor the security of each application post-deployment 
 
 Each time a build artifact is generated an SBOM can be produced and associated with that artifact.  Even though the artifacts never changes, it is important to continually scan for vulnerabilities as they could be discovered and published after the initial image creation.
 
-***Standards***
+### Standards
 
 An SBOM can exist in a simple human-readable output such as CSV, TSV or JSON.  However there are two main industry standards for SBOMs:
 
 - **[CycloneDX](https://cyclonedx.org/)** is a lightweight SBOM standard useful for application security and supply chain component analysis. CycloneDX is an open source project that originated in the OWASP community.
-- **[SPDX](https://spdx.dev/)** is an ISO standard hosted by the Linux Foundation, which outlines the components, licenses, and copyrights associated with a software package.
+- **[SPDX](https://spdx.dev/)** is an ISO standard hosted by the Linux Foundation, which outlines the components, licences, and copyrights associated with a software package. This is the format that meets all the requirements for generating the SBOM as it includes the dependencies' licencing information.
 
 ***Audience***
 
@@ -60,18 +62,18 @@ A vulnerability scanner for container images and filesystems. Works with Syft, S
 
 ### Recipe 1a: Docker images as targets
 
-```bash
+```shell
 # Catalog a container image archive (from the result of `docker image save ...`, `podman save ...`, or `skopeo copy` commands)
 $ docker save alpine:3.11.3 -o alpine.tar
 
 # Specify an output format and file name
 $ syft alpine.tar -o cyclonedx-json=alpine.cdx.json
- ✔ Parsed image            
+ ✔ Parsed image
  ✔ Cataloged packages      [14 packages]
 
 ```
 
-```bash
+```shell
 # Convert cyclonedx-json to human readable format using json parser
 $ cat alpine.cdx.json  | jq -r '(["name", "type", "version"] | (.,map(length*"-"))), (.components[] | [.name, .type, .version]) | @tsv ' | column -t
 name                    type              version
@@ -93,23 +95,23 @@ zlib                    library           1.2.11-r3
 alpine                  operating-system  3.11.3
 ```
 
-```bash
+```shell
 # Use SBOM as input to vulnerability scan
 $ grype sbom:./alpine.cdx.json --fail-on CRITICAL
  ✔ Vulnerability DB        [no update available]
  ✔ Scanned image           [71 vulnerabilities]
-NAME          INSTALLED  FIXED-IN    TYPE  VULNERABILITY   SEVERITY 
-apk-tools     2.10.4-r3  2.10.6-r0   apk   CVE-2021-30139  High      
-apk-tools     2.10.4-r3  2.10.7-r0   apk   CVE-2021-36159  Critical  
-busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42386  High      
-busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42383  High      
-busybox       1.31.1-r9  1.31.1-r10  apk   CVE-2021-28831  High      
-busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42378  High      
-busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42380  High      
-busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42382  High      
-busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42385  High      
-busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42381  High      
-busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42374  Medium    
+NAME          INSTALLED  FIXED-IN    TYPE  VULNERABILITY   SEVERITY
+apk-tools     2.10.4-r3  2.10.6-r0   apk   CVE-2021-30139  High
+apk-tools     2.10.4-r3  2.10.7-r0   apk   CVE-2021-36159  Critical
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42386  High
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42383  High
+busybox       1.31.1-r9  1.31.1-r10  apk   CVE-2021-28831  High
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42378  High
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42380  High
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42382  High
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42385  High
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42381  High
+busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42374  Medium
 ...
 1 error occurred:
         * discovered vulnerabilities at or above the severity threshold
@@ -118,15 +120,15 @@ busybox       1.31.1-r9  1.31.1-r11  apk   CVE-2021-42374  Medium
 
 ### Recipe 1b: Filesystem
 
-```bash
+```shell
 # Catalog a folder
 $ syft ./python -o cyclonedx-json=python.cdx.json
- ✔ Indexed python          
+ ✔ Indexed python
  ✔ Cataloged packages      [22 packages]
 
 ```
 
-```bash
+```shell
 # Convert SBOM to human readable format using json parser
 $ cat python.cdx.json  | jq -r '(["name", "type", "version"] | (.,map(length*"-"))), (.components[] | [.name, .type, .version]) | @tsv ' | column -t
 name                type     version
@@ -156,26 +158,26 @@ urllib3             library  1.26.9
 
 ```
 
-```bash
+```shell
 # Scan a SBOM generated from file systems
 $ grype sbom:./python.cdx.json --fail-on CRITICAL
  ✔ Vulnerability DB        [no update available]
  ✔ Scanned image           [7 vulnerabilities]
-NAME  INSTALLED  FIXED-IN  TYPE    VULNERABILITY        SEVERITY 
-lxml  4.6.0      4.6.2     python  GHSA-pgww-xf46-h92r  Medium    
-lxml  4.6.0      4.9.1     python  GHSA-wrxv-2j5q-m38w  Medium    
-lxml  4.6.0                python  CVE-2020-27783       Medium    
-lxml  4.6.0                python  CVE-2021-28957       Medium    
-lxml  4.6.0                python  CVE-2021-43818       High      
-lxml  4.6.0      4.6.5     python  GHSA-55x5-fj6c-h6m8  High      
-lxml  4.6.0      4.6.3     python  GHSA-jq4v-f5q6-mjqq  Medium      
+NAME  INSTALLED  FIXED-IN  TYPE    VULNERABILITY        SEVERITY
+lxml  4.6.0      4.6.2     python  GHSA-pgww-xf46-h92r  Medium
+lxml  4.6.0      4.9.1     python  GHSA-wrxv-2j5q-m38w  Medium
+lxml  4.6.0                python  CVE-2020-27783       Medium
+lxml  4.6.0                python  CVE-2021-28957       Medium
+lxml  4.6.0                python  CVE-2021-43818       High
+lxml  4.6.0      4.6.5     python  GHSA-55x5-fj6c-h6m8  High
+lxml  4.6.0      4.6.3     python  GHSA-jq4v-f5q6-mjqq  Medium
 ```
 
 ### Recipe 2: Using Docker images, Makefile and shell scripting
 
 Makefile
 
-```bash
+```shell
 generate-sbom: ### Run SBOM generator - mandatory: SCHEME=[file|directory|image|registry]; optional: ARGS=[syft args]
   docker run --interactive --tty --rm \
     --volume /var/run/docker.sock:/var/run/docker.sock \
@@ -199,7 +201,7 @@ scan-vulnerabilities: ### Run vulnerability scanner - mandatory: SCHEME=[sbom|fi
 
 Run from a command-line
 
-```bash
+```shell
 # Scan the repository
 
 $ make generate-sbom SCHEME="dir:./" ARGS="-o cyclonedx-json=sbom-repo.cdx.json"
@@ -212,7 +214,7 @@ $ make scan-vulnerabilities SCHEME="sbom:./sbom-repo.cdx.json"
 No vulnerabilities found
 ```
 
-```bash
+```shell
 # Scan an image
 
 $ make generate-sbom SCHEME="alpine:3.11.3" ARGS="-o cyclonedx-json=sbom-image.cdx.json"
@@ -342,9 +344,9 @@ jobs:
 
 ### Recipe 4: Jenkins Pipeline
 
-A jenkins pipeline that builds a container image archive, generates an SBOM, commits to a git reposity, then scans for vulnerabilities.
+A Jenkins pipeline that builds a container image archive, generates an SBOM, commits to a git repository, then scans for vulnerabilities.
 
-```
+```jenkinsfile
 # commits SBOM to repository
 pipeline {
     agent {
@@ -352,7 +354,7 @@ pipeline {
     }
     options {
         buildDiscarder(logRotator(numToKeepStr: '3', artifactNumToKeepStr: '3'))
-    }        
+    }
     environment {
         githubCredential = 'jenkins-git'
         SOURCE_DIR = "${WORKSPACE}/src"
@@ -385,7 +387,7 @@ pipeline {
                         sshagent([githubCredential]) {
                             sh """
                                 export GIT_SSH_COMMAND="ssh -oStrictHostKeyChecking=no"
-                                
+
                                 git checkout main
                                 if ! [ -d .sbom ]; then mkdir .sbom; fi
 
@@ -400,7 +402,7 @@ pipeline {
                     }
                 }
             }
-        }           
+        }
         stage('Grype') {
             steps {
                 sh 'grype sbom:./alpine.cdx.json --fail-on CRITICAL'
@@ -410,6 +412,7 @@ pipeline {
 }
 
 ```
+
 ## How It Works
 
 - Syft generates SBOMs for container images, filesystems & archives to discover packages and libraries
@@ -421,6 +424,6 @@ pipeline {
 
 What's next
 
-- Integrate SBOM into CI/CD piplines to provide early visibility of application dependencies.
+- Integrate SBOM into CI/CD pipelines to provide early visibility of application dependencies.
 - Consider where SBOM artifacts are stored, i.e committed and tagged in the source repository.
 - Use SBOM to continually scan for new vulnerabilities as they are discovered.
