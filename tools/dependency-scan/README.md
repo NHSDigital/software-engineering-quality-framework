@@ -42,7 +42,7 @@ An SBOM can exist in a simple human-readable output such as CSV, TSV or JSON.  H
 
 SBOMs play a critical role for security teams, especially when it comes to vulnerability scanning. It is much quicker and easier to scan a library of SBOMs than it is to scan the entire infrastructure.  SBOMs can also be leveraged by security teams to prioritise issues for remediation based on their location and severity.
 
-Development teams use SBOMS to track the open source, commercial, and custom-built software components that they use across the applications they develop, manage, and operate. This assists development teams by reducing time spent on rework by helping to manage dependencies, identify security issues for remediation early, and ensure that developers are using approved code and sources.
+Development teams use SBOMs to track the open source, commercial, and custom-built software components that they use across the applications they develop, manage, and operate. This assists development teams by reducing time spent on rework by helping to manage dependencies, identify security issues for remediation early, and ensure that developers are using approved code and sources.
 
 ## Design
 
@@ -180,8 +180,6 @@ Makefile
 ```shell
 generate-sbom: ### Run SBOM generator - mandatory: SCHEME=[file|directory|image|registry]; optional: ARGS=[syft args]
   docker run --interactive --tty --rm \
-    --volume /var/run/docker.sock:/var/run/docker.sock \
-    --volume $(HOME)/.docker/config.json:/config/config.json \
     --volume $(PWD):/project \
     --env "DOCKER_CONFIG=/config" \
     --workdir /project \
@@ -189,9 +187,7 @@ generate-sbom: ### Run SBOM generator - mandatory: SCHEME=[file|directory|image|
 
 scan-vulnerabilities: ### Run vulnerability scanner - mandatory: SCHEME=[sbom|file|directory|image|registry]; optional: ARGS=[grype args]
   docker run --interactive --tty --rm \
-    --volume /var/run/docker.sock:/var/run/docker.sock \
     --volume /tmp/grype/db:/tmp/grype/db \
-    --volume $(HOME)/.docker/config.json:/config/config.json \
     --volume $(PWD):/project \
     --env "DOCKER_CONFIG=/config" \
     --env "XDG_CACHE_HOME=/tmp/grype/db" \
