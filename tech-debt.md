@@ -8,9 +8,9 @@
 
 "Technical debt" is a term which refers to undesirable things about the way a system is built which are not apparent to users of the system, but impact the ability of the team to make changes to it quickly and safely. Tech debt arises due to processes or practices in the past, but has an ongoing impact on the present, in that it:
 
-*	Leads to bugs and loss of reliability
-*	Means changes take longer to develop, and makes it harder to predict how long the work will take
-*	Causes dissatisfaction and disengagement in the delivery team
+* Leads to bugs and loss of reliability
+* Means changes take longer to develop, and makes it harder to predict how long the work will take
+* Causes dissatisfaction and disengagement in the delivery team
 
 There are many different views on what is and isn't tech debt - this is ours.
 
