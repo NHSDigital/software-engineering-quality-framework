@@ -7,12 +7,14 @@ For that to work, GitHub needs permissions on the S3 bucket. The standard approa
 OIDC is an alternative approach whereby GitHub gets granted temporary access to a specific role in AWS. This further lets you limit that role using IAM: to specific buckets and actions.
 
 The process flow for OIDC is:
+
 1. GitHub Action triggers from your git commit
 2. GitHub Action assumes a role in AWS
 3. (behind the scenes, GitHub and AWS use OIDC: exchanging JWT tokens to grant GitHub temporary access to a specific role in AWS)
 4. GitHub Action uses that role to copy files into an S3 bucket
 
 One-time setup to get this working:
+
 1. Define GitHub as an Identity Provider in your AWS account
 2. Define what GitHub is allowed to do (IAM Role Policy)
 3. Define the GitHub role (IAM Role)
@@ -56,6 +58,7 @@ Create new Policy ("GitHubS3DeployPolicy")
 ## Define the GitHub role
 
 This is the role that GitHub will assume. It:
+
 - Links to the policy created early
 - Links to the github OIDC created early
 - Explicitly states which GitHub repo, and branches are permitted
@@ -136,7 +139,8 @@ Some basic test cases below to make sure you've secured this properly. Add your 
 You should look to automate these where possible.
 I've included my specific tests, and results - may be some helpful notes in there.
 
-Ensure success
+Ensure success:
+
 - GitHub: edit "view-stack/index.html"
 - Commit to "main" branch
 - Expecting:
@@ -147,7 +151,8 @@ Ensure success
   - No previous version stored in bucket (we're not versionsing)
 - RESULT: PASS. Took 21 seconds, 18 of those in copying the files. Expect that to grow as files get bigger, but remain under 10 mins. Add a timeout to the GitHub action to enforce that time limit.
 
-Ensure GitHub Action: only triggers on "main" branch
+Ensure GitHub Action: only triggers on "main" branch:
+
 - GitHub: make a new branch and commit
 - Expecting:
   - Action does NOT trigger
@@ -156,7 +161,8 @@ Ensure GitHub Action: only triggers on "main" branch
   - Should only trigger on "main" branch (ci.yml:  on:push:branches: - main)
 - RESULT: PASS
 
-Ensure Role Policy: fails when has wrong S3 bucket name
+Ensure Role Policy: fails when has wrong S3 bucket name:
+
 - AWS: edit "GitHubS3DeployPolicy". Change S3 bucket name to something random.
 - Kick off another github workflow on "main"
 - Expecting:
@@ -170,7 +176,8 @@ Ensure Role Policy: fails when has wrong S3 bucket name
 	10fatal error: An error occurred (AccessDenied) when calling the ListObjectsV2 operation: Access Denied 
 	11Error: Process completed with exit code 1.
 
-Ensure Role: fails when has wrong GitHub Repo name
+Ensure Role: fails when has wrong GitHub Repo name:
+
 - AWS: edit "GitHubS3DeployRole" Trust Policy. Change GitHub Repo in "token.actions.githubusercontent.com:sub" to something random: "repo:NHSDigitalWRONG/tech-radar:ref:refs/heads/main"
 - Kick off another github workflow on "main"
 - Expecting:
@@ -183,6 +190,7 @@ Ensure Role: fails when has wrong GitHub Repo name
   - But took 2min, seemed to be timing out / retrying
 
 Ensure Role fails when has wrong GitHub Branch name:
+
 - AWS: edit "GitHubS3DeployRole" Trust Policy. Change GitHub branch in "token.actions.githubusercontent.com:sub" to something random: "repo:NHSDigital/tech-radar:ref:refs/heads/mainWRONG"
 - Kick off another github workflow on "main"
 - Expecting:
