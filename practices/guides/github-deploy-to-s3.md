@@ -14,9 +14,9 @@ The process flow for OIDC is:
 
 One-time setup to get this working:
 1. Define GitHub as an Identity Provider in your AWS account
-2. Define what GitHub is allowed to do (IAM policy)
-3. Define the GitHub role (IAM role)
-4. Define the GitHub Action
+2. Define what GitHub is allowed to do (IAM Role Policy)
+3. Define the GitHub role (IAM Role)
+4. Hook this into your GitHub Action
 
 NB: You should script as much of this as possible, where it is safe to do so.
 
@@ -91,13 +91,14 @@ Trust policy:
 Attach the policy created earlier ("GitHubS3DeployPolicy")
 
 
-## Define the GitHub Action
+## Hook this into your GitHub Action
 
-Define ASSUME_ROLE_ARN ("GitHubS3DeployRole" from earlier) and AWS_S3_BUCKET_NAME in GitHub Repo Secrets.
-Example below just syncs the "view-stack" folder into the s3 bucket.
+Define two GitHub Secrets to hold the ASSUME_ROLE_ARN ("GitHubS3DeployRole" from earlier) and AWS_S3_BUCKET_NAME.
+Use "aws-actions/configure-aws-credentials@v2" to assume that role.
+Example below just syncs two folders into the s3 bucket.
 
 ```yaml
-name: deploy-radar
+name: deploy-app
 
 on:
   push:
@@ -131,9 +132,9 @@ All done!
 
 ## Testing
 
-Some basic test cases below. Add your own too!
-You should look to automate these where possibly.
-I've included my specific tests, and results - some helpful notes in there.
+Some basic test cases below to make sure you've secured this properly. Add your own too.
+You should look to automate these where possible.
+I've included my specific tests, and results - may be some helpful notes in there.
 
 Ensure success
 - GitHub: edit "view-stack/index.html"
