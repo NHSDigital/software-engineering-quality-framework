@@ -27,8 +27,7 @@ NB: You should script as much of this as possible, where it is safe to do so.
 This is done by adding GitHub as an IdP Provider in AWS.
 
 Follow steps to create IdP provider:
-https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services
-
+<https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services>
 
 ## Define what GitHub is allowed to do
 
@@ -64,7 +63,7 @@ This is the role that GitHub will assume. It:
 - Explicitly states which GitHub repo, and branches are permitted
 
 This page includes many options, including using Cognito, etc.
-https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_oidc.html
+<https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_oidc.html>
 
 Below is a full, simple example that doesn't use Cognito.
 
@@ -91,8 +90,8 @@ Trust policy:
   ]
 }
 ```
-Attach the policy created earlier ("GitHubS3DeployPolicy")
 
+Attach the policy created earlier ("GitHubS3DeployPolicy")
 
 ## Hook this into your GitHub Action
 
@@ -172,9 +171,9 @@ Ensure Role Policy: fails when has wrong S3 bucket name:
   - Role Policy says explicitly which bucket name this role is allowed to deploy into
   - Auth should still work, but aws s3 command should fail with access denied.
 - RESULT: PASS
-  - Run aws s3 sync view-stack s3://***/view-stack 
-	10fatal error: An error occurred (AccessDenied) when calling the ListObjectsV2 operation: Access Denied 
-	11Error: Process completed with exit code 1.
+  - Run aws s3 sync view-stack s3://***/view-stack
+  10fatal error: An error occurred (AccessDenied) when calling the ListObjectsV2 operation: Access Denied
+  11Error: Process completed with exit code 1.
 
 Ensure Role: fails when has wrong GitHub Repo name:
 
