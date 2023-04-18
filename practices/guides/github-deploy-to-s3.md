@@ -138,8 +138,8 @@ Some basic test cases below to make sure you've secured this properly. Add your 
 You should look to automate these where possible.
 I've included my specific tests, and results - may be some helpful notes in there.
 
+```text
 Ensure success:
-
 - GitHub: edit "view-stack/index.html"
 - Commit to "main" branch
 - Expecting:
@@ -151,7 +151,6 @@ Ensure success:
 - RESULT: PASS. Took 21 seconds, 18 of those in copying the files. Expect that to grow as files get bigger, but remain under 10 mins. Add a timeout to the GitHub action to enforce that time limit.
 
 Ensure GitHub Action: only triggers on "main" branch:
-
 - GitHub: make a new branch and commit
 - Expecting:
   - Action does NOT trigger
@@ -161,7 +160,6 @@ Ensure GitHub Action: only triggers on "main" branch:
 - RESULT: PASS
 
 Ensure Role Policy: fails when has wrong S3 bucket name:
-
 - AWS: edit "GitHubS3DeployPolicy". Change S3 bucket name to something random.
 - Kick off another github workflow on "main"
 - Expecting:
@@ -176,7 +174,6 @@ Ensure Role Policy: fails when has wrong S3 bucket name:
   11Error: Process completed with exit code 1.
 
 Ensure Role: fails when has wrong GitHub Repo name:
-
 - AWS: edit "GitHubS3DeployRole" Trust Policy. Change GitHub Repo in "token.actions.githubusercontent.com:sub" to something random: "repo:NHSDigitalWRONG/tech-radar:ref:refs/heads/main"
 - Kick off another github workflow on "main"
 - Expecting:
@@ -189,7 +186,6 @@ Ensure Role: fails when has wrong GitHub Repo name:
   - But took 2min, seemed to be timing out / retrying
 
 Ensure Role fails when has wrong GitHub Branch name:
-
 - AWS: edit "GitHubS3DeployRole" Trust Policy. Change GitHub branch in "token.actions.githubusercontent.com:sub" to something random: "repo:NHSDigital/tech-radar:ref:refs/heads/mainWRONG"
 - Kick off another github workflow on "main"
 - Expecting:
@@ -201,3 +197,4 @@ Ensure Role fails when has wrong GitHub Branch name:
 - RESULT: PASS, with notes:
   - Authentication failed: Error: Not authorized to perform sts:AssumeRoleWithWebIdentity
   - But took 2min, seemed to be timing out / retrying
+```
