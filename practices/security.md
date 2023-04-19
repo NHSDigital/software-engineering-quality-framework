@@ -108,6 +108,10 @@ The remainder of this page gives more detailed and specific recommendations to b
 - **Secure the route** to infrastructure: all access to infrastructure (production or otherwise) must be via a secured route, for example via a hardened bastion only accessible via a VPN (with MFA challenge), and with an audit of usage.
 - Ensure infrastructure **IAM** is robust
   - Strong passwords and MFA
+- **Secure deployment** infrastructure.
+  - [Maual deployments should be avoided.](../patterns/deployment.md#manual-deployments)
+  - Deployment routes should be secured and should be considered access to Production systems.
+  - Consider the way code is [promoted through development environments to production.](../patterns/deployment.md#promotion-through-path-to-live-environments)
 
     <details><summary>Example IAM policy to prevent assume role without MFA (click to expand)</summary>
 
