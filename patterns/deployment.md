@@ -69,7 +69,7 @@ Particular care should be taken around deployments for serverless architectures 
 The following table includes steps that development teams should consider when planning their deployment strategy, it assumes a CI/CD pipeline deploying each merge to main into production, development teams would need to review these steps against their specific needs and governance cycles.
 
 | Step | Description | Actor | Stage |
-| :---: | --- | --- |
+| :---: | --- | --- | --- |
 | 1 | Developer makes changes to their branch. | Developer | Development |
 | 2 | Changes are committed to their remote branch. | Developer | Development |
 | 3 | Majority of tests run (including linting, security). Ideally all tests if acceptable runtime. | CI tooling | CI |
@@ -87,7 +87,7 @@ The following table includes steps that development teams should consider when p
 | c | Testing period complete. | CI tooling | CI |
 | 13 | Confirmation that there are no issues, ready to deploy to production. | CI tooling | CI |
 | 14 | Ensure RFCs have been approved | CI tooling | CI |
-| 15 | Confirmation that all traffic is currently being processed by one production leg.
+| 15 | Confirmation that all traffic is currently being processed by one production leg. | CI tooling | CI |
 | 16 | New production leg built / idle leg released to. | CI tooling | CI |
 | 17 | Initial smoke tests run. | CI tooling | CI |
 | 18 | Traffic is migrated to new leg. | CI tooling | CI |
