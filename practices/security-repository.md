@@ -47,7 +47,7 @@ Depending on your use case, you may want to create additional teams (e.g. a read
 ## Code security
 
 - Enable, at a minimum, [Dependabot](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/) alerts for vulnerabilities and respond to them appropriately.
-- Generate [SBOM (Software Bill of Materials)](/tools/dependency-scan/README.md) for your repository content and all the artefacts that are build as part of the CI/CD process
+- Generate [SBOM (Software Bill of Materials)](../tools/dependency-scan/README.md) for your repository content and all the artefacts that are build as part of the CI/CD process
 - Disable ability to push to the default branch for everyone, admins included (`applies-to-admin` option).
 - Refer to [Quality Checks](../quality-checks.md) for further code security practices.
 
