@@ -56,6 +56,8 @@ The following practices support the principle of building quality in.
 
 **Collaborative analysis and elaboration** with the right people involved to examine a change from all angles to ensure requirements are fully understood at the point the work will be done.
 
+**[Deploy safely.](patterns/deployment.md)** Use automation and repeatable processes to ensure that products can be deployed safely.
+
 **[Deliver incrementally.](patterns/little-and-often.md)** Establish build-measure-learn loops to keep the system simple and to ensure it meets evolving user needs.
 
 **Pair programming**. Avoid quality issues by combining the skills and experience of two developers instead of one. Take advantage of navigator and driver roles. Also consider cross-discipline (e.g. dev-test) pairing.
