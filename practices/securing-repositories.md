@@ -1,6 +1,6 @@
-# Securing repositories
+# Securing Repositories
 
-- [Securing repositories](#securing-repositories)
+- [Securing Repositories](#securing-repositories)
   - [Prerequisites](#prerequisites)
   - [Access controls](#access-controls)
     - [Organisation-level settings](#organisation-level-settings)
@@ -35,14 +35,16 @@ This guide lays out security best practice for Github repositories. This set of 
 
 ### Teams setup
 
-Because of baseline visibility configurations, you must setup Github teams in order to provide team members access to repos. The minimum recommended setup is as follows:
+Because of baseline visibility configurations, you must setup GitHub teams in order to provide team members access to repositories. The minimum recommended setup is as follows:
 
 - Create one team with the name of your programme (e.g. `Engineering Quality Framework`). Add all required members to this team.
-- Create one child team within the team, for admins only (e.g. `Engineering Quality Framework Admins`). Add admins only to this team. Set the visibility of the team to `Secret`.
-- Create a second child team, for code owners (e.g. `Engineering Quality Framework Code Owners`). Add relevant members to this team, and reference in the CODEOWNERS file (example [here](https://github.com/NHSDigital/software-engineering-quality-framework/blob/master/.github/CODEOWNERS)). Set the visibility of the team to `Secret`.
+- Create one child team within the team, for admins only (e.g. `Engineering Quality Framework Admins`). Add admins only to this team.
+- Create a second child team, for code owners (e.g. `Engineering Quality Framework Code Owners`). Add relevant members to this team, and reference in the CODEOWNERS file (example [here](https://github.com/NHSDigital/software-engineering-quality-framework/blob/master/.github/CODEOWNERS)).
 - For each repo in your programme (e.g. `software-engineering-quality-framework`), under the `Manage Access` option in `Settings`, set the general team to have `Write` access and the admins team to have `Admin` access.
 
-Depending on your use case, you may want to create additional teams (e.g. a read-only access team, or different teams granting access to different projects). This is welcomed by the framework, as long as the teams provide clarity on the role they encompass, remain consistent and are applied consistently to your repos.
+Child teams inherit the parent's access permissions, simplifying permissions management for large groups. Members of child teams also receive notifications when the parent team is `@mentioned`, simplifying communication with multiple groups of people.
+
+Depending on your use case, you may want to create additional teams (e.g. a read-only access team, or different teams granting access to different projects). This is welcomed by the framework, as long as the teams provide clarity on the role they encompass, remain consistent and are applied consistently to your repositories.
 
 ## Code security
 

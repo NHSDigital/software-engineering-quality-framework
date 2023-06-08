@@ -41,7 +41,7 @@ Here is a non-exhaustive list of examples we consider to be *in* scope of "techn
 * Code you no longer need ([e.g. a new managed service is available](patterns/outsource-bottom-up.md))
 * Technologies no longer needed (e.g. you've introduced something better than what you used before)
 * CI issues, e.g. lack of [fast feedback](patterns/fast-feedback.md), or intermittent [build failures](practices/continuous-integration.md)
-* [Code-repository configuration issues](practices/security-repository.md), e.g. lack of branch protection rules
+* [Code-repository configuration issues](practices/securing-repositories.md), e.g. lack of branch protection rules
 * Manual processes that could be [automated](patterns/automate-everything.md)
 * Software components with inappropriate / confused [domain boundaries](patterns/architect-for-flow.md)
 * Use of obsolete / unsupported technologies
