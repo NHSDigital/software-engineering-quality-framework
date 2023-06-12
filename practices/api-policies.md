@@ -1,5 +1,9 @@
 # API policies and best practice
 
+- [API policies and best practice](#api-policies-and-best-practice)
+  - [Context](#context)
+  - [Details](#details)
+
 ## Context
 
 These notes are part of a broader set of [principles](../principles.md). See also [cloud services](cloud-services.md).

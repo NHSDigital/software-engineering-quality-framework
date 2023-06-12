@@ -1,6 +1,6 @@
-# Service Reliability
+# Service reliability
 
-- [Service Reliability](#service-reliability)
+- [Service reliability](#service-reliability)
   - [Context](#context)
   - [Details](#details)
 

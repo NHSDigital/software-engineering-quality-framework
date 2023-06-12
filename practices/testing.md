@@ -2,14 +2,14 @@
 
 - [Testing](#testing)
   - [Context](#context)
-  - [General Testing Principles](#general-testing-principles)
-  - [Test Automation Theory](#test-automation-theory)
+  - [General testing principles](#general-testing-principles)
+  - [Test automation theory](#test-automation-theory)
   - [Guidelines for different types of testing](#guidelines-for-different-types-of-testing)
-    - [Unit Testing Guidance](#unit-testing-guidance)
-    - [API Testing Guidance](#api-testing-guidance)
-    - [UI Testing Guidance](#ui-testing-guidance)
-    - [Browser/OS Testing Guidance](#browseros-testing-guidance)
-  - [Other Tools To Consider](#other-tools-to-consider)
+    - [Unit testing guidance](#unit-testing-guidance)
+    - [API testing guidance](#api-testing-guidance)
+    - [UI testing guidance](#ui-testing-guidance)
+    - [Browser/OS testing guidance](#browseros-testing-guidance)
+  - [Other tools to consider](#other-tools-to-consider)
   - [Further reading and resources](#further-reading-and-resources)
 
 ## Context
@@ -22,7 +22,7 @@
   - [Quality Metrics](../quality-checks.md)
   - [Performance Testing](performance-testing.md)
 
-## General Testing Principles
+## General testing principles
 
 - **Quality is the whole team's responsibility**
   - Education on testing and testing principles should be important to the whole team.
@@ -55,14 +55,14 @@
   - Testing is a continuous activity, not a phase of delivery
   - Testing can be performed in [all phases of a product's DevOps cycle](https://danashby.co.uk/2016/10/19/continuous-testing-in-devops/) and should be done as a collaborative exercise
 
-## Test Automation Theory
+## Test automation theory
 
 - Test should be added at the most appropriate level of the [test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html) &mdash; in general, the lower the better and avoid testing the same thing in multiple levels.
 - Consider using the [agile testing quadrant](https://lisacrispin.com/2011/11/08/using-the-agile-testing-quadrants/) to help support a whole team approach around test planning and test automation.
 
 ## Guidelines for different types of testing
 
-### Unit Testing Guidance
+### Unit testing guidance
 
 - Tests act as documentation of the system's behaviour and should be clear enough to do this effectively.
 - Tests are written alongside or before whatever they are testing.
@@ -75,19 +75,19 @@
 - Tests must pass before code can be merged.
 - Use stubs to test the behaviour of components in isolation &mdash; focus tests of multiple services on validating the interactions between services e.g. using consumer-driven contract testing.
 
-### API Testing Guidance
+### API testing guidance
 
 - When building an API start with an implementation of an automated contract test suite first. This can be supported by simple tools like Wiremock and Postman/Newman
 - Use contract tests to support technical and business documentation
 - Provide a web interface for exploratory testing. This usually comes out of the box with tooling that supports the OpenAPI specification. Although, this requires an environment to be set up or to be run on demand locally
 
-### UI Testing Guidance
+### UI testing guidance
 
-### Browser/OS Testing Guidance
+### Browser/OS testing guidance
 
 - Website user interfaces should be tested against an appropriate set of browsers and versions &mdash; in particular, no effort should be spent testing against unsupported browsers or unsupported versions of browsers. See supported browsers for [Staff](https://aalto.digital.nhs.uk/#/document/viewer/8c039de1-eec0-49cd-8af3-a97fed6a8bff?library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0) and [Citizens](https://aalto.digital.nhs.uk/#/document/viewer/465e6d1b-f107-49eb-ad25-e72c0299d3a6?library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0)
 
-## Other Tools To Consider
+## Other tools to consider
 
 - BDD tools to encode acceptance criteria in business terms as automated tests where appropriate.
 - Chaos engineering / resilience testing e.g. using AWS Fault Injection Simulator (see [AWS FIS](../tools/aws-fis) for sample code)

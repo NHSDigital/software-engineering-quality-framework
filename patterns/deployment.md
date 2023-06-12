@@ -1,4 +1,16 @@
-# Deployment Strategies
+# Deployment strategies
+
+- [Deployment strategies](#deployment-strategies)
+  - [CI/CD pipeline-based deployment](#cicd-pipeline-based-deployment)
+    - [Immutable signed deployment artefacts](#immutable-signed-deployment-artefacts)
+    - [Promotion through path-to-live environments](#promotion-through-path-to-live-environments)
+  - [Continuous deployment vs approval gateways](#continuous-deployment-vs-approval-gateways)
+  - [Manual deployments](#manual-deployments)
+  - [Zero-downtime deployments](#zero-downtime-deployments)
+  - [Roll-back strategies](#roll-back-strategies)
+  - [Example deployment pipeline stages](#example-deployment-pipeline-stages)
+    - [Failure mode](#failure-mode)
+    - [Game days and chaos testing](#game-days-and-chaos-testing)
 
 When developing services and applications development teams must consider their approach to deploying new releases.
 
