@@ -1,9 +1,16 @@
 # Inclusive language
 
+- [Inclusive language](#inclusive-language)
+  - [Context](#context)
+  - [Background](#background)
+  - [Details](#details)
+  - [Renaming the master branch in GitHub](#renaming-the-master-branch-in-github)
+  - [Further reading](#further-reading)
+
 ## Context
 
-* This is part of a broader [quality framework](README.md)
-* This guidance has been co-authored with the NHS Digital [EMBRACE network](https://digital.nhs.uk/about-nhs-digital/corporate-information-and-documents/staff-networks#ethnic-minorities-broadening-racial-awareness-and-cultural-exchange-embrace-) and the [Lesbian, Gay, Bisexual, Transgender, Queer and Allies (LGBTQ+) network](https://digital.nhs.uk/about-nhs-digital/corporate-information-and-documents/staff-networks#lesbian-gay-bisexual-transgender-queer-and-allies-lgbtq-)
+- This is part of a broader [quality framework](README.md)
+- This guidance has been co-authored with the NHS Digital [EMBRACE network](https://digital.nhs.uk/about-nhs-digital/corporate-information-and-documents/staff-networks#ethnic-minorities-broadening-racial-awareness-and-cultural-exchange-embrace-) and the [Lesbian, Gay, Bisexual, Transgender, Queer and Allies (LGBTQ+) network](https://digital.nhs.uk/about-nhs-digital/corporate-information-and-documents/staff-networks#lesbian-gay-bisexual-transgender-queer-and-allies-lgbtq-)
 
 ## Background
 
@@ -38,8 +45,8 @@ git remote set-head origin -a
 
 ## Further reading
 
-* [inclusivenaming.org](https://inclusivenaming.org/word-lists/)
-* [Internet Engineering Task Force](https://datatracker.ietf.org/doc/draft-knodel-terminology/)
-* [Python](https://bugs.python.org/issue34605)
-* [GitHub](https://github.com/github/renaming)
-* [NCSC](https://www.ncsc.gov.uk/blog-post/terminology-its-not-black-and-white)
+- [inclusivenaming.org](https://inclusivenaming.org/word-lists/)
+- [Internet Engineering Task Force](https://datatracker.ietf.org/doc/draft-knodel-terminology/)
+- [Python](https://bugs.python.org/issue34605)
+- [GitHub](https://github.com/github/renaming)
+- [NCSC](https://www.ncsc.gov.uk/blog-post/terminology-its-not-black-and-white)

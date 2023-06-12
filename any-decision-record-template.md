@@ -1,4 +1,4 @@
-# ADR-XXX: ADR (Any Decision Record) Template
+# ADR-nnn: Any Decision Record Template
 
 >|              | |
 >| ------------ | --- |
@@ -10,7 +10,7 @@
 
 ---
 
-- [ADR-XXX: ADR (Any Decision Record) Template](#adr-xxx-adr-any-decision-record-template)
+- [ADR-nnn: Any Decision Record Template](#adr-nnn-any-decision-record-template)
   - [Context](#context)
   - [Decision](#decision)
     - [Assumptions](#assumptions)
