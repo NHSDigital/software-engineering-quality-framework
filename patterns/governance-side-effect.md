@@ -41,6 +41,7 @@ Automate preventative measures and ongoing compliance checks to ensure systems m
 ### Audit and alert
 
 Properly configured tooling supports good practice and provides an audit trail through the whole software delivery lifecycle:
+
 - Use of an issue tracking system such as Jira ensures changing requirements are visible over time.
 - Use of issue references in source control commit messages (which can be enforced with commit hooks) ensures code changes can be traced back to a business requirement.
 - Source control systems provide visibility of who changed what when, and enforce and record [peer review](everything-as-code.md) approvals.
@@ -49,6 +50,7 @@ Properly configured tooling supports good practice and provides an audit trail t
 - Cloud platforms provide logs of changes to resources, e.g. AWS CloudTrail.
 
 Where prevention is impracticable or impossible (because we are not in control of external sources of change), monitoring and alerting is an alternative approach:
+
 - As well as preventative measures, AWS [Control Tower](https://aws.amazon.com/about-aws/whats-new/2019/06/aws-control-tower-is-now-generally-available) continuously monitor deployed resources for nonconformance and can alert when detected.
 - Alerts may be configured for specific events reported in CloudTrail.
 
