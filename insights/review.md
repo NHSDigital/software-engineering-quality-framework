@@ -43,7 +43,7 @@ This is a **self** assessment review:
 - Scores help the team focus attention on where to concentrate improvement work.
 - Scores can help teams communicate and escalate issues outside the team.
 - Scores cannot be compared between teams, but they can help spot common issues which would benefit from coordinated effort between and across teams.
-- This is for use by *whole teams*, which means everyone involved in the delivery & operation of the product, not defined by organisation boundaries (for example if specialisms such as cyber and service management are based in a separate area of the organisation, they are still part of the team)
+- This is for use by *whole teams*, which means everyone involved in the delivery & operation of the product, not defined by organisation boundaries (for example if specialisms such as service management and cyber are based in a separate area of the organisation, they are still part of the team and should be included in the review session)
 
 ## Metrics
 
