@@ -43,6 +43,7 @@ This is a **self** assessment review:
 - Scores help the team focus attention on where to concentrate improvement work.
 - Scores can help teams communicate and escalate issues outside the team.
 - Scores cannot be compared between teams, but they can help spot common issues which would benefit from coordinated effort between and across teams.
+- This is for use by *whole teams* (which means everyone involved in the delivery & operation of the product, not defined by organisation boundaries)
 
 ## Metrics
 
@@ -254,7 +255,7 @@ Good facilitation can help teams get the most out of the review and it is recomm
 
 ### Facilitator responsibilities
 
-- Ensure the session has the right people in it.
+- Ensure the session has the right people in it - see note about about "whole team" not being defined by organisation structures.
 - Ensure all participants understand the [purpose](#purpose) of the review.
 - Ensure a full and accurate review is done, considering all aspects.
 - Ensure actions are identified and recorded.
