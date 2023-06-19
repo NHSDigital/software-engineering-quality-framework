@@ -1,5 +1,26 @@
 # Continuous improvement
 
+- [Continuous improvement](#continuous-improvement)
+  - [Quick start](#quick-start)
+  - [Improvement Kata](#improvement-kata)
+  - [Plan-Do-Check-Act improvement cycles](#plan-do-check-act-improvement-cycles)
+  - [Benefits](#benefits)
+    - [Maintain and improve processes](#maintain-and-improve-processes)
+    - [Control technical debt](#control-technical-debt)
+    - [Improve reliability and operability](#improve-reliability-and-operability)
+  - [Identifying improvement opportunities](#identifying-improvement-opportunities)
+    - [1. Process or practice](#1-process-or-practice)
+    - [2. Technical debt](#2-technical-debt)
+    - [3. Reliability and operability](#3-reliability-and-operability)
+  - [Prioritising](#prioritising)
+    - [Prioritising tech debt](#prioritising-tech-debt)
+  - [Acting](#acting)
+  - [Making time](#making-time)
+  - [Measurement](#measurement)
+  - [What does this mean for me as a less-technical person?](#what-does-this-mean-for-me-as-a-less-technical-person)
+  - [What does this mean for me as a technical person?](#what-does-this-mean-for-me-as-a-technical-person)
+  - [Closing remarks](#closing-remarks)
+
 Continuous improvement is the practice of iteratively reviewing processes and impediments and making incremental changes to reduce waste and increase quality.
 
 ## Quick start
@@ -33,10 +54,10 @@ The [Improvement Kata](https://www.atlassian.com/agile/agile-at-scale/using-impr
 
 It is common to describe the iterative continuous improvement process as a cycle, and the most common is called Plan-Do-Check-Act (PDCA). This gives a mental model rather than a process to follow, but this can still be useful when adopting and maintaining continuous improvement. The PDCA cycle is attributed to Demming and Shewhart, and here adapted from [ASQ](https://asq.org/quality-resources/continuous-improvement), has four stages which are performed in a continuous loop:
 
-* **Plan**: Identify an opportunity and plan for change.
-* **Do**: Implement the change on a small scale.
-* **Check**: Use data to analyse the results of the change and determine whether it made a difference.
-* **Act**: If the change was successful, reinforce it or implement it on a wider scale and continuously assess your results. If the change did not work, begin the cycle again &mdash; i.e. try a different approach to driving improvement in this area.
+- **Plan**: Identify an opportunity and plan for change.
+- **Do**: Implement the change on a small scale.
+- **Check**: Use data to analyse the results of the change and determine whether it made a difference.
+- **Act**: If the change was successful, reinforce it or implement it on a wider scale and continuously assess your results. If the change did not work, begin the cycle again &mdash; i.e. try a different approach to driving improvement in this area.
 
 At any one time, you may have several improvement initiatives in progress.
 
@@ -48,9 +69,9 @@ Continuous improvement has significant benefits for teams.
 
 Improving processes:
 
-* Reduces waste, leading to improved efficiency and productivity.
-* Improves quality and reduce error rates.
-* Leads to happier people and improved engagement, retention, and recruitment.
+- Reduces waste, leading to improved efficiency and productivity.
+- Improves quality and reduce error rates.
+- Leads to happier people and improved engagement, retention, and recruitment.
 
 It takes continuous effort to maintain and evolve processes in response to challenges and changing circumstances. Without this sustained effort, productivity and quality decline over time.
 
@@ -68,13 +89,13 @@ Where things like this are missing or need improvement, it is not tech debt &mda
 
 The benefits of improving these areas are:
 
-* Service has fewer bugs.
-* Performance is more reliable.
-* Services are more available.
-* Services are more secure.
-* Incidents are less severe.
-* Incidents are detected earlier.
-* Incidents are fixed more quickly.
+- Service has fewer bugs.
+- Performance is more reliable.
+- Services are more available.
+- Services are more secure.
+- Incidents are less severe.
+- Incidents are detected earlier.
+- Incidents are fixed more quickly.
 
 ## Identifying improvement opportunities
 
@@ -88,29 +109,29 @@ The [Lean principles](principles.md) give some useful areas to consider.
 
 Examples include:
 
-* The way stories are analysed or elaborated.
-* The way code is written or reviewed.
-* The tools and techniques for testing.
-* Communication and collaboration mechanisms within and between teams.
-* Team structures.
+- The way stories are analysed or elaborated.
+- The way code is written or reviewed.
+- The tools and techniques for testing.
+- Communication and collaboration mechanisms within and between teams.
+- Team structures.
 
 ### 2. Technical debt
 
 Examples include:
 
-* Code which needs to be refactored.
-* Technologies which should be replaced.
-* Areas with insufficient, inefficient or ineffective testing.
+- Code which needs to be refactored.
+- Technologies which should be replaced.
+- Areas with insufficient, inefficient or ineffective testing.
 
 ### 3. Reliability and operability
 
 Examples include:
 
-* Automated build and deployment pipelines.
-* Monitoring dashboards.
-* Automated alerts.
-* Application logs.
-* Automated security testing.
+- Automated build and deployment pipelines.
+- Monitoring dashboards.
+- Automated alerts.
+- Application logs.
+- Automated security testing.
 
 ## Prioritising
 
@@ -181,19 +202,19 @@ Other teams find it too difficult to determine relative priorities between featu
 
 When seeking to [identify](#identifying-improvement-opportunities) and [prioritise](#prioritising) improvements, it can be helpful to have agreed metrics as a guide. These will be specific to each team, but some good defaults to start with are:
 
-* Deployment frequency
-* Lead time for changes
-* Incident rate
-* Mean time to recover
-* Team happiness
+- Deployment frequency
+- Lead time for changes
+- Incident rate
+- Mean time to recover
+- Team happiness
 
 In addition, it is useful to track the proportion of time being spent on various activities so that the balance can be corrected if required:
 
-* Features
-* Bug fixing
-* Operability
-* Tech debt
-* Other improvement work
+- Features
+- Bug fixing
+- Operability
+- Tech debt
+- Other improvement work
 
 ## What does this mean for me as a less-technical person?
 
@@ -201,25 +222,25 @@ Good engineering and good ways of working are intrinsically connected. Every tea
 
 Same as for more technical people, continuous improvement should help you reduce waste and enable more focus on the core activities that deliver value from your role. Start with general concepts that may help you identify more specific areas for improvement:
 
-* Can you observe handoffs between "teams-within-a-team"? How could you help reduce or avoid them?
-* Do you have no understanding of what a part of the team is working on? How could that be made more visible?
-* Do you find yourself spending significant time on activities which seem to have no influence on the value of what the team produces? Why do such activities exist, and how could they be reduced or avoided so that time can be better spent?
+- Can you observe handoffs between "teams-within-a-team"? How could you help reduce or avoid them?
+- Do you have no understanding of what a part of the team is working on? How could that be made more visible?
+- Do you find yourself spending significant time on activities which seem to have no influence on the value of what the team produces? Why do such activities exist, and how could they be reduced or avoided so that time can be better spent?
 
 ## What does this mean for me as a technical person?
 
 If you are an Engineer or Tester, continuous improvement will help you:
 
-* Reduce waste and spend more time delivering value for users.
-* Implement features and fix bugs more quickly and safely.
-* Spend less time on menial or repetitive work.
+- Reduce waste and spend more time delivering value for users.
+- Implement features and fix bugs more quickly and safely.
+- Spend less time on menial or repetitive work.
 
 You have an important role to play!
 
-* Make sure you understand the user needs well enough to have an informed conversation about the relative priority of the functional work items.
-* Express technical work in terms of the benefits it will deliver so that as a team you can have a meaningful conversation about relative priorities.
-* Play an active role in backlog refinement and planning, ensuring that operability and reliability work is adequately represented.
-* Be bold and make sure technical quality is maintained.
-  * But also, be pragmatic and accept that all systems have imperfections and some degree of tech debt.
+- Make sure you understand the user needs well enough to have an informed conversation about the relative priority of the functional work items.
+- Express technical work in terms of the benefits it will deliver so that as a team you can have a meaningful conversation about relative priorities.
+- Play an active role in backlog refinement and planning, ensuring that operability and reliability work is adequately represented.
+- Be bold and make sure technical quality is maintained.
+  - But also, be pragmatic and accept that all systems have imperfections and some degree of tech debt.
 
 ## Closing remarks
 
