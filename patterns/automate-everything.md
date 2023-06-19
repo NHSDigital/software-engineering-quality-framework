@@ -18,7 +18,7 @@
 
 ## The pattern
 
-Regularly review *every- manual process that the team performs. Automate it, but be pragmatic: choose where to invest your time. Error-prone, high impact and frequent activities are all high priorities for automation.
+Regularly review **every** manual process that the team performs. Automate it, but be pragmatic: choose where to invest your time. Error-prone, high impact and frequent activities are all high priorities for automation.
 
 ## Benefits
 
@@ -49,4 +49,4 @@ Regularly review *every- manual process that the team performs. Automate it, but
 
 Some automation is highly managed and is purely declarative. e.g. VM or container auto scaling in cloud platforms can typically be achieved without the need to write any code: the platform implements scaling based on specified rules.
 
-Programmatic automation by contrast typically involves writing code and involves the use of **orchestrators*- such as CI tools (e.g. Jenkins, Circle CI), AWS Step Functions or Lambda triggers and **runners*- which do the actual work (e.g. bash or Python scripts). The orchestration and runner logic should all be represented in code with everything that entails (see [everything as code](everything-as-code.md)).
+Programmatic automation by contrast typically involves writing code and involves the use of **orchestrators** such as CI tools (e.g. Jenkins, Circle CI), AWS Step Functions or Lambda triggers and **runners** which do the actual work (e.g. bash or Python scripts). The orchestration and runner logic should all be represented in code with everything that entails (see [everything as code](everything-as-code.md)).
