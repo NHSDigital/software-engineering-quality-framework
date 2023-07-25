@@ -1,6 +1,6 @@
-# Structured Code
+# Structured code
 
-- [Structured Code](#structured-code)
+- [Structured code](#structured-code)
   - [Context](#context)
   - [Details](#details)
 

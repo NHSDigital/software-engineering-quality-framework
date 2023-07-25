@@ -1,6 +1,6 @@
-# Performance Testing
+# Performance testing
 
-- [Performance Testing](#performance-testing)
+- [Performance testing](#performance-testing)
   - [Context](#context)
   - [Introduction](#introduction)
   - [How to start?](#how-to-start)

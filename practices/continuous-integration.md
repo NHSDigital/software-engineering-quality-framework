@@ -1,6 +1,6 @@
-# Continuous Integration
+# Continuous integration
 
-- [Continuous Integration](#continuous-integration)
+- [Continuous integration](#continuous-integration)
   - [Context](#context)
   - [Details](#details)
     - [Avoid collisions](#avoid-collisions)

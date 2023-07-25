@@ -1,14 +1,13 @@
-# Git Commit Signing Setup Guide
+# Git commit signing setup guide
 
-- [From Workstations](#from-workstations):
-  - [macOS](#macos)
-  - [Windows](#windows)
-- [From Pipelines](#from-pipelines):
-  - [GitHub Actions](#github-actions)
-  - [AWS CodePipeline](#aws-codepipeline)
-- [Troubleshooting](#troubleshooting)
-
-<br>
+- [Git commit signing setup guide](#git-commit-signing-setup-guide)
+  - [From Workstations](#from-workstations)
+    - [macOS](#macos)
+    - [Windows](#windows)
+  - [From Pipelines](#from-pipelines)
+    - [GitHub Actions](#github-actions)
+    - [AWS CodePipeline](#aws-codepipeline)
+  - [Troubleshooting](#troubleshooting)
 
 ## From Workstations
 
@@ -52,8 +51,6 @@ The first time you commit you will be prompted to add the GPG key passphrase to 
 
 Most of the published solutions for this don't work because *brew* seems to have moved the default folder for binaries, plus many guides contain obsolete settings for *gpg-agent*.
 
-<br>
-
 ### Windows
 
 - Install [Git for Windows](https://git-scm.com/download/win), which includes Bash and GnuPG
@@ -84,8 +81,6 @@ git config --global commit.gpgsign true
 ```
 
 When you commit you will be prompted to enter the GPG key passphrase into a Pinentry window.
-
-<br>
 
 ## From Pipelines
 
@@ -124,8 +119,6 @@ git commit ${GITHUB_SIGNING_OPTION} -am "Automated commit from GitHub Actions: $
 git push
 ```
 
-<br>
-
 ### AWS CodePipeline
 
 The cryptographic libraries in the default Amazon Linux 2 distro are very old, and do not support elliptic curve cryptography. When using pre-existing solution elements updating the build container is not always an option. This restricts the GPG key algorithm to RSA. You should use RSA-4096, which is the required minimum for GitHub.
@@ -135,7 +128,7 @@ Furthermore, the Systems Manager Parameter Store will not accept a key that is g
 Example AWS CodeBuild Buildspec excerpt:
 
 ```bash
-# Create SSH identity for connecting to GitHub 
+# Create SSH identity for connecting to GitHub
 BOT_SSH_KEY=$(aws ssm get-parameter --name "/keys/ssh-key" --query "Parameter.Value" --output text --with-decryption 2> /dev/null || echo "None")
 if [[ ${BOT_SSH_KEY} != "None" ]]; then
   mkdir -p ~/.ssh
@@ -153,7 +146,7 @@ gpg --version
 echo
 BOT_GPG_KEY=$(aws ssm get-parameter --name "/keys/gpg-key" --query "Parameter.Value" --output text --with-decryption 2> /dev/null || echo "None")
 if [ "${BOT_GPG_KEY}" != "None" ]; then
-  echo "Encrypted GPG secret key found in the Parameter Store, enabling GitHub commmit signing" 
+  echo "Encrypted GPG secret key found in the Parameter Store, enabling GitHub commmit signing"
   GITHUB_SIGNING_OPTION="-S"
   echo "${BOT_GPG_KEY}" | gpg --import
   # Highlight any expiry date
@@ -178,8 +171,6 @@ git add .
 git commit ${GITHUB_SIGNING_OPTION} -am "Automated commit from ${SCRIPT_URL}"
 git push
 ```
-
-<br>
 
 ## Troubleshooting
 
