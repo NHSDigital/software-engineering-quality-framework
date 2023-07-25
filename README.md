@@ -2,6 +2,8 @@
 
 ## How to get started
 
+This is awesome
+
 See the [Quick Start Guide](quickstart.md)
 
 ## Purpose
