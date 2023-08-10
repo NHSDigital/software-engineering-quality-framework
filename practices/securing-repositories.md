@@ -32,6 +32,7 @@ This guide lays out security best practice for Github repositories. This set of 
 - Private repositories must disable forking.
 - There must be no outside collaborators in private repositories.
 - Enable abuse reporting by <!-- markdown-link-check-disable -->[accepting content reports](https://docs.github.com/en/communities/moderating-comments-and-conversations/managing-how-contributors-report-abuse-in-your-organizations-repository)<!-- markdown-link-check-enable -->
+- Default branch should be called "main", not "master" - please see [](../inclusive-language.md) for guidance on how to rename the default branch
 
 ### Teams setup
 
