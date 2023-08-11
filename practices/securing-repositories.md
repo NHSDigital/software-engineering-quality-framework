@@ -9,7 +9,9 @@
   - [Code security](#code-security)
     - [Branch protection](#branch-protection)
 
-This guide lays out security best practice for Github repositories. This set of practices is a minimum (nothing stops you from doing more), and they should be implemented alongside other relevant ones that contribute to [security](security.md) as a whole. These are discussed in more detail as part of the [Quality Checks](../quality-checks.md).
+This page lists requirements for securing code repositories. This guide includes specific configuration settings for GitHub, but  these requirements apply to all code repositories.
+
+This set of practices is a minimum (nothing stops you from doing more), and they should be implemented alongside other relevant ones that contribute to [security](security.md) as a whole. These are discussed in more detail as part of the [Quality Checks](../quality-checks.md).
 
 ## Prerequisites
 
