@@ -1,7 +1,6 @@
 # Securing repositories
 
 - [Securing repositories](#securing-repositories)
-  - [Prerequisites](#prerequisites)
   - [Access controls](#access-controls)
     - [Organisation-level settings](#organisation-level-settings)
     - [Repository-specific settings](#repository-specific-settings)
