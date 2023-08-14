@@ -47,15 +47,15 @@ This guide describes our minimum set of requirements to secure & configure our G
 
 - [Dependabot](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/) alerts for vulnerabilities must be enabled and acted on appropriately.
 - [SBOM (Software Bill of Materials)](../tools/dependency-scan/README.md) must be generated for your repository content and all the artefacts that are build as part of the CI/CD process.
-- Ability to push to the default branch must be disabled for everyone, including administrators (using the `applies-to-admin` option).
 - Refer to [Quality Checks](../quality-checks.md) for further code security practices.
 
 ### Branch protection
 
-- Require <!-- markdown-link-check-disable -->[Pull request code reviews](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-pull-request-reviews-before-merging)<!-- markdown-link-check-enable -->, must be required to merge a branch.
+- Ability to push to the default branch must be disabled for everyone, including administrators (using the `applies-to-admin` option).
+- Pull request <!-- markdown-link-check-disable -->[code reviews](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-pull-request-reviews-before-merging)<!-- markdown-link-check-enable --> must be required prior to merging a branch.
   - Code reviews must be approved by at least one code owner
 - Commits must be <!-- markdown-link-check-disable -->[signed](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-signed-commits)<!-- markdown-link-check-enable -->, and verified before merging.
   - Git treats authentication and identity separately - any authenticated user can impersonate another developer when committing code. This means that even if a junior account is compromised it could have significant consequences, for example impersonating the lead developer in the hope of an easy merge. Only by requiring signing can identity truly be verified. [Setup Guides](guides/commit-signing.md) for macOS, Windows, GitHub Actions, and AWS CodePipeline.
 - Existing reviews must be invalidated automatically when new commits are pushed (using the `fresh-commits-invalidate-existing-reviews` option).
-- Merging must be blocked if the brnach is not up to date.
+- Merging must be blocked if the branch is not up to date.
 - Consider any further automated status checks which should be enforced prior to merging a branch
