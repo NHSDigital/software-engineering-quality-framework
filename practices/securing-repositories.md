@@ -27,19 +27,13 @@ This guide describes our minimum set of requirements to secure & configure our G
 - Outside collaborators must not be permitted in private repositories.
 - Abuse reporting must be enabled by <!-- markdown-link-check-disable -->[accepting content reports](https://docs.github.com/en/communities/moderating-comments-and-conversations/managing-how-contributors-report-abuse-in-your-organizations-repository)<!-- markdown-link-check-enable -->
 - In line with our [inclusive language guidance](../inclusive-language.md), the default branch must not be named "master" - we suggest "main" - please see our [inclusive language guidance](../inclusive-language.md) for how to rename the default branch.
-
-### Teams setup
-
-Because of baseline visibility configuration (please see Organisation-level settings, above), you must create GitHub teams in to provide individuals access to repositories. The minimum recommended setup is as follows:
-
-- Create one team with the name of your programme (e.g. `Engineering Quality Framework`). Add all required members to this team.
-- Create one child team within the team, for admins only (e.g. `Engineering Quality Framework Admins`). Add admins only to this team.
-- Create a second child team, for code owners (e.g. `Engineering Quality Framework Code Owners`). Add relevant members to this team, and reference in the CODEOWNERS file (example [here](https://github.com/NHSDigital/software-engineering-quality-framework/blob/master/.github/CODEOWNERS)).
-- For each repo in your programme (e.g. `software-engineering-quality-framework`), under the `Manage Access` option in `Settings`, set the general team to have `Write` access and the admins team to have `Admin` access.
-
-Child teams inherit the parent's access permissions, simplifying permissions management for large groups. Members of child teams also receive notifications when the parent team is `@mentioned`, simplifying communication with multiple groups of people.
-
-Depending on your use case, you may want to create additional teams (e.g. a read-only access team, or different teams granting access to different projects). This is welcomed by the framework, as long as the teams provide clarity on the role they encompass, remain consistent and are applied consistently to your repositories.
+- GitHub teams must be created to provide individuals access to repositories. The minimum recommended setup is as follows:
+  - Create one team with the name of your programme (e.g. `Engineering Quality Framework`). Add all required members to this team.
+  - Create one child team within the team, for admins only (e.g. `Engineering Quality Framework Admins`). Add admins only to this team.
+  - Create a second child team, for code owners (e.g. `Engineering Quality Framework Code Owners`). Add relevant members to this team, and reference in the CODEOWNERS file (example [here](https://github.com/NHSDigital/software-engineering-quality-framework/blob/master/.github/CODEOWNERS)).
+  - For each repo in your programme (e.g. `software-engineering-quality-framework`), under the `Manage Access` option in `Settings`, set the general team to have `Write` access and the admins team to have `Admin` access.
+  - Child teams inherit the parent's access permissions, simplifying permissions management for large groups. Members of child teams also receive notifications when the parent team is `@mentioned`, simplifying communication with multiple groups of people.
+  - Depending on your use case, you may want to create additional teams (e.g. a read-only access team, or different teams granting access to different projects). This is welcomed by the framework, as long as the teams provide clarity on the role they encompass, remain consistent and are applied consistently to your repositories.
 
 ## Code security
 
