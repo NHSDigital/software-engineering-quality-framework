@@ -27,6 +27,9 @@ This guide describes our minimum set of requirements to secure & configure our G
 - Outside collaborators must not be permitted in private repositories.
 - Abuse reporting must be enabled by <!-- markdown-link-check-disable -->[accepting content reports](https://docs.github.com/en/communities/moderating-comments-and-conversations/managing-how-contributors-report-abuse-in-your-organizations-repository)<!-- markdown-link-check-enable -->
 - In line with our [inclusive language guidance](../inclusive-language.md), the default branch must not be named "master" - we suggest "main" - please see our [inclusive language guidance](../inclusive-language.md) for how to rename the default branch.
+
+## Teams setup
+
 - GitHub teams must be created to provide individuals access to repositories. The minimum recommended setup is as follows:
   - Create a team for the repo (e.g. `Engineering Quality Framework`).
     - Add all required members to this team.
