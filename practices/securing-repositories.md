@@ -55,7 +55,8 @@ This minimum set of requirements should be implemented alongside other relevant 
 
 - Ability to push to the default branch must be disabled for everyone, including administrators (using the `applies-to-admin` option).
 - Pull request <!-- markdown-link-check-disable -->[code reviews](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-pull-request-reviews-before-merging)<!-- markdown-link-check-enable --> must be required prior to merging a branch.
-  - Code reviews must be approved by at least one code owner
+  - Code reviews must be approved by at least one code owner.
+  - You may want to require multiple code owners to review pull requests.
 - Commits must be <!-- markdown-link-check-disable -->[signed](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-signed-commits)<!-- markdown-link-check-enable -->, and verified before merging.
   - Git treats authentication and identity separately - any authenticated user can impersonate another developer when committing code. This means that even if a junior account is compromised it could have significant consequences, for example impersonating the lead developer in the hope of an easy merge. Only by requiring signing can identity truly be verified. [Setup Guides](guides/commit-signing.md) for macOS, Windows, GitHub Actions, and AWS CodePipeline.
 - Existing reviews must be invalidated automatically when new commits are pushed (using the `fresh-commits-invalidate-existing-reviews` option).
