@@ -30,16 +30,6 @@ This minimum set of requirements should be implemented alongside other relevant 
 - Abuse reporting must be enabled by <!-- markdown-link-check-disable -->[accepting content reports](https://docs.github.com/en/communities/moderating-comments-and-conversations/managing-how-contributors-report-abuse-in-your-organizations-repository)<!-- markdown-link-check-enable -->
 - In line with our [inclusive language guidance](../inclusive-language.md), the default branch must not be named "master" - we suggest "main" - please see our [inclusive language guidance](../inclusive-language.md) for how to rename the default branch.
 
-### Repository content
-
-- The following minimum set of files must be included in the repository, to support others to navigate the repository content:
-  - README.md
-  - CONTRIBUTING.md
-  - LICENSE.md
-  - Pull request template
-  - Security issue report note
-- We recommend the use of a repository template, for example [NHS England Repository Template](https://github.com/nhs-england-tools/repository-template)
-
 ### Teams setup
 
 - GitHub teams must be created to provide individuals access to repositories. The minimum recommended setup is as follows:
@@ -73,3 +63,13 @@ This minimum set of requirements should be implemented alongside other relevant 
 - Existing reviews must be invalidated automatically when new commits are pushed (using the `fresh-commits-invalidate-existing-reviews` option).
 - Merging must be blocked if the branch is not up to date.
 - Consider any further automated status checks which should be enforced prior to merging a branch
+
+## Repository content
+
+- The following minimum set of files must be included in the repository, to support others to navigate the repository content:
+  - README.md
+  - CONTRIBUTING.md
+  - LICENSE.md
+  - Pull request template
+  - Security issue report note
+- We recommend the use of a repository template, for example [NHS England Repository Template](https://github.com/nhs-england-tools/repository-template)
