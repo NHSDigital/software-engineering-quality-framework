@@ -45,9 +45,9 @@ This guide describes our minimum set of requirements to secure & configure our G
 
 ## Code security
 
-- Enable, at a minimum, [Dependabot](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/) alerts for vulnerabilities and respond to them appropriately.
-- Generate [SBOM (Software Bill of Materials)](../tools/dependency-scan/README.md) for your repository content and all the artefacts that are build as part of the CI/CD process
-- Disable ability to push to the default branch for everyone, admins included (`applies-to-admin` option).
+- [Dependabot](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/) alerts for vulnerabilities must be enabled and acted on appropriately.
+- [SBOM (Software Bill of Materials)](../tools/dependency-scan/README.md) must be generated for your repository content and all the artefacts that are build as part of the CI/CD process.
+- Ability to push to the default branch must be disabled for everyone, including administrators (using the `applies-to-admin` option).
 - Refer to [Quality Checks](../quality-checks.md) for further code security practices.
 
 ### Branch protection
