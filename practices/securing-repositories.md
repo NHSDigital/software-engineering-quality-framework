@@ -9,20 +9,15 @@
   - [Code security](#code-security)
     - [Branch protection](#branch-protection)
 
-This guide lays out security best practice for Github repositories. This set of practices is a minimum (nothing stops you from doing more), and they should be implemented alongside other relevant ones that contribute to [security](security.md) as a whole. These are discussed in more detail as part of the [Quality Checks](../quality-checks.md).
+In line with [NCSC guidance](https://www.ncsc.gov.uk/collection/developers-collection/principles/protect-your-code-repository) it is important to secure your code repository.
 
-## Prerequisites
-
-[Publishing Code](../quality-checks.md#publishing-code) within the Quality Checks page lists a minimum set of practices that should be in place before code is published. This implies that:
-
-- Repositories can only be secure once the listed practices meet the relevant amber/green thresholds (which should also be reflected in a [Quality Dashboard](../insights/metrics.md)).
-- The guidelines in this page are a necessary, but not a sufficient, condition for code overall being secure.
+This guide describes our minimum set of requirements to secure & configure our Github repositories. This minimum set should be implemented alongside other relevant ones that contribute to [security](security.md) as a whole. These are discussed in more detail as part of the [Quality Checks](../quality-checks.md).
 
 ## Access controls
 
 ### Organisation-level settings
 
-- All users must have MFA enabled.
+- MFA must be enabled and enforced for all users.
 - Baseline visibility for private repositories must be `No Permission`.
 - Ability to change repository view from private to public must be reserved to admins only.
 
@@ -30,9 +25,9 @@ This guide lays out security best practice for Github repositories. This set of 
 
 - In line with the [Service Manual](https://service-manual.nhs.uk/service-standard/12-make-new-source-code-open), new repositories should be public by default, unless there is good reason not to - this avoids costly rework to secure private information further down the line.
 - Private repositories must disable forking.
-- There must be no outside collaborators in private repositories.
-- Enable abuse reporting by <!-- markdown-link-check-disable -->[accepting content reports](https://docs.github.com/en/communities/moderating-comments-and-conversations/managing-how-contributors-report-abuse-in-your-organizations-repository)<!-- markdown-link-check-enable -->
-- Default branch should be called "main", not "master" - please see [](../inclusive-language.md) for guidance on how to rename the default branch
+- Outside collaborators must not be permitted in private repositories.
+- Abuse reporting must be enabled by <!-- markdown-link-check-disable -->[accepting content reports](https://docs.github.com/en/communities/moderating-comments-and-conversations/managing-how-contributors-report-abuse-in-your-organizations-repository)<!-- markdown-link-check-enable -->
+- In line with [inclusive language](../inclusive-language.md) guidance, the default branch must not be named "master" - we suggest "main" - please see our [inclusive language guidance](../inclusive-language.md) for how to rename the default branch.
 
 ### Teams setup
 
