@@ -26,7 +26,7 @@ This guide describes our minimum set of requirements to secure & configure our G
 - Private repositories must disable forking.
 - Outside collaborators must not be permitted in private repositories.
 - Abuse reporting must be enabled by <!-- markdown-link-check-disable -->[accepting content reports](https://docs.github.com/en/communities/moderating-comments-and-conversations/managing-how-contributors-report-abuse-in-your-organizations-repository)<!-- markdown-link-check-enable -->
-- In line with [inclusive language](../inclusive-language.md) guidance, the default branch must not be named "master" - we suggest "main" - please see our [inclusive language guidance](../inclusive-language.md) for how to rename the default branch.
+- In line with our [inclusive language guidance](../inclusive-language.md), the default branch must not be named "master" - we suggest "main" - please see our [inclusive language guidance](../inclusive-language.md) for how to rename the default branch.
 
 ### Teams setup
 
