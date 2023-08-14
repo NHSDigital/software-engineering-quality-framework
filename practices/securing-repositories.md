@@ -52,7 +52,10 @@ This guide describes our minimum set of requirements to secure & configure our G
 
 ### Branch protection
 
-- Require <!-- markdown-link-check-disable -->[pull request code reviews](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-pull-request-reviews-before-merging)<!-- markdown-link-check-enable -->, by at least one code owner, to merge a branch.
-- Require <!-- markdown-link-check-disable -->[signed commits](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-signed-commits)<!-- markdown-link-check-enable -->, and, accordingly, check that commits are verified before merging. Git treats authentication and identity separately - any authenticated user can impersonate another developer when committing code. This means that even if a junior account is compromised it could have significant consequences, for example impersonating the lead developer in the hope of an easy merge. Only by requiring signing can identity truly be verified. [Setup Guides](guides/commit-signing.md) for macOS, Windows, GitHub Actions, and AWS CodePipeline.
-- Invalidate existing reviews when new commits are pushed (`fresh-commits-invalidate-existing-reviews` option).
-- Require adequate automated status checks prior to merging. This should always include checking that branches are up to date.
+- Require <!-- markdown-link-check-disable -->[Pull request code reviews](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-pull-request-reviews-before-merging)<!-- markdown-link-check-enable -->, must be required to merge a branch.
+  - Code reviews must be approved by at least one code owner
+- Commits must be <!-- markdown-link-check-disable -->[signed](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-signed-commits)<!-- markdown-link-check-enable -->, and verified before merging.
+  - Git treats authentication and identity separately - any authenticated user can impersonate another developer when committing code. This means that even if a junior account is compromised it could have significant consequences, for example impersonating the lead developer in the hope of an easy merge. Only by requiring signing can identity truly be verified. [Setup Guides](guides/commit-signing.md) for macOS, Windows, GitHub Actions, and AWS CodePipeline.
+- Existing reviews must be invalidated automatically when new commits are pushed (using the `fresh-commits-invalidate-existing-reviews` option).
+- Merging must be blocked if the brnach is not up to date.
+- Consider any further automated status checks which should be enforced prior to merging a branch
