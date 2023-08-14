@@ -30,7 +30,7 @@ This guide describes our minimum set of requirements to secure & configure our G
 
 ### Teams setup
 
-Because of baseline visibility configurations, you must setup GitHub teams in order to provide team members access to repositories. The minimum recommended setup is as follows:
+Because of baseline visibility configuration (please see Organisation-level settings, above), you must create GitHub teams in to provide individuals access to repositories. The minimum recommended setup is as follows:
 
 - Create one team with the name of your programme (e.g. `Engineering Quality Framework`). Add all required members to this team.
 - Create one child team within the team, for admins only (e.g. `Engineering Quality Framework Admins`). Add admins only to this team.
