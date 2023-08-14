@@ -40,7 +40,7 @@ This minimum set of requirements should be implemented alongside other relevant 
     - Add admins only to this team.
     - Set this team to have `Admin` access (under the `Manage Access` option in `Settings`).
   - Create a second child team, for code owners (e.g. `Engineering Quality Framework Code Owners`).
-    - Add relevant members to this team.
+    - Add relevant members to this team: these are the individuals who will be permitted to approve pull request code reviews (please see Branch protection, below).
     - Use this team rather than individual accounts in the CODEOWNERS file (example [here](https://github.com/NHSDigital/software-engineering-quality-framework/blob/master/.github/CODEOWNERS)).
   - Child teams inherit the parent's access permissions, simplifying permissions management for large groups. Members of child teams also receive notifications when the parent team is `@mentioned`, simplifying communication with multiple groups of people.
   - Depending on your use case, you may want to create additional teams (e.g. a read-only access team).
