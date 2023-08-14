@@ -67,6 +67,7 @@ This minimum set of requirements should be implemented alongside other relevant 
 
 ## Repository content
 
+- The repository must have a description(using the `About` option)
 - The following minimum set of files must be included in the repository, to support others to navigate the repository content:
   - README.md
   - CONTRIBUTING.md
