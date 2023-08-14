@@ -7,6 +7,7 @@
     - [Teams setup](#teams-setup)
   - [Code security](#code-security)
     - [Branch protection](#branch-protection)
+  - [Repository content](#repository-content)
 
 In line with [NCSC guidance](https://www.ncsc.gov.uk/collection/developers-collection/principles/protect-your-code-repository) it is important to secure your code repository.
 
