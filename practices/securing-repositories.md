@@ -72,6 +72,7 @@ This minimum set of requirements should be implemented alongside other relevant 
   - README.md
   - CONTRIBUTING.md
   - LICENSE.md
-  - .github/PULL_REQUEST_TEMPLATE.md
-  - .github/SECURITY.md
+  - PULL_REQUEST_TEMPLATE.md
+  - SECURITY.md
+  - CODEOWNERS (which should reference teams rather than individuals - please see [teams setup](#teams-setup)
 - We recommend the use of a repository template, for example [NHS England Repository Template](https://github.com/nhs-england-tools/repository-template)
