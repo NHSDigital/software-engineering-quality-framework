@@ -71,6 +71,6 @@ This minimum set of requirements should be implemented alongside other relevant 
   - README.md
   - CONTRIBUTING.md
   - LICENSE.md
-  - Pull request template
-  - Security issue report note
+  - .github/PULL_REQUEST_TEMPLATE.md
+  - .github/SECURITY.md
 - We recommend the use of a repository template, for example [NHS England Repository Template](https://github.com/nhs-england-tools/repository-template)
