@@ -11,7 +11,7 @@
 
 In line with [NCSC guidance](https://www.ncsc.gov.uk/collection/developers-collection/principles/protect-your-code-repository) it is important to secure your code repository.
 
-This guide describes our minimum set of requirements to secure & configure our Github repositories. This minimum set should be implemented alongside other relevant guidance which contribute to [security](security.md) as a whole. These are discussed in more detail as part of the [Quality Checks](../quality-checks.md).
+This guide describes our minimum set of requirements to secure & configure our Github repositories. This minimum set should be implemented alongside other relevant guidance which contribute to [security](security.md) as a whole. Please also see [Quality Checks](../quality-checks.md).
 
 ## Access controls
 
