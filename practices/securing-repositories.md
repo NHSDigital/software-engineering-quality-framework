@@ -9,7 +9,7 @@
     - [Branch protection](#branch-protection)
   - [Repository content](#repository-content)
 
-In line with [NCSC guidance](https://www.ncsc.gov.uk/collection/developers-collection/principles/protect-your-code-repository) it is important to secure your code repository.
+In line with [NCSC guidance](https://www.ncsc.gov.uk/collection/developers-collection/principles/protect-your-code-repository) it is essential to secure your code repository.
 
 This guide describes our minimum set of requirements to secure & configure our code repositories, with specific guidance for GitHub-based repositories.
 
