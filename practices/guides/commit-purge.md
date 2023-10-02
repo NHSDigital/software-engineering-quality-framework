@@ -6,7 +6,7 @@ Engineering teams should take all necessary precautions to ensure that sensitive
 
 If a secret or other sensitive information is identified as having been pushed to a remote repository in GitHub then the following steps ***must*** be undertaken to ensure removal of the information. Please note that just removing the data from the git history is **not** sufficient as views can be cached by the UI.
 
-1.	Rotate the secrets that have been revealed – whether the repository is public or private this should be a key step in reducing the risk of any accidental publishing of secrets.
-2.	Consider whether an incident should be raised, for example has sensitive information been shared in a public repository. If in doubt raise an incident.
-3.	Undertake steps to [remove the sensitive data from your Git history](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository#purging-a-file-from-your-repositorys-history).
-4.	Once the history has been cleansed we need to request that GitHub purge their cache – please [raise a request](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository#fully-removing-the-data-from-github) with the internal Github admins mailbox.
+1. Rotate the secrets that have been revealed – whether the repository is public or private this should be a key step in reducing the risk of any accidental publishing of secrets.
+2. Consider whether an incident should be raised, for example has sensitive information been shared in a public repository. If in doubt raise an incident.
+3. Undertake steps to [remove the sensitive data from your Git history](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository#purging-a-file-from-your-repositorys-history).
+4. Once the history has been cleansed we need to request that GitHub purge their cache – please [raise a request](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository#fully-removing-the-data-from-github) with the internal Github admins mailbox.
