@@ -87,13 +87,13 @@ Use personal access tokens:
 
 1. In the upper-right corner of any page, click your profile photo, then click  **Settings**.
 
-2. In the left sidebar, click  ** Developer settings**. Then click  **Personal access tokens**.
+2. In the left sidebar, click  **Developer settings**. Then click  **Personal access tokens**.
 
 3. Click  **Generate new token**.
 
 4. Give your token a descriptive name.
 
-5. give your token an expiration, select the  **Expiration**  drop-down menu, then click a default or use the calendar picker.
+5. Give your token an expiration, select the  **Expiration**  drop-down menu, then click a default or use the calendar picker.
 
 6. Select the scopes, or permissions, you'd like to grant this token. To use your token to access repositories from the command line, select  **repo**.
 
