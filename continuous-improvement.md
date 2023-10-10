@@ -99,7 +99,7 @@ The benefits of improving these areas are:
 
 ## Identifying improvement opportunities
 
-Regular team retrospectives are an effective way to identify improvement opportunities and actions. Another potential source are periodic reviews using tools such as the the [AWS](https://aws.amazon.com/architecture/well-architected/) or [Azure](https://azure.microsoft.com/en-gb/blog/introducing-the-microsoft-azure-wellarchitected-framework/) Well-Architected Frameworks and the [NHS Digital quality review](insights/review.md). And of course, tech debt is often uncovered in the course of making changes to a system.
+Regular team retrospectives are an effective way to identify improvement opportunities and actions. Another potential source are periodic reviews using tools such as the the [AWS](https://aws.amazon.com/architecture/well-architected/) or [Azure](https://learn.microsoft.com/en-us/azure/well-architected/) Well-Architected Frameworks and the [NHS Digital quality review](insights/review.md). And of course, tech debt is often uncovered in the course of making changes to a system.
 
 As discused in [Benefits](#benefits), in high level terms the opportunities for reducing waste or improving quality tend to be in these areas:
 
