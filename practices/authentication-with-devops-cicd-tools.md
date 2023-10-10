@@ -1,6 +1,6 @@
 # Authentication with DevOps CI/CD Tools
 
-**Examples of DevOps Tools:**
+## Examples of DevOps Tools:
 
 - Azure DevOps - Pipelines
 - GitHub - Actions
@@ -8,7 +8,7 @@
 - TeamCity
 - Jenkins
 
-**Identity, Authentication, and Authorization**
+## Identity, Authentication, and Authorization
 
 Secrets are the authentication details proving the identity of a user or system. Authenticated identities then have authorisation to access or use systems based on user or group privileges defined within systems.
 
@@ -28,7 +28,7 @@ Here are some other examples:
 - Private encryption keys for systems
 - System-to-system passwords
 
-**Secrets in a CI/CD Pipeline**
+## Secrets in a CI/CD Pipeline
 
 Automated processes are a critical component of DevOps infrastructure. CI/CD orchestration and configuration tools such as listed above are increasingly deployed in DevOps processes to improve processes, facilitate faster deployment of software and product delivery, and provide continuous cost reduction.
 
@@ -36,7 +36,7 @@ However, CI/CD tools are the biggest consumers of secrets and have access to a l
 
 Furthermore, secrets aren't just for authentication between tools. Often, secrets need to be provided as part of the build and deployment process so that deployed resources have access. This is particularly important in hybrid cloud and microservices deployments, and with the automated scaling capabilities of tools like Kubernetes.
 
-**Common Risks to Secrets**
+## Common Risks to Secrets
 
 Tools such as above interface with other systems and applications throughout DevOps environments, and there is the danger of exposed secrets in the clear in CI/CD config files.
 
@@ -58,7 +58,7 @@ Compromised secrets means someone could make unwanted changes or leak informatio
 
 While tools, platforms, and infrastructure may have their own built-in capability to secure secrets, these may lack interoperability, leading to siloed security efforts, making it difficult to track, manage, and audit security effectiveness.
 
-**Best Practices for CI/CD Security**
+## Best Practices for CI/CD Security
 
 The first steps for securing CI/CD pipelines include locking down configuration managers, systems that host repositories, and the build servers. The pipeline should be monitored from end to end with access control across the entire toolchain. Scripted builds need to be scanned for vulnerabilities, and source code needs to be regularly monitored for vulnerabilities prior to app deployment to production.
 
@@ -73,7 +73,7 @@ The security of secrets needs to apply both during transit and at rest. Best pra
 - Ensure secrets are not inadvertently passed on during builds for pull requests via your CI/CD pipelines.
 - Deploy the practice of least privilege: Give access only to secrets that are requisite. Besides user access, least privilege also applies to applications, systems, or connected devices that require privileges or permissions to perform tasks. You should regularly audit levels of access to maintain the level of least privilege.
 
-**Tool Use Cases**
+## Tool Use Cases
 
 **GitHub Actions with AWS CodeBuild**
 
@@ -83,7 +83,7 @@ Use service user account (inform CSOC [csoc@nhs.net](mailto:csoc@nhs.net) to add
 2. Store Key+Secret access key in GitHub vault
 3. GitHub Action invokes the CodeBuild job.
 
-**GitHub**
+## GitHub
 
 Use personal access tokens:
 
@@ -103,7 +103,7 @@ Use personal access tokens:
 
 8. Use token with GitHub Actions
 
-**Azure DevOps**
+## Azure DevOps
 
 Use personal access token:
 
