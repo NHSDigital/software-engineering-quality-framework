@@ -103,7 +103,7 @@ Do not use it when:
 
 - **Sharing your account**: PATs should never be used to provide access to your GitHub account to others. Instead, use GitHub's built-in features for collaboration and access management, such as adding collaborators to repositories or using organisations and teams.
 
-- **Public repositories or code**: PATs provide broad access to your account, so you should never embed them in your code, especially if that code is public. This could allow someone to take control of your account, modify your repositories or steal your data. The [scan secrets functionality](../../docs/user-guides/Scan_secrets.md) that is part of this repository template should prevent you from doing so anyway.
+- **Public repositories or code**: PATs provide broad access to your account, so you should never embed them in your code, especially if that code is public. This could allow someone to take control of your account, modify your repositories or steal your data. The [scan secrets functionality](https://github.com/nhs-england-tools/repository-template/blob/main/docs/user-guides/Scan_secrets.md) that is part of this repository template should prevent you from doing so anyway.
 
 - **Broad permissions**: While PATs can have broad permissions, you should aim to restrict each token's scope to what is necessary for its purpose. For instance, a token used only for reading repository metadata does not need write or admin access.
 
@@ -136,7 +136,7 @@ This guide describes the essence of the fundamental aspects of GitHub authentica
 To be executed by a GitHub organisation administrator:
 
 - Identify the GitHub repository name for which the team has requested a GitHub App integration
-- Create a shared email address [england.[repository-name]-app@nhs.net](england.[repository-name]-app@nhs.net) by filling in the `New shared mailbox request` form using the Internal Portal (ServiceNow)
+- Create a shared email address <!-- markdown-link-check-disable -->[england.[repository-name]-app@nhs.net](england.[repository-name]-app@nhs.net)<!-- markdown-link-check-enable--> by filling in the `New shared mailbox request` form using the Internal Portal (ServiceNow)
   - Delegate access to this mailbox for the GitHub organisation owners, administrators and the engineering team
 - Create a GitHub bot account named `[repository-name]-app` using the email address mentioned above. The bot account should not be added to the organisation; therefore, **no GitHub seat will be taken**. It serves as an identity, but authentication and authorisation are handled via the GitHub App. This avoids granting the bot admin permissions to the repository, enabling commits to be signed by that bot account. Access is controlled solely through the GitHub App.
   - Use the `nhs.net` email address as the default and only email
