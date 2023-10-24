@@ -43,7 +43,6 @@ You need to understand and be able to justify a choice that creates vendor lock-
 
 The choice is between investing time early to build in mobility and deferring that effort (quite possibly forever) to focus on things which deliver more value to the organisation, but following the principle that nothing untested can be assumed to work, engineering principles dictate that you should have a plan to continue to assure that mobility as the project evolves.  If mobility is a required feature, that feature must be tested.
 
-
 ## Details
 
 Always prefer software as a service (SaaS, e.g. Splunk, Jira), then serverless platform as a service (PaaS, e.g. Amazon DynamoDB, AWS Lambda, Texas, AWS Fargate), then infrastructure as a service (IaaS, e.g. cloud VMs). Cloud VMs are the least flexible option available to us, so should only be used if no other option can be chosen.
@@ -59,7 +58,6 @@ If you have a choice as to whether to use functions as a service or a container 
 - Implementations based on cloud functions can be harder to test, because you might not be able to instantiate service dependencies locally.  Is that important for your use case?  Do you have a good developer testing story otherwise?
 - Is your implementation primarily plumbing between other services already in the cloud, with little logic of its own?  Is it primarily asynchronous?  A "yes" to either of these would point in the direction of cloud functions.
 - Do you have specific language or runtime version requirements?  While these can usually be accommodated on cloud function platforms, there is additional work if your needs do not align with the platform-supplied runtimes.  You may find that this erases any advantage to cloud functions over containers.
-
 
 ### Data persistence
 
