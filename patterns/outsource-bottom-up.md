@@ -1,15 +1,15 @@
 # Outsource bottom up
 
 - [Outsource bottom up](#outsource-bottom-up)
-    - [Context](#context)
-    - [The pattern](#the-pattern)
-        - [Benefits](#benefits)
-        - [Tradeoffs](#tradeoffs)
-    - [Details](#details)
-        - [Containers vs cloud functions](#containers-vs-cloud-functions)
-        - [Data persistence](#data-persistence)
-        - [Certificates](#certificates)
-    - [Caveats](#caveats)
+  - [Context](#context)
+  - [The pattern](#the-pattern)
+    - [Benefits](#benefits)
+    - [Tradeoffs](#tradeoffs)
+  - [Details](#details)
+    - [Containers vs cloud functions](#containers-vs-cloud-functions)
+    - [Data persistence](#data-persistence)
+    - [Certificates](#certificates)
+  - [Caveats](#caveats)
 
 ## Context
 
