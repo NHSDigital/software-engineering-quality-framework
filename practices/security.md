@@ -83,7 +83,7 @@ The remainder of this page gives more detailed and specific recommendations to b
   - Be wary of any 3rd party JavaScript included on the page, e.g. for A/B testing, analytics
   - Pin dependencies at known versions to avoid unexpected updates
   - Scan dependencies for vulnerabilities, e.g. using [OWASP Dependency Check](https://owasp.org/www-project-dependency-check/) or [Snyk](https://snyk.io/)
-  - Scan running software, e.g. using [OWASP ZAP](https://owasp.org/www-project-zap/)
+  - Scan running software, e.g. using [OWASP ZAP](https://www.zaproxy.org/)
 - **Automate** security testing &mdash; on every build if practical
   - Generate test data in a way that avoids including personally identifiable information
 - When granting roles to CI/CD tools, use different roles for the different stages in the deployment pipeline &mdash; for example so that a deployment meant for a development account cannot be performed against a production account
@@ -142,17 +142,17 @@ The remainder of this page gives more detailed and specific recommendations to b
   <details><summary>Example IAM policy fragment to prevent unencrypted RDS databases (click to expand)</summary>
 
     ```yaml
-    {​​​​​​​​
+    {
       "Sid": "",
       "Effect": "Deny",
       "Action": "rds:CreateDBInstance",
       "Resource": "*",
-      "Condition": {​​​​​​​​
-        "Bool": {​​​​​​​​
+      "Condition": {
+        "Bool": {
           "rds:StorageEncrypted": "false"
         }
-      }​​​​​​​​
-    }​​​​​​​​
+      }
+    }
     ```
 
   </details>
