@@ -49,7 +49,7 @@ This minimum set of requirements should be implemented alongside other relevant 
 ## Code security
 
 - [Dependabot](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/) alerts for vulnerabilities must be enabled and acted on appropriately.
-- [SBOM (Software Bill of Materials)](../tools/dependency-scan/README.md) must be generated for your repository content and all the artefacts that are build as part of the CI/CD process.
+- [SBOM (Software Bill of Materials)](../tools/dependency-scan/README.md) must be generated for your repository content and all the artefacts that are built as part of the CI/CD process.
 - Refer to [Quality Checks](../quality-checks.md) for further code security practices.
 
 ### Branch protection
