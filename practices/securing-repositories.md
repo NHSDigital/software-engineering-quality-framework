@@ -65,6 +65,10 @@ This minimum set of requirements should be implemented alongside other relevant 
 - Merging must be blocked if the branch is not up to date.
 - Consider any further automated status checks which should be enforced prior to merging a branch
 
+### Removing sensitive information
+
+Teams should take all necessary precautions to ensure that sensitive data does not leak into Source Control Management Systems. Should any sensitive information leak into Source Control then teams should review the steps [detailed here](guides/commit-purge.md).
+
 ## Repository content
 
 - The repository must have a description (using the `About` option)
