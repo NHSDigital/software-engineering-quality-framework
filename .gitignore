@@ -1,3 +1,5 @@
-.vscode
-**/.DS_Store
-tools/dependency-check-maven/example/.settings
+.DS_Store
+.obsidian
+.vs
+*.code-workspace
+!project.code-workspace

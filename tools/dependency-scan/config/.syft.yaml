@@ -1,0 +1,220 @@
+# TODO: Example
+
+# the output format(s) of the SBOM report (options: table, text, json, spdx, ...)
+# same as -o, --output, and SYFT_OUTPUT env var
+# to specify multiple output files in differing formats, use a list:
+# output:
+#   - "json=<syft-json-output-file>"
+#   - "spdx-json=<spdx-json-output-file>"
+output: "table"
+
+# suppress all output (except for the SBOM report)
+# same as -q ; SYFT_QUIET env var
+quiet: false
+
+# same as --file; write output report to a file (default is to write to stdout)
+file: ""
+
+# enable/disable checking for application updates on startup
+# same as SYFT_CHECK_FOR_APP_UPDATE env var
+check-for-app-update: true
+
+# a list of globs to exclude from scanning. same as --exclude ; for example:
+# exclude:
+#   - "/etc/**"
+#   - "./out/**/*.json"
+exclude: []
+
+# os and/or architecture to use when referencing container images (e.g. "windows/armv6" or "arm64")
+# same as --platform; SYFT_PLATFORM env var
+platform: ""
+
+# set the list of package catalogers to use when generating the SBOM
+# default = empty (cataloger set determined automatically by the source type [image or file/directory])
+# catalogers:
+#   - ruby-gemfile
+#   - ruby-gemspec
+#   - python-index
+#   - python-package
+#   - javascript-lock
+#   - javascript-package
+#   - php-composer-installed
+#   - php-composer-lock
+#   - alpmdb
+#   - dpkgdb
+#   - rpmdb
+#   - java
+#   - apkdb
+#   - go-module-binary
+#   - go-mod-file
+#   - dartlang-lock
+#   - rust
+#   - dotnet-deps
+catalogers:
+
+# cataloging packages is exposed through the packages and power-user subcommands
+package:
+
+  # search within archives that do contain a file index to search against (zip)
+  # note: for now this only applies to the java package cataloger
+  # SYFT_PACKAGE_SEARCH_INDEXED_ARCHIVES env var
+  search-indexed-archives: true
+
+  # search within archives that do not contain a file index to search against (tar, tar.gz, tar.bz2, etc)
+  # note: enabling this may result in a performance impact since all discovered compressed tars will be decompressed
+  # note: for now this only applies to the java package cataloger
+  # SYFT_PACKAGE_SEARCH_UNINDEXED_ARCHIVES env var
+  search-unindexed-archives: false
+
+  cataloger:
+    # enable/disable cataloging of packages
+    # SYFT_PACKAGE_CATALOGER_ENABLED env var
+    enabled: true
+
+    # the search space to look for packages (options: all-layers, squashed)
+    # same as -s ; SYFT_PACKAGE_CATALOGER_SCOPE env var
+    scope: "squashed"
+
+# cataloging file classifications is exposed through the power-user subcommand
+file-classification:
+  cataloger:
+    # enable/disable cataloging of file classifications
+    # SYFT_FILE_CLASSIFICATION_CATALOGER_ENABLED env var
+    enabled: true
+
+    # the search space to look for file classifications (options: all-layers, squashed)
+    # SYFT_FILE_CLASSIFICATION_CATALOGER_SCOPE env var
+    scope: "squashed"
+
+# cataloging file contents is exposed through the power-user subcommand
+file-contents:
+  cataloger:
+    # enable/disable cataloging of secrets
+    # SYFT_FILE_CONTENTS_CATALOGER_ENABLED env var
+    enabled: true
+
+    # the search space to look for secrets (options: all-layers, squashed)
+    # SYFT_FILE_CONTENTS_CATALOGER_SCOPE env var
+    scope: "squashed"
+
+  # skip searching a file entirely if it is above the given size (default = 1MB; unit = bytes)
+  # SYFT_FILE_CONTENTS_SKIP_FILES_ABOVE_SIZE env var
+  skip-files-above-size: 1048576
+
+  # file globs for the cataloger to match on
+  # SYFT_FILE_CONTENTS_GLOBS env var
+  globs: []
+
+# cataloging file metadata is exposed through the power-user subcommand
+file-metadata:
+  cataloger:
+    # enable/disable cataloging of file metadata
+    # SYFT_FILE_METADATA_CATALOGER_ENABLED env var
+    enabled: true
+
+    # the search space to look for file metadata (options: all-layers, squashed)
+    # SYFT_FILE_METADATA_CATALOGER_SCOPE env var
+    scope: "squashed"
+
+  # the file digest algorithms to use when cataloging files (options: "sha256", "md5", "sha1")
+  # SYFT_FILE_METADATA_DIGESTS env var
+  digests: ["sha256"]
+
+# cataloging secrets is exposed through the power-user subcommand
+secrets:
+  cataloger:
+    # enable/disable cataloging of secrets
+    # SYFT_SECRETS_CATALOGER_ENABLED env var
+    enabled: true
+
+    # the search space to look for secrets (options: all-layers, squashed)
+    # SYFT_SECRETS_CATALOGER_SCOPE env var
+    scope: "all-layers"
+
+  # show extracted secret values in the final JSON report
+  # SYFT_SECRETS_REVEAL_VALUES env var
+  reveal-values: false
+
+  # skip searching a file entirely if it is above the given size (default = 1MB; unit = bytes)
+  # SYFT_SECRETS_SKIP_FILES_ABOVE_SIZE env var
+  skip-files-above-size: 1048576
+
+  # name-regex pairs to consider when searching files for secrets. Note: the regex must match single line patterns
+  # but may also have OPTIONAL multiline capture groups. Regexes with a named capture group of "value" will
+  # use the entire regex to match, but the secret value will be assumed to be entirely contained within the
+  # "value" named capture group.
+  additional-patterns: {}
+
+  # names to exclude from the secrets search, valid values are: "aws-access-key", "aws-secret-key", "pem-private-key",
+  # "docker-config-auth", and "generic-api-key". Note: this does not consider any names introduced in the
+  # "secrets.additional-patterns" config option.
+  # SYFT_SECRETS_EXCLUDE_PATTERN_NAMES env var
+  exclude-pattern-names: []
+
+# options when pulling directly from a registry via the "registry:" scheme
+registry:
+  # skip TLS verification when communicating with the registry
+  # SYFT_REGISTRY_INSECURE_SKIP_TLS_VERIFY env var
+  insecure-skip-tls-verify: false
+  # use http instead of https when connecting to the registry
+  # SYFT_REGISTRY_INSECURE_USE_HTTP env var
+  insecure-use-http: false
+
+  # credentials for specific registries
+  auth:
+      # the URL to the registry (e.g. "docker.io", "localhost:5000", etc.)
+      # SYFT_REGISTRY_AUTH_AUTHORITY env var
+    - authority: ""
+      # SYFT_REGISTRY_AUTH_USERNAME env var
+      username: ""
+      # SYFT_REGISTRY_AUTH_PASSWORD env var
+      password: ""
+      # note: token and username/password are mutually exclusive
+      # SYFT_REGISTRY_AUTH_TOKEN env var
+      token: ""
+      # - ... # note, more credentials can be provided via config file only
+
+# generate an attested SBOM
+attest:
+  # path to the private key file to use for attestation
+  # SYFT_ATTEST_KEY env var
+  key: "cosign.key"
+
+  # password to decrypt to given private key
+  # SYFT_ATTEST_PASSWORD env var, additionally responds to COSIGN_PASSWORD
+  password: ""
+
+log:
+  # use structured logging
+  # same as SYFT_LOG_STRUCTURED env var
+  structured: false
+
+  # the log level; note: detailed logging suppress the ETUI
+  # same as SYFT_LOG_LEVEL env var
+  level: "error"
+
+  # location to write the log file (default is not to have a log file)
+  # same as SYFT_LOG_FILE env var
+  file: ""
+
+# uploading package SBOM is exposed through the packages subcommand
+anchore:
+  # (feature-preview) the Anchore Enterprise Host or URL to upload results to (supported on Enterprise 3.0+)
+  # same as -H ; SYFT_ANCHORE_HOST env var
+  host: ""
+
+  # (feature-preview) the path after the host to the Anchore External API (supported on Enterprise 3.0+)
+  # same as SYFT_ANCHORE_PATH env var
+  path: ""
+
+  # (feature-preview) the username to authenticate against Anchore Enterprise (supported on Enterprise 3.0+)
+  # same as -u ; SYFT_ANCHORE_USERNAME env var
+  username: ""
+
+  # (feature-preview) the password to authenticate against Anchore Enterprise (supported on Enterprise 3.0+)
+  # same as -p ; SYFT_ANCHORE_PASSWORD env var
+  password: ""
+
+  # (feature-preview) path to dockerfile to be uploaded with the syft results to Anchore Enterprise (supported on Enterprise 3.0+)
+  # same as -d ; SYFT_ANCHORE_DOCKERFILE env var
+  dockerfile: ""

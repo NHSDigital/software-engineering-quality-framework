@@ -1,22 +1,20 @@
 # Engineering principles
 
-This is part of a broader [quality framework](README.md)
+- [Engineering principles](#engineering-principles)
+  - [Details](#details)
+    - [1. Eliminate waste](#1-eliminate-waste)
+    - [2. Build quality in](#2-build-quality-in)
+    - [3. Create knowledge](#3-create-knowledge)
+    - [4. Defer commitment](#4-defer-commitment)
+    - [5. Deliver as fast as possible](#5-deliver-as-fast-as-possible)
+    - [6. Respect for people](#6-respect-for-people)
+    - [7. Optimise the whole](#7-optimise-the-whole)
+
+## Details
 
 Our principles guide the way we work and interact with each other. They are based on the seven Lean principles as expressed in Lean Software Development: An Agile Toolkit by Mary Poppendieck and Tom Poppendieck.
 
-# Summary
-
-1. [Eliminate waste](#1-eliminate-waste)
-2. [Build quality in](#2-build-quality-in)
-3. [Create knowledge](#3-create-knowledge)
-4. [Defer commitment](#4-defer-commitment)
-5. [Deliver as fast as possible](#5-deliver-as-fast-as-possible)
-6. [Respect for people](#6-respect-for-people)
-7. [Optimise the whole](#7-optimise-the-whole)
-
-# Details
-
-## 1. Eliminate waste
+### 1. Eliminate waste
 
 Waste is anything that interferes with giving customers what they really value at the time and place where it will provide the most value. Here are some examples, listed against the seven types of waste identified by Lean:
 
@@ -38,11 +36,13 @@ Waste is anything that interferes with giving customers what they really value a
 
 - **Defects** due to not understanding requirements properly or bugs leaking through. Use approaches described in the next section.
 
-## 2. Build quality in
+### 2. Build quality in
 
 The following practices support the principle of building quality in.
 
 **Collaborative analysis and elaboration** with the right people involved to examine a change from all angles to ensure requirements are fully understood at the point the work will be done.
+
+**[Deploy safely.](patterns/deployment.md)** Use automation and repeatable processes to ensure that products can be deployed safely.
 
 **[Deliver incrementally.](patterns/little-and-often.md)** Establish build-measure-learn loops to keep the system simple and to ensure it meets evolving user needs.
 
@@ -74,17 +74,19 @@ The following practices support the principle of building quality in.
 
 **Bake in [observability](practices/observability.md) and [reliability](practices/service-reliability.md).** [SERVICE-RELIABILITY](https://service-manual.nhs.uk/service-standard/14-operate-a-reliable-service) Understand requirements as a team, treated as unspoken user needs. Consider it through every stage of delivery. Verify it automatically and continuously. Practice incident management resolution using techniques like [game days](https://wa.aws.amazon.com/wat.concept.gameday.en.html).
 
-## 3. Create knowledge
+### 3. Create knowledge
 
 **Generate knowledge.** Make time for activities which help us learn by doing, e.g. spikes, proof of concepts. Validation of technical design comes as the code is being written &mdash; expect the design to evolve. Encourage learning and experimentation.
 
 **Gather knowledge.** Release a minimum feature set early for evaluation and feedback and continue to iterate and get feedback. Use continuous integration and live service monitoring and analytics to gain insight on code and system health.
 
-**Share knowledge.** e.g. pair programming, code reviews, show and tell.
+**Share knowledge.** e.g. pair programming, code reviews, show and tell. Consider whether encoding knowledge in tools would assist other members of your team, for example building a VSCode extension to provide contextual information and tips for using a bespoke test harness.
 
 **Record knowledge.** e.g. tests, self-documenting code, self-documenting system (e.g. [OpenAPI](https://swagger.io/resources/open-api/)), documentation &mdash; in that order.
 
-## 4. Defer commitment
+**Record decisions.** Use the [Any Decision Record template](any-decision-record-template.md) to document point-in-time decisions providing information like context, assumption, drivers, options and rationale to articulate the decision for the stakeholders and your future self. Always, consider and compare options as a decision made without that is not a decision.
+
+### 4. Defer commitment
 
 **Make decisions small** by breaking a big problem down.
 
@@ -94,7 +96,9 @@ The following practices support the principle of building quality in.
 
 **Just enough, just in time** &mdash; applied to all stages: research, analysis, product design, planning, technical design.
 
-## 5. Deliver as fast as possible
+**Recognise architecturally significant decisions** that affect the structure, non-functional characteristics, dependencies, interfaces or construction techniques. A good architecture decision is one that helps guide development teams in making the right technical choices.
+
+### 5. Deliver as fast as possible
 
 We need to figure out how to deliver software as fast as possible.  This reduces the cycle time for change, allows the business to reach the point of increased learning sooner and provides more immediate gratification and feedback for the customer.  This also allows us to defer commitment as much as possible.
 
@@ -108,7 +112,7 @@ We need to figure out how to deliver software as fast as possible.  This reduces
 
 **Choose the right tools for each job.** [SERVICE-TOOLS](https://service-manual.nhs.uk/service-standard/11-choose-the-right-tools-and-technology) Balance autonomy and conformity: unnecessary proliferation of a wide variety of tools impacts overall effectiveness, but limiting too much promotes "least worst" choices. Note that "each job" does not have to mean a single toolset for a service: consider a polyglot approach for component-based services.
 
-## 6. Respect for people
+### 6. Respect for people
 
 **Communicate** e.g. stand-ups, retrospectives, show and tell / demo.
 
@@ -124,7 +128,9 @@ We need to figure out how to deliver software as fast as possible.  This reduces
 
 **No blame.** When things go wrong, treat it as a learning opportunity for the team and organisation. Use blameless post mortems and Five Whys.
 
-## 7. Optimise the whole
+**[Use inclusive language.](inclusive-language.md)** Avoid terms which cause hurt and offence, including if they have historically been considered industry-standard terms.
+
+### 7. Optimise the whole
 
 **Visualise the work.** Map the value stream with a Kanban board, identify bottlenecks.
 
