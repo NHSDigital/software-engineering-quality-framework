@@ -20,23 +20,23 @@ Our principles guide the way we work and interact with each other. They are base
 
 Waste is anything that interferes with giving customers what they really value at the time and place where it will provide the most value. Here are some examples, listed against the seven types of waste identified by Lean:
 
-* **Inventory &mdash; partially done work**, e.g. plans and designs, code shelved halfway. Limit work in progress (WIP) and use a pull-based approach.
+- **Inventory &mdash; partially done work**, e.g. plans and designs, code shelved halfway. Limit work in progress (WIP) and use a pull-based approach.
 
-* **Inventory &mdash; [unnecessary resources](practices/cloud-services.md)** [[ARCHITECTURE-SUSTAINABILITY]](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/deliver-sustainable-services), e.g. server over-provisioning, complicated tools where simple ones would do. Adopt a "just enough, not just in case" mindset.
+- **Inventory &mdash; [unnecessary resources](practices/cloud-services.md)** [[ARCHITECTURE-SUSTAINABILITY]](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/deliver-sustainable-services), e.g. server over-provisioning, complicated tools where simple ones would do. Adopt a "just enough, not just in case" mindset.
 
-* **Overproduction &mdash; planning or designing in excessive detail.** Requirements change, therefore use a "just enough, just in time" approach to both. Detail should be added as you move to the right in the [cone of uncertainty](http://www.agilenutshell.com/cone_of_uncertainty).
+- **Overproduction &mdash; planning or designing in excessive detail.** Requirements change, therefore use a "just enough, just in time" approach to both. Detail should be added as you move to the right in the [cone of uncertainty](http://www.agilenutshell.com/cone_of_uncertainty).
 
-* **Overproduction &mdash; overengineering**, i.e. building unnecessary features, unwarranted levels of code perfection or quantities of tests, or premature optimisation. Start simple and prefer explicit logic to implicit. Be pragmatic and balance effort now with saved effort or risk in the future. Remember [KISS](http://principles-wiki.net/principles:keep_it_simple_stupid) and [YAGNI](https://www.martinfowler.com/bliki/Yagni.html) and see the caveats in [structured code](practices/structured-code.md).
+- **Overproduction &mdash; overengineering**, i.e. building unnecessary features, unwarranted levels of code perfection or quantities of tests, or premature optimisation. Start simple and prefer explicit logic to implicit. Be pragmatic and balance effort now with saved effort or risk in the future. Remember [KISS](http://principles-wiki.net/principles:keep_it_simple_stupid) and [YAGNI](https://www.martinfowler.com/bliki/Yagni.html) and see the caveats in [structured code](practices/structured-code.md).
 
-* **Overproduction &mdash; reinventing the wheel.** Solving the same problem repeatedly in an organisation, or building when you could reuse or buy [[ARCHITECTURE-REUSE]](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/reuse-before-buy-build). Make sure there are effective ways to share knowledge between teams to avoid this.
+- **Overproduction &mdash; reinventing the wheel.** Solving the same problem repeatedly in an organisation, or building when you could reuse or buy [[ARCHITECTURE-REUSE]](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/reuse-before-buy-build). Make sure there are effective ways to share knowledge between teams to avoid this.
 
-* **Extra Processing &mdash; due to delayed integration** making merging / reconciliation and testing harder. Use [continuous integration](practices/continuous-integration.md) with frequent merges. When combined with Test-Driven Development, this will allow bugs to be detected early when they are cheap to fix.
+- **Extra Processing &mdash; due to delayed integration** making merging / reconciliation and testing harder. Use [continuous integration](practices/continuous-integration.md) with frequent merges. When combined with Test-Driven Development, this will allow bugs to be detected early when they are cheap to fix.
 
-* **Hand-offs** (“Transportation” and “Waiting” in Lean terminology) &mdash; excessive passing of work between individuals or teams. Develop multi-skilled individuals and cross-functional product teams. Apply the [Shift Left](https://www.testim.io/blog/shift-left-testing-guide/) principle to testing and other areas of your SDLC.
+- **Hand-offs** (“Transportation” and “Waiting” in Lean terminology) &mdash; excessive passing of work between individuals or teams. Develop multi-skilled individuals and cross-functional product teams. Apply the [Shift Left](https://www.testim.io/blog/shift-left-testing-guide/) principle to testing and other areas of your SDLC.
 
-* **Context switching &mdash; due to too much work in progress (WIP) or poorly segregated work.** Limit WIP explicitly. Focus on optimising lead time. For project vs. support work, implement time-slicing or rota systems to allow focus and prevent reactiveness.
+- **Context switching &mdash; due to too much work in progress (WIP) or poorly segregated work.** Limit WIP explicitly. Focus on optimising lead time. For project vs. support work, implement time-slicing or rota systems to allow focus and prevent reactiveness.
 
-* **Defects** due to not understanding requirements properly or bugs leaking through. Use approaches described in the next section.
+- **Defects** due to not understanding requirements properly or bugs leaking through. Use approaches described in the next section.
 
 ## 2. Build quality in
 
