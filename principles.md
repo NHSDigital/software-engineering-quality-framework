@@ -20,7 +20,7 @@ Our principles guide the way we work and interact with each other. They are base
 
 Waste is anything that interferes with giving customers what they really value at the time and place where it will provide the most value. Here are some examples, listed against the seven types of waste identified by Lean:
 
-* **Inventory &mdash; partially done work**, e.g. plans and designs, code shelved halfay. Limit work in progress (WIP) and use a pull-based approach.
+* **Inventory &mdash; partially done work**, e.g. plans and designs, code shelved halfway. Limit work in progress (WIP) and use a pull-based approach.
 
 * **Inventory &mdash; [unnecessary resources](practices/cloud-services.md)** [[ARCHITECTURE-SUSTAINABILITY]](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/deliver-sustainable-services), e.g. server over-provisioning, complicated tools where simple ones would do. Adopt a "just enough, not just in case" mindset.
 
