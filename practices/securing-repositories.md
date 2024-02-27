@@ -8,6 +8,7 @@
     - [Teams setup](#teams-setup)
   - [Code security](#code-security)
     - [Branch protection](#branch-protection)
+    - [Removing sensitive information](#removing-sensitive-information)
 
 This guide lays out security best practice for Github repositories. This set of practices is a minimum (nothing stops you from doing more), and they should be implemented alongside other relevant ones that contribute to [security](security.md) as a whole. These are discussed in more detail as part of the [Quality Checks](../quality-checks.md).
 
@@ -40,7 +41,7 @@ Because of baseline visibility configurations, you must setup GitHub teams in or
 - Create one team with the name of your product (e.g. `Engineering Quality Framework`). Add all required members to this team.
 - Create one child team within the team, for admins only (e.g. `Engineering Quality Framework Admins`). Add admins only to this team.
 - Create a second child team, for code owners (e.g. `Engineering Quality Framework Code Owners`). Add relevant members to this team, and reference in the CODEOWNERS file (example [here](https://github.com/NHSDigital/software-engineering-quality-framework/blob/master/.github/CODEOWNERS)).
-- For each repo in your programme (e.g. `software-engineering-quality-framework`), under the `Manage Access` option in `Settings`, set the general team to have `Write` access and the admins team to have `Admin` access.
+- For each of your repositories (e.g. `NHSDigital/software-engineering-quality-framework`), under the `Collaborators and teams > Manage Access` option in `Settings`, set the general (parent) team to have `Write` access, code owners to have `Maintain` access, and the admins team to have `Admin` access.
 
 Child teams inherit the parent's access permissions, simplifying permissions management for large groups. Members of child teams also receive notifications when the parent team is `@mentioned`, simplifying communication with multiple groups of people.
 
