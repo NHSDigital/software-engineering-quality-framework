@@ -51,14 +51,14 @@ Depending on your use case, you may want to create additional teams (e.g. a read
 
 - Enable, at a minimum, [Dependabot](https://github.blog/2020-06-01-keep-all-your-packages-up-to-date-with-dependabot/) alerts for vulnerabilities and respond to them appropriately.
 - Generate [SBOM (Software Bill of Materials)](../tools/dependency-scan/README.md) for your repository content and all the artefacts that are build as part of the CI/CD process
-- Disable ability to push to the default branch for everyone, admins included (`applies-to-admin` option).
-- Refer to [Quality Checks](../quality-checks.md) for further code security practices.
+- Disable ability to push to the default branch for everyone, admins included (`Rules applied to everyone including administrators` option).
+- Refer to [Quality checks](../quality-checks.md) for further code security practices.
 
 ### Branch protection
 
 - Require <!-- markdown-link-check-disable -->[pull request code reviews](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-pull-request-reviews-before-merging)<!-- markdown-link-check-enable -->, by at least one code owner, to merge a branch.
 - Require <!-- markdown-link-check-disable -->[signed commits](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-signed-commits)<!-- markdown-link-check-enable -->, and, accordingly, check that commits are verified before merging. Git treats authentication and identity separately - any authenticated user can impersonate another developer when committing code. This means that even if a junior account is compromised it could have significant consequences, for example impersonating the lead developer in the hope of an easy merge. Only by requiring signing can identity truly be verified. [Setup Guides](guides/commit-signing.md) for macOS, Windows, GitHub Actions, and AWS CodePipeline.
-- Invalidate existing reviews when new commits are pushed (`fresh-commits-invalidate-existing-reviews` option).
+- Invalidate existing reviews when new commits are pushed (`Dismiss stale pull request approvals when new commits are pushed` option).
 - Require adequate automated status checks prior to merging. This should always include checking that branches are up to date.
 
 ### Removing sensitive information
