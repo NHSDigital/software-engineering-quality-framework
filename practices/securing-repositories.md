@@ -10,13 +10,13 @@
     - [Branch protection](#branch-protection)
     - [Removing sensitive information](#removing-sensitive-information)
 
-This guide lays out security best practice for Github repositories. This set of practices is a minimum (nothing stops you from doing more), and they should be implemented alongside other relevant ones that contribute to [security](security.md) as a whole. These are discussed in more detail as part of the [Quality Checks](../quality-checks.md).
+This guide lays out security best practice for GitHub repositories. This set of practices is a minimum (nothing stops you from doing more), and they should be implemented alongside other relevant ones that contribute to [security](security.md) as a whole. These are discussed in more detail as part of the [Quality checks](../quality-checks.md).
 
 ## Prerequisites
 
-[Publishing Code](../quality-checks.md#publishing-code) within the Quality Checks page lists a minimum set of practices that should be in place before code is published. This implies that:
+[Publishing code](../quality-checks.md#publishing-code) within the Quality checks page lists a minimum set of practices that should be in place before code is published. This implies that:
 
-- Repositories can only be secure once the listed practices meet the relevant amber/green thresholds (which should also be reflected in a [Quality Dashboard](../insights/metrics.md)).
+- Repositories can only be secure once the listed practices meet the relevant amber/green thresholds (which should also be reflected in a [Engineering Quality Dashboard](../insights/metrics.md)).
 - The guidelines in this page are a necessary, but not a sufficient, condition for code overall being secure.
 
 ## Access controls
