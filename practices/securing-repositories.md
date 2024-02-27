@@ -37,7 +37,7 @@ This guide lays out security best practice for Github repositories. This set of 
 
 Because of baseline visibility configurations, you must setup GitHub teams in order to provide team members access to repositories. The minimum recommended setup is as follows:
 
-- Create one team with the name of your programme (e.g. `Engineering Quality Framework`). Add all required members to this team.
+- Create one team with the name of your product (e.g. `Engineering Quality Framework`). Add all required members to this team.
 - Create one child team within the team, for admins only (e.g. `Engineering Quality Framework Admins`). Add admins only to this team.
 - Create a second child team, for code owners (e.g. `Engineering Quality Framework Code Owners`). Add relevant members to this team, and reference in the CODEOWNERS file (example [here](https://github.com/NHSDigital/software-engineering-quality-framework/blob/master/.github/CODEOWNERS)).
 - For each repo in your programme (e.g. `software-engineering-quality-framework`), under the `Manage Access` option in `Settings`, set the general team to have `Write` access and the admins team to have `Admin` access.
