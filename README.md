@@ -34,7 +34,7 @@ The philosophy underpinning this framework advocates:
 The framework is a companion to:
 
 * The [NHS service standard](https://service-manual.nhs.uk/service-standard), with cross-references in this format: [SERVICE-RELIABILITY](https://service-manual.nhs.uk/service-standard/14-operate-a-reliable-service)
-* The [NHS Digital architectural principles](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles), with cross-references in this format: [ARCHITECTURE-SECURITY](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/adopt-appropriate-cyber-security-standards)
+* The [NHS Digital architectural principles](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles), with cross-references in this format: [ARCHITECTURE-SECURITY](https://digital.nhs.uk/developer/architecture/principles/adopt-appropriate-cyber-security-standards)
 
 ## Contents
 

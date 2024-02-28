@@ -1,4 +1,4 @@
-# Engineering quality-checks
+# Engineering quality checks
 
 This is part of a broader [quality framework](README.md) and forms a key part of the [metrics](insights/metrics.md) section.
 
