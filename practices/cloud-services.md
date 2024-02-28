@@ -36,8 +36,9 @@
 - Services should scale automatically up and down.
   - If possible, drive scaling based on metrics which matter to users (e.g. response time), but balance this with the benefits of choosing leading indicators (e.g. CPU usage) to avoid slow scaling from impacting user experience.
   - Understand how rapidly demand can spike and ensure scaling can meet these requirements. Balance scaling needs with the desire to avoid over provisioning and use [pre-warming](https://petrutandrei.wordpress.com/2016/03/18/pre-warming-the-load-balancer-in-aws/) of judiciously where required. Discuss this with the cloud provider well before go live they can assist with pre-warming processes ([AWS](https://aws.amazon.com/premiumsupport/programs/iem/)).
-- Infrastructure should always be fully utilised (if it isn't, it's generating waste).
-  - Though balance this with potential need to run with some overhead to accommodate failed instance replacement times without overloading remaining instances.
+- As a rule of thumb, where you are using inelastic infrastructure, aim for 80% utilisation.
+  - Don't let utilisation rise far enough that a single instance failing would cause an outage.
+  - Too high utilisation will cause latency problems. Know what your performance SLOs are to understand how much latency headroom you have.
 - Keep up to date.
   - Services/components need prompt updates to dependencies where security vulnerabilities are found &mdash; even if they are not under active development.
   - Services which use deprecated or unsupported technologies should be migrated onto alternatives as a priority.
