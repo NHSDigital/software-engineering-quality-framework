@@ -43,6 +43,7 @@ This is a **self** assessment review:
 - Scores help the team focus attention on where to concentrate improvement work.
 - Scores can help teams communicate and escalate issues outside the team.
 - Scores cannot be compared between teams, but they can help spot common issues which would benefit from coordinated effort between and across teams.
+- This is for use by *whole teams*, which means everyone involved in the delivery & operation of the product, not defined by organisation boundaries (for example if specialisms such as service management and cyber are based in a separate area of the organisation, they are still part of the team and should be included in the review session)
 
 ## Metrics
 
@@ -254,7 +255,7 @@ Good facilitation can help teams get the most out of the review and it is recomm
 
 ### Facilitator responsibilities
 
-- Ensure the session has the right people in it.
+- Ensure the session has the right people in it - see note about about "whole team" not being defined by organisation structures.
 - Ensure all participants understand the [purpose](#purpose) of the review.
 - Ensure a full and accurate review is done, considering all aspects.
 - Ensure actions are identified and recorded.
@@ -264,7 +265,7 @@ Good facilitation can help teams get the most out of the review and it is recomm
 - Recommended group size is 3&ndash;8 team members for each session.
 - Recommended duration is 3&ndash;4 hours, either in one block with breaks or in multiple sessions (but aim to avoid long gaps between sessions).
 - Ask a member of the Software Engineering Quality Assessments team (currently Andrew Blundell, Daniel Stefanuik, David Lavender, Sean Craig, Nick Sparks, Ezequiel Gomez) to create a blank spreadsheet for the review from the [template](review-template.xlsx). This will be stored centrally and shared with the team.
-- Work with a member of the team to fill in the _Project_ and _What's it do_ fields before the session. This is typically uncontroversial and saves time in the session.
+- Work with a member of the team to fill in the *Project* and *What's it do* fields before the session. This is typically uncontroversial and saves time in the session.
 - To save time, fill in the list of participants before the session, but verify and update as necessary at the start of the session.
 - Be ready for the session with the review spreadsheet and this document open such that both can easily be seen by participants by sharing your screen (assuming the review is not being held in person).
 
