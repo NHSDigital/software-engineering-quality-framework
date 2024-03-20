@@ -1,14 +1,25 @@
 # Engineering red lines
 
+## Context
+
+- This is part of a broader [quality framework](README.md)
+
+## Overview
+
 The engineering principles, practices and patterns in this framework provide guidance around best-practice engineering.
 
-There is a lot of this guidance - it's all important, but we consider some of these principles, and some specific practices related to them, to be especially significant and therefore mandatory requirements for the services we build: these are our engineering "red lines".
+There is a lot of this guidance - it's all important, but we consider some of these principles, and some specific practices related to them, to be especially significant: we refer to these as our engineering "red lines".
 
-We have chosen to put in place a formal governance process for any exceptions to these red lines (including how frequently any exceptions need to be re-assessed), and any changes to this central list of red lines.
+We have chosen to put in place a more formal governance process for any exceptions to these red lines in the services we build, for the ongoing re-assessment of any exceptions to the red lines, and for any changes to the list of red lines.
 
 You will find references to the red lines throughout this framework (the references look like this: [**RED-LINE**](red-lines.md)) - and for convenience this list is the complete set of red lines.
 
-## Cloud / Infrastructure
+Drafting notes for any changes to this list:
+  * Red lines must be specific and measurable, for example [Bake in security](practices/security.md) is a good principle but would not be a valid red line, because it's open-ended. Some of the specific security practices that fall under this general principle would be suitable candidates for red lines.
+
+## Details
+
+### Cloud / Infrastructure
 
 1. All new services must be developed on public cloud
     * Red line for the principle [overproduction &mdash; building when you could instead reuse or buy](principles.md#1-eliminate-waste) and the pattern [outsource from the bottom up](patterns/outsource-bottom-up.md)
