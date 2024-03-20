@@ -10,7 +10,7 @@ The engineering principles, practices and patterns in this framework provide gui
 
 There is a lot of this guidance - it's all important, but we consider some of these principles, and some specific practices related to them, to be especially significant: we refer to these as our engineering "red lines", and we consider them to be requirements rather than guidance.
 
-We have chosen to put in place a more formal governance process for:
+We have chosen to put in place a governance process for:
   * Any exceptions to these red lines in the services we build
   * The ongoing re-assessment of any exceptions to the red lines
   * Changes to the list of red lines
