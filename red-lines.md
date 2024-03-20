@@ -8,14 +8,17 @@
 
 The engineering principles, practices and patterns in this framework provide guidance around best-practice engineering.
 
-There is a lot of this guidance - it's all important, but we consider some of these principles, and some specific practices related to them, to be especially significant: we refer to these as our engineering "red lines".
+There is a lot of this guidance - it's all important, but we consider some of these principles, and some specific practices related to them, to be especially significant: we refer to these as our engineering "red lines", and we consider them to be requirements rather than guidance.
 
-We have chosen to put in place a more formal governance process for any exceptions to these red lines in the services we build, for the ongoing re-assessment of any exceptions to the red lines, and for any changes to the list of red lines.
+We have chosen to put in place a more formal governance process for:
+  * Any exceptions to these red lines in the services we build
+  * The ongoing re-assessment of any exceptions to the red lines
+  * Changes to the list of red lines
 
 You will find references to the red lines throughout this framework (the references look like this: [**RED-LINE**](red-lines.md)) - and for convenience this list is the complete set of red lines.
 
 Drafting notes for any changes to this list:
-  * Red lines must be specific and measurable, for example [Bake in security](practices/security.md) is a good principle but would not be a valid red line, because it's open-ended. Some of the specific security practices that fall under this general principle would be suitable candidates for red lines.
+  * Red lines must be specific and measurable, for example [Bake in security](practices/security.md) is a good principle but would not be a valid red line, because it's open-ended. Some of the specific security practices that fall under this general security principle would however be suitable candidates for red lines.
 
 ## Details
 
