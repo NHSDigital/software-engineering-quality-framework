@@ -14,6 +14,8 @@
 
 Our principles guide the way we work and interact with each other. They are based on the seven Lean principles as expressed in Lean Software Development: An Agile Toolkit by Mary Poppendieck and Tom Poppendieck.
 
+A subset of these principles relate to our [red lines](red-lines.md) - these are identified by links like this: [**RED-LINE**](red-lines.md)
+
 ### 1. Eliminate waste
 
 Waste is anything that interferes with giving customers what they really value at the time and place where it will provide the most value. Here are some examples, listed against the seven types of waste identified by Lean.
@@ -21,6 +23,7 @@ Waste is anything that interferes with giving customers what they really value a
 **Inventory &mdash; partially done work**, e.g. plans and designs, code. Limit work in progress (WIP) and use a pull-based approach.
 
 **[Inventory &mdash; unnecessary resources](practices/cloud-services.md)** [ARCHITECTURE-SUSTAINABILITY](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/deliver-sustainable-services), e.g. server over-provisioning, complicated tools where simple ones would do. Adopt a "just enough, not just in case" mindset.
+  * [**RED-LINE**](red-lines.md): Development and test environments must not be run 24 by 7
 
 **Overproduction &mdash; building unnecessary features.** Start simple and basic, get feedback and iterate.
 
@@ -31,6 +34,7 @@ Waste is anything that interferes with giving customers what they really value a
 **Overproduction &mdash; reinventing the wheel.** Solving the same problem repeatedly in an organisation. Make sure there are effective ways to share knowledge between teams to avoid this.
 
 **[Overproduction &mdash; building when you could instead reuse or buy](practices/cloud-services.md).** [ARCHITECTURE-REUSE](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/reuse-before-buy-build) Remember to consider all these alternatives.
+  * [**RED-LINE**](red-lines.md): All new services must be developed on public cloud
 
 **Overproduction &mdash; premature optimisation for reusability.** Before making something reusable, first make it usable. Prefer explicit logic to implicit. Excessively generic systems create accidental complexity. [KISS](http://principles-wiki.net/principles:keep_it_simple_stupid) and [YAGNI](https://www.martinfowler.com/bliki/Yagni.html) and the caveats in [structured code](practices/structured-code.md) again.
 
