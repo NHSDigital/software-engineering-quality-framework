@@ -15,6 +15,10 @@
   - [ARCHITECTURE-CLOUD](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/public-cloud-first)
   - [ARCHITECTURE-REUSE](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/reuse-before-buy-build)
 
+## Red lines
+
+This pattern relates to [**RED-LINE**](red-lines.md): All new services must be developed on public cloud
+
 ## The pattern
 
 Use managed services where available and appropriate. The aim is to reduce operational burden by handing responsibility to the cloud provider. They have made a business from doing this better than most organisations can.

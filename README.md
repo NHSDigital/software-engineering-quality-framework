@@ -40,7 +40,7 @@ The framework is a companion to:
 
 The framework consists of:
 
-* [Engineering principles](principles.md) and [blueprints](blueprints.md)
+* [Engineering principles](principles.md), [blueprints](blueprints.md) and [red lines](red-lines.md)
 * [Engineering quality review tool](insights/review.md)
 * [Communities of practice guidelines](communities/communities-of-practice.md) and active communities:
   * [Product Development Test Automation Working Group](communities/pd-test-automation-working-group.md)
