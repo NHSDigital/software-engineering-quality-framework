@@ -23,6 +23,6 @@ When committing your changes, please reference the issue they're resolving, so i
 * Preview your Markdown code to make sure the format is not broken.
 * Check grammar, spelling and punctuation, no one wants to look pedantic by requesting changes due to typos or inconsistent grammar/syntax, but it's only fair to keep this tidy.
 * The framework is open to the world. This has a few implications:
-  * Nothing in it should be confidential, private to NHSD or include any personal data.
+  * Nothing in it should be confidential, private to NHSE or include any personal data.
   * All links in framework pages should be public.
 * Use [inclusive language](inclusive-language.md): avoid terms which cause hurt and offence, including if they have historically been considered industry-standard terms.
