@@ -46,8 +46,4 @@ Create branches and submit Pull Requests to add your own content, or improve exi
 
 [Raise an Issue](https://github.com/NHSDigital/software-engineering-quality-framework/issues/new) for things you would like us to add or amend.
 
-Join the [communities](https://nhs.sharepoint.com/sites/X26_EngineeringCOE) that jointly input into the Framework.
-
-Join weekly knowledge-sharing meetings, focused on building shared solutions.
-
 Ask for a Technical Coach to help guide your team. You can also offer yourself up as a coach to help other teams.
