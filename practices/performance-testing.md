@@ -19,7 +19,6 @@
 
 - These notes are part of a broader set of [principles](../principles.md)
 - This is related to [Engineering quality checks](../quality-checks.md)
-- Related community of practice: [Test Automation Working Group](../communities/pd-test-automation-working-group.md)
 - See also:
   - [Quality Metrics](../quality-checks.md)
   - [Continuous integration](continuous-integration.md)
