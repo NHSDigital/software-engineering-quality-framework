@@ -14,6 +14,18 @@ This is the default technology for building services using Cloud Hosting Service
 * Has the ability to automatically scale to Zero, with fast start-up / scale-up times.
 * Encourages a reduction in the size of deployable components.
 
+Nothing comes for free, and the use of functions as a service requires acceptance of:
+
+* More complicated infrastructure and observability
+* Higher per-request cost
+* A more limited choice of runtimes (or a more complicated build)
+* The need for more contract and integration testing
+* Vendor lock-in
+* Less mature development options
+* A lower performance ceiling for some execution patterns
+
+Organisationally we believe that this trade-off is worth enforcing as a default.
+
 Functions SHOULD be delivered as individual capabilities, rather than one function routing traffic internally to different capabilities (see for example this AWS anti-pattern).
 
 Our preferred managed services are:
