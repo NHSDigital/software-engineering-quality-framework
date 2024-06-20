@@ -48,7 +48,7 @@ Our preferred managed services are:
 
 The following criteria permit __Rule 2__ to be broken
 
-Your Service relies on other proprietary software being installed on the same OS that your code runs on
+Your Service relies on other third party software being installed on the same OS that your code runs on
 
 ### Rule 3 - Where Rules 1 and 2 can NOT be met, your Service MUST be built on Cloud hosted Virtual Machines
 
