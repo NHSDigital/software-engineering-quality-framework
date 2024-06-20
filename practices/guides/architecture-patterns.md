@@ -56,4 +56,4 @@ Where your Service needs to be built on Virtual Machine Instances, then the foll
 
 * Your Virtual Machines MUST be based on commodity images.
 
-Only where Rules 1, 2 and 3 can NOT be met, your Service may be built using physical on premise hardware.
+Only where Rules 1, 2 and 3 can NOT be met, your Service may be built using physical hardware.
