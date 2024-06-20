@@ -28,7 +28,7 @@ The following criteria permit __Rule 1__ to be broken
     * NB: This could suggest that your service could be refactored to reduce batch processing sizes?
 * The data payload size required for operating your Service is beyond the limits of FaaS offerings
     * NB: This could suggest that your service could be refactored to reduce batch processing sizes?
-* Your Service relies on other proprietary software being installed on the same OS that your code runs on
+* Your Service relies on other third party software being installed on the same OS that your code runs on
 
 ### Rule 2 Where Rule 1 can NOT be met, your Service MUST be built using __Managed Service Container__ technologies
 
