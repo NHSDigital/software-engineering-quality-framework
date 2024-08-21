@@ -184,7 +184,7 @@ A dependency may change licence between versions, in a way that brings more resp
 
 If the terms of the new licence are not contradicted by any of the above guidance, the simplest option may well be to comply with it.  For instance, a dependency which changes from the MIT licence to the GPLv3 would require relicensing your application under the GPLv3 (or another compatible licence) to adopt the new version, but would require no technical work other than to increment the dependency version as you normally would.
 
-An important exception to this would be where there are secrets within the codebase or its history which cannot be made public.  However, repositories where this is the case *must* be [made safe](guides/commit-purge.md) regardless of their open or closed source status, so this work needs to be done anyway.
+An important exception to this would be where there are secrets within the codebase or its history which cannot be made public.  However, repositories where this is the case _must_ be [made safe](guides/commit-purge.md) regardless of their open or closed source status, so this work needs to be done anyway.
 
 ### 5.2 Stay on the old version
 
