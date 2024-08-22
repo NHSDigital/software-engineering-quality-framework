@@ -99,7 +99,7 @@ The remainder of this page gives more detailed and specific recommendations to b
 - **Minimise access** to production
   - Logging & monitoring should negate the need to manually inspect a production host
   - All deployments should be done via delivery pipelines, negating the need to manually change a production host
-  - Only allow access for emergencies using a "break glass" pattern, e.g. using Azure AD [Privileged Identity Management](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure)
+  - Only allow access for emergencies using a "break glass" pattern, e.g. using Azure AD [Privileged Identity Management](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure)
   - Audit access to production and alert for unexpected access
   - Frequently asked questions:
     - Q: If I can't access production, how can I check data, for example to respond to a support call? A: one approach is to build a facility (which must be automated, controlled and secured - so likely to be triggered via a pipeline) to clone the production database into a short-lived and isolated copy, so that data can be checked safely without anyone accessing production. Read-replicas can potentially be used instead, but they are (obviously) limited to read-only, and will often consume more cost and energy than on-demand clones ([ARCHITECTURE-SUSTAINABILITY](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/deliver-sustainable-services)). As above, access must be audited and strictly controlled.
@@ -132,7 +132,7 @@ The remainder of this page gives more detailed and specific recommendations to b
     ```
 
     </details>
-  - Segregate workloads, e.g. in separate AWS accounts ([Landing Zone](https://aws.amazon.com/solutions/aws-landing-zone/), [Control Tower](https://aws.amazon.com/controltower/features/)) or Azure [subscriptions](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/decision-guides/subscriptions/)
+  - Segregate workloads, e.g. in separate AWS accounts ([Landing Zone](https://aws.amazon.com/solutions/aws-landing-zone/), [Control Tower](https://aws.amazon.com/controltower/features/)) or Azure [subscriptions](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/resource-org-subscriptions)
   - Fine grained, least privilege IAM roles
 - Secure **CI/CD**
   - Robust authentication and minimum privileges
