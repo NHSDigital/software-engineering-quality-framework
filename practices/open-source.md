@@ -28,7 +28,7 @@
     - [5.2 Stay on the old version](#52-stay-on-the-old-version)
     - [5.3 Replace the dependency](#53-replace-the-dependency)
 
-This section provides guidance for teams who either consume open source dependencies, or are considering whether to make their own projects public.
+This section provides guidance for teams who either consume open source dependencies, or want to understand our responsibilities when we [code in the open](https://service-manual.nhs.uk/standards-and-technology/service-standard-points/12-make-new-source-code-open).
 
 ## 1. Context
 
@@ -47,7 +47,7 @@ There is further guidance as to when publishing our source code would not be app
 
 The position of all three of these documents is that we should code in the open by default. If you are starting a new project then your first choice should be the [MIT Licence](https://choosealicense.com/licenses/mit/).  See [here](https://github.com/nhsx/open-source-policy/blob/main/open-source-policy.md#c-licences-and-regulatory-requirements) for the rationale, and for when alternatives may be appropriate.
 
-There will be special cases where we need to deviate from that guidance. For instance, if we were to build a reference implementation of an API standard, and we wanted to ensure that future developments of that reference implementation benefit the public commons, it may be suitable to choose the AGPL for that implementation. In such cases, where you believe that you may need to deviate from the [Open Source policy](https://github.com/nhsx/open-source-policy/blob/main/open-source-policy.md), you should consult the Engineering Technical Authority for advice.  While it is not (yet) a binding policy, it is a distillation of good practice and should be followed unless there is a good reason not to, as in this example.
+There will be special cases where we need to deviate from the licences listed in the above guidance. For instance, if we were to build a reference implementation of an API standard, and we wanted to ensure that future developments of that reference implementation benefit the public commons, it may be suitable to choose the AGPL for that implementation. In such cases, where you believe that you may need to deviate from the [Open Source policy](https://github.com/nhsx/open-source-policy/blob/main/open-source-policy.md), you should consult the Engineering Technical Authority for advice.  While it is not (yet) a binding policy, it is a distillation of good practice and should be followed unless there is a good reason not to, as in this example.
 
 ## 3. Open source dependencies
 
