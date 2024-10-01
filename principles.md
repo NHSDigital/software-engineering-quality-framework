@@ -86,6 +86,8 @@ The following practices support the principle of building quality in.
 
 **Record decisions.** Use the [Any Decision Record template](any-decision-record-template.md) to document point-in-time decisions providing information like context, assumption, drivers, options and rationale to articulate the decision for the stakeholders and your future self. Always, consider and compare options as a decision made without that is not a decision.
 
+**Consider comments and Readme text** Comments in open source repos are not official communications and don't go through the normal approval process for public communication. They can however still be interpreted as NHSE communication, even if not intended as such, particularly for public repos. Especially when coding in the open, but also when developing in private repositories, consider the contents of Readme files and comments within the code. Ensure that comments add value to the code you are developing. Please avoid anything that could be considered a statement on approach/policy.  Consider the broader impact of any text in these areas to ensure that the project and the organisation are reflected correctly. Note that we produce and maintain services that are important to the public, therefore it is essential to be careful and accurate when referring to these services. If in doubt please ask. Also note there is high sensitivity around protecting privacy so please be careful your comments reflect the importance and sensitivity around protecting personal data.
+
 ### 4. Defer commitment
 
 **Make decisions small** by breaking a big problem down.
