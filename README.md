@@ -40,13 +40,8 @@ The framework is a companion to:
 
 The framework consists of:
 
-* [Engineering principles](principles.md)
+* [Engineering principles](principles.md) and [blueprints](blueprints.md)
 * [Engineering quality review tool](insights/review.md)
-* [Communities of practice guidelines](communities/communities-of-practice.md) and active communities:
-  * [Product Development Test Automation Working Group](communities/pd-test-automation-working-group.md)
-  * [Product Development Engineering CoP](communities/pd-engineering-cop.md)
-  * [Product Development Cloud PaaS Working Group](communities/pd-cloud-working-group.md)
-  * [Secure Engineering CoP](communities/security-cop.md)
 * Guidance on how to practice [continuous improvement](continuous-improvement.md)
 
 ## Contributing

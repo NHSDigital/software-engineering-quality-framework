@@ -15,7 +15,6 @@
 ## Context
 
 - These notes are part of a broader set of [principles](../principles.md)
-- Related community of practice: [Test Automation Working Group](../communities/pd-test-automation-working-group.md)
 - See also:
   - [Continuous integration](continuous-integration.md)
   - [Governance as a side effect](../patterns/governance-side-effect.md)
