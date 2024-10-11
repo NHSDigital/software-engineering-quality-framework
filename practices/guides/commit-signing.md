@@ -24,7 +24,7 @@ gpg --full-generate-key
 - Accept the defaults, Curve 25519 etc.
 - Enter your GitHub account name as the Real Name
 - Enter your GitHub account email as the Email Address
-- Avoid adding a comment (this _may_ prevent git from auto-selecting a key - see Troubleshooting section below)
+- Avoid adding a comment (this *may* prevent git from auto-selecting a key - see Troubleshooting section below)
 - You can use the privacy *@users.noreply.github.com* email address listed in the GitHub profile: *Settings > Email*
 - Define a passphrase for the key and keep it in your password manager
 
@@ -65,7 +65,7 @@ gpg --full-generate-key
 - Set key size to 4096 bit, the minimum accepted for GitHub
 - Enter your GitHub account name as the Real Name
 - Enter your GitHub account email as the Email Address
-- Avoid adding a comment (this _may_ prevent git from auto-selecting a key - see Troubleshooting section below)
+- Avoid adding a comment (this *may* prevent git from auto-selecting a key - see Troubleshooting section below)
 - You can use the privacy *@users.noreply.github.com* email address listed in the GitHub profile: *Settings > Email*
 - Define a passphrase for the key and keep it in your password manager
 
