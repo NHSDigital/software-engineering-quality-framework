@@ -12,4 +12,4 @@ Where possible this will be a set of fully working components / solutions you ca
 | [Automating performance-test decisions using APDEX](practices/performance-testing.md)    | Instructions      | Recommended    | Published  |
 | [Scanning source code for secrets](tools/nhsd-git-secrets/README.md)                     | Full solution     | Recommended    | Published  |
 | [Cross-account backups on AWS](https://github.com/NHSDigital/terraform-aws-backup)       | Full solution     | Mandatory      | Published  |
-| [Cross-account backups on Azure](https://github.com/NHSDigital/az-backup)                | Full solution     | Mandatory      | Draft      |
+| [Cross-account backups on Azure](https://github.com/NHSDigital/az-backup)                | Full solution     | In progress    | Draft      |
