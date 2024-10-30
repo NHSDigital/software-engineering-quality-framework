@@ -37,4 +37,4 @@
 - Prefer serverless infrastructure where possible, and any hosts should be ephemeral and immutable (e.g. nothing gets patched or reconfigured: instead a replacement is created).
 - The only route to production is via automated deployment pipelines (see [continuous integration](continuous-integration.md)).
 - Choose technologies and architectures which foster reliable operations (see [architect for flow](../patterns/architect-for-flow.md)).
-- Make use of external good practice guides and reviews such as the [AWS](https://aws.amazon.com/architecture/well-architected/) or [Azure](https://azure.microsoft.com/en-gb/blog/introducing-the-microsoft-azure-wellarchitected-framework/) Well-Architected Frameworks.
+- Make use of external good practice guides and reviews such as the [AWS](https://aws.amazon.com/architecture/well-architected/) or [Azure](https://azure.microsoft.com/en-us/blog/introducing-the-microsoft-azure-wellarchitected-framework/) Well-Architected Frameworks.

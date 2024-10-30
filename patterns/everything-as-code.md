@@ -46,7 +46,7 @@ A code review involves another member of the team looking through a proposed cod
 
 Many teams consider code which has been written [as a pair](https://martinfowler.com/articles/on-pair-programming.html) to already have been reviewed, and do not require a separate review.
 
-Robert Fink provides an excellent description of the [motivation and practice of code reviews](https://medium.com/palantir/code-review-best-practices-19e02780015f). Some key points from this and other sources ([Google](https://google.github.io/eng-practices/review/reviewer/), [SmartBear](https://smartbear.com/learn/code-review/best-practices-for-peer-code-review/), [Atlassian](https://www.atlassian.com/agile/software-development/code-reviews)) are:
+Robert Fink provides an excellent description of the [motivation and practice of code reviews](https://medium.com/palantir/code-review-best-practices-19e02780015f). Some key points from this and other sources ([Google](https://github.com/google/eng-practices/blob/master/review/reviewer/index.md), [SmartBear](https://smartbear.com/learn/code-review/best-practices-for-peer-code-review/), [Atlassian](https://www.atlassian.com/agile/software-development/code-reviews)) are:
 
 #### Egalitarian
 

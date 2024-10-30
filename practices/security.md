@@ -13,7 +13,7 @@
 ## Context
 
 - These notes are part of a broader set of [principles](../principles.md)
-- This is related to [ARCHITECTURE-SECURITY](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/adopt-appropriate-cyber-security-standards)
+- This is related to [ARCHITECTURE-SECURITY](https://digital.nhs.uk/developer/architecture/principles/adopt-appropriate-cyber-security-standards)
 - :warning:Any deviation away from these security practices **must** be discussed with your security lead
 
 ## Use the NCSC guidance
@@ -83,7 +83,7 @@ The remainder of this page gives more detailed and specific recommendations to b
   - Be wary of any 3rd party JavaScript included on the page, e.g. for A/B testing, analytics
   - Pin dependencies at known versions to avoid unexpected updates
   - Scan dependencies for vulnerabilities, e.g. using [OWASP Dependency Check](https://owasp.org/www-project-dependency-check/) or [Snyk](https://snyk.io/)
-  - Scan running software, e.g. using [OWASP ZAP](https://www.zaproxy.org/)
+  - Scan running software, e.g. using [Zed Attack Proxy](https://www.zaproxy.org/)
 - **Automate** security testing &mdash; on every build if practical
   - Generate test data in a way that avoids including personally identifiable information
 - When granting roles to CI/CD tools, use different roles for the different stages in the deployment pipeline &mdash; for example so that a deployment meant for a development account cannot be performed against a production account
@@ -99,7 +99,7 @@ The remainder of this page gives more detailed and specific recommendations to b
 - **Minimise access** to production
   - Logging & monitoring should negate the need to manually inspect a production host
   - All deployments should be done via delivery pipelines, negating the need to manually change a production host
-  - Only allow access for emergencies using a "break glass" pattern, e.g. using Azure AD [Privileged Identity Management](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure)
+  - Only allow access for emergencies using a "break glass" pattern, e.g. using Azure AD [Privileged Identity Management](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure)
   - Audit access to production and alert for unexpected access
   - Frequently asked questions:
     - Q: If I can't access production, how can I check data, for example to respond to a support call? A: one approach is to build a facility (which must be automated, controlled and secured - so likely to be triggered via a pipeline) to clone the production database into a short-lived and isolated copy, so that data can be checked safely without anyone accessing production. Read-replicas can potentially be used instead, but they are (obviously) limited to read-only, and will often consume more cost and energy than on-demand clones ([ARCHITECTURE-SUSTAINABILITY](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/deliver-sustainable-services)). As above, access must be audited and strictly controlled.
@@ -132,7 +132,7 @@ The remainder of this page gives more detailed and specific recommendations to b
     ```
 
     </details>
-  - Segregate workloads, e.g. in separate AWS accounts ([Landing Zone](https://aws.amazon.com/solutions/aws-landing-zone/), [Control Tower](https://aws.amazon.com/controltower/features/)) or Azure [subscriptions](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/decision-guides/subscriptions/)
+  - Segregate workloads, e.g. in separate AWS accounts ([Landing Zone](https://aws.amazon.com/solutions/aws-landing-zone/), [Control Tower](https://aws.amazon.com/controltower/features/)) or Azure [subscriptions](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/resource-org-subscriptions)
   - Fine grained, least privilege IAM roles
 - Secure **CI/CD**
   - Robust authentication and minimum privileges
