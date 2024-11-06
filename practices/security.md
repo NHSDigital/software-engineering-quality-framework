@@ -142,17 +142,17 @@ The remainder of this page gives more detailed and specific recommendations to b
   <details><summary>Example IAM policy fragment to prevent unencrypted RDS databases (click to expand)</summary>
 
     ```yaml
-    {​​​​​​​​
+    {
       "Sid": "",
       "Effect": "Deny",
       "Action": "rds:CreateDBInstance",
       "Resource": "*",
-      "Condition": {​​​​​​​​
-        "Bool": {​​​​​​​​
+      "Condition": {
+        "Bool": {
           "rds:StorageEncrypted": "false"
         }
-      }​​​​​​​​
-    }​​​​​​​​
+      }
+    }
     ```
 
   </details>
