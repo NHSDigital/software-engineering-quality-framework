@@ -24,6 +24,7 @@ gpg --full-generate-key
 - Accept the defaults, Curve 25519 etc.
 - Enter your GitHub account name as the Real Name
 - Enter your GitHub account email as the Email Address
+- Avoid adding a comment (this *may* prevent git from auto-selecting a key - see Troubleshooting section below)
 - You can use the privacy *@users.noreply.github.com* email address listed in the GitHub profile: *Settings > Email*
 - Define a passphrase for the key and keep it in your password manager
 
@@ -64,6 +65,7 @@ gpg --full-generate-key
 - Set key size to 4096 bit, the minimum accepted for GitHub
 - Enter your GitHub account name as the Real Name
 - Enter your GitHub account email as the Email Address
+- Avoid adding a comment (this *may* prevent git from auto-selecting a key - see Troubleshooting section below)
 - You can use the privacy *@users.noreply.github.com* email address listed in the GitHub profile: *Settings > Email*
 - Define a passphrase for the key and keep it in your password manager
 
@@ -176,4 +178,4 @@ git push
 
 Re-run your git command prefixed with GIT_TRACE=1
 
-A failure to sign a commit is usually because the name or email does not quite match those which were used to generate the GPG key, so git cannot auto-select a key. Ensure that these are indeed consistent. You are able to [force a choice of signing key](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key), though this should not be necessary.
+A failure to sign a commit is usually because the name or email does not quite match those which were used to generate the GPG key, so git cannot auto-select a key. Ensure that these are indeed consistent. (If you added a comment when creating your gpg key, this *may* cause a mismatch: the comment will be visible when listing your gpg keys, e.g. `RealName (Comment) <EmailAddress>`.) You are able to [force a choice of signing key](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key), though this should not be necessary.
