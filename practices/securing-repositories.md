@@ -1,6 +1,7 @@
 # Securing repositories
 
 - [Securing repositories](#securing-repositories)
+- [Removing sensitive information](#removing-sensitive-information)
   - [Prerequisites](#prerequisites)
   - [Access controls](#access-controls)
     - [Organisation-level settings](#organisation-level-settings)
@@ -8,9 +9,12 @@
     - [Teams setup](#teams-setup)
   - [Code security](#code-security)
     - [Branch protection](#branch-protection)
-    - [Removing sensitive information](#removing-sensitive-information)
 
 This guide lays out security best practice for GitHub repositories. This set of practices is a minimum (nothing stops you from doing more), and they should be implemented alongside other relevant ones that contribute to [security](security.md) as a whole. These are discussed in more detail as part of the [Quality checks](../quality-checks.md).
+
+## Removing sensitive information
+
+Contributors must take all necessary precautions to ensure that sensitive data does not leak into Source Control Management Systems. Should any sensitive information leak into Source Control then teams must follow the steps [detailed here](guides/commit-purge.md).
 
 ## Prerequisites
 
@@ -60,7 +64,3 @@ Depending on your use case, you may want to create additional teams (e.g. a read
 - Require <!-- markdown-link-check-disable -->[signed commits](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-signed-commits)<!-- markdown-link-check-enable -->, and, accordingly, check that commits are verified before merging. Git treats authentication and identity separately - any authenticated user can impersonate another developer when committing code. This means that even if a junior account is compromised it could have significant consequences, for example impersonating the lead developer in the hope of an easy merge. Only by requiring signing can identity truly be verified. [Setup Guides](guides/commit-signing.md) for macOS, Windows, GitHub Actions, and AWS CodePipeline.
 - Invalidate existing reviews when new commits are pushed (`Dismiss stale pull request approvals when new commits are pushed` option).
 - Require adequate automated status checks prior to merging. This should always include checking that branches are up to date.
-
-### Removing sensitive information
-
-Teams should take all necessary precautions to ensure that sensitive data does not leak into Source Control Management Systems. Should any sensitive information leak into Source Control then teams should review the steps [detailed here](guides/commit-purge.md).
