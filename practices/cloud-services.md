@@ -24,7 +24,7 @@
 - Understand cloud supplier SLAs.
 - Make systems self-healing.
   - Prefer technologies which are resilient by default.
-  - Favour global-scoped (e.g. [CloudFront](https://aws.amazon.com/cloudfront/) or [Front Door](https://azure.microsoft.com/en-gb/pricing/details/frontdoor/)) or region-scoped services (e.g. [S3](https://aws.amazon.com/s3/), [Lambda](https://aws.amazon.com/lambda/), [Azure Functions](https://azure.microsoft.com/en-gb/services/functions/)) to availability-zone (AZ) scoped (e.g. [VMs](https://azure.microsoft.com/en-gb/services/virtual-machines/), [RDS DBs](https://aws.amazon.com/rds/)) or single-instance services (e.g. [EC2 instance storage](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html)).
+  - Favour global-scoped (e.g. [CloudFront](https://aws.amazon.com/cloudfront/) or [Front Door](https://azure.microsoft.com/en-gb/pricing/details/frontdoor/)) or region-scoped services (e.g. [S3](https://aws.amazon.com/s3/), [Lambda](https://aws.amazon.com/lambda/), [Azure Functions](https://azure.microsoft.com/en-gb/products/functions/)) to availability-zone (AZ) scoped (e.g. [VMs](https://azure.microsoft.com/en-gb/products/virtual-machines/), [RDS DBs](https://aws.amazon.com/rds/)) or single-instance services (e.g. [EC2 instance storage](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html)).
   - For AZ-scoped services, use redundancy to create required resilience (e.g. [AWS Auto Scaling Groups](https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html) or [Azure Scale/Availability Sets](https://docs.microsoft.com/en-us/azure/virtual-machines/availability)), and:
     - For stateless components use active-active configurations across AZs (e.g. running stateless containers across multiple AZs using [AWS Elastic Kubernetes Service](https://aws.amazon.com/eks/))
     - For stateful components, e.g. databases, consider use of active-active configurations across AZs (e.g. [Aurora Multi-Master](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html)), but be aware of the added complexity conflict resolution for asynchronous replication can bring and potential performance impact where synchronous replication is chosen.
@@ -36,8 +36,9 @@
 - Services should scale automatically up and down.
   - If possible, drive scaling based on metrics which matter to users (e.g. response time), but balance this with the benefits of choosing leading indicators (e.g. CPU usage) to avoid slow scaling from impacting user experience.
   - Understand how rapidly demand can spike and ensure scaling can meet these requirements. Balance scaling needs with the desire to avoid over provisioning and use [pre-warming](https://petrutandrei.wordpress.com/2016/03/18/pre-warming-the-load-balancer-in-aws/) of judiciously where required. Discuss this with the cloud provider well before go live they can assist with pre-warming processes ([AWS](https://aws.amazon.com/premiumsupport/programs/iem/)).
-- Infrastructure should always be fully utilised (if it isn't, it's generating waste).
-  - Though balance this with potential need to run with some overhead to accommodate failed instance replacement times without overloading remaining instances.
+- As a rule of thumb, where you are using inelastic infrastructure, aim for 80% utilisation.
+  - Don't let utilisation rise far enough that a single instance failing would cause an outage.
+  - Too high utilisation will cause latency problems. Know what your performance SLOs are to understand how much latency headroom you have.
 - Keep up to date.
   - Services/components need prompt updates to dependencies where security vulnerabilities are found &mdash; even if they are not under active development.
   - Services which use deprecated or unsupported technologies should be migrated onto alternatives as a priority.

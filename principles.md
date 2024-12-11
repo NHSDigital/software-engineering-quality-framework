@@ -16,39 +16,25 @@ Our principles guide the way we work and interact with each other. They are base
 
 ### 1. Eliminate waste
 
-Waste is anything that interferes with giving customers what they really value at the time and place where it will provide the most value. Here are some examples, listed against the seven types of waste identified by Lean.
+Waste is anything that interferes with giving customers what they really value at the time and place where it will provide the most value. Here are some examples, listed against the seven types of waste identified by Lean:
 
-**Inventory &mdash; partially done work**, e.g. plans and designs, code. Limit work in progress (WIP) and use a pull-based approach.
+- **Inventory &mdash; partially done work**, e.g. plans and designs, code shelved halfway. Limit work in progress (WIP) and use a pull-based approach.
 
-**[Inventory &mdash; unnecessary resources](practices/cloud-services.md)** [ARCHITECTURE-SUSTAINABILITY](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/deliver-sustainable-services), e.g. server over-provisioning, complicated tools where simple ones would do. Adopt a "just enough, not just in case" mindset.
+- **Inventory &mdash; [unnecessary resources](practices/cloud-services.md)** [[ARCHITECTURE-SUSTAINABILITY]](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/deliver-sustainable-services), e.g. server over-provisioning, complicated tools where simple ones would do. Adopt a "just enough, not just in case" mindset.
 
-**Overproduction &mdash; building unnecessary features.** Start simple and basic, get feedback and iterate.
+- **Overproduction &mdash; planning or designing in excessive detail.** Requirements change, therefore use a "just enough, just in time" approach to both. Detail should be added as you move to the right in the [cone of uncertainty](http://www.agilenutshell.com/cone_of_uncertainty).
 
-**Overproduction &mdash; planning or designing in excessive detail.** Use a "just enough, just in time" approach to both.
+- **Overproduction &mdash; overengineering**, i.e. building unnecessary features, unwarranted levels of code perfection or quantities of tests, or premature optimisation. Start simple and prefer explicit logic to implicit. Be pragmatic and balance effort now with saved effort or risk in the future. Remember [KISS](http://principles-wiki.net/principles:keep_it_simple_stupid) and [YAGNI](https://www.martinfowler.com/bliki/Yagni.html) and see the caveats in [structured code](practices/structured-code.md).
 
-**Overproduction &mdash; overengineering**, i.e. building unwarranted levels of code perfection or quantities of tests. Be pragmatic and balance effort now with saved effort or risk in the future. Remember [KISS](http://principles-wiki.net/principles:keep_it_simple_stupid) and [YAGNI](https://www.martinfowler.com/bliki/Yagni.html) and see the caveats in [structured code](practices/structured-code.md).
+- **Overproduction &mdash; reinventing the wheel.** Solving the same problem repeatedly in an organisation, or building when you could reuse or buy [[ARCHITECTURE-REUSE]](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/reuse-before-buy-build). Make sure there are effective ways to share knowledge between teams to avoid this.
 
-**Overproduction &mdash; reinventing the wheel.** Solving the same problem repeatedly in an organisation. Make sure there are effective ways to share knowledge between teams to avoid this.
+- **Extra Processing &mdash; due to delayed integration** making merging / reconciliation and testing harder. Use [continuous integration](practices/continuous-integration.md) with frequent merges. When combined with Test-Driven Development, this will allow bugs to be detected early when they are cheap to fix.
 
-**[Overproduction &mdash; building when you could instead reuse or buy](practices/cloud-services.md).** [ARCHITECTURE-REUSE](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/reuse-before-buy-build) Remember to consider all these alternatives.
+- **Hand-offs** (“Transportation” and “Waiting” in Lean terminology) &mdash; excessive passing of work between individuals or teams. Develop multi-skilled individuals and cross-functional product teams. Apply the [Shift Left](https://www.testim.io/blog/shift-left-testing-guide/) principle to testing and other areas of your SDLC.
 
-**Overproduction &mdash; premature optimisation for reusability.** Before making something reusable, first make it usable. Prefer explicit logic to implicit. Excessively generic systems create accidental complexity. [KISS](http://principles-wiki.net/principles:keep_it_simple_stupid) and [YAGNI](https://www.martinfowler.com/bliki/Yagni.html) and the caveats in [structured code](practices/structured-code.md) again.
+- **Context switching &mdash; due to too much work in progress (WIP) or poorly segregated work.** Limit WIP explicitly. Focus on optimising lead time. For project vs. support work, implement time-slicing or rota systems to allow focus and prevent reactiveness.
 
-**Overproduction &mdash; premature optimisation**, e.g. for performance or scale. Design with both in mind, but not excessively so. Defer optimisation until testing shows it is necessary. Start simple, test, iterate.
-
-**Extra Processing &mdash; due to changing requirements.** Use just enough, just in time approach to understanding requirements and deliver small iterations in a build-measure-learn loop.
-
-**Extra Processing &mdash; due to delayed integration** making merging / reconciliation harder. Use [continuous integration](practices/continuous-integration.md) with frequent merges.
-
-**Extra Processing &mdash; due to late testing.** When testing is done after implementation, especially if long after, bugs become more time consuming to detect and fix. Use test driven development and [continuous integration](practices/continuous-integration.md).
-
-**Hand-offs** (“Transportation” and “Waiting” in Lean terminology) &mdash; excessive passing of work between individuals or teams. Develop multi-skilled individuals and cross-functional product teams.
-
-**Context switching &mdash; due to too much work in progress (WIP).** Limit WIP explicitly. Focus on optimising lead time.
-
-**Context switching &mdash; due to poorly segregated work** (e.g. project vs support). Identify different classes of work and create separation with time-slice or rota systems to avoid reactive work from destroying productivity.
-
-**Defects** due to not understanding requirements properly or bugs leaking through. Use approaches described in the next section.
+- **Defects** due to not understanding requirements properly or bugs leaking through. Use approaches described in the next section.
 
 ### 2. Build quality in
 
@@ -99,6 +85,8 @@ The following practices support the principle of building quality in.
 **Record knowledge.** e.g. tests, self-documenting code, self-documenting system (e.g. [OpenAPI](https://swagger.io/resources/open-api/)), documentation &mdash; in that order.
 
 **Record decisions.** Use the [Any Decision Record template](any-decision-record-template.md) to document point-in-time decisions providing information like context, assumption, drivers, options and rationale to articulate the decision for the stakeholders and your future self. Always, consider and compare options as a decision made without that is not a decision.
+
+**Consider comments and Readme text** Comments in open source repos are not official communications and don't go through the normal approval process for public communication. They can however still be interpreted as NHSE communication, even if not intended as such, particularly for public repos. Especially when coding in the open, but also when developing in private repositories, consider the contents of Readme files and comments within the code. Ensure that comments add value to the code you are developing. Please avoid anything that could be considered a statement on approach/policy.  Consider the broader impact of any text in these areas to ensure that the project and the organisation are reflected correctly. Note that we produce and maintain services that are important to the public, therefore it is essential to be careful and accurate when referring to these services. If in doubt please ask. Also note there is high sensitivity around protecting privacy so please be careful your comments reflect the importance and sensitivity around protecting personal data.
 
 ### 4. Defer commitment
 

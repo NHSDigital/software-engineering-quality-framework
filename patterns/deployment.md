@@ -16,7 +16,7 @@ When developing services and applications development teams must consider their 
 
 This is a fundamental step in the design of the solution, development teams must consider the technical impact of different strategies alongside the impact to service during deployments. This starts at the point of building the CI pipelines and permeates through to final live deployment pipelines. Different approaches may be applicable depending on the chosen approach, for example serverless deployments as opposed to VM based deployments.
 
-Deployments must be repeatable and [idempotent](../practices/continuous-integration.md#deploy-what-you-tested), so that deploying the same version twice will result in the dame deployed environment.
+Deployments must be repeatable and [idempotent](../practices/continuous-integration.md#deploy-what-you-tested) so that deploying the same version twice will result in the same deployed environment.
 
 ## CI/CD pipeline-based deployment
 
@@ -120,9 +120,9 @@ The following table includes steps that development teams should consider when p
 
 ### Failure mode
 
-If initial smoke tests fail OR monitoring identifies increased failures / other indicator OR Further smoke tests fail:
+If initial smoke tests fail OR monitoring identifies increased failures / other indicators OR Further smoke tests fail:
 
-1. Traffic is migrated back to previously healthy leg.
+1. Traffic is migrated back to the previously healthy leg.
 1. Release is marked as failed.
 
 ### Game days and chaos testing
