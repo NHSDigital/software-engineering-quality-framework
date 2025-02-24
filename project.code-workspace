@@ -1,0 +1,154 @@
+{
+  "folders": [
+    {
+      "name": "[Repository]",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "breadcrumbs.enabled": true,
+    "editor.autoIndent": "full",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.fontSize": 14,
+    "editor.formatOnSave": true,
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [
+      120
+    ],
+    "editor.suggestSelection": "recentlyUsedByPrefix",
+    "explorer.autoReveal": true,
+    "explorer.sortOrder": "type",
+    "extensions.ignoreRecommendations": true,
+    "files.associations": {
+      "Jenkinsfile*": "jenkinsfile"
+    },
+    "files.autoSave": "onFocusChange",
+    "files.eol": "\n",
+    "files.exclude": {
+      "**/.classpath": true,
+      "**/.project": true,
+      "**/.settings": true,
+      "**/.factorypath": true
+    },
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "files.watcherExclude": {
+      "**/.git": true,
+      "**/log": true,
+      "**/node_modules": true,
+      "**/target": true,
+      "**/tmp": true
+    },
+    "java.completion.enabled": true,
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.format.enabled": false,
+    "php.suggest.basic": false,
+    "python.formatting.blackArgs": [
+      "--line-length",
+      "120"
+    ],
+    "python.formatting.provider": "black",
+    "python.languageServer": "Pylance",
+    "python.linting.flake8Args": [
+      "--max-line-length=120"
+    ],
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyArgs": [],
+    "python.linting.mypyEnabled": true,
+    "python.linting.pylintArgs": [],
+    "python.linting.pylintEnabled": true,
+    "python.terminal.activateEnvironment": false,
+    "search.exclude": {
+      "**/.git": true,
+      "**/log": true,
+      "**/node_modules": true,
+      "**/target": true,
+      "**/tmp": true
+    },
+    "terminal.integrated.fontFamily": "Hack Nerd Font",
+    "window.title": "${activeEditorMedium}${separator}${rootName}${separator}${rootPath}",
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Noctis Azureus",
+    "workbench.editor.enablePreview": false,
+    "workbench.tree.indent": 24,
+    "[dockerfile]": {
+      "editor.formatOnSave": false,
+      "editor.insertSpaces": true,
+      "editor.tabSize": 4
+    },
+    "[groovy]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2
+    },
+    "[java]": {
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true
+    },
+    "[javascript]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2
+    },
+    "[javascriptreact]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2
+    },
+    "[json]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2
+    },
+    "[python]": {
+      "editor.tabSize": 4,
+      "editor.insertSpaces": true
+    },
+    "[terraform]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2
+    },
+    "[typescript]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2
+    },
+    "[typescriptreact]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2
+    },
+    "[makefile]": {
+      "editor.insertSpaces": false,
+      "editor.tabSize": 2
+    },
+    "[markdown]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2
+    },
+    "[xml]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2
+    },
+    "[yaml]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2
+    },
+    "workbench.colorCustomizations": {
+      "activityBar.activeBackground": "#1accff",
+      "activityBar.activeBorder": "#df00ad",
+      "activityBar.background": "#1accff",
+      "activityBar.foreground": "#15202b",
+      "activityBar.inactiveForeground": "#15202b99",
+      "activityBarBadge.background": "#df00ad",
+      "activityBarBadge.foreground": "#e7e7e7",
+      "sash.hoverBorder": "#1accff",
+      "statusBar.background": "#00b3e6",
+      "statusBar.foreground": "#15202b",
+      "statusBarItem.hoverBackground": "#008bb3",
+      "statusBarItem.remoteBackground": "#00b3e6",
+      "statusBarItem.remoteForeground": "#15202b",
+      "titleBar.activeBackground": "#00b3e6",
+      "titleBar.activeForeground": "#15202b",
+      "titleBar.inactiveBackground": "#00b3e699",
+      "titleBar.inactiveForeground": "#15202b99",
+      "commandCenter.border": "#15202b99"
+    },
+    "peacock.color": "#00b3e6"
+  }
+}

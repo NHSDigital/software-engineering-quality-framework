@@ -1,0 +1,5 @@
+.DS_Store
+.obsidian
+.vs
+*.code-workspace
+!project.code-workspace
