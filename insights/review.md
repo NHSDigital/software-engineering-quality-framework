@@ -167,7 +167,10 @@ You may wish to score each individual component or system separately for these a
 #### 9. Testing
 
 - We have great test coverage.
-- Testing is everyone's responsibility.
+- Testing is everyone's responsibility and test is a first-class concern.
+- We support all team members to practice good testing, including by holding no-blame sessions to discuss any automation tests we should have added, and what we can learn from having missed them initially.
+- We build code for testability.
+- Tests are part of our standard peer-review process.
 - Repetitive tests are automated.
 - Testing is considered before each work item is started and throughout its delivery.
 - We use the right mix of testing techniques including automated checks and exploratory testing.
