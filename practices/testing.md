@@ -26,6 +26,7 @@
 - **Quality is the whole team's responsibility**
   - Education on testing and testing principles should be important to the whole team.
   - Quality approaches should be driven as a team and implemented by everyone.
+  - Teams should consider running regular coaching / mentoring sessions to support colleagues who are less experienced in testing to grow their skills, for example by no-blame group discussions to identify edge-case tests which have so far been missed, tests positioned incorrectly in the [test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html), etc.
 
 - **Combining business knowledge with testing knowledge yields better quality outcomes**
   - Include business knowledge and critical thinking as part of assurance
@@ -49,6 +50,7 @@
     - Eg. using API testing tools to aid exploratory API testing
 
 - **Testing should be continually improved**
+  - [Peer reviews](../patterns/everything-as-code.md#code-review) must consider tests as a first-class concern - this includes tests that are present / have been added (e.g. whether they are positioned appropriately in the [test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html), whether they are triggered appropriately in CI builds, etc) and any tests that are missing, e.g. edge-cases not yet considered
 
 - **Testing is continuous**
   - Testing is a continuous activity, not a phase of delivery
