@@ -70,7 +70,7 @@ While effective testing is the best way to detect bugs or non-functional problem
 - Is the code clear and simple?
 - Is the code layout and structure consistent with agreed style and other code? (please see [enforce code formatting](enforce-code-formatting.md))
 - Would it easily allow future modification to meet slightly different needs, e.g. ten times the required data size or throughput?
-- Is it [built for testability](#)?
+- Is it [built for testability](../practices/structured-code.md)?
 - Are the automated tests positioned appropriately in the [test pyramid](#), triggered appropriately in CI builds, etc?
 - Are there any missing [automated tests](#), e.g. edge-cases that have not yet been considered?
 - Have the non-functional requirements been considered (performance, scalability, robustness, etc)?
