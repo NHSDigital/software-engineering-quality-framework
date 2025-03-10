@@ -16,7 +16,7 @@ The benefits of well-structured & clean code are profound & widespread, some hig
 - Promoting *maintainability* by generally making the code easier and safer to work on
 - Supporting *building for testability*, which hugely reduces the risk and effort of practicing good testing
 
-The above are fundamental to supporting the (little and often)[../patterns/little-and-often.md] delivery approach, which itself has many benefits and is at the heart of this framework
+The above are fundamental to supporting the [little and often](../patterns/little-and-often.md) delivery approach, which itself has many benefits and is at the heart of this framework
 
 ## Details
 
