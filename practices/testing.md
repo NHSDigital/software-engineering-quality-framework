@@ -52,7 +52,7 @@
   - Education on testing and testing principles should be important to the whole team.
   - Quality approaches should be driven as a team and implemented by everyone.
   - Teams should consider running regular coaching / mentoring sessions to support colleagues who are less experienced in testing to grow their skills, for example by no-blame group discussions to identify edge-case tests which have so far been missed, tests positioned incorrectly in the [test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html), and pairing with a tester navigating so that the driver learns the necessary skills.
-  - Testing is a shared team concern, not a tester’s job alone. Developers own testing for their code, including pipeline tests, monitoring their deploys, infrastructure and on-call responsibilities, as deploying at least once a day requires autonomy and accountability.
+  - Testing is a shared team concern, not a tester’s job alone. Developers own testing for their code.
 
 - **Combining business knowledge with testing knowledge yields better quality outcomes**
   - Include business knowledge and critical thinking as part of technical assurance.
