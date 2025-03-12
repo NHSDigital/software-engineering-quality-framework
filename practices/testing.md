@@ -103,7 +103,7 @@
 
   Effective testing does not stop once software reaches production. By integrating [observability](observability.md) into testing, teams gain real-time insights and continuously validate system behavior under real-world conditions. Observability-driven testing means using telemetry data, such as metrics, logs, tracing and user analytics, to shape test approach, validate assumptions, detect regressions early and drive continuous improvement.
 
-  Applying this principle reduces mean-time-to-detection and recovery, improving reliability, enables teams to validate assumptions using real data rather than guesswork, enhances the quality of future releases by continuously learning from real-world usage patterns. Increases confidence when releasing frequently, knowing production issues can be quickly identified, understood and addressed.
+  Applying this principle reduces mean-time-to-detection and recovery, improving reliability, enables teams to validate assumptions using real data rather than guesswork, and enhances the quality of future releases by continuously learning from real-world usage patterns. It increases confidence when releasing frequently, knowing production issues can be quickly identified, understood and addressed.
 
 - **Testing is assisted by automation**
 
