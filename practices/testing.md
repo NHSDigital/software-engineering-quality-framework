@@ -23,32 +23,103 @@
 
 ## General testing principles
 
+- **Design for testability**, and [shift testing left and right](https://www.redhat.com/en/topics/devops/shift-left-vs-shift-right)
+
+  Testing is most effective when it is baked into the system design and runs across the entire lifecycle-from development to production. Teams should build systems that are inherently testable and support both early validation ("shift left") and ongoing validation in live environments ("shift right"). Key Practices:
+
+  - Shift left, aka test early
+    - Testing starts at the design and coding phase, not after.
+    - Pre-commit hooks, linting, static code analysis, and unit tests run locally before code even hits a branch.
+    - [Test-Driven Development (TDD)](https://www.thoughtworks.com/en-gb/insights/blog/test-driven-development-best-thing-has-happened-software-design) and [Behavior-Driven Development (BDD)](https://www.thoughtworks.com/en-gb/insights/blog/applying-bdd-acceptance-criteria-user-stories) encourage writing tests before or alongside code, ensuring clarity of requirements and better design.
+    - Test planning is informed by risk analysis and [architectural decisions](../any-decision-record-template.md) made early on.
+  - Design for testability
+    - Build systems as small units, each of which can be tested in isolation.
+    - Expose clear APIs, provide injection points for test doubles (mocks/stubs), and avoid tight coupling.
+    - Feature toggles and dependency injection help test components in isolation without complex setups.
+    - Make non-functional testing (performance, security, resilience) a first-class concern, with hooks and controls to simulate adverse conditions.
+  - Design for reproducibility
+    - Tests should be idempotent and easily repeatable in any environment (local, test, staging, production).
+  - Shift right, aka test in production
+    - Testing does not stop at deployment: continuous validation in production is essential.
+    - Implement real-time monitoring, synthetic checks, health probes, and user behavior tracking.
+    - Use canary deployments and feature flags to support testing changes as they are deployed.
+    - When safe to do so, employ chaos engineering to test system resilience under real-world failure conditions.
+    - Instrument systems to detect anomalies, performance degradation, or unexpected behaviors automatically - to support good quality canary deployments.
+
+  In a high-throughput environment where deploying at least once a day is the norm, adhering to the design-for-testability principle is paramount. The benefits include: 1) *faster feedback loops* – early testing catches issues when they are cheapest to fix, while testing later in the cycle ensures real-world readiness; 2) *increased confidence* – testing at all stages validates assumptions, improves system reliability, and supports safe, frequent releases; and 3) *higher quality by design* – systems built for testability are easier to maintain, scale, and evolve.
+
 - **Quality is the whole team's responsibility**
   - Education on testing and testing principles should be important to the whole team.
   - Quality approaches should be driven as a team and implemented by everyone.
+  - Teams should consider running regular coaching/mentoring sessions to support colleagues who are less experienced in testing to grow their skills, for example by:
+    - Holding no-blame group discussions to identify edge-case tests which have so far been missed and tests positioned incorrectly in the [test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html).
+    - Pairing developers with a tester navigating so that the driver learns the necessary testing skills.
+  - Testing is a shared team concern, not a tester’s job alone. Developers own testing for their code.
 
 - **Combining business knowledge with testing knowledge yields better quality outcomes**
-  - Include business knowledge and critical thinking as part of assurance
-  - Intrinsic knowledge and mindset of the team is key to driving quality outcomes
+  - Include business knowledge and critical thinking as part of technical assurance.
+  - Intrinsic knowledge and mindset of the team is key to driving quality outcomes.
 
 - **Testing is prioritised based on risk**
-  - A testing risk profile is defined and understood by the whole team, including the customer
-  - Risk appetite should be worked across the whole team, including customers and/or users
-  - Solution Assurance risks and Clinical Safety hazards must also be considered when prioritising risks
+  - A testing risk profile is defined and understood by the whole team, including the customer.
+  - Risk appetite should be worked across the whole team, including customers and/or users.
+  - Assurance risks and Clinical Safety hazards must also be considered when prioritising risks.
 
 - **Testing is context driven**
   - Context should be considered when deciding on test techniques and tools to use.
 
+- **Test data management is a first-class citizen**
+
+  Frequent deployments require reliable and consistent test environments. Data drift or stale data can undermine test confidence.
+
+  - Test data should be easy to generate, isolate and reset.
+  - Use factories, fixtures or synthetic data generation.
+  - Make sure that you can generate test data of a scale and complexity representative of the production system, to ensure that performance and exploratory testing is realistic.
+
+- **Consistent, CLI-driven test execution across all environments**
+
+  Tests and test processes should execute consistently in every environment, ranging from local developer workstations to cloud-based CI/CD pipelines. Using a CLI-driven approach ensures standardisation, portability and reliability.
+
+  - Command-Line interface (CLI) as the default test runner
+    - All tests (unit, integration, functional, performance) must be executable through straightforward, repeatable CLI commands.
+    - Ensure a single, consistent command can run the complete test suite, facilitating rapid local and remote execution , e.g. `make test`
+  - Consistent environment configuration
+    - Clearly defined and documented dependencies (IaC) ensure that test environments are reproducible, reducing "it works on my machine" scenarios.
+    - Use Infrastructure as Code (IaC) or containerised test environments (e.g. Docker) to guarantee identical configurations between local machines and cloud pipelines.
+  - Reproducibility and portability
+    - Tests must behave identically when run locally and remotely. No tests should rely on hidden state, manual configuration, or proprietary local tooling.
+    - Standardise environment configuration through version-controlled configuration files or scripts, enabling teams to replicate exact test runs on any workstation or CI/CD environment effortlessly.
+  - Dependency isolation and management
+    - Dependencies should be explicitly declared and managed using tools appropriate to your technology stack (e.g. Python’s requirements.txt, Node’s package.json, etc.). Use these tools to ensure that specific versions are locked.
+    - Employ dependency management tools (e.g. virtual environments, containers, package managers) to enforce consistency.
+  - Environment parity between development and production
+    - Aim to eliminate differences between local, staging and production environments. Running tests consistently across environments ensures that deployment to production is predictable and low-risk.
+    - Teams regularly validate environment parity through automated checks or smoke tests.
+  - Clear and consistent documentation
+    - Standardised CLI test commands and environment setups must be clearly documented (e.g. README.md) and version-controlled.
+    - Onboarding documentation should guide new developers to execute the same tests consistently across their local and cloud environments.
+
+- **Validate continuously through observability**
+
+  Effective testing does not stop once software reaches production. By integrating [observability](observability.md) into testing, teams gain real-time insights and continuously validate system behavior under real-world conditions. Observability-driven testing means using telemetry data, such as metrics, logs, tracing and user analytics, to shape test approach, validate assumptions, detect regressions early and drive continuous improvement.
+
+  Applying this principle reduces mean-time-to-detection and recovery, improving reliability, enables teams to validate assumptions using real data rather than guesswork, and enhances the quality of future releases by continuously learning from real-world usage patterns. It increases confidence when releasing frequently, knowing production issues can be quickly identified, understood and addressed.
+
 - **Testing is assisted by automation**
-  - Appreciate that not everything can be automated
-  - Identify good candidates for automation - particular focus on high risk and repeatable areas
-  - Automated tests should be used to provide confidence to all stakeholders.  This includes test analysts themselves who should be familiar with what the tests are doing to allow them to make decisions on what they want to test.
+
+  Test automation is critical for maintaining rapid, frequent deployments while consistently ensuring quality. It provides scalable confidence in software changes, reduces repetitive manual efforts, and frees up human activities for high-value exploratory testing. Automated testing should be seen as a core enabler of development workflow, particularly when combined with a robust approach to design for testability.
+
+  - Appreciate that not everything can be automated, however automated testing, supported by intentional design for testability, increases delivery speed, confidence and adaptability.
+  - Identify good candidates for automation - particular focus on high risk and repeatable areas.
+  - Automated tests should be used to provide confidence to all stakeholders. This includes test analysts themselves who should be familiar with what the tests are doing to allow them to make decisions on what they want to test.
+  - It defines clear, technology-neutral contracts and behaviors. This provides stable reference points when migrating or re-implementing systems in new languages or platforms. Automated contract tests (e.g. consumer-driven contract tests) enable safe technology swaps, helping confirm system compatibility across evolving stacks.
   - Automated test packs should be maintained regularly to ensure they have suitable coverage, are efficient and providing correct results.
-  - Consider using testing tools to enhance other test techniques.
-    - Eg. using record and play tools to aid exploratory UI testing
-    - Eg. using API testing tools to aid exploratory API testing
+  - Consider using testing tools to enhance other test techniques, e.g.
+    - using record and play tools to aid exploratory UI testing,
+    - using API testing tools to aid exploratory API testing.
 
 - **Testing should be continually improved**
+  - [Peer reviews](../patterns/everything-as-code.md#code-review) must consider tests as a first-class concern - this includes tests that are present / have been added (e.g. whether they are positioned appropriately in the [test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html), whether they are triggered appropriately in CI builds, etc) and any tests that are missing, e.g. edge-cases not yet considered
 
 - **Testing is continuous**
   - Testing is a continuous activity, not a phase of delivery
