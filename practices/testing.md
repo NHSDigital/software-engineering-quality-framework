@@ -90,7 +90,7 @@
     - Tests must behave identically when run locally and remotely. No tests should rely on hidden state, manual configuration, or proprietary local tooling.
     - Standardise environment configuration through version-controlled configuration files or scripts, enabling teams to replicate exact test runs on any workstation or CI/CD environment effortlessly.
   - Dependency isolation and management
-    - Dependencies should be explicitly declared and managed using tools appropriate to your technology stack (e.g. Python’s requirements.txt, Node’s package.json, etc.).
+    - Dependencies should be explicitly declared and managed using tools appropriate to your technology stack (e.g. Python’s requirements.txt, Node’s package.json, etc.). Use these tools to ensure that specific versions are locked.
     - Employ dependency management tools (e.g. virtual environments, containers, package managers) to enforce consistency.
   - Environment parity between development and production
     - Aim to eliminate differences between local, staging and production environments. Running tests consistently across environments ensures that deployment to production is predictable and low-risk.
