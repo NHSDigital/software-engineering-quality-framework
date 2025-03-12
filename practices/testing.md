@@ -74,7 +74,7 @@
 
   - Test data should be easy to generate, isolate and reset.
   - Use factories, fixtures or synthetic data generation.
-  - Anonymised production data can improve test relevance, especially in performance or exploratory testing.
+  - Make sure that you can generate test data of a scale and complexity representative of the production system, to ensure that performance and exploratory testing is realistic.
 
 - **Consistent, CLI-driven test execution across all environments**
 
