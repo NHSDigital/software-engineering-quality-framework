@@ -40,13 +40,13 @@
   - Design for reproducibility
     - Tests should be idempotent and easily repeatable in any environment (local, test, staging, production).
   - Shift right, aka test in production
-    - Testing does not stop at deployment-continuous validation in production is essential.
+    - Testing does not stop at deployment: continuous validation in production is essential.
     - Implement real-time monitoring, synthetic checks, health probes, and user behavior tracking.
     - Use canary deployments and feature flags to support testing changes as they are deployed.
     - When safe to do so, employ chaos engineering to test system resilience under real-world failure conditions.
     - Instrument systems to detect anomalies, performance degradation, or unexpected behaviors automatically - to support good quality canary deployments.
 
-  In a high-throughput environment-where deploying at least once a day is the norm, adhering to the design for testability principle is paramount. The benefits include: 1) *faster feedback loops* – early testing catches issues when they are cheapest to fix, while testing later in the cycle ensures real-world readiness; 2) *increased confidence* – testing at all stages validates assumptions, improves system reliability, and supports safe, frequent releases; and 3) *higher quality by design* – systems built for testability are easier to maintain, scale, and evolve.
+  In a high-throughput environment where deploying at least once a day is the norm, adhering to the design for testability principle is paramount. The benefits include: 1) *faster feedback loops* – early testing catches issues when they are cheapest to fix, while testing later in the cycle ensures real-world readiness; 2) *increased confidence* – testing at all stages validates assumptions, improves system reliability, and supports safe, frequent releases; and 3) *higher quality by design* – systems built for testability are easier to maintain, scale, and evolve.
 
 - **Quality is the whole team's responsibility**
   - Education on testing and testing principles should be important to the whole team.
