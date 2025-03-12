@@ -33,7 +33,7 @@
     - [Test-Driven Development (TDD)](https://www.thoughtworks.com/en-gb/insights/blog/test-driven-development-best-thing-has-happened-software-design) and [Behavior-Driven Development (BDD)](https://www.thoughtworks.com/en-gb/insights/blog/applying-bdd-acceptance-criteria-user-stories) encourage writing tests before or alongside code, ensuring clarity of requirements and better design.
     - Test planning is informed by risk analysis and [architectural decisions](../any-decision-record-template.md) made early on.
   - Design for testability
-    - Systems are designed with observability, modularity, and controllability in mind.
+    - Build systems as small units, each of which can be tested in isolation.
     - Expose clear APIs, provide injection points for test doubles (mocks/stubs), and avoid tight coupling.
     - Feature toggles and dependency injection help test components in isolation without complex setups.
     - Make non-functional testing (performance, security, resilience) a first-class concern, with hooks and controls to simulate adverse conditions.
@@ -42,9 +42,9 @@
   - Shift right, aka test in production
     - Testing does not stop at deployment-continuous validation in production is essential.
     - Implement real-time monitoring, synthetic checks, health probes, and user behavior tracking.
-    - Use canary deployments, blue-green releases, and feature flags to roll out changes gradually, monitoring for issues as they surface.
-    - Employ chaos engineering to test system resilience under real-world failure conditions.
-    - Instrument systems to detect anomalies, performance degradation, or unexpected behaviors automatically.
+    - Use canary deployments and feature flags to support testing changes as they are deployed.
+    - When safe to do so, employ chaos engineering to test system resilience under real-world failure conditions.
+    - Instrument systems to detect anomalies, performance degradation, or unexpected behaviors automatically - to support good quality canary deployments.
 
   In a high-throughput environment-where deploying at least once a day is the norm, adhering to the design for testability principle is paramount. The benefits include: 1) *faster feedback loops* – early testing catches issues when they are cheapest to fix, while testing later in the cycle ensures real-world readiness; 2) *increased confidence* – testing at all stages validates assumptions, improves system reliability, and supports safe, frequent releases; and 3) *higher quality by design* – systems built for testability are easier to maintain, scale, and evolve.
 
