@@ -101,29 +101,7 @@
 
 - **Validate continuously through observability**
 
-  Effective testing does not stop once software reaches production. By integrating observability into testing, teams gain real-time insights and continuously validate system behavior under real-world conditions. Observability-driven testing means using telemetry data, such as metrics, logs, tracing and user analytics, to shape test approach, validate assumptions, detect regressions early and drive continuous improvement.
-
-  - Instrument systems for visibility
-    - Implement consistent instrumentation (metrics, logs, tracing) across services to capture detailed runtime behavior.
-    - Ensure telemetry data clearly maps back to business functionality, enabling both technical and business stakeholders to interpret the data.
-  - Continuous monitoring in production
-    - Use dashboards and automated alerts to monitor system health continuously, proactively detecting anomalies, performance degradation or unexpected behaviors.
-    - Regularly verify production health checks and synthetic monitoring results as part of your ongoing testing activities.
-  - Real-user monitoring (RUM)
-    - Observe and analyze how real users interact with the system, capturing actual usage patterns, performance characteristics and edge-case scenarios.
-    - Leverage this data to refine existing automated tests or identify new scenarios worth automating.
-  - Distributed tracing to inform testing
-    - Use distributed tracing data (such as OpenTelemetry, AWS X-Ray or Azure Monitor Application Insights) to understand how requests flow through services, identify latency hotspots and pinpoint complex dependency issues.
-    - Translate tracing insights into targeted integration tests and service-level tests, improving test precision.
-  - Alerting and proactive issue detection
-    - Set clear, actionable alerts based on predefined thresholds that matter to users and the business.
-    - Tie production alerts back into automated test scenarios, ensuring tests reflect actual production conditions and preventing similar issues from recurring.
-  - Feedback loops into test planning
-    - Regularly analyze observability data (logs, metrics, user sessions) during sprint planning or retrospectives to identify gaps in testing coverage.
-    - Treat production incidents as opportunities for testing improvements, each incident should trigger analysis of whether similar risks are sufficiently covered by automated or exploratory tests.
-  - Testing resilience and failure modes
-    - Observability supports chaos engineering practices by providing detailed visibility into system behavior under fault conditions.
-    - Proactively test recovery procedures, failovers and resilience strategies based on observed patterns of failure or degradation from production data.
+  Effective testing does not stop once software reaches production. By integrating [observability](observability.md) into testing, teams gain real-time insights and continuously validate system behavior under real-world conditions. Observability-driven testing means using telemetry data, such as metrics, logs, tracing and user analytics, to shape test approach, validate assumptions, detect regressions early and drive continuous improvement.
 
   Applying this principle reduces mean-time-to-detection and recovery, improving reliability, enables teams to validate assumptions using real data rather than guesswork, enhances the quality of future releases by continuously learning from real-world usage patterns. Increases confidence when releasing frequently, knowing production issues can be quickly identified, understood and addressed.
 
