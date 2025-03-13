@@ -42,7 +42,7 @@ The framework is a companion to:
 
 The framework consists of:
 
-* [Engineering principles](principles.md) and [blueprints](blueprints.md)
+* [Engineering principles](principles.md)
 * [Engineering quality review tool](insights/review.md)
 * Guidance on how to practice [continuous improvement](continuous-improvement.md)
 
