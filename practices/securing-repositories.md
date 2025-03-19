@@ -28,7 +28,7 @@ Contributors must take all necessary precautions to ensure that sensitive data d
 ### Organisation-level settings
 
 - All users must have MFA enabled.
-- [Baseline visibility](baseline-visibility.md) for private repositories must be `Read`.
+- [Baseline visibility](baseline-visibility.md) for private repositories must be `No Permission`.
 - Ability to change repository view from private to public must be reserved to admins only.
 
 ### Repository-specific settings
