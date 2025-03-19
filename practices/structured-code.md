@@ -9,6 +9,15 @@
 - These notes are part of a broader set of [principles](../principles.md)
 - These practices should be read in conjunction with [architect for flow](../patterns/architect-for-flow.md)
 
+## Benefits
+
+The benefits of well-structured & clean code are profound & widespread, some highlights are:
+
+- Promoting *maintainability* by generally making the code easier and safer to work on
+- Supporting *building for testability*, which hugely reduces the risk and effort of practicing good testing
+
+The above are fundamental to supporting the [little and often](../patterns/little-and-often.md) delivery approach, which itself has many benefits and is at the heart of this framework
+
 ## Details
 
 - Good code structure is essential for maintainability.

@@ -10,7 +10,7 @@
 ## Context
 
 - This is part of a broader [quality framework](README.md)
-- This guidance has been co-authored with the NHS Digital [EMBRACE network](https://digital.nhs.uk/about-nhs-digital/corporate-information-and-documents/staff-networks#ethnic-minorities-broadening-racial-awareness-and-cultural-exchange-embrace-) and the [Lesbian, Gay, Bisexual, Transgender, Queer and Allies (LGBTQ+) network](https://digital.nhs.uk/about-nhs-digital/corporate-information-and-documents/staff-networks#lesbian-gay-bisexual-transgender-queer-and-allies-lgbtq-)
+- This guidance has been co-authored with the NHS Digital EMBRACE network and the [Lesbian, Gay, Bisexual, Transgender, Queer and Allies (LGBTQ+) network](https://www.england.nhs.uk/about/working-for/staff-networks/)
 
 ## Background
 
