@@ -2,13 +2,13 @@
 
 ## Collaborating
 
-This repository is part of the [NHSDigital GitHub Organisation](https://github.com/NHSDigital), this organisation in turn forms part of a wider [Enterprise](https://docs.github.com/en/enterprise-cloud@latest/admin/overview/about-github-for-enterprises). To enable effective collaboration between members of the NHSDigital organisation the [base permissions](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/setting-base-permissions-for-an-organization) for all repositories should be set to `Read`. This will mean that individual members will be able to view source code from across the organisation whether it is Public or Private.
+This repository is part of the [NHSDigital GitHub Organisation](https://github.com/NHSDigital), this organisation in turn forms part of a wider [Enterprise](https://docs.github.com/en/enterprise-cloud@latest/admin/overview/about-github-for-enterprises). To enable effective collaboration between members of the NHSDigital organisation the [base permissions](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/setting-base-permissions-for-an-organization) for all repositories should be set to `No Permissions`. This will mean that individual members will not be able to view source code from across the organisation for Private repositories, unless granted specific permissions. All members should be invited to the `everyone` team - where repositories are Private, but teams want to provide access to the wider community, specifically the members of the organisation the repository is part of, then this `everyone` team can be used for example to provide `read` permissions to a repository.
 
 As the organisation is part of the Enterprise there are other Organisations, for members of these organisations it is possible to provide access to view Source Code in this organisation without the need to invite users into this org by setting the visibility for the repository to [Internal](./baseline-visibility.md#internal-repositories).
 
 ## Contributing
 
-With these permissions members can view the source code, they might then be able to identify improvements to this code. Each repository should contain a [CONTRIBUTING.md](../CONTRIBUTING.md) to describe how both team members and members from the wider organisation can contribute to the repository. Contributions to repositories are welcomed and should be encouraged.
+With these permissions members can view the source code or Public and Internal repositories, they might then be able to identify improvements to this code. Each repository should contain a [CONTRIBUTING.md](../CONTRIBUTING.md) to describe how both team members and members from the wider organisation can contribute to the repository. Contributions to repositories are welcomed and should be encouraged.
 
 ## Code Owners
 
@@ -20,4 +20,4 @@ The presence of the CodeOwners file will also mean that organisation members can
 
 ## Internal Repositories
 
-Private repositories can be created at the `Internal` type. This will mean that all members of the "Enterprise" can view these repositories. Note that this will include users who do not have direct access to the NHSDigital Organisation.
+Private repositories can be created at the `Internal` type. This will mean that all members of the "Enterprise" can view these repositories. Note that this will include users who do not have direct access to the individual Organisation but who are members of the Enterprise.
