@@ -7,6 +7,7 @@ GitHub Actions is a powerful automation tool that enables CI/CD workflows direct
 This guide outlines best practices for securing your GitHub Actions workflows and minimizing security risks.
 
 ## Table of Contents
+
 - [Secrets Management](#secrets-management)
 - [Limiting Permissions](#limiting-permissions)
 - [Third-Party Actions](#third-party-actions)
@@ -28,7 +29,8 @@ This guide outlines best practices for securing your GitHub Actions workflows an
 - Ensure a secret scanner is deployed as part of your workflows
 - Public repositories should enable GitHub Secret Scanner and Push Protection
 
-### Minimize Secret Scope 
+### Minimize Secret Scope
+
 ```yaml
 # Good practice - limiting secret to specific environment
 jobs:
@@ -53,7 +55,8 @@ jobs:
 
 ### Use Least Privilege Principle
 
-Limit the GitHub token permissions to only what's necessary: 
+Limit the GitHub token permissions to only what's necessary:
+
 ```yaml
 permissions:
   contents: read
@@ -80,7 +83,7 @@ To mitigate these risks, always follow best practices, such as pinning actions t
 
 ### Pin Actions to Specific Versions
 
-Always use specific commit SHAs instead of tags or branches: 
+Always use specific commit SHAs instead of tags or branches:
 
 ```yaml
 # Not secure - can change unexpectedly
@@ -203,7 +206,7 @@ jobs:
 - Enforce code reviews for workflow file changes
 - Use CODEOWNERS to restrict who can modify workflow files
 
-```
+```plaintext
 # CODEOWNERS file/.github/workflows/ @security-team
 ```
 
