@@ -83,7 +83,7 @@ To mitigate these risks, always follow best practices, such as pinning actions t
 
 ### Pin Actions to Specific Versions
 
-Always use specific commit SHAs instead of tags or branches:
+When including a GitHub Action within your workflow you should perform due diligence checks to ensure that the action achieves the aims you are intending it to, and that it doesn't do anything unintended, this would include performing a code review of the GitHub action code. To prevent the underlying code being changed without your awareness always use specific commit SHAs instead of tags or branches:
 
 ```yaml
 # Not secure - can change unexpectedly
@@ -91,7 +91,7 @@ Always use specific commit SHAs instead of tags or branches:
 # Better - using a specific version tag
 - uses: actions/checkout@v3.1.0 
 # Best - using a specific commit SHA
-- uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+- uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # v3.1.0
 ```
 
 ### Verify Third-Party Actions
@@ -123,7 +123,9 @@ Always use specific commit SHAs instead of tags or branches:
 If using self-hosted runners:
 
 - Run them in isolated environments (containers/VMs)
-- Regularly update and patch runner machines- Implement proper network isolation- Use ephemeral runners when possible
+- Regularly update and patch runner machines
+- Implement proper network isolation
+- Use ephemeral runners when possible
 
 ```yaml
 jobs:
@@ -185,7 +187,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::123456789012:role/github-actions
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/github-actions
           aws-region: eu-west-2
 ```
 
