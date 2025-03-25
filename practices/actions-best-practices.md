@@ -19,6 +19,8 @@ This guide outlines best practices for securing your GitHub Actions workflows an
 
 ## Secrets Management
 
+This section describes how secrets in GitHub Actions should be managed, teams should ensure that they are using robust secrets management tools such as Azure Key Vault and AWS Secrets Manager for securely storing secrets.
+
 ### Use GitHub Secrets
 
 - Store sensitive data (API tokens, credentials, etc.) as [GitHub Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets)
@@ -55,7 +57,7 @@ jobs:
 
 ### Use Least Privilege Principle
 
-Limit the GitHub token permissions to only what's necessary:
+Limit the GitHub token permissions to only what's necessary please [see here](https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication#permissions-for-the-github_token) for details on the default permissions that the github token is given when the permissions block is not used:
 
 ```yaml
 permissions:
@@ -65,6 +67,8 @@ permissions:
 ```
 
 ### Use Fine-Grained Tokens
+
+Fine grained tokens *must* only be used if the GitHub token can not be used.
 
 - Create custom GitHub Apps with limited scopes when possible
 - Use repository-scoped tokens instead of organization-wide tokens
@@ -83,7 +87,7 @@ To mitigate these risks, always follow best practices, such as pinning actions t
 
 ### Pin Actions to Specific Versions
 
-When including a GitHub Action within your workflow you should perform due diligence checks to ensure that the action achieves the aims you are intending it to, and that it doesn't do anything unintended, this would include performing a code review of the GitHub action code. To prevent the underlying code being changed without your awareness always use specific commit SHAs instead of tags or branches:
+When including a GitHub Action within your workflow you should perform due diligence checks to ensure that the action achieves the aims you are intending it to, and that it doesn't do anything unintended, this would include performing a code review of the GitHub action code. To prevent the underlying code being changed without your awareness always use specific commit SHAs instead of tags or branches as tags can be modified if the upstream repository is compromised:
 
 ```yaml
 # Not secure - can change unexpectedly
@@ -95,6 +99,8 @@ When including a GitHub Action within your workflow you should perform due dilig
 ```
 
 ### Verify Third-Party Actions
+
+When including a GitHub Action within your workflow consider alternatives, is there an existing mechanism you can use? Would this be something that could be reused and you could create your own action within the organisation that other teams could benefit from? If you can only achieve your goal with a third-party action then:
 
 - Only use trusted actions from the GitHub Marketplace
 - Review the source code of third-party actions before using them
@@ -120,7 +126,7 @@ When including a GitHub Action within your workflow you should perform due dilig
 
 ### Self-hosted Runner Security
 
-If using self-hosted runners:
+Self-hosted runners *must* only be [used with private repositories](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners#self-hosted-runner-security). If using self-hosted runners:
 
 - Run them in isolated environments (containers/VMs)
 - Regularly update and patch runner machines
