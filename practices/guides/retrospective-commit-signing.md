@@ -1,8 +1,8 @@
 # Retrospective commit signing guide
 
 - [Retrospective commit signing guide](#retrospective-commit-signing-guide)
-  - [From Workstations](#from-workstations)
-  - [Troubleshooting](#troubleshooting)
+  - [Signing previously pushed commits](#signing-previously-pushed-commits)
+    - [Steps](#steps)
 
 ## Signing previously pushed commits
 
@@ -60,7 +60,7 @@ Please take the time to understand the commands that you are using, this is just
 7. **Complete the rebase**  
    Once rebasing is complete, you will see a message like:
 
-   ```
+   ```plaintext
    Successfully rebased and updated refs/heads/…
    ```
 
