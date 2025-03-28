@@ -179,3 +179,5 @@ git push
 Re-run your git command prefixed with GIT_TRACE=1
 
 A failure to sign a commit is usually because the name or email does not quite match those which were used to generate the GPG key, so git cannot auto-select a key. Ensure that these are indeed consistent. (If you added a comment when creating your gpg key, this *may* cause a mismatch: the comment will be visible when listing your gpg keys, e.g. `RealName (Comment) <EmailAddress>`.) You are able to [force a choice of signing key](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key), though this should not be necessary.
+
+If you have already committed and need to retrospectively sign this commit [please follow the instructions here](./retrospective-commit-signing.md).
