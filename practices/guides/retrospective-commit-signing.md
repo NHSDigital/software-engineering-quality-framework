@@ -41,7 +41,7 @@ Please take the time to understand the commands that you are using, this is just
 
    ![Interactive rebase after selecting commits](../../images/interactive-rebase-after-selecting-commits.png)
 
-   Save the changes by pressing `Ctrl+X`, then press `Enter` to confirm.
+   If you are using `Nano`, save the changes with `Ctrl+X` and confirm with `Enter`. For `Vi`, exit with `:wq` to save and quit.
 
 6. **Amend the commit to include a signature**  
    For each commit you flagged as `edit`, run the following commands:
