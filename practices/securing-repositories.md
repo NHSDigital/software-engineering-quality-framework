@@ -35,7 +35,7 @@ Contributors must take all necessary precautions to ensure that sensitive data d
 
 - In line with the [Service Manual](https://service-manual.nhs.uk/service-standard/12-make-new-source-code-open), new repositories should be public by default, unless there is good reason not to - this avoids costly rework to secure private information further down the line.
 - Private repositories must disable forking.
-- [Outside collaborators](outside-collaborators.md) in private repositories must be there for a specific purpose (e.g. Penetration testers) and their need for access must be regularly reviewed.
+- Outside collaborators in private repositories must be there for a specific purpose (e.g. Penetration testers) and their need for access must be regularly reviewed.
 - Enable abuse reporting by <!-- markdown-link-check-disable -->[accepting content reports](https://docs.github.com/en/communities/moderating-comments-and-conversations/managing-how-contributors-report-abuse-in-your-organizations-repository)<!-- markdown-link-check-enable -->
 
 ### Teams setup
