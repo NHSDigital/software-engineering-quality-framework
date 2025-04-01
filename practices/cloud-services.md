@@ -43,7 +43,7 @@
   - Services/components need prompt updates to dependencies where security vulnerabilities are found &mdash; even if they are not under active development.
   - Services which use deprecated or unsupported technologies should be migrated onto alternatives as a priority.
 - Understand and be able to justify vendor lock in (see [outsource from the bottom up](../patterns/outsource-bottom-up.md)).
-- Build in [governance as a side effect](../patterns/governance-side-effect.md), e.g.
+- <a name="build-in-governance"></a>Build in [governance as a side effect](../patterns/governance-side-effect.md), e.g.
   - Segregate production and non-production workloads
 
     Production and non-production workloads should be deployed into separate cloud subscriptions (Azure) or accounts (AWS) to enforce clear security boundaries, reduce risk of accidental impact and simplify policy enforcement. This separation enables:
