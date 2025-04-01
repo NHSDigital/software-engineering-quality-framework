@@ -16,7 +16,7 @@
 
 ## Details
 
-- Configure all infrastructure using declarative code such as Terraform and CloudFormation (see [everything as code](../patterns/everything-as-code.md)).
+- Configure all infrastructure using declarative code such as Terraform or CloudFormation (see [everything as code](../patterns/everything-as-code.md)).
 - Automate monitoring and alerting (see [automate everything](../patterns/automate-everything.md) and [observability](observability.md).
 - Prefer serverless platform as a service (PaaS) over infrastructure as a service (IaaS) (see [outsource bottom up](../patterns/outsource-bottom-up.md)).
 - Where not serverless use ephemeral and immutable infrastructure.
@@ -44,7 +44,29 @@
   - Services which use deprecated or unsupported technologies should be migrated onto alternatives as a priority.
 - Understand and be able to justify vendor lock in (see [outsource from the bottom up](../patterns/outsource-bottom-up.md)).
 - Build in [governance as a side effect](../patterns/governance-side-effect.md), e.g.
-  - Segregate production and non-production workloads.
+  - Segregate production and non-production workloads
+
+    Production and non-production workloads should be deployed into separate cloud subscriptions (Azure) or accounts (AWS) to enforce clear security boundaries, reduce risk of accidental impact and simplify policy enforcement. This separation enables:
+
+    - Tighter access control for production, ensuring only the necessary users and automation have access
+    - Application of different Azure or AWS policies and guardrails (e.g. cost controls, logging requirements, monitoring sensitivity)
+    - Easier environment-specific cost tracking (especially in showback/chargeback models)
+    - Safer testing and change validation, supporting the DevOps approach of *"rapid, iterative and incremental change"* through controlled progression across environments (e.g. Dev → Int → NFT → Preprod → Prod)
+
+    This structure is also aligned with the Cloud Adoption Framework for [Azure](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/) and [AWS](https://aws.amazon.com/cloud-adoption-framework/), which recommend using subscriptions as units of governance and risk isolation.
+
+  - Segregate products
+
+    Each product should operate within its own set of cloud subscriptions (Azure) or accounts (AWS), rather than being co-located with other products in a large shared environment. This aligns infrastructure with product boundaries, enabling:
+
+    - Empowered and autonomous teams (a core principle) to own, operate and iterate on their environments independently, enabling clear ownership and accountability
+    - Improved cost attribution for budgeting and forecasting, essential for long-living products supported by outcome teams
+    - Reduced risk of cross-product failure, misconfiguration or conflicting changes, and their blast radius
+    - Better alignment to [Conway’s Law](https://martinfowler.com/bliki/ConwaysLaw.html), [Team Topologies](https://teamtopologies.com/) and [Domain-Driven Design](https://martinfowler.com/bliki/DomainDrivenDesign.html), where infrastructure reflects the structure and ownership of the team, accelerating delivery and supporting flow
+    - Scalable, long-term governance, as each product evolves, is replatformed or retired, its resources can be managed in isolation
+
+    By segregating subscriptions per product, we can reduce friction between teams, improve lifecycle management and support the [*"you build it, you run it"*](https://www.thoughtworks.com/en-gb/insights/decoder/y/you-build-it-you-run-it) DevOps approch.
+
   - <details><summary>Infrastructure must be tagged to identity the service so that unnecessary resources don't go unnoticed (click to expand)</summary>
 
     AWS Config rule to identify EC2 assets not tagged with "CostCenter" and "Owner":
