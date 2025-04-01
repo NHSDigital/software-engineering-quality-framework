@@ -63,7 +63,7 @@
     - Improved cost attribution for budgeting and forecasting, essential for long-living products supported by outcome teams
     - Reduced risk of cross-product failure, misconfiguration or conflicting changes, and their blast radius
     - Better alignment to [Conway’s Law](https://martinfowler.com/bliki/ConwaysLaw.html), [Team Topologies](https://teamtopologies.com/) and [Domain-Driven Design](https://martinfowler.com/bliki/DomainDrivenDesign.html), where infrastructure reflects the structure and ownership of the team, accelerating delivery and supporting flow
-    - Scalable, long-term governance, as each product evolves, is replatformed or retired, its resources can be managed in isolation
+    - Scalable approach to managing the product lifecycle: as each product evolves, is replatformed or retired, its resources can be managed in isolation
 
     By segregating subscriptions per product, we can reduce friction between teams, improve lifecycle management and support the [*"you build it, you run it"*](https://www.thoughtworks.com/en-gb/insights/decoder/y/you-build-it-you-run-it) DevOps approch.
 
