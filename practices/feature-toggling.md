@@ -19,7 +19,6 @@
 
 - These notes are part of our broader [engineering principles](../principles.md).
 - Feature toggling contributes to safer delivery, reduced deployment risk, and enhanced responsiveness to change.
-- It supports practices aligned with [DevOps](devops.md) and [continuous delivery](continuous-delivery.md).
 
 ## In summary
 
@@ -121,8 +120,7 @@ Best practices:
 ## Further reading
 
 - [Feature Toggles by Martin Fowler](https://martinfowler.com/articles/feature-toggles.html)
-- [Feature Management Maturity Model](https://launchdarkly.com/blog/the-feature-management-maturity-model/)
 - [Unleash Strategies and Best Practices](https://docs.getunleash.io/advanced/toggle-strategy)
 - [Flagsmith Docs](https://docs.flagsmith.com/)
-- [Feature Flag Best Practices](https://launchdarkly.com/blog/feature-flag-best-practices/)
+- [Feature Flag Best Practices](https://launchdarkly.com/blog/best-practices-for-coding-with-feature-flags/)
 - [Thoughtworks Tech Radar](https://www.thoughtworks.com/radar/techniques/minimum-feature-toggle-solution)
