@@ -1,0 +1,128 @@
+# Feature Toggling
+
+- [Feature Toggling](#feature-toggling)
+  - [Context](#context)
+  - [In summary](#in-summary)
+  - [Background](#background)
+  - [What is feature toggling?](#what-is-feature-toggling)
+  - [Why use feature toggles?](#why-use-feature-toggles)
+  - [Types of toggles](#types-of-toggles)
+  - [Managing toggles](#managing-toggles)
+  - [Toggling strategy](#toggling-strategy)
+  - [Toggle lifecycle](#toggle-lifecycle)
+    - [Best practice lifecycle](#best-practice-lifecycle)
+  - [Testing toggled features](#testing-toggled-features)
+  - [Designing for failure](#designing-for-failure)
+  - [Further reading](#further-reading)
+
+## Context
+
+- These notes are part of our broader [engineering principles](../principles.md).
+- Feature toggling contributes to safer delivery, reduced deployment risk, and enhanced responsiveness to change.
+- It supports practices aligned with [DevOps](devops.md) and [continuous delivery](continuous-delivery.md).
+
+## In summary
+
+- Feature toggling enables functionality to be turned on or off without deploying new code.
+- It separates deployment from release, allowing code to be safely deployed without activating a feature.
+- Toggles should be explicitly managed with clear naming, documented intent, and timely removal.
+- Toggle abuse (too many, long-lived, or undocumented flags) leads to tech debt and complex logic.
+
+## Background
+
+Feature toggling, also known as feature flags, is a technique for modifying system behaviour without changing code by checking a condition (usually externalised) at runtime. It is often used to control feature rollouts, manage risk, and test changes in production.
+
+This is particularly powerful in continuous delivery environments where small, frequent changes are the norm. It supports practices like canary releases, A/B testing, and operational kill switches.
+
+For a detailed and widely referenced introduction to this practice, see Martin Fowler's article on [Feature Toggles](https://martinfowler.com/articles/feature-toggles.html).
+
+While some areas are looking to adopt a more enterprise-grade offering with Flagsmith, it's important to recognise that more minimal feature toggle approaches may be appropriate for smaller or simpler systems. The [Thoughtworks Technology Radar](https://www.thoughtworks.com/radar) notes that many teams over-engineer feature flagging by immediately adopting complex platforms, when a simpler approach (e.g., environment variables or static config) would suffice. However, irrespective of how the toggle is implemented, the **governance, traceability, and lifecycle management processes should be consistent**.
+
+## What is feature toggling?
+
+Feature toggling works by introducing conditional logic into the application code. This logic evaluates a configuration value or remote toggle to determine whether to execute a new or existing code path.
+
+Toggles can be defined statically (e.g., environment variable or config file) or dynamically (e.g., via an external feature flag service). Dynamic toggles can be changed without restarting or redeploying the application.
+
+## Why use feature toggles?
+
+- **Decouple deployment from release**: Code can be deployed behind a toggle and activated later.
+- **Safe rollouts**: Enable features for specific users or teams to validate functionality before full rollout.
+- **Operational control**: Temporarily disable a feature causing issues without rollback.
+- **Experimentation**: Run A/B tests to determine user impact.
+- **Environment-specific behaviour**: Activate features in dev or test environments only.
+
+## Types of toggles
+
+According to Martin Fowler, toggles typically fall into the following categories:
+
+- **Release toggles**: Allow incomplete features to be merged and deployed.
+- **Experiment toggles**: Support A/B or multivariate testing.
+- **Ops toggles**: Provide operational control for performance or reliability.
+- **Permission toggles**: Enable features based on user roles or attributes.
+
+## Managing toggles
+
+Poorly managed toggles can lead to complexity, bugs, and technical debt. Best practices include:
+
+- Give toggles meaningful, consistent names.
+- Store toggle state in a centralised and observable system.
+- Document the purpose and expected lifetime of each toggle.
+- Remove stale toggles once their purpose is fulfilled.
+- Avoid nesting toggles or creating toggle spaghetti.
+- Ensure toggles are discoverable, testable, and auditable.
+
+## Toggling strategy
+
+Choose a feature flagging approach appropriate for the scale and complexity of your system:
+
+- **Simple applications**: Environment variables or configuration files.
+- **Moderate scale and beyond**: Look to make use of [Flagsmith](https://www.flagsmith.com/), which support targeting, analytics, and team workflows.
+
+Feature toggles should be queryable from all components that need access to their values. Depending on your architecture, this may require synchronisation, caching, or SDK integration.
+
+## Toggle lifecycle
+
+Toggles are intended to be short-lived unless explicitly designed to be permanent (e.g. permission toggles).
+
+### Best practice lifecycle
+
+1. **Introduce** the toggle with a clear purpose and target outcome.
+2. **Implement** the feature behind the toggle.
+3. **Test** the feature in both on/off states.
+4. **Roll out** gradually (e.g., canary users, targeted groups).
+5. **Monitor** the impact of the feature.
+6. **Remove** the toggle once the feature is stable and fully deployed.
+
+Document toggles in your architecture or delivery tooling to ensure visibility and traceability.
+
+## Testing toggled features
+
+Features behind toggles should be tested in both their enabled and disabled states. This ensures correctness regardless of the toggle value.
+
+- Write tests that explicitly set the toggle on and off.
+- Use test frameworks that allow injecting or mocking toggle values.
+- Consider test coverage for the toggle transitions (e.g., changing at runtime).
+- Ensure integration and end-to-end tests include scenarios where toggles are disabled.
+
+This is particularly important for toggles that persist for more than one release cycle.
+
+## Designing for failure
+
+Feature toggles should never become a point of failure. Design your system so that it behaves predictably even if the toggle service is unavailable or fails to return a value.
+
+Best practices:
+
+- Default values: Every toggle should have a known and safe default (either on or off) hardcoded in the consuming service.
+- Fail-safe logic: Ensure that remote flag checks have timeouts and fallback paths.
+- Graceful degradation: Systems should still function, possibly with reduced capability, if a toggle cannot be resolved.
+- Resilient integration: SDKs or services used for toggling should not block startup or core paths.
+
+## Further reading
+
+- [Feature Toggles by Martin Fowler](https://martinfowler.com/articles/feature-toggles.html)
+- [Feature Management Maturity Model](https://launchdarkly.com/blog/the-feature-management-maturity-model/)
+- [Unleash Strategies and Best Practices](https://docs.getunleash.io/advanced/toggle-strategy)
+- [Flagsmith Docs](https://docs.flagsmith.com/)
+- [Feature Flag Best Practices](https://launchdarkly.com/blog/feature-flag-best-practices/)
+- [Thoughtworks Tech Radar](https://www.thoughtworks.com/radar/techniques/minimum-feature-toggle-solution)
