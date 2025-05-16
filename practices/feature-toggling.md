@@ -120,7 +120,7 @@ Best practices:
 ## Further reading
 
 - [Feature Toggles by Martin Fowler](https://martinfowler.com/articles/feature-toggles.html)
-- [Unleash Strategies and Best Practices](https://docs.getunleash.io/advanced/toggle-strategy)
+- [Unleash Strategies and Best Practices](https://docs.getunleash.io/topics/feature-flags/feature-flag-best-practices)
 - [Flagsmith Docs](https://docs.flagsmith.com/)
 - [Feature Flag Best Practices](https://launchdarkly.com/blog/best-practices-for-coding-with-feature-flags/)
 - [Thoughtworks Tech Radar](https://www.thoughtworks.com/radar/techniques/minimum-feature-toggle-solution)
