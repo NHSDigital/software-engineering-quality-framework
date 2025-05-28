@@ -15,7 +15,6 @@
     - [Best practice lifecycle](#best-practice-lifecycle)
   - [Testing toggled features](#testing-toggled-features)
   - [Designing for failure](#designing-for-failure)
-  - [Comments](#comments)
   - [Further reading](#further-reading)
 
 ## Context
@@ -42,7 +41,7 @@ This is particularly powerful in continuous delivery environments where small, f
 
 For a detailed and widely referenced introduction to this practice, see Martin Fowler's article on [Feature Toggles](https://martinfowler.com/articles/feature-toggles.html).
 
-While some areas are looking to adopt a more enterprise-grade offering with Flagsmith, it's important to recognise that more minimal feature toggle approaches may be appropriate for smaller or simpler systems. The [Thoughtworks Technology Radar](https://www.thoughtworks.com/radar) notes that many teams over-engineer feature flagging by immediately adopting complex platforms, when a simpler approach (e.g., environment variables or static config) would suffice. However, irrespective of how the toggle is implemented, the **governance, traceability, and lifecycle management processes should be consistent**.
+While some areas are looking to adopt a more enterprise-grade offering with a dedicated feature toggling tool, it's important to recognise that more minimal feature toggle approaches may be appropriate for smaller or simpler systems. The [Thoughtworks Technology Radar](https://www.thoughtworks.com/radar) notes that many teams over-engineer feature flagging by immediately adopting complex platforms, when a simpler approach (e.g., environment variables or static config) would suffice. However, irrespective of how the toggle is implemented, the **governance, traceability, and lifecycle management processes should be consistent**.
 
 ## What is feature toggling?
 
@@ -52,9 +51,9 @@ Toggles can be defined statically (e.g., environment variable or config file) or
 
 ## Why use feature toggling?
 
-- **Decouple deployment from release**: Code can be deployed behind a toggle and activated later.
+- **Decouple deployment from release**: Deploy code behind a toggle and activate it later.
 - **Enable safe rollouts**: Enable features for specific users or teams to validate functionality before full rollout.
-- **Support operational control**: Temporarily disable a feature causing issues without rollback.
+- **Support operational control**: Temporarily disable a feature which is causing issues, without needing to rollback.
 - **Enable experimentation**: Run A/B tests to determine user impact.
 - **Configure environment-specific behaviour**: Activate features in dev or test environments only.
 
@@ -67,16 +66,20 @@ According to Martin Fowler, toggles typically fall into the following categories
 - **Ops toggles**: Provide operational control for performance or reliability.
 - **Permission toggles**: Enable features based on user roles or attributes.
 
+> [!NOTE]
+> While permission toggles can target users by role or attribute during a rollout or experiment, they are not a replacement for robust, permanent role-based access control (RBAC). Use RBAC as a separate, first-class mechanism for managing user permissions.
+
 ## Managing toggles
 
 Poorly managed toggles can lead to complexity, bugs, and technical debt. Best practices include:
 
 - Give toggles meaningful, consistent names.
-- Store toggle state in a centralised and observable system.
 - Document the purpose and expected lifetime of each toggle.
-- Remove stale toggles once their purpose is fulfilled. Ideally integrate this into your CI pipeline to report on stale flags.
-- Avoid nesting toggles or creating toggle spaghetti.
+- Store toggle state in an observable system.
+- Guard the feature behind a single toggle check, and pass the resulting behaviour or strategy through your code to minimise duplication and simplify removal.
 - Ensure toggles are discoverable, testable, and auditable.
+- Avoid nesting toggles or creating toggle spaghetti.
+- Remove stale toggles once their purpose is fulfilled.
 
 ## Caveats
 
@@ -92,7 +95,7 @@ Whilst there are obvious benefits to Feature Toggling, there are some caveats wo
 Choose a feature flagging approach appropriate for the scale and complexity of your system:
 
 - **Simple applications**: Environment variables or configuration files.
-- **Moderate scale and beyond**: Look to make use of e.g. [Flagsmith](https://www.flagsmith.com/), which supports targeting, analytics, and team workflows.
+- **Moderate scale and beyond**: Look to make use of a dedicated feature toggling tool, which supports targeting, analytics, and team workflows.
 
 Feature toggles should be queryable from all components that need access to their values. Depending on your architecture, this may require synchronisation, caching, or SDK integration.
 
@@ -115,16 +118,21 @@ Document toggles in your architecture or delivery tooling to ensure visibility a
 
 Features behind toggles should be tested in both their enabled and disabled states. This ensures correctness regardless of the toggle value.
 
-- Write tests that explicitly set the toggle on and off.
-- Use test frameworks that allow injecting or mocking toggle values.
-- Consider test coverage for the toggle transitions (e.g., changing at runtime).
-- Ensure integration and end-to-end tests include scenarios where toggles are disabled.
+- Prefer testing the behaviour behind the toggle (e.g. via Strategy implementations) directly, rather than toggling features within tests.
+- Where the Strategy Pattern is used, write separate unit tests for each strategy to validate their behaviour in isolation.
+- If toggling is required in tests, use frameworks that allow injecting or mocking toggle values cleanly.
+- Ensure integration and end-to-end tests include scenarios with the toggle both enabled and disabled, especially if the toggle is expected to persist across multiple releases.
+- Include toggle state in test names or descriptions to clarify test intent (e.g. `shouldReturnNull_whenFeatureDisabled()`).
+- Track test coverage across both toggle states and regularly review it for long-lived or critical toggles.
+- Ensure test coverage includes edge cases introduced by toggled logic, such as different user roles, environment-specific behaviour, or state transitions.
+- Use contract tests where toggled behaviour affects external APIs or integrations to ensure they remain backward-compatible.
+- Avoid asserting on the presence or structure of toggle code itself, focus on testing expected outcomes.
 
 This is particularly important for toggles that persist for more than one release cycle.
 
 ## Designing for failure
 
-Feature toggles should never become a point of failure. Design your system so that it behaves predictably even if the toggle service is unavailable or fails to return a value.
+If you are using a feature toggle service external to the application, feature toggles should never become a point of failure. Design your system so that it behaves predictably even if the toggle service is unavailable or fails to return a value.
 
 Best practices:
 
@@ -133,13 +141,9 @@ Best practices:
 - Graceful degradation: Systems should still function, possibly with reduced capability, if a toggle cannot be resolved.
 - Resilient integration: Ensure that SDKs or services used for toggling are resilient and do not block application startup or core functionality.
 
-## Comments
-
 ## Further reading
 
-- [Feature Toggles by Martin Fowler](https://martinfowler.com/articles/feature-toggles.html)
-- [Unleash Strategies and Best Practices](https://docs.getunleash.io/topics/feature-flags/feature-flag-best-practices)
-- [Flagsmith Docs](https://docs.flagsmith.com/)
-- [Feature Flag Best Practices](https://launchdarkly.com/blog/best-practices-for-coding-with-feature-flags/)
-- [Thoughtworks Tech Radar](https://www.thoughtworks.com/radar/techniques/minimum-feature-toggle-solution)
-- [Defensive coding](https://docs.flagsmith.com/guides-and-examples/defensive-coding)
+- [Feature Toggles (aka Feature Flags) by Martin Fowler](https://martinfowler.com/articles/feature-toggles.html)
+- [11 principles for building and scaling feature flag systems](https://docs.getunleash.io/topics/feature-flags/feature-flag-best-practices)
+- [Best practices for coding with feature flags](https://launchdarkly.com/blog/best-practices-for-coding-with-feature-flags/)
+- [An example tool for feature toggling](https://docs.flagsmith.com/)
