@@ -2,10 +2,11 @@
 
 - [Feature Toggling](#feature-toggling)
   - [Context](#context)
-  - [In summary](#in-summary)
+  - [The intent](#the-intent)
+  - [Key takeaway](#key-takeaway)
   - [Background](#background)
   - [What is feature toggling?](#what-is-feature-toggling)
-  - [Why use feature toggles?](#why-use-feature-toggles)
+  - [Why use feature toggling?](#why-use-feature-toggling)
   - [Types of toggles](#types-of-toggles)
   - [Managing toggles](#managing-toggles)
   - [Toggling strategy](#toggling-strategy)
@@ -20,7 +21,11 @@
 - These notes are part of our broader [engineering principles](../principles.md).
 - Feature toggling contributes to safer delivery, reduced deployment risk, and enhanced responsiveness to change.
 
-## In summary
+## The intent
+
+We use feature toggling as a key enabling practice to support our move towards daily code integration and deployment, including multiple deployments per day. Feature toggling allows us to separate deployment from release, so that incomplete features can be merged and deployed without impacting end users. It enables incremental development by allowing small, frequent commits to `main`, and supports risk-managed rollouts by enabling functionality selectively. Importantly, it also provides a mechanism for rapid rollback without reverting code. This approach is critical to mitigating the risks associated with frequent deployments, and is foundational to achieving a safe and sustainable continuous delivery model.
+
+## Key takeaway
 
 - Feature toggling enables functionality to be turned on or off without deploying new code.
 - It separates deployment from release, allowing code to be safely deployed without activating a feature.
@@ -43,13 +48,13 @@ Feature toggling works by introducing conditional logic into the application cod
 
 Toggles can be defined statically (e.g., environment variable or config file) or dynamically (e.g., via an external feature flag service). Dynamic toggles can be changed without restarting or redeploying the application.
 
-## Why use feature toggles?
+## Why use feature toggling?
 
 - **Decouple deployment from release**: Code can be deployed behind a toggle and activated later.
-- **Safe rollouts**: Enable features for specific users or teams to validate functionality before full rollout.
-- **Operational control**: Temporarily disable a feature causing issues without rollback.
-- **Experimentation**: Run A/B tests to determine user impact.
-- **Environment-specific behaviour**: Activate features in dev or test environments only.
+- **Enable safe rollouts**: Enable features for specific users or teams to validate functionality before full rollout.
+- **Support operational control**: Temporarily disable a feature causing issues without rollback.
+- **Enable experimentation**: Run A/B tests to determine user impact.
+- **Configure environment-specific behaviour**: Activate features in dev or test environments only.
 
 ## Types of toggles
 
@@ -76,7 +81,7 @@ Poorly managed toggles can lead to complexity, bugs, and technical debt. Best pr
 Choose a feature flagging approach appropriate for the scale and complexity of your system:
 
 - **Simple applications**: Environment variables or configuration files.
-- **Moderate scale and beyond**: Look to make use of [Flagsmith](https://www.flagsmith.com/), which support targeting, analytics, and team workflows.
+- **Moderate scale and beyond**: Look to make use of e.g. [Flagsmith](https://www.flagsmith.com/), which supports targeting, analytics, and team workflows.
 
 Feature toggles should be queryable from all components that need access to their values. Depending on your architecture, this may require synchronisation, caching, or SDK integration.
 
@@ -115,7 +120,7 @@ Best practices:
 - Default values: Every toggle should have a known and safe default (either on or off) hardcoded in the consuming service.
 - Fail-safe logic: Ensure that remote flag checks have timeouts and fallback paths.
 - Graceful degradation: Systems should still function, possibly with reduced capability, if a toggle cannot be resolved.
-- Resilient integration: SDKs or services used for toggling should not block startup or core paths.
+- Resilient integration: Ensure that SDKs or services used for toggling are resilient and do not block application startup or core functionality.
 
 ## Further reading
 
