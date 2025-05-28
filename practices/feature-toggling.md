@@ -15,6 +15,7 @@
     - [Best practice lifecycle](#best-practice-lifecycle)
   - [Testing toggled features](#testing-toggled-features)
   - [Designing for failure](#designing-for-failure)
+  - [Comments](#comments)
   - [Further reading](#further-reading)
 
 ## Context
@@ -131,6 +132,8 @@ Best practices:
 - Fail-safe logic: Ensure that remote flag checks have timeouts and fallback paths.
 - Graceful degradation: Systems should still function, possibly with reduced capability, if a toggle cannot be resolved.
 - Resilient integration: Ensure that SDKs or services used for toggling are resilient and do not block application startup or core functionality.
+
+## Comments
 
 ## Further reading
 
