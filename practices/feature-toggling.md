@@ -9,6 +9,7 @@
   - [Why use feature toggling?](#why-use-feature-toggling)
   - [Types of toggles](#types-of-toggles)
   - [Managing toggles](#managing-toggles)
+  - [Caveats](#caveats)
   - [Toggling strategy](#toggling-strategy)
   - [Toggle lifecycle](#toggle-lifecycle)
     - [Best practice lifecycle](#best-practice-lifecycle)
@@ -72,9 +73,18 @@ Poorly managed toggles can lead to complexity, bugs, and technical debt. Best pr
 - Give toggles meaningful, consistent names.
 - Store toggle state in a centralised and observable system.
 - Document the purpose and expected lifetime of each toggle.
-- Remove stale toggles once their purpose is fulfilled.
+- Remove stale toggles once their purpose is fulfilled. Ideally integrate this into your CI pipeline to report on stale flags.
 - Avoid nesting toggles or creating toggle spaghetti.
 - Ensure toggles are discoverable, testable, and auditable.
+
+## Caveats
+
+Whilst there are obvious benefits to Feature Toggling, there are some caveats worth bearing in mind when implementing them
+
+- **Performance Overhead**: Feature toggles can introduce performance overhead if they are checked frequently, especially within loops and every evaluation goes back to the server.
+- **Toggle Bloat & Technical Debt**: Toggles are intended for short term use, failure to adhere to this principle can lead to conditional sprawl of if statements, harder code to read and maintain and increased risk of toggle conflicts or becoming orphaned
+- **Test Complexity**: More toggles increase your permutations around a single test path. A single toggle doubles the test scenarios and needs careful factoring in to the test approach.
+- **Increased Logging/Observability Needs**; Now need to know the state of the toggles at the point of the logs, otherwise inspecting the logs becomes incredibly difficult.
 
 ## Toggling strategy
 
@@ -129,3 +139,4 @@ Best practices:
 - [Flagsmith Docs](https://docs.flagsmith.com/)
 - [Feature Flag Best Practices](https://launchdarkly.com/blog/best-practices-for-coding-with-feature-flags/)
 - [Thoughtworks Tech Radar](https://www.thoughtworks.com/radar/techniques/minimum-feature-toggle-solution)
+- [Defensive coding](https://docs.flagsmith.com/guides-and-examples/defensive-coding)
