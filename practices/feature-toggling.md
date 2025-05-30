@@ -144,6 +144,7 @@ Best practices:
 ## Further reading
 
 - [Feature Toggles (aka Feature Flags) by Martin Fowler](https://martinfowler.com/articles/feature-toggles.html)
+- [Thoughtworks Tech Radar](https://www.thoughtworks.com/radar/techniques/simplest-possible-feature-toggle)
 - [11 principles for building and scaling feature flag systems](https://docs.getunleash.io/topics/feature-flags/feature-flag-best-practices)
 - [Best practices for coding with feature flags](https://launchdarkly.com/blog/best-practices-for-coding-with-feature-flags/)
 - [Defensive coding](https://docs.flagsmith.com/guides-and-examples/defensive-coding)
