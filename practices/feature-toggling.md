@@ -79,7 +79,16 @@ Poorly managed toggles can lead to complexity, bugs, and technical debt. Best pr
 - Guard the feature behind a single toggle check, and pass the resulting behaviour or strategy through your code to minimise duplication and simplify removal.
 - Ensure toggles are discoverable, testable, and auditable.
 - Avoid nesting toggles or creating toggle spaghetti.
-- Remove stale toggles once their purpose is fulfilled.
+- Remove stale toggles once their purpose is fulfilled. Ideally integrate this into your CI pipeline to report on stale flags.
+
+## Caveats
+
+Whilst there are obvious benefits to Feature Toggling, there are some caveats worth bearing in mind when implementing them
+
+- **Performance Overhead**: Feature toggles can introduce performance overhead if they are checked frequently, especially within loops and every evaluation goes back to the server.
+- **Toggle Bloat & Technical Debt**: Toggles are intended for short term use, failure to adhere to this principle can lead to conditional sprawl of if statements, harder code to read and maintain and increased risk of toggle conflicts or becoming orphaned
+- **Test Complexity**: More toggles increase your permutations around a single test path. A single toggle doubles the test scenarios and needs careful factoring in to the test approach.
+- **Increased Logging/Observability Needs**; Now need to know the state of the toggles at the point of the logs, otherwise inspecting the logs becomes incredibly difficult.
 
 ## Caveats
 
@@ -146,4 +155,5 @@ Best practices:
 - [Feature Toggles (aka Feature Flags) by Martin Fowler](https://martinfowler.com/articles/feature-toggles.html)
 - [11 principles for building and scaling feature flag systems](https://docs.getunleash.io/topics/feature-flags/feature-flag-best-practices)
 - [Best practices for coding with feature flags](https://launchdarkly.com/blog/best-practices-for-coding-with-feature-flags/)
+- [Defensive coding](https://docs.flagsmith.com/guides-and-examples/defensive-coding)
 - [An example tool for feature toggling](https://docs.flagsmith.com/)
