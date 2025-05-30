@@ -90,15 +90,6 @@ Whilst there are obvious benefits to Feature Toggling, there are some caveats wo
 - **Test Complexity**: More toggles increase your permutations around a single test path. A single toggle doubles the test scenarios and needs careful factoring in to the test approach.
 - **Increased Logging/Observability Needs**; Now need to know the state of the toggles at the point of the logs, otherwise inspecting the logs becomes incredibly difficult.
 
-## Caveats
-
-Whilst there are obvious benefits to Feature Toggling, there are some caveats worth bearing in mind when implementing them
-
-- **Performance Overhead**: Feature toggles can introduce performance overhead if they are checked frequently, especially within loops and every evaluation goes back to the server.
-- **Toggle Bloat & Technical Debt**: Toggles are intended for short term use, failure to adhere to this principle can lead to conditional sprawl of if statements, harder code to read and maintain and increased risk of toggle conflicts or becoming orphaned
-- **Test Complexity**: More toggles increase your permutations around a single test path. A single toggle doubles the test scenarios and needs careful factoring in to the test approach.
-- **Increased Logging/Observability Needs**; Now need to know the state of the toggles at the point of the logs, otherwise inspecting the logs becomes incredibly difficult.
-
 ## Toggling strategy
 
 Choose a feature flagging approach appropriate for the scale and complexity of your system:
