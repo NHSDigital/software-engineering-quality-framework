@@ -12,3 +12,4 @@ Where possible this will be a set of fully working components / solutions you ca
 | [Automating performance-test decisions using APDEX](practices/performance-testing.md)    | Instructions      | Recommended    | Published  |
 | [Scanning source code for secrets](tools/nhsd-git-secrets/README.md)                     | Full solution     | Recommended    | Published  |
 | Cross-account backups on AWS                                                             | Instructions      | In progress    | Draft      |
+| [Architecture Patterns](practices/guides/architecture-patterns.md)                       | Instructions      | In progress    | Draft      |
