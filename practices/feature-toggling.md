@@ -150,4 +150,4 @@ Best practices:
 - [Best practices for coding with feature flags](https://launchdarkly.com/blog/best-practices-for-coding-with-feature-flags/)
 - [Defensive coding](https://docs.flagsmith.com/guides-and-examples/defensive-coding)
 - [An example tool for feature toggling](https://docs.flagsmith.com/)
-- [How to use feature flags without technical debt](https://blog.palantir.com/code-review-best-practices-19e02780015f)
+- [How to use feature flags without technical debt](https://launchdarkly.com/blog/how-to-use-feature-flags-without-technical-debt/)
