@@ -106,11 +106,12 @@ Toggles are intended to be short-lived unless explicitly designed to be permanen
 ### Best practice lifecycle
 
 1. **Introduce** the toggle with a clear purpose and target outcome.
-2. **Implement** the feature behind the toggle.
-3. **Test** the feature in both on/off states.
-4. **Roll out** gradually (e.g., canary users, targeted groups).
-5. **Monitor** the impact of the feature.
-6. **Remove** the toggle once the feature is stable and fully deployed.
+2. **Keep it tidy** create a PR for the toggle removal called cleanup/feature_flag_name
+3. **Implement** the feature behind the toggle.
+4. **Test** the feature in both on/off states.
+5. **Roll out** gradually (e.g., canary users, targeted groups).
+6. **Monitor** the impact of the feature.
+7. **Remove** the toggle once the feature is stable and fully deployed.
 
 Document toggles in your architecture or delivery tooling to ensure visibility and traceability.
 
@@ -149,3 +150,4 @@ Best practices:
 - [Best practices for coding with feature flags](https://launchdarkly.com/blog/best-practices-for-coding-with-feature-flags/)
 - [Defensive coding](https://docs.flagsmith.com/guides-and-examples/defensive-coding)
 - [An example tool for feature toggling](https://docs.flagsmith.com/)
+- [How to use feature flags without technical debt](https://blog.palantir.com/code-review-best-practices-19e02780015f)
