@@ -24,7 +24,7 @@
 
 ## The intent
 
-We use feature toggling as a key enabling practice to support our move towards daily code integration and deployment, including multiple deployments per day. Feature toggling allows us to separate deployment from release, so that incomplete features can be merged and deployed without impacting end users. It enables incremental development by allowing small, frequent commits to `main`, and supports risk-managed rollouts by enabling functionality selectively. Importantly, it also provides a mechanism for rapid rollback without reverting code. This approach is critical to mitigating the risks associated with frequent deployments, and is foundational to achieving a safe and sustainable continuous delivery model.
+We use feature toggling as a **key enabling practice to support our move towards daily code integration and deployment, including multiple deployments per day** - this is the main motivation behind introducing this practice. Feature toggling allows us to separate deployment from release, so that incomplete features can be merged and deployed without impacting end users. It enables incremental development by allowing small, frequent commits to `main`, and supports risk-managed rollouts by enabling functionality selectively. Importantly, it also provides a mechanism for rapid rollback without reverting code. This approach is critical to mitigating the risks associated with frequent deployments, and is foundational to achieving a safe and sustainable continuous delivery model.
 
 ## Key takeaway
 
@@ -80,6 +80,14 @@ Poorly managed toggles can lead to complexity, bugs, and technical debt. Best pr
 - Ensure toggles are discoverable, testable, and auditable.
 - Avoid nesting toggles or creating toggle spaghetti.
 - Remove stale toggles once their purpose is fulfilled. Ideally integrate this into your CI pipeline to report on stale flags.
+
+Changing a toggle’s state can significantly impact system behaviour, especially in live environments. These changes should therefore be treated with the same rigour as code changes. Recommended practices include:
+
+- All toggle changes — whether in code or dynamic configuration stores — should be peer reviewed and documented. For code-based toggles, this naturally happens via pull requests.
+- Use a feature toggle system or configuration store that logs all changes, including who made them, when, and the before/after values.
+- Where possible, verify the impact of a toggle change in a non-production environment before enabling it in live.
+- When enabling or disabling a toggle, communicate with relevant stakeholders, particularly for user-facing or operational changes.
+- Where practical, manage toggle values through infrastructure-as-code or parameterised pipelines to allow version-controlled, reviewed, and auditable changes.
 
 ## Caveats
 
