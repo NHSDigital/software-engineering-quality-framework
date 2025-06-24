@@ -67,6 +67,9 @@ According to Martin Fowler, toggles typically fall into the following categories
 - **Permission toggles**: Enable features based on user roles or attributes.
 
 > [!NOTE]
+> For teams practising daily integration and deployment, feature flagging is a foundational capability. It enables separation of deployment from release, allowing incomplete features to be merged, deployed, and safely hidden from users until ready. However, where a product’s needs are focused on basic **Canary Releasing** or **A/B testing**, and the aspiration for daily deployment to production is yet to be realised, teams may choose to start with the native capabilities of their cloud provider (e.g., Azure deployment slots, AWS Lambda aliases, or traffic-routing rules, etc.). These offer infrastructure-level rollout control with minimal additional complexity or reliance on third-party tooling. While dedicated feature toggling services provide powerful feature-level targeting and experimentation, they also introduce external dependencies that may be unnecessary for very simple workloads. Therefore, teams may decide to start simple and evolve their approach as feature granularity, targeting precision, and user needs increase.
+
+> [!WARNING]
 > While permission toggles can target users by role or attribute during a rollout or experiment, they are not a replacement for robust, permanent role-based access control (RBAC). Use RBAC as a separate, first-class mechanism for managing user permissions.
 
 ## Managing toggles
