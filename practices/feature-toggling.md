@@ -64,9 +64,13 @@ According to Martin Fowler, toggles typically fall into the following categories
 - **Release toggles**: Allow incomplete features to be merged and deployed.
 
 > [!NOTE]
-> For teams practising daily integration and deployment, feature flagging is a foundational capability. It enables separation of deployment from release, allowing incomplete features to be merged, deployed, and safely hidden from users until ready. However, where a product’s needs are focused on basic **Canary Releasing** or **A/B testing**, and the aspiration for daily deployment to production is yet to be realised, teams may choose to start with the native capabilities of their cloud provider (e.g., Azure deployment slots, AWS Lambda aliases, or traffic-routing rules, etc.). These offer infrastructure-level rollout control with minimal additional complexity or reliance on third-party tooling. While dedicated feature toggling services provide powerful feature-level targeting and experimentation, they also introduce external dependencies that may be unnecessary for very simple workloads. Therefore, teams may decide to start simple and evolve their approach as feature granularity, targeting precision, and user needs increase.
+> For teams practising daily integration and deployment, feature flagging is a foundational capability. It enables separation of deployment from release, allowing incomplete features to be merged, deployed, and safely hidden from users until ready. Where a product’s needs are focused on basic **canary releasing**, and the aspiration for daily deployment to production is yet to be realised, teams may choose to start with the native capabilities of their cloud provider (e.g., Azure deployment slots, AWS Lambda aliases, or traffic-routing rules). These offer infrastructure-level rollout control with minimal additional complexity or reliance on third-party tooling.
 
 - **Experiment toggles**: Support A/B or multivariate testing.
+
+> [!NOTE]
+> True **A/B testing**, involving consistent user assignment, behavioural metrics, and statistical comparison, typically requires additional tooling to manage variant bucketing, exposure logging, and result analysis. In such cases, dedicated services may be more appropriate. Teams are encouraged to start simple, and evolve their approach as feature granularity, targeting precision, analytical needs, and user expectations increase.
+
 - **Ops toggles**: Provide operational control for performance or reliability.
 - **Permission toggles**: Enable features based on user roles or attributes.
 
