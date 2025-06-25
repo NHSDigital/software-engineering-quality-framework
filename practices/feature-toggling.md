@@ -69,7 +69,7 @@ According to Martin Fowler, toggles typically fall into the following categories
 - **Experiment toggles**: Support A/B or multivariate testing.
 
 > [!NOTE]
-> True **A/B testing**, involving consistent user assignment, behavioural metrics, and statistical comparison, typically requires additional tooling to manage variant bucketing, exposure logging, and result analysis. In such cases, dedicated services may be more appropriate. Teams are encouraged to start simple, and evolve their approach as feature granularity, targeting precision, analytical needs, and user expectations increase.
+> True **A/B testing**, involving consistent user assignment, behavioural metrics, and statistical comparison, typically requires additional tooling to manage variant bucketing, exposure logging, and result analysis. In such cases, dedicated services are more appropriate, as the solutions can be subtle and mathematically complex (be aware of ["Optional Stopping" or "Peeking Bias"](https://www.evanmiller.org/how-not-to-run-an-ab-test.html)). We do not want to have to re-invent them. Teams are encouraged to start simple, and evolve their approach as feature granularity, targeting precision, analytical needs, and user expectations increase.
 
 - **Ops toggles**: Provide operational control for performance or reliability.
 - **Permission toggles**: Enable features based on user roles or attributes.
