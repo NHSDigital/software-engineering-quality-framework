@@ -167,3 +167,6 @@ Best practices:
 - [Defensive coding](https://docs.flagsmith.com/guides-and-examples/defensive-coding)
 - [An example tool for feature toggling](https://docs.flagsmith.com/)
 - [How to use feature flags without technical debt](https://launchdarkly.com/blog/how-to-use-feature-flags-without-technical-debt/)
+- [Scaling Feature Flags - A Roadmap for Safer Releases & Faster Development](https://143451822.fs1.hubspotusercontent-eu1.net/hubfs/143451822/eBooks/eBook:%20Scaling%20Feature%20Flags%20-%20A%20Roadmap%20for%20Safer%20Releases%20%26%20Faster%20Development.pdf)
+- [Flip the Switch - Unlock Modern Software Development with Feature Flags](https://143451822.fs1.hubspotusercontent-eu1.net/hubfs/143451822/eBooks/Flip%20the%20Switch%20On%20Modern%20Software%20Development%20with%20Feature%20Flags%20-%20Flagsmith.pdf)
+- [Modern Development Practices in Banking: A Playbook](https://143451822.fs1.hubspotusercontent-eu1.net/hubfs/143451822/eBooks/Modern%20Development%20Practices%20in%20Banking%20by%20Flagsmith.pdf)
