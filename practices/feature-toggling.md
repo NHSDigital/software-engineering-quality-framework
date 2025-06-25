@@ -62,11 +62,19 @@ Toggles can be defined statically (e.g., environment variable or config file) or
 According to Martin Fowler, toggles typically fall into the following categories:
 
 - **Release toggles**: Allow incomplete features to be merged and deployed.
+
+> [!NOTE]
+> For teams practising daily integration and deployment, feature flagging is a foundational capability. It enables separation of deployment from release, allowing incomplete features to be merged, deployed, and safely hidden from users until ready. Where a product’s needs are focused on basic **canary releasing**, and the aspiration for daily deployment to production is yet to be realised, teams may choose to start with the native capabilities of their cloud provider (e.g., Azure deployment slots, AWS Lambda aliases, or traffic-routing rules). These offer infrastructure-level rollout control with minimal additional complexity or reliance on third-party tooling.
+
 - **Experiment toggles**: Support A/B or multivariate testing.
+
+> [!NOTE]
+> True **A/B testing**, involving consistent user assignment, behavioural metrics, and statistical comparison, typically requires additional tooling to manage variant bucketing, exposure logging, and result analysis. In such cases, dedicated services are more appropriate, as the solutions can be subtle and mathematically complex (consider issues such as ["Optional Stopping" or "Peeking Bias"](https://www.evanmiller.org/how-not-to-run-an-ab-test.html)). We do not want to have to re-invent them. Teams are encouraged to start simple, and evolve their approach as feature granularity, targeting precision, analytical needs, and user expectations increase.
+
 - **Ops toggles**: Provide operational control for performance or reliability.
 - **Permission toggles**: Enable features based on user roles or attributes.
 
-> [!NOTE]
+> [!WARNING]
 > While permission toggles can target users by role or attribute during a rollout or experiment, they are not a replacement for robust, permanent role-based access control (RBAC). Use RBAC as a separate, first-class mechanism for managing user permissions.
 
 ## Managing toggles
