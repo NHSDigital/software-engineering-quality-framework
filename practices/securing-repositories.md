@@ -28,19 +28,19 @@ Contributors must take all necessary precautions to ensure that sensitive data d
 ### Organisation-level settings
 
 - All users must have MFA enabled.
-- Baseline visibility for private repositories must be `No Permission`.
+- [Baseline visibility](baseline-visibility.md) for private repositories must be `No Permission`.
 - Ability to change repository view from private to public must be reserved to admins only.
 
 ### Repository-specific settings
 
 - In line with the [Service Manual](https://service-manual.nhs.uk/service-standard/12-make-new-source-code-open), new repositories should be public by default, unless there is good reason not to - this avoids costly rework to secure private information further down the line.
 - Private repositories must disable forking.
-- There must be no outside collaborators in private repositories.
+- Outside collaborators in private repositories must be there for a specific purpose (e.g. security testers) and their need for access must be regularly reviewed.
 - Enable abuse reporting by <!-- markdown-link-check-disable -->[accepting content reports](https://docs.github.com/en/communities/moderating-comments-and-conversations/managing-how-contributors-report-abuse-in-your-organizations-repository)<!-- markdown-link-check-enable -->
 
 ### Teams setup
 
-Because of baseline visibility configurations, you must setup GitHub teams in order to provide team members access to repositories. The minimum recommended setup is as follows:
+Because of baseline visibility configurations, you must setup GitHub teams in order to provide team members appropriate access to repositories. The minimum recommended setup is as follows:
 
 - Create one team with the name of your product (e.g. `Engineering Quality Framework`). Add all required members to this team.
 - Create one child team within the team, for admins only (e.g. `Engineering Quality Framework Admins`). Add admins only to this team.
@@ -49,7 +49,7 @@ Because of baseline visibility configurations, you must setup GitHub teams in or
 
 Child teams inherit the parent's access permissions, simplifying permissions management for large groups. Members of child teams also receive notifications when the parent team is `@mentioned`, simplifying communication with multiple groups of people.
 
-Depending on your use case, you may want to create additional teams (e.g. a read-only access team, or different teams granting access to different projects). This is welcomed by the framework, as long as the teams provide clarity on the role they encompass, remain consistent and are applied consistently to your repositories.
+Depending on your use case, you may want to create additional teams (e.g. teams granting access to different projects). This is welcomed by the framework, as long as the teams provide clarity on the role they encompass, remain consistent and are applied consistently to your repositories.
 
 ## Code security
 
