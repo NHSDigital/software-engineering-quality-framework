@@ -14,9 +14,9 @@ With a baseline of `No Permissions` on a repository and as a member of the `ever
 
 Each repository should include a [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) file in the root of the project. [Branch protections](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) must be in place to ensure that any Pull Requests are approved by users listed in the CODEOWNERS file. This ensures that any code changes are approved by appropriate members the teams that own and are responsible for the code and any downstream services that depend upon it.
 
-Teams can be listed as CODEOWNERS - but secret teams should not be used so that individual members of the organisation can identify who the codeowners are.
+The presence of the CODEOWNERS file alows organisation members to identify who to contact should they have any questions about the code.
 
-The presence of the CodeOwners file will also mean that organisation members can identify who to contact should they have any questions about the code.
+Teams can be listed as CODEOWNERS, but secret teams should not be used.  Otherwise potential contributors wouldn't be able to identify who the codeowners are.
 
 ## Internal Repositories
 
