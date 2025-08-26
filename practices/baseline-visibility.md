@@ -12,7 +12,7 @@ With a baseline of `No Permissions` on a repository and as a member of the `ever
 
 ## Code Owners
 
-Each repository should include a [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) file in the root of the project. [Branch protections](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) must be in place to ensure that any Pull Requests are approved by users listed in the CODEOWNERS file. This ensures that any code changes are approved by appropriate members the teams that own and are responsible for the code and any downstream services that depend upon it.
+Each repository should include a [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) file in one of the [recommended locations](https://graphite.dev/guides/in-depth-guide-github-codeowners#creating-and-locating-your-codeowners-file). [Branch protections](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) must be in place to ensure that any Pull Requests are approved by users listed in the CODEOWNERS file. This ensures that any code changes are approved by appropriate members the teams that own and are responsible for the code and any downstream services that depend upon it.
 
 The presence of the CODEOWNERS file alows organisation members to identify who to contact should they have any questions about the code.
 
