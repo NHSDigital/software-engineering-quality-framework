@@ -20,4 +20,4 @@ Teams can be listed as CODEOWNERS, but secret teams should not be used.  Otherwi
 
 ## Internal Repositories
 
-Private repositories can be created at the `Internal` type. This will mean that all members of the "Enterprise" can view these repositories. Note that this will include users who do not have direct access to the individual Organisation but who are members of the Enterprise.
+Non-public repositories can be created of the `Internal` type. All members of the Enterprise can view these repositories. This will include users who do not have direct access to the individual Organisation but who are members of the Enterprise.
