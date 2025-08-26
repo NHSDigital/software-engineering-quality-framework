@@ -4,7 +4,7 @@
 
 This repository is part of the [NHSDigital GitHub Organisation](https://github.com/NHSDigital), which forms part of a wider [Enterprise](https://docs.github.com/en/enterprise-cloud@latest/admin/overview/about-github-for-enterprises). To enable effective collaboration between members of the NHSDigital organisation the [base permissions](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/setting-base-permissions-for-an-organization) for repositories should be set to `No Permissions`, and visibility of Internal repositories is limited to members of the organisation. This will mean that individual members will not be able to view Private repository source code  unless granted specific permissions. All members should be invited to the `everyone` team. This grants access to Internal repositories while keeping Private repository access constrained.
 
-As the organisation is part of the Enterprise there are other Organisations, for members of these organisations it is possible to provide access to view Source Code in this organisation without the need to invite users into this org by setting the visibility for the repository to [Internal](./baseline-visibility.md#internal-repositories).
+As the organisation is part of the Enterprise there are other Organisations. Members of these other Organisations have read access to [Internal](./baseline-visibility.md#internal-repositories) repositories.
 
 ## Contributing
 
