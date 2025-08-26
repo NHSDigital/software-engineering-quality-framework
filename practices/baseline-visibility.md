@@ -8,7 +8,7 @@ As the organisation is part of the Enterprise there are other Organisations. Mem
 
 ## Contributing
 
-With these permissions members can view the source code of Public and Internal repositories and Private repositories that they have explicit read permissions for, they might then be able to identify improvements to this code. Each repository should contain a [CONTRIBUTING.md](../CONTRIBUTING.md) to describe how both team members and members from the wider organisation can contribute to the repository. Contributions to repositories are welcomed and should be encouraged.
+With a baseline of `No Permissions` on a repository and as a member of the `everyone` team, members of the Organisation can view the source code of Public and Internal repositories and Private repositories that they have explicit read permissions for. They might then be able to identify improvements to this code. Each repository should contain a [CONTRIBUTING.md](../CONTRIBUTING.md) to describe how both team members and members from the wider organisation can contribute to the repository. Contributions to repositories are welcomed and should be encouraged.
 
 ## Code Owners
 
