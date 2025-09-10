@@ -13,76 +13,129 @@
 
 ### macOS
 
-- Install the [Brew package manager](https://brew.sh)
+1. Install `gnupg` & `pinentry-mac` with [Brew](https://brew.sh):
 
-```bash
-brew upgrade
-brew install gnupg pinentry-mac
-gpg --full-generate-key
-```
+    ```bash
+    brew upgrade
+    brew install gnupg pinentry-mac
+    sed -i '' '/^export GPG_TTY/d' ~/.zshrc
+    echo export GPG_TTY=\$\(tty\) >> ~/.zshrc
+    source ~/.zshrc
+    PINENTRY_BIN=$(whereis -q pinentry-mac)
+    touch ~/.gnupg/gpg-agent.conf
+    sed -i '' '/^pinentry-program/d' ~/.gnupg/gpg-agent.conf
+    echo "pinentry-program ${PINENTRY_BIN}" >> ~/.gnupg/gpg-agent.conf
+    gpgconf --kill gpg-agent
+    ```
 
-- Accept the defaults, Curve 25519 etc.
-- Enter your GitHub account name as the Real Name
-- Enter your GitHub account email as the Email Address
-- Avoid adding a comment (this *may* prevent git from auto-selecting a key - see Troubleshooting section below)
-- You can use the privacy *@users.noreply.github.com* email address listed in the GitHub profile: *Settings > Email*
-- Define a passphrase for the key and keep it in your password manager
+1. Create a new GPG key:
 
-```bash
-gpg --armor --export ${my_email_address} | pbcopy
-```
+    ```bash
+    gpg --full-generate-key
+    ```
 
-- Public key is now in your clipboard - in your GitHub account add it to your profile via *Settings > SSH and GPG Keys> Add New GPG Key*
-- Paste it in
+    1. Pick `RSA and RSA`, or `RSA (sign only)` (there is no elliptic curve cryptography (ECC) support at the time of writing)
+    1. `keysize` = `4096` bits (the minimum accepted for GitHub)
+    1. `Real name` = Your GitHub handle
+    1. `Email address` = Your GitHub account email [listed on your GitHub profile](https://github.com/settings/emails) (you can use the privacy *@users.noreply.github.com* email address): `Settings` -> `Emails` -> `Keep my email addresses private`)
 
-```bash
-git config --global user.email ${my_email_address} # same one used during key generation
-git config --global user.name ${my_username}
-git config --global commit.gpgsign true
-sed -i '' '/^export GPG_TTY/d' ~/.zshrc
-echo export GPG_TTY=\$\(tty\) >> ~/.zshrc
-source ~/.zshrc
-PINENTRY_BIN=$(whereis -q pinentry-mac)
-sed -i '' '/^pinentry-program/d' ~/.gnupg/gpg-agent.conf
-echo "pinentry-program ${PINENTRY_BIN}" >> ~/.gnupg/gpg-agent.conf
-gpgconf --kill gpg-agent
-```
+        > If you go for the private email option, consider enabling `Block command line pushes that expose my email`.
+    1. Avoid adding a comment (this *may* prevent git from auto-selecting a key - see Troubleshooting section below)
+    1. Define a passphrase for the key
 
-The first time you commit you will be prompted to add the GPG key passphrase to the macOS Keychain. Thereafter signing will happen seamlessly without prompts.
+1. Check the key was made successfully:
 
-Most of the published solutions for this don't work because *brew* seems to have moved the default folder for binaries, plus many guides contain obsolete settings for *gpg-agent*.
+    ```bash
+    gpg -k
+    ```
+
+1. Export the PGP PUBLIC KEY (to your clipboard):
+
+    ```bash
+    gpg --armor --export ${my_email_address} | pbcopy
+    ```
+
+1. [Add the public key to your GitHub account](https://github.com/settings/gpg/new) (`Settings` -> `SSH and GPG keys` -> `New GPG key`)
+
+    > Note the `Key ID` as you'll need this in the next step.
+
+1. Set your local git config to use GPG signing:
+
+    ```bash
+    git config --global user.email ${my_email_address} # same one used during key generation
+    git config --global user.name ${my_username}
+    git config --global user.signingkey = ${key_id}
+    git config --global commit.gpgsign true
+    git config --global tag.gpgsign true
+    ```
+
+> The first time you commit you will be prompted to add the GPG key passphrase to the macOS Keychain. Thereafter signing will happen seamlessly without prompts.
+>
+> Most of the published solutions for this don't work because *brew* seems to have moved the default folder for binaries, plus many guides contain obsolete settings for *gpg-agent*.
 
 ### Windows
 
-- Install [Git for Windows](https://git-scm.com/download/win), which includes Bash and GnuPG
-- Right-click on the Desktop > *Git Bash Here*
+1. Install [Git for Windows](https://git-scm.com/download/win) (which includes Bash and GnuPG)
+1. Right-click on the Desktop -> `Open Git Bash here`
+1. Create a new GPG key:
 
-```bash
-gpg --full-generate-key
-```
+    ```bash
+    gpg --full-generate-key
+    ```
 
-- Pick *RSA and RSA*, or *RSA (sign only)* - there is no elliptic curve cryptography (ECC) support at the time of writing
-- Set key size to 4096 bit, the minimum accepted for GitHub
-- Enter your GitHub account name as the Real Name
-- Enter your GitHub account email as the Email Address
-- Avoid adding a comment (this *may* prevent git from auto-selecting a key - see Troubleshooting section below)
-- You can use the privacy *@users.noreply.github.com* email address listed in the GitHub profile: *Settings > Email*
-- Define a passphrase for the key and keep it in your password manager
+    1. Pick `RSA and RSA`, or `RSA (sign only)` (there is no elliptic curve cryptography (ECC) support at the time of writing)
+    1. `keysize` = `4096` bits (the minimum accepted for GitHub)
+    1. `Real name` = Your GitHub handle
+    1. `Email address` = Your GitHub account email [listed on your GitHub profile](https://github.com/settings/emails) (you can use the privacy *@users.noreply.github.com* email address): `Settings` -> `Emails` -> `Keep my email addresses private`)
 
-```bash
-gpg --armor --export ${my_email_address} | clip
-```
+        > If you go for the private email option, consider enabling `Block command line pushes that expose my email`.
+    1. Avoid adding a comment (this *may* prevent git from auto-selecting a key - see Troubleshooting section below)
+    1. Define a passphrase for the key
 
-- Public key is now in your clipboard - in your GitHub account add it to your profile via *Settings > SSH and GPG Keys> Add New GPG Key*
-- Paste it in
+1. Export the PGP PUBLIC KEY (to your clipboard):
 
-```bash
-git config --global user.email ${my_email_address} # same one used during key generation
-git config --global user.name ${my_username}
-git config --global commit.gpgsign true
-```
+    ```bash
+    gpg --armor --export ${my_email_address} | clip
+    ```
 
-When you commit you will be prompted to enter the GPG key passphrase into a Pinentry window.
+1. [Add the public key to your GitHub account](https://github.com/settings/gpg/new) (`Settings` -> `SSH and GPG keys` -> `New GPG key`)
+
+    > Note the `Key ID` as you'll need this in the next step.
+
+1. Set your local git config to use GPG signing:
+
+    ```bash
+    git config --global user.email ${my_email_address} # same one used during key generation
+    git config --global user.name ${my_username}
+    git config --global user.signingkey = ${key_id}
+    git config --global commit.gpgsign true
+    git config --global tag.gpgsign true
+    ```
+
+1. Optional: Your new GPG key can be used within WSL, but not from Windows; to enable this:
+
+    1. Export the key:
+
+        ```bash
+        gpg --output <GitHub handle>.pgp --export-secret-key ${my_email_address}$
+        ```
+
+    1. Install [Gpg4win](https://www.gpg4win.org/) (which includes GnuPG and Kleopatra)
+
+        > **Ensure both `GnuPG` and `Kleopatra` are installed!**
+
+    1. Open Kleopatra -> `Import` -> Select the `<GitHub handle>.pgp` file created in the first step.
+    1. In `cmd`, set your local git config to use GPG signing:
+
+        ```bash
+        git config --global user.email ${my_email_address} # same one used during key generation
+        git config --global user.name ${my_username}
+        git config --global user.signingkey = ${key_id}
+        git config --global commit.gpgsign true
+        git config --global tag.gpgsign true
+        ```
+
+> When you commit, you'll now be prompted to enter the GPG key passphrase into a Pinentry window.
 
 ## From Pipelines
 
@@ -97,7 +150,7 @@ The workflow would then use a Personal Access Token, stored with the GPG private
 ```yaml
 steps:
   - name: Checkout
-    uses: actions/checkout@v3
+    uses: actions/checkout@v5
     with:
       token: ${{ secrets.BOT_PAT }}
       ref: main
