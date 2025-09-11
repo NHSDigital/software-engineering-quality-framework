@@ -36,22 +36,19 @@
 
     1. Pick `RSA and RSA`, or `RSA (sign only)` (there is no elliptic curve cryptography (ECC) support at the time of writing)
     1. `keysize` = `4096` bits (the minimum accepted for GitHub)
+    1. Select a key expiry time (personal choice)
     1. `Real name` = Your GitHub handle
     1. `Email address` = Your GitHub account email [listed on your GitHub profile](https://github.com/settings/emails) (you can use the privacy *@users.noreply.github.com* email address): `Settings` -> `Emails` -> `Keep my email addresses private`)
 
         > If you go for the private email option, consider enabling `Block command line pushes that expose my email`.
+
     1. Avoid adding a comment (this *may* prevent git from auto-selecting a key - see Troubleshooting section below)
     1. Define a passphrase for the key
-
-1. Check the key was made successfully:
-
-    ```bash
-    gpg -k
-    ```
 
 1. Export the PGP PUBLIC KEY (to your clipboard):
 
     ```bash
+    gpg -k # This should list the new key
     gpg --armor --export ${my_email_address} | pbcopy
     ```
 
@@ -76,7 +73,7 @@
 ### Windows
 
 1. Install [Git for Windows](https://git-scm.com/download/win) (which includes Bash and GnuPG)
-1. Right-click on the Desktop -> `Open Git Bash here`
+1. Open `Git Bash`
 1. Create a new GPG key:
 
     ```bash
@@ -85,16 +82,19 @@
 
     1. Pick `RSA and RSA`, or `RSA (sign only)` (there is no elliptic curve cryptography (ECC) support at the time of writing)
     1. `keysize` = `4096` bits (the minimum accepted for GitHub)
+    1. Select a key expiry time (personal choice)
     1. `Real name` = Your GitHub handle
     1. `Email address` = Your GitHub account email [listed on your GitHub profile](https://github.com/settings/emails) (you can use the privacy *@users.noreply.github.com* email address): `Settings` -> `Emails` -> `Keep my email addresses private`)
 
         > If you go for the private email option, consider enabling `Block command line pushes that expose my email`.
+
     1. Avoid adding a comment (this *may* prevent git from auto-selecting a key - see Troubleshooting section below)
     1. Define a passphrase for the key
 
 1. Export the PGP PUBLIC KEY (to your clipboard):
 
     ```bash
+    gpg -k # This should list the new key
     gpg --armor --export ${my_email_address} | clip
     ```
 
@@ -112,7 +112,7 @@
     git config --global tag.gpgsign true
     ```
 
-1. Optional: Your new GPG key can be used within WSL, but not from Windows; to enable this:
+1. Now your key is created, make it avalable within Windows:
 
     1. Export the key:
 
@@ -124,15 +124,33 @@
 
         > **Ensure both `GnuPG` and `Kleopatra` are installed!**
 
-    1. Open Kleopatra -> `Import` -> Select the `<GitHub handle>.pgp` file created in the first step.
+    1. Open Kleopatra -> `Import` -> Select the `<GitHub handle>.pgp` file created in the first step
     1. In `cmd`, set your local git config to use GPG signing:
 
         ```bash
+        gpg -k # This should list the new key
         git config --global user.email ${my_email_address} # same one used during key generation
         git config --global user.name ${my_username}
         git config --global user.signingkey = ${key_id}
         git config --global commit.gpgsign true
         git config --global tag.gpgsign true
+        ```
+
+1. And finally, make it avalable within WSL:
+
+    1. Within Ubuntu:
+
+        ```bash
+        sudo ln -s /mnt/c/Program\ Files\ \(x86\)/GnuPG/bin/gpg.exe /usr/local/bin/gpg
+        sudo ln -s gpg /usr/local/bin/gpg2
+        ```
+
+    1. Close and reopen your Ubuntu terminal
+
+    1. Test the key is visible:
+
+        ```bash
+        gpg -k # This should list the new key
         ```
 
 > When you commit, you'll now be prompted to enter the GPG key passphrase into a Pinentry window.
