@@ -60,7 +60,7 @@
 
     ```bash
     git config --global user.email ${my_email_address} # same one used during key generation
-    git config --global user.name ${my_username}
+    git config --global user.name ${github_handle}
     git config --global user.signingkey ${key_id}
     git config --global commit.gpgsign true
     git config --global tag.gpgsign true
@@ -106,7 +106,7 @@
 
     ```bash
     git config --global user.email ${my_email_address} # same one used during key generation
-    git config --global user.name ${my_username}
+    git config --global user.name ${github_handle}
     git config --global user.signingkey ${key_id}
     git config --global commit.gpgsign true
     git config --global tag.gpgsign true
@@ -130,7 +130,7 @@
         ```bash
         gpg -k # This should list the new key
         git config --global user.email ${my_email_address} # same one used during key generation
-        git config --global user.name ${my_username}
+        git config --global user.name ${github_handle}
         git config --global user.signingkey ${key_id}
         git config --global commit.gpgsign true
         git config --global tag.gpgsign true
@@ -152,7 +152,7 @@
         ```bash
         gpg -k # This should list the new key
         git config --global user.email ${my_email_address} # same one used during key generation
-        git config --global user.name ${my_username}
+        git config --global user.name ${github_handle}
         git config --global user.signingkey ${key_id}
         git config --global commit.gpgsign true
         git config --global tag.gpgsign true
