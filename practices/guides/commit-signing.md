@@ -45,7 +45,7 @@
     1. Avoid adding a comment (this *may* prevent git from auto-selecting a key - see Troubleshooting section below)
     1. Define a passphrase for the key
 
-1. Export the PGP PUBLIC KEY (to your clipboard):
+1. Test the key is visible and export the PGP PUBLIC KEY (to your clipboard):
 
     ```bash
     gpg -k # This should list the new key
@@ -91,7 +91,7 @@
     1. Avoid adding a comment (this *may* prevent git from auto-selecting a key - see Troubleshooting section below)
     1. Define a passphrase for the key
 
-1. Export the PGP PUBLIC KEY (to your clipboard):
+1. Test the key is visible and export the PGP PUBLIC KEY (to your clipboard):
 
     ```bash
     gpg -k # This should list the new key
@@ -125,7 +125,7 @@
         > **Ensure both `GnuPG` and `Kleopatra` are installed!**
 
     1. Open Kleopatra -> `Import` -> Select the `<GitHub handle>.pgp` file created in the first step
-    1. In `cmd`, set your local git config to use GPG signing:
+    1. In `cmd`, test the key is visible and set your local git config to use GPG signing:
 
         ```bash
         gpg -k # This should list the new key
@@ -147,10 +147,15 @@
 
     1. Close and reopen your Ubuntu terminal
 
-    1. Test the key is visible:
+    1. Test the key is visible and set your local git config to use GPG signing:
 
         ```bash
         gpg -k # This should list the new key
+        git config --global user.email ${my_email_address} # same one used during key generation
+        git config --global user.name ${my_username}
+        git config --global user.signingkey ${key_id}
+        git config --global commit.gpgsign true
+        git config --global tag.gpgsign true
         ```
 
 > When you commit, you'll now be prompted to enter the GPG key passphrase into a Pinentry window.
