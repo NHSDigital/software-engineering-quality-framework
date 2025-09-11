@@ -35,10 +35,10 @@
     ```
 
     1. Pick `RSA and RSA`, or `RSA (sign only)` (there is no elliptic curve cryptography (ECC) support at the time of writing)
-    1. `keysize` = `4096` bits (the minimum accepted for GitHub)
+    1. `keysize` `4096` bits (the minimum accepted for GitHub)
     1. Select a key expiry time (personal choice)
-    1. `Real name` = Your GitHub handle
-    1. `Email address` = Your GitHub account email [listed on your GitHub profile](https://github.com/settings/emails) (you can use the privacy *@users.noreply.github.com* email address): `Settings` -> `Emails` -> `Keep my email addresses private`)
+    1. `Real name` Your GitHub handle
+    1. `Email address` Your GitHub account email [listed on your GitHub profile](https://github.com/settings/emails) (you can use the privacy *@users.noreply.github.com* email address): `Settings` -> `Emails` -> `Keep my email addresses private`)
 
         > If you go for the private email option, consider enabling `Block command line pushes that expose my email`.
 
@@ -61,7 +61,7 @@
     ```bash
     git config --global user.email ${my_email_address} # same one used during key generation
     git config --global user.name ${my_username}
-    git config --global user.signingkey = ${key_id}
+    git config --global user.signingkey ${key_id}
     git config --global commit.gpgsign true
     git config --global tag.gpgsign true
     ```
@@ -107,7 +107,7 @@
     ```bash
     git config --global user.email ${my_email_address} # same one used during key generation
     git config --global user.name ${my_username}
-    git config --global user.signingkey = ${key_id}
+    git config --global user.signingkey ${key_id}
     git config --global commit.gpgsign true
     git config --global tag.gpgsign true
     ```
@@ -131,7 +131,7 @@
         gpg -k # This should list the new key
         git config --global user.email ${my_email_address} # same one used during key generation
         git config --global user.name ${my_username}
-        git config --global user.signingkey = ${key_id}
+        git config --global user.signingkey ${key_id}
         git config --global commit.gpgsign true
         git config --global tag.gpgsign true
         ```
