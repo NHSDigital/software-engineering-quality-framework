@@ -53,7 +53,7 @@
     gpg --armor --export <my_email_address> | pbcopy
     ```
 
-        > Your PGP PUBLIC KEY is now in your clipboard!
+    > Your PGP PUBLIC KEY is now in your clipboard!
 
 1. [Add the public key to your GitHub account](https://github.com/settings/gpg/new) (`Settings` -> `SSH and GPG keys` -> `New GPG key`)
 
@@ -102,8 +102,7 @@
     gpg --armor --export <my_email_address> | clip
     ```
 
-        > [!NOTE]
-        > Your PGP PUBLIC KEY is now in your clipboard!
+    > Your PGP PUBLIC KEY is now in your clipboard!
 
 1. [Add the public key to your GitHub account](https://github.com/settings/gpg/new) (`Settings` -> `SSH and GPG keys` -> `New GPG key`)
 
