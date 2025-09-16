@@ -43,14 +43,18 @@
         > If you go for the private email option, consider enabling `Block command line pushes that expose my email`.
 
     1. Avoid adding a comment (this *may* prevent git from auto-selecting a key - see Troubleshooting section below)
+    1. Review your inputs and press enter `O` to confirm
     1. Define a passphrase for the key
 
 1. Test the key is visible and export the PGP PUBLIC KEY (to your clipboard):
 
     ```bash
     gpg -k # This should list the new key
-    gpg --armor --export ${my_email_address} | pbcopy
+    gpg --armor --export <my_email_address> | pbcopy
     ```
+
+    > [!NOTE]
+    > Your PGP PUBLIC KEY is now in your clipboard!
 
 1. [Add the public key to your GitHub account](https://github.com/settings/gpg/new) (`Settings` -> `SSH and GPG keys` -> `New GPG key`)
 
@@ -59,9 +63,9 @@
 1. Set your local git config to use GPG signing:
 
     ```bash
-    git config --global user.email ${my_email_address} # same one used during key generation
-    git config --global user.name ${github_handle}
-    git config --global user.signingkey ${key_id}
+    git config --global user.email <my_email_address> # same one used during key generation
+    git config --global user.name <github_handle>
+    git config --global user.signingkey <key_id>
     git config --global commit.gpgsign true
     git config --global tag.gpgsign true
     ```
@@ -72,7 +76,7 @@
 
 ### Windows
 
-1. Install [Git for Windows](https://git-scm.com/download/win) (which includes Bash and GnuPG)
+1. Install (as administrator) [Git for Windows](https://git-scm.com/download/win) (which includes Bash and GnuPG)
 1. Open `Git Bash`
 1. Create a new GPG key:
 
@@ -89,14 +93,18 @@
         > If you go for the private email option, consider enabling `Block command line pushes that expose my email`.
 
     1. Avoid adding a comment (this *may* prevent git from auto-selecting a key - see Troubleshooting section below)
-    1. Define a passphrase for the key
+    1. Review your inputs and press enter `O` to confirm
+    1. A new window called pinentry will appear prompting you to enter a passphrase.
 
 1. Test the key is visible and export the PGP PUBLIC KEY (to your clipboard):
 
     ```bash
     gpg -k # This should list the new key
-    gpg --armor --export ${my_email_address} | clip
+    gpg --armor --export <my_email_address> | clip
     ```
+
+    > [!NOTE]
+    > Your PGP PUBLIC KEY is now in your clipboard!
 
 1. [Add the public key to your GitHub account](https://github.com/settings/gpg/new) (`Settings` -> `SSH and GPG keys` -> `New GPG key`)
 
@@ -105,9 +113,9 @@
 1. Set your local git config to use GPG signing:
 
     ```bash
-    git config --global user.email ${my_email_address} # same one used during key generation
-    git config --global user.name ${github_handle}
-    git config --global user.signingkey ${key_id}
+    git config --global user.email <my_email_address> # same one used during key generation
+    git config --global user.name <github_handle>
+    git config --global user.signingkey <key_id>
     git config --global commit.gpgsign true
     git config --global tag.gpgsign true
     ```
@@ -117,10 +125,10 @@
     1. Export the key:
 
         ```bash
-        gpg --output <GitHub handle>.pgp --export-secret-key ${my_email_address}$
+        gpg --output <GitHub handle>.pgp --export-secret-key <my_email_address>
         ```
 
-    1. Install [Gpg4win](https://www.gpg4win.org/) (which includes GnuPG and Kleopatra)
+    1. Install (as administrator) [Gpg4win](https://www.gpg4win.org/) (which includes GnuPG and Kleopatra)
 
         > **Ensure both `GnuPG` and `Kleopatra` are installed!**
 
@@ -129,9 +137,9 @@
 
         ```bash
         gpg -k # This should list the new key
-        git config --global user.email ${my_email_address} # same one used during key generation
-        git config --global user.name ${github_handle}
-        git config --global user.signingkey ${key_id}
+        git config --global user.email <my_email_address> # same one used during key generation
+        git config --global user.name <github_handle>
+        git config --global user.signingkey <key_id>
         git config --global commit.gpgsign true
         git config --global tag.gpgsign true
         ```
@@ -151,9 +159,9 @@
 
         ```bash
         gpg -k # This should list the new key
-        git config --global user.email ${my_email_address} # same one used during key generation
-        git config --global user.name ${github_handle}
-        git config --global user.signingkey ${key_id}
+        git config --global user.email <my_email_address> # same one used during key generation
+        git config --global user.name <github_handle>
+        git config --global user.signingkey <key_id>
         git config --global commit.gpgsign true
         git config --global tag.gpgsign true
         ```
