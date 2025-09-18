@@ -74,7 +74,7 @@
 >
 > Most of the published solutions for this don't work because *brew* seems to have moved the default folder for binaries, plus many guides contain obsolete settings for *gpg-agent*.
 
-### Windows (includes WSL)
+### Windows/WSL
 
 1. Install (as administrator) [Git for Windows](https://git-scm.com/download/win) (which includes Bash and GnuPG)
 1. Open `Git Bash`
