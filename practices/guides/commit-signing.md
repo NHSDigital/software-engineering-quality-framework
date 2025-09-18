@@ -1,14 +1,5 @@
 # Git commit signing setup guide
 
-- [Git commit signing setup guide](#git-commit-signing-setup-guide)
-  - [From Workstations](#from-workstations)
-    - [macOS](#macos)
-    - [Windows](#windows)
-  - [From Pipelines](#from-pipelines)
-    - [GitHub Actions](#github-actions)
-    - [AWS CodePipeline](#aws-codepipeline)
-  - [Troubleshooting](#troubleshooting)
-
 ## From Workstations
 
 ### macOS
