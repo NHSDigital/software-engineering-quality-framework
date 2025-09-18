@@ -61,9 +61,20 @@
     git config --global tag.gpgsign true
     ```
 
-> The first time you commit you will be prompted to add the GPG key passphrase to the macOS Keychain. Thereafter signing will happen seamlessly without prompts.
->
-> Most of the published solutions for this don't work because *brew* seems to have moved the default folder for binaries, plus many guides contain obsolete settings for *gpg-agent*.
+1. Test it works:
+
+    1. Create a temporary branch of your favourite repository.
+    1. Make an inconsequential whitesace change.
+    1. Commit the change.
+        1. You will be prompted for your GPG key passphrase - optionally select to add it to the macOS Keychain.
+    1. Check the latest commit shows a successful signing:
+
+        ```bash
+        $ git log --show-signature -1
+        ...
+        gpg: Good signature from "<github_handle> <<my_email_address>>" [ultimate]
+        ...
+        ```
 
 ### Windows/WSL
 
@@ -134,7 +145,7 @@
         git config --global tag.gpgsign true
         ```
 
-1. And finally, make it avalable within WSL:
+1. Now make it avalable within WSL:
 
     1. Within Ubuntu:
 
@@ -156,7 +167,20 @@
         git config --global tag.gpgsign true
         ```
 
-> When you commit, you'll now be prompted to enter the GPG key passphrase into a Pinentry window.
+1. Test it works:
+
+    1. Create a temporary branch of your favourite repository.
+    1. Make an inconsequential whitesace change.
+    1. Commit the change.
+        1. You will be prompted for your GPG key passphrase.
+    1. Check the latest commit shows a successful signing:
+
+        ```bash
+        $ git log --show-signature -1
+        ...
+        gpg: Good signature from "<github_handle> <<my_email_address>>" [ultimate]
+        ...
+        ```
 
 ## From Pipelines
 
@@ -212,7 +236,7 @@ if [[ ${BOT_SSH_KEY} != "None" ]]; then
   echo "StrictHostKeyChecking yes" >> ~/.ssh/config
   echo "UserKnownHostsFile=~/.ssh/known_hosts" >> ~/.ssh/config
   echo "${BOT_SSH_KEY}" > ~/.ssh/ssh_key
-  echo -e "\n\n" >>  ~/.ssh/ssh_key
+  echo -e "\n\n" >> ~/.ssh/ssh_key
   chmod 600 ~/.ssh/ssh_key
   eval "$(ssh-agent -s)"
   ssh-add ~/.ssh/ssh_key
