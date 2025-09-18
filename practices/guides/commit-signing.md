@@ -22,6 +22,7 @@
     echo export GPG_TTY=\$\(tty\) >> ~/.zshrc
     source ~/.zshrc
     PINENTRY_BIN=$(whereis -q pinentry-mac)
+    mkdir -p ~/.gnupg
     touch ~/.gnupg/gpg-agent.conf
     sed -i '' '/^pinentry-program/d' ~/.gnupg/gpg-agent.conf
     echo "pinentry-program ${PINENTRY_BIN}" >> ~/.gnupg/gpg-agent.conf
