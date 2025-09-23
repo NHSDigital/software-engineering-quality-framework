@@ -64,7 +64,7 @@
 1. Test it works:
 
     1. Create a temporary branch of your favourite repository.
-    1. Make an inconsequential whitesace change.
+    1. Make an inconsequential whitespace change.
     1. Commit the change.
         1. You will be prompted for your GPG key passphrase - optionally select to add it to the macOS Keychain.
     1. Check the latest commit shows a successful signing:
@@ -121,7 +121,7 @@
     git config --global tag.gpgsign true
     ```
 
-1. Now your key is created, make it avalable within Windows:
+1. Now your key is created, make it available within Windows:
 
     1. Export the key:
 
@@ -145,7 +145,7 @@
         git config --global tag.gpgsign true
         ```
 
-1. Now make it avalable within WSL:
+1. Now make it available within WSL:
 
     1. Within Ubuntu:
 
@@ -170,7 +170,7 @@
 1. Test it works:
 
     1. Create a temporary branch of your favourite repository.
-    1. Make an inconsequential whitesace change.
+    1. Make an inconsequential whitespace change.
     1. Commit the change.
         1. You will be prompted for your GPG key passphrase.
     1. Check the latest commit shows a successful signing:
