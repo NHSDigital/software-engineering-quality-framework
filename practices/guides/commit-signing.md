@@ -303,19 +303,19 @@ A failure to sign a commit is usually because the name or email does not quite m
 1. Signing commits with an SSH key is not the default method, so you need to [configure Git](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key#telling-git-about-your-ssh-key) accordingly:
 
     1. Run the following command to instruct Git to use the SSH signing key format, instead of the default GPG:
-    
+
         ```shell
         git config --global gpg.format ssh
         ```
-    
+
     1. Next, specify the private key for Git to use:
-    
+
         ```shell
         git config --global user.signingkey ~/.ssh/github-signing-key
         ```
-    
+
     1. Lastly, instruct Git to sign all of your commits:
-    
+
         ```shell
         git config --global commit.gpgsign true
         ```
@@ -328,6 +328,7 @@ A failure to sign a commit is usually because the name or email does not quite m
         ```shell
         cat ~/.ssh/github-signing-key.pub
         ```
+
     1. `Add SSH key`
 
 1. To ensure your configuration works as expected, make a commit to a branch locally and push it to GitHub. When you view the commit history of the branch on GitHub, [your latest commit](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification#about-commit-signature-verification) should now display a `Verified` tag, which indicates successful signing with your GPG or SSH key.
