@@ -1,8 +1,20 @@
 # Git commit signing setup guide
 
-## From Workstations
+Using GPG, SSH, or S/MIME, you can sign commits and tags locally. These commits and tags are marked as verified on GitHub so other people can be confident that the changes come from a trusted source.
 
-### macOS
+The instructions on this page focus on GPG and SSH.
+
+> You should only set up **one** of these options - **don't attempt to set up GPG and SSH commit signing**!
+
+See the full GitHub documentation [here](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification).
+
+## GPG commit signing
+
+### From Workstations
+
+If you have already committed and need to retrospectively sign commits, follow the instructions below, then follow the [retrospective commit signing instructions](./retrospective-commit-signing.md).
+
+#### macOS
 
 1. Install `gnupg` & `pinentry-mac` with [Brew](https://brew.sh):
 
@@ -76,7 +88,7 @@
         ...
         ```
 
-### Windows/WSL
+#### Windows/WSL
 
 1. Install (as administrator) [Git for Windows](https://git-scm.com/download/win) (which includes Bash and GnuPG)
 1. Open `Git Bash`
@@ -182,9 +194,9 @@
         ...
         ```
 
-## From Pipelines
+### From Pipelines
 
-### GitHub Actions
+#### GitHub Actions
 
 A GitHub Actions workflow will by default authenticate using a [GITHUB_TOKEN](https://docs.github.com/en/actions/security-guides/automatic-token-authentication) which is generated automatically.
 
@@ -219,7 +231,7 @@ git commit ${GITHUB_SIGNING_OPTION} -am "Automated commit from GitHub Actions: $
 git push
 ```
 
-### AWS CodePipeline
+#### AWS CodePipeline
 
 The cryptographic libraries in the default Amazon Linux 2 distro are very old, and do not support elliptic curve cryptography. When using pre-existing solution elements updating the build container is not always an option. This restricts the GPG key algorithm to RSA. You should use RSA-4096, which is the required minimum for GitHub.
 
@@ -272,10 +284,50 @@ git commit ${GITHUB_SIGNING_OPTION} -am "Automated commit from ${SCRIPT_URL}"
 git push
 ```
 
-## Troubleshooting
+### Troubleshooting
 
-Re-run your git command prefixed with GIT_TRACE=1
+Re-run your git command prefixed with `GIT_TRACE=1`.
 
-A failure to sign a commit is usually because the name or email does not quite match those which were used to generate the GPG key, so git cannot auto-select a key. Ensure that these are indeed consistent. (If you added a comment when creating your gpg key, this *may* cause a mismatch: the comment will be visible when listing your gpg keys, e.g. `RealName (Comment) <EmailAddress>`.) You are able to [force a choice of signing key](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key), though this should not be necessary.
+A failure to sign a commit is usually because the name or email does not quite match those which were used to generate the GPG key, so git cannot auto-select a key. Ensure that these are indeed consistent. (If you added a comment when creating your GPG key, this *may* cause a mismatch: the comment will be visible when listing your GPG keys, e.g. `RealName (Comment) <EmailAddress>`.) You are able to [force a choice of signing key](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key), though this should not be necessary.
 
-If you have already committed and need to retrospectively sign this commit [please follow the instructions here](./retrospective-commit-signing.md).
+## SSH commit signing
+
+1. If you do not already have SSH key access set up on your GitHub account, first [generate a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). To create a new SSH key, you need to run the following command. This will generate a new SSH key of the type `ed25519` and associate it with your email address (replace `<my_email_address>` with your actual email address):
+
+    ```shell
+    ssh-keygen -t ed25519 -C "<my_email_address>" -f "~/.ssh/github-signing-key"
+    ```
+
+    > When you run this command, it will ask you to enter a passphrase. Choose a strong passphrase and make sure to remember it, as you will need to provide it when your key is loaded by the SSH agent.
+
+1. Signing commits with an SSH key is not the default method, so you need to [configure Git](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key#telling-git-about-your-ssh-key) accordingly:
+
+    1. Run the following command to instruct Git to use the SSH signing key format, instead of the default GPG:
+    
+        ```shell
+        git config --global gpg.format ssh
+        ```
+    
+    1. Next, specify the private key for Git to use:
+    
+        ```shell
+        git config --global user.signingkey ~/.ssh/github-signing-key
+        ```
+    
+    1. Lastly, instruct Git to sign all of your commits:
+    
+        ```shell
+        git config --global commit.gpgsign true
+        ```
+
+1. [Add the SSH public key to your GitHub account](https://github.com/settings/ssh/new) (`Settings` -> `SSH and GPG keys` -> `New SSH key`)
+
+    1. `Key type` = `Signing Key`
+    1. Copy the contents of your public key file and paste it into the `Key` field.
+
+        ```shell
+        cat ~/.ssh/github-signing-key.pub
+        ```
+    1. `Add SSH key`
+
+1. To ensure your configuration works as expected, make a commit to a branch locally and push it to GitHub. When you view the commit history of the branch on GitHub, [your latest commit](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification#about-commit-signature-verification) should now display a `Verified` tag, which indicates successful signing with your GPG or SSH key.
