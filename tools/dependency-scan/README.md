@@ -1,22 +1,5 @@
 # Dependency Scan
 
-- [Dependency Scan](#dependency-scan)
-  - [Problem](#problem)
-    - [Software Bill of Materials](#software-bill-of-materials)
-    - [Standards](#standards)
-  - [Design](#design)
-  - [Tools](#tools)
-    - [syft](#syft)
-    - [grype](#grype)
-  - [Solution](#solution)
-    - [Recipe 1a: Docker images as targets](#recipe-1a-docker-images-as-targets)
-    - [Recipe 1b: Filesystem](#recipe-1b-filesystem)
-    - [Recipe 2: Using Docker images, Makefile and shell scripting](#recipe-2-using-docker-images-makefile-and-shell-scripting)
-    - [Recipe 3: Using GitHub Workflow Action](#recipe-3-using-github-workflow-action)
-    - [Recipe 4: Jenkins Pipeline](#recipe-4-jenkins-pipeline)
-  - [How It Works](#how-it-works)
-  - [Further Comments](#further-comments)
-
 ## Problem
 
 The dependency scan feature can automatically find security vulnerabilities in your dependencies while you are developing and testing your applications. For example, dependency scanning lets you know if your application uses an external (open source) library that is known to be vulnerable. You can then take action to protect your application.
@@ -283,59 +266,147 @@ zlib          1.2.11-r3              apk   CVE-2018-25032  High
 
 ### Recipe 3: Using GitHub Workflow Action
 
-An action to generate software bill of materials for the repository and a Docker image
+> You may wish to change the `severity-cutoff` value in the examples from `low` to `high` or `critical` (see [here](https://github.com/anchore/scan-action?tab=readme-ov-file#failing-a-build-on-vulnerability-severity) for details).
+
+#### Recipe 3a: Static Code Analysis
+
+Drop the following file into `.github/workflows/` to provide static code analysis for your repository:
 
 ```yaml
-name: "Generate SBOM"
+name: 'Z-AUTOMATED: SBOM Repo Scan'
+
 on:
-  push:
-    branches: [main]
   pull_request:
     types: [opened, synchronize, reopened]
+
+permissions:
+  actions: read   # Required for anchore/sbom-action
+  contents: write # Required for anchore/sbom-action
+  id-token: write # Required for requesting the JWT
+  pull-requests: write
+
 jobs:
-  generate-sbom:
+  sbom_scan:
+    name: SBOM Repo Scan
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - uses: anchore/sbom-action@v0
-      with:
-        path: ./
-        format: cyclonedx-json
-        artifact-name: sbom-repo.cdx.json
-    - uses: anchore/sbom-action@v0
-      with:
-        image: my-registry.com/my/awesome/image
-        registry-username: ${{ secrets.REGISTRY_USERNAME }}
-        registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-        format: cyclonedx-json
-        artifact-name: sbom-image.cdx.json
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+
+      - uses: anchore/sbom-action@v0
+        with:
+          path: "."
+          format: cyclonedx-json
+          output-file: sbom-repo-${{ github.event.repository.name }}-${{ github.sha }}.cdx.json
+
+      - uses: anchore/scan-action@v7
+        id: sbom-scan
+        with:
+          sbom: sbom-repo-${{ github.event.repository.name }}-${{ github.sha }}.cdx.json
+          fail-build: true
+          severity-cutoff: low
+          only-fixed: true
+          output-format: sarif
+
+      - name: Upload Anchore scan SARIF report
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: ${{ steps.sbom-scan.outputs.sarif }}
+
+      - name: Add/Update SBOM failure comment
+        uses: actions/github-script@v8
+        if: always() && failure()
+        with:
+          script: |
+            // 1. Retrieve existing bot comments for the PR
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            })
+            
+            const botComment = comments.find(comment => {
+              return comment.user.type === 'Bot' && comment.body.includes('Code security issues found')
+            })
+
+            // 2. Prepare format of the comment
+            const output = `### Code security issues found
+            
+            View full details [here](https://github.com/${{ github.repository }}/security/code-scanning?query=is%3Aopen+pr%3A${{ github.event.pull_request.number }}).`;
+
+            // 3. If we have a comment, update it, otherwise create a new one
+            if (botComment) {
+              github.rest.issues.deleteComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: output
+              })
+            }
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            })
+
+      - name: Delete SBOM failure comment
+        uses: actions/github-script@v8
+        if: always() && success()
+        with:
+          script: |
+            // 1. Retrieve existing bot comments for the PR
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            })
+            
+            const botComment = comments.find(comment => {
+              return comment.user.type === 'Bot' && comment.body.includes('Code security issues found')
+            })
+
+            // 2. If we have a comment, update it, otherwise create a new one
+            if (botComment) {
+              github.rest.issues.deleteComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id
+              })
+            }
 ```
 
-An action to scan vulnerabilities based on the content of the generated sbom json file
+#### Recipe 3b: Image Scanning
+
+Modify an existing workflow file which creates/uses an image to scan it for vunrubilities prior to use:
+
+> This outputs issues as a table in its logs.
 
 ```yaml
-name: "Scan vulnerabilities"
-on:
-  push:
-    branches: [main]
-  pull_request:
-    types: [opened, synchronize, reopened]
-jobs:
-  scan-vulnerabilities:
-    runs-on: ubuntu-latest
+...
+permissions:
+  actions: read   # Required for anchore/sbom-action
+  contents: write # Required for anchore/sbom-action
+...
     steps:
-    - uses: anchore/scan-action@v3
-      with:
-        sbom: sbom-repo.cdx.json
-        fail-build: true
-        severity-cutoff: critical
-        acs-report-enable: true
-    - uses: anchore/scan-action@v3
-      with:
-        sbom: sbom-image.cdx.json
-        fail-build: true
-        severity-cutoff: critical
-        acs-report-enable: true
+    ...
+      - uses: anchore/sbom-action@v0
+        with:
+          image: <image_location>/<image_name>:<image_tag>
+          format: cyclonedx-json
+          output-file: sbom-image-${{ github.event.repository.name }}-${{ github.sha }}.cdx.json
+
+      - uses: anchore/scan-action@v7
+        with:
+          sbom: sbom-image-${{ github.event.repository.name }}-${{ github.sha }}.cdx.json
+          fail-build: true
+          severity-cutoff: low
+          only-fixed: true
+          output-format: table
+...
 ```
 
 ### Recipe 4: Jenkins Pipeline
