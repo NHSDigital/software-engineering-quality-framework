@@ -38,10 +38,10 @@ If you have already committed and need to retrospectively sign commits, follow t
 
     1. Pick `ECC (sign and encrypt)` then `Curve 25519` ([Ed25519](https://en.wikipedia.org/wiki/EdDSA#Ed25519) offers the strongest encryption at time of writing)
     1. Select a key expiry time (personal choice)
-    1. `Real name` Your GitHub handle
-    1. `Email address` Your GitHub account email [listed on your GitHub profile](https://github.com/settings/emails) (you can use the privacy *@users.noreply.github.com* email address): `Settings` -> `Emails` -> `Keep my email addresses private`)
+    1. `Real name` = Your GitHub handle
+    1. `Email address` = An email address [registered against your GitHub account](https://github.com/settings/emails) - to enable [Smart Commits](https://nhsd-confluence.digital.nhs.uk/x/SZNYRg#UsingtheGitHubintegrationinJira-SmartCommits) ([Jira/GitHub integration](https://support.atlassian.com/jira-software-cloud/docs/process-issues-with-smart-commits/)), use your `@nhs.net` address
 
-        > If you go for the private email option, consider enabling `Block command line pushes that expose my email`.
+        > If instead you opt for the private *@users.noreply.github.com* email address, consider enabling `Block command line pushes that expose my email`.
 
     1. Avoid adding a comment (this *may* prevent git from auto-selecting a key - see Troubleshooting section below)
     1. Review your inputs and press enter `O` to confirm
@@ -98,9 +98,9 @@ If you have already committed and need to retrospectively sign commits, follow t
     1. Pick `ECC (sign and encrypt)` then `Curve 25519` ([Ed25519](https://en.wikipedia.org/wiki/EdDSA#Ed25519) offers the strongest encryption at time of writing)
     1. Select a key expiry time (personal choice)
     1. `Real name` = Your GitHub handle
-    1. `Email address` = Your GitHub account email [listed on your GitHub profile](https://github.com/settings/emails) (you can use the privacy *@users.noreply.github.com* email address): `Settings` -> `Emails` -> `Keep my email addresses private`)
+    1. `Email address` = An email address [registered against your GitHub account](https://github.com/settings/emails) - to enable [Smart Commits](https://nhsd-confluence.digital.nhs.uk/x/SZNYRg#UsingtheGitHubintegrationinJira-SmartCommits) ([Jira/GitHub integration](https://support.atlassian.com/jira-software-cloud/docs/process-issues-with-smart-commits/)), use your `@nhs.net` address
 
-        > If you go for the private email option, consider enabling `Block command line pushes that expose my email`.
+        > If instead you opt for the private *@users.noreply.github.com* email address, consider enabling `Block command line pushes that expose my email`.
 
     1. Avoid adding a comment (this *may* prevent git from auto-selecting a key - see Troubleshooting section below)
     1. Review your inputs and press enter `O` to confirm
