@@ -47,14 +47,14 @@ If you have already committed and need to retrospectively sign commits, follow t
     1. Review your inputs and press enter `O` to confirm
     1. Define a passphrase for the key
 
-1. Test the key is visible and export the PGP PUBLIC KEY (to your clipboard):
+1. Test the key is visible and export the PGP public key (to your clipboard):
 
     ```bash
     gpg -k # This should list the new key
     gpg --armor --export <my_email_address> | pbcopy
     ```
 
-    > Your PGP PUBLIC KEY is now in your clipboard!
+    > Your PGP public key is now in your clipboard!
 
 1. [Add the public key to your GitHub account](https://github.com/settings/gpg/new) (`Settings` -> `SSH and GPG keys` -> `New GPG key`)
 
@@ -106,14 +106,14 @@ If you have already committed and need to retrospectively sign commits, follow t
     1. Review your inputs and press enter `O` to confirm
     1. A new window called pinentry will appear prompting you to enter a passphrase.
 
-1. Test the key is visible and export the PGP PUBLIC KEY (to your clipboard):
+1. Test the key is visible and export the PGP public key (to your clipboard):
 
     ```bash
     gpg -k # This should list the new key
     gpg --armor --export <my_email_address> | clip
     ```
 
-    > Your PGP PUBLIC KEY is now in your clipboard!
+    > Your PGP public key is now in your clipboard!
 
 1. [Add the public key to your GitHub account](https://github.com/settings/gpg/new) (`Settings` -> `SSH and GPG keys` -> `New GPG key`)
 
