@@ -82,6 +82,7 @@ If you have already committed and need to retrospectively sign commits, follow t
         $ git log --show-signature -1
         ...
         gpg: Good signature from "<github_handle> <<my_email_address>>" [ultimate]
+        Author: <github_handle> <<my_email_address>>
         ...
         ```
 
@@ -187,6 +188,7 @@ If you have already committed and need to retrospectively sign commits, follow t
         $ git log --show-signature -1
         ...
         gpg: Good signature from "<github_handle> <<my_email_address>>" [ultimate]
+        Author: <github_handle> <<my_email_address>>
         ...
         ```
 
