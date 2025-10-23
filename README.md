@@ -1,5 +1,7 @@
 # Software Engineering Quality Framework
 
+> **Note:** Contributors must take all necessary precautions to ensure that sensitive data does not leak into Source Control Management Systems. You must ensure you have reviewed the [guidance on what to do should this happen](practices/guides/commit-purge.md).
+
 ## How to get started
 
 See the [Quick Start Guide](quickstart.md)

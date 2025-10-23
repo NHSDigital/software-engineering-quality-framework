@@ -46,7 +46,7 @@ A code review involves another member of the team looking through a proposed cod
 
 Many teams consider code which has been written [as a pair](https://martinfowler.com/articles/on-pair-programming.html) to already have been reviewed, and do not require a separate review.
 
-Robert Fink provides an excellent description of the [motivation and practice of code reviews](https://medium.com/palantir/code-review-best-practices-19e02780015f). Some key points from this and other sources ([Google](https://github.com/google/eng-practices/blob/master/review/reviewer/index.md), [SmartBear](https://smartbear.com/learn/code-review/best-practices-for-peer-code-review/), [Atlassian](https://www.atlassian.com/agile/software-development/code-reviews)) are:
+Robert Fink provides an excellent description of the [motivation and practice of code reviews](https://blog.palantir.com/code-review-best-practices-19e02780015f). Some key points from this and other sources ([Google](https://github.com/google/eng-practices/blob/master/review/reviewer/index.md), [SmartBear](https://smartbear.com/learn/code-review/best-practices-for-peer-code-review/), [Atlassian](https://www.atlassian.com/agile/software-development/code-reviews)) are:
 
 #### Egalitarian
 
@@ -70,6 +70,9 @@ While effective testing is the best way to detect bugs or non-functional problem
 - Is the code clear and simple?
 - Is the code layout and structure consistent with agreed style and other code? (please see [enforce code formatting](enforce-code-formatting.md))
 - Would it easily allow future modification to meet slightly different needs, e.g. ten times the required data size or throughput?
+- Is it [built for testability](../practices/structured-code.md)?
+- Are the automated tests positioned appropriately in the [test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html), triggered appropriately in CI builds, and do they block the build when they fail?
+- Are there any missing [automated tests](../practices/testing.md), e.g. edge-cases that have not yet been considered?
 - Have the non-functional requirements been considered (performance, scalability, robustness, etc)?
 - Are common security issues guarded against (e.g. [OWASP Top 10](https://owasp.org/www-project-top-ten/))? Including:
   - Is any new input data being treated as potentially hostile?

@@ -1,4 +1,0 @@
-{
-  "aliveStatusCodes": [200, 403],
-  "timeout": "30s"
-}
