@@ -12,4 +12,3 @@ Where possible this will be a set of fully working components / solutions you ca
 | [Signing commits on GitHub](practices/guides/commit-signing.md)                                                                   | Instructions      | Recommended    | Published |
 | [Automating performance-test decisions using APDEX](practices/performance-testing.md)                                             | Instructions      | Recommended    | Published |
 | [Scanning source code for secrets](tools/nhsd-git-secrets/README.md)                                                              | Full solution     | Recommended    | Published |
-| Cross-account backups on AWS                                                                                                      | Instructions      | In progress    | Draft     |
