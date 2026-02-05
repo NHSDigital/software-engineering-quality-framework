@@ -36,7 +36,7 @@ If you have already committed and need to retrospectively sign commits, follow t
     gpg --full-generate-key
     ```
 
-    1. Pick `ECC (sign and encrypt)` then `Curve 25519` ([Ed25519](https://en.wikipedia.org/wiki/EdDSA#Ed25519) offers the strongest encryption at time of writing)
+    1. Pick `(9) ECC (sign and encrypt)` then `Curve 25519` ([Ed25519](https://en.wikipedia.org/wiki/EdDSA#Ed25519) offers the strongest encryption at time of writing)
     1. Select a key expiry time (personal choice)
     1. `Real name` = Your GitHub handle
     1. `Email address` = An email address [registered against your GitHub account](https://github.com/settings/emails) - to enable [Smart Commits](https://nhsd-confluence.digital.nhs.uk/x/SZNYRg#UsingtheGitHubintegrationinJira-SmartCommits) ([Jira/GitHub integration](https://support.atlassian.com/jira-software-cloud/docs/process-issues-with-smart-commits/)), use your `@nhs.net` address
@@ -96,7 +96,10 @@ If you have already committed and need to retrospectively sign commits, follow t
     gpg --full-generate-key
     ```
 
-    1. Pick `ECC (sign and encrypt)` then `Curve 25519` ([Ed25519](https://en.wikipedia.org/wiki/EdDSA#Ed25519) offers the strongest encryption at time of writing)
+    1. Pick `(9) ECC (sign and encrypt)` then `Curve 25519` ([Ed25519](https://en.wikipedia.org/wiki/EdDSA#Ed25519) offers the strongest encryption at time of writing)
+
+        > If you already had Git for Windows installed, and its version is between `2.5.0` and `2.30.x`, the `(9) ECC and ECC` option is available if you run `gpg --expert --full-generate-key`, however if you can upgrade to the latest version, this is advised.
+
     1. Select a key expiry time (personal choice)
     1. `Real name` = Your GitHub handle
     1. `Email address` = An email address [registered against your GitHub account](https://github.com/settings/emails) - to enable [Smart Commits](https://nhsd-confluence.digital.nhs.uk/x/SZNYRg#UsingtheGitHubintegrationinJira-SmartCommits) ([Jira/GitHub integration](https://support.atlassian.com/jira-software-cloud/docs/process-issues-with-smart-commits/)), use your `@nhs.net` address
