@@ -83,8 +83,10 @@ If you are happy that the most recent N commits can *all* be signed in one go, t
 If N == 10:
 
 ```bash
-git rebase --exec "git commit -S --amend --no-edit" HEAD~10
+git rebase --exec "git commit -S --amend --no-edit --allow-empty" HEAD~10
 git push -f
 ```
 
 The first command automatically cycles through all 10 commits, signing each one. The second force-pushes the newly signed commits.
+
+Note: --allow-empty is only needed if any of the commits you want to sign are empty.
