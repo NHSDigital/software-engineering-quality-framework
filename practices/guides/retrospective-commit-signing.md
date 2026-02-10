@@ -75,3 +75,16 @@ Please take the time to understand the commands that you are using, this is just
    Refresh the browser window for your PR. You should now see the verified commits:
 
    ![Updated commit history in GitHub](../../images/updated-commit-history-github.png)
+
+### Optional process variation: bulk update last N commits in one command
+
+If you are happy that the most recent N commits can *all* be signed in one go, that's possible in fewer steps than the method above, but is less flexible: you can't pick and choose which commits this acts on, so this won't always be an appropriate method.
+
+If N == 10:
+
+```bash
+git rebase --exec "git commit -S --amend --no-edit" HEAD~10
+git push -f
+```
+
+The first command automatically cycles through all 10 commits, signing each one. The second force-pushes the newly signed commits.
