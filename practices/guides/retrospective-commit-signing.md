@@ -76,7 +76,7 @@ Please take the time to understand the commands that you are using, this is just
 
    ![Updated commit history in GitHub](../../images/updated-commit-history-github.png)
 
-### Optional process variation: bulk update last N commits in one command
+### Optional process variation: bulk update last N commits
 
 If you are happy that the most recent N commits can *all* be signed in one go, that's possible in fewer steps than the method above, but is less flexible: you can't pick and choose which commits this acts on, so this won't always be an appropriate method.
 
