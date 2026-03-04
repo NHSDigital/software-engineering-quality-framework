@@ -140,7 +140,7 @@ Dashboards should be easy to understand at a glance. Some tips to achieve this a
 - Adopt conventions around use of colour and units (e.g. standardise on milliseconds for times and rates per second).
 - Display metrics over an appropriate rolling time period (e.g. the last hour). It's important to get the right balance between providing enough context to understand trends in the data and providing a high enough resolution to accurately show metrics.
 - Configure an appropriate refresh rate to ensure changes in metric values are seen promptly.
-- Make a concious trade-off between indicating "long tail" performance vs representing the majority experience. For example, the 95th centile latency is usually a more useful indicator than either the mean or maximum latency, which under- and over-emphasise the worst case, respectively.
+- Make a conscious trade-off between indicating "long tail" performance vs representing the majority experience. For example, the 95th centile latency is usually a more useful indicator than either the mean or maximum latency, which under- and over-emphasise the worst case, respectively.
 
 It is often a good idea to draw a clear distinction between:
 
