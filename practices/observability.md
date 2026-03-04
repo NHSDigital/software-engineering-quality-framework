@@ -50,7 +50,7 @@
   - Logs should be easily accessible and searchable in a log aggregation system.
   - Agree log levels (e.g. DEBUG, INFO, ERROR) and use them consistently.
   - Consider using structured (i.e. Json formatted) log messages, as log aggregation systems can often perform more effective searches of these.
-  - Tracing can be implemented using cloud platform-native tools like [AWS X-Ray](https://aws.amazon.com/xray/) or open source equivalents such as [OpenTracing](https://opentracing.io/docs/overview/what-is-tracing/). APM tools mentioned elsewhere also typically include tracing functionality.
+  - Tracing can be implemented using cloud platform-native tools like [AWS X-Ray](https://aws.amazon.com/xray/) or open source equivalents such as [OpenTelemetry](https://opentelemetry.io/docs/what-is-opentelemetry/). APM tools mentioned elsewhere also typically include tracing functionality.
 - More **things to monitor**.
   - Monitor (and generate alerts for) the expiry dates of the SSL certificates within the service. See [acm-cert-monitor](../tools/acm-cert-monitor/) for an example lambda and Terraform stack to monitor your AWS ACM certificates.
     - Or, even better, outsource certificate management completely (see [outsource from the bottom up](../patterns/outsource-bottom-up.md))
