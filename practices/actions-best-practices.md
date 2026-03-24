@@ -83,7 +83,7 @@ While third-party actions can significantly enhance the functionality and effici
 - *Lack of Maintenance*: Some third-party actions may not be actively maintained, leaving them vulnerable to security issues or compatibility problems with newer GitHub Actions features.
 - *Excessive Permissions*: Third-party actions may request more permissions than necessary, potentially exposing sensitive data or allowing unauthorized access to your repository.
 
-To mitigate these risks, all actions must be pinned to specific commit SHAs, reviewed before adoption, and sourced only from trusted publishers.
+To mitigate these risks, all actions must be pinned to specific commit SHAs, reviewed before adoption, and sourced only from trusted publishers. Teams must minimise use of third-party actions and should expect the permitted set of actions to be restricted over time.
 
 ### Pin All Actions to a Commit SHA
 
@@ -113,11 +113,23 @@ updates:
 
 ### Verify Third-Party Actions
 
-When including a GitHub Action within your workflow consider alternatives, is there an existing mechanism you can use? Would this be something that could be reused and you could create your own action within the organisation that other teams could benefit from? If you can only achieve your goal with a third-party action then:
+Third-party actions must not be the default choice. Before introducing one, teams should confirm that the requirement cannot be met by:
+
+- Native GitHub Actions features such as `run` steps, reusable workflows, or built-in workflow syntax
+- An action already owned and maintained within the organisation
+- An action that is already approved for reuse by other teams
+
+If a third-party action is still required, document why it is needed, what alternatives were considered, and why those alternatives were rejected. Teams should prefer actions with a clear maintenance history, minimal permissions, and a narrow, well-understood scope.
+
+If you can only achieve your goal with a third-party action then:
 
 - Only use trusted actions from the GitHub Marketplace
 - Review the source code of third-party actions before using them
 - Consider forking and maintaining your own copy of critical actions
+- Keep a record of the approval decision and the version or SHA that was reviewed
+- Be prepared to replace the action if organisational policy restricts the allowed set of actions
+
+The long-term direction is to lock down the set of actions that can be used. Teams should therefore avoid introducing new third-party actions unless there is a clear, defensible need.
 
 ### Use Actions Security Best Practices
 
