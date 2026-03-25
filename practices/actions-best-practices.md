@@ -109,7 +109,11 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    cooldown:
+      default-days: 7
 ```
+
+The `cooldown` option tells Dependabot to delay version updates for newly released versions until they have aged past the configured threshold. This reduces the chance of immediately pulling in a compromised release. Security updates are not subject to cooldown, so known vulnerabilities are still flagged immediately.
 
 ### Verify Third-Party Actions
 
