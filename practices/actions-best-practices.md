@@ -87,14 +87,14 @@ To mitigate these risks, all actions must be pinned to specific commit SHAs, rev
 
 ### Pin All Actions to a Commit SHA
 
-When including a GitHub Action within your workflow you should perform due diligence checks to ensure that the action achieves the aims you are intending it to, and that it does not do anything unintended, including reviewing the action code where appropriate. Every action reference must use a full-length commit SHA, including GitHub-authored actions, marketplace actions, and internally maintained actions. Do not use tags or branch references in committed workflow definitions because they can move without review or be modified if the upstream repository is compromised:
+When including a GitHub Action within your workflow you should perform due diligence checks to ensure that the action achieves the aims you are intending it to, and that it does not do anything unintended, including reviewing the action code where appropriate. Every action reference must use a full-length commit SHA, including GitHub-authored actions, marketplace actions, and internally maintained actions, and must include an inline comment identifying the corresponding tag or version. Do not use tags or branch references in committed workflow definitions because they can move without review or be modified if the upstream repository is compromised. The tag annotation comment is not optional — without it, a pinned SHA is opaque and cannot be reviewed or updated effectively:
 
 ```yaml
 # Not secure - can change unexpectedly
 - uses: actions/checkout@v4
 # Also not acceptable - tags can be moved
 - uses: actions/checkout@v4.1.7
-# Required - pin to the full commit SHA and optionally annotate the tag for readability
+# Required - pin to the full commit SHA and annotate the tag for readability
 - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
 ```
 
