@@ -4,7 +4,7 @@
 
 GitHub Actions is a powerful automation tool that enables CI/CD workflows directly within your GitHub repository. Securing your GitHub Actions workflows is crucial to protect your code, secrets, and infrastructure from potential security threats.
 
-This guide outlines best practices for securing your GitHub Actions workflows and minimizing security risks.
+This guide outlines best practices for securing your GitHub Actions workflows and minimizing security risks. All actions used in committed workflow definitions must be pinned to a full-length commit SHA.
 
 ## Table of Contents
 
@@ -40,7 +40,7 @@ jobs:
     environment: production
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Deploy
         env:
           API_TOKEN: ${{ secrets.API_TOKEN }}
@@ -57,7 +57,7 @@ jobs:
 
 ### Use Least Privilege Principle
 
-Limit the GitHub token permissions to only what's necessary please [see here](https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication#permissions-for-the-github_token) for details on the default permissions that the github token is given when the permissions block is not used:
+Limit the GitHub token permissions to only what's necessary [see here](https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication#permissions-for-the-github_token) for details on the default permissions that the github token is given when the permissions block is not used:
 
 ```yaml
 permissions:
@@ -83,28 +83,53 @@ While third-party actions can significantly enhance the functionality and effici
 - *Lack of Maintenance*: Some third-party actions may not be actively maintained, leaving them vulnerable to security issues or compatibility problems with newer GitHub Actions features.
 - *Excessive Permissions*: Third-party actions may request more permissions than necessary, potentially exposing sensitive data or allowing unauthorized access to your repository.
 
-To mitigate these risks, always follow best practices, such as pinning actions to specific commit SHAs, reviewing the source code of actions, and using only trusted actions from reputable sources.
+To mitigate these risks, all actions must be pinned to specific commit SHAs, reviewed before adoption, and sourced only from trusted publishers. Teams must minimise use of third-party actions and should expect the permitted set of actions to be restricted over time.
 
-### Pin Actions to Specific Versions
+### Pin All Actions to a Commit SHA
 
-When including a GitHub Action within your workflow you should perform due diligence checks to ensure that the action achieves the aims you are intending it to, and that it doesn't do anything unintended, this would include performing a code review of the GitHub action code. To prevent the underlying code being changed without your awareness always use specific commit SHAs instead of tags or branches as tags can be modified if the upstream repository is compromised:
+When including a GitHub Action within your workflow you should perform due diligence checks to ensure that the action achieves the aims you are intending it to, and that it does not do anything unintended, including reviewing the action code where appropriate. Every action reference must use a full-length commit SHA, including GitHub-authored actions, marketplace actions, and internally maintained actions, and must include an inline comment identifying the corresponding tag or version. Do not use tags or branch references in committed workflow definitions because they can move without review or be modified if the upstream repository is compromised. The tag annotation comment is not optional — without it, a pinned SHA is opaque and cannot be reviewed or updated effectively:
 
 ```yaml
 # Not secure - can change unexpectedly
-- uses: actions/checkout@v3 
-# Better - using a specific version tag
-- uses: actions/checkout@v3.1.0 
-# Best - using a specific commit SHA
-- uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # v3.1.0
+- uses: actions/checkout@v4
+# Also not acceptable - tags can be moved
+- uses: actions/checkout@v4.1.7
+# Required - pin to the full commit SHA and annotate the tag for readability
+- uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+```
+
+If you use automation such as Dependabot to keep actions up to date, enable the `github-actions` ecosystem in `dependabot.yml` and keep the release tag comment on the same line as the pinned SHA so updates continue to track tagged releases.
+
+A minimal Dependabot configuration for GitHub Actions is:
+
+```yaml
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
 ```
 
 ### Verify Third-Party Actions
 
-When including a GitHub Action within your workflow consider alternatives, is there an existing mechanism you can use? Would this be something that could be reused and you could create your own action within the organisation that other teams could benefit from? If you can only achieve your goal with a third-party action then:
+Third-party actions must not be the default choice. Before introducing one, teams should confirm that the requirement cannot be met by:
+
+- Native GitHub Actions features such as `run` steps, reusable workflows, or built-in workflow syntax
+- An action already owned and maintained within the organisation
+- An action that is already approved for reuse by other teams
+
+If a third-party action is still required, document why it is needed, what alternatives were considered, and why those alternatives were rejected. This should live in `docs/ADRs.md`, or similar, to ensure the decision process is held within the repository. Teams should prefer actions with a clear maintenance history, minimal permissions, and a narrow, well-understood scope.
+
+If you can only achieve your goal with a third-party action then:
 
 - Only use trusted actions from the GitHub Marketplace
 - Review the source code of third-party actions before using them
 - Consider forking and maintaining your own copy of critical actions
+- Keep a record of the approval decision and the version or SHA that was reviewed
+- Be prepared to replace the action if organisational policy restricts the allowed set of actions
+
+The long-term direction is to lock down the set of actions that can be used. Teams should therefore avoid introducing new third-party actions unless there is a clear, defensible need.
 
 ### Use Actions Security Best Practices
 
@@ -164,7 +189,7 @@ jobs:
     permissions:
       contents: read
     steps:      
-      - uses: actions/checkout@v3      
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Run tests
         run: npm test
 ```
@@ -189,9 +214,9 @@ jobs:
       id-token: write
       contents: read
     steps:      
-      - uses: actions/checkout@v3      
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@e3dd6a429d7300a6a4c196c26e071d42e0343502 # v4.0.2
         with:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/github-actions
           aws-region: eu-west-2
