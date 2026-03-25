@@ -119,7 +119,7 @@ Third-party actions must not be the default choice. Before introducing one, team
 - An action already owned and maintained within the organisation
 - An action that is already approved for reuse by other teams
 
-If a third-party action is still required, document why it is needed, what alternatives were considered, and why those alternatives were rejected. Teams should prefer actions with a clear maintenance history, minimal permissions, and a narrow, well-understood scope.
+If a third-party action is still required, document why it is needed, what alternatives were considered, and why those alternatives were rejected. This should live in `docs/ADRs.md`, or similar, to ensure the decision process is held within the repository. Teams should prefer actions with a clear maintenance history, minimal permissions, and a narrow, well-understood scope.
 
 If you can only achieve your goal with a third-party action then:
 
