@@ -1,9 +1,0 @@
-.*git-secrets/.*:*
-.*terraform.tfstate.*:*
-.*.svg:*
-.*.jquery.*.js:*
-.*engine_version*
-.*127.0.0.1*
-.*assembly: AssemblyVersion*
-.*assembly: AssemblyFileVersion*
-.*Version=*

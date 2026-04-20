@@ -79,7 +79,7 @@ The remainder of this page gives more detailed and specific recommendations to b
 - Prevent **[clickjacking](https://sudo.pagerduty.com/for_engineers/#clickjacking)** with `X-Frame-Options`
 - Be careful not to **leak information**, e.g. error messages, stack traces, headers
 - **Don't trust** yourself or others! <a name='secret-scanning'></a>
-  - Code must be automatically scanned for secrets or other sensitive data. We have a [secret scanning guide](../tools/nhsd-git-secrets/README.md) that describes how to best achieve this using our preferred tooling, and also includes examples to get you started.
+  - Code must be automatically scanned for secrets or other sensitive data. Use our [GitLeaks guidance](../tools/gitleaks.md) to implement local and pipeline scanning with the organisation's preferred tooling.
   - Be wary of any 3rd party JavaScript included on the page, e.g. for A/B testing, analytics
   - Pin dependencies at known versions to avoid unexpected updates
   - Scan dependencies for vulnerabilities, e.g. using [OWASP Dependency Check](https://owasp.org/www-project-dependency-check/) or [Snyk](https://snyk.io/)
