@@ -9,6 +9,7 @@
     - [Teams setup](#teams-setup)
   - [Code security](#code-security)
     - [Branch protection](#branch-protection)
+  - [Allowing others to report security problems](#allowing-others-to-report-security-problems)
 
 This guide lays out security best practice for GitHub repositories. This set of practices is a minimum (nothing stops you from doing more), and they should be implemented alongside other relevant ones that contribute to [security](security.md) as a whole. These are discussed in more detail as part of the [Quality checks](../quality-checks.md).
 
@@ -64,3 +65,13 @@ Depending on your use case, you may want to create additional teams (e.g. teams 
 - Require <!-- markdown-link-check-disable -->[signed commits](https://docs.github.com/en/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#require-signed-commits)<!-- markdown-link-check-enable -->, and, accordingly, check that commits are verified before merging. Git treats authentication and identity separately - any authenticated user can impersonate another developer when committing code. This means that even if a junior account is compromised it could have significant consequences, for example impersonating the lead developer in the hope of an easy merge. Only by requiring signing can identity truly be verified. [Setup Guides](guides/commit-signing.md) for macOS, Windows, GitHub Actions, and AWS CodePipeline.
 - Invalidate existing reviews when new commits are pushed (`Dismiss stale pull request approvals when new commits are pushed` option).
 - Require adequate automated status checks prior to merging. This should always include checking that branches are up to date.
+
+## Allowing others to report security problems
+
+- Provide a SECURITY.md file describing how other people should report any security issues they discover in your repository.
+- Enable Security advisories in your repository as the preferred means of other people reporting security issues.
+- If your repository is public, also enable [Private vulnerability reporting](https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/privately-reporting-a-security-vulnerability) so that external users can report issues privately.
+  - Note: the "Enable vulnerability reporting" button in the "Security and Quality" tab doesn't actually enable this setting: it just takes you to the "Settings" tab where the real "Enable" button is.
+- Ensure that you monitor Security advisories and act on them promptly.
+
+For an example, please see this repository's [SECURITY.md](../SECURITY.md).
