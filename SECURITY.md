@@ -1,6 +1,6 @@
 # Security
 
-We take security and the protection of private data extremely seriously. If you believe you have found a vulnerability or other issue which has compromised or could compromise the security of any of our systems and/or private data managed by our systems, please do not hesitate to contact us using the method outlined below.
+We take security and the protection of private data extremely seriously. If you believe you have found a vulnerability or other issue which has compromised or could compromise the security of any of our systems or private data managed by our systems, please do not hesitate to contact us using the method outlined below.
 
 ## Table of Contents
 
