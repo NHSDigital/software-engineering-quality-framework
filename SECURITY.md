@@ -2,12 +2,12 @@
 
 We take security and the protection of private data extremely seriously. If you believe you have found a vulnerability or other issue which has compromised or could compromise the security of any of our systems or private data managed by our systems, please do not hesitate to contact us using the method outlined below.
 
-## Table of Contents
+## Table of contents
 
 - [Security](#security)
-  - [Table of Contents](#table-of-contents)
+  - [Table of contents](#table-of-contents)
   - [Reporting a vulnerability](#reporting-a-vulnerability)
-  - [General Security Enquiries](#general-security-enquiries)
+  - [General security enquiries](#general-security-enquiries)
 
 ## Reporting a vulnerability
 
@@ -18,6 +18,6 @@ If you believe you have found a security issue in this repository, please report
 
 This creates a private channel for discussion and allows us to coordinate a fix before any public disclosure.
 
-## General Security Enquiries
+## General security enquiries
 
 If you have general enquiries regarding our cybersecurity, please reach out to us at [cybersecurity@nhs.net](cybersecurity@nhs.net)
