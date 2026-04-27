@@ -8,7 +8,7 @@ Engineering teams must take all necessary precautions to ensure that sensitive d
 
 Teams must also review their Near Miss reporting requirements and ensure that necessary steps are taken.
 
-Teams must ensure that a [Secret scanner](https://github.com/NHSDigital/software-engineering-quality-framework/tree/main/tools/nhsd-git-secrets) is enabled on their repositories.
+Teams must ensure that a secret scanner such as [GitLeaks](../../tools/gitleaks.md) is enabled on their repositories.
 
 Teams must also ensure that developers follow standard processes to ensure any pre-commit hooks are enabled and enforced to reduce the risk of sensitive information being accidentally published. Teams should also contribute to the rule set for these tools to ensure secrets are identified correctly.
 
