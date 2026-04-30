@@ -20,4 +20,4 @@ This creates a private channel for discussion and allows us to coordinate a fix 
 
 ## General Security Enquiries
 
-If you have general enquiries regarding our cybersecurity, please reach out to us at [cybersecurity@nhs.net](cybersecurity@nhs.net)
+If you have general enquiries regarding our cybersecurity, please reach out to us at [cybersecurity@nhs.net](mailto:cybersecurity@nhs.net)
