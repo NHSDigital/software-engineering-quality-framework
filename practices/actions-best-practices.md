@@ -181,12 +181,12 @@ jobs:
 ### Secure Pull Request Workflows
 
 - Don't expose secrets to pull request workflows from forks
-- Use `pull_request_target` carefully with read-only permissions
+- Do not use `pull_request_target` in workflows. It runs in the context of the base repository with access to secrets and write permissions, even for PRs from untrusted forks. This makes it a common vector for supply chain attacks ("pwn requests"). Use `pull_request` instead
 
 ```yaml
-# Safer approach for PR workflows
+# Required approach for PR workflows
 on:
-  pull_request: 
+  pull_request:
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -197,6 +197,50 @@ jobs:
       - name: Run tests
         run: npm test
 ```
+
+The one widely-used exception is Dependabot auto-merge workflows. GitHub's own [auto-merge guidance](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/automating-dependabot-with-github-actions) relies on `pull_request_target` because Dependabot PRs need write access to trigger merges. If you use this pattern, restrict permissions to the minimum required (e.g. `pull-requests: write`, `contents: write`), and ensure the workflow never checks out or executes code from the PR head. Any such workflow must be reviewed and approved before merging.
+
+To ensure the workflow never checks out or executes PR head code:
+
+- **Do not include an `actions/checkout` step.** Auto-merge workflows only need to call the GitHub API (e.g. to approve or merge); they do not need the repository contents.
+- If a checkout is unavoidable, **never use the PR head ref or SHA** — do not pass `ref: ${{ github.event.pull_request.head.sha }}` or `ref: ${{ github.head_ref }}` to `actions/checkout`. Omitting `ref` checks out the base branch.
+- **Do not interpolate any PR-supplied values directly into `run:` steps.** This applies to all workflows, not just `pull_request_target` — see [Avoid Script Injection](#avoid-script-injection) below.
+- **Limit the workflow trigger.** Scope `pull_request_target` to specific activity types (e.g. `opened`, `synchronize`) and, where possible, add a condition to restrict execution to Dependabot only:
+
+```yaml
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+
+jobs:
+  auto-merge:
+    if: github.actor == 'dependabot[bot]'
+```
+
+### Avoid Script Injection
+
+Script injection can occur in any workflow — not just `pull_request_target` — whenever untrusted values are interpolated directly into a `run:` step. GitHub Actions expressions are evaluated before the shell executes the command, so an attacker who controls an input value (e.g. a PR title, branch name, or issue body) can inject arbitrary shell commands.
+
+Do not use `${{ }}` expressions directly inside `run:` blocks. Instead, assign them to environment variables and reference those variables in the shell:
+
+```yaml
+# Unsafe - expression evaluated before shell runs; attacker controls PR title
+- run: echo "${{ github.event.pull_request.title }}"
+
+# Safe - value passed via environment variable; shell treats it as data, not code
+- run: echo "$PR_TITLE"
+  env:
+    PR_TITLE: ${{ github.event.pull_request.title }}
+```
+
+This applies to all context values that may contain user-controlled input, including but not limited to:
+
+- `github.event.pull_request.title` / `.body` / `.head.ref`
+- `github.event.issue.title` / `.body`
+- `github.event.comment.body`
+- `github.head_ref`
+
+Values sourced entirely from within your own organisation (e.g. `github.repository`, `github.sha`) carry lower risk, but the environment variable pattern is still the preferred style for consistency and reviewability.
 
 ### Implement Required Reviews
 
