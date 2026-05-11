@@ -58,7 +58,11 @@ Example GitHub Actions step:
 
 ```yaml
 - name: Run GitLeaks
-  run: gitleaks git --redact --verbose --log-opts="--all"
+  run:  docker run --rm --platform linux/amd64 \
+            -v "$(pwd):/repo" \
+            -w /repo \
+            ghcr.io/gitleaks/gitleaks@sha256:c00b6bd0aeb3071cbcb79009cb16a60dd9e0a7c60e2be9ab65d25e6bc8abbb7f \
+            git --source /repo --redact --verbose --log-opts="--all"
 ```
 
 If you maintain a custom configuration, store it in the repository and reference it explicitly in local and CI commands so the same rules apply everywhere.
