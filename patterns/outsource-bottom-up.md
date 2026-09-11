@@ -15,8 +15,8 @@
 
 - These notes are part of a broader set of [principles](../principles.md)
 - This is related to:
-  - [ARCHITECTURE-CLOUD](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/public-cloud-first)
-  - [ARCHITECTURE-REUSE](https://digital.nhs.uk/about-nhs-digital/our-work/nhs-digital-architecture/principles/reuse-before-buy-build)
+  - [ARCHITECTURE-CLOUD](https://digital.nhs.uk/developer/architecture/principles/public-cloud-first)
+  - [ARCHITECTURE-REUSE](https://digital.nhs.uk/developer/architecture/principles/reuse-before-buy-build)
 
 ## The pattern
 
