@@ -179,7 +179,8 @@ The [Site Reliability Workbook](https://landing.google.com/sre/workbook/chapters
 
 The [SRE book](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/) discusses two types of monitoring:
 
-**Clear-box monitoring**<br/>
+### Clear-box monitoring
+
 > Monitoring based on metrics exposed by the internals of the system, including logs, interfaces like the Java Virtual Machine Profiling Interface, or an HTTP handler that emits internal statistics.
 
 Examples include:
@@ -189,7 +190,8 @@ Examples include:
 - Publishing internal metrics from a component as CloudWatch [custom metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html), either by pushing them to CloudWatch using the SDK or by using [metric filters](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/MonitoringLogData.html#search-filter-concepts) to extract metrics from application logs in [CloudWatch Logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html).
 - Using [Java Management Extensions](https://en.wikipedia.org/wiki/Java_Management_Extensions) (JMX) to collect internal metrics from an instrumented Java component.
 
-**Opaque-box monitoring**<br/>
+### Opaque-box monitoring
+
 > Testing externally-visible behaviour as a user would see it.
 
 Examples include:
