@@ -114,7 +114,7 @@ If you have already committed and need to retrospectively sign commits, follow t
 
     ```bash
     gpg -k # This should list the new key
-    gpg --armor --export <my_email_address> | clip
+    gpg --armor --export <my_email_address> | clip.exe
     ```
 
     > Your PGP public key is now in your clipboard!
@@ -162,7 +162,7 @@ If you have already committed and need to retrospectively sign commits, follow t
     1. Within Ubuntu:
 
         ```bash
-        sudo ln -s /mnt/c/Program\ Files\ \(x86\)/GnuPG/bin/gpg.exe /usr/local/bin/gpg
+        sudo ln -s /mnt/c/Program\ Files/GnuPG/bin/gpg.exe /usr/local/bin/gpg
         sudo ln -s gpg /usr/local/bin/gpg2
         ```
 
