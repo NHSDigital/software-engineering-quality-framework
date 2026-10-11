@@ -47,11 +47,11 @@ If you have already committed and need to retrospectively sign commits, follow t
     1. Review your inputs and press enter `O` to confirm
     1. Define a passphrase for the key
 
-1. Test the key is visible and export the PGP public key (to your clipboard):
+1. Test the key is visible, then export the [most recently generated] PGP public key (to your clipboard):
 
     ```bash
-    gpg -k # This should list the new key
-    gpg --armor --export <my_email_address> | pbcopy
+    gpg -k
+    gpg --armor --export $(gpg --list-secret-keys --with-colons | grep '^sec:' | tail -n 1 | cut -d: -f5) | pbcopy
     ```
 
     > Your PGP public key is now in your clipboard!
@@ -110,11 +110,11 @@ If you have already committed and need to retrospectively sign commits, follow t
     1. Review your inputs and press enter `O` to confirm
     1. A new window called pinentry will appear prompting you to enter a passphrase.
 
-1. Test the key is visible and export the PGP public key (to your clipboard):
+1. Test the key is visible, then export the [most recently generated] PGP public key (to your clipboard):
 
     ```bash
-    gpg -k # This should list the new key
-    gpg --armor --export <my_email_address> | clip
+    gpg -k
+    gpg --armor --export $(gpg --list-secret-keys --with-colons | grep '^sec:' | tail -n 1 | cut -d: -f5) | clip
     ```
 
     > Your PGP public key is now in your clipboard!
@@ -208,7 +208,7 @@ The workflow would then use a Personal Access Token, stored with the GPG private
 ```yaml
 steps:
   - name: Checkout
-    uses: actions/checkout@v5
+    uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
     with:
       token: ${{ secrets.BOT_PAT }}
       ref: main
