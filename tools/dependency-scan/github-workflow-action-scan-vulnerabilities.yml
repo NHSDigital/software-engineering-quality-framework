@@ -8,13 +8,13 @@ jobs:
   scan-vulnerabilities:
     runs-on: ubuntu-latest
     steps:
-    - uses: anchore/scan-action@v3
+    - uses: anchore/scan-action@8576240a41341d866dbd7ebc72cd9fc0ef023f54 #v7.4.2
       with:
         sbom: sbom-repo.cdx.json
         fail-build: true
         severity-cutoff: critical
         acs-report-enable: true
-    - uses: anchore/scan-action@v3
+    - uses: anchore/scan-action@8576240a41341d866dbd7ebc72cd9fc0ef023f54 #v7.4.2
       with:
         sbom: sbom-image.cdx.json
         fail-build: true
