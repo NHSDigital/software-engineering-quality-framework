@@ -8,7 +8,7 @@
 
 - These notes are part of a broader set of [principles](../principles.md)
 - Practices in this section contribute to [service reliability](service-reliability.md)
-- See also [observability](observability.md)
+- See also [observability](observability.md) and [cloud databases](cloud-databases.md#infrastructure) for guidance on database reuse within the isolation boundaries below.
 - This is related to:
   - [ARCHITECTURE-CLOUD](https://digital.nhs.uk/developer/architecture/principles/public-cloud-first)
   - [ARCHITECTURE-SUSTAINABILITY](https://digital.nhs.uk/developer/architecture/principles/deliver-sustainable-services)
