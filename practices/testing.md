@@ -155,9 +155,7 @@
 
 ### Browser/OS testing guidance
 
-<!-- markdown-link-check-disable -->
-- Website user interfaces should be tested against an appropriate set of browsers and versions &mdash; in particular, no effort should be spent testing against unsupported browsers or unsupported versions of browsers. See supported browsers for [Staff](https://aalto.digital.nhs.uk/#/document/viewer/8c039de1-eec0-49cd-8af3-a97fed6a8bff?library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0) and [Citizens](https://aalto.digital.nhs.uk/#/document/viewer/465e6d1b-f107-49eb-ad25-e72c0299d3a6?library=5464c07f-daf1-4eee-b9b6-22e6c4dfbbd0)
-<!-- markdown-link-check-enable -->
+- Website user interfaces should be tested against an appropriate set of browsers and versions. Follow the [GOV.UK Service Manual guidance on designing for different browsers and devices](https://www.gov.uk/service-manual/technology/designing-for-different-browsers-and-devices). Use service analytics to understand how users access the service and decide whether additional browser support is needed.
 
 ## Other tools to consider
 
