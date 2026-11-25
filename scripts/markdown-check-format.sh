@@ -13,10 +13,10 @@
 
 files=$((git diff --diff-filter=ACMRT --name-only origin/${BRANCH_NAME:-main}.. "*.md"; git diff --name-only "*.md") | sort | uniq)
 if [ -n "$files" ]; then
-  image=ghcr.io/igorshubovych/markdownlint-cli@sha256:df7ce7cdcdb525d52a89d7aab17c507d49adceaddf2b767d3ed799c9537ded80 # v0.32.2
+  image=ghcr.io/igorshubovych/markdownlint-cli@sha256:905baf9f6bd11da2ede8c394882c616509385f24b8b8d54fff6e111be88f39de # v0.49.1
   docker run --rm \
     -v $PWD:/workdir \
     $image \
       $files \
-      --disable MD013 MD033
+      --disable MD013 MD033 MD055 MD056 MD058 MD059 MD060
 fi
